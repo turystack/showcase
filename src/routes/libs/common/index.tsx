@@ -2,15 +2,19 @@ import { createFileRoute } from '@tanstack/react-router'
 
 import { CodeBlock } from '@/components/docs/CodeBlock'
 
+export const Route = createFileRoute('/libs/common/')({
+	component: Page,
+})
+
 function Page() {
 	return (
 		<div className="space-y-8">
 			<div>
 				<h1 className="font-bold font-display text-3xl tracking-tight">
-					@tury/ui
+					@tury/common
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
-					A collection of accessible, customizable UI components.
+					A collection of type-safe utility functions for common operations.
 				</p>
 			</div>
 
@@ -18,10 +22,10 @@ function Page() {
 				<h2 className="font-display font-semibold text-xl">Installation</h2>
 				<CodeBlock
 					tabs={[
-						{ label: 'npm', code: 'npm install @tury/ui' },
-						{ label: 'pnpm', code: 'pnpm add @tury/ui' },
-						{ label: 'yarn', code: 'yarn add @tury/ui' },
-						{ label: 'bun', code: 'bun add @tury/ui' },
+						{ label: 'npm', code: 'npm install @tury/common' },
+						{ label: 'pnpm', code: 'pnpm add @tury/common' },
+						{ label: 'yarn', code: 'yarn add @tury/common' },
+						{ label: 'bun', code: 'bun add @tury/common' },
 					]}
 				/>
 			</div>
@@ -31,27 +35,19 @@ function Page() {
 				<ul className="space-y-2 text-muted-foreground">
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-tury-cyan">→</span>
-						<span>
-							Fully accessible components with keyboard navigation and ARIA
-							support
-						</span>
+						<span>TypeScript-first with precise overloads and return types</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-tury-cyan">→</span>
-						<span>Customizable via CSS variables with built-in dark mode</span>
+						<span>Zero dependencies and tree-shakeable by design</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-tury-cyan">→</span>
-						<span>
-							TypeScript-first with full type definitions for all components
-						</span>
+						<span>Fully tested with edge cases covered</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-tury-cyan">→</span>
-						<span>
-							Composable primitives designed to integrate with any styling
-							system
-						</span>
+						<span>Works in Node.js, browsers, and edge runtimes</span>
 					</li>
 				</ul>
 			</div>
@@ -59,19 +55,15 @@ function Page() {
 			<div className="space-y-3">
 				<h2 className="font-display font-semibold text-xl">Usage</h2>
 				<CodeBlock
-					code={`import { Button } from '@tury/ui'
+					code={`import { sum, subtract, multiply } from '@tury/common'
 
-export function App() {
-  return <Button>Click me</Button>
-}`}
-					filename="App.tsx"
-					language="tsx"
+sum(2, 3)        // 5
+subtract(10, 4)  // 6
+multiply(3, 7)   // 21`}
+					filename="example.ts"
+					language="ts"
 				/>
 			</div>
 		</div>
 	)
 }
-
-export const Route = createFileRoute('/libs/ui/')({
-	component: Page,
-})

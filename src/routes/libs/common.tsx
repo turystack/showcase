@@ -9,7 +9,7 @@ const sections: SidebarSection[] = [
 		items: [
 			{
 				label: 'Introduction',
-				to: '/libs/ui',
+				to: '/libs/common',
 			},
 		],
 		title: 'Getting Started',
@@ -17,19 +17,27 @@ const sections: SidebarSection[] = [
 	{
 		items: [
 			{
-				label: 'Button',
-				to: '/libs/ui/button',
+				label: 'sum',
+				to: '/libs/common/sum',
+			},
+			{
+				label: 'subtract',
+				to: '/libs/common/subtract',
+			},
+			{
+				label: 'multiply',
+				to: '/libs/common/multiply',
 			},
 		],
-		title: 'Components',
+		title: 'Functions',
 	},
 ]
 
 function Page() {
 	return (
 		<LibraryLayout
-			githubUrl="https://github.com/turystack/ui"
-			libraryName="@tury/ui"
+			githubUrl="https://github.com/turystack/common"
+			libraryName="@tury/common"
 			sections={sections}
 		>
 			<Outlet />
@@ -37,6 +45,6 @@ function Page() {
 	)
 }
 
-export const Route = createFileRoute('/libs/ui')({
+export const Route = createFileRoute('/libs/common')({
 	component: Page,
 })

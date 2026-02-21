@@ -12,8 +12,13 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as MainRouteImport } from './routes/_main'
 import { Route as MainIndexRouteImport } from './routes/_main/index'
 import { Route as LibsUiRouteImport } from './routes/libs/ui'
+import { Route as LibsCommonRouteImport } from './routes/libs/common'
 import { Route as LibsUiIndexRouteImport } from './routes/libs/ui/index'
+import { Route as LibsCommonIndexRouteImport } from './routes/libs/common/index'
 import { Route as LibsUiButtonRouteImport } from './routes/libs/ui/button'
+import { Route as LibsCommonSumRouteImport } from './routes/libs/common/sum'
+import { Route as LibsCommonSubtractRouteImport } from './routes/libs/common/subtract'
+import { Route as LibsCommonMultiplyRouteImport } from './routes/libs/common/multiply'
 
 const MainRoute = MainRouteImport.update({
   id: '/_main',
@@ -29,52 +34,113 @@ const LibsUiRoute = LibsUiRouteImport.update({
   path: '/libs/ui',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LibsCommonRoute = LibsCommonRouteImport.update({
+  id: '/libs/common',
+  path: '/libs/common',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LibsUiIndexRoute = LibsUiIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsCommonIndexRoute = LibsCommonIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsCommonRoute,
 } as any)
 const LibsUiButtonRoute = LibsUiButtonRouteImport.update({
   id: '/button',
   path: '/button',
   getParentRoute: () => LibsUiRoute,
 } as any)
+const LibsCommonSumRoute = LibsCommonSumRouteImport.update({
+  id: '/sum',
+  path: '/sum',
+  getParentRoute: () => LibsCommonRoute,
+} as any)
+const LibsCommonSubtractRoute = LibsCommonSubtractRouteImport.update({
+  id: '/subtract',
+  path: '/subtract',
+  getParentRoute: () => LibsCommonRoute,
+} as any)
+const LibsCommonMultiplyRoute = LibsCommonMultiplyRouteImport.update({
+  id: '/multiply',
+  path: '/multiply',
+  getParentRoute: () => LibsCommonRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof MainIndexRoute
+  '/libs/common': typeof LibsCommonRouteWithChildren
   '/libs/ui': typeof LibsUiRouteWithChildren
+  '/libs/common/multiply': typeof LibsCommonMultiplyRoute
+  '/libs/common/subtract': typeof LibsCommonSubtractRoute
+  '/libs/common/sum': typeof LibsCommonSumRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/common/': typeof LibsCommonIndexRoute
   '/libs/ui/': typeof LibsUiIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof MainIndexRoute
+  '/libs/common/multiply': typeof LibsCommonMultiplyRoute
+  '/libs/common/subtract': typeof LibsCommonSubtractRoute
+  '/libs/common/sum': typeof LibsCommonSumRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/common': typeof LibsCommonIndexRoute
   '/libs/ui': typeof LibsUiIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_main': typeof MainRouteWithChildren
+  '/libs/common': typeof LibsCommonRouteWithChildren
   '/libs/ui': typeof LibsUiRouteWithChildren
   '/_main/': typeof MainIndexRoute
+  '/libs/common/multiply': typeof LibsCommonMultiplyRoute
+  '/libs/common/subtract': typeof LibsCommonSubtractRoute
+  '/libs/common/sum': typeof LibsCommonSumRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/common/': typeof LibsCommonIndexRoute
   '/libs/ui/': typeof LibsUiIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/libs/ui' | '/libs/ui/button' | '/libs/ui/'
+  fullPaths:
+    | '/'
+    | '/libs/common'
+    | '/libs/ui'
+    | '/libs/common/multiply'
+    | '/libs/common/subtract'
+    | '/libs/common/sum'
+    | '/libs/ui/button'
+    | '/libs/common/'
+    | '/libs/ui/'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/libs/ui/button' | '/libs/ui'
+  to:
+    | '/'
+    | '/libs/common/multiply'
+    | '/libs/common/subtract'
+    | '/libs/common/sum'
+    | '/libs/ui/button'
+    | '/libs/common'
+    | '/libs/ui'
   id:
     | '__root__'
     | '/_main'
+    | '/libs/common'
     | '/libs/ui'
     | '/_main/'
+    | '/libs/common/multiply'
+    | '/libs/common/subtract'
+    | '/libs/common/sum'
     | '/libs/ui/button'
+    | '/libs/common/'
     | '/libs/ui/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   MainRoute: typeof MainRouteWithChildren
+  LibsCommonRoute: typeof LibsCommonRouteWithChildren
   LibsUiRoute: typeof LibsUiRouteWithChildren
 }
 
@@ -101,6 +167,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsUiRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/libs/common': {
+      id: '/libs/common'
+      path: '/libs/common'
+      fullPath: '/libs/common'
+      preLoaderRoute: typeof LibsCommonRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/libs/ui/': {
       id: '/libs/ui/'
       path: '/'
@@ -108,12 +181,40 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsUiIndexRouteImport
       parentRoute: typeof LibsUiRoute
     }
+    '/libs/common/': {
+      id: '/libs/common/'
+      path: '/'
+      fullPath: '/libs/common/'
+      preLoaderRoute: typeof LibsCommonIndexRouteImport
+      parentRoute: typeof LibsCommonRoute
+    }
     '/libs/ui/button': {
       id: '/libs/ui/button'
       path: '/button'
       fullPath: '/libs/ui/button'
       preLoaderRoute: typeof LibsUiButtonRouteImport
       parentRoute: typeof LibsUiRoute
+    }
+    '/libs/common/sum': {
+      id: '/libs/common/sum'
+      path: '/sum'
+      fullPath: '/libs/common/sum'
+      preLoaderRoute: typeof LibsCommonSumRouteImport
+      parentRoute: typeof LibsCommonRoute
+    }
+    '/libs/common/subtract': {
+      id: '/libs/common/subtract'
+      path: '/subtract'
+      fullPath: '/libs/common/subtract'
+      preLoaderRoute: typeof LibsCommonSubtractRouteImport
+      parentRoute: typeof LibsCommonRoute
+    }
+    '/libs/common/multiply': {
+      id: '/libs/common/multiply'
+      path: '/multiply'
+      fullPath: '/libs/common/multiply'
+      preLoaderRoute: typeof LibsCommonMultiplyRouteImport
+      parentRoute: typeof LibsCommonRoute
     }
   }
 }
@@ -127,6 +228,24 @@ const MainRouteChildren: MainRouteChildren = {
 }
 
 const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
+
+interface LibsCommonRouteChildren {
+  LibsCommonMultiplyRoute: typeof LibsCommonMultiplyRoute
+  LibsCommonSubtractRoute: typeof LibsCommonSubtractRoute
+  LibsCommonSumRoute: typeof LibsCommonSumRoute
+  LibsCommonIndexRoute: typeof LibsCommonIndexRoute
+}
+
+const LibsCommonRouteChildren: LibsCommonRouteChildren = {
+  LibsCommonMultiplyRoute: LibsCommonMultiplyRoute,
+  LibsCommonSubtractRoute: LibsCommonSubtractRoute,
+  LibsCommonSumRoute: LibsCommonSumRoute,
+  LibsCommonIndexRoute: LibsCommonIndexRoute,
+}
+
+const LibsCommonRouteWithChildren = LibsCommonRoute._addFileChildren(
+  LibsCommonRouteChildren,
+)
 
 interface LibsUiRouteChildren {
   LibsUiButtonRoute: typeof LibsUiButtonRoute
@@ -143,6 +262,7 @@ const LibsUiRouteWithChildren =
 
 const rootRouteChildren: RootRouteChildren = {
   MainRoute: MainRouteWithChildren,
+  LibsCommonRoute: LibsCommonRouteWithChildren,
   LibsUiRoute: LibsUiRouteWithChildren,
 }
 export const routeTree = rootRouteImport

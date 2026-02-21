@@ -1,59 +1,70 @@
 import { Link } from '@tanstack/react-router'
-import { ChevronRight, Menu, Terminal, X } from 'lucide-react'
+import { ChevronRight, Github, Menu, Terminal, X } from 'lucide-react'
 
 import { ThemeToggle } from '@/components/ThemeToggle'
 
-interface DocsHeaderProps {
-  sidebarOpen: boolean
-  onToggleSidebar: () => void
-  libraryName?: string
+type DocsHeaderProps = {
+	sidebarOpen: boolean
+	libraryName?: string
+	githubUrl: string
+	onToggleSidebar: () => void
 }
 
 export function DocsHeader({
-  sidebarOpen,
-  onToggleSidebar,
-  libraryName,
+	sidebarOpen,
+	libraryName,
+	githubUrl,
+	onToggleSidebar,
 }: DocsHeaderProps) {
-  return (
-    <header className="sticky top-0 z-50 border-b border-border/50 bg-background/80 backdrop-blur-xl">
-      <div className="flex h-16 items-center gap-4 px-4 md:px-6">
-        <button
-          aria-label="Toggle sidebar"
-          className="rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
-          onClick={onToggleSidebar}
-          type="button"
-        >
-          {sidebarOpen ? <X size={20} /> : <Menu size={20} />}
-        </button>
+	return (
+		<header className="fixed inset-x-0 top-0 z-50 border-border/50 border-b bg-background/80 backdrop-blur-xl">
+			<div className="flex h-16 items-center gap-4 px-4 md:px-6">
+				<button
+					aria-label="Toggle sidebar"
+					className="rounded-md p-1.5 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+					onClick={onToggleSidebar}
+					type="button"
+				>
+					{sidebarOpen ? <X size={20} /> : <Menu size={20} />}
+				</button>
 
-        <div className="flex items-center gap-2">
-          <Link
-            className="flex items-center gap-2 hover:opacity-80"
-            to="/"
-          >
-            <Terminal className="h-5 w-5 text-tury-cyan" />
-            <span className="font-display text-sm font-bold tracking-tight">
-              tury<span className="text-tury-cyan">.dev</span>
-            </span>
-          </Link>
+				<div className="flex items-center gap-2">
+					<Link
+						className="flex items-center gap-2 hover:opacity-80"
+						to="/"
+					>
+						<Terminal className="h-5 w-5 text-tury-cyan" />
+						<span className="font-bold font-display text-sm tracking-tight">
+							tury<span className="text-tury-cyan">.dev</span>
+						</span>
+					</Link>
 
-          {libraryName && (
-            <>
-              <ChevronRight
-                className="text-muted-foreground"
-                size={14}
-              />
-              <span className="text-sm font-medium text-foreground">
-                {libraryName}
-              </span>
-            </>
-          )}
-        </div>
+					{libraryName && (
+						<>
+							<ChevronRight
+								className="text-muted-foreground"
+								size={14}
+							/>
+							<span className="font-medium text-foreground text-sm">
+								{libraryName}
+							</span>
+						</>
+					)}
+				</div>
 
-        <div className="ml-auto">
-          <ThemeToggle />
-        </div>
-      </div>
-    </header>
-  )
+				<div className="ml-auto flex items-center gap-3">
+					<a
+						className="text-muted-foreground transition-colors hover:text-foreground"
+						href={githubUrl}
+						rel="noreferrer"
+						target="_blank"
+					>
+						<Github size={18} />
+					</a>
+
+					<ThemeToggle />
+				</div>
+			</div>
+		</header>
+	)
 }
