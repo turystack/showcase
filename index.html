@@ -5,6 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>tury.dev</title>
     <meta name="description" content="Open-source tools for the modern JavaScript ecosystem" />
+    <script>
+      (function () {
+        const query = new URLSearchParams(window.location.search);
+        const p = query.get("p");
+        if (p) {
+          query.delete("p");
+          const qs = query.toString();
+          window.history.replaceState(
+            null,
+            null,
+            p + (qs ? "?" + qs : "") + window.location.hash,
+          );
+        }
+      })();
+    </script>
   </head>
   <body>
     <div id="root"></div>

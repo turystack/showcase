@@ -33,8 +33,8 @@ export function PropsTable({ props }: PropsTableProps) {
         <tbody>
           {props.map((prop, i) => (
             <tr
-              key={prop.name}
               className={i < props.length - 1 ? 'border-b border-border' : ''}
+              key={prop.name}
             >
               <td className="px-4 py-3">
                 <code className="rounded bg-muted px-1.5 py-0.5 text-xs font-medium text-foreground">

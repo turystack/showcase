@@ -16,12 +16,12 @@ export interface SidebarSection {
 
 const defaultSections: SidebarSection[] = [
   {
-    title: 'Getting Started',
     items: [{ label: 'Introduction', to: '/libs/ui' }],
+    title: 'Getting Started',
   },
   {
-    title: 'Components',
     items: [{ label: 'Button', to: '/libs/ui/button' }],
+    title: 'Components',
   },
 ]
 
@@ -40,12 +40,11 @@ export function DocsSidebar({
 
   return (
     <>
-      {/* Mobile overlay */}
       {isMobile && open && (
         <div
+          aria-hidden="true"
           className="fixed inset-0 z-40 bg-background/80 backdrop-blur-sm"
           onClick={onClose}
-          aria-hidden="true"
         />
       )}
 
@@ -58,10 +57,10 @@ export function DocsSidebar({
         <div className="flex items-center justify-between p-4 md:hidden">
           <span className="text-sm font-medium">Menu</span>
           <button
+            aria-label="Close sidebar"
             className="rounded-md p-1 text-muted-foreground hover:text-foreground"
             onClick={onClose}
             type="button"
-            aria-label="Close sidebar"
           >
             <X size={16} />
           </button>
@@ -69,7 +68,10 @@ export function DocsSidebar({
 
         <nav className="p-4 pt-2">
           {sections.map((section) => (
-            <div key={section.title} className="mb-6">
+            <div
+              className="mb-6"
+              key={section.title}
+            >
               <p className="mb-2 px-3 text-xs font-semibold uppercase tracking-wider text-muted-foreground">
                 {section.title}
               </p>
@@ -77,13 +79,13 @@ export function DocsSidebar({
                 {section.items.map((item) => (
                   <li key={item.to}>
                     <Link
-                      to={item.to}
-                      className="block rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
                       activeOptions={{ exact: true }}
                       activeProps={{
                         className:
                           'block rounded-md px-3 py-2 text-sm bg-tury-cyan/10 text-tury-cyan font-medium border-l-2 border-tury-cyan transition-colors',
                       }}
+                      className="block rounded-md px-3 py-2 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                      to={item.to}
                     >
                       {item.label}
                     </Link>
