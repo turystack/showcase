@@ -17,8 +17,21 @@ const sections: SidebarSection[] = [
 	{
 		items: [
 			{
-				label: 'Button',
-				to: '/libs/ui/button',
+				label: 'TuryStackProvider',
+				to: '/libs/ui/provider',
+			},
+		],
+		title: 'Core',
+	},
+	{
+		items: [
+			{
+				label: 'TButton',
+				to: '/libs/ui/t-button',
+			},
+			{
+				label: 'TLoader',
+				to: '/libs/ui/t-loader',
 			},
 		],
 		title: 'Components',

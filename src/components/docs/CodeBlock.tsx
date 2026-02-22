@@ -1,6 +1,7 @@
 import { Check, Copy } from 'lucide-react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 
+import { highlight } from '@/lib/highlight'
 import { cn } from '@/lib/utils'
 
 type Tab = {
@@ -15,6 +16,13 @@ type CodeBlockProps = {
 	tabs?: Tab[]
 }
 
+function stripComments(code: string): string {
+	return code
+		.split('\n')
+		.filter(line => !line.trim().startsWith('//'))
+		.join('\n')
+}
+
 export function CodeBlock({
 	code,
 	language = 'tsx',
@@ -23,11 +31,18 @@ export function CodeBlock({
 }: CodeBlockProps) {
 	const [copied, setCopied] = useState(false)
 	const [activeTab, setActiveTab] = useState(0)
+	const [highlightedHtml, setHighlightedHtml] = useState<string | null>(null)
 
 	const activeCode = tabs ? tabs[activeTab].code : (code ?? '')
+	const cleanedCode = stripComments(activeCode)
+
+	useEffect(() => {
+		setHighlightedHtml(null)
+		highlight(cleanedCode, language).then(setHighlightedHtml)
+	}, [cleanedCode, language])
 
 	const handleCopy = async () => {
-		await navigator.clipboard.writeText(activeCode)
+		await navigator.clipboard.writeText(cleanedCode)
 		setCopied(true)
 		setTimeout(() => setCopied(false), 2000)
 	}
@@ -71,8 +86,12 @@ export function CodeBlock({
 				>
 					{copied ? <Check size={14} /> : <Copy size={14} />}
 				</button>
-				<pre className="overflow-x-auto p-4 text-sm text-zinc-100 leading-relaxed">
-					<code>{activeCode}</code>
+				<pre className="overflow-x-auto p-4 text-sm leading-relaxed">
+					{highlightedHtml ? (
+						<div className="[&>pre]:bg-transparent! [&>pre]:p-0!" dangerouslySetInnerHTML={{ __html: highlightedHtml }} />
+					) : (
+						<code className="text-zinc-100">{cleanedCode}</code>
+					)}
 				</pre>
 			</div>
 		</div>
