@@ -15,7 +15,7 @@
 		"@radix-ui/react-separator": "^1.1.8",
 		"@radix-ui/react-slot": "^1.2.4",
 		"@tanstack/react-router": "^1.161.4",
-		"@turystack/ui": "^0.0.17",
+		"@turystack/ui": "^0.0.18",
 		"class-variance-authority": "^0.7.1",
 		"clsx": "^2.1.1",
 		"lucide-react": "^0.575.0",

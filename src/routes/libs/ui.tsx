@@ -26,11 +26,11 @@ const sections: SidebarSection[] = [
 	{
 		items: [
 			{
-				label: 'TButton',
-				to: '/libs/ui/t-button',
+				label: 'Button',
+				to: '/libs/ui/button',
 			},
 			{
-				label: 'TLoader',
+				label: 'Loader',
 				to: '/libs/ui/t-loader',
 			},
 		],

@@ -15,6 +15,8 @@ import { Route as LibsUiRouteImport } from './routes/libs/ui'
 import { Route as LibsCommonRouteImport } from './routes/libs/common'
 import { Route as LibsUiIndexRouteImport } from './routes/libs/ui/index'
 import { Route as LibsCommonIndexRouteImport } from './routes/libs/common/index'
+import { Route as LibsUiTLoaderRouteImport } from './routes/libs/ui/t-loader'
+import { Route as LibsUiProviderRouteImport } from './routes/libs/ui/provider'
 import { Route as LibsUiButtonRouteImport } from './routes/libs/ui/button'
 import { Route as LibsCommonSumRouteImport } from './routes/libs/common/sum'
 import { Route as LibsCommonSubtractRouteImport } from './routes/libs/common/subtract'
@@ -49,6 +51,16 @@ const LibsCommonIndexRoute = LibsCommonIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LibsCommonRoute,
 } as any)
+const LibsUiTLoaderRoute = LibsUiTLoaderRouteImport.update({
+  id: '/t-loader',
+  path: '/t-loader',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiProviderRoute = LibsUiProviderRouteImport.update({
+  id: '/provider',
+  path: '/provider',
+  getParentRoute: () => LibsUiRoute,
+} as any)
 const LibsUiButtonRoute = LibsUiButtonRouteImport.update({
   id: '/button',
   path: '/button',
@@ -78,6 +90,8 @@ export interface FileRoutesByFullPath {
   '/libs/common/subtract': typeof LibsCommonSubtractRoute
   '/libs/common/sum': typeof LibsCommonSumRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/ui/provider': typeof LibsUiProviderRoute
+  '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
   '/libs/common/': typeof LibsCommonIndexRoute
   '/libs/ui/': typeof LibsUiIndexRoute
 }
@@ -87,6 +101,8 @@ export interface FileRoutesByTo {
   '/libs/common/subtract': typeof LibsCommonSubtractRoute
   '/libs/common/sum': typeof LibsCommonSumRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/ui/provider': typeof LibsUiProviderRoute
+  '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
   '/libs/common': typeof LibsCommonIndexRoute
   '/libs/ui': typeof LibsUiIndexRoute
 }
@@ -100,6 +116,8 @@ export interface FileRoutesById {
   '/libs/common/subtract': typeof LibsCommonSubtractRoute
   '/libs/common/sum': typeof LibsCommonSumRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/ui/provider': typeof LibsUiProviderRoute
+  '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
   '/libs/common/': typeof LibsCommonIndexRoute
   '/libs/ui/': typeof LibsUiIndexRoute
 }
@@ -113,6 +131,8 @@ export interface FileRouteTypes {
     | '/libs/common/subtract'
     | '/libs/common/sum'
     | '/libs/ui/button'
+    | '/libs/ui/provider'
+    | '/libs/ui/t-loader'
     | '/libs/common/'
     | '/libs/ui/'
   fileRoutesByTo: FileRoutesByTo
@@ -122,6 +142,8 @@ export interface FileRouteTypes {
     | '/libs/common/subtract'
     | '/libs/common/sum'
     | '/libs/ui/button'
+    | '/libs/ui/provider'
+    | '/libs/ui/t-loader'
     | '/libs/common'
     | '/libs/ui'
   id:
@@ -134,6 +156,8 @@ export interface FileRouteTypes {
     | '/libs/common/subtract'
     | '/libs/common/sum'
     | '/libs/ui/button'
+    | '/libs/ui/provider'
+    | '/libs/ui/t-loader'
     | '/libs/common/'
     | '/libs/ui/'
   fileRoutesById: FileRoutesById
@@ -187,6 +211,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/libs/common/'
       preLoaderRoute: typeof LibsCommonIndexRouteImport
       parentRoute: typeof LibsCommonRoute
+    }
+    '/libs/ui/t-loader': {
+      id: '/libs/ui/t-loader'
+      path: '/t-loader'
+      fullPath: '/libs/ui/t-loader'
+      preLoaderRoute: typeof LibsUiTLoaderRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/provider': {
+      id: '/libs/ui/provider'
+      path: '/provider'
+      fullPath: '/libs/ui/provider'
+      preLoaderRoute: typeof LibsUiProviderRouteImport
+      parentRoute: typeof LibsUiRoute
     }
     '/libs/ui/button': {
       id: '/libs/ui/button'
@@ -249,11 +287,15 @@ const LibsCommonRouteWithChildren = LibsCommonRoute._addFileChildren(
 
 interface LibsUiRouteChildren {
   LibsUiButtonRoute: typeof LibsUiButtonRoute
+  LibsUiProviderRoute: typeof LibsUiProviderRoute
+  LibsUiTLoaderRoute: typeof LibsUiTLoaderRoute
   LibsUiIndexRoute: typeof LibsUiIndexRoute
 }
 
 const LibsUiRouteChildren: LibsUiRouteChildren = {
   LibsUiButtonRoute: LibsUiButtonRoute,
+  LibsUiProviderRoute: LibsUiProviderRoute,
+  LibsUiTLoaderRoute: LibsUiTLoaderRoute,
   LibsUiIndexRoute: LibsUiIndexRoute,
 }
 

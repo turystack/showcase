@@ -122,10 +122,15 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Props</h2>
+					<PropsTable props={buttonProps} />
+				</div>
+
+				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Variants</h2>
 					<ComponentPreview title="Button variants">
-						<div className="flex flex-wrap gap-3">
-							<Button>Default</Button>
+						<div className="flex flex-wrap justify-center gap-3">
+							<Button>Default</Button> 
 							<Button variant="outline">Outline</Button>
 							<Button variant="dashed">Dashed</Button>
 							<Button variant="secondary">Secondary</Button>
@@ -239,11 +244,6 @@ function Page() {
 						filename="example.tsx"
 						language="tsx"
 					/>
-				</div>
-
-				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Props</h2>
-					<PropsTable props={buttonProps} />
 				</div>
 			</div>
 		</TuryStackProvider>
