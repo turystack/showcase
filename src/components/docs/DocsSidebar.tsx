@@ -9,9 +9,15 @@ export type SidebarItem = {
 	to: string
 }
 
-export type SidebarSection = {
+export type SidebarSubsection = {
 	title: string
 	items: SidebarItem[]
+}
+
+export type SidebarSection = {
+	title: string
+	items?: SidebarItem[]
+	subsections?: SidebarSubsection[]
 }
 
 type DocsSidebarProps = {
@@ -60,25 +66,53 @@ export function DocsSidebar({ open, onClose, sections }: DocsSidebarProps) {
 							<p className="mb-2 px-3 font-semibold text-muted-foreground text-xs uppercase tracking-wider">
 								{section.title}
 							</p>
-							<ul className="space-y-0.5">
-								{section.items.map((item) => (
-									<li key={item.to}>
-										<Link
-											activeOptions={{
-												exact: true,
-											}}
-											activeProps={{
-												className:
-													'block rounded-md px-3 py-2 text-sm bg-tury-cyan/10 text-tury-cyan font-medium border-l-2 border-tury-cyan transition-colors',
-											}}
-											className="block rounded-md px-3 py-2 text-muted-foreground text-sm transition-colors hover:bg-muted hover:text-foreground"
-											to={item.to}
-										>
-											{item.label}
-										</Link>
-									</li>
-								))}
-							</ul>
+							{section.items && (
+								<ul className="space-y-0.5">
+									{section.items.map((item) => (
+										<li key={item.to}>
+											<Link
+												activeOptions={{
+													exact: true,
+												}}
+												activeProps={{
+													className:
+														'block rounded-md px-3 py-2 text-sm bg-tury-cyan/10 text-tury-cyan font-medium border-l-2 border-tury-cyan transition-colors',
+												}}
+												className="block rounded-md px-3 py-2 text-muted-foreground text-sm transition-colors hover:bg-muted hover:text-foreground"
+												to={item.to}
+											>
+												{item.label}
+											</Link>
+										</li>
+									))}
+								</ul>
+							)}
+							{section.subsections?.map((subsection) => (
+								<div key={subsection.title}>
+									<p className="mt-3 mb-1 px-3 pl-4 font-medium text-muted-foreground/70 text-xs">
+										{subsection.title}
+									</p>
+									<ul className="space-y-0.5">
+										{subsection.items.map((item) => (
+											<li key={item.to}>
+												<Link
+													activeOptions={{
+														exact: true,
+													}}
+													activeProps={{
+														className:
+															'block rounded-md pl-5 pr-3 py-2 text-sm bg-tury-cyan/10 text-tury-cyan font-medium border-l-2 border-tury-cyan transition-colors',
+													}}
+													className="block rounded-md py-2 pr-3 pl-5 text-muted-foreground text-sm transition-colors hover:bg-muted hover:text-foreground"
+													to={item.to}
+												>
+													{item.label}
+												</Link>
+											</li>
+										))}
+									</ul>
+								</div>
+							))}
 						</div>
 					))}
 				</nav>

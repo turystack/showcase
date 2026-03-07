@@ -1,0 +1,224 @@
+import { Search } from 'lucide-react'
+import { createFileRoute } from '@tanstack/react-router'
+import { Input, TuryStackProvider } from '@turystack/ui'
+
+import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
+
+const inputProps = [
+	{
+		default: '"text"',
+		description: 'The type of the input.',
+		name: 'type',
+		type: '"text" | "password"',
+	},
+	{
+		description: 'The controlled value of the input.',
+		name: 'value',
+		type: 'string | null',
+	},
+	{
+		description: 'The default value when uncontrolled.',
+		name: 'defaultValue',
+		type: 'string | null',
+	},
+	{
+		description: 'Placeholder text displayed when the input is empty.',
+		name: 'placeholder',
+		type: 'string',
+	},
+	{
+		default: '"md"',
+		description: 'The size of the input.',
+		name: 'size',
+		type: '"sm" | "md" | "lg"',
+	},
+	{
+		description: 'Content rendered on the left side of the input.',
+		name: 'leftSection',
+		type: 'React.ReactNode',
+	},
+	{
+		description: 'Content rendered on the right side of the input.',
+		name: 'rightSection',
+		type: 'React.ReactNode',
+	},
+	{
+		default: 'false',
+		description:
+			'When true, the onChange callback is debounced (~300ms) and the input uses defaultValue instead of controlled value.',
+		name: 'debounce',
+		type: 'boolean',
+	},
+	{
+		default: 'false',
+		description: 'Makes the input take the full width of its container.',
+		name: 'block',
+		type: 'boolean',
+	},
+	{
+		default: 'false',
+		description: 'Disables the input, preventing interaction.',
+		name: 'disabled',
+		type: 'boolean',
+	},
+	{
+		default: 'false',
+		description: 'Shows a loading spinner in the input.',
+		name: 'loading',
+		type: 'boolean',
+	},
+	{
+		description:
+			'Handler called when the input value changes. Receives null when empty.',
+		name: 'onChange',
+		type: '(value: string | null) => void',
+	},
+]
+
+const usageCode = `import { Input } from '@turystack/ui'
+
+// Basic
+<Input placeholder="Enter your name" />
+
+// Sizes
+<Input size="sm" placeholder="Small" />
+<Input size="md" placeholder="Medium" />
+<Input size="lg" placeholder="Large" />
+
+// With sections
+<Input
+  leftSection={<Search className="size-4 text-muted-foreground" />}
+  placeholder="Search..."
+/>
+
+// Password
+<Input type="password" placeholder="Enter password" />
+
+// Loading
+<Input loading placeholder="Loading..." />
+
+// Block (full width)
+<Input block placeholder="Full width input" />`
+
+function Page() {
+	return (
+		<TuryStackProvider>
+			<div className="space-y-10">
+				<div>
+					<h1 className="font-bold font-display text-3xl tracking-tight">
+						Input
+					</h1>
+					<p className="mt-3 text-lg text-muted-foreground">
+						A text input field that supports multiple types, sizes, sections,
+						debounce, and loading state.
+					</p>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Props</h2>
+					<PropsTable props={inputProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Basic</h2>
+					<ComponentPreview title="Simple text input">
+						<Input placeholder="Enter your name" />
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Sizes</h2>
+					<ComponentPreview title="Input sizes">
+						<div className="flex flex-col gap-3">
+							<Input
+								size="sm"
+								placeholder="Small"
+							/>
+							<Input
+								size="md"
+								placeholder="Medium"
+							/>
+							<Input
+								size="lg"
+								placeholder="Large"
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">With sections</h2>
+					<ComponentPreview title="Left and right sections">
+						<div className="flex flex-col gap-3">
+							<Input
+								leftSection={
+									<Search className="size-4 text-muted-foreground" />
+								}
+								placeholder="Search..."
+							/>
+							<Input
+								rightSection={
+									<span className="text-muted-foreground text-sm">kg</span>
+								}
+								placeholder="Weight"
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Password</h2>
+					<ComponentPreview title="Password with toggle">
+						<Input
+							type="password"
+							placeholder="Enter password"
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Loading</h2>
+					<ComponentPreview title="Loading state">
+						<Input
+							loading
+							placeholder="Loading..."
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Disabled</h2>
+					<ComponentPreview title="Disabled state">
+						<Input
+							disabled
+							placeholder="Disabled input"
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Block</h2>
+					<ComponentPreview className="w-80" title="Full width">
+						<Input
+							block
+							placeholder="Full width input"
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Usage</h2>
+					<CodeBlock
+						code={usageCode}
+						filename="example.tsx"
+						language="tsx"
+					/>
+				</div>
+			</div>
+		</TuryStackProvider>
+	)
+}
+
+export const Route = createFileRoute('/libs/ui/input')({
+	component: Page,
+})

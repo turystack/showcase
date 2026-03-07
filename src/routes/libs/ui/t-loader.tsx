@@ -31,7 +31,7 @@ function Page() {
 				</p>
 			</div>
 
-      <div className="space-y-4">
+			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Props</h2>
 				<PropsTable props={loaderProps} />
 			</div>
@@ -52,7 +52,7 @@ function Page() {
 				<CodeBlock
 					code={usageCode}
 					filename="example.tsx"
-					language='tsx'
+					language="tsx"
 				/>
 			</div>
 		</div>

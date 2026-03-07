@@ -113,8 +113,17 @@ function Page() {
 						<div className="flex flex-wrap items-center gap-4">
 							<TuryStackProvider
 								components={{
-									button: { defaultProps: { variant: 'outline', size: 'lg' } },
-									loader: { defaultProps: { size: 'sm' } },
+									button: {
+										defaultProps: {
+											variant: 'outline',
+											size: 'lg',
+										},
+									},
+									loader: {
+										defaultProps: {
+											size: 'sm',
+										},
+									},
 								}}
 							>
 								<Button>Button Configured</Button>
@@ -145,7 +154,11 @@ function Page() {
 					<ComponentPreview title="Pill-shaped buttons via classNames">
 						<TuryStackProvider
 							components={{
-								button: { classNames: { root: 'rounded-full' } },
+								button: {
+									classNames: {
+										root: 'rounded-full',
+									},
+								},
 							}}
 						>
 							<div className="flex flex-wrap gap-3">

@@ -15,9 +15,24 @@ import { Route as LibsUiRouteImport } from './routes/libs/ui'
 import { Route as LibsCommonRouteImport } from './routes/libs/common'
 import { Route as LibsUiIndexRouteImport } from './routes/libs/ui/index'
 import { Route as LibsCommonIndexRouteImport } from './routes/libs/common/index'
+import { Route as LibsUiTagsInputRouteImport } from './routes/libs/ui/tags-input'
 import { Route as LibsUiTLoaderRouteImport } from './routes/libs/ui/t-loader'
+import { Route as LibsUiSelectRouteImport } from './routes/libs/ui/select'
 import { Route as LibsUiProviderRouteImport } from './routes/libs/ui/provider'
+import { Route as LibsUiPhoneInputRouteImport } from './routes/libs/ui/phone-input'
+import { Route as LibsUiOtpInputRouteImport } from './routes/libs/ui/otp-input'
+import { Route as LibsUiMaskInputRouteImport } from './routes/libs/ui/mask-input'
+import { Route as LibsUiInputRouteImport } from './routes/libs/ui/input'
+import { Route as LibsUiDateRangeInputRouteImport } from './routes/libs/ui/date-range-input'
+import { Route as LibsUiDateInputRouteImport } from './routes/libs/ui/date-input'
+import { Route as LibsUiCurrencyInputRouteImport } from './routes/libs/ui/currency-input'
+import { Route as LibsUiCheckboxRouteImport } from './routes/libs/ui/checkbox'
 import { Route as LibsUiButtonRouteImport } from './routes/libs/ui/button'
+import { Route as LibsUiBreadcrumbRouteImport } from './routes/libs/ui/breadcrumb'
+import { Route as LibsUiBadgeRouteImport } from './routes/libs/ui/badge'
+import { Route as LibsUiAvatarRouteImport } from './routes/libs/ui/avatar'
+import { Route as LibsUiAlertRouteImport } from './routes/libs/ui/alert'
+import { Route as LibsUiAccordionRouteImport } from './routes/libs/ui/accordion'
 import { Route as LibsCommonSumRouteImport } from './routes/libs/common/sum'
 import { Route as LibsCommonSubtractRouteImport } from './routes/libs/common/subtract'
 import { Route as LibsCommonMultiplyRouteImport } from './routes/libs/common/multiply'
@@ -51,9 +66,19 @@ const LibsCommonIndexRoute = LibsCommonIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LibsCommonRoute,
 } as any)
+const LibsUiTagsInputRoute = LibsUiTagsInputRouteImport.update({
+  id: '/tags-input',
+  path: '/tags-input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
 const LibsUiTLoaderRoute = LibsUiTLoaderRouteImport.update({
   id: '/t-loader',
   path: '/t-loader',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiSelectRoute = LibsUiSelectRouteImport.update({
+  id: '/select',
+  path: '/select',
   getParentRoute: () => LibsUiRoute,
 } as any)
 const LibsUiProviderRoute = LibsUiProviderRouteImport.update({
@@ -61,9 +86,74 @@ const LibsUiProviderRoute = LibsUiProviderRouteImport.update({
   path: '/provider',
   getParentRoute: () => LibsUiRoute,
 } as any)
+const LibsUiPhoneInputRoute = LibsUiPhoneInputRouteImport.update({
+  id: '/phone-input',
+  path: '/phone-input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiOtpInputRoute = LibsUiOtpInputRouteImport.update({
+  id: '/otp-input',
+  path: '/otp-input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiMaskInputRoute = LibsUiMaskInputRouteImport.update({
+  id: '/mask-input',
+  path: '/mask-input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiInputRoute = LibsUiInputRouteImport.update({
+  id: '/input',
+  path: '/input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiDateRangeInputRoute = LibsUiDateRangeInputRouteImport.update({
+  id: '/date-range-input',
+  path: '/date-range-input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiDateInputRoute = LibsUiDateInputRouteImport.update({
+  id: '/date-input',
+  path: '/date-input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiCurrencyInputRoute = LibsUiCurrencyInputRouteImport.update({
+  id: '/currency-input',
+  path: '/currency-input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiCheckboxRoute = LibsUiCheckboxRouteImport.update({
+  id: '/checkbox',
+  path: '/checkbox',
+  getParentRoute: () => LibsUiRoute,
+} as any)
 const LibsUiButtonRoute = LibsUiButtonRouteImport.update({
   id: '/button',
   path: '/button',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiBreadcrumbRoute = LibsUiBreadcrumbRouteImport.update({
+  id: '/breadcrumb',
+  path: '/breadcrumb',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiBadgeRoute = LibsUiBadgeRouteImport.update({
+  id: '/badge',
+  path: '/badge',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiAvatarRoute = LibsUiAvatarRouteImport.update({
+  id: '/avatar',
+  path: '/avatar',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiAlertRoute = LibsUiAlertRouteImport.update({
+  id: '/alert',
+  path: '/alert',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiAccordionRoute = LibsUiAccordionRouteImport.update({
+  id: '/accordion',
+  path: '/accordion',
   getParentRoute: () => LibsUiRoute,
 } as any)
 const LibsCommonSumRoute = LibsCommonSumRouteImport.update({
@@ -89,9 +179,24 @@ export interface FileRoutesByFullPath {
   '/libs/common/multiply': typeof LibsCommonMultiplyRoute
   '/libs/common/subtract': typeof LibsCommonSubtractRoute
   '/libs/common/sum': typeof LibsCommonSumRoute
+  '/libs/ui/accordion': typeof LibsUiAccordionRoute
+  '/libs/ui/alert': typeof LibsUiAlertRoute
+  '/libs/ui/avatar': typeof LibsUiAvatarRoute
+  '/libs/ui/badge': typeof LibsUiBadgeRoute
+  '/libs/ui/breadcrumb': typeof LibsUiBreadcrumbRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
+  '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
+  '/libs/ui/date-input': typeof LibsUiDateInputRoute
+  '/libs/ui/date-range-input': typeof LibsUiDateRangeInputRoute
+  '/libs/ui/input': typeof LibsUiInputRoute
+  '/libs/ui/mask-input': typeof LibsUiMaskInputRoute
+  '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
+  '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
   '/libs/ui/provider': typeof LibsUiProviderRoute
+  '/libs/ui/select': typeof LibsUiSelectRoute
   '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
+  '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
   '/libs/common/': typeof LibsCommonIndexRoute
   '/libs/ui/': typeof LibsUiIndexRoute
 }
@@ -100,9 +205,24 @@ export interface FileRoutesByTo {
   '/libs/common/multiply': typeof LibsCommonMultiplyRoute
   '/libs/common/subtract': typeof LibsCommonSubtractRoute
   '/libs/common/sum': typeof LibsCommonSumRoute
+  '/libs/ui/accordion': typeof LibsUiAccordionRoute
+  '/libs/ui/alert': typeof LibsUiAlertRoute
+  '/libs/ui/avatar': typeof LibsUiAvatarRoute
+  '/libs/ui/badge': typeof LibsUiBadgeRoute
+  '/libs/ui/breadcrumb': typeof LibsUiBreadcrumbRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
+  '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
+  '/libs/ui/date-input': typeof LibsUiDateInputRoute
+  '/libs/ui/date-range-input': typeof LibsUiDateRangeInputRoute
+  '/libs/ui/input': typeof LibsUiInputRoute
+  '/libs/ui/mask-input': typeof LibsUiMaskInputRoute
+  '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
+  '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
   '/libs/ui/provider': typeof LibsUiProviderRoute
+  '/libs/ui/select': typeof LibsUiSelectRoute
   '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
+  '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
   '/libs/common': typeof LibsCommonIndexRoute
   '/libs/ui': typeof LibsUiIndexRoute
 }
@@ -115,9 +235,24 @@ export interface FileRoutesById {
   '/libs/common/multiply': typeof LibsCommonMultiplyRoute
   '/libs/common/subtract': typeof LibsCommonSubtractRoute
   '/libs/common/sum': typeof LibsCommonSumRoute
+  '/libs/ui/accordion': typeof LibsUiAccordionRoute
+  '/libs/ui/alert': typeof LibsUiAlertRoute
+  '/libs/ui/avatar': typeof LibsUiAvatarRoute
+  '/libs/ui/badge': typeof LibsUiBadgeRoute
+  '/libs/ui/breadcrumb': typeof LibsUiBreadcrumbRoute
   '/libs/ui/button': typeof LibsUiButtonRoute
+  '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
+  '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
+  '/libs/ui/date-input': typeof LibsUiDateInputRoute
+  '/libs/ui/date-range-input': typeof LibsUiDateRangeInputRoute
+  '/libs/ui/input': typeof LibsUiInputRoute
+  '/libs/ui/mask-input': typeof LibsUiMaskInputRoute
+  '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
+  '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
   '/libs/ui/provider': typeof LibsUiProviderRoute
+  '/libs/ui/select': typeof LibsUiSelectRoute
   '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
+  '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
   '/libs/common/': typeof LibsCommonIndexRoute
   '/libs/ui/': typeof LibsUiIndexRoute
 }
@@ -130,9 +265,24 @@ export interface FileRouteTypes {
     | '/libs/common/multiply'
     | '/libs/common/subtract'
     | '/libs/common/sum'
+    | '/libs/ui/accordion'
+    | '/libs/ui/alert'
+    | '/libs/ui/avatar'
+    | '/libs/ui/badge'
+    | '/libs/ui/breadcrumb'
     | '/libs/ui/button'
+    | '/libs/ui/checkbox'
+    | '/libs/ui/currency-input'
+    | '/libs/ui/date-input'
+    | '/libs/ui/date-range-input'
+    | '/libs/ui/input'
+    | '/libs/ui/mask-input'
+    | '/libs/ui/otp-input'
+    | '/libs/ui/phone-input'
     | '/libs/ui/provider'
+    | '/libs/ui/select'
     | '/libs/ui/t-loader'
+    | '/libs/ui/tags-input'
     | '/libs/common/'
     | '/libs/ui/'
   fileRoutesByTo: FileRoutesByTo
@@ -141,9 +291,24 @@ export interface FileRouteTypes {
     | '/libs/common/multiply'
     | '/libs/common/subtract'
     | '/libs/common/sum'
+    | '/libs/ui/accordion'
+    | '/libs/ui/alert'
+    | '/libs/ui/avatar'
+    | '/libs/ui/badge'
+    | '/libs/ui/breadcrumb'
     | '/libs/ui/button'
+    | '/libs/ui/checkbox'
+    | '/libs/ui/currency-input'
+    | '/libs/ui/date-input'
+    | '/libs/ui/date-range-input'
+    | '/libs/ui/input'
+    | '/libs/ui/mask-input'
+    | '/libs/ui/otp-input'
+    | '/libs/ui/phone-input'
     | '/libs/ui/provider'
+    | '/libs/ui/select'
     | '/libs/ui/t-loader'
+    | '/libs/ui/tags-input'
     | '/libs/common'
     | '/libs/ui'
   id:
@@ -155,9 +320,24 @@ export interface FileRouteTypes {
     | '/libs/common/multiply'
     | '/libs/common/subtract'
     | '/libs/common/sum'
+    | '/libs/ui/accordion'
+    | '/libs/ui/alert'
+    | '/libs/ui/avatar'
+    | '/libs/ui/badge'
+    | '/libs/ui/breadcrumb'
     | '/libs/ui/button'
+    | '/libs/ui/checkbox'
+    | '/libs/ui/currency-input'
+    | '/libs/ui/date-input'
+    | '/libs/ui/date-range-input'
+    | '/libs/ui/input'
+    | '/libs/ui/mask-input'
+    | '/libs/ui/otp-input'
+    | '/libs/ui/phone-input'
     | '/libs/ui/provider'
+    | '/libs/ui/select'
     | '/libs/ui/t-loader'
+    | '/libs/ui/tags-input'
     | '/libs/common/'
     | '/libs/ui/'
   fileRoutesById: FileRoutesById
@@ -212,11 +392,25 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsCommonIndexRouteImport
       parentRoute: typeof LibsCommonRoute
     }
+    '/libs/ui/tags-input': {
+      id: '/libs/ui/tags-input'
+      path: '/tags-input'
+      fullPath: '/libs/ui/tags-input'
+      preLoaderRoute: typeof LibsUiTagsInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
     '/libs/ui/t-loader': {
       id: '/libs/ui/t-loader'
       path: '/t-loader'
       fullPath: '/libs/ui/t-loader'
       preLoaderRoute: typeof LibsUiTLoaderRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/select': {
+      id: '/libs/ui/select'
+      path: '/select'
+      fullPath: '/libs/ui/select'
+      preLoaderRoute: typeof LibsUiSelectRouteImport
       parentRoute: typeof LibsUiRoute
     }
     '/libs/ui/provider': {
@@ -226,11 +420,102 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsUiProviderRouteImport
       parentRoute: typeof LibsUiRoute
     }
+    '/libs/ui/phone-input': {
+      id: '/libs/ui/phone-input'
+      path: '/phone-input'
+      fullPath: '/libs/ui/phone-input'
+      preLoaderRoute: typeof LibsUiPhoneInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/otp-input': {
+      id: '/libs/ui/otp-input'
+      path: '/otp-input'
+      fullPath: '/libs/ui/otp-input'
+      preLoaderRoute: typeof LibsUiOtpInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/mask-input': {
+      id: '/libs/ui/mask-input'
+      path: '/mask-input'
+      fullPath: '/libs/ui/mask-input'
+      preLoaderRoute: typeof LibsUiMaskInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/input': {
+      id: '/libs/ui/input'
+      path: '/input'
+      fullPath: '/libs/ui/input'
+      preLoaderRoute: typeof LibsUiInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/date-range-input': {
+      id: '/libs/ui/date-range-input'
+      path: '/date-range-input'
+      fullPath: '/libs/ui/date-range-input'
+      preLoaderRoute: typeof LibsUiDateRangeInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/date-input': {
+      id: '/libs/ui/date-input'
+      path: '/date-input'
+      fullPath: '/libs/ui/date-input'
+      preLoaderRoute: typeof LibsUiDateInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/currency-input': {
+      id: '/libs/ui/currency-input'
+      path: '/currency-input'
+      fullPath: '/libs/ui/currency-input'
+      preLoaderRoute: typeof LibsUiCurrencyInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/checkbox': {
+      id: '/libs/ui/checkbox'
+      path: '/checkbox'
+      fullPath: '/libs/ui/checkbox'
+      preLoaderRoute: typeof LibsUiCheckboxRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
     '/libs/ui/button': {
       id: '/libs/ui/button'
       path: '/button'
       fullPath: '/libs/ui/button'
       preLoaderRoute: typeof LibsUiButtonRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/breadcrumb': {
+      id: '/libs/ui/breadcrumb'
+      path: '/breadcrumb'
+      fullPath: '/libs/ui/breadcrumb'
+      preLoaderRoute: typeof LibsUiBreadcrumbRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/badge': {
+      id: '/libs/ui/badge'
+      path: '/badge'
+      fullPath: '/libs/ui/badge'
+      preLoaderRoute: typeof LibsUiBadgeRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/avatar': {
+      id: '/libs/ui/avatar'
+      path: '/avatar'
+      fullPath: '/libs/ui/avatar'
+      preLoaderRoute: typeof LibsUiAvatarRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/alert': {
+      id: '/libs/ui/alert'
+      path: '/alert'
+      fullPath: '/libs/ui/alert'
+      preLoaderRoute: typeof LibsUiAlertRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/accordion': {
+      id: '/libs/ui/accordion'
+      path: '/accordion'
+      fullPath: '/libs/ui/accordion'
+      preLoaderRoute: typeof LibsUiAccordionRouteImport
       parentRoute: typeof LibsUiRoute
     }
     '/libs/common/sum': {
@@ -286,16 +571,46 @@ const LibsCommonRouteWithChildren = LibsCommonRoute._addFileChildren(
 )
 
 interface LibsUiRouteChildren {
+  LibsUiAccordionRoute: typeof LibsUiAccordionRoute
+  LibsUiAlertRoute: typeof LibsUiAlertRoute
+  LibsUiAvatarRoute: typeof LibsUiAvatarRoute
+  LibsUiBadgeRoute: typeof LibsUiBadgeRoute
+  LibsUiBreadcrumbRoute: typeof LibsUiBreadcrumbRoute
   LibsUiButtonRoute: typeof LibsUiButtonRoute
+  LibsUiCheckboxRoute: typeof LibsUiCheckboxRoute
+  LibsUiCurrencyInputRoute: typeof LibsUiCurrencyInputRoute
+  LibsUiDateInputRoute: typeof LibsUiDateInputRoute
+  LibsUiDateRangeInputRoute: typeof LibsUiDateRangeInputRoute
+  LibsUiInputRoute: typeof LibsUiInputRoute
+  LibsUiMaskInputRoute: typeof LibsUiMaskInputRoute
+  LibsUiOtpInputRoute: typeof LibsUiOtpInputRoute
+  LibsUiPhoneInputRoute: typeof LibsUiPhoneInputRoute
   LibsUiProviderRoute: typeof LibsUiProviderRoute
+  LibsUiSelectRoute: typeof LibsUiSelectRoute
   LibsUiTLoaderRoute: typeof LibsUiTLoaderRoute
+  LibsUiTagsInputRoute: typeof LibsUiTagsInputRoute
   LibsUiIndexRoute: typeof LibsUiIndexRoute
 }
 
 const LibsUiRouteChildren: LibsUiRouteChildren = {
+  LibsUiAccordionRoute: LibsUiAccordionRoute,
+  LibsUiAlertRoute: LibsUiAlertRoute,
+  LibsUiAvatarRoute: LibsUiAvatarRoute,
+  LibsUiBadgeRoute: LibsUiBadgeRoute,
+  LibsUiBreadcrumbRoute: LibsUiBreadcrumbRoute,
   LibsUiButtonRoute: LibsUiButtonRoute,
+  LibsUiCheckboxRoute: LibsUiCheckboxRoute,
+  LibsUiCurrencyInputRoute: LibsUiCurrencyInputRoute,
+  LibsUiDateInputRoute: LibsUiDateInputRoute,
+  LibsUiDateRangeInputRoute: LibsUiDateRangeInputRoute,
+  LibsUiInputRoute: LibsUiInputRoute,
+  LibsUiMaskInputRoute: LibsUiMaskInputRoute,
+  LibsUiOtpInputRoute: LibsUiOtpInputRoute,
+  LibsUiPhoneInputRoute: LibsUiPhoneInputRoute,
   LibsUiProviderRoute: LibsUiProviderRoute,
+  LibsUiSelectRoute: LibsUiSelectRoute,
   LibsUiTLoaderRoute: LibsUiTLoaderRoute,
+  LibsUiTagsInputRoute: LibsUiTagsInputRoute,
   LibsUiIndexRoute: LibsUiIndexRoute,
 }
 

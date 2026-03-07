@@ -1,27 +1,21 @@
+import { useColorScheme } from '@turystack/ui'
 import { Moon, Sun } from 'lucide-react'
-import { useEffect, useState } from 'react'
 
 export function ThemeToggle() {
-	const [dark, setDark] = useState(true)
+	const { colorScheme, changeColorScheme } = useColorScheme()
 
-	useEffect(() => {
-		document.documentElement.classList.toggle('dark', dark)
-	}, [
-		dark,
-	])
-
-	useEffect(() => {
-		document.documentElement.classList.add('dark')
-	}, [])
+	const isDark =
+		colorScheme === 'dark' ||
+		(colorScheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
 
 	return (
 		<button
 			aria-label="Toggle theme"
 			className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
-			onClick={() => setDark(!dark)}
+			onClick={() => changeColorScheme(isDark ? 'light' : 'dark')}
 			type="button"
 		>
-			{dark ? <Sun size={18} /> : <Moon size={18} />}
+			{isDark ? <Sun size={18} /> : <Moon size={18} />}
 		</button>
 	)
 }

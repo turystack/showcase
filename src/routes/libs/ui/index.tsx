@@ -18,10 +18,22 @@ function Page() {
 				<h2 className="font-display font-semibold text-xl">Installation</h2>
 				<CodeBlock
 					tabs={[
-						{ label: 'npm', code: 'npm install @tury/ui' },
-						{ label: 'pnpm', code: 'pnpm add @tury/ui' },
-						{ label: 'yarn', code: 'yarn add @tury/ui' },
-						{ label: 'bun', code: 'bun add @tury/ui' },
+						{
+							label: 'npm',
+							code: 'npm install @tury/ui',
+						},
+						{
+							label: 'pnpm',
+							code: 'pnpm add @tury/ui',
+						},
+						{
+							label: 'yarn',
+							code: 'yarn add @tury/ui',
+						},
+						{
+							label: 'bun',
+							code: 'bun add @tury/ui',
+						},
 					]}
 				/>
 			</div>

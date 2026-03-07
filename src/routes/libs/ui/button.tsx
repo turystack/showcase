@@ -130,7 +130,7 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Variants</h2>
 					<ComponentPreview title="Button variants">
 						<div className="flex flex-wrap justify-center gap-3">
-							<Button>Default</Button> 
+							<Button>Default</Button>
 							<Button variant="outline">Outline</Button>
 							<Button variant="dashed">Dashed</Button>
 							<Button variant="secondary">Secondary</Button>

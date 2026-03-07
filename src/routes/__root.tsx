@@ -1,7 +1,12 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router'
+import { TuryStackProvider } from '@turystack/ui'
 
 export const Route = createRootRoute({
-	component: () => <Outlet />,
+	component: () => (
+		<TuryStackProvider defaultColorScheme="system">
+			<Outlet />
+		</TuryStackProvider>
+	),
 
 	notFoundComponent: () => (
 		<div className="container flex min-h-[60vh] flex-col items-center justify-center gap-4 text-center">

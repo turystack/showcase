@@ -19,7 +19,7 @@ type CodeBlockProps = {
 function stripComments(code: string): string {
 	return code
 		.split('\n')
-		.filter(line => !line.trim().startsWith('//'))
+		.filter((line) => !line.trim().startsWith('//'))
 		.join('\n')
 }
 
@@ -39,7 +39,10 @@ export function CodeBlock({
 	useEffect(() => {
 		setHighlightedHtml(null)
 		highlight(cleanedCode, language).then(setHighlightedHtml)
-	}, [cleanedCode, language])
+	}, [
+		cleanedCode,
+		language,
+	])
 
 	const handleCopy = async () => {
 		await navigator.clipboard.writeText(cleanedCode)
@@ -88,7 +91,12 @@ export function CodeBlock({
 				</button>
 				<pre className="overflow-x-auto p-4 text-sm leading-relaxed">
 					{highlightedHtml ? (
-						<div className="[&>pre]:bg-transparent! [&>pre]:p-0!" dangerouslySetInnerHTML={{ __html: highlightedHtml }} />
+						<div
+							className="[&>pre]:bg-transparent! [&>pre]:p-0!"
+							dangerouslySetInnerHTML={{
+								__html: highlightedHtml,
+							}}
+						/>
 					) : (
 						<code className="text-zinc-100">{cleanedCode}</code>
 					)}

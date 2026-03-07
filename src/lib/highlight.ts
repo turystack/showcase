@@ -1,11 +1,27 @@
 import { createHighlighter } from 'shiki'
 
 const highlighterPromise = createHighlighter({
-	themes: ['github-dark'],
-	langs: ['tsx', 'typescript', 'javascript', 'jsx', 'bash', 'json'],
+	themes: [
+		'github-dark',
+	],
+	langs: [
+		'tsx',
+		'typescript',
+		'javascript',
+		'jsx',
+		'bash',
+		'json',
+	],
 })
 
-const validLangs = ['tsx', 'typescript', 'javascript', 'jsx', 'bash', 'json']
+const validLangs = [
+	'tsx',
+	'typescript',
+	'javascript',
+	'jsx',
+	'bash',
+	'json',
+]
 
 export async function highlight(code: string, lang: string): Promise<string> {
 	const highlighter = await highlighterPromise

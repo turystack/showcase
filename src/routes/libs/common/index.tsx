@@ -22,10 +22,22 @@ function Page() {
 				<h2 className="font-display font-semibold text-xl">Installation</h2>
 				<CodeBlock
 					tabs={[
-						{ label: 'npm', code: 'npm install @tury/common' },
-						{ label: 'pnpm', code: 'pnpm add @tury/common' },
-						{ label: 'yarn', code: 'yarn add @tury/common' },
-						{ label: 'bun', code: 'bun add @tury/common' },
+						{
+							label: 'npm',
+							code: 'npm install @tury/common',
+						},
+						{
+							label: 'pnpm',
+							code: 'pnpm add @tury/common',
+						},
+						{
+							label: 'yarn',
+							code: 'yarn add @tury/common',
+						},
+						{
+							label: 'bun',
+							code: 'bun add @tury/common',
+						},
 					]}
 				/>
 			</div>
@@ -35,7 +47,9 @@ function Page() {
 				<ul className="space-y-2 text-muted-foreground">
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-tury-cyan">→</span>
-						<span>TypeScript-first with precise overloads and return types</span>
+						<span>
+							TypeScript-first with precise overloads and return types
+						</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-tury-cyan">→</span>
