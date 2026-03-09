@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { Select, TuryStackProvider } from '@turystack/ui'
+import { Select, Provider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -328,7 +328,7 @@ function InfiniteScrollExample() {
 
 function Page() {
 	return (
-		<TuryStackProvider>
+		<Provider>
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
@@ -566,7 +566,7 @@ function Page() {
 					/>
 				</div>
 			</div>
-		</TuryStackProvider>
+		</Provider>
 	)
 }
 

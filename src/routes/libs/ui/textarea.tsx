@@ -1,0 +1,145 @@
+import { createFileRoute } from '@tanstack/react-router'
+import { Textarea, Provider } from '@turystack/ui'
+
+import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
+
+const textareaProps = [
+	{
+		description: 'The controlled value of the textarea.',
+		name: 'value',
+		type: 'string | null',
+	},
+	{
+		description: 'The default value when uncontrolled.',
+		name: 'defaultValue',
+		type: 'string | null',
+	},
+	{
+		description: 'Placeholder text displayed when the textarea is empty.',
+		name: 'placeholder',
+		type: 'string',
+	},
+	{
+		description: 'Maximum number of characters allowed. Shows a counter inside the field when set.',
+		name: 'maxLength',
+		type: 'number',
+	},
+	{
+		default: 'false',
+		description: 'Makes the textarea take the full width of its container.',
+		name: 'block',
+		type: 'boolean',
+	},
+	{
+		default: 'false',
+		description: 'Disables the textarea, preventing interaction.',
+		name: 'disabled',
+		type: 'boolean',
+	},
+	{
+		default: 'false',
+		description: 'Shows a loading spinner.',
+		name: 'loading',
+		type: 'boolean',
+	},
+	{
+		description:
+			'Handler called when the value changes. Receives null when empty.',
+		name: 'onChange',
+		type: '(value: string | null) => void',
+	},
+]
+
+const usageCode = `import { Textarea } from '@turystack/ui'
+
+// Basic — auto-expands as you type
+<Textarea placeholder="Enter a description..." />
+
+// With character counter (shown inside bottom-right)
+<Textarea
+  placeholder="Write something..."
+  maxLength={280}
+  block
+/>
+
+// Controlled
+const [text, setText] = useState('')
+
+<Textarea
+  value={text}
+  onChange={setText}
+  placeholder="Type here..."
+  maxLength={500}
+  block
+/>`
+
+function Page() {
+	return (
+		<Provider>
+			<div className="space-y-10">
+				<div>
+					<h1 className="font-bold font-display text-3xl tracking-tight">
+						Textarea
+					</h1>
+					<p className="mt-3 text-lg text-muted-foreground">
+						A multi-line text input. Auto-expands as content grows. Supports{' '}
+						<code className="rounded bg-muted px-1 text-sm">maxLength</code>{' '}
+						which shows an inline character counter at the bottom-right.
+					</p>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Props</h2>
+					<PropsTable props={textareaProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Basic</h2>
+					<ComponentPreview title="Auto-expanding textarea">
+						<Textarea
+							block
+							placeholder="Enter a description..."
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						With character counter
+					</h2>
+					<ComponentPreview title="Counter inside the field">
+						<Textarea
+							block
+							maxLength={280}
+							placeholder="Write something (max 280 chars)..."
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Disabled</h2>
+					<ComponentPreview title="Disabled state">
+						<Textarea
+							block
+							defaultValue="This textarea is disabled and cannot be edited."
+							disabled
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Usage</h2>
+					<CodeBlock
+						code={usageCode}
+						filename="example.tsx"
+						language="tsx"
+					/>
+				</div>
+			</div>
+		</Provider>
+	)
+}
+
+export const Route = createFileRoute('/libs/ui/textarea')({
+	component: Page,
+})

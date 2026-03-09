@@ -3,6 +3,8 @@
 @import "@turystack/ui/index.css";
 @import "tailwindcss";
 
+@source "../node_modules/@turystack/ui/src";
+
 @plugin "tailwindcss-animate";
 
 @variant dark (&:is(.dark *));
@@ -62,6 +64,8 @@
 	--secondary-foreground: hsl(30 8% 10%);
 	--muted: hsl(30 6% 94%);
 	--muted-foreground: hsl(30 5% 45%);
+	--t-muted: hsl(30 8% 86%);
+	--t-muted-foreground: hsl(30 5% 40%);
 	--accent: hsl(30 6% 92%);
 	--accent-foreground: hsl(30 8% 10%);
 	--destructive: hsl(0 84% 60%);
@@ -100,6 +104,8 @@
 	--secondary-foreground: hsl(30 8% 92%);
 	--muted: hsl(30 5% 14%);
 	--muted-foreground: hsl(30 5% 55%);
+	--t-muted: hsl(30 5% 18%);
+	--t-muted-foreground: hsl(30 5% 55%);
 	--accent: hsl(30 5% 14%);
 	--accent-foreground: hsl(30 8% 92%);
 	--destructive: hsl(0 62% 30%);

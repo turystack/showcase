@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Checkbox, TuryStackProvider } from '@turystack/ui'
+import { Checkbox, Provider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -7,6 +7,11 @@ const checkboxProps = [
 	{
 		description: 'Label text displayed next to the checkbox.',
 		name: 'label',
+		type: 'string',
+	},
+	{
+		description: 'Helper text rendered below the label.',
+		name: 'description',
 		type: 'string',
 	},
 	{
@@ -19,6 +24,12 @@ const checkboxProps = [
 		description: 'The size of the checkbox.',
 		name: 'size',
 		type: '"sm" | "md" | "lg"',
+	},
+	{
+		default: 'false',
+		description: 'Wraps the checkbox in a bordered card.',
+		name: 'bordered',
+		type: 'boolean',
 	},
 	{
 		default: 'false',
@@ -84,6 +95,19 @@ const usageCode = `import { Checkbox } from '@turystack/ui'
 // Single checkbox
 <Checkbox label="Accept terms and conditions" />
 
+// With description
+<Checkbox
+  label="Marketing emails"
+  description="Receive offers, product updates, and news."
+/>
+
+// Bordered (card-style)
+<Checkbox
+  bordered
+  label="Enable notifications"
+  description="Get alerts for important events."
+/>
+
 // Sizes
 <Checkbox size="sm" label="Small" />
 <Checkbox size="md" label="Medium" />
@@ -111,7 +135,7 @@ const usageCode = `import { Checkbox } from '@turystack/ui'
 
 function Page() {
 	return (
-		<TuryStackProvider>
+		<Provider>
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
@@ -264,6 +288,66 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">With description</h2>
+					<ComponentPreview title="Checkbox with description text">
+						<div className="flex flex-col gap-3">
+							<Checkbox
+								label="Marketing emails"
+								description="Receive offers, product updates, and news."
+							/>
+							<Checkbox
+								defaultChecked
+								label="Security alerts"
+								description="Get notified about suspicious activity on your account."
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Bordered</h2>
+					<ComponentPreview title="Bordered checkbox — title only">
+						<div className="flex flex-col gap-3 w-full max-w-sm">
+							<Checkbox
+								bordered
+								label="Enable notifications"
+							/>
+							<Checkbox
+								bordered
+								defaultChecked
+								label="Marketing emails"
+							/>
+							<Checkbox
+								bordered
+								disabled
+								label="SMS alerts"
+							/>
+						</div>
+					</ComponentPreview>
+					<ComponentPreview title="Bordered checkbox — with description">
+						<div className="flex flex-col gap-3 w-full max-w-sm">
+							<Checkbox
+								bordered
+								label="Enable notifications"
+								description="Get alerts for important events."
+							/>
+							<Checkbox
+								bordered
+								defaultChecked
+								label="Marketing emails"
+								description="Receive offers, product updates, and news."
+							/>
+							<Checkbox
+								bordered
+								disabled
+								label="SMS alerts"
+								description="Requires a verified phone number."
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Usage</h2>
 					<CodeBlock
 						code={usageCode}
@@ -272,7 +356,7 @@ function Page() {
 					/>
 				</div>
 			</div>
-		</TuryStackProvider>
+		</Provider>
 	)
 }
 

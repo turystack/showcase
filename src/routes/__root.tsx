@@ -1,11 +1,11 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router'
-import { TuryStackProvider } from '@turystack/ui'
+import { Provider } from '@turystack/ui'
 
 export const Route = createRootRoute({
 	component: () => (
-		<TuryStackProvider defaultColorScheme="system">
+		<Provider defaultColorScheme="system">
 			<Outlet />
-		</TuryStackProvider>
+		</Provider>
 	),
 
 	notFoundComponent: () => (

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Button, Loader, TuryStackProvider } from '@turystack/ui'
+import { Button, Loader, Provider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -18,21 +18,21 @@ const providerProps = [
 	},
 ]
 
-const setupCode = `import { TuryStackProvider } from '@turystack/ui'
+const setupCode = `import { Provider } from '@turystack/ui'
 import { createRoot } from 'react-dom/client'
 import { App } from './App'
 
 createRoot(document.getElementById('root')!).render(
-  <TuryStackProvider>
+  <Provider>
     <App />
-  </TuryStackProvider>
+  </Provider>
 )`
 
-const defaultPropsCode = `import { TButton, TLoader, TuryStackProvider } from '@turystack/ui'
+const defaultPropsCode = `import { Button, Loader, Provider } from '@turystack/ui'
 
 export function App() {
   return (
-    <TuryStackProvider
+    <Provider
       components={{
         button: {
           defaultProps: { variant: 'outline', size: 'lg' },
@@ -42,17 +42,17 @@ export function App() {
         },
       }}
     >
-      <TButton>Uses outline + lg by default</TButton>
-      <TLoader />
-    </TuryStackProvider>
+      <Button>Uses outline + lg by default</Button>
+      <Loader />
+    </Provider>
   )
 }`
 
-const classNamesCode = `import { TButton, TuryStackProvider } from '@turystack/ui'
+const classNamesCode = `import { Button, Provider } from '@turystack/ui'
 
 export function App() {
   return (
-    <TuryStackProvider
+    <Provider
       components={{
         button: {
           classNames: {
@@ -62,18 +62,18 @@ export function App() {
         },
       }}
     >
-      <TButton>Pill button</TButton>
-    </TuryStackProvider>
+      <Button>Pill button</Button>
+    </Provider>
   )
 }`
 
 function Page() {
 	return (
-		<TuryStackProvider>
+		<Provider>
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
-						TuryStackProvider
+						Provider
 					</h1>
 					<p className="mt-3 text-lg text-muted-foreground">
 						A React context provider that configures global defaults and class
@@ -86,7 +86,7 @@ function Page() {
 					<p className="text-muted-foreground text-sm">
 						Wrap your application root (or any subtree) with{' '}
 						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-							TuryStackProvider
+							Provider
 						</code>
 						. Components outside the provider will still render, but they won't
 						receive any global defaults or class name overrides.
@@ -111,7 +111,7 @@ function Page() {
 					</p>
 					<ComponentPreview title="Global size and variant defaults">
 						<div className="flex flex-wrap items-center gap-4">
-							<TuryStackProvider
+							<Provider
 								components={{
 									button: {
 										defaultProps: {
@@ -128,7 +128,7 @@ function Page() {
 							>
 								<Button>Button Configured</Button>
 								<Loader />
-							</TuryStackProvider>
+							</Provider>
 						</div>
 					</ComponentPreview>
 					<CodeBlock
@@ -152,7 +152,7 @@ function Page() {
 						styles.
 					</p>
 					<ComponentPreview title="Pill-shaped buttons via classNames">
-						<TuryStackProvider
+						<Provider
 							components={{
 								button: {
 									classNames: {
@@ -166,7 +166,7 @@ function Page() {
 								<Button variant="outline">Outline</Button>
 								<Button variant="secondary">Secondary</Button>
 							</div>
-						</TuryStackProvider>
+						</Provider>
 					</ComponentPreview>
 					<CodeBlock
 						code={classNamesCode}
@@ -180,7 +180,7 @@ function Page() {
 					<PropsTable props={providerProps} />
 				</div>
 			</div>
-		</TuryStackProvider>
+		</Provider>
 	)
 }
 

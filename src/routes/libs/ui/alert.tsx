@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Alert, TuryStackProvider } from '@turystack/ui'
+import { Alert, Provider } from '@turystack/ui'
 import { AlertCircle, Info, Terminal } from 'lucide-react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
@@ -71,7 +71,7 @@ import { Info, AlertCircle, Terminal } from 'lucide-react'
 
 function Page() {
 	return (
-		<TuryStackProvider>
+		<Provider>
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
@@ -221,7 +221,7 @@ function Page() {
 					/>
 				</div>
 			</div>
-		</TuryStackProvider>
+		</Provider>
 	)
 }
 

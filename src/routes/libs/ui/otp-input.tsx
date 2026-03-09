@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { OTPInput, TuryStackProvider } from '@turystack/ui'
+import { OTPInput, Provider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -10,6 +10,12 @@ const otpInputProps = [
 			'Array of numbers defining group sizes. E.g. [3, 3] creates two groups of 3 slots with a separator.',
 		name: 'pattern',
 		type: 'number[]',
+	},
+	{
+		default: '"md"',
+		description: 'The size of each OTP slot.',
+		name: 'size',
+		type: '"sm" | "md" | "lg"',
 	},
 	{
 		description: 'The controlled value of the OTP.',
@@ -42,7 +48,7 @@ const usageCode = `import { OTPInput } from '@turystack/ui'
 
 function Page() {
 	return (
-		<TuryStackProvider>
+		<Provider>
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
@@ -102,6 +108,17 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Sizes</h2>
+					<ComponentPreview title="sm / md / lg">
+						<div className="flex flex-col items-start gap-4">
+							<OTPInput pattern={[3, 3]} size="sm" />
+							<OTPInput pattern={[3, 3]} size="md" />
+							<OTPInput pattern={[3, 3]} size="lg" />
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Usage</h2>
 					<CodeBlock
 						code={usageCode}
@@ -110,7 +127,7 @@ function Page() {
 					/>
 				</div>
 			</div>
-		</TuryStackProvider>
+		</Provider>
 	)
 }
 

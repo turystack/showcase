@@ -17,7 +17,7 @@ const sections: SidebarSection[] = [
 	{
 		items: [
 			{
-				label: 'TuryStackProvider',
+				label: 'Provider',
 				to: '/libs/ui/provider',
 			},
 		],
@@ -44,12 +44,28 @@ const sections: SidebarSection[] = [
 						to: '/libs/ui/date-range-input',
 					},
 					{
+						label: 'DocumentInput',
+						to: '/libs/ui/document-input',
+					},
+					{
+						label: 'Form',
+						to: '/libs/ui/form',
+					},
+					{
 						label: 'Input',
 						to: '/libs/ui/input',
 					},
 					{
+						label: 'Label',
+						to: '/libs/ui/label',
+					},
+					{
 						label: 'MaskInput',
 						to: '/libs/ui/mask-input',
+					},
+					{
+						label: 'NumberInput',
+						to: '/libs/ui/number-input',
 					},
 					{
 						label: 'OTPInput',
@@ -60,12 +76,32 @@ const sections: SidebarSection[] = [
 						to: '/libs/ui/phone-input',
 					},
 					{
+						label: 'Radio',
+						to: '/libs/ui/radio',
+					},
+					{
 						label: 'Select',
 						to: '/libs/ui/select',
 					},
 					{
+						label: 'Slider',
+						to: '/libs/ui/slider',
+					},
+					{
+						label: 'Switch',
+						to: '/libs/ui/switch',
+					},
+					{
 						label: 'TagsInput',
 						to: '/libs/ui/tags-input',
+					},
+					{
+						label: 'Textarea',
+						to: '/libs/ui/textarea',
+					},
+					{
+						label: 'Uploader',
+						to: '/libs/ui/uploader',
 					},
 				],
 				title: 'Form',
@@ -85,8 +121,48 @@ const sections: SidebarSection[] = [
 						to: '/libs/ui/badge',
 					},
 					{
+						label: 'Breadcrumb',
+						to: '/libs/ui/breadcrumb',
+					},
+					{
 						label: 'Button',
 						to: '/libs/ui/button',
+					},
+					{
+						label: 'Card',
+						to: '/libs/ui/card',
+					},
+					{
+						label: 'Flex',
+						to: '/libs/ui/flex',
+					},
+					{
+						label: 'Grid',
+						to: '/libs/ui/grid',
+					},
+					{
+						label: 'Layout',
+						to: '/libs/ui/layout',
+					},
+					{
+						label: 'Separator',
+						to: '/libs/ui/separator',
+					},
+					{
+						label: 'Skeleton',
+						to: '/libs/ui/skeleton',
+					},
+					{
+						label: 'Table',
+						to: '/libs/ui/table',
+					},
+					{
+						label: 'Tabs',
+						to: '/libs/ui/tabs',
+					},
+					{
+						label: 'Typography',
+						to: '/libs/ui/typography',
 					},
 				],
 				title: 'Display',
@@ -98,8 +174,28 @@ const sections: SidebarSection[] = [
 						to: '/libs/ui/alert',
 					},
 					{
+						label: 'Confirm',
+						to: '/libs/ui/confirm',
+					},
+					{
 						label: 'Loader',
 						to: '/libs/ui/t-loader',
+					},
+					{
+						label: 'LoadingOverlay',
+						to: '/libs/ui/loading-overlay',
+					},
+					{
+						label: 'Pagination',
+						to: '/libs/ui/pagination',
+					},
+					{
+						label: 'Progress',
+						to: '/libs/ui/progress',
+					},
+					{
+						label: 'Toast',
+						to: '/libs/ui/toast',
 					},
 				],
 				title: 'Feedback',
@@ -107,11 +203,27 @@ const sections: SidebarSection[] = [
 			{
 				items: [
 					{
-						label: 'Breadcrumb',
-						to: '/libs/ui/breadcrumb',
+						label: 'DropdownMenu',
+						to: '/libs/ui/dropdown-menu',
+					},
+					{
+						label: 'Modal',
+						to: '/libs/ui/modal',
+					},
+					{
+						label: 'Popover',
+						to: '/libs/ui/popover',
+					},
+					{
+						label: 'Sheet',
+						to: '/libs/ui/sheet',
+					},
+					{
+						label: 'Tooltip',
+						to: '/libs/ui/tooltip',
 					},
 				],
-				title: 'Navigation',
+				title: 'Overlays',
 			},
 		],
 		title: 'Components',

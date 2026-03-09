@@ -46,7 +46,7 @@ export function LibraryLayout({
 					sidebarOpen && !isMobile ? 'left-64' : 'left-0',
 				)}
 			>
-				<div className="mx-auto max-w-3xl p-8">{children}</div>
+				<div className="mx-auto max-w-6xl p-8">{children}</div>
 			</main>
 		</div>
 	)

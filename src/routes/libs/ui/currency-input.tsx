@@ -1,9 +1,15 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { CurrencyInput, TuryStackProvider } from '@turystack/ui'
+import { CurrencyInput, Provider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
 const currencyInputProps = [
+	{
+		default: '"single"',
+		description: 'Input mode. "single" for a single numeric value, "range" for a from/to range.',
+		name: 'mode',
+		type: '"single" | "range"',
+	},
 	{
 		default: '"brl"',
 		description: 'The currency to format the value in.',
@@ -11,14 +17,14 @@ const currencyInputProps = [
 		type: '"brl" | "usd" | "eur"',
 	},
 	{
-		description: 'The controlled numeric value.',
+		description: 'The controlled value. A number for single mode, { from?, to? } for range mode.',
 		name: 'value',
-		type: 'number | null',
+		type: 'number | null | { from?: number | null; to?: number | null }',
 	},
 	{
-		description: 'The default numeric value when uncontrolled.',
+		description: 'The default value when uncontrolled.',
 		name: 'defaultValue',
-		type: 'number | null',
+		type: 'number | null | { from?: number | null; to?: number | null }',
 	},
 	{
 		description: 'Placeholder text displayed when the input is empty.',
@@ -45,9 +51,9 @@ const currencyInputProps = [
 	},
 	{
 		description:
-			'Handler called when the value changes. Receives the numeric value or null.',
+			'Handler called when the value changes.',
 		name: 'onChange',
-		type: '(value: number | null) => void',
+		type: '(value: number | null) => void | (value: { from?: number | null; to?: number | null }) => void',
 	},
 ]
 
@@ -64,7 +70,7 @@ const usageCode = `import { CurrencyInput } from '@turystack/ui'
 
 function Page() {
 	return (
-		<TuryStackProvider>
+		<Provider>
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
@@ -127,6 +133,17 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Range mode</h2>
+					<ComponentPreview title="From / To range picker">
+						<CurrencyInput
+							mode="range"
+							currency="brl"
+							placeholder="Select price range"
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Usage</h2>
 					<CodeBlock
 						code={usageCode}
@@ -135,7 +152,7 @@ function Page() {
 					/>
 				</div>
 			</div>
-		</TuryStackProvider>
+		</Provider>
 	)
 }
 

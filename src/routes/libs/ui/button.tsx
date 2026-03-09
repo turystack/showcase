@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Button, TuryStackProvider } from '@turystack/ui'
+import { Button, Provider } from '@turystack/ui'
 import { Mail, Search, Trash2 } from 'lucide-react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
@@ -110,7 +110,7 @@ const usageCode = `import { Button } from '@turystack/ui'
 
 function Page() {
 	return (
-		<TuryStackProvider>
+		<Provider>
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
@@ -246,7 +246,7 @@ function Page() {
 					/>
 				</div>
 			</div>
-		</TuryStackProvider>
+		</Provider>
 	)
 }
 

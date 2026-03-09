@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Avatar, TuryStackProvider } from '@turystack/ui'
+import { Avatar, Provider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -53,7 +53,7 @@ const usageCode = `import { Avatar } from '@turystack/ui'
 
 function Page() {
 	return (
-		<TuryStackProvider>
+		<Provider>
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
@@ -124,7 +124,7 @@ function Page() {
 					/>
 				</div>
 			</div>
-		</TuryStackProvider>
+		</Provider>
 	)
 }
 
