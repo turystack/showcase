@@ -38,12 +38,6 @@ const tagsInputProps = [
 	},
 	{
 		default: 'false',
-		description: 'Makes the input take the full width of its container.',
-		name: 'block',
-		type: 'boolean',
-	},
-	{
-		default: 'false',
 		description: 'Disables the input.',
 		name: 'disabled',
 		type: 'boolean',
@@ -94,7 +88,9 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Basic</h2>
 					<ComponentPreview title="Type and press Enter to add">
-						<TagsInput placeholder="Type and press Enter" />
+						<div className="w-80">
+							<TagsInput placeholder="Type and press Enter" />
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -103,37 +99,43 @@ function Page() {
 						With Default Tags
 					</h2>
 					<ComponentPreview title="Pre-populated tags">
-						<TagsInput
-							defaultValue={[
-								'React',
-								'TypeScript',
-								'Tailwind',
-							]}
-							placeholder="Add a tag"
-						/>
+						<div className="w-80">
+							<TagsInput
+								defaultValue={[
+									'React',
+									'TypeScript',
+									'Tailwind',
+								]}
+								placeholder="Add a tag"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Max Tags</h2>
 					<ComponentPreview title="Limited to 3 tags">
-						<TagsInput
-							maxTags={3}
-							placeholder="Max 3 tags"
-						/>
+						<div className="w-80">
+							<TagsInput
+								maxTags={3}
+								placeholder="Max 3 tags"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<TagsInput
-							defaultValue={[
-								'Locked',
-							]}
-							disabled
-							placeholder="Disabled"
-						/>
+						<div className="w-80">
+							<TagsInput
+								defaultValue={[
+									'Locked',
+								]}
+								disabled
+								placeholder="Disabled"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

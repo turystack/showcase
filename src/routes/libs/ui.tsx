@@ -97,6 +97,10 @@ const sections: SidebarSection[] = [
 						to: '/libs/ui/otp-input',
 					},
 					{
+						label: 'PasswordInput',
+						to: '/libs/ui/password-input',
+					},
+					{
 						label: 'PhoneInput',
 						to: '/libs/ui/phone-input',
 					},

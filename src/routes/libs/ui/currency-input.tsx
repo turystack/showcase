@@ -51,12 +51,6 @@ const currencyInputProps = [
 	},
 	{
 		default: 'false',
-		description: 'Makes the input take the full width of its container.',
-		name: 'block',
-		type: 'boolean',
-	},
-	{
-		default: 'false',
 		description: 'Disables the input, preventing interaction.',
 		name: 'disabled',
 		type: 'boolean',
@@ -95,9 +89,6 @@ const usageCode = `import { CurrencyInput } from '@turystack/ui'
 <CurrencyInput currency="brl" size="sm" placeholder="Small" />
 <CurrencyInput currency="brl" size="md" placeholder="Medium" />
 <CurrencyInput currency="brl" size="lg" placeholder="Large" />
-
-// Block (full width)
-<CurrencyInput currency="brl" block placeholder="R$ 0,00" />
 
 // Loading
 <CurrencyInput currency="brl" loading placeholder="Loading..." />
@@ -143,10 +134,12 @@ function Page() {
 						Brazilian Real (BRL)
 					</h2>
 					<ComponentPreview title="Default currency">
-						<CurrencyInput
-							currency="brl"
-							placeholder="R$ 0,00"
-						/>
+						<div className="w-80">
+							<CurrencyInput
+								currency="brl"
+								placeholder="R$ 0,00"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -155,27 +148,31 @@ function Page() {
 						US Dollar (USD)
 					</h2>
 					<ComponentPreview title="USD format">
-						<CurrencyInput
-							currency="usd"
-							placeholder="$0.00"
-						/>
+						<div className="w-80">
+							<CurrencyInput
+								currency="usd"
+								placeholder="$0.00"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Euro (EUR)</h2>
 					<ComponentPreview title="EUR format">
-						<CurrencyInput
-							currency="eur"
-							placeholder="0,00 €"
-						/>
+						<div className="w-80">
+							<CurrencyInput
+								currency="eur"
+								placeholder="0,00 €"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Sizes</h2>
 					<ComponentPreview title="Currency input sizes">
-						<div className="flex flex-col gap-3">
+						<div className="flex w-80 flex-col gap-3">
 							<CurrencyInput
 								currency="brl"
 								placeholder="Small"
@@ -196,49 +193,41 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Block</h2>
-					<ComponentPreview
-						className="w-80"
-						title="Full width"
-					>
-						<CurrencyInput
-							block
-							currency="brl"
-							placeholder="R$ 0,00"
-						/>
-					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Loading</h2>
 					<ComponentPreview title="Loading state">
-						<CurrencyInput
-							currency="brl"
-							loading
-							placeholder="Loading..."
-						/>
+						<div className="w-80">
+							<CurrencyInput
+								currency="brl"
+								loading
+								placeholder="Loading..."
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<CurrencyInput
-							currency="brl"
-							disabled
-							placeholder="Disabled"
-						/>
+						<div className="w-80">
+							<CurrencyInput
+								currency="brl"
+								disabled
+								placeholder="Disabled"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Range mode</h2>
 					<ComponentPreview title="From / To range picker">
-						<CurrencyInput
-							currency="brl"
-							mode="range"
-							placeholder="Select price range"
-						/>
+						<div className="w-80">
+							<CurrencyInput
+								currency="brl"
+								mode="range"
+								placeholder="Select price range"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

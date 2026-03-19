@@ -152,7 +152,7 @@ function Page() {
 					<ComponentPreview title="Tooltip with structured content">
 						<Tooltip
 							content={
-								<div className="max-w-xs space-y-1">
+								<div className="flex max-w-xs flex-col items-start gap-1">
 									<Typography
 										size="sm"
 										weight="semibold"

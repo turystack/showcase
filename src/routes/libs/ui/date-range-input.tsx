@@ -27,12 +27,6 @@ const dateRangeInputProps = [
 	},
 	{
 		default: 'false',
-		description: 'Makes the input take the full width of its container.',
-		name: 'block',
-		type: 'boolean',
-	},
-	{
-		default: 'false',
 		description: 'Disables the date range input.',
 		name: 'disabled',
 		type: 'boolean',
@@ -56,8 +50,8 @@ const usageCode = `import { DateRangeInput } from '@turystack/ui'
 // Basic
 <DateRangeInput placeholder="Select a period" />
 
-// Block (full width)
-<DateRangeInput block placeholder="Select a period" />`
+// Full width (inputs are w-full by default)
+<DateRangeInput placeholder="Select a period" />`
 
 function Page() {
 	return (
@@ -81,27 +75,21 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Basic</h2>
 					<ComponentPreview title="Click to open calendar">
-						<DateRangeInput placeholder="Select a period" />
+						<div className="w-80">
+							<DateRangeInput placeholder="Select a period" />
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<DateRangeInput
-							disabled
-							placeholder="Disabled"
-						/>
-					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Block</h2>
-					<ComponentPreview title="Full width">
-						<DateRangeInput
-							block
-							placeholder="Select a period"
-						/>
+						<div className="w-80">
+							<DateRangeInput
+								disabled
+								placeholder="Disabled"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

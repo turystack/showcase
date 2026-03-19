@@ -27,12 +27,6 @@ const dateInputProps = [
 	},
 	{
 		default: 'false',
-		description: 'Makes the input take the full width of its container.',
-		name: 'block',
-		type: 'boolean',
-	},
-	{
-		default: 'false',
 		description: 'Disables the date input.',
 		name: 'disabled',
 		type: 'boolean',
@@ -59,8 +53,8 @@ const usageCode = `import { DateInput } from '@turystack/ui'
 // With default value
 <DateInput defaultValue={new Date()} />
 
-// Block (full width)
-<DateInput block placeholder="Select a date" />`
+// Full width (inputs are w-full by default)
+<DateInput placeholder="Select a date" />`
 
 function Page() {
 	return (
@@ -84,7 +78,9 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Basic</h2>
 					<ComponentPreview title="Click to open calendar">
-						<DateInput placeholder="Select a date" />
+						<div className="w-80">
+							<DateInput placeholder="Select a date" />
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -93,27 +89,21 @@ function Page() {
 						With Default Value
 					</h2>
 					<ComponentPreview title="Pre-selected date">
-						<DateInput defaultValue={new Date()} />
+						<div className="w-80">
+							<DateInput defaultValue={new Date()} />
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<DateInput
-							disabled
-							placeholder="Disabled"
-						/>
-					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Block</h2>
-					<ComponentPreview title="Full width">
-						<DateInput
-							block
-							placeholder="Select a date"
-						/>
+						<div className="w-80">
+							<DateInput
+								disabled
+								placeholder="Disabled"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

@@ -37,6 +37,7 @@ import { Route as LibsUiProgressRouteImport } from './routes/libs/ui/progress'
 import { Route as LibsUiPopoverRouteImport } from './routes/libs/ui/popover'
 import { Route as LibsUiPlaygroundRouteImport } from './routes/libs/ui/playground'
 import { Route as LibsUiPhoneInputRouteImport } from './routes/libs/ui/phone-input'
+import { Route as LibsUiPasswordInputRouteImport } from './routes/libs/ui/password-input'
 import { Route as LibsUiPaginationRouteImport } from './routes/libs/ui/pagination'
 import { Route as LibsUiOtpInputRouteImport } from './routes/libs/ui/otp-input'
 import { Route as LibsUiNumberInputRouteImport } from './routes/libs/ui/number-input'
@@ -206,6 +207,11 @@ const LibsUiPlaygroundRoute = LibsUiPlaygroundRouteImport.update({
 const LibsUiPhoneInputRoute = LibsUiPhoneInputRouteImport.update({
   id: '/phone-input',
   path: '/phone-input',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiPasswordInputRoute = LibsUiPasswordInputRouteImport.update({
+  id: '/password-input',
+  path: '/password-input',
   getParentRoute: () => LibsUiRoute,
 } as any)
 const LibsUiPaginationRoute = LibsUiPaginationRouteImport.update({
@@ -399,6 +405,7 @@ export interface FileRoutesByFullPath {
   '/libs/ui/number-input': typeof LibsUiNumberInputRoute
   '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
   '/libs/ui/pagination': typeof LibsUiPaginationRoute
+  '/libs/ui/password-input': typeof LibsUiPasswordInputRoute
   '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
   '/libs/ui/playground': typeof LibsUiPlaygroundRoute
   '/libs/ui/popover': typeof LibsUiPopoverRoute
@@ -457,6 +464,7 @@ export interface FileRoutesByTo {
   '/libs/ui/number-input': typeof LibsUiNumberInputRoute
   '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
   '/libs/ui/pagination': typeof LibsUiPaginationRoute
+  '/libs/ui/password-input': typeof LibsUiPasswordInputRoute
   '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
   '/libs/ui/playground': typeof LibsUiPlaygroundRoute
   '/libs/ui/popover': typeof LibsUiPopoverRoute
@@ -519,6 +527,7 @@ export interface FileRoutesById {
   '/libs/ui/number-input': typeof LibsUiNumberInputRoute
   '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
   '/libs/ui/pagination': typeof LibsUiPaginationRoute
+  '/libs/ui/password-input': typeof LibsUiPasswordInputRoute
   '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
   '/libs/ui/playground': typeof LibsUiPlaygroundRoute
   '/libs/ui/popover': typeof LibsUiPopoverRoute
@@ -581,6 +590,7 @@ export interface FileRouteTypes {
     | '/libs/ui/number-input'
     | '/libs/ui/otp-input'
     | '/libs/ui/pagination'
+    | '/libs/ui/password-input'
     | '/libs/ui/phone-input'
     | '/libs/ui/playground'
     | '/libs/ui/popover'
@@ -639,6 +649,7 @@ export interface FileRouteTypes {
     | '/libs/ui/number-input'
     | '/libs/ui/otp-input'
     | '/libs/ui/pagination'
+    | '/libs/ui/password-input'
     | '/libs/ui/phone-input'
     | '/libs/ui/playground'
     | '/libs/ui/popover'
@@ -700,6 +711,7 @@ export interface FileRouteTypes {
     | '/libs/ui/number-input'
     | '/libs/ui/otp-input'
     | '/libs/ui/pagination'
+    | '/libs/ui/password-input'
     | '/libs/ui/phone-input'
     | '/libs/ui/playground'
     | '/libs/ui/popover'
@@ -928,6 +940,13 @@ declare module '@tanstack/react-router' {
       path: '/phone-input'
       fullPath: '/libs/ui/phone-input'
       preLoaderRoute: typeof LibsUiPhoneInputRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/password-input': {
+      id: '/libs/ui/password-input'
+      path: '/password-input'
+      fullPath: '/libs/ui/password-input'
+      preLoaderRoute: typeof LibsUiPasswordInputRouteImport
       parentRoute: typeof LibsUiRoute
     }
     '/libs/ui/pagination': {
@@ -1207,6 +1226,7 @@ interface LibsUiRouteChildren {
   LibsUiNumberInputRoute: typeof LibsUiNumberInputRoute
   LibsUiOtpInputRoute: typeof LibsUiOtpInputRoute
   LibsUiPaginationRoute: typeof LibsUiPaginationRoute
+  LibsUiPasswordInputRoute: typeof LibsUiPasswordInputRoute
   LibsUiPhoneInputRoute: typeof LibsUiPhoneInputRoute
   LibsUiPlaygroundRoute: typeof LibsUiPlaygroundRoute
   LibsUiPopoverRoute: typeof LibsUiPopoverRoute
@@ -1261,6 +1281,7 @@ const LibsUiRouteChildren: LibsUiRouteChildren = {
   LibsUiNumberInputRoute: LibsUiNumberInputRoute,
   LibsUiOtpInputRoute: LibsUiOtpInputRoute,
   LibsUiPaginationRoute: LibsUiPaginationRoute,
+  LibsUiPasswordInputRoute: LibsUiPasswordInputRoute,
   LibsUiPhoneInputRoute: LibsUiPhoneInputRoute,
   LibsUiPlaygroundRoute: LibsUiPlaygroundRoute,
   LibsUiPopoverRoute: LibsUiPopoverRoute,

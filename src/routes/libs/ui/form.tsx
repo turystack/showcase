@@ -19,6 +19,13 @@ const fieldProps = [
 		type: 'string | { content: string; required?: boolean; optional?: boolean; disabled?: boolean; tooltip?: React.ReactNode }',
 	},
 	{
+		default: 'false',
+		description:
+			'When true, the label floats inside the input and animates on focus/fill.',
+		name: 'labelFloating',
+		type: 'boolean',
+	},
+	{
 		description:
 			'The id of the associated form control — passed as htmlFor to the label.',
 		name: 'name',
@@ -60,11 +67,11 @@ const usageCode = `import { Form, Input, Button } from '@turystack/ui'
     description="We'll never share your email."
     error={errors.email}
   >
-    <Input id="email" type="email" placeholder="you@example.com" block />
+    <Input id="email" type="email" placeholder="you@example.com" />
   </Form.Field>
 
   <Form.Field name="password" label={{ content: 'Password', required: true }}>
-    <Input id="password" type="password" placeholder="••••••••" block />
+    <Input id="password" type="password" placeholder="••••••••" />
   </Form.Field>
 
   <Button type="submit" block>Sign in</Button>
@@ -72,16 +79,16 @@ const usageCode = `import { Form, Input, Button } from '@turystack/ui'
 
 // Simple string label
 <Form.Field name="username" label="Username">
-  <Input id="username" block />
+  <Input id="username" />
 </Form.Field>
 
 // Form.FieldSet groups related fields with a legend
 <Form.FieldSet legend="Personal Information">
   <Form.Field name="first-name" label="First name">
-    <Input id="first-name" block />
+    <Input id="first-name" />
   </Form.Field>
   <Form.Field name="last-name" label="Last name">
-    <Input id="last-name" block />
+    <Input id="last-name" />
   </Form.Field>
 </Form.FieldSet>`
 
@@ -124,7 +131,7 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Basic form</h2>
 					<ComponentPreview title="Login form">
-						<div className="w-full max-w-sm">
+						<div className="w-80">
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.Field
 									description="We'll never share your email."
@@ -135,7 +142,6 @@ function Page() {
 									name="email"
 								>
 									<Input
-										block
 										id="email"
 										placeholder="you@example.com"
 									/>
@@ -148,7 +154,6 @@ function Page() {
 									name="password"
 								>
 									<Input
-										block
 										id="password"
 										placeholder="••••••••"
 										type="password"
@@ -168,7 +173,7 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">With error</h2>
 					<ComponentPreview title="Field with validation error">
-						<div className="w-full max-w-sm">
+						<div className="w-80">
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.Field
 									error="Please enter a valid email address."
@@ -179,7 +184,6 @@ function Page() {
 									name="email"
 								>
 									<Input
-										block
 										defaultValue="not-an-email"
 										id="email"
 									/>
@@ -192,7 +196,7 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">With tooltip</h2>
 					<ComponentPreview title="Label with tooltip">
-						<div className="w-full max-w-sm">
+						<div className="w-80">
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.Field
 									description="Keep this secret — never share it publicly."
@@ -204,7 +208,6 @@ function Page() {
 									name="api-key"
 								>
 									<Input
-										block
 										id="api-key"
 										placeholder="sk-••••••••"
 									/>
@@ -217,7 +220,7 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">FieldSet</h2>
 					<ComponentPreview title="Grouped fields with legend">
-						<div className="w-full max-w-sm">
+						<div className="w-80">
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.FieldSet legend="Contact details">
 									<Form.Field
@@ -228,7 +231,6 @@ function Page() {
 										name="phone"
 									>
 										<Input
-											block
 											id="phone"
 											placeholder="+1 555 000 0000"
 										/>
@@ -241,7 +243,6 @@ function Page() {
 										name="website"
 									>
 										<Input
-											block
 											id="website"
 											placeholder="https://example.com"
 										/>
@@ -257,7 +258,7 @@ function Page() {
 						FieldSet with tooltip
 					</h2>
 					<ComponentPreview title="Legend info tooltip">
-						<div className="w-full max-w-sm">
+						<div className="w-80">
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.FieldSet
 									legend="Billing address"
@@ -268,7 +269,6 @@ function Page() {
 										name="address"
 									>
 										<Input
-											block
 											id="address"
 											placeholder="123 Main St"
 										/>
@@ -278,12 +278,46 @@ function Page() {
 										name="city"
 									>
 										<Input
-											block
 											id="city"
 											placeholder="San Francisco"
 										/>
 									</Form.Field>
 								</Form.FieldSet>
+							</Form>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Floating Label</h2>
+					<p className="text-muted-foreground text-sm">
+						Use <code>labelFloating</code> to place the label inside the input.
+						The label animates up on focus or when the input has a value.
+					</p>
+					<ComponentPreview title="Floating label fields">
+						<div className="w-80">
+							<Form onSubmit={(e) => e.preventDefault()}>
+								<Form.Field
+									label="Email"
+									labelFloating
+									name="floating-email"
+								>
+									<Input
+										id="floating-email"
+										placeholder=" "
+									/>
+								</Form.Field>
+								<Form.Field
+									label="Password"
+									labelFloating
+									name="floating-password"
+								>
+									<Input
+										id="floating-password"
+										placeholder=" "
+										type="password"
+									/>
+								</Form.Field>
 							</Form>
 						</div>
 					</ComponentPreview>

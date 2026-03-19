@@ -1,15 +1,9 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { MaskInput, Provider } from '@turystack/ui'
+import { PasswordInput, Provider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
-const maskInputProps = [
-	{
-		description: 'The mask pattern. Use "0" for digits and "a" for letters.',
-		name: 'mask',
-		required: true,
-		type: 'string | string[]',
-	},
+const passwordInputProps = [
 	{
 		description: 'The controlled value of the input.',
 		name: 'value',
@@ -32,14 +26,11 @@ const maskInputProps = [
 		type: '"sm" | "md" | "lg"',
 	},
 	{
-		description: 'Content rendered on the left side of the input.',
-		name: 'leftSection',
-		type: 'React.ReactNode',
-	},
-	{
-		description: 'Content rendered on the right side of the input.',
-		name: 'rightSection',
-		type: 'React.ReactNode',
+		default: 'true',
+		description:
+			'Shows a password strength indicator bar below the input.',
+		name: 'showStrength',
+		type: 'boolean',
 	},
 	{
 		default: 'false',
@@ -61,16 +52,18 @@ const maskInputProps = [
 	},
 ]
 
-const usageCode = `import { MaskInput } from '@turystack/ui'
+const usageCode = `import { PasswordInput } from '@turystack/ui'
 
-// CPF mask
-<MaskInput mask="000.000.000-00" placeholder="000.000.000-00" />
+// Basic with strength indicator
+<PasswordInput placeholder="Enter your password" />
 
-// Phone mask
-<MaskInput mask="(00) 00000-0000" placeholder="(00) 00000-0000" />
+// Without strength indicator
+<PasswordInput showStrength={false} placeholder="Enter your password" />
 
-// Multiple masks (auto-detect)
-<MaskInput mask={["(00) 0000-0000", "(00) 00000-0000"]} placeholder="Phone" />`
+// Sizes
+<PasswordInput size="sm" placeholder="Small" />
+<PasswordInput size="md" placeholder="Medium" />
+<PasswordInput size="lg" placeholder="Large" />`
 
 function Page() {
 	return (
@@ -78,53 +71,58 @@ function Page() {
 			<div className="space-y-10">
 				<div>
 					<h1 className="font-bold font-display text-3xl tracking-tight">
-						MaskInput
+						PasswordInput
 					</h1>
 					<p className="mt-3 text-lg text-muted-foreground">
-						A masked input field that enforces a specific format using pattern
-						masks. Built on top of react-imask.
+						A password input with a built-in strength indicator. Shows a
+						segmented bar and descriptive label based on password complexity
+						rules.
 					</p>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Props</h2>
-					<PropsTable props={maskInputProps} />
+					<PropsTable props={passwordInputProps} />
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">CPF Mask</h2>
-					<ComponentPreview title="Brazilian CPF format">
+					<h2 className="font-display font-semibold text-xl">Basic</h2>
+					<ComponentPreview title="Password with strength indicator">
 						<div className="w-80">
-							<MaskInput
-								mask="000.000.000-00"
-								placeholder="000.000.000-00"
+							<PasswordInput placeholder="Enter your password" />
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						Without Strength
+					</h2>
+					<ComponentPreview title="Strength indicator hidden">
+						<div className="w-80">
+							<PasswordInput
+								placeholder="Enter your password"
+								showStrength={false}
 							/>
 						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Phone Mask</h2>
-					<ComponentPreview title="Brazilian phone format">
-						<div className="w-80">
-							<MaskInput
-								mask="(00) 00000-0000"
-								placeholder="(00) 00000-0000"
+					<h2 className="font-display font-semibold text-xl">Sizes</h2>
+					<ComponentPreview title="Password input sizes">
+						<div className="flex w-80 flex-col gap-3">
+							<PasswordInput
+								placeholder="Small"
+								size="sm"
 							/>
-						</div>
-					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Multiple Masks</h2>
-					<ComponentPreview title="Auto-detect between landline and mobile">
-						<div className="w-80">
-							<MaskInput
-								mask={[
-									'(00) 0000-0000',
-									'(00) 00000-0000',
-								]}
-								placeholder="Phone"
+							<PasswordInput
+								placeholder="Medium"
+								size="md"
+							/>
+							<PasswordInput
+								placeholder="Large"
+								size="lg"
 							/>
 						</div>
 					</ComponentPreview>
@@ -134,9 +132,8 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
 						<div className="w-80">
-							<MaskInput
+							<PasswordInput
 								disabled
-								mask="000.000.000-00"
 								placeholder="Disabled"
 							/>
 						</div>
@@ -156,6 +153,6 @@ function Page() {
 	)
 }
 
-export const Route = createFileRoute('/libs/ui/mask-input')({
+export const Route = createFileRoute('/libs/ui/password-input')({
 	component: Page,
 })

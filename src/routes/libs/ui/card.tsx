@@ -111,12 +111,6 @@ function Page() {
 									</p>
 								</Card.Content>
 								<Card.Footer bordered>
-									<Button
-										size="sm"
-										variant="outline"
-									>
-										Decline
-									</Button>
 									<Button size="sm">Pay now</Button>
 								</Card.Footer>
 							</Card>

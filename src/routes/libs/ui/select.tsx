@@ -188,12 +188,6 @@ const selectProps = [
 		type: 'boolean',
 	},
 	{
-		default: 'false',
-		description: 'Makes the trigger take full width.',
-		name: 'block',
-		type: 'boolean',
-	},
-	{
 		description: 'Custom render function for each option in the dropdown.',
 		name: 'renderOption',
 		type: '(option: T) => React.ReactNode',
@@ -409,13 +403,15 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Single Select</h2>
 					<ComponentPreview title="Choose one option">
-						<Select
-							mode="single"
-							optionLabel="label"
-							options={singleOptions}
-							optionValue="value"
-							placeholder="Choose a framework"
-						/>
+						<div className="w-80">
+							<Select
+								mode="single"
+								optionLabel="label"
+								options={singleOptions}
+								optionValue="value"
+								placeholder="Choose a framework"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -424,13 +420,15 @@ function Page() {
 						Multiple Select
 					</h2>
 					<ComponentPreview title="Choose multiple options">
-						<Select
-							mode="multiple"
-							optionLabel="label"
-							options={singleOptions}
-							optionValue="value"
-							placeholder="Choose frameworks"
-						/>
+						<div className="w-80">
+							<Select
+								mode="multiple"
+								optionLabel="label"
+								options={singleOptions}
+								optionValue="value"
+								placeholder="Choose frameworks"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -443,14 +441,16 @@ function Page() {
 						key name or a function.
 					</p>
 					<ComponentPreview title="Options grouped by category">
-						<Select
-							mode="single"
-							optionGroup="category"
-							optionLabel="label"
-							options={groupedOptions}
-							optionValue="value"
-							placeholder="Choose a technology"
-						/>
+						<div className="w-80">
+							<Select
+								mode="single"
+								optionGroup="category"
+								optionLabel="label"
+								options={groupedOptions}
+								optionValue="value"
+								placeholder="Choose a technology"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -459,14 +459,16 @@ function Page() {
 						Grouped Multiple Select
 					</h2>
 					<ComponentPreview title="Multiple selection with groups">
-						<Select
-							mode="multiple"
-							optionGroup="category"
-							optionLabel="label"
-							options={groupedOptions}
-							optionValue="value"
-							placeholder="Choose technologies"
-						/>
+						<div className="w-80">
+							<Select
+								mode="multiple"
+								optionGroup="category"
+								optionLabel="label"
+								options={groupedOptions}
+								optionValue="value"
+								placeholder="Choose technologies"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -480,10 +482,11 @@ function Page() {
 						value display in the trigger.
 					</p>
 					<ComponentPreview title="Color dots with custom render">
-						<Select
-							mode="single"
-							optionLabel="label"
-							options={colorOptions}
+						<div className="w-80">
+							<Select
+								mode="single"
+								optionLabel="label"
+								options={colorOptions}
 							optionValue="value"
 							placeholder="Choose a framework"
 							renderOption={(option) => (
@@ -524,7 +527,8 @@ function Page() {
 									{option.label}
 								</div>
 							)}
-						/>
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -538,49 +542,41 @@ function Page() {
 						<code>loadingMore</code>, and <code>onLoadMore</code>.
 					</p>
 					<ComponentPreview title="Scroll to load more (100 items total)">
-						<InfiniteScrollExample />
+						<div className="w-80">
+							<InfiniteScrollExample />
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<Select
-							disabled
-							mode="single"
-							optionLabel="label"
-							options={singleOptions}
-							optionValue="value"
-							placeholder="Disabled"
-						/>
+						<div className="w-80">
+							<Select
+								disabled
+								mode="single"
+								optionLabel="label"
+								options={singleOptions}
+								optionValue="value"
+								placeholder="Disabled"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Loading</h2>
 					<ComponentPreview title="Loading state">
-						<Select
-							loading
-							mode="single"
-							optionLabel="label"
-							options={singleOptions}
-							optionValue="value"
-							placeholder="Loading..."
-						/>
-					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Block</h2>
-					<ComponentPreview title="Full width select">
-						<Select
-							block
-							mode="single"
-							optionLabel="label"
-							options={singleOptions}
-							optionValue="value"
-							placeholder="Full width"
-						/>
+						<div className="w-80">
+							<Select
+								loading
+								mode="single"
+								optionLabel="label"
+								options={singleOptions}
+								optionValue="value"
+								placeholder="Loading..."
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

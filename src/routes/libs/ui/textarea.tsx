@@ -44,12 +44,6 @@ const textareaProps = [
 	},
 	{
 		default: 'false',
-		description: 'Makes the textarea take the full width of its container.',
-		name: 'block',
-		type: 'boolean',
-	},
-	{
-		default: 'false',
 		description: 'Disables the textarea, preventing interaction.',
 		name: 'disabled',
 		type: 'boolean',
@@ -82,14 +76,12 @@ const usageCode = `import { Textarea } from '@turystack/ui'
 <Textarea
   leftSection={<Search className="size-4 text-muted-foreground" />}
   placeholder="Search notes..."
-  block
 />
 
 // With character counter (shown inside bottom-right)
 <Textarea
   placeholder="Write something..."
   maxLength={280}
-  block
 />
 
 // Controlled
@@ -100,7 +92,6 @@ const [text, setText] = useState('')
   onChange={setText}
   placeholder="Type here..."
   maxLength={500}
-  block
 />`
 
 function Page() {
@@ -126,17 +117,16 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Basic</h2>
 					<ComponentPreview title="Auto-expanding textarea">
-						<Textarea
-							block
-							placeholder="Enter a description..."
-						/>
+						<div className="w-80">
+							<Textarea placeholder="Enter a description..." />
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Sizes</h2>
 					<ComponentPreview title="Textarea sizes">
-						<div className="flex flex-col gap-3">
+						<div className="flex w-80 flex-col gap-3">
 							<Textarea
 								placeholder="Small"
 								size="sm"
@@ -156,16 +146,14 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">With sections</h2>
 					<ComponentPreview title="Left and right sections">
-						<div className="flex flex-col gap-3">
+						<div className="flex w-80 flex-col gap-3">
 							<Textarea
-								block
 								leftSection={
 									<Search className="size-4 text-muted-foreground" />
 								}
 								placeholder="Search notes..."
 							/>
 							<Textarea
-								block
 								placeholder="Description"
 								rightSection={
 									<span className="text-muted-foreground text-sm">opt.</span>
@@ -180,22 +168,24 @@ function Page() {
 						With character counter
 					</h2>
 					<ComponentPreview title="Counter inside the field">
-						<Textarea
-							block
-							maxLength={280}
-							placeholder="Write something (max 280 chars)..."
-						/>
+						<div className="w-80">
+							<Textarea
+								maxLength={280}
+								placeholder="Write something (max 280 chars)..."
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<Textarea
-							block
-							defaultValue="This textarea is disabled and cannot be edited."
-							disabled
-						/>
+						<div className="w-80">
+							<Textarea
+								defaultValue="This textarea is disabled and cannot be edited."
+								disabled
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

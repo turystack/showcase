@@ -51,12 +51,6 @@ const inputProps = [
 	},
 	{
 		default: 'false',
-		description: 'Makes the input take the full width of its container.',
-		name: 'block',
-		type: 'boolean',
-	},
-	{
-		default: 'false',
 		description: 'Disables the input, preventing interaction.',
 		name: 'disabled',
 		type: 'boolean',
@@ -95,10 +89,7 @@ const usageCode = `import { Input } from '@turystack/ui'
 <Input type="password" placeholder="Enter password" />
 
 // Loading
-<Input loading placeholder="Loading..." />
-
-// Block (full width)
-<Input block placeholder="Full width input" />`
+<Input loading placeholder="Loading..." />`
 
 function Page() {
 	return (
@@ -122,14 +113,16 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Basic</h2>
 					<ComponentPreview title="Simple text input">
-						<Input placeholder="Enter your name" />
+						<div className="w-80">
+							<Input placeholder="Enter your name" />
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Sizes</h2>
 					<ComponentPreview title="Input sizes">
-						<div className="flex flex-col gap-3">
+						<div className="flex w-80 flex-col gap-3">
 							<Input
 								placeholder="Small"
 								size="sm"
@@ -149,7 +142,7 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">With sections</h2>
 					<ComponentPreview title="Left and right sections">
-						<div className="flex flex-col gap-3">
+						<div className="flex w-80 flex-col gap-3">
 							<Input
 								leftSection={
 									<Search className="size-4 text-muted-foreground" />
@@ -169,43 +162,36 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Password</h2>
 					<ComponentPreview title="Password with toggle">
-						<Input
-							placeholder="Enter password"
-							type="password"
-						/>
+						<div className="w-80">
+							<Input
+								placeholder="Enter password"
+								type="password"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Loading</h2>
 					<ComponentPreview title="Loading state">
-						<Input
-							loading
-							placeholder="Loading..."
-						/>
+						<div className="w-80">
+							<Input
+								loading
+								placeholder="Loading..."
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<Input
-							disabled
-							placeholder="Disabled input"
-						/>
-					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Block</h2>
-					<ComponentPreview
-						className="w-80"
-						title="Full width"
-					>
-						<Input
-							block
-							placeholder="Full width input"
-						/>
+						<div className="w-80">
+							<Input
+								disabled
+								placeholder="Disabled input"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

@@ -44,12 +44,6 @@ const singleProps = [
 	},
 	{
 		default: 'false',
-		description: 'Makes the input take the full width of its container.',
-		name: 'block',
-		type: 'boolean',
-	},
-	{
-		default: 'false',
 		description: 'Disables the input, preventing interaction.',
 		name: 'disabled',
 		type: 'boolean',
@@ -115,9 +109,6 @@ const usageCode = `import { NumberInput } from '@turystack/ui'
 <NumberInput mode="single" size="md" placeholder="Medium" />
 <NumberInput mode="single" size="lg" placeholder="Large" />
 
-// Block (full width)
-<NumberInput mode="single" block placeholder="Full width" />
-
 // Loading
 <NumberInput mode="single" loading placeholder="Loading..." />
 
@@ -168,10 +159,12 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Single</h2>
 					<ComponentPreview title="Single number input">
-						<NumberInput
-							mode="single"
-							placeholder="0"
-						/>
+						<div className="w-80">
+							<NumberInput
+								mode="single"
+								placeholder="0"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -180,18 +173,20 @@ function Page() {
 						Single with step
 					</h2>
 					<ComponentPreview title="Step of 5">
-						<NumberInput
-							defaultValue={0}
-							mode="single"
-							step={5}
-						/>
+						<div className="w-80">
+							<NumberInput
+								defaultValue={0}
+								mode="single"
+								step={5}
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Sizes</h2>
 					<ComponentPreview title="Number input sizes">
-						<div className="flex flex-col gap-3">
+						<div className="flex w-80 flex-col gap-3">
 							<NumberInput
 								mode="single"
 								placeholder="Small"
@@ -212,68 +207,43 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Block</h2>
-					<ComponentPreview
-						className="w-80"
-						title="Full width"
-					>
-						<NumberInput
-							block
-							mode="single"
-							placeholder="Full width input"
-						/>
-					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Loading</h2>
 					<ComponentPreview title="Loading state">
-						<NumberInput
-							loading
-							mode="single"
-							placeholder="Loading..."
-						/>
+						<div className="w-80">
+							<NumberInput
+								loading
+								mode="single"
+								placeholder="Loading..."
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Range</h2>
 					<ComponentPreview title="Range (from / to)">
-						<NumberInput
-							defaultValue={{
-								from: 10,
-								to: 100,
-							}}
-							mode="range"
-						/>
-					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Range block</h2>
-					<ComponentPreview
-						className="w-96"
-						title="Full width range"
-					>
-						<NumberInput
-							block
-							defaultValue={{
-								from: 0,
-								to: 50,
-							}}
-							mode="range"
-						/>
+						<div className="w-80">
+							<NumberInput
+								defaultValue={{
+									from: 10,
+									to: 100,
+								}}
+								mode="range"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<NumberInput
-							defaultValue={42}
-							disabled
-							mode="single"
-						/>
+						<div className="w-80">
+							<NumberInput
+								defaultValue={42}
+								disabled
+								mode="single"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

@@ -38,12 +38,6 @@ const documentInputProps = [
 		name: 'disabled',
 		type: 'boolean',
 	},
-	{
-		default: 'false',
-		description: 'When true, the input stretches to fill its container width.',
-		name: 'block',
-		type: 'boolean',
-	},
 ]
 
 const usageCode = `import { DocumentInput } from '@turystack/ui'
@@ -93,22 +87,24 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">CPF</h2>
 					<ComponentPreview title="CPF input (000.000.000-00)">
-						<DocumentInput
-							block
-							placeholder="000.000.000-00"
-							variant="cpf"
-						/>
+						<div className="w-80">
+							<DocumentInput
+								placeholder="000.000.000-00"
+								variant="cpf"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">CNPJ</h2>
 					<ComponentPreview title="CNPJ input (00.000.000/0000-00)">
-						<DocumentInput
-							block
-							placeholder="00.000.000/0000-00"
-							variant="cnpj"
-						/>
+						<div className="w-80">
+							<DocumentInput
+								placeholder="00.000.000/0000-00"
+								variant="cnpj"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
@@ -117,22 +113,24 @@ function Page() {
 						CPF or CNPJ (auto-detect)
 					</h2>
 					<ComponentPreview title="Auto-detects based on input length">
-						<DocumentInput
-							block
-							placeholder="CPF or CNPJ"
-							variant="cpf_cnpj"
-						/>
+						<div className="w-80">
+							<DocumentInput
+								placeholder="CPF or CNPJ"
+								variant="cpf_cnpj"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
-						<DocumentInput
-							block
-							disabled
-							variant="cpf_cnpj"
-						/>
+						<div className="w-80">
+							<DocumentInput
+								disabled
+								variant="cpf_cnpj"
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 
