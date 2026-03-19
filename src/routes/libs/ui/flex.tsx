@@ -143,8 +143,8 @@ function Page() {
 										justify="{j}"
 									</p>
 									<Flex
-										justify={j}
 										gap="sm"
+										justify={j}
 									>
 										<Box label="A" />
 										<Box label="B" />
@@ -160,9 +160,19 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Gap</h2>
 					<ComponentPreview title="Gap sizes">
 						<div className="w-full space-y-3">
-							{(['xs', 'sm', 'md', 'lg', 'xl'] as const).map((g) => (
+							{(
+								[
+									'xs',
+									'sm',
+									'md',
+									'lg',
+									'xl',
+								] as const
+							).map((g) => (
 								<div key={g}>
-									<p className="mb-1 text-muted-foreground text-xs">gap="{g}"</p>
+									<p className="mb-1 text-muted-foreground text-xs">
+										gap="{g}"
+									</p>
 									<Flex gap={g}>
 										<Box label="1" />
 										<Box label="2" />

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Separator, Provider } from '@turystack/ui'
+import { Provider, Separator } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 

@@ -6,7 +6,8 @@ export function ThemeToggle() {
 
 	const isDark =
 		colorScheme === 'dark' ||
-		(colorScheme === 'system' && window.matchMedia('(prefers-color-scheme: dark)').matches)
+		(colorScheme === 'system' &&
+			window.matchMedia('(prefers-color-scheme: dark)').matches)
 
 	return (
 		<button

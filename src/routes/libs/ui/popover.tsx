@@ -22,6 +22,13 @@ const popoverProps = [
 		name: 'sideOffset',
 		type: 'number',
 	},
+	{
+		default: '"center"',
+		description:
+			'The preferred alignment of the popover relative to the trigger.',
+		name: 'align',
+		type: '"start" | "center" | "end"',
+	},
 ]
 
 const usageCode = `import { Popover, Button } from '@turystack/ui'
@@ -46,6 +53,15 @@ const usageCode = `import { Popover, Button } from '@turystack/ui'
 
 <Popover side="right" content={<div>Right popover</div>}>
   <Button>Right</Button>
+</Popover>
+
+// Alignment
+<Popover align="start" content={<div>Start-aligned</div>}>
+  <Button>Start</Button>
+</Popover>
+
+<Popover align="end" content={<div>End-aligned</div>}>
+  <Button>End</Button>
 </Popover>`
 
 function Page() {
@@ -75,8 +91,8 @@ function Page() {
 								<div className="p-3">
 									<p className="font-medium text-sm">Popover title</p>
 									<p className="mt-1 max-w-xs text-muted-foreground text-xs">
-										This is a popover with custom content. You can put any
-										React node here.
+										This is a popover with custom content. You can put any React
+										node here.
 									</p>
 								</div>
 							}
@@ -90,13 +106,45 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Sides</h2>
 					<ComponentPreview title="Popover on different sides">
 						<div className="flex flex-wrap items-center justify-center gap-4">
-							{(['top', 'right', 'bottom', 'left'] as const).map((side) => (
+							{(
+								[
+									'top',
+									'right',
+									'bottom',
+									'left',
+								] as const
+							).map((side) => (
 								<Popover
-									key={side}
 									content={<div className="p-2 text-sm">{side} popover</div>}
+									key={side}
 									side={side}
 								>
 									<Button variant="outline">{side}</Button>
+								</Popover>
+							))}
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Alignment</h2>
+					<ComponentPreview title="Popover alignment relative to trigger">
+						<div className="flex flex-wrap items-center justify-center gap-4">
+							{(
+								[
+									'start',
+									'center',
+									'end',
+								] as const
+							).map((align) => (
+								<Popover
+									align={align}
+									content={
+										<div className="p-2 text-sm">{align}-aligned popover</div>
+									}
+									key={align}
+								>
+									<Button variant="outline">{align}</Button>
 								</Popover>
 							))}
 						</div>

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Skeleton, Provider } from '@turystack/ui'
+import { Provider, Skeleton } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -47,8 +47,8 @@ function Page() {
 						Skeleton
 					</h1>
 					<p className="mt-3 text-lg text-muted-foreground">
-						A pulsing placeholder used to represent loading content. Pass
-						sizing classes directly via <code>className</code>.
+						A pulsing placeholder used to represent loading content. Pass sizing
+						classes directly via <code>className</code>.
 					</p>
 				</div>
 
@@ -91,7 +91,9 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Table skeleton</h2>
 					<ComponentPreview title="Table rows loading state">
 						<div className="w-full max-w-md space-y-2">
-							{Array.from({ length: 4 }).map((_, i) => (
+							{Array.from({
+								length: 4,
+							}).map((_, i) => (
 								<div
 									className="flex gap-4"
 									key={i}

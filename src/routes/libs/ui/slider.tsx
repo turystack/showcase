@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Slider, Provider } from '@turystack/ui'
+import { Provider, Slider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -145,7 +145,10 @@ function Page() {
 					<ComponentPreview title="Horizontal range slider (two thumbs)">
 						<div className="w-full max-w-sm">
 							<Slider
-								defaultValue={[20, 80]}
+								defaultValue={[
+									20,
+									80,
+								]}
 								mode="range"
 								orientation="horizontal"
 							/>

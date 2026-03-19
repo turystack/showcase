@@ -13,12 +13,14 @@ const formProps = [
 
 const fieldProps = [
 	{
-		description: 'Label for the field. Accepts a plain string or a label config object.',
+		description:
+			'Label for the field. Accepts a plain string or a label config object.',
 		name: 'label',
 		type: 'string | { content: string; required?: boolean; optional?: boolean; disabled?: boolean; tooltip?: React.ReactNode }',
 	},
 	{
-		description: 'The id of the associated form control — passed as htmlFor to the label.',
+		description:
+			'The id of the associated form control — passed as htmlFor to the label.',
 		name: 'name',
 		type: 'string',
 	},
@@ -41,7 +43,8 @@ const fieldSetProps = [
 		type: 'string',
 	},
 	{
-		description: 'Tooltip shown on an info icon next to the legend. Accepts a string or a TooltipProps object.',
+		description:
+			'Tooltip shown on an info icon next to the legend. Accepts a string or a TooltipProps object.',
 		name: 'tooltip',
 		type: 'string | TooltipProps',
 	},
@@ -92,7 +95,9 @@ function Page() {
 					</h1>
 					<p className="mt-3 text-lg text-muted-foreground">
 						A compound component for building accessible, well-structured forms.
-						<code className="mx-1 rounded bg-muted px-1 py-0.5 text-sm">Form.Field</code>
+						<code className="mx-1 rounded bg-muted px-1 py-0.5 text-sm">
+							Form.Field
+						</code>
 						composes label, description, and error automatically from props.
 					</p>
 				</div>
@@ -103,12 +108,16 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Form.Field Props</h2>
+					<h2 className="font-display font-semibold text-xl">
+						Form.Field Props
+					</h2>
 					<PropsTable props={fieldProps} />
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Form.FieldSet Props</h2>
+					<h2 className="font-display font-semibold text-xl">
+						Form.FieldSet Props
+					</h2>
 					<PropsTable props={fieldSetProps} />
 				</div>
 
@@ -118,23 +127,29 @@ function Page() {
 						<div className="w-full max-w-sm">
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.Field
-									name="email"
-									label={{ content: 'Email', required: true }}
 									description="We'll never share your email."
+									label={{
+										content: 'Email',
+										required: true,
+									}}
+									name="email"
 								>
 									<Input
-										id="email"
 										block
+										id="email"
 										placeholder="you@example.com"
 									/>
 								</Form.Field>
 								<Form.Field
+									label={{
+										content: 'Password',
+										required: true,
+									}}
 									name="password"
-									label={{ content: 'Password', required: true }}
 								>
 									<Input
-										id="password"
 										block
+										id="password"
 										placeholder="••••••••"
 										type="password"
 									/>
@@ -156,14 +171,17 @@ function Page() {
 						<div className="w-full max-w-sm">
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.Field
-									name="email"
-									label={{ content: 'Email', required: true }}
 									error="Please enter a valid email address."
+									label={{
+										content: 'Email',
+										required: true,
+									}}
+									name="email"
 								>
 									<Input
-										id="email"
 										block
 										defaultValue="not-an-email"
+										id="email"
 									/>
 								</Form.Field>
 							</Form>
@@ -177,13 +195,17 @@ function Page() {
 						<div className="w-full max-w-sm">
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.Field
-									name="api-key"
-									label={{ content: 'API Key', required: true, tooltip: 'Find your API key in the developer settings.' }}
 									description="Keep this secret — never share it publicly."
+									label={{
+										content: 'API Key',
+										required: true,
+										tooltip: 'Find your API key in the developer settings.',
+									}}
+									name="api-key"
 								>
 									<Input
-										id="api-key"
 										block
+										id="api-key"
 										placeholder="sk-••••••••"
 									/>
 								</Form.Field>
@@ -199,22 +221,28 @@ function Page() {
 							<Form onSubmit={(e) => e.preventDefault()}>
 								<Form.FieldSet legend="Contact details">
 									<Form.Field
+										label={{
+											content: 'Phone',
+											optional: true,
+										}}
 										name="phone"
-										label={{ content: 'Phone', optional: true }}
 									>
 										<Input
-											id="phone"
 											block
+											id="phone"
 											placeholder="+1 555 000 0000"
 										/>
 									</Form.Field>
 									<Form.Field
+										label={{
+											content: 'Website',
+											optional: true,
+										}}
 										name="website"
-										label={{ content: 'Website', optional: true }}
 									>
 										<Input
-											id="website"
 											block
+											id="website"
 											placeholder="https://example.com"
 										/>
 									</Form.Field>
@@ -225,7 +253,9 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">FieldSet with tooltip</h2>
+					<h2 className="font-display font-semibold text-xl">
+						FieldSet with tooltip
+					</h2>
 					<ComponentPreview title="Legend info tooltip">
 						<div className="w-full max-w-sm">
 							<Form onSubmit={(e) => e.preventDefault()}>
@@ -233,11 +263,25 @@ function Page() {
 									legend="Billing address"
 									tooltip="This address will appear on your invoices and receipts."
 								>
-									<Form.Field name="address" label="Street address">
-										<Input id="address" block placeholder="123 Main St" />
+									<Form.Field
+										label="Street address"
+										name="address"
+									>
+										<Input
+											block
+											id="address"
+											placeholder="123 Main St"
+										/>
 									</Form.Field>
-									<Form.Field name="city" label="City">
-										<Input id="city" block placeholder="San Francisco" />
+									<Form.Field
+										label="City"
+										name="city"
+									>
+										<Input
+											block
+											id="city"
+											placeholder="San Francisco"
+										/>
 									</Form.Field>
 								</Form.FieldSet>
 							</Form>

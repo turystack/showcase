@@ -1,6 +1,14 @@
 import { createFileRoute } from '@tanstack/react-router'
 import { Button, DropdownMenu, Provider } from '@turystack/ui'
-import { ChevronRight, Copy, Edit, LogOut, MoreVertical, Settings, Trash } from 'lucide-react'
+import {
+	ChevronRight,
+	Copy,
+	Edit,
+	LogOut,
+	MoreVertical,
+	Settings,
+	Trash,
+} from 'lucide-react'
 import { useState } from 'react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
@@ -39,6 +47,16 @@ const contentProps = [
 	},
 ]
 
+const triggerProps = [
+	{
+		default: 'false',
+		description:
+			'Merges props onto the child element instead of rendering a wrapper.',
+		name: 'asChild',
+		type: 'boolean',
+	},
+]
+
 const itemProps = [
 	{
 		default: '"default"',
@@ -53,9 +71,81 @@ const itemProps = [
 		type: 'boolean',
 	},
 	{
+		default: 'false',
+		description:
+			'Merges props onto the child element instead of rendering a wrapper.',
+		name: 'asChild',
+		type: 'boolean',
+	},
+	{
 		description: 'Handler called when the item is clicked.',
 		name: 'onClick',
 		type: 'React.MouseEventHandler<HTMLDivElement>',
+	},
+]
+
+const checkboxItemProps = [
+	{
+		description: 'Whether the checkbox item is checked.',
+		name: 'checked',
+		type: 'boolean',
+	},
+	{
+		default: 'false',
+		description: 'Disables the checkbox item, preventing interaction.',
+		name: 'disabled',
+		type: 'boolean',
+	},
+	{
+		description: 'Handler called when the checked state changes.',
+		name: 'onCheckedChange',
+		type: '(checked: boolean) => void',
+	},
+]
+
+const radioGroupProps = [
+	{
+		description: 'The value of the currently selected radio item.',
+		name: 'value',
+		type: 'string',
+	},
+	{
+		description: 'Handler called when the selected value changes.',
+		name: 'onValueChange',
+		type: '(value: string) => void',
+	},
+]
+
+const radioItemProps = [
+	{
+		description: 'The unique value for this radio item.',
+		name: 'value',
+		required: true,
+		type: 'string',
+	},
+	{
+		default: 'false',
+		description: 'Disables the radio item, preventing interaction.',
+		name: 'disabled',
+		type: 'boolean',
+	},
+]
+
+const labelProps = [
+	{
+		default: 'false',
+		description: 'Adds left padding to align with items that have icons.',
+		name: 'inset',
+		type: 'boolean',
+	},
+]
+
+const subTriggerProps = [
+	{
+		default: 'false',
+		description: 'Adds left padding to align with items that have icons.',
+		name: 'inset',
+		type: 'boolean',
 	},
 ]
 
@@ -114,6 +204,46 @@ const [sort, setSort] = useState('name')
       <DropdownMenu.RadioItem value="date">Date</DropdownMenu.RadioItem>
     </DropdownMenu.RadioGroup>
   </DropdownMenu.Content>
+</DropdownMenu>
+
+// With submenu
+<DropdownMenu>
+  <DropdownMenu.Trigger asChild>
+    <Button variant="outline">Open menu</Button>
+  </DropdownMenu.Trigger>
+  <DropdownMenu.Content>
+    <DropdownMenu.Item>Settings</DropdownMenu.Item>
+    <DropdownMenu.Sub>
+      <DropdownMenu.SubTrigger>Share</DropdownMenu.SubTrigger>
+      <DropdownMenu.SubContent>
+        <DropdownMenu.Item>Email</DropdownMenu.Item>
+        <DropdownMenu.Item>Slack</DropdownMenu.Item>
+      </DropdownMenu.SubContent>
+    </DropdownMenu.Sub>
+    <DropdownMenu.Separator />
+    <DropdownMenu.Item variant="destructive">Delete</DropdownMenu.Item>
+  </DropdownMenu.Content>
+</DropdownMenu>
+
+// With shortcuts and groups
+<DropdownMenu>
+  <DropdownMenu.Trigger asChild>
+    <Button variant="outline">Edit</Button>
+  </DropdownMenu.Trigger>
+  <DropdownMenu.Content>
+    <DropdownMenu.Group>
+      <DropdownMenu.Label>Edit</DropdownMenu.Label>
+      <DropdownMenu.Item>
+        Cut <DropdownMenu.Shortcut>\u2318X</DropdownMenu.Shortcut>
+      </DropdownMenu.Item>
+      <DropdownMenu.Item>
+        Copy <DropdownMenu.Shortcut>\u2318C</DropdownMenu.Shortcut>
+      </DropdownMenu.Item>
+      <DropdownMenu.Item>
+        Paste <DropdownMenu.Shortcut>\u2318V</DropdownMenu.Shortcut>
+      </DropdownMenu.Item>
+    </DropdownMenu.Group>
+  </DropdownMenu.Content>
 </DropdownMenu>`
 
 function CheckboxDemo() {
@@ -163,10 +293,17 @@ function RadioDemo() {
 			<DropdownMenu.Content>
 				<DropdownMenu.Label>Sort by</DropdownMenu.Label>
 				<DropdownMenu.Separator />
-				<DropdownMenu.RadioGroup value={sort} onValueChange={setSort}>
+				<DropdownMenu.RadioGroup
+					onValueChange={setSort}
+					value={sort}
+				>
 					<DropdownMenu.RadioItem value="name">Name</DropdownMenu.RadioItem>
-					<DropdownMenu.RadioItem value="date">Date created</DropdownMenu.RadioItem>
-					<DropdownMenu.RadioItem value="updated">Last updated</DropdownMenu.RadioItem>
+					<DropdownMenu.RadioItem value="date">
+						Date created
+					</DropdownMenu.RadioItem>
+					<DropdownMenu.RadioItem value="updated">
+						Last updated
+					</DropdownMenu.RadioItem>
 				</DropdownMenu.RadioGroup>
 			</DropdownMenu.Content>
 		</DropdownMenu>
@@ -197,6 +334,13 @@ function Page() {
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.Trigger Props
+					</h2>
+					<PropsTable props={triggerProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
 						DropdownMenu.Content Props
 					</h2>
 					<PropsTable props={contentProps} />
@@ -207,6 +351,88 @@ function Page() {
 						DropdownMenu.Item Props
 					</h2>
 					<PropsTable props={itemProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.Label Props
+					</h2>
+					<PropsTable props={labelProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.Separator
+					</h2>
+					<p className="text-muted-foreground text-sm">
+						A visual divider between groups of items. No props.
+					</p>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.CheckboxItem Props
+					</h2>
+					<PropsTable props={checkboxItemProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.RadioGroup Props
+					</h2>
+					<PropsTable props={radioGroupProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.RadioItem Props
+					</h2>
+					<PropsTable props={radioItemProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.Sub
+					</h2>
+					<p className="text-muted-foreground text-sm">
+						Wrapper for a submenu. Contains SubTrigger and SubContent. No props.
+					</p>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.SubTrigger Props
+					</h2>
+					<PropsTable props={subTriggerProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.SubContent
+					</h2>
+					<p className="text-muted-foreground text-sm">
+						The content area for a submenu. Renders inside DropdownMenu.Sub
+						alongside a SubTrigger. No props.
+					</p>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.Group
+					</h2>
+					<p className="text-muted-foreground text-sm">
+						Groups related items together. No props.
+					</p>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						DropdownMenu.Shortcut
+					</h2>
+					<p className="text-muted-foreground text-sm">
+						Renders keyboard shortcut text aligned to the right of an item. No
+						props.
+					</p>
 				</div>
 
 				<div className="space-y-4">
@@ -289,7 +515,10 @@ function Page() {
 					<ComponentPreview title="Icon-only trigger button">
 						<DropdownMenu>
 							<DropdownMenu.Trigger asChild>
-								<button className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground">
+								<button
+									className="inline-flex h-8 w-8 items-center justify-center rounded-md border border-input bg-background hover:bg-accent hover:text-accent-foreground"
+									type="button"
+								>
 									<MoreVertical className="h-4 w-4" />
 								</button>
 							</DropdownMenu.Trigger>

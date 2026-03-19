@@ -1,9 +1,6 @@
 import { createHighlighter } from 'shiki'
 
 const highlighterPromise = createHighlighter({
-	themes: [
-		'github-dark',
-	],
 	langs: [
 		'tsx',
 		'typescript',
@@ -11,6 +8,9 @@ const highlighterPromise = createHighlighter({
 		'jsx',
 		'bash',
 		'json',
+	],
+	themes: [
+		'github-dark',
 	],
 })
 

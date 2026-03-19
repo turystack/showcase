@@ -6,7 +6,8 @@ import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 const currencyInputProps = [
 	{
 		default: '"single"',
-		description: 'Input mode. "single" for a single numeric value, "range" for a from/to range.',
+		description:
+			'Input mode. "single" for a single numeric value, "range" for a from/to range.',
 		name: 'mode',
 		type: '"single" | "range"',
 	},
@@ -17,7 +18,8 @@ const currencyInputProps = [
 		type: '"brl" | "usd" | "eur"',
 	},
 	{
-		description: 'The controlled value. A number for single mode, { from?, to? } for range mode.',
+		description:
+			'The controlled value. A number for single mode, { from?, to? } for range mode.',
 		name: 'value',
 		type: 'number | null | { from?: number | null; to?: number | null }',
 	},
@@ -38,6 +40,16 @@ const currencyInputProps = [
 		type: '"sm" | "md" | "lg"',
 	},
 	{
+		description: 'Content rendered on the left side of the input.',
+		name: 'leftSection',
+		type: 'React.ReactNode',
+	},
+	{
+		description: 'Content rendered on the right side of the input.',
+		name: 'rightSection',
+		type: 'React.ReactNode',
+	},
+	{
 		default: 'false',
 		description: 'Makes the input take the full width of its container.',
 		name: 'block',
@@ -50,8 +62,19 @@ const currencyInputProps = [
 		type: 'boolean',
 	},
 	{
+		default: 'false',
+		description: 'Shows a loading spinner in the input.',
+		name: 'loading',
+		type: 'boolean',
+	},
+	{
 		description:
-			'Handler called when the value changes.',
+			'Additional CSS class name applied to the root wrapper element.',
+		name: 'rootClassName',
+		type: 'string',
+	},
+	{
+		description: 'Handler called when the value changes.',
 		name: 'onChange',
 		type: '(value: number | null) => void | (value: { from?: number | null; to?: number | null }) => void',
 	},
@@ -66,7 +89,35 @@ const usageCode = `import { CurrencyInput } from '@turystack/ui'
 <CurrencyInput currency="usd" placeholder="$0.00" />
 
 // Euro
-<CurrencyInput currency="eur" placeholder="0,00 €" />`
+<CurrencyInput currency="eur" placeholder="0,00 €" />
+
+// Sizes
+<CurrencyInput currency="brl" size="sm" placeholder="Small" />
+<CurrencyInput currency="brl" size="md" placeholder="Medium" />
+<CurrencyInput currency="brl" size="lg" placeholder="Large" />
+
+// Block (full width)
+<CurrencyInput currency="brl" block placeholder="R$ 0,00" />
+
+// Loading
+<CurrencyInput currency="brl" loading placeholder="Loading..." />
+
+// Range mode
+<CurrencyInput
+  mode="range"
+  currency="brl"
+  placeholder="Select price range"
+/>
+
+// Controlled
+const [price, setPrice] = useState<number | null>(null)
+
+<CurrencyInput
+  currency="brl"
+  value={price}
+  onChange={setPrice}
+  placeholder="R$ 0,00"
+/>`
 
 function Page() {
 	return (
@@ -122,11 +173,59 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Sizes</h2>
+					<ComponentPreview title="Currency input sizes">
+						<div className="flex flex-col gap-3">
+							<CurrencyInput
+								currency="brl"
+								placeholder="Small"
+								size="sm"
+							/>
+							<CurrencyInput
+								currency="brl"
+								placeholder="Medium"
+								size="md"
+							/>
+							<CurrencyInput
+								currency="brl"
+								placeholder="Large"
+								size="lg"
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Block</h2>
+					<ComponentPreview
+						className="w-80"
+						title="Full width"
+					>
+						<CurrencyInput
+							block
+							currency="brl"
+							placeholder="R$ 0,00"
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Loading</h2>
+					<ComponentPreview title="Loading state">
+						<CurrencyInput
+							currency="brl"
+							loading
+							placeholder="Loading..."
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
 						<CurrencyInput
-							disabled
 							currency="brl"
+							disabled
 							placeholder="Disabled"
 						/>
 					</ComponentPreview>
@@ -136,8 +235,8 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Range mode</h2>
 					<ComponentPreview title="From / To range picker">
 						<CurrencyInput
-							mode="range"
 							currency="brl"
+							mode="range"
 							placeholder="Select price range"
 						/>
 					</ComponentPreview>

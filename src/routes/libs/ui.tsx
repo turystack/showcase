@@ -1,4 +1,4 @@
-import { createFileRoute, Outlet } from '@tanstack/react-router'
+import { createFileRoute, Outlet, useMatchRoute } from '@tanstack/react-router'
 
 import { LibraryLayout } from '@/layout'
 
@@ -17,8 +17,33 @@ const sections: SidebarSection[] = [
 	{
 		items: [
 			{
+				label: 'Playground',
+				to: '/libs/ui/playground',
+			},
+		],
+		title: 'Playground',
+	},
+	{
+		items: [
+			{
 				label: 'Provider',
 				to: '/libs/ui/provider',
+			},
+			{
+				label: 'Theme',
+				to: '/libs/ui/theme',
+			},
+			{
+				label: 'ColorScheme',
+				to: '/libs/ui/color-scheme',
+			},
+			{
+				label: 'Layout',
+				to: '/libs/ui/layout',
+			},
+			{
+				label: 'I18n',
+				to: '/libs/ui/i18n',
 			},
 		],
 		title: 'Core',
@@ -141,10 +166,6 @@ const sections: SidebarSection[] = [
 						to: '/libs/ui/grid',
 					},
 					{
-						label: 'Layout',
-						to: '/libs/ui/layout',
-					},
-					{
 						label: 'Separator',
 						to: '/libs/ui/separator',
 					},
@@ -231,8 +252,14 @@ const sections: SidebarSection[] = [
 ]
 
 function Page() {
+	const matchRoute = useMatchRoute()
+	const isPlayground = matchRoute({
+		to: '/libs/ui/playground',
+	})
+
 	return (
 		<LibraryLayout
+			contentClassName={isPlayground ? 'max-w-none py-8 px-10' : undefined}
 			githubUrl="https://github.com/turystack/ui"
 			libraryName="@tury/ui"
 			sections={sections}

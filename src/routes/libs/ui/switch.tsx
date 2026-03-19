@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Switch, Provider } from '@turystack/ui'
+import { Provider, Switch } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -114,8 +114,8 @@ function Page() {
 							<Switch />
 							<Switch label="Enable notifications" />
 							<Switch
-								label="Marketing emails"
 								description="Receive emails about new products and features."
+								label="Marketing emails"
 							/>
 						</div>
 					</ComponentPreview>
@@ -126,19 +126,19 @@ function Page() {
 					<ComponentPreview title="Switch in sm, md and lg">
 						<div className="flex flex-col gap-4">
 							<Switch
-								size="sm"
+								defaultChecked
 								label="Small"
-								defaultChecked
+								size="sm"
 							/>
 							<Switch
-								size="md"
+								defaultChecked
 								label="Medium"
-								defaultChecked
+								size="md"
 							/>
 							<Switch
-								size="lg"
-								label="Large"
 								defaultChecked
+								label="Large"
+								size="lg"
 							/>
 						</div>
 					</ComponentPreview>
@@ -163,14 +163,14 @@ function Page() {
 						<div className="w-full max-w-md space-y-3">
 							<Switch
 								bordered
-								label="Dark mode"
 								description="Use dark theme across the application."
+								label="Dark mode"
 							/>
 							<Switch
 								bordered
 								defaultChecked
-								label="Auto-save"
 								description="Automatically save your work every minute."
+								label="Auto-save"
 							/>
 						</div>
 					</ComponentPreview>
@@ -181,13 +181,13 @@ function Page() {
 					<ComponentPreview title="Disabled state">
 						<div className="flex flex-col gap-3">
 							<Switch
-								label="Disabled (off)"
 								disabled
+								label="Disabled (off)"
 							/>
 							<Switch
-								label="Disabled (on)"
-								disabled
 								defaultChecked
+								disabled
+								label="Disabled (on)"
 							/>
 						</div>
 					</ComponentPreview>

@@ -111,9 +111,27 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Sizes</h2>
 					<ComponentPreview title="sm / md / lg">
 						<div className="flex flex-col items-start gap-4">
-							<OTPInput pattern={[3, 3]} size="sm" />
-							<OTPInput pattern={[3, 3]} size="md" />
-							<OTPInput pattern={[3, 3]} size="lg" />
+							<OTPInput
+								pattern={[
+									3,
+									3,
+								]}
+								size="sm"
+							/>
+							<OTPInput
+								pattern={[
+									3,
+									3,
+								]}
+								size="md"
+							/>
+							<OTPInput
+								pattern={[
+									3,
+									3,
+								]}
+								size="lg"
+							/>
 						</div>
 					</ComponentPreview>
 				</div>

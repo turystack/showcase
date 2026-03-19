@@ -23,20 +23,20 @@ function Page() {
 				<CodeBlock
 					tabs={[
 						{
-							label: 'npm',
 							code: 'npm install @tury/common',
+							label: 'npm',
 						},
 						{
-							label: 'pnpm',
 							code: 'pnpm add @tury/common',
+							label: 'pnpm',
 						},
 						{
-							label: 'yarn',
 							code: 'yarn add @tury/common',
+							label: 'yarn',
 						},
 						{
-							label: 'bun',
 							code: 'bun add @tury/common',
+							label: 'bun',
 						},
 					]}
 				/>

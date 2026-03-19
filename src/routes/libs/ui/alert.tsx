@@ -139,7 +139,7 @@ function Page() {
 										improvements.
 									</Alert.Description>
 									<Alert.Action>
-										<button className="t:text-sm t:font-medium t:underline t:underline-offset-4">
+										<button className="t:font-medium t:text-sm t:underline t:underline-offset-4">
 											Update now
 										</button>
 									</Alert.Action>
@@ -193,9 +193,9 @@ function Page() {
 					<ComponentPreview title="Closable destructive alert">
 						<div className="w-full max-w-lg">
 							<Alert
-								variant="destructive"
 								closable
 								onClose={() => console.log('Destructive alert closed')}
+								variant="destructive"
 							>
 								<Alert.Icon>
 									<AlertCircle className="h-4 w-4" />

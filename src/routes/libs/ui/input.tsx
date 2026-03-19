@@ -1,6 +1,6 @@
-import { Search } from 'lucide-react'
 import { createFileRoute } from '@tanstack/react-router'
 import { Input, Provider } from '@turystack/ui'
+import { Search } from 'lucide-react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -131,16 +131,16 @@ function Page() {
 					<ComponentPreview title="Input sizes">
 						<div className="flex flex-col gap-3">
 							<Input
-								size="sm"
 								placeholder="Small"
+								size="sm"
 							/>
 							<Input
-								size="md"
 								placeholder="Medium"
+								size="md"
 							/>
 							<Input
-								size="lg"
 								placeholder="Large"
+								size="lg"
 							/>
 						</div>
 					</ComponentPreview>
@@ -157,10 +157,10 @@ function Page() {
 								placeholder="Search..."
 							/>
 							<Input
+								placeholder="Weight"
 								rightSection={
 									<span className="text-muted-foreground text-sm">kg</span>
 								}
-								placeholder="Weight"
 							/>
 						</div>
 					</ComponentPreview>
@@ -170,8 +170,8 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Password</h2>
 					<ComponentPreview title="Password with toggle">
 						<Input
-							type="password"
 							placeholder="Enter password"
+							type="password"
 						/>
 					</ComponentPreview>
 				</div>
@@ -198,7 +198,10 @@ function Page() {
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Block</h2>
-					<ComponentPreview className="w-80" title="Full width">
+					<ComponentPreview
+						className="w-80"
+						title="Full width"
+					>
 						<Input
 							block
 							placeholder="Full width input"

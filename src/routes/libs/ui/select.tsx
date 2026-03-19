@@ -1,6 +1,6 @@
-import { useCallback, useEffect, useRef, useState } from 'react'
 import { createFileRoute } from '@tanstack/react-router'
-import { Select, Provider } from '@turystack/ui'
+import { Provider, Select } from '@turystack/ui'
+import { useCallback, useEffect, useRef, useState } from 'react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -28,22 +28,74 @@ const singleOptions = [
 ]
 
 const groupedOptions = [
-	{ label: 'React', value: 'react', category: 'Frontend' },
-	{ label: 'Vue', value: 'vue', category: 'Frontend' },
-	{ label: 'Angular', value: 'angular', category: 'Frontend' },
-	{ label: 'Express', value: 'express', category: 'Backend' },
-	{ label: 'Fastify', value: 'fastify', category: 'Backend' },
-	{ label: 'NestJS', value: 'nestjs', category: 'Backend' },
-	{ label: 'PostgreSQL', value: 'postgres', category: 'Database' },
-	{ label: 'MongoDB', value: 'mongodb', category: 'Database' },
+	{
+		category: 'Frontend',
+		label: 'React',
+		value: 'react',
+	},
+	{
+		category: 'Frontend',
+		label: 'Vue',
+		value: 'vue',
+	},
+	{
+		category: 'Frontend',
+		label: 'Angular',
+		value: 'angular',
+	},
+	{
+		category: 'Backend',
+		label: 'Express',
+		value: 'express',
+	},
+	{
+		category: 'Backend',
+		label: 'Fastify',
+		value: 'fastify',
+	},
+	{
+		category: 'Backend',
+		label: 'NestJS',
+		value: 'nestjs',
+	},
+	{
+		category: 'Database',
+		label: 'PostgreSQL',
+		value: 'postgres',
+	},
+	{
+		category: 'Database',
+		label: 'MongoDB',
+		value: 'mongodb',
+	},
 ]
 
 const colorOptions = [
-	{ label: 'React', value: 'react', color: '#61DAFB' },
-	{ label: 'Vue', value: 'vue', color: '#4FC08D' },
-	{ label: 'Angular', value: 'angular', color: '#DD0031' },
-	{ label: 'Svelte', value: 'svelte', color: '#FF3E00' },
-	{ label: 'Solid', value: 'solid', color: '#2C4F7C' },
+	{
+		color: '#61DAFB',
+		label: 'React',
+		value: 'react',
+	},
+	{
+		color: '#4FC08D',
+		label: 'Vue',
+		value: 'vue',
+	},
+	{
+		color: '#DD0031',
+		label: 'Angular',
+		value: 'angular',
+	},
+	{
+		color: '#FF3E00',
+		label: 'Svelte',
+		value: 'svelte',
+	},
+	{
+		color: '#2C4F7C',
+		label: 'Solid',
+		value: 'solid',
+	},
 ]
 
 const selectProps = [
@@ -78,8 +130,7 @@ const selectProps = [
 		type: 'keyof T | ((option: T) => string)',
 	},
 	{
-		description:
-			'The controlled selected value (single) or values (multiple).',
+		description: 'The controlled selected value (single) or values (multiple).',
 		name: 'value',
 		type: 'I | null (single) | I[] (multiple)',
 	},
@@ -281,10 +332,15 @@ const handleLoadMore = () => {
 const PAGE_SIZE = 20
 
 function generateItems(start: number, count: number) {
-	return Array.from({ length: count }, (_, i) => ({
-		label: `Item ${start + i + 1}`,
-		value: `item-${start + i + 1}`,
-	}))
+	return Array.from(
+		{
+			length: count,
+		},
+		(_, i) => ({
+			label: `Item ${start + i + 1}`,
+			value: `item-${start + i + 1}`,
+		}),
+	)
 }
 
 function InfiniteScrollExample() {
@@ -304,10 +360,15 @@ function InfiniteScrollExample() {
 		if (loadingMore) return
 		setLoadingMore(true)
 		timerRef.current = setTimeout(() => {
-			setItems((prev) => [...prev, ...generateItems(prev.length, PAGE_SIZE)])
+			setItems((prev) => [
+				...prev,
+				...generateItems(prev.length, PAGE_SIZE),
+			])
 			setLoadingMore(false)
 		}, 800)
-	}, [loadingMore])
+	}, [
+		loadingMore,
+	])
 
 	return (
 		<Select
@@ -319,8 +380,8 @@ function InfiniteScrollExample() {
 			}}
 			mode="single"
 			optionLabel="label"
-			optionValue="value"
 			options={items}
+			optionValue="value"
 			placeholder={`Select from ${totalItems} items`}
 		/>
 	)
@@ -351,8 +412,8 @@ function Page() {
 						<Select
 							mode="single"
 							optionLabel="label"
-							optionValue="value"
 							options={singleOptions}
+							optionValue="value"
 							placeholder="Choose a framework"
 						/>
 					</ComponentPreview>
@@ -366,8 +427,8 @@ function Page() {
 						<Select
 							mode="multiple"
 							optionLabel="label"
-							optionValue="value"
 							options={singleOptions}
+							optionValue="value"
 							placeholder="Choose frameworks"
 						/>
 					</ComponentPreview>
@@ -386,8 +447,8 @@ function Page() {
 							mode="single"
 							optionGroup="category"
 							optionLabel="label"
-							optionValue="value"
 							options={groupedOptions}
+							optionValue="value"
 							placeholder="Choose a technology"
 						/>
 					</ComponentPreview>
@@ -402,8 +463,8 @@ function Page() {
 							mode="multiple"
 							optionGroup="category"
 							optionLabel="label"
-							optionValue="value"
 							options={groupedOptions}
+							optionValue="value"
 							placeholder="Choose technologies"
 						/>
 					</ComponentPreview>
@@ -422,23 +483,23 @@ function Page() {
 						<Select
 							mode="single"
 							optionLabel="label"
-							optionValue="value"
 							options={colorOptions}
+							optionValue="value"
 							placeholder="Choose a framework"
 							renderOption={(option) => (
 								<div
 									style={{
-										display: 'flex',
 										alignItems: 'center',
+										display: 'flex',
 										gap: 8,
 									}}
 								>
 									<span
 										style={{
-											width: 10,
-											height: 10,
-											borderRadius: '50%',
 											backgroundColor: option.color,
+											borderRadius: '50%',
+											height: 10,
+											width: 10,
 										}}
 									/>
 									{option.label}
@@ -447,17 +508,17 @@ function Page() {
 							renderValue={(option) => (
 								<div
 									style={{
-										display: 'flex',
 										alignItems: 'center',
+										display: 'flex',
 										gap: 8,
 									}}
 								>
 									<span
 										style={{
-											width: 10,
-											height: 10,
-											borderRadius: '50%',
 											backgroundColor: option.color,
+											borderRadius: '50%',
+											height: 10,
+											width: 10,
 										}}
 									/>
 									{option.label}
@@ -473,9 +534,8 @@ function Page() {
 					</h2>
 					<p className="text-muted-foreground text-sm">
 						Use the <code>infinite</code> prop to load more options as the user
-						scrolls to the bottom of the list. Pass{' '}
-						<code>hasMore</code>, <code>loadingMore</code>, and{' '}
-						<code>onLoadMore</code>.
+						scrolls to the bottom of the list. Pass <code>hasMore</code>,{' '}
+						<code>loadingMore</code>, and <code>onLoadMore</code>.
 					</p>
 					<ComponentPreview title="Scroll to load more (100 items total)">
 						<InfiniteScrollExample />
@@ -489,8 +549,8 @@ function Page() {
 							disabled
 							mode="single"
 							optionLabel="label"
-							optionValue="value"
 							options={singleOptions}
+							optionValue="value"
 							placeholder="Disabled"
 						/>
 					</ComponentPreview>
@@ -503,8 +563,8 @@ function Page() {
 							loading
 							mode="single"
 							optionLabel="label"
-							optionValue="value"
 							options={singleOptions}
+							optionValue="value"
 							placeholder="Loading..."
 						/>
 					</ComponentPreview>
@@ -517,8 +577,8 @@ function Page() {
 							block
 							mode="single"
 							optionLabel="label"
-							optionValue="value"
 							options={singleOptions}
+							optionValue="value"
 							placeholder="Full width"
 						/>
 					</ComponentPreview>
@@ -534,9 +594,7 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">
-						Grouped Usage
-					</h2>
+					<h2 className="font-display font-semibold text-xl">Grouped Usage</h2>
 					<CodeBlock
 						code={groupedCode}
 						filename="grouped.tsx"

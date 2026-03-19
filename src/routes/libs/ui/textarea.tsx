@@ -1,5 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Textarea, Provider } from '@turystack/ui'
+import { Provider, Textarea } from '@turystack/ui'
+import { Search } from 'lucide-react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
@@ -20,7 +21,24 @@ const textareaProps = [
 		type: 'string',
 	},
 	{
-		description: 'Maximum number of characters allowed. Shows a counter inside the field when set.',
+		default: '"md"',
+		description: 'The size of the textarea.',
+		name: 'size',
+		type: '"sm" | "md" | "lg"',
+	},
+	{
+		description: 'Content rendered on the left side of the textarea.',
+		name: 'leftSection',
+		type: 'React.ReactNode',
+	},
+	{
+		description: 'Content rendered on the right side of the textarea.',
+		name: 'rightSection',
+		type: 'React.ReactNode',
+	},
+	{
+		description:
+			'Maximum number of characters allowed. Shows a counter inside the field when set.',
 		name: 'maxLength',
 		type: 'number',
 	},
@@ -37,10 +55,10 @@ const textareaProps = [
 		type: 'boolean',
 	},
 	{
-		default: 'false',
-		description: 'Shows a loading spinner.',
-		name: 'loading',
-		type: 'boolean',
+		description:
+			'Additional CSS class name applied to the root wrapper element.',
+		name: 'rootClassName',
+		type: 'string',
 	},
 	{
 		description:
@@ -54,6 +72,18 @@ const usageCode = `import { Textarea } from '@turystack/ui'
 
 // Basic — auto-expands as you type
 <Textarea placeholder="Enter a description..." />
+
+// Sizes
+<Textarea size="sm" placeholder="Small" />
+<Textarea size="md" placeholder="Medium" />
+<Textarea size="lg" placeholder="Large" />
+
+// With sections
+<Textarea
+  leftSection={<Search className="size-4 text-muted-foreground" />}
+  placeholder="Search notes..."
+  block
+/>
 
 // With character counter (shown inside bottom-right)
 <Textarea
@@ -100,6 +130,48 @@ function Page() {
 							block
 							placeholder="Enter a description..."
 						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Sizes</h2>
+					<ComponentPreview title="Textarea sizes">
+						<div className="flex flex-col gap-3">
+							<Textarea
+								placeholder="Small"
+								size="sm"
+							/>
+							<Textarea
+								placeholder="Medium"
+								size="md"
+							/>
+							<Textarea
+								placeholder="Large"
+								size="lg"
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">With sections</h2>
+					<ComponentPreview title="Left and right sections">
+						<div className="flex flex-col gap-3">
+							<Textarea
+								block
+								leftSection={
+									<Search className="size-4 text-muted-foreground" />
+								}
+								placeholder="Search notes..."
+							/>
+							<Textarea
+								block
+								placeholder="Description"
+								rightSection={
+									<span className="text-muted-foreground text-sm">opt.</span>
+								}
+							/>
+						</div>
 					</ComponentPreview>
 				</div>
 

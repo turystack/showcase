@@ -1,11 +1,12 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Radio, Provider } from '@turystack/ui'
+import { Provider, Radio } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
 const radioGroupProps = [
 	{
-		description: 'Array of radio items with label, value, optional description, and optional disabled.',
+		description:
+			'Array of radio items with label, value, optional description, and optional disabled.',
 		name: 'items',
 		required: true,
 		type: 'Array<{ label: string; value: string; description?: string; disabled?: boolean }>',
@@ -167,9 +168,18 @@ function Page() {
 						<Radio.Group
 							defaultValue="b"
 							items={[
-								{ label: 'Option A', value: 'a' },
-								{ label: 'Option B', value: 'b' },
-								{ label: 'Option C', value: 'c' },
+								{
+									label: 'Option A',
+									value: 'a',
+								},
+								{
+									label: 'Option B',
+									value: 'b',
+								},
+								{
+									label: 'Option C',
+									value: 'c',
+								},
 							]}
 						/>
 					</ComponentPreview>
@@ -181,9 +191,18 @@ function Page() {
 						<Radio.Group
 							defaultValue="md"
 							items={[
-								{ label: 'Small', value: 'sm' },
-								{ label: 'Medium', value: 'md' },
-								{ label: 'Large', value: 'lg' },
+								{
+									label: 'Small',
+									value: 'sm',
+								},
+								{
+									label: 'Medium',
+									value: 'md',
+								},
+								{
+									label: 'Large',
+									value: 'lg',
+								},
 							]}
 							variant="horizontal"
 						/>
@@ -198,13 +217,19 @@ function Page() {
 						<Radio.Group
 							defaultValue="a"
 							items={[
-								{ label: 'Available option', value: 'a' },
+								{
+									label: 'Available option',
+									value: 'a',
+								},
 								{
 									disabled: true,
 									label: 'Unavailable option',
 									value: 'b',
 								},
-								{ label: 'Another available option', value: 'c' },
+								{
+									label: 'Another available option',
+									value: 'c',
+								},
 							]}
 						/>
 					</ComponentPreview>
@@ -214,11 +239,17 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Disabled group</h2>
 					<ComponentPreview title="Entirely disabled group">
 						<Radio.Group
-							disabled
 							defaultValue="a"
+							disabled
 							items={[
-								{ label: 'Option A', value: 'a' },
-								{ label: 'Option B', value: 'b' },
+								{
+									label: 'Option A',
+									value: 'a',
+								},
+								{
+									label: 'Option B',
+									value: 'b',
+								},
 							]}
 						/>
 					</ComponentPreview>
@@ -255,9 +286,18 @@ function Page() {
 								bordered
 								defaultValue="pro"
 								items={[
-									{ label: 'Starter', value: 'starter' },
-									{ label: 'Pro', value: 'pro' },
-									{ label: 'Enterprise', value: 'enterprise' },
+									{
+										label: 'Starter',
+										value: 'starter',
+									},
+									{
+										label: 'Pro',
+										value: 'pro',
+									},
+									{
+										label: 'Enterprise',
+										value: 'enterprise',
+									},
 								]}
 							/>
 						</div>
@@ -308,8 +348,8 @@ function Page() {
 						<div className="w-full max-w-sm">
 							<Radio
 								bordered
-								label="Accept terms and conditions"
 								description="By selecting this you agree to our Terms of Service."
+								label="Accept terms and conditions"
 							/>
 						</div>
 					</ComponentPreview>

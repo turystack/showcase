@@ -111,8 +111,8 @@ function BasicDemo() {
 		<>
 			<Button onClick={() => setOpen(true)}>Open modal</Button>
 			<Modal
-				open={open}
 				onChange={setOpen}
+				open={open}
 			>
 				<Modal.Content>
 					<Modal.Header
@@ -129,8 +129,8 @@ function BasicDemo() {
 					</Modal.Body>
 					<Modal.Footer bordered>
 						<Button
-							variant="outline"
 							onClick={() => setOpen(false)}
+							variant="outline"
 						>
 							Cancel
 						</Button>
@@ -157,8 +157,8 @@ function TriggerDemo() {
 				</Modal.Header>
 				<Modal.Body>
 					<p className="text-sm">
-						This modal opens and closes via Modal.Trigger and the built-in
-						close button, without any external state.
+						This modal opens and closes via Modal.Trigger and the built-in close
+						button, without any external state.
 					</p>
 				</Modal.Body>
 			</Modal.Content>
@@ -171,14 +171,14 @@ function ScrollingDemo() {
 	return (
 		<>
 			<Button
-				variant="outline"
 				onClick={() => setOpen(true)}
+				variant="outline"
 			>
 				Open with long content
 			</Button>
 			<Modal
-				open={open}
 				onChange={setOpen}
+				open={open}
 			>
 				<Modal.Content>
 					<Modal.Header
@@ -191,7 +191,9 @@ function ScrollingDemo() {
 						</Modal.Header.Description>
 					</Modal.Header>
 					<Modal.Body>
-						{Array.from({ length: 20 }).map((_, i) => (
+						{Array.from({
+							length: 20,
+						}).map((_, i) => (
 							<p
 								className="mb-3 text-sm"
 								key={i}
@@ -204,8 +206,8 @@ function ScrollingDemo() {
 					</Modal.Body>
 					<Modal.Footer bordered>
 						<Button
-							variant="outline"
 							onClick={() => setOpen(false)}
+							variant="outline"
 						>
 							Cancel
 						</Button>

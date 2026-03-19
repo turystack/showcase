@@ -118,8 +118,8 @@ function Page() {
 					<ComponentPreview title="Single accordion (collapsible)">
 						<div className="w-full max-w-md">
 							<Accordion
-								type="single"
 								collapsible
+								type="single"
 							>
 								<Accordion.Item value="item-1">
 									<Accordion.Trigger>Is it accessible?</Accordion.Trigger>
@@ -151,10 +151,10 @@ function Page() {
 					<ComponentPreview title="Multiple accordion">
 						<div className="w-full max-w-md">
 							<Accordion
-								type="multiple"
 								defaultValue={[
 									'item-1',
 								]}
+								type="multiple"
 							>
 								<Accordion.Item value="item-1">
 									<Accordion.Trigger>First item</Accordion.Trigger>
@@ -184,8 +184,8 @@ function Page() {
 					<ComponentPreview title="Accordion with disabled item">
 						<div className="w-full max-w-md">
 							<Accordion
-								type="single"
 								collapsible
+								type="single"
 							>
 								<Accordion.Item value="item-1">
 									<Accordion.Trigger>Available item</Accordion.Trigger>
@@ -194,8 +194,8 @@ function Page() {
 									</Accordion.Content>
 								</Accordion.Item>
 								<Accordion.Item
-									value="item-2"
 									disabled
+									value="item-2"
 								>
 									<Accordion.Trigger>Disabled item</Accordion.Trigger>
 									<Accordion.Content>

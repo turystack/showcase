@@ -7,7 +7,11 @@ type ComponentPreviewProps = PropsWithChildren<{
 	title?: string
 }>
 
-export function ComponentPreview({ children, className, title }: ComponentPreviewProps) {
+export function ComponentPreview({
+	children,
+	className,
+	title,
+}: ComponentPreviewProps) {
 	return (
 		<div className="overflow-hidden rounded-lg border border-border">
 			{title && (
@@ -17,7 +21,10 @@ export function ComponentPreview({ children, className, title }: ComponentPrevie
 			)}
 
 			<div
-				className={cn("flex min-h-32 items-center justify-center p-8", className)}
+				className={cn(
+					'flex min-h-32 items-center justify-center p-8',
+					className,
+				)}
 				style={{
 					backgroundImage:
 						'radial-gradient(circle, hsl(var(--border)) 1px, transparent 1px)',

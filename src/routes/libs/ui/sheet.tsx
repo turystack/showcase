@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Button, Sheet, Provider } from '@turystack/ui'
+import { Button, Provider, Sheet } from '@turystack/ui'
 import { useState } from 'react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
@@ -72,15 +72,15 @@ function Demo({ side }: { side: 'top' | 'right' | 'bottom' | 'left' }) {
 	return (
 		<>
 			<Button
-				variant="outline"
 				onClick={() => setOpen(true)}
+				variant="outline"
 			>
 				{side}
 			</Button>
 			<Sheet
+				onChange={setOpen}
 				open={open}
 				side={side}
-				onChange={setOpen}
 			>
 				<Sheet.Header
 					bordered
@@ -96,8 +96,8 @@ function Demo({ side }: { side: 'top' | 'right' | 'bottom' | 'left' }) {
 				</Sheet.Body>
 				<Sheet.Footer bordered>
 					<Button
-						variant="outline"
 						onClick={() => setOpen(false)}
+						variant="outline"
 					>
 						Cancel
 					</Button>
@@ -113,15 +113,15 @@ function ScrollingDemo() {
 	return (
 		<>
 			<Button
-				variant="outline"
 				onClick={() => setOpen(true)}
+				variant="outline"
 			>
 				Open with long content
 			</Button>
 			<Sheet
+				onChange={setOpen}
 				open={open}
 				side="right"
-				onChange={setOpen}
 			>
 				<Sheet.Header
 					bordered
@@ -133,7 +133,9 @@ function ScrollingDemo() {
 					</Sheet.Description>
 				</Sheet.Header>
 				<Sheet.Body>
-					{Array.from({ length: 20 }).map((_, i) => (
+					{Array.from({
+						length: 20,
+					}).map((_, i) => (
 						<p
 							className="mb-3 text-sm"
 							key={i}
@@ -146,8 +148,8 @@ function ScrollingDemo() {
 				</Sheet.Body>
 				<Sheet.Footer bordered>
 					<Button
-						variant="outline"
 						onClick={() => setOpen(false)}
+						variant="outline"
 					>
 						Cancel
 					</Button>

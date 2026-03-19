@@ -9,16 +9,16 @@ export const Route = createFileRoute('/libs/common/sum')({
 
 const params = [
 	{
-		name: 'a',
-		type: 'number',
 		description: 'The first operand.',
+		name: 'a',
 		required: true,
+		type: 'number',
 	},
 	{
-		name: 'b',
-		type: 'number',
 		description: 'The second operand.',
+		name: 'b',
 		required: true,
+		type: 'number',
 	},
 ]
 

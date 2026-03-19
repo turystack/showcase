@@ -3,6 +3,33 @@ import { Breadcrumb, Provider } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
+const breadcrumbProps = [
+	{
+		description:
+			'Standard HTML attributes for the nav element. The root breadcrumb renders as a <nav> with aria-label="breadcrumb".',
+		name: '...props',
+		type: 'React.ComponentPropsWithoutRef<"nav">',
+	},
+]
+
+const breadcrumbListProps = [
+	{
+		description:
+			'Standard HTML attributes for the ordered list element. Renders as an <ol>.',
+		name: '...props',
+		type: 'React.ComponentPropsWithoutRef<"ol">',
+	},
+]
+
+const breadcrumbItemProps = [
+	{
+		description:
+			'Standard HTML attributes for the list item element. Renders as an <li>.',
+		name: '...props',
+		type: 'React.ComponentPropsWithoutRef<"li">',
+	},
+]
+
 const breadcrumbLinkProps = [
 	{
 		description: 'The URL the breadcrumb link points to.',
@@ -15,6 +42,33 @@ const breadcrumbLinkProps = [
 			'When true, the link renders as its child element using Radix Slot.',
 		name: 'asChild',
 		type: 'boolean',
+	},
+]
+
+const breadcrumbPageProps = [
+	{
+		description:
+			'Standard HTML attributes for the current page span. Renders as a <span> with role="link" and aria-current="page".',
+		name: '...props',
+		type: 'React.ComponentPropsWithoutRef<"span">',
+	},
+]
+
+const breadcrumbSeparatorProps = [
+	{
+		description:
+			'Custom separator content. Defaults to a chevron icon. Renders as an <li> with role="presentation".',
+		name: 'children',
+		type: 'React.ReactNode',
+	},
+]
+
+const breadcrumbEllipsisProps = [
+	{
+		description:
+			'Standard HTML attributes for the ellipsis span. Renders a "More" icon with sr-only label.',
+		name: '...props',
+		type: 'React.ComponentPropsWithoutRef<"span">',
 	},
 ]
 
@@ -70,9 +124,51 @@ function Page() {
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">
+						Breadcrumb Props
+					</h2>
+					<PropsTable props={breadcrumbProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						Breadcrumb.List Props
+					</h2>
+					<PropsTable props={breadcrumbListProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						Breadcrumb.Item Props
+					</h2>
+					<PropsTable props={breadcrumbItemProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
 						Breadcrumb.Link Props
 					</h2>
 					<PropsTable props={breadcrumbLinkProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						Breadcrumb.Page Props
+					</h2>
+					<PropsTable props={breadcrumbPageProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						Breadcrumb.Separator Props
+					</h2>
+					<PropsTable props={breadcrumbSeparatorProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						Breadcrumb.Ellipsis Props
+					</h2>
+					<PropsTable props={breadcrumbEllipsisProps} />
 				</div>
 
 				<div className="space-y-4">
@@ -119,37 +215,6 @@ function Page() {
 							</Breadcrumb.List>
 						</Breadcrumb>
 					</ComponentPreview>
-				</div>
-
-				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Composition</h2>
-					<p className="text-muted-foreground text-sm">
-						The breadcrumb is built from composable sub-components:{' '}
-						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-							Breadcrumb.List
-						</code>
-						,{' '}
-						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-							Breadcrumb.Item
-						</code>
-						,{' '}
-						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-							Breadcrumb.Link
-						</code>
-						,{' '}
-						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-							Breadcrumb.Page
-						</code>
-						,{' '}
-						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-							Breadcrumb.Separator
-						</code>
-						, and{' '}
-						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
-							Breadcrumb.Ellipsis
-						</code>
-						.
-					</p>
 				</div>
 
 				<div className="space-y-4">

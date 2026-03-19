@@ -66,7 +66,9 @@ function Page() {
 					</h1>
 					<p className="mt-3 text-lg text-muted-foreground">
 						A layout primitive based on CSS Grid for creating column-based
-						layouts. Use <code className="rounded bg-muted px-1 text-sm">Grid.Item</code> to control how many columns a child spans.
+						layouts. Use{' '}
+						<code className="rounded bg-muted px-1 text-sm">Grid.Item</code> to
+						control how many columns a child spans.
 					</p>
 				</div>
 

@@ -49,6 +49,11 @@ const usageCode = `import { Badge } from '@turystack/ui'
 <Badge variant="destructive">Destructive</Badge>
 <Badge variant="outline">Outline</Badge>
 
+// Align
+<Badge align="start">Start</Badge>
+<Badge align="center">Center</Badge>
+<Badge align="end">End</Badge>
+
 // Loading
 <Badge loading>Loading</Badge>
 
@@ -81,6 +86,32 @@ function Page() {
 							<Badge variant="secondary">Secondary</Badge>
 							<Badge variant="destructive">Destructive</Badge>
 							<Badge variant="outline">Outline</Badge>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Align</h2>
+					<ComponentPreview title="Badge alignment">
+						<div className="flex w-full max-w-sm flex-col gap-3">
+							<Badge
+								align="start"
+								block
+							>
+								Start
+							</Badge>
+							<Badge
+								align="center"
+								block
+							>
+								Center
+							</Badge>
+							<Badge
+								align="end"
+								block
+							>
+								End
+							</Badge>
 						</div>
 					</ComponentPreview>
 				</div>

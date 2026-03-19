@@ -9,16 +9,16 @@ export const Route = createFileRoute('/libs/common/multiply')({
 
 const params = [
 	{
-		name: 'a',
-		type: 'number',
 		description: 'The first factor.',
+		name: 'a',
 		required: true,
+		type: 'number',
 	},
 	{
-		name: 'b',
-		type: 'number',
 		description: 'The second factor.',
+		name: 'b',
 		required: true,
+		type: 'number',
 	},
 ]
 

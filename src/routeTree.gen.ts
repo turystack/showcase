@@ -19,6 +19,7 @@ import { Route as LibsUiUploaderRouteImport } from './routes/libs/ui/uploader'
 import { Route as LibsUiTypographyRouteImport } from './routes/libs/ui/typography'
 import { Route as LibsUiTooltipRouteImport } from './routes/libs/ui/tooltip'
 import { Route as LibsUiToastRouteImport } from './routes/libs/ui/toast'
+import { Route as LibsUiThemeRouteImport } from './routes/libs/ui/theme'
 import { Route as LibsUiTextareaRouteImport } from './routes/libs/ui/textarea'
 import { Route as LibsUiTagsInputRouteImport } from './routes/libs/ui/tags-input'
 import { Route as LibsUiTabsRouteImport } from './routes/libs/ui/tabs'
@@ -34,6 +35,7 @@ import { Route as LibsUiRadioRouteImport } from './routes/libs/ui/radio'
 import { Route as LibsUiProviderRouteImport } from './routes/libs/ui/provider'
 import { Route as LibsUiProgressRouteImport } from './routes/libs/ui/progress'
 import { Route as LibsUiPopoverRouteImport } from './routes/libs/ui/popover'
+import { Route as LibsUiPlaygroundRouteImport } from './routes/libs/ui/playground'
 import { Route as LibsUiPhoneInputRouteImport } from './routes/libs/ui/phone-input'
 import { Route as LibsUiPaginationRouteImport } from './routes/libs/ui/pagination'
 import { Route as LibsUiOtpInputRouteImport } from './routes/libs/ui/otp-input'
@@ -44,6 +46,7 @@ import { Route as LibsUiLoadingOverlayRouteImport } from './routes/libs/ui/loadi
 import { Route as LibsUiLayoutRouteImport } from './routes/libs/ui/layout'
 import { Route as LibsUiLabelRouteImport } from './routes/libs/ui/label'
 import { Route as LibsUiInputRouteImport } from './routes/libs/ui/input'
+import { Route as LibsUiI18nRouteImport } from './routes/libs/ui/i18n'
 import { Route as LibsUiGridRouteImport } from './routes/libs/ui/grid'
 import { Route as LibsUiFormRouteImport } from './routes/libs/ui/form'
 import { Route as LibsUiFlexRouteImport } from './routes/libs/ui/flex'
@@ -53,6 +56,7 @@ import { Route as LibsUiDateRangeInputRouteImport } from './routes/libs/ui/date-
 import { Route as LibsUiDateInputRouteImport } from './routes/libs/ui/date-input'
 import { Route as LibsUiCurrencyInputRouteImport } from './routes/libs/ui/currency-input'
 import { Route as LibsUiConfirmRouteImport } from './routes/libs/ui/confirm'
+import { Route as LibsUiColorSchemeRouteImport } from './routes/libs/ui/color-scheme'
 import { Route as LibsUiCheckboxRouteImport } from './routes/libs/ui/checkbox'
 import { Route as LibsUiCardRouteImport } from './routes/libs/ui/card'
 import { Route as LibsUiButtonRouteImport } from './routes/libs/ui/button'
@@ -112,6 +116,11 @@ const LibsUiTooltipRoute = LibsUiTooltipRouteImport.update({
 const LibsUiToastRoute = LibsUiToastRouteImport.update({
   id: '/toast',
   path: '/toast',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiThemeRoute = LibsUiThemeRouteImport.update({
+  id: '/theme',
+  path: '/theme',
   getParentRoute: () => LibsUiRoute,
 } as any)
 const LibsUiTextareaRoute = LibsUiTextareaRouteImport.update({
@@ -189,6 +198,11 @@ const LibsUiPopoverRoute = LibsUiPopoverRouteImport.update({
   path: '/popover',
   getParentRoute: () => LibsUiRoute,
 } as any)
+const LibsUiPlaygroundRoute = LibsUiPlaygroundRouteImport.update({
+  id: '/playground',
+  path: '/playground',
+  getParentRoute: () => LibsUiRoute,
+} as any)
 const LibsUiPhoneInputRoute = LibsUiPhoneInputRouteImport.update({
   id: '/phone-input',
   path: '/phone-input',
@@ -239,6 +253,11 @@ const LibsUiInputRoute = LibsUiInputRouteImport.update({
   path: '/input',
   getParentRoute: () => LibsUiRoute,
 } as any)
+const LibsUiI18nRoute = LibsUiI18nRouteImport.update({
+  id: '/i18n',
+  path: '/i18n',
+  getParentRoute: () => LibsUiRoute,
+} as any)
 const LibsUiGridRoute = LibsUiGridRouteImport.update({
   id: '/grid',
   path: '/grid',
@@ -282,6 +301,11 @@ const LibsUiCurrencyInputRoute = LibsUiCurrencyInputRouteImport.update({
 const LibsUiConfirmRoute = LibsUiConfirmRouteImport.update({
   id: '/confirm',
   path: '/confirm',
+  getParentRoute: () => LibsUiRoute,
+} as any)
+const LibsUiColorSchemeRoute = LibsUiColorSchemeRouteImport.update({
+  id: '/color-scheme',
+  path: '/color-scheme',
   getParentRoute: () => LibsUiRoute,
 } as any)
 const LibsUiCheckboxRoute = LibsUiCheckboxRouteImport.update({
@@ -355,6 +379,7 @@ export interface FileRoutesByFullPath {
   '/libs/ui/button': typeof LibsUiButtonRoute
   '/libs/ui/card': typeof LibsUiCardRoute
   '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
+  '/libs/ui/color-scheme': typeof LibsUiColorSchemeRoute
   '/libs/ui/confirm': typeof LibsUiConfirmRoute
   '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
   '/libs/ui/date-input': typeof LibsUiDateInputRoute
@@ -364,6 +389,7 @@ export interface FileRoutesByFullPath {
   '/libs/ui/flex': typeof LibsUiFlexRoute
   '/libs/ui/form': typeof LibsUiFormRoute
   '/libs/ui/grid': typeof LibsUiGridRoute
+  '/libs/ui/i18n': typeof LibsUiI18nRoute
   '/libs/ui/input': typeof LibsUiInputRoute
   '/libs/ui/label': typeof LibsUiLabelRoute
   '/libs/ui/layout': typeof LibsUiLayoutRoute
@@ -374,6 +400,7 @@ export interface FileRoutesByFullPath {
   '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
   '/libs/ui/pagination': typeof LibsUiPaginationRoute
   '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
+  '/libs/ui/playground': typeof LibsUiPlaygroundRoute
   '/libs/ui/popover': typeof LibsUiPopoverRoute
   '/libs/ui/progress': typeof LibsUiProgressRoute
   '/libs/ui/provider': typeof LibsUiProviderRoute
@@ -389,6 +416,7 @@ export interface FileRoutesByFullPath {
   '/libs/ui/tabs': typeof LibsUiTabsRoute
   '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
   '/libs/ui/textarea': typeof LibsUiTextareaRoute
+  '/libs/ui/theme': typeof LibsUiThemeRoute
   '/libs/ui/toast': typeof LibsUiToastRoute
   '/libs/ui/tooltip': typeof LibsUiTooltipRoute
   '/libs/ui/typography': typeof LibsUiTypographyRoute
@@ -409,6 +437,7 @@ export interface FileRoutesByTo {
   '/libs/ui/button': typeof LibsUiButtonRoute
   '/libs/ui/card': typeof LibsUiCardRoute
   '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
+  '/libs/ui/color-scheme': typeof LibsUiColorSchemeRoute
   '/libs/ui/confirm': typeof LibsUiConfirmRoute
   '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
   '/libs/ui/date-input': typeof LibsUiDateInputRoute
@@ -418,6 +447,7 @@ export interface FileRoutesByTo {
   '/libs/ui/flex': typeof LibsUiFlexRoute
   '/libs/ui/form': typeof LibsUiFormRoute
   '/libs/ui/grid': typeof LibsUiGridRoute
+  '/libs/ui/i18n': typeof LibsUiI18nRoute
   '/libs/ui/input': typeof LibsUiInputRoute
   '/libs/ui/label': typeof LibsUiLabelRoute
   '/libs/ui/layout': typeof LibsUiLayoutRoute
@@ -428,6 +458,7 @@ export interface FileRoutesByTo {
   '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
   '/libs/ui/pagination': typeof LibsUiPaginationRoute
   '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
+  '/libs/ui/playground': typeof LibsUiPlaygroundRoute
   '/libs/ui/popover': typeof LibsUiPopoverRoute
   '/libs/ui/progress': typeof LibsUiProgressRoute
   '/libs/ui/provider': typeof LibsUiProviderRoute
@@ -443,6 +474,7 @@ export interface FileRoutesByTo {
   '/libs/ui/tabs': typeof LibsUiTabsRoute
   '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
   '/libs/ui/textarea': typeof LibsUiTextareaRoute
+  '/libs/ui/theme': typeof LibsUiThemeRoute
   '/libs/ui/toast': typeof LibsUiToastRoute
   '/libs/ui/tooltip': typeof LibsUiTooltipRoute
   '/libs/ui/typography': typeof LibsUiTypographyRoute
@@ -467,6 +499,7 @@ export interface FileRoutesById {
   '/libs/ui/button': typeof LibsUiButtonRoute
   '/libs/ui/card': typeof LibsUiCardRoute
   '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
+  '/libs/ui/color-scheme': typeof LibsUiColorSchemeRoute
   '/libs/ui/confirm': typeof LibsUiConfirmRoute
   '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
   '/libs/ui/date-input': typeof LibsUiDateInputRoute
@@ -476,6 +509,7 @@ export interface FileRoutesById {
   '/libs/ui/flex': typeof LibsUiFlexRoute
   '/libs/ui/form': typeof LibsUiFormRoute
   '/libs/ui/grid': typeof LibsUiGridRoute
+  '/libs/ui/i18n': typeof LibsUiI18nRoute
   '/libs/ui/input': typeof LibsUiInputRoute
   '/libs/ui/label': typeof LibsUiLabelRoute
   '/libs/ui/layout': typeof LibsUiLayoutRoute
@@ -486,6 +520,7 @@ export interface FileRoutesById {
   '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
   '/libs/ui/pagination': typeof LibsUiPaginationRoute
   '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
+  '/libs/ui/playground': typeof LibsUiPlaygroundRoute
   '/libs/ui/popover': typeof LibsUiPopoverRoute
   '/libs/ui/progress': typeof LibsUiProgressRoute
   '/libs/ui/provider': typeof LibsUiProviderRoute
@@ -501,6 +536,7 @@ export interface FileRoutesById {
   '/libs/ui/tabs': typeof LibsUiTabsRoute
   '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
   '/libs/ui/textarea': typeof LibsUiTextareaRoute
+  '/libs/ui/theme': typeof LibsUiThemeRoute
   '/libs/ui/toast': typeof LibsUiToastRoute
   '/libs/ui/tooltip': typeof LibsUiTooltipRoute
   '/libs/ui/typography': typeof LibsUiTypographyRoute
@@ -525,6 +561,7 @@ export interface FileRouteTypes {
     | '/libs/ui/button'
     | '/libs/ui/card'
     | '/libs/ui/checkbox'
+    | '/libs/ui/color-scheme'
     | '/libs/ui/confirm'
     | '/libs/ui/currency-input'
     | '/libs/ui/date-input'
@@ -534,6 +571,7 @@ export interface FileRouteTypes {
     | '/libs/ui/flex'
     | '/libs/ui/form'
     | '/libs/ui/grid'
+    | '/libs/ui/i18n'
     | '/libs/ui/input'
     | '/libs/ui/label'
     | '/libs/ui/layout'
@@ -544,6 +582,7 @@ export interface FileRouteTypes {
     | '/libs/ui/otp-input'
     | '/libs/ui/pagination'
     | '/libs/ui/phone-input'
+    | '/libs/ui/playground'
     | '/libs/ui/popover'
     | '/libs/ui/progress'
     | '/libs/ui/provider'
@@ -559,6 +598,7 @@ export interface FileRouteTypes {
     | '/libs/ui/tabs'
     | '/libs/ui/tags-input'
     | '/libs/ui/textarea'
+    | '/libs/ui/theme'
     | '/libs/ui/toast'
     | '/libs/ui/tooltip'
     | '/libs/ui/typography'
@@ -579,6 +619,7 @@ export interface FileRouteTypes {
     | '/libs/ui/button'
     | '/libs/ui/card'
     | '/libs/ui/checkbox'
+    | '/libs/ui/color-scheme'
     | '/libs/ui/confirm'
     | '/libs/ui/currency-input'
     | '/libs/ui/date-input'
@@ -588,6 +629,7 @@ export interface FileRouteTypes {
     | '/libs/ui/flex'
     | '/libs/ui/form'
     | '/libs/ui/grid'
+    | '/libs/ui/i18n'
     | '/libs/ui/input'
     | '/libs/ui/label'
     | '/libs/ui/layout'
@@ -598,6 +640,7 @@ export interface FileRouteTypes {
     | '/libs/ui/otp-input'
     | '/libs/ui/pagination'
     | '/libs/ui/phone-input'
+    | '/libs/ui/playground'
     | '/libs/ui/popover'
     | '/libs/ui/progress'
     | '/libs/ui/provider'
@@ -613,6 +656,7 @@ export interface FileRouteTypes {
     | '/libs/ui/tabs'
     | '/libs/ui/tags-input'
     | '/libs/ui/textarea'
+    | '/libs/ui/theme'
     | '/libs/ui/toast'
     | '/libs/ui/tooltip'
     | '/libs/ui/typography'
@@ -636,6 +680,7 @@ export interface FileRouteTypes {
     | '/libs/ui/button'
     | '/libs/ui/card'
     | '/libs/ui/checkbox'
+    | '/libs/ui/color-scheme'
     | '/libs/ui/confirm'
     | '/libs/ui/currency-input'
     | '/libs/ui/date-input'
@@ -645,6 +690,7 @@ export interface FileRouteTypes {
     | '/libs/ui/flex'
     | '/libs/ui/form'
     | '/libs/ui/grid'
+    | '/libs/ui/i18n'
     | '/libs/ui/input'
     | '/libs/ui/label'
     | '/libs/ui/layout'
@@ -655,6 +701,7 @@ export interface FileRouteTypes {
     | '/libs/ui/otp-input'
     | '/libs/ui/pagination'
     | '/libs/ui/phone-input'
+    | '/libs/ui/playground'
     | '/libs/ui/popover'
     | '/libs/ui/progress'
     | '/libs/ui/provider'
@@ -670,6 +717,7 @@ export interface FileRouteTypes {
     | '/libs/ui/tabs'
     | '/libs/ui/tags-input'
     | '/libs/ui/textarea'
+    | '/libs/ui/theme'
     | '/libs/ui/toast'
     | '/libs/ui/tooltip'
     | '/libs/ui/typography'
@@ -754,6 +802,13 @@ declare module '@tanstack/react-router' {
       path: '/toast'
       fullPath: '/libs/ui/toast'
       preLoaderRoute: typeof LibsUiToastRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/theme': {
+      id: '/libs/ui/theme'
+      path: '/theme'
+      fullPath: '/libs/ui/theme'
+      preLoaderRoute: typeof LibsUiThemeRouteImport
       parentRoute: typeof LibsUiRoute
     }
     '/libs/ui/textarea': {
@@ -861,6 +916,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsUiPopoverRouteImport
       parentRoute: typeof LibsUiRoute
     }
+    '/libs/ui/playground': {
+      id: '/libs/ui/playground'
+      path: '/playground'
+      fullPath: '/libs/ui/playground'
+      preLoaderRoute: typeof LibsUiPlaygroundRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
     '/libs/ui/phone-input': {
       id: '/libs/ui/phone-input'
       path: '/phone-input'
@@ -931,6 +993,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsUiInputRouteImport
       parentRoute: typeof LibsUiRoute
     }
+    '/libs/ui/i18n': {
+      id: '/libs/ui/i18n'
+      path: '/i18n'
+      fullPath: '/libs/ui/i18n'
+      preLoaderRoute: typeof LibsUiI18nRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
     '/libs/ui/grid': {
       id: '/libs/ui/grid'
       path: '/grid'
@@ -992,6 +1061,13 @@ declare module '@tanstack/react-router' {
       path: '/confirm'
       fullPath: '/libs/ui/confirm'
       preLoaderRoute: typeof LibsUiConfirmRouteImport
+      parentRoute: typeof LibsUiRoute
+    }
+    '/libs/ui/color-scheme': {
+      id: '/libs/ui/color-scheme'
+      path: '/color-scheme'
+      fullPath: '/libs/ui/color-scheme'
+      preLoaderRoute: typeof LibsUiColorSchemeRouteImport
       parentRoute: typeof LibsUiRoute
     }
     '/libs/ui/checkbox': {
@@ -1111,6 +1187,7 @@ interface LibsUiRouteChildren {
   LibsUiButtonRoute: typeof LibsUiButtonRoute
   LibsUiCardRoute: typeof LibsUiCardRoute
   LibsUiCheckboxRoute: typeof LibsUiCheckboxRoute
+  LibsUiColorSchemeRoute: typeof LibsUiColorSchemeRoute
   LibsUiConfirmRoute: typeof LibsUiConfirmRoute
   LibsUiCurrencyInputRoute: typeof LibsUiCurrencyInputRoute
   LibsUiDateInputRoute: typeof LibsUiDateInputRoute
@@ -1120,6 +1197,7 @@ interface LibsUiRouteChildren {
   LibsUiFlexRoute: typeof LibsUiFlexRoute
   LibsUiFormRoute: typeof LibsUiFormRoute
   LibsUiGridRoute: typeof LibsUiGridRoute
+  LibsUiI18nRoute: typeof LibsUiI18nRoute
   LibsUiInputRoute: typeof LibsUiInputRoute
   LibsUiLabelRoute: typeof LibsUiLabelRoute
   LibsUiLayoutRoute: typeof LibsUiLayoutRoute
@@ -1130,6 +1208,7 @@ interface LibsUiRouteChildren {
   LibsUiOtpInputRoute: typeof LibsUiOtpInputRoute
   LibsUiPaginationRoute: typeof LibsUiPaginationRoute
   LibsUiPhoneInputRoute: typeof LibsUiPhoneInputRoute
+  LibsUiPlaygroundRoute: typeof LibsUiPlaygroundRoute
   LibsUiPopoverRoute: typeof LibsUiPopoverRoute
   LibsUiProgressRoute: typeof LibsUiProgressRoute
   LibsUiProviderRoute: typeof LibsUiProviderRoute
@@ -1145,6 +1224,7 @@ interface LibsUiRouteChildren {
   LibsUiTabsRoute: typeof LibsUiTabsRoute
   LibsUiTagsInputRoute: typeof LibsUiTagsInputRoute
   LibsUiTextareaRoute: typeof LibsUiTextareaRoute
+  LibsUiThemeRoute: typeof LibsUiThemeRoute
   LibsUiToastRoute: typeof LibsUiToastRoute
   LibsUiTooltipRoute: typeof LibsUiTooltipRoute
   LibsUiTypographyRoute: typeof LibsUiTypographyRoute
@@ -1161,6 +1241,7 @@ const LibsUiRouteChildren: LibsUiRouteChildren = {
   LibsUiButtonRoute: LibsUiButtonRoute,
   LibsUiCardRoute: LibsUiCardRoute,
   LibsUiCheckboxRoute: LibsUiCheckboxRoute,
+  LibsUiColorSchemeRoute: LibsUiColorSchemeRoute,
   LibsUiConfirmRoute: LibsUiConfirmRoute,
   LibsUiCurrencyInputRoute: LibsUiCurrencyInputRoute,
   LibsUiDateInputRoute: LibsUiDateInputRoute,
@@ -1170,6 +1251,7 @@ const LibsUiRouteChildren: LibsUiRouteChildren = {
   LibsUiFlexRoute: LibsUiFlexRoute,
   LibsUiFormRoute: LibsUiFormRoute,
   LibsUiGridRoute: LibsUiGridRoute,
+  LibsUiI18nRoute: LibsUiI18nRoute,
   LibsUiInputRoute: LibsUiInputRoute,
   LibsUiLabelRoute: LibsUiLabelRoute,
   LibsUiLayoutRoute: LibsUiLayoutRoute,
@@ -1180,6 +1262,7 @@ const LibsUiRouteChildren: LibsUiRouteChildren = {
   LibsUiOtpInputRoute: LibsUiOtpInputRoute,
   LibsUiPaginationRoute: LibsUiPaginationRoute,
   LibsUiPhoneInputRoute: LibsUiPhoneInputRoute,
+  LibsUiPlaygroundRoute: LibsUiPlaygroundRoute,
   LibsUiPopoverRoute: LibsUiPopoverRoute,
   LibsUiProgressRoute: LibsUiProgressRoute,
   LibsUiProviderRoute: LibsUiProviderRoute,
@@ -1195,6 +1278,7 @@ const LibsUiRouteChildren: LibsUiRouteChildren = {
   LibsUiTabsRoute: LibsUiTabsRoute,
   LibsUiTagsInputRoute: LibsUiTagsInputRoute,
   LibsUiTextareaRoute: LibsUiTextareaRoute,
+  LibsUiThemeRoute: LibsUiThemeRoute,
   LibsUiToastRoute: LibsUiToastRoute,
   LibsUiTooltipRoute: LibsUiTooltipRoute,
   LibsUiTypographyRoute: LibsUiTypographyRoute,

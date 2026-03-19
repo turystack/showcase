@@ -5,16 +5,44 @@ import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
 const providerProps = [
 	{
+		default: '"light"',
 		description:
-			'Per-component configuration. Each key maps to a component and accepts a ComponentConfig object.',
-		name: 'components',
-		type: '{ button?: ComponentConfig<ButtonProps, ButtonSlots>; loader?: ComponentConfig<LoaderProps, LoaderSlots> }',
+			'The initial color scheme applied when no value is stored in localStorage.',
+		name: 'defaultColorScheme',
+		type: '"light" | "dark" | "system"',
 	},
 	{
 		description:
-			'Configuration for a specific component. classNames maps slot names to class strings; defaultProps sets prop defaults for every instance.',
-		name: 'ComponentConfig<T, S>',
-		type: '{ classNames?: Partial<Record<S, string>>; defaultProps?: Partial<T> }',
+			'Global theme configuration. Controls the visual style, base color, primary color, font, and border radius for all components.',
+		name: 'theme',
+		type: '{ style?: "vega" | "nova" | "maia" | "lyra" | "mira"; baseColor?: "neutral" | "stone" | "zinc" | "gray"; primaryColor?: "cyan" | "green" | "orange" | "pink" | "yellow" | "purple" | "red" | "blue" | "indigo" | "violet" | "fuchsia" | "rose"; font?: "sans" | "serif" | "mono"; radius?: "none" | "lg" | "md" | "sm" }',
+	},
+	{
+		description:
+			'Internationalization overrides. Provide translation strings used by components internally.',
+		name: 'translations',
+		type: 'I18nTranslations',
+	},
+	{
+		description:
+			'Per-component configuration. Each key maps to a component name (e.g. button, loader, tooltip) and accepts a ComponentConfig object with classNames and defaultProps.',
+		name: 'components',
+		type: 'Record<ComponentName, ComponentConfig>',
+	},
+]
+
+const componentConfigProps = [
+	{
+		description:
+			'Maps slot names to CSS class strings. Classes are merged on top of the default styles for each internal slot of the component.',
+		name: 'classNames',
+		type: 'Partial<Record<SlotName, string>>',
+	},
+	{
+		description:
+			'Default prop values applied to every instance of the component. Instance-level props always take precedence over these defaults.',
+		name: 'defaultProps',
+		type: 'Partial<ComponentProps>',
 	},
 ]
 
@@ -67,6 +95,57 @@ export function App() {
   )
 }`
 
+const themeCode = `import { Provider } from '@turystack/ui'
+
+<Provider
+  theme={{
+    style: 'nova',
+    primaryColor: 'violet',
+    baseColor: 'zinc',
+    font: 'sans',
+    radius: 'md',
+  }}
+>
+  <App />
+</Provider>`
+
+const colorSchemeCode = `import { Provider } from '@turystack/ui'
+
+// Start in dark mode
+<Provider defaultColorScheme="dark">
+  <App />
+</Provider>
+
+// Follow system preference
+<Provider defaultColorScheme="system">
+  <App />
+</Provider>`
+
+const fullConfigCode = `import { Provider } from '@turystack/ui'
+
+<Provider
+  defaultColorScheme="system"
+  theme={{
+    style: 'maia',
+    primaryColor: 'blue',
+    radius: 'lg',
+  }}
+  components={{
+    button: {
+      defaultProps: { variant: 'outline', size: 'md' },
+      classNames: { root: 'rounded-full' },
+    },
+    tooltip: {
+      defaultProps: { side: 'bottom' },
+    },
+    loader: {
+      defaultProps: { size: 'sm' },
+    },
+  }}
+>
+  <App />
+</Provider>`
+
 function Page() {
 	return (
 		<Provider>
@@ -82,6 +161,37 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Props</h2>
+					<PropsTable props={providerProps} />
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						ComponentConfig shape
+					</h2>
+					<p className="text-muted-foreground text-sm">
+						Every entry in the{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							components
+						</code>{' '}
+						object follows the{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							ComponentConfig
+						</code>{' '}
+						shape. It has two optional keys:{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							classNames
+						</code>{' '}
+						for injecting CSS classes into internal slots, and{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							defaultProps
+						</code>{' '}
+						for setting default prop values.
+					</p>
+					<PropsTable props={componentConfigProps} />
+				</div>
+
+				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Setup</h2>
 					<p className="text-muted-foreground text-sm">
 						Wrap your application root (or any subtree) with{' '}
@@ -94,6 +204,40 @@ function Page() {
 					<CodeBlock
 						code={setupCode}
 						filename="main.tsx"
+						language="tsx"
+					/>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Color scheme</h2>
+					<p className="text-muted-foreground text-sm">
+						Use{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							defaultColorScheme
+						</code>{' '}
+						to set the initial color scheme. The value is persisted in
+						localStorage once the user changes it.
+					</p>
+					<CodeBlock
+						code={colorSchemeCode}
+						filename="App.tsx"
+						language="tsx"
+					/>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Theme</h2>
+					<p className="text-muted-foreground text-sm">
+						Use{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							theme
+						</code>{' '}
+						to configure the global visual identity. You can control the style
+						preset, base and primary colors, font family, and border radius.
+					</p>
+					<CodeBlock
+						code={themeCode}
+						filename="App.tsx"
 						language="tsx"
 					/>
 				</div>
@@ -115,8 +259,8 @@ function Page() {
 								components={{
 									button: {
 										defaultProps: {
-											variant: 'outline',
 											size: 'lg',
+											variant: 'outline',
 										},
 									},
 									loader: {
@@ -176,8 +320,18 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Props</h2>
-					<PropsTable props={providerProps} />
+					<h2 className="font-display font-semibold text-xl">
+						Full configuration
+					</h2>
+					<p className="text-muted-foreground text-sm">
+						Combine color scheme, theme, and component config in a single
+						provider for a complete setup.
+					</p>
+					<CodeBlock
+						code={fullConfigCode}
+						filename="App.tsx"
+						language="tsx"
+					/>
 				</div>
 			</div>
 		</Provider>

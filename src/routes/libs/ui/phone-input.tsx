@@ -27,6 +27,17 @@ const phoneInputProps = [
 		type: '"sm" | "md" | "lg"',
 	},
 	{
+		description: 'Content rendered on the right side of the input.',
+		name: 'rightSection',
+		type: 'React.ReactNode',
+	},
+	{
+		default: 'false',
+		description: 'Makes the input take the full width of its container.',
+		name: 'block',
+		type: 'boolean',
+	},
+	{
 		default: 'false',
 		description: 'Disables the input and country selector.',
 		name: 'disabled',
@@ -34,7 +45,7 @@ const phoneInputProps = [
 	},
 	{
 		default: 'false',
-		description: 'Shows a loading spinner.',
+		description: 'Shows a loading spinner in the input.',
 		name: 'loading',
 		type: 'boolean',
 	},
@@ -50,6 +61,17 @@ const usageCode = `import { PhoneInput } from '@turystack/ui'
 
 // Basic
 <PhoneInput placeholder="Phone number" />
+
+// Sizes
+<PhoneInput size="sm" placeholder="Small" />
+<PhoneInput size="md" placeholder="Medium" />
+<PhoneInput size="lg" placeholder="Large" />
+
+// Loading
+<PhoneInput loading placeholder="Loading..." />
+
+// Block (full width)
+<PhoneInput block placeholder="Full width phone input" />
 
 // With onChange handler
 <PhoneInput
@@ -86,11 +108,54 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Sizes</h2>
+					<ComponentPreview title="Phone input sizes">
+						<div className="flex flex-col gap-3">
+							<PhoneInput
+								placeholder="Small"
+								size="sm"
+							/>
+							<PhoneInput
+								placeholder="Medium"
+								size="md"
+							/>
+							<PhoneInput
+								placeholder="Large"
+								size="lg"
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Disabled</h2>
 					<ComponentPreview title="Disabled state">
 						<PhoneInput
 							disabled
 							placeholder="Phone number"
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Loading</h2>
+					<ComponentPreview title="Loading state">
+						<PhoneInput
+							loading
+							placeholder="Loading..."
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Block</h2>
+					<ComponentPreview
+						className="w-80"
+						title="Full width"
+					>
+						<PhoneInput
+							block
+							placeholder="Full width phone input"
 						/>
 					</ComponentPreview>
 				</div>

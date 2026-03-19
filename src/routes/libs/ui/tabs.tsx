@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Tabs, Provider } from '@turystack/ui'
+import { Provider, Tabs } from '@turystack/ui'
 import { BarChart, Settings, Users } from 'lucide-react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
@@ -54,7 +54,8 @@ const contentProps = [
 const listProps = [
 	{
 		default: 'false',
-		description: 'When true, tabs expand to fill the full width of the list, each tab taking equal space.',
+		description:
+			'When true, tabs expand to fill the full width of the list, each tab taking equal space.',
 		name: 'justified',
 		type: 'boolean',
 	},
@@ -194,7 +195,9 @@ function Page() {
 									</Tabs.Trigger>
 								</Tabs.List>
 								<Tabs.Content value="users">
-									<p className="text-sm">Manage team members and permissions.</p>
+									<p className="text-sm">
+										Manage team members and permissions.
+									</p>
 								</Tabs.Content>
 								<Tabs.Content value="reports">
 									<p className="text-sm">View usage reports and metrics.</p>
@@ -223,7 +226,9 @@ function Page() {
 									</Tabs.Trigger>
 								</Tabs.List>
 								<Tabs.Content value="profile">
-									<p className="text-sm">Edit your public profile information.</p>
+									<p className="text-sm">
+										Edit your public profile information.
+									</p>
 								</Tabs.Content>
 								<Tabs.Content value="security">
 									<p className="text-sm">Manage passwords and 2FA.</p>

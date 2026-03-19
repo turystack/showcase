@@ -5,7 +5,8 @@ import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
 const cardProps = [
 	{
-		description: 'Handler called when the card is clicked. Makes the card appear clickable.',
+		description:
+			'Handler called when the card is clicked. Makes the card appear clickable.',
 		name: 'onClick',
 		type: 'React.MouseEventHandler<HTMLDivElement>',
 	},
@@ -69,7 +70,8 @@ function Page() {
 						Card
 					</h1>
 					<p className="mt-3 text-lg text-muted-foreground">
-						A container component for grouping related content and actions. Composed of Header, Content, Footer, and Separator sections.
+						A container component for grouping related content and actions.
+						Composed of Header, Content, Footer, and Separator sections.
 					</p>
 				</div>
 
@@ -152,9 +154,7 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">
-						With separator
-					</h2>
+					<h2 className="font-display font-semibold text-xl">With separator</h2>
 					<ComponentPreview title="Card with internal separator">
 						<div className="w-full max-w-sm">
 							<Card>
@@ -163,7 +163,9 @@ function Page() {
 								</Card.Content>
 								<Card.Separator />
 								<Card.Content>
-									<p className="text-muted-foreground text-sm">Bottom section</p>
+									<p className="text-muted-foreground text-sm">
+										Bottom section
+									</p>
 								</Card.Content>
 							</Card>
 						</div>

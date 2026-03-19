@@ -11,13 +11,15 @@ const labelProps = [
 	},
 	{
 		default: 'false',
-		description: 'When true, renders a red asterisk (*) indicating a required field.',
+		description:
+			'When true, renders a red asterisk (*) indicating a required field.',
 		name: 'required',
 		type: 'boolean',
 	},
 	{
 		default: 'false',
-		description: 'When true, renders an "(optional)" text indicating an optional field.',
+		description:
+			'When true, renders an "(optional)" text indicating an optional field.',
 		name: 'optional',
 		type: 'boolean',
 	},
@@ -28,7 +30,8 @@ const labelProps = [
 		type: 'boolean',
 	},
 	{
-		description: 'Tooltip content shown via an info icon next to the label text.',
+		description:
+			'Tooltip content shown via an info icon next to the label text.',
 		name: 'tooltip',
 		type: 'React.ReactNode',
 	},
@@ -96,8 +99,8 @@ function Page() {
 								Optional field
 							</Label>
 							<Label
-								htmlFor="disabled"
 								disabled
+								htmlFor="disabled"
 							>
 								Disabled label
 							</Label>

@@ -1,5 +1,5 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { TagsInput, Provider } from '@turystack/ui'
+import { Provider, TagsInput } from '@turystack/ui'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 

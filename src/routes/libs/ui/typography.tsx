@@ -79,16 +79,25 @@ function Page() {
 					<h2 className="font-display font-semibold text-xl">Sizes</h2>
 					<ComponentPreview title="Text sizes">
 						<div className="flex flex-col gap-2">
-							{(['xs', 'sm', 'base', 'lg', 'xl', '2xl', '3xl', '4xl'] as const).map(
-								(size) => (
-									<Typography
-										key={size}
-										size={size}
-									>
-										Size {size}
-									</Typography>
-								),
-							)}
+							{(
+								[
+									'xs',
+									'sm',
+									'base',
+									'lg',
+									'xl',
+									'2xl',
+									'3xl',
+									'4xl',
+								] as const
+							).map((size) => (
+								<Typography
+									key={size}
+									size={size}
+								>
+									Size {size}
+								</Typography>
+							))}
 						</div>
 					</ComponentPreview>
 				</div>

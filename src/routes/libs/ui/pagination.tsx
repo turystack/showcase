@@ -45,7 +45,8 @@ const offsetProps = [
 
 const cursorProps = [
 	{
-		description: 'Mode discriminant — use "cursor" for cursor-based pagination.',
+		description:
+			'Mode discriminant — use "cursor" for cursor-based pagination.',
 		name: 'mode',
 		required: true,
 		type: '"cursor"',

@@ -165,8 +165,8 @@ function Page() {
 						<div className="flex flex-col gap-3">
 							<Checkbox label="Accept terms and conditions" />
 							<Checkbox
-								label="Subscribe to newsletter"
 								defaultChecked
+								label="Subscribe to newsletter"
 							/>
 						</div>
 					</ComponentPreview>
@@ -177,16 +177,16 @@ function Page() {
 					<ComponentPreview title="Checkbox sizes">
 						<div className="flex flex-col gap-3">
 							<Checkbox
-								size="sm"
 								label="Small"
+								size="sm"
 							/>
 							<Checkbox
-								size="md"
 								label="Medium"
+								size="md"
 							/>
 							<Checkbox
-								size="lg"
 								label="Large"
+								size="lg"
 							/>
 						</div>
 					</ComponentPreview>
@@ -257,8 +257,8 @@ function Page() {
 								label="Disabled unchecked"
 							/>
 							<Checkbox
-								disabled
 								defaultChecked
+								disabled
 								label="Disabled checked"
 							/>
 						</div>
@@ -288,17 +288,19 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">With description</h2>
+					<h2 className="font-display font-semibold text-xl">
+						With description
+					</h2>
 					<ComponentPreview title="Checkbox with description text">
 						<div className="flex flex-col gap-3">
 							<Checkbox
-								label="Marketing emails"
 								description="Receive offers, product updates, and news."
+								label="Marketing emails"
 							/>
 							<Checkbox
 								defaultChecked
-								label="Security alerts"
 								description="Get notified about suspicious activity on your account."
+								label="Security alerts"
 							/>
 						</div>
 					</ComponentPreview>
@@ -307,7 +309,7 @@ function Page() {
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">Bordered</h2>
 					<ComponentPreview title="Bordered checkbox — title only">
-						<div className="flex flex-col gap-3 w-full max-w-sm">
+						<div className="flex w-full max-w-sm flex-col gap-3">
 							<Checkbox
 								bordered
 								label="Enable notifications"
@@ -325,23 +327,23 @@ function Page() {
 						</div>
 					</ComponentPreview>
 					<ComponentPreview title="Bordered checkbox — with description">
-						<div className="flex flex-col gap-3 w-full max-w-sm">
+						<div className="flex w-full max-w-sm flex-col gap-3">
 							<Checkbox
 								bordered
-								label="Enable notifications"
 								description="Get alerts for important events."
+								label="Enable notifications"
 							/>
 							<Checkbox
 								bordered
 								defaultChecked
-								label="Marketing emails"
 								description="Receive offers, product updates, and news."
+								label="Marketing emails"
 							/>
 							<Checkbox
 								bordered
+								description="Requires a verified phone number."
 								disabled
 								label="SMS alerts"
-								description="Requires a verified phone number."
 							/>
 						</div>
 					</ComponentPreview>

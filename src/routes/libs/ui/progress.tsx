@@ -16,9 +16,9 @@ const progressProps = [
 	},
 	{
 		description:
-			'Label text or a label config object with content, required, optional, and disabled.',
+			'Label for the progress bar. Pass a string for simple text, or an object to configure additional options like required, optional, disabled, tooltip, and htmlFor.',
 		name: 'label',
-		type: 'string | { content?: string; required?: boolean; optional?: boolean; disabled?: boolean }',
+		type: 'string | { content?: string; required?: boolean; optional?: boolean; disabled?: boolean; tooltip?: React.ReactNode; htmlFor?: string }',
 	},
 	{
 		default: '"md"',
@@ -33,8 +33,24 @@ const usageCode = `import { Progress } from '@turystack/ui'
 // Basic
 <Progress value={60} />
 
-// With label
+// With label (string shorthand)
 <Progress label="Upload progress" value={75} />
+
+// With label (object config)
+<Progress
+  label={{ content: 'Storage used', required: true }}
+  value={68}
+/>
+
+<Progress
+  label={{ content: 'Optional field', optional: true }}
+  value={42}
+/>
+
+<Progress
+  label={{ content: 'Disabled progress', disabled: true }}
+  value={30}
+/>
 
 // Sizes
 <Progress size="sm" value={60} />
@@ -81,7 +97,7 @@ function Page() {
 
 				<div className="space-y-4">
 					<h2 className="font-display font-semibold text-xl">With label</h2>
-					<ComponentPreview title="Progress with label and percentage">
+					<ComponentPreview title="Progress with string label">
 						<div className="w-full max-w-md space-y-4">
 							<Progress
 								label="Storage used"
@@ -90,6 +106,76 @@ function Page() {
 							<Progress
 								label="Upload progress"
 								value={42}
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">
+						Label object config
+					</h2>
+					<p className="text-muted-foreground text-sm">
+						Pass an object to{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							label
+						</code>{' '}
+						for fine-grained control. The object accepts{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							content
+						</code>
+						,{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							required
+						</code>
+						,{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							optional
+						</code>
+						,{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							disabled
+						</code>
+						,{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							tooltip
+						</code>
+						, and{' '}
+						<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+							htmlFor
+						</code>{' '}
+						properties.
+					</p>
+					<ComponentPreview title="Label with required indicator">
+						<div className="w-full max-w-md space-y-4">
+							<Progress
+								label={{
+									content: 'Required field',
+									required: true,
+								}}
+								value={55}
+							/>
+						</div>
+					</ComponentPreview>
+					<ComponentPreview title="Label with optional indicator">
+						<div className="w-full max-w-md space-y-4">
+							<Progress
+								label={{
+									content: 'Optional field',
+									optional: true,
+								}}
+								value={30}
+							/>
+						</div>
+					</ComponentPreview>
+					<ComponentPreview title="Label with disabled state">
+						<div className="w-full max-w-md space-y-4">
+							<Progress
+								label={{
+									content: 'Disabled progress',
+									disabled: true,
+								}}
+								value={20}
 							/>
 						</div>
 					</ComponentPreview>

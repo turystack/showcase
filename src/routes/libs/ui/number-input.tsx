@@ -37,16 +37,44 @@ const singleProps = [
 		type: 'string',
 	},
 	{
+		default: '"md"',
+		description: 'The size of the input.',
+		name: 'size',
+		type: '"sm" | "md" | "lg"',
+	},
+	{
 		default: 'false',
-		description: 'Disables the input.',
+		description: 'Makes the input take the full width of its container.',
+		name: 'block',
+		type: 'boolean',
+	},
+	{
+		default: 'false',
+		description: 'Disables the input, preventing interaction.',
 		name: 'disabled',
 		type: 'boolean',
 	},
 	{
 		default: 'false',
-		description: 'Makes the input full-width.',
-		name: 'block',
+		description: 'Shows a loading spinner in the input.',
+		name: 'loading',
 		type: 'boolean',
+	},
+	{
+		description: 'Content rendered on the left side of the input.',
+		name: 'leftSection',
+		type: 'React.ReactNode',
+	},
+	{
+		description: 'Content rendered on the right side of the input.',
+		name: 'rightSection',
+		type: 'React.ReactNode',
+	},
+	{
+		description:
+			'Additional CSS class name applied to the root wrapper element.',
+		name: 'rootClassName',
+		type: 'string',
 	},
 ]
 
@@ -81,6 +109,17 @@ const usageCode = `import { NumberInput } from '@turystack/ui'
 
 // With step
 <NumberInput mode="single" step={5} defaultValue={10} />
+
+// Sizes
+<NumberInput mode="single" size="sm" placeholder="Small" />
+<NumberInput mode="single" size="md" placeholder="Medium" />
+<NumberInput mode="single" size="lg" placeholder="Large" />
+
+// Block (full width)
+<NumberInput mode="single" block placeholder="Full width" />
+
+// Loading
+<NumberInput mode="single" loading placeholder="Loading..." />
 
 // Controlled single
 const [qty, setQty] = useState(1)
@@ -150,10 +189,78 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">Range</h2>
-					<ComponentPreview title="Range (from → to)">
+					<h2 className="font-display font-semibold text-xl">Sizes</h2>
+					<ComponentPreview title="Number input sizes">
+						<div className="flex flex-col gap-3">
+							<NumberInput
+								mode="single"
+								placeholder="Small"
+								size="sm"
+							/>
+							<NumberInput
+								mode="single"
+								placeholder="Medium"
+								size="md"
+							/>
+							<NumberInput
+								mode="single"
+								placeholder="Large"
+								size="lg"
+							/>
+						</div>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Block</h2>
+					<ComponentPreview
+						className="w-80"
+						title="Full width"
+					>
 						<NumberInput
-							defaultValue={{ from: 10, to: 100 }}
+							block
+							mode="single"
+							placeholder="Full width input"
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Loading</h2>
+					<ComponentPreview title="Loading state">
+						<NumberInput
+							loading
+							mode="single"
+							placeholder="Loading..."
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Range</h2>
+					<ComponentPreview title="Range (from / to)">
+						<NumberInput
+							defaultValue={{
+								from: 10,
+								to: 100,
+							}}
+							mode="range"
+						/>
+					</ComponentPreview>
+				</div>
+
+				<div className="space-y-4">
+					<h2 className="font-display font-semibold text-xl">Range block</h2>
+					<ComponentPreview
+						className="w-96"
+						title="Full width range"
+					>
+						<NumberInput
+							block
+							defaultValue={{
+								from: 0,
+								to: 50,
+							}}
 							mode="range"
 						/>
 					</ComponentPreview>

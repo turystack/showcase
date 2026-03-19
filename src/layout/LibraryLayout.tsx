@@ -11,10 +11,12 @@ type LibraryLayoutProps = PropsWithChildren<{
 	libraryName?: string
 	githubUrl: string
 	sections: SidebarSection[]
+	contentClassName?: string
 }>
 
 export function LibraryLayout({
 	children,
+	contentClassName,
 	libraryName,
 	githubUrl,
 	sections,
@@ -46,7 +48,9 @@ export function LibraryLayout({
 					sidebarOpen && !isMobile ? 'left-64' : 'left-0',
 				)}
 			>
-				<div className="mx-auto max-w-6xl p-8">{children}</div>
+				<div className={cn('mx-auto max-w-6xl p-8', contentClassName)}>
+					{children}
+				</div>
 			</main>
 		</div>
 	)

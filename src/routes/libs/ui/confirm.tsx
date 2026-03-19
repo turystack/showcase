@@ -41,6 +41,12 @@ const confirmProps = [
 		type: 'Omit<ButtonProps, "loading" | "onClick">',
 	},
 	{
+		description:
+			'Additional props forwarded to the cancel button (excludes loading and onClick).',
+		name: 'cancelProps',
+		type: 'Omit<ButtonProps, "loading" | "onClick">',
+	},
+	{
 		description: 'Handler called when the user confirms the action.',
 		name: 'onConfirm',
 		type: '() => void',
@@ -93,33 +99,35 @@ function Demo() {
 	return (
 		<div className="flex flex-wrap gap-3">
 			<Button
-				variant="outline"
 				onClick={() => setOpen(true)}
+				variant="outline"
 			>
 				Open confirm dialog
 			</Button>
 			<Button
-				variant="destructive"
 				onClick={() => setDestructiveOpen(true)}
+				variant="destructive"
 			>
 				Delete item
 			</Button>
 
 			<Confirm
 				description="Are you sure you want to proceed with this action? This may affect your settings."
-				open={open}
-				title="Confirm action"
 				onClose={() => setOpen(false)}
 				onConfirm={() => setOpen(false)}
+				open={open}
+				title="Confirm action"
 			/>
 			<Confirm
-				confirmProps={{ variant: 'destructive' }}
+				confirmProps={{
+					variant: 'destructive',
+				}}
 				confirmText="Delete"
 				description="This action cannot be undone. The item will be permanently deleted from the system."
-				open={destructiveOpen}
-				title="Delete item"
 				onClose={() => setDestructiveOpen(false)}
 				onConfirm={() => setDestructiveOpen(false)}
+				open={destructiveOpen}
+				title="Delete item"
 			/>
 		</div>
 	)

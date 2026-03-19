@@ -1,12 +1,13 @@
 import { createFileRoute } from '@tanstack/react-router'
-import { Table, Provider } from '@turystack/ui'
+import { Provider, Table } from '@turystack/ui'
 import { useState } from 'react'
 
 import { CodeBlock, ComponentPreview, PropsTable } from '@/components'
 
 const tableProps = [
 	{
-		description: 'Column definitions including key, label, selector, align, width, sorter, and hide.',
+		description:
+			'Column definitions including key, label, selector, align, width, sorter, and hide.',
 		name: 'columns',
 		required: true,
 		type: 'TableColumns<T>',
@@ -29,18 +30,31 @@ const tableProps = [
 		type: '"none" | "multiple"',
 	},
 	{
+		description:
+			'Controlled array of selected row keys. Use with onSelectionChange for controlled selection.',
+		name: 'selectedKeys',
+		type: 'string[]',
+	},
+	{
+		description: 'Initial selected row keys for uncontrolled selection mode.',
+		name: 'defaultSelectedKeys',
+		type: 'string[]',
+	},
+	{
 		description: 'Pagination configuration (offset or cursor mode).',
 		name: 'pagination',
 		type: 'PaginationProps',
 	},
 	{
-		description: 'Current sort key. Prefix with "-" for descending (e.g., "-name").',
+		description:
+			'Current sort key. Prefix with "-" for descending (e.g., "-name").',
 		name: 'sort',
 		type: 'string',
 	},
 	{
 		default: 'false',
-		description: 'When true, hides the pagination control even if pagination is provided.',
+		description:
+			'When true, hides the pagination control even if pagination is provided.',
 		name: 'hidePagination',
 		type: 'boolean',
 	},
@@ -61,7 +75,8 @@ const tableProps = [
 		type: '(row: T) => void',
 	},
 	{
-		description: 'Handler called when selection changes. Receives array of selected key strings.',
+		description:
+			'Handler called when selection changes. Receives array of selected key strings.',
 		name: 'onSelectionChange',
 		type: '(value: string[]) => void',
 	},
@@ -74,7 +89,8 @@ const tableProps = [
 
 const columnProps = [
 	{
-		description: 'Unique key identifying this column (also used as the row data key).',
+		description:
+			'Unique key identifying this column (also used as the row data key).',
 		name: 'key',
 		required: true,
 		type: 'string',
@@ -85,7 +101,8 @@ const columnProps = [
 		type: 'string',
 	},
 	{
-		description: 'Custom cell renderer. Falls back to String(row[key]) if omitted.',
+		description:
+			'Custom cell renderer. Falls back to String(row[key]) if omitted.',
 		name: 'selector',
 		type: '(row: T, index: number) => React.ReactNode',
 	},
@@ -123,25 +140,99 @@ type User = {
 }
 
 const ALL_USERS: User[] = [
-	{ email: 'alice@example.com', id: 1, name: 'Alice Johnson', role: 'Admin', status: 'Active' },
-	{ email: 'bob@example.com', id: 2, name: 'Bob Smith', role: 'User', status: 'Active' },
-	{ email: 'carol@example.com', id: 3, name: 'Carol White', role: 'Editor', status: 'Inactive' },
-	{ email: 'dave@example.com', id: 4, name: 'Dave Brown', role: 'User', status: 'Active' },
-	{ email: 'eve@example.com', id: 5, name: 'Eve Davis', role: 'Viewer', status: 'Pending' },
-	{ email: 'frank@example.com', id: 6, name: 'Frank Miller', role: 'User', status: 'Active' },
-	{ email: 'grace@example.com', id: 7, name: 'Grace Lee', role: 'Editor', status: 'Active' },
-	{ email: 'henry@example.com', id: 8, name: 'Henry Wilson', role: 'Viewer', status: 'Inactive' },
-	{ email: 'iris@example.com', id: 9, name: 'Iris Clark', role: 'Admin', status: 'Active' },
-	{ email: 'jack@example.com', id: 10, name: 'Jack Turner', role: 'User', status: 'Pending' },
-	{ email: 'kate@example.com', id: 11, name: 'Kate Adams', role: 'Editor', status: 'Active' },
-	{ email: 'leo@example.com', id: 12, name: 'Leo Scott', role: 'Viewer', status: 'Active' },
+	{
+		email: 'alice@example.com',
+		id: 1,
+		name: 'Alice Johnson',
+		role: 'Admin',
+		status: 'Active',
+	},
+	{
+		email: 'bob@example.com',
+		id: 2,
+		name: 'Bob Smith',
+		role: 'User',
+		status: 'Active',
+	},
+	{
+		email: 'carol@example.com',
+		id: 3,
+		name: 'Carol White',
+		role: 'Editor',
+		status: 'Inactive',
+	},
+	{
+		email: 'dave@example.com',
+		id: 4,
+		name: 'Dave Brown',
+		role: 'User',
+		status: 'Active',
+	},
+	{
+		email: 'eve@example.com',
+		id: 5,
+		name: 'Eve Davis',
+		role: 'Viewer',
+		status: 'Pending',
+	},
+	{
+		email: 'frank@example.com',
+		id: 6,
+		name: 'Frank Miller',
+		role: 'User',
+		status: 'Active',
+	},
+	{
+		email: 'grace@example.com',
+		id: 7,
+		name: 'Grace Lee',
+		role: 'Editor',
+		status: 'Active',
+	},
+	{
+		email: 'henry@example.com',
+		id: 8,
+		name: 'Henry Wilson',
+		role: 'Viewer',
+		status: 'Inactive',
+	},
+	{
+		email: 'iris@example.com',
+		id: 9,
+		name: 'Iris Clark',
+		role: 'Admin',
+		status: 'Active',
+	},
+	{
+		email: 'jack@example.com',
+		id: 10,
+		name: 'Jack Turner',
+		role: 'User',
+		status: 'Pending',
+	},
+	{
+		email: 'kate@example.com',
+		id: 11,
+		name: 'Kate Adams',
+		role: 'Editor',
+		status: 'Active',
+	},
+	{
+		email: 'leo@example.com',
+		id: 12,
+		name: 'Leo Scott',
+		role: 'Viewer',
+		status: 'Active',
+	},
 ]
 
 function applySortToUsers(data: User[], sort?: string): User[] {
 	if (!sort) return data
 	const desc = sort.startsWith('-')
 	const key = (desc ? sort.slice(1) : sort) as keyof User
-	return [...data].sort((a, b) =>
+	return [
+		...data,
+	].sort((a, b) =>
 		desc
 			? String(b[key]).localeCompare(String(a[key]))
 			: String(a[key]).localeCompare(String(b[key])),
@@ -156,7 +247,7 @@ function StatusBadge({ status }: { status: User['status'] }) {
 	}
 	return (
 		<span
-			className={`inline-flex items-center rounded-full px-2 py-0.5 text-xs font-medium ${colors[status]}`}
+			className={`inline-flex items-center rounded-full px-2 py-0.5 font-medium text-xs ${colors[status]}`}
 		>
 			{status}
 		</span>
@@ -229,9 +320,21 @@ function Page() {
 	const [clickedUser, setClickedUser] = useState<User | null>(null)
 
 	const columns = [
-		{ key: 'name', label: 'Name', sorter: true },
-		{ key: 'email', label: 'Email', sorter: true },
-		{ key: 'role', label: 'Role', sorter: true },
+		{
+			key: 'name',
+			label: 'Name',
+			sorter: true,
+		},
+		{
+			key: 'email',
+			label: 'Email',
+			sorter: true,
+		},
+		{
+			key: 'role',
+			label: 'Role',
+			sorter: true,
+		},
 		{
 			align: 'center' as const,
 			key: 'status',
@@ -289,8 +392,8 @@ function Page() {
 							columns={columns}
 							itemKey="id"
 							items={basicItems}
-							sort={basicSort}
 							onSortChange={setBasicSort}
+							sort={basicSort}
 						/>
 					</ComponentPreview>
 				</div>
@@ -307,6 +410,10 @@ function Page() {
 							columns={columns}
 							itemKey="id"
 							items={paginatedItems}
+							onSortChange={(s) => {
+								setPaginatedSort(s)
+								setPage(1)
+							}}
 							pagination={{
 								mode: 'offset',
 								onPageChange: setPage,
@@ -319,18 +426,12 @@ function Page() {
 								total: ALL_USERS.length,
 							}}
 							sort={paginatedSort}
-							onSortChange={(s) => {
-								setPaginatedSort(s)
-								setPage(1)
-							}}
 						/>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">
-						With selection
-					</h2>
+					<h2 className="font-display font-semibold text-xl">With selection</h2>
 					<ComponentPreview
 						className="block p-4"
 						title="Multi-select, sorting and pagination combined"
@@ -339,6 +440,11 @@ function Page() {
 							columns={columns}
 							itemKey="id"
 							items={fullItems}
+							onSelectionChange={() => {}}
+							onSortChange={(s) => {
+								setFullSort(s)
+								setFullPage(1)
+							}}
 							pagination={{
 								mode: 'offset',
 								onPageChange: setFullPage,
@@ -352,19 +458,12 @@ function Page() {
 							}}
 							selection="multiple"
 							sort={fullSort}
-							onSelectionChange={() => {}}
-							onSortChange={(s) => {
-								setFullSort(s)
-								setFullPage(1)
-							}}
 						/>
 					</ComponentPreview>
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">
-						Clickable rows
-					</h2>
+					<h2 className="font-display font-semibold text-xl">Clickable rows</h2>
 					<ComponentPreview
 						className="block p-4"
 						title="Table with row click handler"
@@ -377,7 +476,7 @@ function Page() {
 								onRowClick={setClickedUser}
 							/>
 							{clickedUser && (
-								<p className="text-sm text-muted-foreground">
+								<p className="text-muted-foreground text-sm">
 									Clicked:{' '}
 									<span className="font-medium text-foreground">
 										{clickedUser.name}
@@ -390,9 +489,7 @@ function Page() {
 				</div>
 
 				<div className="space-y-4">
-					<h2 className="font-display font-semibold text-xl">
-						Loading state
-					</h2>
+					<h2 className="font-display font-semibold text-xl">Loading state</h2>
 					<ComponentPreview
 						className="block p-4"
 						title="Table with loading overlay"

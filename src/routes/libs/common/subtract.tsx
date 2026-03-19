@@ -9,16 +9,16 @@ export const Route = createFileRoute('/libs/common/subtract')({
 
 const params = [
 	{
-		name: 'a',
-		type: 'number',
 		description: 'The value to subtract from.',
+		name: 'a',
 		required: true,
+		type: 'number',
 	},
 	{
-		name: 'b',
-		type: 'number',
 		description: 'The value to subtract.',
+		name: 'b',
 		required: true,
+		type: 'number',
 	},
 ]
 
