@@ -1,7 +1,9 @@
 import { Link } from '@tanstack/react-router'
-import { Github, Terminal } from 'lucide-react'
+import { Github } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 
+import { TuryMark } from '@/components/Logo'
+import { SpotlightTrigger } from '@/components/SpotlightSearch'
 import { ThemeToggle } from '@/components/ThemeToggle'
 
 export function MainLayout({ children }: PropsWithChildren) {
@@ -13,31 +15,35 @@ export function MainLayout({ children }: PropsWithChildren) {
 						className="flex items-center gap-2"
 						to="/"
 					>
-						<Terminal className="h-6 w-6 text-tury-cyan" />
+						<TuryMark size={24} />
 						<span className="font-bold font-display text-lg tracking-tight">
-							tury<span className="text-tury-cyan">.dev</span>
+							tury<span className="text-tury-green">.dev</span>
 						</span>
 					</Link>
 
-					<nav className="hidden items-center gap-8 md:flex">
+					<nav className="hidden items-center gap-6 md:flex">
+						<SpotlightTrigger className="w-56" />
 						<a
 							className="text-muted-foreground text-sm transition-colors hover:text-foreground"
 							href="#libraries"
 						>
 							Libraries
 						</a>
-						<a
-							className="text-muted-foreground text-sm transition-colors hover:text-foreground"
-							href="https://github.com"
-							rel="noreferrer"
-							target="_blank"
-						>
-							<Github size={18} />
-						</a>
-						<ThemeToggle />
+						<div className="flex items-center gap-1">
+							<a
+								className="cursor-pointer rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+								href="https://github.com"
+								rel="noreferrer"
+								target="_blank"
+							>
+								<Github size={18} />
+							</a>
+							<ThemeToggle />
+						</div>
 					</nav>
 
 					<div className="flex items-center gap-2 md:hidden">
+						<SpotlightTrigger />
 						<ThemeToggle />
 					</div>
 				</div>
@@ -49,10 +55,10 @@ export function MainLayout({ children }: PropsWithChildren) {
 				<div className="container">
 					<div className="flex flex-col items-center justify-between gap-6 md:flex-row">
 						<div className="flex items-center gap-2">
-							<Terminal className="h-5 w-5 text-tury-cyan" />
+							<TuryMark size={20} />
 
 							<span className="font-bold font-display text-sm">
-								tury<span className="text-tury-cyan">.dev</span>
+								tury<span className="text-tury-green">.dev</span>
 							</span>
 						</div>
 

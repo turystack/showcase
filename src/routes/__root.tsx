@@ -1,9 +1,12 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router'
 import { Provider } from '@turystack/ui'
 
+import { SpotlightSearch } from '@/components/SpotlightSearch'
+
 export const Route = createRootRoute({
 	component: () => (
 		<Provider defaultColorScheme="system">
+			<SpotlightSearch />
 			<Outlet />
 		</Provider>
 	),

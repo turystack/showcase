@@ -12,7 +12,7 @@ export function ThemeToggle() {
 	return (
 		<button
 			aria-label="Toggle theme"
-			className="rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+			className="cursor-pointer rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
 			onClick={() => changeColorScheme(isDark ? 'light' : 'dark')}
 			type="button"
 		>

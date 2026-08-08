@@ -76,7 +76,7 @@ export function DocsSidebar({ open, onClose, sections }: DocsSidebarProps) {
 												}}
 												activeProps={{
 													className:
-														'block rounded-md px-3 py-2 text-sm bg-tury-cyan/10 text-tury-cyan font-medium border-l-2 border-tury-cyan transition-colors',
+														'block rounded-md px-3 py-2 text-sm bg-lib/10 text-lib font-medium border-l-2 border-lib transition-colors',
 												}}
 												className="block rounded-md px-3 py-2 text-muted-foreground text-sm transition-colors hover:bg-muted hover:text-foreground"
 												to={item.to}
@@ -101,7 +101,7 @@ export function DocsSidebar({ open, onClose, sections }: DocsSidebarProps) {
 													}}
 													activeProps={{
 														className:
-															'block rounded-md pl-5 pr-3 py-2 text-sm bg-tury-cyan/10 text-tury-cyan font-medium border-l-2 border-tury-cyan transition-colors',
+															'block rounded-md pl-5 pr-3 py-2 text-sm bg-lib/10 text-lib font-medium border-l-2 border-lib transition-colors',
 													}}
 													className="block rounded-md py-2 pr-3 pl-5 text-muted-foreground text-sm transition-colors hover:bg-muted hover:text-foreground"
 													to={item.to}

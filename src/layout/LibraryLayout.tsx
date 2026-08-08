@@ -1,9 +1,10 @@
-import type { PropsWithChildren } from 'react'
+import type { CSSProperties, PropsWithChildren } from 'react'
 import { useState } from 'react'
 
 import { DocsHeader } from '@/components/docs/DocsHeader'
 import type { SidebarSection } from '@/components/docs/DocsSidebar'
 import { DocsSidebar } from '@/components/docs/DocsSidebar'
+import { libraries } from '@/data/libraries'
 import { useIsMobile } from '@/hooks/use-mobile'
 import { cn } from '@/lib/utils'
 
@@ -27,8 +28,19 @@ export function LibraryLayout({
 	const handleToggleSidebar = () => setSidebarOpen((prev) => !prev)
 	const handleCloseSidebar = () => setSidebarOpen(false)
 
+	const accent = libraries.find((lib) => lib.name === libraryName)?.color
+
 	return (
-		<div className="h-screen overflow-hidden">
+		<div
+			className="h-screen overflow-hidden"
+			style={
+				accent
+					? ({
+							'--lib-accent': `var(--tury-${accent})`,
+						} as CSSProperties)
+					: undefined
+			}
+		>
 			<DocsHeader
 				githubUrl={githubUrl}
 				libraryName={libraryName}

@@ -11,64 +11,209 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MainRouteImport } from './routes/_main'
 import { Route as MainIndexRouteImport } from './routes/_main/index'
-import { Route as LibsUiRouteImport } from './routes/libs/ui'
-import { Route as LibsCommonRouteImport } from './routes/libs/common'
-import { Route as LibsUiIndexRouteImport } from './routes/libs/ui/index'
-import { Route as LibsCommonIndexRouteImport } from './routes/libs/common/index'
-import { Route as LibsUiUploaderRouteImport } from './routes/libs/ui/uploader'
-import { Route as LibsUiTypographyRouteImport } from './routes/libs/ui/typography'
-import { Route as LibsUiTooltipRouteImport } from './routes/libs/ui/tooltip'
-import { Route as LibsUiToastRouteImport } from './routes/libs/ui/toast'
-import { Route as LibsUiThemeRouteImport } from './routes/libs/ui/theme'
-import { Route as LibsUiTextareaRouteImport } from './routes/libs/ui/textarea'
-import { Route as LibsUiTagsInputRouteImport } from './routes/libs/ui/tags-input'
-import { Route as LibsUiTabsRouteImport } from './routes/libs/ui/tabs'
-import { Route as LibsUiTableRouteImport } from './routes/libs/ui/table'
-import { Route as LibsUiTLoaderRouteImport } from './routes/libs/ui/t-loader'
-import { Route as LibsUiSwitchRouteImport } from './routes/libs/ui/switch'
-import { Route as LibsUiSliderRouteImport } from './routes/libs/ui/slider'
-import { Route as LibsUiSkeletonRouteImport } from './routes/libs/ui/skeleton'
-import { Route as LibsUiSheetRouteImport } from './routes/libs/ui/sheet'
-import { Route as LibsUiSeparatorRouteImport } from './routes/libs/ui/separator'
-import { Route as LibsUiSelectRouteImport } from './routes/libs/ui/select'
-import { Route as LibsUiRadioRouteImport } from './routes/libs/ui/radio'
-import { Route as LibsUiProviderRouteImport } from './routes/libs/ui/provider'
-import { Route as LibsUiProgressRouteImport } from './routes/libs/ui/progress'
-import { Route as LibsUiPopoverRouteImport } from './routes/libs/ui/popover'
-import { Route as LibsUiPlaygroundRouteImport } from './routes/libs/ui/playground'
-import { Route as LibsUiPhoneInputRouteImport } from './routes/libs/ui/phone-input'
-import { Route as LibsUiPasswordInputRouteImport } from './routes/libs/ui/password-input'
-import { Route as LibsUiPaginationRouteImport } from './routes/libs/ui/pagination'
-import { Route as LibsUiOtpInputRouteImport } from './routes/libs/ui/otp-input'
-import { Route as LibsUiNumberInputRouteImport } from './routes/libs/ui/number-input'
-import { Route as LibsUiModalRouteImport } from './routes/libs/ui/modal'
-import { Route as LibsUiMaskInputRouteImport } from './routes/libs/ui/mask-input'
-import { Route as LibsUiLoadingOverlayRouteImport } from './routes/libs/ui/loading-overlay'
-import { Route as LibsUiLayoutRouteImport } from './routes/libs/ui/layout'
-import { Route as LibsUiLabelRouteImport } from './routes/libs/ui/label'
-import { Route as LibsUiInputRouteImport } from './routes/libs/ui/input'
-import { Route as LibsUiI18nRouteImport } from './routes/libs/ui/i18n'
-import { Route as LibsUiGridRouteImport } from './routes/libs/ui/grid'
-import { Route as LibsUiFormRouteImport } from './routes/libs/ui/form'
-import { Route as LibsUiFlexRouteImport } from './routes/libs/ui/flex'
-import { Route as LibsUiDropdownMenuRouteImport } from './routes/libs/ui/dropdown-menu'
-import { Route as LibsUiDocumentInputRouteImport } from './routes/libs/ui/document-input'
-import { Route as LibsUiDateRangeInputRouteImport } from './routes/libs/ui/date-range-input'
-import { Route as LibsUiDateInputRouteImport } from './routes/libs/ui/date-input'
-import { Route as LibsUiCurrencyInputRouteImport } from './routes/libs/ui/currency-input'
-import { Route as LibsUiConfirmRouteImport } from './routes/libs/ui/confirm'
-import { Route as LibsUiColorSchemeRouteImport } from './routes/libs/ui/color-scheme'
-import { Route as LibsUiCheckboxRouteImport } from './routes/libs/ui/checkbox'
-import { Route as LibsUiCardRouteImport } from './routes/libs/ui/card'
-import { Route as LibsUiButtonRouteImport } from './routes/libs/ui/button'
-import { Route as LibsUiBreadcrumbRouteImport } from './routes/libs/ui/breadcrumb'
-import { Route as LibsUiBadgeRouteImport } from './routes/libs/ui/badge'
-import { Route as LibsUiAvatarRouteImport } from './routes/libs/ui/avatar'
-import { Route as LibsUiAlertRouteImport } from './routes/libs/ui/alert'
-import { Route as LibsUiAccordionRouteImport } from './routes/libs/ui/accordion'
-import { Route as LibsCommonSumRouteImport } from './routes/libs/common/sum'
-import { Route as LibsCommonSubtractRouteImport } from './routes/libs/common/subtract'
-import { Route as LibsCommonMultiplyRouteImport } from './routes/libs/common/multiply'
+import { Route as LibsSagaRouteImport } from './routes/libs/saga'
+import { Route as LibsReactWebRouteImport } from './routes/libs/react-web'
+import { Route as LibsReactMobileRouteImport } from './routes/libs/react-mobile'
+import { Route as LibsReactIconsRouteImport } from './routes/libs/react-icons'
+import { Route as LibsReactHooksRouteImport } from './routes/libs/react-hooks'
+import { Route as LibsQueryDslRouteImport } from './routes/libs/query-dsl'
+import { Route as LibsNestjsStorageRouteImport } from './routes/libs/nestjs-storage'
+import { Route as LibsNestjsSocialAuthRouteImport } from './routes/libs/nestjs-social-auth'
+import { Route as LibsNestjsServerlessRouteImport } from './routes/libs/nestjs-serverless'
+import { Route as LibsNestjsServerRouteImport } from './routes/libs/nestjs-server'
+import { Route as LibsNestjsSchedulerRouteImport } from './routes/libs/nestjs-scheduler'
+import { Route as LibsNestjsResilienceRouteImport } from './routes/libs/nestjs-resilience'
+import { Route as LibsNestjsRateLimitRouteImport } from './routes/libs/nestjs-rate-limit'
+import { Route as LibsNestjsPublisherRouteImport } from './routes/libs/nestjs-publisher'
+import { Route as LibsNestjsObservabilityRouteImport } from './routes/libs/nestjs-observability'
+import { Route as LibsNestjsLoggerRouteImport } from './routes/libs/nestjs-logger'
+import { Route as LibsNestjsLockRouteImport } from './routes/libs/nestjs-lock'
+import { Route as LibsNestjsIdempotencyRouteImport } from './routes/libs/nestjs-idempotency'
+import { Route as LibsNestjsIamRouteImport } from './routes/libs/nestjs-iam'
+import { Route as LibsNestjsDatabaseRouteImport } from './routes/libs/nestjs-database'
+import { Route as LibsNestjsContextRouteImport } from './routes/libs/nestjs-context'
+import { Route as LibsNestjsConfigRouteImport } from './routes/libs/nestjs-config'
+import { Route as LibsNestjsCacheRouteImport } from './routes/libs/nestjs-cache'
+import { Route as LibsFrontendPrimitivesPatternRouteImport } from './routes/libs/frontend-primitives-pattern'
+import { Route as LibsFrontendPatternRouteImport } from './routes/libs/frontend-pattern'
+import { Route as LibsFrontendConfigRouteImport } from './routes/libs/frontend-config'
+import { Route as LibsExceptionsRouteImport } from './routes/libs/exceptions'
+import { Route as LibsEntityRouteImport } from './routes/libs/entity'
+import { Route as LibsCliRouteImport } from './routes/libs/cli'
+import { Route as LibsBackendPatternRouteImport } from './routes/libs/backend-pattern'
+import { Route as LibsBackendConfigRouteImport } from './routes/libs/backend-config'
+import { Route as LibsArchitecturePatternRouteImport } from './routes/libs/architecture-pattern'
+import { Route as LibsSagaIndexRouteImport } from './routes/libs/saga/index'
+import { Route as LibsReactWebIndexRouteImport } from './routes/libs/react-web/index'
+import { Route as LibsReactMobileIndexRouteImport } from './routes/libs/react-mobile/index'
+import { Route as LibsReactIconsIndexRouteImport } from './routes/libs/react-icons/index'
+import { Route as LibsReactHooksIndexRouteImport } from './routes/libs/react-hooks/index'
+import { Route as LibsQueryDslIndexRouteImport } from './routes/libs/query-dsl/index'
+import { Route as LibsNestjsStorageIndexRouteImport } from './routes/libs/nestjs-storage/index'
+import { Route as LibsNestjsSocialAuthIndexRouteImport } from './routes/libs/nestjs-social-auth/index'
+import { Route as LibsNestjsServerlessIndexRouteImport } from './routes/libs/nestjs-serverless/index'
+import { Route as LibsNestjsServerIndexRouteImport } from './routes/libs/nestjs-server/index'
+import { Route as LibsNestjsSchedulerIndexRouteImport } from './routes/libs/nestjs-scheduler/index'
+import { Route as LibsNestjsResilienceIndexRouteImport } from './routes/libs/nestjs-resilience/index'
+import { Route as LibsNestjsRateLimitIndexRouteImport } from './routes/libs/nestjs-rate-limit/index'
+import { Route as LibsNestjsPublisherIndexRouteImport } from './routes/libs/nestjs-publisher/index'
+import { Route as LibsNestjsObservabilityIndexRouteImport } from './routes/libs/nestjs-observability/index'
+import { Route as LibsNestjsLoggerIndexRouteImport } from './routes/libs/nestjs-logger/index'
+import { Route as LibsNestjsLockIndexRouteImport } from './routes/libs/nestjs-lock/index'
+import { Route as LibsNestjsIdempotencyIndexRouteImport } from './routes/libs/nestjs-idempotency/index'
+import { Route as LibsNestjsIamIndexRouteImport } from './routes/libs/nestjs-iam/index'
+import { Route as LibsNestjsDatabaseIndexRouteImport } from './routes/libs/nestjs-database/index'
+import { Route as LibsNestjsContextIndexRouteImport } from './routes/libs/nestjs-context/index'
+import { Route as LibsNestjsConfigIndexRouteImport } from './routes/libs/nestjs-config/index'
+import { Route as LibsNestjsCacheIndexRouteImport } from './routes/libs/nestjs-cache/index'
+import { Route as LibsFrontendPrimitivesPatternIndexRouteImport } from './routes/libs/frontend-primitives-pattern/index'
+import { Route as LibsFrontendPatternIndexRouteImport } from './routes/libs/frontend-pattern/index'
+import { Route as LibsFrontendConfigIndexRouteImport } from './routes/libs/frontend-config/index'
+import { Route as LibsExceptionsIndexRouteImport } from './routes/libs/exceptions/index'
+import { Route as LibsEntityIndexRouteImport } from './routes/libs/entity/index'
+import { Route as LibsCliIndexRouteImport } from './routes/libs/cli/index'
+import { Route as LibsBackendPatternIndexRouteImport } from './routes/libs/backend-pattern/index'
+import { Route as LibsBackendConfigIndexRouteImport } from './routes/libs/backend-config/index'
+import { Route as LibsArchitecturePatternIndexRouteImport } from './routes/libs/architecture-pattern/index'
+import { Route as LibsSagaSagaRouteImport } from './routes/libs/saga/saga'
+import { Route as LibsReactWebUploaderRouteImport } from './routes/libs/react-web/uploader'
+import { Route as LibsReactWebTypographyRouteImport } from './routes/libs/react-web/typography'
+import { Route as LibsReactWebTooltipRouteImport } from './routes/libs/react-web/tooltip'
+import { Route as LibsReactWebToastRouteImport } from './routes/libs/react-web/toast'
+import { Route as LibsReactWebThemeRouteImport } from './routes/libs/react-web/theme'
+import { Route as LibsReactWebTextareaRouteImport } from './routes/libs/react-web/textarea'
+import { Route as LibsReactWebTagsInputRouteImport } from './routes/libs/react-web/tags-input'
+import { Route as LibsReactWebTabsRouteImport } from './routes/libs/react-web/tabs'
+import { Route as LibsReactWebTableRouteImport } from './routes/libs/react-web/table'
+import { Route as LibsReactWebTLoaderRouteImport } from './routes/libs/react-web/t-loader'
+import { Route as LibsReactWebSwitchRouteImport } from './routes/libs/react-web/switch'
+import { Route as LibsReactWebSliderRouteImport } from './routes/libs/react-web/slider'
+import { Route as LibsReactWebSkeletonRouteImport } from './routes/libs/react-web/skeleton'
+import { Route as LibsReactWebSheetRouteImport } from './routes/libs/react-web/sheet'
+import { Route as LibsReactWebSeparatorRouteImport } from './routes/libs/react-web/separator'
+import { Route as LibsReactWebSelectRouteImport } from './routes/libs/react-web/select'
+import { Route as LibsReactWebRadioRouteImport } from './routes/libs/react-web/radio'
+import { Route as LibsReactWebProviderRouteImport } from './routes/libs/react-web/provider'
+import { Route as LibsReactWebProgressRouteImport } from './routes/libs/react-web/progress'
+import { Route as LibsReactWebPopoverRouteImport } from './routes/libs/react-web/popover'
+import { Route as LibsReactWebPlaygroundRouteImport } from './routes/libs/react-web/playground'
+import { Route as LibsReactWebPhoneInputRouteImport } from './routes/libs/react-web/phone-input'
+import { Route as LibsReactWebPasswordInputRouteImport } from './routes/libs/react-web/password-input'
+import { Route as LibsReactWebPaginationRouteImport } from './routes/libs/react-web/pagination'
+import { Route as LibsReactWebOtpInputRouteImport } from './routes/libs/react-web/otp-input'
+import { Route as LibsReactWebNumberInputRouteImport } from './routes/libs/react-web/number-input'
+import { Route as LibsReactWebModalRouteImport } from './routes/libs/react-web/modal'
+import { Route as LibsReactWebMaskInputRouteImport } from './routes/libs/react-web/mask-input'
+import { Route as LibsReactWebLoadingOverlayRouteImport } from './routes/libs/react-web/loading-overlay'
+import { Route as LibsReactWebLayoutRouteImport } from './routes/libs/react-web/layout'
+import { Route as LibsReactWebLabelRouteImport } from './routes/libs/react-web/label'
+import { Route as LibsReactWebInputRouteImport } from './routes/libs/react-web/input'
+import { Route as LibsReactWebI18nRouteImport } from './routes/libs/react-web/i18n'
+import { Route as LibsReactWebGridRouteImport } from './routes/libs/react-web/grid'
+import { Route as LibsReactWebFormRouteImport } from './routes/libs/react-web/form'
+import { Route as LibsReactWebFlexRouteImport } from './routes/libs/react-web/flex'
+import { Route as LibsReactWebDropdownMenuRouteImport } from './routes/libs/react-web/dropdown-menu'
+import { Route as LibsReactWebDocumentInputRouteImport } from './routes/libs/react-web/document-input'
+import { Route as LibsReactWebDateRangeInputRouteImport } from './routes/libs/react-web/date-range-input'
+import { Route as LibsReactWebDateInputRouteImport } from './routes/libs/react-web/date-input'
+import { Route as LibsReactWebCurrencyInputRouteImport } from './routes/libs/react-web/currency-input'
+import { Route as LibsReactWebContainerRouteImport } from './routes/libs/react-web/container'
+import { Route as LibsReactWebConfirmRouteImport } from './routes/libs/react-web/confirm'
+import { Route as LibsReactWebColorSchemeRouteImport } from './routes/libs/react-web/color-scheme'
+import { Route as LibsReactWebCheckboxRouteImport } from './routes/libs/react-web/checkbox'
+import { Route as LibsReactWebCardRouteImport } from './routes/libs/react-web/card'
+import { Route as LibsReactWebButtonRouteImport } from './routes/libs/react-web/button'
+import { Route as LibsReactWebBreadcrumbRouteImport } from './routes/libs/react-web/breadcrumb'
+import { Route as LibsReactWebBoxRouteImport } from './routes/libs/react-web/box'
+import { Route as LibsReactWebBlocksRouteImport } from './routes/libs/react-web/blocks'
+import { Route as LibsReactWebBadgeRouteImport } from './routes/libs/react-web/badge'
+import { Route as LibsReactWebAvatarRouteImport } from './routes/libs/react-web/avatar'
+import { Route as LibsReactWebAlertRouteImport } from './routes/libs/react-web/alert'
+import { Route as LibsReactWebAccordionRouteImport } from './routes/libs/react-web/accordion'
+import { Route as LibsReactIconsPlaygroundRouteImport } from './routes/libs/react-icons/playground'
+import { Route as LibsReactHooksHookRouteImport } from './routes/libs/react-hooks/$hook'
+import { Route as LibsQueryDslSortSchemaRouteImport } from './routes/libs/query-dsl/sort-schema'
+import { Route as LibsQueryDslRangeSchemaRouteImport } from './routes/libs/query-dsl/range-schema'
+import { Route as LibsQueryDslPaginationSchemaRouteImport } from './routes/libs/query-dsl/pagination-schema'
+import { Route as LibsQueryDslListSchemaRouteImport } from './routes/libs/query-dsl/list-schema'
+import { Route as LibsQueryDslFilterSchemaRouteImport } from './routes/libs/query-dsl/filter-schema'
+import { Route as LibsQueryDslDateRangeSchemaRouteImport } from './routes/libs/query-dsl/date-range-schema'
+import { Route as LibsQueryDslBooleanSchemaRouteImport } from './routes/libs/query-dsl/boolean-schema'
+import { Route as LibsNestjsStorageStorageServiceRouteImport } from './routes/libs/nestjs-storage/storage-service'
+import { Route as LibsNestjsStorageStorageModuleRouteImport } from './routes/libs/nestjs-storage/storage-module'
+import { Route as LibsNestjsSocialAuthSocialAuthServiceRouteImport } from './routes/libs/nestjs-social-auth/social-auth-service'
+import { Route as LibsNestjsSocialAuthSocialAuthModuleRouteImport } from './routes/libs/nestjs-social-auth/social-auth-module'
+import { Route as LibsNestjsServerlessServerlessModuleRouteImport } from './routes/libs/nestjs-serverless/serverless-module'
+import { Route as LibsNestjsServerlessServerlessCreateRouteImport } from './routes/libs/nestjs-serverless/serverless-create'
+import { Route as LibsNestjsServerlessHandlerDecoratorRouteImport } from './routes/libs/nestjs-serverless/handler-decorator'
+import { Route as LibsNestjsServerServerCreateRouteImport } from './routes/libs/nestjs-server/server-create'
+import { Route as LibsNestjsServerRouteDecoratorRouteImport } from './routes/libs/nestjs-server/route-decorator'
+import { Route as LibsNestjsServerRequestDecoratorRouteImport } from './routes/libs/nestjs-server/request-decorator'
+import { Route as LibsNestjsServerControllerDecoratorRouteImport } from './routes/libs/nestjs-server/controller-decorator'
+import { Route as LibsNestjsSchedulerSchedulerModuleRouteImport } from './routes/libs/nestjs-scheduler/scheduler-module'
+import { Route as LibsNestjsSchedulerScheduleDecoratorRouteImport } from './routes/libs/nestjs-scheduler/schedule-decorator'
+import { Route as LibsNestjsResilienceTimeoutRouteImport } from './routes/libs/nestjs-resilience/timeout'
+import { Route as LibsNestjsResilienceRetryRouteImport } from './routes/libs/nestjs-resilience/retry'
+import { Route as LibsNestjsResilienceCircuitBreakerRouteImport } from './routes/libs/nestjs-resilience/circuit-breaker'
+import { Route as LibsNestjsRateLimitRateLimitServiceRouteImport } from './routes/libs/nestjs-rate-limit/rate-limit-service'
+import { Route as LibsNestjsRateLimitRateLimitModuleRouteImport } from './routes/libs/nestjs-rate-limit/rate-limit-module'
+import { Route as LibsNestjsRateLimitRateLimitDecoratorRouteImport } from './routes/libs/nestjs-rate-limit/rate-limit-decorator'
+import { Route as LibsNestjsPublisherSubscriberDecoratorRouteImport } from './routes/libs/nestjs-publisher/subscriber-decorator'
+import { Route as LibsNestjsPublisherPublisherServiceRouteImport } from './routes/libs/nestjs-publisher/publisher-service'
+import { Route as LibsNestjsPublisherPublisherModuleRouteImport } from './routes/libs/nestjs-publisher/publisher-module'
+import { Route as LibsNestjsPublisherOutboxRouteImport } from './routes/libs/nestjs-publisher/outbox'
+import { Route as LibsNestjsObservabilityTracingRouteImport } from './routes/libs/nestjs-observability/tracing'
+import { Route as LibsNestjsObservabilityObservabilityModuleRouteImport } from './routes/libs/nestjs-observability/observability-module'
+import { Route as LibsNestjsObservabilityMetricsServiceRouteImport } from './routes/libs/nestjs-observability/metrics-service'
+import { Route as LibsNestjsObservabilityMeasureDecoratorRouteImport } from './routes/libs/nestjs-observability/measure-decorator'
+import { Route as LibsNestjsLoggerLoggerServiceRouteImport } from './routes/libs/nestjs-logger/logger-service'
+import { Route as LibsNestjsLoggerLoggerModuleRouteImport } from './routes/libs/nestjs-logger/logger-module'
+import { Route as LibsNestjsLockLockServiceRouteImport } from './routes/libs/nestjs-lock/lock-service'
+import { Route as LibsNestjsLockLockModuleRouteImport } from './routes/libs/nestjs-lock/lock-module'
+import { Route as LibsNestjsLockLockDecoratorRouteImport } from './routes/libs/nestjs-lock/lock-decorator'
+import { Route as LibsNestjsIdempotencyIdempotentDecoratorRouteImport } from './routes/libs/nestjs-idempotency/idempotent-decorator'
+import { Route as LibsNestjsIdempotencyIdempotencyServiceRouteImport } from './routes/libs/nestjs-idempotency/idempotency-service'
+import { Route as LibsNestjsIdempotencyIdempotencyModuleRouteImport } from './routes/libs/nestjs-idempotency/idempotency-module'
+import { Route as LibsNestjsIamTokenServiceRouteImport } from './routes/libs/nestjs-iam/token-service'
+import { Route as LibsNestjsIamIamModuleRouteImport } from './routes/libs/nestjs-iam/iam-module'
+import { Route as LibsNestjsIamAuthenticatedProfileDecoratorRouteImport } from './routes/libs/nestjs-iam/authenticated-profile-decorator'
+import { Route as LibsNestjsIamAuthDecoratorRouteImport } from './routes/libs/nestjs-iam/auth-decorator'
+import { Route as LibsNestjsIamAclServiceRouteImport } from './routes/libs/nestjs-iam/acl-service'
+import { Route as LibsNestjsIamAclDecoratorRouteImport } from './routes/libs/nestjs-iam/acl-decorator'
+import { Route as LibsNestjsDatabaseTypesAndErrorsRouteImport } from './routes/libs/nestjs-database/types-and-errors'
+import { Route as LibsNestjsDatabaseTransactionalRouteImport } from './routes/libs/nestjs-database/transactional'
+import { Route as LibsNestjsDatabaseTransactionHooksRouteImport } from './routes/libs/nestjs-database/transaction-hooks'
+import { Route as LibsNestjsDatabaseSchemaDefinitionRouteImport } from './routes/libs/nestjs-database/schema-definition'
+import { Route as LibsNestjsDatabaseDatabaseServiceRouteImport } from './routes/libs/nestjs-database/database-service'
+import { Route as LibsNestjsDatabaseDatabaseModuleRouteImport } from './routes/libs/nestjs-database/database-module'
+import { Route as LibsNestjsDatabaseAuditRouteImport } from './routes/libs/nestjs-database/audit'
+import { Route as LibsNestjsContextWithContextRouteImport } from './routes/libs/nestjs-context/with-context'
+import { Route as LibsNestjsContextContextServiceRouteImport } from './routes/libs/nestjs-context/context-service'
+import { Route as LibsNestjsContextContextModuleRouteImport } from './routes/libs/nestjs-context/context-module'
+import { Route as LibsNestjsConfigSchemaAndTypingRouteImport } from './routes/libs/nestjs-config/schema-and-typing'
+import { Route as LibsNestjsConfigConfigServiceRouteImport } from './routes/libs/nestjs-config/config-service'
+import { Route as LibsNestjsConfigConfigModuleRouteImport } from './routes/libs/nestjs-config/config-module'
+import { Route as LibsNestjsCacheCacheServiceRouteImport } from './routes/libs/nestjs-cache/cache-service'
+import { Route as LibsNestjsCacheCacheModuleRouteImport } from './routes/libs/nestjs-cache/cache-module'
+import { Route as LibsNestjsCacheCacheGetRouteImport } from './routes/libs/nestjs-cache/cache-get'
+import { Route as LibsNestjsCacheCacheDelRouteImport } from './routes/libs/nestjs-cache/cache-del'
+import { Route as LibsFrontendPrimitivesPatternSectionRouteImport } from './routes/libs/frontend-primitives-pattern/$section'
+import { Route as LibsFrontendPatternSectionRouteImport } from './routes/libs/frontend-pattern/$section'
+import { Route as LibsFrontendConfigTypescriptRouteImport } from './routes/libs/frontend-config/typescript'
+import { Route as LibsFrontendConfigBiomeRouteImport } from './routes/libs/frontend-config/biome'
+import { Route as LibsExceptionsExceptionsRouteImport } from './routes/libs/exceptions/exceptions'
+import { Route as LibsEntityEntityRouteImport } from './routes/libs/entity/entity'
+import { Route as LibsCliWebRouteImport } from './routes/libs/cli/web'
+import { Route as LibsCliMonorepoRouteImport } from './routes/libs/cli/monorepo'
+import { Route as LibsCliMobileRouteImport } from './routes/libs/cli/mobile'
+import { Route as LibsCliHandlerRouteImport } from './routes/libs/cli/handler'
+import { Route as LibsCliApiRouteImport } from './routes/libs/cli/api'
+import { Route as LibsBackendPatternSectionRouteImport } from './routes/libs/backend-pattern/$section'
+import { Route as LibsBackendConfigTypescriptRouteImport } from './routes/libs/backend-config/typescript'
+import { Route as LibsBackendConfigBiomeRouteImport } from './routes/libs/backend-config/biome'
+import { Route as LibsArchitecturePatternSectionRouteImport } from './routes/libs/architecture-pattern/$section'
+import { Route as LibsReactMobileComponentsIndexRouteImport } from './routes/libs/react-mobile/components/index'
+import { Route as LibsReactMobileComponentsComponentRouteImport } from './routes/libs/react-mobile/components/$component'
 
 const MainRoute = MainRouteImport.update({
   id: '/_main',
@@ -79,669 +224,2319 @@ const MainIndexRoute = MainIndexRouteImport.update({
   path: '/',
   getParentRoute: () => MainRoute,
 } as any)
-const LibsUiRoute = LibsUiRouteImport.update({
-  id: '/libs/ui',
-  path: '/libs/ui',
+const LibsSagaRoute = LibsSagaRouteImport.update({
+  id: '/libs/saga',
+  path: '/libs/saga',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LibsCommonRoute = LibsCommonRouteImport.update({
-  id: '/libs/common',
-  path: '/libs/common',
+const LibsReactWebRoute = LibsReactWebRouteImport.update({
+  id: '/libs/react-web',
+  path: '/libs/react-web',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LibsUiIndexRoute = LibsUiIndexRouteImport.update({
+const LibsReactMobileRoute = LibsReactMobileRouteImport.update({
+  id: '/libs/react-mobile',
+  path: '/libs/react-mobile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsReactIconsRoute = LibsReactIconsRouteImport.update({
+  id: '/libs/react-icons',
+  path: '/libs/react-icons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsReactHooksRoute = LibsReactHooksRouteImport.update({
+  id: '/libs/react-hooks',
+  path: '/libs/react-hooks',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsQueryDslRoute = LibsQueryDslRouteImport.update({
+  id: '/libs/query-dsl',
+  path: '/libs/query-dsl',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsStorageRoute = LibsNestjsStorageRouteImport.update({
+  id: '/libs/nestjs-storage',
+  path: '/libs/nestjs-storage',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsSocialAuthRoute = LibsNestjsSocialAuthRouteImport.update({
+  id: '/libs/nestjs-social-auth',
+  path: '/libs/nestjs-social-auth',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsServerlessRoute = LibsNestjsServerlessRouteImport.update({
+  id: '/libs/nestjs-serverless',
+  path: '/libs/nestjs-serverless',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsServerRoute = LibsNestjsServerRouteImport.update({
+  id: '/libs/nestjs-server',
+  path: '/libs/nestjs-server',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsSchedulerRoute = LibsNestjsSchedulerRouteImport.update({
+  id: '/libs/nestjs-scheduler',
+  path: '/libs/nestjs-scheduler',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsResilienceRoute = LibsNestjsResilienceRouteImport.update({
+  id: '/libs/nestjs-resilience',
+  path: '/libs/nestjs-resilience',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsRateLimitRoute = LibsNestjsRateLimitRouteImport.update({
+  id: '/libs/nestjs-rate-limit',
+  path: '/libs/nestjs-rate-limit',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsPublisherRoute = LibsNestjsPublisherRouteImport.update({
+  id: '/libs/nestjs-publisher',
+  path: '/libs/nestjs-publisher',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsObservabilityRoute = LibsNestjsObservabilityRouteImport.update({
+  id: '/libs/nestjs-observability',
+  path: '/libs/nestjs-observability',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsLoggerRoute = LibsNestjsLoggerRouteImport.update({
+  id: '/libs/nestjs-logger',
+  path: '/libs/nestjs-logger',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsLockRoute = LibsNestjsLockRouteImport.update({
+  id: '/libs/nestjs-lock',
+  path: '/libs/nestjs-lock',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsIdempotencyRoute = LibsNestjsIdempotencyRouteImport.update({
+  id: '/libs/nestjs-idempotency',
+  path: '/libs/nestjs-idempotency',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsIamRoute = LibsNestjsIamRouteImport.update({
+  id: '/libs/nestjs-iam',
+  path: '/libs/nestjs-iam',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsDatabaseRoute = LibsNestjsDatabaseRouteImport.update({
+  id: '/libs/nestjs-database',
+  path: '/libs/nestjs-database',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsContextRoute = LibsNestjsContextRouteImport.update({
+  id: '/libs/nestjs-context',
+  path: '/libs/nestjs-context',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsConfigRoute = LibsNestjsConfigRouteImport.update({
+  id: '/libs/nestjs-config',
+  path: '/libs/nestjs-config',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsNestjsCacheRoute = LibsNestjsCacheRouteImport.update({
+  id: '/libs/nestjs-cache',
+  path: '/libs/nestjs-cache',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsFrontendPrimitivesPatternRoute =
+  LibsFrontendPrimitivesPatternRouteImport.update({
+    id: '/libs/frontend-primitives-pattern',
+    path: '/libs/frontend-primitives-pattern',
+    getParentRoute: () => rootRouteImport,
+  } as any)
+const LibsFrontendPatternRoute = LibsFrontendPatternRouteImport.update({
+  id: '/libs/frontend-pattern',
+  path: '/libs/frontend-pattern',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsFrontendConfigRoute = LibsFrontendConfigRouteImport.update({
+  id: '/libs/frontend-config',
+  path: '/libs/frontend-config',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsExceptionsRoute = LibsExceptionsRouteImport.update({
+  id: '/libs/exceptions',
+  path: '/libs/exceptions',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsEntityRoute = LibsEntityRouteImport.update({
+  id: '/libs/entity',
+  path: '/libs/entity',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsCliRoute = LibsCliRouteImport.update({
+  id: '/libs/cli',
+  path: '/libs/cli',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsBackendPatternRoute = LibsBackendPatternRouteImport.update({
+  id: '/libs/backend-pattern',
+  path: '/libs/backend-pattern',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsBackendConfigRoute = LibsBackendConfigRouteImport.update({
+  id: '/libs/backend-config',
+  path: '/libs/backend-config',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsArchitecturePatternRoute = LibsArchitecturePatternRouteImport.update({
+  id: '/libs/architecture-pattern',
+  path: '/libs/architecture-pattern',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsSagaIndexRoute = LibsSagaIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsSagaRoute,
 } as any)
-const LibsCommonIndexRoute = LibsCommonIndexRouteImport.update({
+const LibsReactWebIndexRoute = LibsReactWebIndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => LibsCommonRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiUploaderRoute = LibsUiUploaderRouteImport.update({
+const LibsReactMobileIndexRoute = LibsReactMobileIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsReactMobileRoute,
+} as any)
+const LibsReactIconsIndexRoute = LibsReactIconsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsReactIconsRoute,
+} as any)
+const LibsReactHooksIndexRoute = LibsReactHooksIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsReactHooksRoute,
+} as any)
+const LibsQueryDslIndexRoute = LibsQueryDslIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsQueryDslRoute,
+} as any)
+const LibsNestjsStorageIndexRoute = LibsNestjsStorageIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsStorageRoute,
+} as any)
+const LibsNestjsSocialAuthIndexRoute =
+  LibsNestjsSocialAuthIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsNestjsSocialAuthRoute,
+  } as any)
+const LibsNestjsServerlessIndexRoute =
+  LibsNestjsServerlessIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsNestjsServerlessRoute,
+  } as any)
+const LibsNestjsServerIndexRoute = LibsNestjsServerIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsServerRoute,
+} as any)
+const LibsNestjsSchedulerIndexRoute =
+  LibsNestjsSchedulerIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsNestjsSchedulerRoute,
+  } as any)
+const LibsNestjsResilienceIndexRoute =
+  LibsNestjsResilienceIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsNestjsResilienceRoute,
+  } as any)
+const LibsNestjsRateLimitIndexRoute =
+  LibsNestjsRateLimitIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsNestjsRateLimitRoute,
+  } as any)
+const LibsNestjsPublisherIndexRoute =
+  LibsNestjsPublisherIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsNestjsPublisherRoute,
+  } as any)
+const LibsNestjsObservabilityIndexRoute =
+  LibsNestjsObservabilityIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsNestjsObservabilityRoute,
+  } as any)
+const LibsNestjsLoggerIndexRoute = LibsNestjsLoggerIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsLoggerRoute,
+} as any)
+const LibsNestjsLockIndexRoute = LibsNestjsLockIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsLockRoute,
+} as any)
+const LibsNestjsIdempotencyIndexRoute =
+  LibsNestjsIdempotencyIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsNestjsIdempotencyRoute,
+  } as any)
+const LibsNestjsIamIndexRoute = LibsNestjsIamIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsIamRoute,
+} as any)
+const LibsNestjsDatabaseIndexRoute = LibsNestjsDatabaseIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsDatabaseRoute,
+} as any)
+const LibsNestjsContextIndexRoute = LibsNestjsContextIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsContextRoute,
+} as any)
+const LibsNestjsConfigIndexRoute = LibsNestjsConfigIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsConfigRoute,
+} as any)
+const LibsNestjsCacheIndexRoute = LibsNestjsCacheIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsCacheRoute,
+} as any)
+const LibsFrontendPrimitivesPatternIndexRoute =
+  LibsFrontendPrimitivesPatternIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsFrontendPrimitivesPatternRoute,
+  } as any)
+const LibsFrontendPatternIndexRoute =
+  LibsFrontendPatternIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsFrontendPatternRoute,
+  } as any)
+const LibsFrontendConfigIndexRoute = LibsFrontendConfigIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsFrontendConfigRoute,
+} as any)
+const LibsExceptionsIndexRoute = LibsExceptionsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsExceptionsRoute,
+} as any)
+const LibsEntityIndexRoute = LibsEntityIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsEntityRoute,
+} as any)
+const LibsCliIndexRoute = LibsCliIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsCliRoute,
+} as any)
+const LibsBackendPatternIndexRoute = LibsBackendPatternIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsBackendPatternRoute,
+} as any)
+const LibsBackendConfigIndexRoute = LibsBackendConfigIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsBackendConfigRoute,
+} as any)
+const LibsArchitecturePatternIndexRoute =
+  LibsArchitecturePatternIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsArchitecturePatternRoute,
+  } as any)
+const LibsSagaSagaRoute = LibsSagaSagaRouteImport.update({
+  id: '/saga',
+  path: '/saga',
+  getParentRoute: () => LibsSagaRoute,
+} as any)
+const LibsReactWebUploaderRoute = LibsReactWebUploaderRouteImport.update({
   id: '/uploader',
   path: '/uploader',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiTypographyRoute = LibsUiTypographyRouteImport.update({
+const LibsReactWebTypographyRoute = LibsReactWebTypographyRouteImport.update({
   id: '/typography',
   path: '/typography',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiTooltipRoute = LibsUiTooltipRouteImport.update({
+const LibsReactWebTooltipRoute = LibsReactWebTooltipRouteImport.update({
   id: '/tooltip',
   path: '/tooltip',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiToastRoute = LibsUiToastRouteImport.update({
+const LibsReactWebToastRoute = LibsReactWebToastRouteImport.update({
   id: '/toast',
   path: '/toast',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiThemeRoute = LibsUiThemeRouteImport.update({
+const LibsReactWebThemeRoute = LibsReactWebThemeRouteImport.update({
   id: '/theme',
   path: '/theme',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiTextareaRoute = LibsUiTextareaRouteImport.update({
+const LibsReactWebTextareaRoute = LibsReactWebTextareaRouteImport.update({
   id: '/textarea',
   path: '/textarea',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiTagsInputRoute = LibsUiTagsInputRouteImport.update({
+const LibsReactWebTagsInputRoute = LibsReactWebTagsInputRouteImport.update({
   id: '/tags-input',
   path: '/tags-input',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiTabsRoute = LibsUiTabsRouteImport.update({
+const LibsReactWebTabsRoute = LibsReactWebTabsRouteImport.update({
   id: '/tabs',
   path: '/tabs',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiTableRoute = LibsUiTableRouteImport.update({
+const LibsReactWebTableRoute = LibsReactWebTableRouteImport.update({
   id: '/table',
   path: '/table',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiTLoaderRoute = LibsUiTLoaderRouteImport.update({
+const LibsReactWebTLoaderRoute = LibsReactWebTLoaderRouteImport.update({
   id: '/t-loader',
   path: '/t-loader',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiSwitchRoute = LibsUiSwitchRouteImport.update({
+const LibsReactWebSwitchRoute = LibsReactWebSwitchRouteImport.update({
   id: '/switch',
   path: '/switch',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiSliderRoute = LibsUiSliderRouteImport.update({
+const LibsReactWebSliderRoute = LibsReactWebSliderRouteImport.update({
   id: '/slider',
   path: '/slider',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiSkeletonRoute = LibsUiSkeletonRouteImport.update({
+const LibsReactWebSkeletonRoute = LibsReactWebSkeletonRouteImport.update({
   id: '/skeleton',
   path: '/skeleton',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiSheetRoute = LibsUiSheetRouteImport.update({
+const LibsReactWebSheetRoute = LibsReactWebSheetRouteImport.update({
   id: '/sheet',
   path: '/sheet',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiSeparatorRoute = LibsUiSeparatorRouteImport.update({
+const LibsReactWebSeparatorRoute = LibsReactWebSeparatorRouteImport.update({
   id: '/separator',
   path: '/separator',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiSelectRoute = LibsUiSelectRouteImport.update({
+const LibsReactWebSelectRoute = LibsReactWebSelectRouteImport.update({
   id: '/select',
   path: '/select',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiRadioRoute = LibsUiRadioRouteImport.update({
+const LibsReactWebRadioRoute = LibsReactWebRadioRouteImport.update({
   id: '/radio',
   path: '/radio',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiProviderRoute = LibsUiProviderRouteImport.update({
+const LibsReactWebProviderRoute = LibsReactWebProviderRouteImport.update({
   id: '/provider',
   path: '/provider',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiProgressRoute = LibsUiProgressRouteImport.update({
+const LibsReactWebProgressRoute = LibsReactWebProgressRouteImport.update({
   id: '/progress',
   path: '/progress',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiPopoverRoute = LibsUiPopoverRouteImport.update({
+const LibsReactWebPopoverRoute = LibsReactWebPopoverRouteImport.update({
   id: '/popover',
   path: '/popover',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiPlaygroundRoute = LibsUiPlaygroundRouteImport.update({
+const LibsReactWebPlaygroundRoute = LibsReactWebPlaygroundRouteImport.update({
   id: '/playground',
   path: '/playground',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiPhoneInputRoute = LibsUiPhoneInputRouteImport.update({
+const LibsReactWebPhoneInputRoute = LibsReactWebPhoneInputRouteImport.update({
   id: '/phone-input',
   path: '/phone-input',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiPasswordInputRoute = LibsUiPasswordInputRouteImport.update({
-  id: '/password-input',
-  path: '/password-input',
-  getParentRoute: () => LibsUiRoute,
-} as any)
-const LibsUiPaginationRoute = LibsUiPaginationRouteImport.update({
+const LibsReactWebPasswordInputRoute =
+  LibsReactWebPasswordInputRouteImport.update({
+    id: '/password-input',
+    path: '/password-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebPaginationRoute = LibsReactWebPaginationRouteImport.update({
   id: '/pagination',
   path: '/pagination',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiOtpInputRoute = LibsUiOtpInputRouteImport.update({
+const LibsReactWebOtpInputRoute = LibsReactWebOtpInputRouteImport.update({
   id: '/otp-input',
   path: '/otp-input',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiNumberInputRoute = LibsUiNumberInputRouteImport.update({
+const LibsReactWebNumberInputRoute = LibsReactWebNumberInputRouteImport.update({
   id: '/number-input',
   path: '/number-input',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiModalRoute = LibsUiModalRouteImport.update({
+const LibsReactWebModalRoute = LibsReactWebModalRouteImport.update({
   id: '/modal',
   path: '/modal',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiMaskInputRoute = LibsUiMaskInputRouteImport.update({
+const LibsReactWebMaskInputRoute = LibsReactWebMaskInputRouteImport.update({
   id: '/mask-input',
   path: '/mask-input',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiLoadingOverlayRoute = LibsUiLoadingOverlayRouteImport.update({
-  id: '/loading-overlay',
-  path: '/loading-overlay',
-  getParentRoute: () => LibsUiRoute,
-} as any)
-const LibsUiLayoutRoute = LibsUiLayoutRouteImport.update({
+const LibsReactWebLoadingOverlayRoute =
+  LibsReactWebLoadingOverlayRouteImport.update({
+    id: '/loading-overlay',
+    path: '/loading-overlay',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebLayoutRoute = LibsReactWebLayoutRouteImport.update({
   id: '/layout',
   path: '/layout',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiLabelRoute = LibsUiLabelRouteImport.update({
+const LibsReactWebLabelRoute = LibsReactWebLabelRouteImport.update({
   id: '/label',
   path: '/label',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiInputRoute = LibsUiInputRouteImport.update({
+const LibsReactWebInputRoute = LibsReactWebInputRouteImport.update({
   id: '/input',
   path: '/input',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiI18nRoute = LibsUiI18nRouteImport.update({
+const LibsReactWebI18nRoute = LibsReactWebI18nRouteImport.update({
   id: '/i18n',
   path: '/i18n',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiGridRoute = LibsUiGridRouteImport.update({
+const LibsReactWebGridRoute = LibsReactWebGridRouteImport.update({
   id: '/grid',
   path: '/grid',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiFormRoute = LibsUiFormRouteImport.update({
+const LibsReactWebFormRoute = LibsReactWebFormRouteImport.update({
   id: '/form',
   path: '/form',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiFlexRoute = LibsUiFlexRouteImport.update({
+const LibsReactWebFlexRoute = LibsReactWebFlexRouteImport.update({
   id: '/flex',
   path: '/flex',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiDropdownMenuRoute = LibsUiDropdownMenuRouteImport.update({
-  id: '/dropdown-menu',
-  path: '/dropdown-menu',
-  getParentRoute: () => LibsUiRoute,
-} as any)
-const LibsUiDocumentInputRoute = LibsUiDocumentInputRouteImport.update({
-  id: '/document-input',
-  path: '/document-input',
-  getParentRoute: () => LibsUiRoute,
-} as any)
-const LibsUiDateRangeInputRoute = LibsUiDateRangeInputRouteImport.update({
-  id: '/date-range-input',
-  path: '/date-range-input',
-  getParentRoute: () => LibsUiRoute,
-} as any)
-const LibsUiDateInputRoute = LibsUiDateInputRouteImport.update({
+const LibsReactWebDropdownMenuRoute =
+  LibsReactWebDropdownMenuRouteImport.update({
+    id: '/dropdown-menu',
+    path: '/dropdown-menu',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebDocumentInputRoute =
+  LibsReactWebDocumentInputRouteImport.update({
+    id: '/document-input',
+    path: '/document-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebDateRangeInputRoute =
+  LibsReactWebDateRangeInputRouteImport.update({
+    id: '/date-range-input',
+    path: '/date-range-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebDateInputRoute = LibsReactWebDateInputRouteImport.update({
   id: '/date-input',
   path: '/date-input',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiCurrencyInputRoute = LibsUiCurrencyInputRouteImport.update({
-  id: '/currency-input',
-  path: '/currency-input',
-  getParentRoute: () => LibsUiRoute,
+const LibsReactWebCurrencyInputRoute =
+  LibsReactWebCurrencyInputRouteImport.update({
+    id: '/currency-input',
+    path: '/currency-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebContainerRoute = LibsReactWebContainerRouteImport.update({
+  id: '/container',
+  path: '/container',
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiConfirmRoute = LibsUiConfirmRouteImport.update({
+const LibsReactWebConfirmRoute = LibsReactWebConfirmRouteImport.update({
   id: '/confirm',
   path: '/confirm',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiColorSchemeRoute = LibsUiColorSchemeRouteImport.update({
+const LibsReactWebColorSchemeRoute = LibsReactWebColorSchemeRouteImport.update({
   id: '/color-scheme',
   path: '/color-scheme',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiCheckboxRoute = LibsUiCheckboxRouteImport.update({
+const LibsReactWebCheckboxRoute = LibsReactWebCheckboxRouteImport.update({
   id: '/checkbox',
   path: '/checkbox',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiCardRoute = LibsUiCardRouteImport.update({
+const LibsReactWebCardRoute = LibsReactWebCardRouteImport.update({
   id: '/card',
   path: '/card',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiButtonRoute = LibsUiButtonRouteImport.update({
+const LibsReactWebButtonRoute = LibsReactWebButtonRouteImport.update({
   id: '/button',
   path: '/button',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiBreadcrumbRoute = LibsUiBreadcrumbRouteImport.update({
+const LibsReactWebBreadcrumbRoute = LibsReactWebBreadcrumbRouteImport.update({
   id: '/breadcrumb',
   path: '/breadcrumb',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiBadgeRoute = LibsUiBadgeRouteImport.update({
+const LibsReactWebBoxRoute = LibsReactWebBoxRouteImport.update({
+  id: '/box',
+  path: '/box',
+  getParentRoute: () => LibsReactWebRoute,
+} as any)
+const LibsReactWebBlocksRoute = LibsReactWebBlocksRouteImport.update({
+  id: '/blocks',
+  path: '/blocks',
+  getParentRoute: () => LibsReactWebRoute,
+} as any)
+const LibsReactWebBadgeRoute = LibsReactWebBadgeRouteImport.update({
   id: '/badge',
   path: '/badge',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiAvatarRoute = LibsUiAvatarRouteImport.update({
+const LibsReactWebAvatarRoute = LibsReactWebAvatarRouteImport.update({
   id: '/avatar',
   path: '/avatar',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiAlertRoute = LibsUiAlertRouteImport.update({
+const LibsReactWebAlertRoute = LibsReactWebAlertRouteImport.update({
   id: '/alert',
   path: '/alert',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsUiAccordionRoute = LibsUiAccordionRouteImport.update({
+const LibsReactWebAccordionRoute = LibsReactWebAccordionRouteImport.update({
   id: '/accordion',
   path: '/accordion',
-  getParentRoute: () => LibsUiRoute,
+  getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsCommonSumRoute = LibsCommonSumRouteImport.update({
-  id: '/sum',
-  path: '/sum',
-  getParentRoute: () => LibsCommonRoute,
+const LibsReactIconsPlaygroundRoute =
+  LibsReactIconsPlaygroundRouteImport.update({
+    id: '/playground',
+    path: '/playground',
+    getParentRoute: () => LibsReactIconsRoute,
+  } as any)
+const LibsReactHooksHookRoute = LibsReactHooksHookRouteImport.update({
+  id: '/$hook',
+  path: '/$hook',
+  getParentRoute: () => LibsReactHooksRoute,
 } as any)
-const LibsCommonSubtractRoute = LibsCommonSubtractRouteImport.update({
-  id: '/subtract',
-  path: '/subtract',
-  getParentRoute: () => LibsCommonRoute,
+const LibsQueryDslSortSchemaRoute = LibsQueryDslSortSchemaRouteImport.update({
+  id: '/sort-schema',
+  path: '/sort-schema',
+  getParentRoute: () => LibsQueryDslRoute,
 } as any)
-const LibsCommonMultiplyRoute = LibsCommonMultiplyRouteImport.update({
-  id: '/multiply',
-  path: '/multiply',
-  getParentRoute: () => LibsCommonRoute,
+const LibsQueryDslRangeSchemaRoute = LibsQueryDslRangeSchemaRouteImport.update({
+  id: '/range-schema',
+  path: '/range-schema',
+  getParentRoute: () => LibsQueryDslRoute,
 } as any)
+const LibsQueryDslPaginationSchemaRoute =
+  LibsQueryDslPaginationSchemaRouteImport.update({
+    id: '/pagination-schema',
+    path: '/pagination-schema',
+    getParentRoute: () => LibsQueryDslRoute,
+  } as any)
+const LibsQueryDslListSchemaRoute = LibsQueryDslListSchemaRouteImport.update({
+  id: '/list-schema',
+  path: '/list-schema',
+  getParentRoute: () => LibsQueryDslRoute,
+} as any)
+const LibsQueryDslFilterSchemaRoute =
+  LibsQueryDslFilterSchemaRouteImport.update({
+    id: '/filter-schema',
+    path: '/filter-schema',
+    getParentRoute: () => LibsQueryDslRoute,
+  } as any)
+const LibsQueryDslDateRangeSchemaRoute =
+  LibsQueryDslDateRangeSchemaRouteImport.update({
+    id: '/date-range-schema',
+    path: '/date-range-schema',
+    getParentRoute: () => LibsQueryDslRoute,
+  } as any)
+const LibsQueryDslBooleanSchemaRoute =
+  LibsQueryDslBooleanSchemaRouteImport.update({
+    id: '/boolean-schema',
+    path: '/boolean-schema',
+    getParentRoute: () => LibsQueryDslRoute,
+  } as any)
+const LibsNestjsStorageStorageServiceRoute =
+  LibsNestjsStorageStorageServiceRouteImport.update({
+    id: '/storage-service',
+    path: '/storage-service',
+    getParentRoute: () => LibsNestjsStorageRoute,
+  } as any)
+const LibsNestjsStorageStorageModuleRoute =
+  LibsNestjsStorageStorageModuleRouteImport.update({
+    id: '/storage-module',
+    path: '/storage-module',
+    getParentRoute: () => LibsNestjsStorageRoute,
+  } as any)
+const LibsNestjsSocialAuthSocialAuthServiceRoute =
+  LibsNestjsSocialAuthSocialAuthServiceRouteImport.update({
+    id: '/social-auth-service',
+    path: '/social-auth-service',
+    getParentRoute: () => LibsNestjsSocialAuthRoute,
+  } as any)
+const LibsNestjsSocialAuthSocialAuthModuleRoute =
+  LibsNestjsSocialAuthSocialAuthModuleRouteImport.update({
+    id: '/social-auth-module',
+    path: '/social-auth-module',
+    getParentRoute: () => LibsNestjsSocialAuthRoute,
+  } as any)
+const LibsNestjsServerlessServerlessModuleRoute =
+  LibsNestjsServerlessServerlessModuleRouteImport.update({
+    id: '/serverless-module',
+    path: '/serverless-module',
+    getParentRoute: () => LibsNestjsServerlessRoute,
+  } as any)
+const LibsNestjsServerlessServerlessCreateRoute =
+  LibsNestjsServerlessServerlessCreateRouteImport.update({
+    id: '/serverless-create',
+    path: '/serverless-create',
+    getParentRoute: () => LibsNestjsServerlessRoute,
+  } as any)
+const LibsNestjsServerlessHandlerDecoratorRoute =
+  LibsNestjsServerlessHandlerDecoratorRouteImport.update({
+    id: '/handler-decorator',
+    path: '/handler-decorator',
+    getParentRoute: () => LibsNestjsServerlessRoute,
+  } as any)
+const LibsNestjsServerServerCreateRoute =
+  LibsNestjsServerServerCreateRouteImport.update({
+    id: '/server-create',
+    path: '/server-create',
+    getParentRoute: () => LibsNestjsServerRoute,
+  } as any)
+const LibsNestjsServerRouteDecoratorRoute =
+  LibsNestjsServerRouteDecoratorRouteImport.update({
+    id: '/route-decorator',
+    path: '/route-decorator',
+    getParentRoute: () => LibsNestjsServerRoute,
+  } as any)
+const LibsNestjsServerRequestDecoratorRoute =
+  LibsNestjsServerRequestDecoratorRouteImport.update({
+    id: '/request-decorator',
+    path: '/request-decorator',
+    getParentRoute: () => LibsNestjsServerRoute,
+  } as any)
+const LibsNestjsServerControllerDecoratorRoute =
+  LibsNestjsServerControllerDecoratorRouteImport.update({
+    id: '/controller-decorator',
+    path: '/controller-decorator',
+    getParentRoute: () => LibsNestjsServerRoute,
+  } as any)
+const LibsNestjsSchedulerSchedulerModuleRoute =
+  LibsNestjsSchedulerSchedulerModuleRouteImport.update({
+    id: '/scheduler-module',
+    path: '/scheduler-module',
+    getParentRoute: () => LibsNestjsSchedulerRoute,
+  } as any)
+const LibsNestjsSchedulerScheduleDecoratorRoute =
+  LibsNestjsSchedulerScheduleDecoratorRouteImport.update({
+    id: '/schedule-decorator',
+    path: '/schedule-decorator',
+    getParentRoute: () => LibsNestjsSchedulerRoute,
+  } as any)
+const LibsNestjsResilienceTimeoutRoute =
+  LibsNestjsResilienceTimeoutRouteImport.update({
+    id: '/timeout',
+    path: '/timeout',
+    getParentRoute: () => LibsNestjsResilienceRoute,
+  } as any)
+const LibsNestjsResilienceRetryRoute =
+  LibsNestjsResilienceRetryRouteImport.update({
+    id: '/retry',
+    path: '/retry',
+    getParentRoute: () => LibsNestjsResilienceRoute,
+  } as any)
+const LibsNestjsResilienceCircuitBreakerRoute =
+  LibsNestjsResilienceCircuitBreakerRouteImport.update({
+    id: '/circuit-breaker',
+    path: '/circuit-breaker',
+    getParentRoute: () => LibsNestjsResilienceRoute,
+  } as any)
+const LibsNestjsRateLimitRateLimitServiceRoute =
+  LibsNestjsRateLimitRateLimitServiceRouteImport.update({
+    id: '/rate-limit-service',
+    path: '/rate-limit-service',
+    getParentRoute: () => LibsNestjsRateLimitRoute,
+  } as any)
+const LibsNestjsRateLimitRateLimitModuleRoute =
+  LibsNestjsRateLimitRateLimitModuleRouteImport.update({
+    id: '/rate-limit-module',
+    path: '/rate-limit-module',
+    getParentRoute: () => LibsNestjsRateLimitRoute,
+  } as any)
+const LibsNestjsRateLimitRateLimitDecoratorRoute =
+  LibsNestjsRateLimitRateLimitDecoratorRouteImport.update({
+    id: '/rate-limit-decorator',
+    path: '/rate-limit-decorator',
+    getParentRoute: () => LibsNestjsRateLimitRoute,
+  } as any)
+const LibsNestjsPublisherSubscriberDecoratorRoute =
+  LibsNestjsPublisherSubscriberDecoratorRouteImport.update({
+    id: '/subscriber-decorator',
+    path: '/subscriber-decorator',
+    getParentRoute: () => LibsNestjsPublisherRoute,
+  } as any)
+const LibsNestjsPublisherPublisherServiceRoute =
+  LibsNestjsPublisherPublisherServiceRouteImport.update({
+    id: '/publisher-service',
+    path: '/publisher-service',
+    getParentRoute: () => LibsNestjsPublisherRoute,
+  } as any)
+const LibsNestjsPublisherPublisherModuleRoute =
+  LibsNestjsPublisherPublisherModuleRouteImport.update({
+    id: '/publisher-module',
+    path: '/publisher-module',
+    getParentRoute: () => LibsNestjsPublisherRoute,
+  } as any)
+const LibsNestjsPublisherOutboxRoute =
+  LibsNestjsPublisherOutboxRouteImport.update({
+    id: '/outbox',
+    path: '/outbox',
+    getParentRoute: () => LibsNestjsPublisherRoute,
+  } as any)
+const LibsNestjsObservabilityTracingRoute =
+  LibsNestjsObservabilityTracingRouteImport.update({
+    id: '/tracing',
+    path: '/tracing',
+    getParentRoute: () => LibsNestjsObservabilityRoute,
+  } as any)
+const LibsNestjsObservabilityObservabilityModuleRoute =
+  LibsNestjsObservabilityObservabilityModuleRouteImport.update({
+    id: '/observability-module',
+    path: '/observability-module',
+    getParentRoute: () => LibsNestjsObservabilityRoute,
+  } as any)
+const LibsNestjsObservabilityMetricsServiceRoute =
+  LibsNestjsObservabilityMetricsServiceRouteImport.update({
+    id: '/metrics-service',
+    path: '/metrics-service',
+    getParentRoute: () => LibsNestjsObservabilityRoute,
+  } as any)
+const LibsNestjsObservabilityMeasureDecoratorRoute =
+  LibsNestjsObservabilityMeasureDecoratorRouteImport.update({
+    id: '/measure-decorator',
+    path: '/measure-decorator',
+    getParentRoute: () => LibsNestjsObservabilityRoute,
+  } as any)
+const LibsNestjsLoggerLoggerServiceRoute =
+  LibsNestjsLoggerLoggerServiceRouteImport.update({
+    id: '/logger-service',
+    path: '/logger-service',
+    getParentRoute: () => LibsNestjsLoggerRoute,
+  } as any)
+const LibsNestjsLoggerLoggerModuleRoute =
+  LibsNestjsLoggerLoggerModuleRouteImport.update({
+    id: '/logger-module',
+    path: '/logger-module',
+    getParentRoute: () => LibsNestjsLoggerRoute,
+  } as any)
+const LibsNestjsLockLockServiceRoute =
+  LibsNestjsLockLockServiceRouteImport.update({
+    id: '/lock-service',
+    path: '/lock-service',
+    getParentRoute: () => LibsNestjsLockRoute,
+  } as any)
+const LibsNestjsLockLockModuleRoute =
+  LibsNestjsLockLockModuleRouteImport.update({
+    id: '/lock-module',
+    path: '/lock-module',
+    getParentRoute: () => LibsNestjsLockRoute,
+  } as any)
+const LibsNestjsLockLockDecoratorRoute =
+  LibsNestjsLockLockDecoratorRouteImport.update({
+    id: '/lock-decorator',
+    path: '/lock-decorator',
+    getParentRoute: () => LibsNestjsLockRoute,
+  } as any)
+const LibsNestjsIdempotencyIdempotentDecoratorRoute =
+  LibsNestjsIdempotencyIdempotentDecoratorRouteImport.update({
+    id: '/idempotent-decorator',
+    path: '/idempotent-decorator',
+    getParentRoute: () => LibsNestjsIdempotencyRoute,
+  } as any)
+const LibsNestjsIdempotencyIdempotencyServiceRoute =
+  LibsNestjsIdempotencyIdempotencyServiceRouteImport.update({
+    id: '/idempotency-service',
+    path: '/idempotency-service',
+    getParentRoute: () => LibsNestjsIdempotencyRoute,
+  } as any)
+const LibsNestjsIdempotencyIdempotencyModuleRoute =
+  LibsNestjsIdempotencyIdempotencyModuleRouteImport.update({
+    id: '/idempotency-module',
+    path: '/idempotency-module',
+    getParentRoute: () => LibsNestjsIdempotencyRoute,
+  } as any)
+const LibsNestjsIamTokenServiceRoute =
+  LibsNestjsIamTokenServiceRouteImport.update({
+    id: '/token-service',
+    path: '/token-service',
+    getParentRoute: () => LibsNestjsIamRoute,
+  } as any)
+const LibsNestjsIamIamModuleRoute = LibsNestjsIamIamModuleRouteImport.update({
+  id: '/iam-module',
+  path: '/iam-module',
+  getParentRoute: () => LibsNestjsIamRoute,
+} as any)
+const LibsNestjsIamAuthenticatedProfileDecoratorRoute =
+  LibsNestjsIamAuthenticatedProfileDecoratorRouteImport.update({
+    id: '/authenticated-profile-decorator',
+    path: '/authenticated-profile-decorator',
+    getParentRoute: () => LibsNestjsIamRoute,
+  } as any)
+const LibsNestjsIamAuthDecoratorRoute =
+  LibsNestjsIamAuthDecoratorRouteImport.update({
+    id: '/auth-decorator',
+    path: '/auth-decorator',
+    getParentRoute: () => LibsNestjsIamRoute,
+  } as any)
+const LibsNestjsIamAclServiceRoute = LibsNestjsIamAclServiceRouteImport.update({
+  id: '/acl-service',
+  path: '/acl-service',
+  getParentRoute: () => LibsNestjsIamRoute,
+} as any)
+const LibsNestjsIamAclDecoratorRoute =
+  LibsNestjsIamAclDecoratorRouteImport.update({
+    id: '/acl-decorator',
+    path: '/acl-decorator',
+    getParentRoute: () => LibsNestjsIamRoute,
+  } as any)
+const LibsNestjsDatabaseTypesAndErrorsRoute =
+  LibsNestjsDatabaseTypesAndErrorsRouteImport.update({
+    id: '/types-and-errors',
+    path: '/types-and-errors',
+    getParentRoute: () => LibsNestjsDatabaseRoute,
+  } as any)
+const LibsNestjsDatabaseTransactionalRoute =
+  LibsNestjsDatabaseTransactionalRouteImport.update({
+    id: '/transactional',
+    path: '/transactional',
+    getParentRoute: () => LibsNestjsDatabaseRoute,
+  } as any)
+const LibsNestjsDatabaseTransactionHooksRoute =
+  LibsNestjsDatabaseTransactionHooksRouteImport.update({
+    id: '/transaction-hooks',
+    path: '/transaction-hooks',
+    getParentRoute: () => LibsNestjsDatabaseRoute,
+  } as any)
+const LibsNestjsDatabaseSchemaDefinitionRoute =
+  LibsNestjsDatabaseSchemaDefinitionRouteImport.update({
+    id: '/schema-definition',
+    path: '/schema-definition',
+    getParentRoute: () => LibsNestjsDatabaseRoute,
+  } as any)
+const LibsNestjsDatabaseDatabaseServiceRoute =
+  LibsNestjsDatabaseDatabaseServiceRouteImport.update({
+    id: '/database-service',
+    path: '/database-service',
+    getParentRoute: () => LibsNestjsDatabaseRoute,
+  } as any)
+const LibsNestjsDatabaseDatabaseModuleRoute =
+  LibsNestjsDatabaseDatabaseModuleRouteImport.update({
+    id: '/database-module',
+    path: '/database-module',
+    getParentRoute: () => LibsNestjsDatabaseRoute,
+  } as any)
+const LibsNestjsDatabaseAuditRoute = LibsNestjsDatabaseAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => LibsNestjsDatabaseRoute,
+} as any)
+const LibsNestjsContextWithContextRoute =
+  LibsNestjsContextWithContextRouteImport.update({
+    id: '/with-context',
+    path: '/with-context',
+    getParentRoute: () => LibsNestjsContextRoute,
+  } as any)
+const LibsNestjsContextContextServiceRoute =
+  LibsNestjsContextContextServiceRouteImport.update({
+    id: '/context-service',
+    path: '/context-service',
+    getParentRoute: () => LibsNestjsContextRoute,
+  } as any)
+const LibsNestjsContextContextModuleRoute =
+  LibsNestjsContextContextModuleRouteImport.update({
+    id: '/context-module',
+    path: '/context-module',
+    getParentRoute: () => LibsNestjsContextRoute,
+  } as any)
+const LibsNestjsConfigSchemaAndTypingRoute =
+  LibsNestjsConfigSchemaAndTypingRouteImport.update({
+    id: '/schema-and-typing',
+    path: '/schema-and-typing',
+    getParentRoute: () => LibsNestjsConfigRoute,
+  } as any)
+const LibsNestjsConfigConfigServiceRoute =
+  LibsNestjsConfigConfigServiceRouteImport.update({
+    id: '/config-service',
+    path: '/config-service',
+    getParentRoute: () => LibsNestjsConfigRoute,
+  } as any)
+const LibsNestjsConfigConfigModuleRoute =
+  LibsNestjsConfigConfigModuleRouteImport.update({
+    id: '/config-module',
+    path: '/config-module',
+    getParentRoute: () => LibsNestjsConfigRoute,
+  } as any)
+const LibsNestjsCacheCacheServiceRoute =
+  LibsNestjsCacheCacheServiceRouteImport.update({
+    id: '/cache-service',
+    path: '/cache-service',
+    getParentRoute: () => LibsNestjsCacheRoute,
+  } as any)
+const LibsNestjsCacheCacheModuleRoute =
+  LibsNestjsCacheCacheModuleRouteImport.update({
+    id: '/cache-module',
+    path: '/cache-module',
+    getParentRoute: () => LibsNestjsCacheRoute,
+  } as any)
+const LibsNestjsCacheCacheGetRoute = LibsNestjsCacheCacheGetRouteImport.update({
+  id: '/cache-get',
+  path: '/cache-get',
+  getParentRoute: () => LibsNestjsCacheRoute,
+} as any)
+const LibsNestjsCacheCacheDelRoute = LibsNestjsCacheCacheDelRouteImport.update({
+  id: '/cache-del',
+  path: '/cache-del',
+  getParentRoute: () => LibsNestjsCacheRoute,
+} as any)
+const LibsFrontendPrimitivesPatternSectionRoute =
+  LibsFrontendPrimitivesPatternSectionRouteImport.update({
+    id: '/$section',
+    path: '/$section',
+    getParentRoute: () => LibsFrontendPrimitivesPatternRoute,
+  } as any)
+const LibsFrontendPatternSectionRoute =
+  LibsFrontendPatternSectionRouteImport.update({
+    id: '/$section',
+    path: '/$section',
+    getParentRoute: () => LibsFrontendPatternRoute,
+  } as any)
+const LibsFrontendConfigTypescriptRoute =
+  LibsFrontendConfigTypescriptRouteImport.update({
+    id: '/typescript',
+    path: '/typescript',
+    getParentRoute: () => LibsFrontendConfigRoute,
+  } as any)
+const LibsFrontendConfigBiomeRoute = LibsFrontendConfigBiomeRouteImport.update({
+  id: '/biome',
+  path: '/biome',
+  getParentRoute: () => LibsFrontendConfigRoute,
+} as any)
+const LibsExceptionsExceptionsRoute =
+  LibsExceptionsExceptionsRouteImport.update({
+    id: '/exceptions',
+    path: '/exceptions',
+    getParentRoute: () => LibsExceptionsRoute,
+  } as any)
+const LibsEntityEntityRoute = LibsEntityEntityRouteImport.update({
+  id: '/entity',
+  path: '/entity',
+  getParentRoute: () => LibsEntityRoute,
+} as any)
+const LibsCliWebRoute = LibsCliWebRouteImport.update({
+  id: '/web',
+  path: '/web',
+  getParentRoute: () => LibsCliRoute,
+} as any)
+const LibsCliMonorepoRoute = LibsCliMonorepoRouteImport.update({
+  id: '/monorepo',
+  path: '/monorepo',
+  getParentRoute: () => LibsCliRoute,
+} as any)
+const LibsCliMobileRoute = LibsCliMobileRouteImport.update({
+  id: '/mobile',
+  path: '/mobile',
+  getParentRoute: () => LibsCliRoute,
+} as any)
+const LibsCliHandlerRoute = LibsCliHandlerRouteImport.update({
+  id: '/handler',
+  path: '/handler',
+  getParentRoute: () => LibsCliRoute,
+} as any)
+const LibsCliApiRoute = LibsCliApiRouteImport.update({
+  id: '/api',
+  path: '/api',
+  getParentRoute: () => LibsCliRoute,
+} as any)
+const LibsBackendPatternSectionRoute =
+  LibsBackendPatternSectionRouteImport.update({
+    id: '/$section',
+    path: '/$section',
+    getParentRoute: () => LibsBackendPatternRoute,
+  } as any)
+const LibsBackendConfigTypescriptRoute =
+  LibsBackendConfigTypescriptRouteImport.update({
+    id: '/typescript',
+    path: '/typescript',
+    getParentRoute: () => LibsBackendConfigRoute,
+  } as any)
+const LibsBackendConfigBiomeRoute = LibsBackendConfigBiomeRouteImport.update({
+  id: '/biome',
+  path: '/biome',
+  getParentRoute: () => LibsBackendConfigRoute,
+} as any)
+const LibsArchitecturePatternSectionRoute =
+  LibsArchitecturePatternSectionRouteImport.update({
+    id: '/$section',
+    path: '/$section',
+    getParentRoute: () => LibsArchitecturePatternRoute,
+  } as any)
+const LibsReactMobileComponentsIndexRoute =
+  LibsReactMobileComponentsIndexRouteImport.update({
+    id: '/components/',
+    path: '/components/',
+    getParentRoute: () => LibsReactMobileRoute,
+  } as any)
+const LibsReactMobileComponentsComponentRoute =
+  LibsReactMobileComponentsComponentRouteImport.update({
+    id: '/components/$component',
+    path: '/components/$component',
+    getParentRoute: () => LibsReactMobileRoute,
+  } as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof MainIndexRoute
-  '/libs/common': typeof LibsCommonRouteWithChildren
-  '/libs/ui': typeof LibsUiRouteWithChildren
-  '/libs/common/multiply': typeof LibsCommonMultiplyRoute
-  '/libs/common/subtract': typeof LibsCommonSubtractRoute
-  '/libs/common/sum': typeof LibsCommonSumRoute
-  '/libs/ui/accordion': typeof LibsUiAccordionRoute
-  '/libs/ui/alert': typeof LibsUiAlertRoute
-  '/libs/ui/avatar': typeof LibsUiAvatarRoute
-  '/libs/ui/badge': typeof LibsUiBadgeRoute
-  '/libs/ui/breadcrumb': typeof LibsUiBreadcrumbRoute
-  '/libs/ui/button': typeof LibsUiButtonRoute
-  '/libs/ui/card': typeof LibsUiCardRoute
-  '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
-  '/libs/ui/color-scheme': typeof LibsUiColorSchemeRoute
-  '/libs/ui/confirm': typeof LibsUiConfirmRoute
-  '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
-  '/libs/ui/date-input': typeof LibsUiDateInputRoute
-  '/libs/ui/date-range-input': typeof LibsUiDateRangeInputRoute
-  '/libs/ui/document-input': typeof LibsUiDocumentInputRoute
-  '/libs/ui/dropdown-menu': typeof LibsUiDropdownMenuRoute
-  '/libs/ui/flex': typeof LibsUiFlexRoute
-  '/libs/ui/form': typeof LibsUiFormRoute
-  '/libs/ui/grid': typeof LibsUiGridRoute
-  '/libs/ui/i18n': typeof LibsUiI18nRoute
-  '/libs/ui/input': typeof LibsUiInputRoute
-  '/libs/ui/label': typeof LibsUiLabelRoute
-  '/libs/ui/layout': typeof LibsUiLayoutRoute
-  '/libs/ui/loading-overlay': typeof LibsUiLoadingOverlayRoute
-  '/libs/ui/mask-input': typeof LibsUiMaskInputRoute
-  '/libs/ui/modal': typeof LibsUiModalRoute
-  '/libs/ui/number-input': typeof LibsUiNumberInputRoute
-  '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
-  '/libs/ui/pagination': typeof LibsUiPaginationRoute
-  '/libs/ui/password-input': typeof LibsUiPasswordInputRoute
-  '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
-  '/libs/ui/playground': typeof LibsUiPlaygroundRoute
-  '/libs/ui/popover': typeof LibsUiPopoverRoute
-  '/libs/ui/progress': typeof LibsUiProgressRoute
-  '/libs/ui/provider': typeof LibsUiProviderRoute
-  '/libs/ui/radio': typeof LibsUiRadioRoute
-  '/libs/ui/select': typeof LibsUiSelectRoute
-  '/libs/ui/separator': typeof LibsUiSeparatorRoute
-  '/libs/ui/sheet': typeof LibsUiSheetRoute
-  '/libs/ui/skeleton': typeof LibsUiSkeletonRoute
-  '/libs/ui/slider': typeof LibsUiSliderRoute
-  '/libs/ui/switch': typeof LibsUiSwitchRoute
-  '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
-  '/libs/ui/table': typeof LibsUiTableRoute
-  '/libs/ui/tabs': typeof LibsUiTabsRoute
-  '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
-  '/libs/ui/textarea': typeof LibsUiTextareaRoute
-  '/libs/ui/theme': typeof LibsUiThemeRoute
-  '/libs/ui/toast': typeof LibsUiToastRoute
-  '/libs/ui/tooltip': typeof LibsUiTooltipRoute
-  '/libs/ui/typography': typeof LibsUiTypographyRoute
-  '/libs/ui/uploader': typeof LibsUiUploaderRoute
-  '/libs/common/': typeof LibsCommonIndexRoute
-  '/libs/ui/': typeof LibsUiIndexRoute
+  '/libs/architecture-pattern': typeof LibsArchitecturePatternRouteWithChildren
+  '/libs/backend-config': typeof LibsBackendConfigRouteWithChildren
+  '/libs/backend-pattern': typeof LibsBackendPatternRouteWithChildren
+  '/libs/cli': typeof LibsCliRouteWithChildren
+  '/libs/entity': typeof LibsEntityRouteWithChildren
+  '/libs/exceptions': typeof LibsExceptionsRouteWithChildren
+  '/libs/frontend-config': typeof LibsFrontendConfigRouteWithChildren
+  '/libs/frontend-pattern': typeof LibsFrontendPatternRouteWithChildren
+  '/libs/frontend-primitives-pattern': typeof LibsFrontendPrimitivesPatternRouteWithChildren
+  '/libs/nestjs-cache': typeof LibsNestjsCacheRouteWithChildren
+  '/libs/nestjs-config': typeof LibsNestjsConfigRouteWithChildren
+  '/libs/nestjs-context': typeof LibsNestjsContextRouteWithChildren
+  '/libs/nestjs-database': typeof LibsNestjsDatabaseRouteWithChildren
+  '/libs/nestjs-iam': typeof LibsNestjsIamRouteWithChildren
+  '/libs/nestjs-idempotency': typeof LibsNestjsIdempotencyRouteWithChildren
+  '/libs/nestjs-lock': typeof LibsNestjsLockRouteWithChildren
+  '/libs/nestjs-logger': typeof LibsNestjsLoggerRouteWithChildren
+  '/libs/nestjs-observability': typeof LibsNestjsObservabilityRouteWithChildren
+  '/libs/nestjs-publisher': typeof LibsNestjsPublisherRouteWithChildren
+  '/libs/nestjs-rate-limit': typeof LibsNestjsRateLimitRouteWithChildren
+  '/libs/nestjs-resilience': typeof LibsNestjsResilienceRouteWithChildren
+  '/libs/nestjs-scheduler': typeof LibsNestjsSchedulerRouteWithChildren
+  '/libs/nestjs-server': typeof LibsNestjsServerRouteWithChildren
+  '/libs/nestjs-serverless': typeof LibsNestjsServerlessRouteWithChildren
+  '/libs/nestjs-social-auth': typeof LibsNestjsSocialAuthRouteWithChildren
+  '/libs/nestjs-storage': typeof LibsNestjsStorageRouteWithChildren
+  '/libs/query-dsl': typeof LibsQueryDslRouteWithChildren
+  '/libs/react-hooks': typeof LibsReactHooksRouteWithChildren
+  '/libs/react-icons': typeof LibsReactIconsRouteWithChildren
+  '/libs/react-mobile': typeof LibsReactMobileRouteWithChildren
+  '/libs/react-web': typeof LibsReactWebRouteWithChildren
+  '/libs/saga': typeof LibsSagaRouteWithChildren
+  '/libs/architecture-pattern/$section': typeof LibsArchitecturePatternSectionRoute
+  '/libs/backend-config/biome': typeof LibsBackendConfigBiomeRoute
+  '/libs/backend-config/typescript': typeof LibsBackendConfigTypescriptRoute
+  '/libs/backend-pattern/$section': typeof LibsBackendPatternSectionRoute
+  '/libs/cli/api': typeof LibsCliApiRoute
+  '/libs/cli/handler': typeof LibsCliHandlerRoute
+  '/libs/cli/mobile': typeof LibsCliMobileRoute
+  '/libs/cli/monorepo': typeof LibsCliMonorepoRoute
+  '/libs/cli/web': typeof LibsCliWebRoute
+  '/libs/entity/entity': typeof LibsEntityEntityRoute
+  '/libs/exceptions/exceptions': typeof LibsExceptionsExceptionsRoute
+  '/libs/frontend-config/biome': typeof LibsFrontendConfigBiomeRoute
+  '/libs/frontend-config/typescript': typeof LibsFrontendConfigTypescriptRoute
+  '/libs/frontend-pattern/$section': typeof LibsFrontendPatternSectionRoute
+  '/libs/frontend-primitives-pattern/$section': typeof LibsFrontendPrimitivesPatternSectionRoute
+  '/libs/nestjs-cache/cache-del': typeof LibsNestjsCacheCacheDelRoute
+  '/libs/nestjs-cache/cache-get': typeof LibsNestjsCacheCacheGetRoute
+  '/libs/nestjs-cache/cache-module': typeof LibsNestjsCacheCacheModuleRoute
+  '/libs/nestjs-cache/cache-service': typeof LibsNestjsCacheCacheServiceRoute
+  '/libs/nestjs-config/config-module': typeof LibsNestjsConfigConfigModuleRoute
+  '/libs/nestjs-config/config-service': typeof LibsNestjsConfigConfigServiceRoute
+  '/libs/nestjs-config/schema-and-typing': typeof LibsNestjsConfigSchemaAndTypingRoute
+  '/libs/nestjs-context/context-module': typeof LibsNestjsContextContextModuleRoute
+  '/libs/nestjs-context/context-service': typeof LibsNestjsContextContextServiceRoute
+  '/libs/nestjs-context/with-context': typeof LibsNestjsContextWithContextRoute
+  '/libs/nestjs-database/audit': typeof LibsNestjsDatabaseAuditRoute
+  '/libs/nestjs-database/database-module': typeof LibsNestjsDatabaseDatabaseModuleRoute
+  '/libs/nestjs-database/database-service': typeof LibsNestjsDatabaseDatabaseServiceRoute
+  '/libs/nestjs-database/schema-definition': typeof LibsNestjsDatabaseSchemaDefinitionRoute
+  '/libs/nestjs-database/transaction-hooks': typeof LibsNestjsDatabaseTransactionHooksRoute
+  '/libs/nestjs-database/transactional': typeof LibsNestjsDatabaseTransactionalRoute
+  '/libs/nestjs-database/types-and-errors': typeof LibsNestjsDatabaseTypesAndErrorsRoute
+  '/libs/nestjs-iam/acl-decorator': typeof LibsNestjsIamAclDecoratorRoute
+  '/libs/nestjs-iam/acl-service': typeof LibsNestjsIamAclServiceRoute
+  '/libs/nestjs-iam/auth-decorator': typeof LibsNestjsIamAuthDecoratorRoute
+  '/libs/nestjs-iam/authenticated-profile-decorator': typeof LibsNestjsIamAuthenticatedProfileDecoratorRoute
+  '/libs/nestjs-iam/iam-module': typeof LibsNestjsIamIamModuleRoute
+  '/libs/nestjs-iam/token-service': typeof LibsNestjsIamTokenServiceRoute
+  '/libs/nestjs-idempotency/idempotency-module': typeof LibsNestjsIdempotencyIdempotencyModuleRoute
+  '/libs/nestjs-idempotency/idempotency-service': typeof LibsNestjsIdempotencyIdempotencyServiceRoute
+  '/libs/nestjs-idempotency/idempotent-decorator': typeof LibsNestjsIdempotencyIdempotentDecoratorRoute
+  '/libs/nestjs-lock/lock-decorator': typeof LibsNestjsLockLockDecoratorRoute
+  '/libs/nestjs-lock/lock-module': typeof LibsNestjsLockLockModuleRoute
+  '/libs/nestjs-lock/lock-service': typeof LibsNestjsLockLockServiceRoute
+  '/libs/nestjs-logger/logger-module': typeof LibsNestjsLoggerLoggerModuleRoute
+  '/libs/nestjs-logger/logger-service': typeof LibsNestjsLoggerLoggerServiceRoute
+  '/libs/nestjs-observability/measure-decorator': typeof LibsNestjsObservabilityMeasureDecoratorRoute
+  '/libs/nestjs-observability/metrics-service': typeof LibsNestjsObservabilityMetricsServiceRoute
+  '/libs/nestjs-observability/observability-module': typeof LibsNestjsObservabilityObservabilityModuleRoute
+  '/libs/nestjs-observability/tracing': typeof LibsNestjsObservabilityTracingRoute
+  '/libs/nestjs-publisher/outbox': typeof LibsNestjsPublisherOutboxRoute
+  '/libs/nestjs-publisher/publisher-module': typeof LibsNestjsPublisherPublisherModuleRoute
+  '/libs/nestjs-publisher/publisher-service': typeof LibsNestjsPublisherPublisherServiceRoute
+  '/libs/nestjs-publisher/subscriber-decorator': typeof LibsNestjsPublisherSubscriberDecoratorRoute
+  '/libs/nestjs-rate-limit/rate-limit-decorator': typeof LibsNestjsRateLimitRateLimitDecoratorRoute
+  '/libs/nestjs-rate-limit/rate-limit-module': typeof LibsNestjsRateLimitRateLimitModuleRoute
+  '/libs/nestjs-rate-limit/rate-limit-service': typeof LibsNestjsRateLimitRateLimitServiceRoute
+  '/libs/nestjs-resilience/circuit-breaker': typeof LibsNestjsResilienceCircuitBreakerRoute
+  '/libs/nestjs-resilience/retry': typeof LibsNestjsResilienceRetryRoute
+  '/libs/nestjs-resilience/timeout': typeof LibsNestjsResilienceTimeoutRoute
+  '/libs/nestjs-scheduler/schedule-decorator': typeof LibsNestjsSchedulerScheduleDecoratorRoute
+  '/libs/nestjs-scheduler/scheduler-module': typeof LibsNestjsSchedulerSchedulerModuleRoute
+  '/libs/nestjs-server/controller-decorator': typeof LibsNestjsServerControllerDecoratorRoute
+  '/libs/nestjs-server/request-decorator': typeof LibsNestjsServerRequestDecoratorRoute
+  '/libs/nestjs-server/route-decorator': typeof LibsNestjsServerRouteDecoratorRoute
+  '/libs/nestjs-server/server-create': typeof LibsNestjsServerServerCreateRoute
+  '/libs/nestjs-serverless/handler-decorator': typeof LibsNestjsServerlessHandlerDecoratorRoute
+  '/libs/nestjs-serverless/serverless-create': typeof LibsNestjsServerlessServerlessCreateRoute
+  '/libs/nestjs-serverless/serverless-module': typeof LibsNestjsServerlessServerlessModuleRoute
+  '/libs/nestjs-social-auth/social-auth-module': typeof LibsNestjsSocialAuthSocialAuthModuleRoute
+  '/libs/nestjs-social-auth/social-auth-service': typeof LibsNestjsSocialAuthSocialAuthServiceRoute
+  '/libs/nestjs-storage/storage-module': typeof LibsNestjsStorageStorageModuleRoute
+  '/libs/nestjs-storage/storage-service': typeof LibsNestjsStorageStorageServiceRoute
+  '/libs/query-dsl/boolean-schema': typeof LibsQueryDslBooleanSchemaRoute
+  '/libs/query-dsl/date-range-schema': typeof LibsQueryDslDateRangeSchemaRoute
+  '/libs/query-dsl/filter-schema': typeof LibsQueryDslFilterSchemaRoute
+  '/libs/query-dsl/list-schema': typeof LibsQueryDslListSchemaRoute
+  '/libs/query-dsl/pagination-schema': typeof LibsQueryDslPaginationSchemaRoute
+  '/libs/query-dsl/range-schema': typeof LibsQueryDslRangeSchemaRoute
+  '/libs/query-dsl/sort-schema': typeof LibsQueryDslSortSchemaRoute
+  '/libs/react-hooks/$hook': typeof LibsReactHooksHookRoute
+  '/libs/react-icons/playground': typeof LibsReactIconsPlaygroundRoute
+  '/libs/react-web/accordion': typeof LibsReactWebAccordionRoute
+  '/libs/react-web/alert': typeof LibsReactWebAlertRoute
+  '/libs/react-web/avatar': typeof LibsReactWebAvatarRoute
+  '/libs/react-web/badge': typeof LibsReactWebBadgeRoute
+  '/libs/react-web/blocks': typeof LibsReactWebBlocksRoute
+  '/libs/react-web/box': typeof LibsReactWebBoxRoute
+  '/libs/react-web/breadcrumb': typeof LibsReactWebBreadcrumbRoute
+  '/libs/react-web/button': typeof LibsReactWebButtonRoute
+  '/libs/react-web/card': typeof LibsReactWebCardRoute
+  '/libs/react-web/checkbox': typeof LibsReactWebCheckboxRoute
+  '/libs/react-web/color-scheme': typeof LibsReactWebColorSchemeRoute
+  '/libs/react-web/confirm': typeof LibsReactWebConfirmRoute
+  '/libs/react-web/container': typeof LibsReactWebContainerRoute
+  '/libs/react-web/currency-input': typeof LibsReactWebCurrencyInputRoute
+  '/libs/react-web/date-input': typeof LibsReactWebDateInputRoute
+  '/libs/react-web/date-range-input': typeof LibsReactWebDateRangeInputRoute
+  '/libs/react-web/document-input': typeof LibsReactWebDocumentInputRoute
+  '/libs/react-web/dropdown-menu': typeof LibsReactWebDropdownMenuRoute
+  '/libs/react-web/flex': typeof LibsReactWebFlexRoute
+  '/libs/react-web/form': typeof LibsReactWebFormRoute
+  '/libs/react-web/grid': typeof LibsReactWebGridRoute
+  '/libs/react-web/i18n': typeof LibsReactWebI18nRoute
+  '/libs/react-web/input': typeof LibsReactWebInputRoute
+  '/libs/react-web/label': typeof LibsReactWebLabelRoute
+  '/libs/react-web/layout': typeof LibsReactWebLayoutRoute
+  '/libs/react-web/loading-overlay': typeof LibsReactWebLoadingOverlayRoute
+  '/libs/react-web/mask-input': typeof LibsReactWebMaskInputRoute
+  '/libs/react-web/modal': typeof LibsReactWebModalRoute
+  '/libs/react-web/number-input': typeof LibsReactWebNumberInputRoute
+  '/libs/react-web/otp-input': typeof LibsReactWebOtpInputRoute
+  '/libs/react-web/pagination': typeof LibsReactWebPaginationRoute
+  '/libs/react-web/password-input': typeof LibsReactWebPasswordInputRoute
+  '/libs/react-web/phone-input': typeof LibsReactWebPhoneInputRoute
+  '/libs/react-web/playground': typeof LibsReactWebPlaygroundRoute
+  '/libs/react-web/popover': typeof LibsReactWebPopoverRoute
+  '/libs/react-web/progress': typeof LibsReactWebProgressRoute
+  '/libs/react-web/provider': typeof LibsReactWebProviderRoute
+  '/libs/react-web/radio': typeof LibsReactWebRadioRoute
+  '/libs/react-web/select': typeof LibsReactWebSelectRoute
+  '/libs/react-web/separator': typeof LibsReactWebSeparatorRoute
+  '/libs/react-web/sheet': typeof LibsReactWebSheetRoute
+  '/libs/react-web/skeleton': typeof LibsReactWebSkeletonRoute
+  '/libs/react-web/slider': typeof LibsReactWebSliderRoute
+  '/libs/react-web/switch': typeof LibsReactWebSwitchRoute
+  '/libs/react-web/t-loader': typeof LibsReactWebTLoaderRoute
+  '/libs/react-web/table': typeof LibsReactWebTableRoute
+  '/libs/react-web/tabs': typeof LibsReactWebTabsRoute
+  '/libs/react-web/tags-input': typeof LibsReactWebTagsInputRoute
+  '/libs/react-web/textarea': typeof LibsReactWebTextareaRoute
+  '/libs/react-web/theme': typeof LibsReactWebThemeRoute
+  '/libs/react-web/toast': typeof LibsReactWebToastRoute
+  '/libs/react-web/tooltip': typeof LibsReactWebTooltipRoute
+  '/libs/react-web/typography': typeof LibsReactWebTypographyRoute
+  '/libs/react-web/uploader': typeof LibsReactWebUploaderRoute
+  '/libs/saga/saga': typeof LibsSagaSagaRoute
+  '/libs/architecture-pattern/': typeof LibsArchitecturePatternIndexRoute
+  '/libs/backend-config/': typeof LibsBackendConfigIndexRoute
+  '/libs/backend-pattern/': typeof LibsBackendPatternIndexRoute
+  '/libs/cli/': typeof LibsCliIndexRoute
+  '/libs/entity/': typeof LibsEntityIndexRoute
+  '/libs/exceptions/': typeof LibsExceptionsIndexRoute
+  '/libs/frontend-config/': typeof LibsFrontendConfigIndexRoute
+  '/libs/frontend-pattern/': typeof LibsFrontendPatternIndexRoute
+  '/libs/frontend-primitives-pattern/': typeof LibsFrontendPrimitivesPatternIndexRoute
+  '/libs/nestjs-cache/': typeof LibsNestjsCacheIndexRoute
+  '/libs/nestjs-config/': typeof LibsNestjsConfigIndexRoute
+  '/libs/nestjs-context/': typeof LibsNestjsContextIndexRoute
+  '/libs/nestjs-database/': typeof LibsNestjsDatabaseIndexRoute
+  '/libs/nestjs-iam/': typeof LibsNestjsIamIndexRoute
+  '/libs/nestjs-idempotency/': typeof LibsNestjsIdempotencyIndexRoute
+  '/libs/nestjs-lock/': typeof LibsNestjsLockIndexRoute
+  '/libs/nestjs-logger/': typeof LibsNestjsLoggerIndexRoute
+  '/libs/nestjs-observability/': typeof LibsNestjsObservabilityIndexRoute
+  '/libs/nestjs-publisher/': typeof LibsNestjsPublisherIndexRoute
+  '/libs/nestjs-rate-limit/': typeof LibsNestjsRateLimitIndexRoute
+  '/libs/nestjs-resilience/': typeof LibsNestjsResilienceIndexRoute
+  '/libs/nestjs-scheduler/': typeof LibsNestjsSchedulerIndexRoute
+  '/libs/nestjs-server/': typeof LibsNestjsServerIndexRoute
+  '/libs/nestjs-serverless/': typeof LibsNestjsServerlessIndexRoute
+  '/libs/nestjs-social-auth/': typeof LibsNestjsSocialAuthIndexRoute
+  '/libs/nestjs-storage/': typeof LibsNestjsStorageIndexRoute
+  '/libs/query-dsl/': typeof LibsQueryDslIndexRoute
+  '/libs/react-hooks/': typeof LibsReactHooksIndexRoute
+  '/libs/react-icons/': typeof LibsReactIconsIndexRoute
+  '/libs/react-mobile/': typeof LibsReactMobileIndexRoute
+  '/libs/react-web/': typeof LibsReactWebIndexRoute
+  '/libs/saga/': typeof LibsSagaIndexRoute
+  '/libs/react-mobile/components/$component': typeof LibsReactMobileComponentsComponentRoute
+  '/libs/react-mobile/components/': typeof LibsReactMobileComponentsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof MainIndexRoute
-  '/libs/common/multiply': typeof LibsCommonMultiplyRoute
-  '/libs/common/subtract': typeof LibsCommonSubtractRoute
-  '/libs/common/sum': typeof LibsCommonSumRoute
-  '/libs/ui/accordion': typeof LibsUiAccordionRoute
-  '/libs/ui/alert': typeof LibsUiAlertRoute
-  '/libs/ui/avatar': typeof LibsUiAvatarRoute
-  '/libs/ui/badge': typeof LibsUiBadgeRoute
-  '/libs/ui/breadcrumb': typeof LibsUiBreadcrumbRoute
-  '/libs/ui/button': typeof LibsUiButtonRoute
-  '/libs/ui/card': typeof LibsUiCardRoute
-  '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
-  '/libs/ui/color-scheme': typeof LibsUiColorSchemeRoute
-  '/libs/ui/confirm': typeof LibsUiConfirmRoute
-  '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
-  '/libs/ui/date-input': typeof LibsUiDateInputRoute
-  '/libs/ui/date-range-input': typeof LibsUiDateRangeInputRoute
-  '/libs/ui/document-input': typeof LibsUiDocumentInputRoute
-  '/libs/ui/dropdown-menu': typeof LibsUiDropdownMenuRoute
-  '/libs/ui/flex': typeof LibsUiFlexRoute
-  '/libs/ui/form': typeof LibsUiFormRoute
-  '/libs/ui/grid': typeof LibsUiGridRoute
-  '/libs/ui/i18n': typeof LibsUiI18nRoute
-  '/libs/ui/input': typeof LibsUiInputRoute
-  '/libs/ui/label': typeof LibsUiLabelRoute
-  '/libs/ui/layout': typeof LibsUiLayoutRoute
-  '/libs/ui/loading-overlay': typeof LibsUiLoadingOverlayRoute
-  '/libs/ui/mask-input': typeof LibsUiMaskInputRoute
-  '/libs/ui/modal': typeof LibsUiModalRoute
-  '/libs/ui/number-input': typeof LibsUiNumberInputRoute
-  '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
-  '/libs/ui/pagination': typeof LibsUiPaginationRoute
-  '/libs/ui/password-input': typeof LibsUiPasswordInputRoute
-  '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
-  '/libs/ui/playground': typeof LibsUiPlaygroundRoute
-  '/libs/ui/popover': typeof LibsUiPopoverRoute
-  '/libs/ui/progress': typeof LibsUiProgressRoute
-  '/libs/ui/provider': typeof LibsUiProviderRoute
-  '/libs/ui/radio': typeof LibsUiRadioRoute
-  '/libs/ui/select': typeof LibsUiSelectRoute
-  '/libs/ui/separator': typeof LibsUiSeparatorRoute
-  '/libs/ui/sheet': typeof LibsUiSheetRoute
-  '/libs/ui/skeleton': typeof LibsUiSkeletonRoute
-  '/libs/ui/slider': typeof LibsUiSliderRoute
-  '/libs/ui/switch': typeof LibsUiSwitchRoute
-  '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
-  '/libs/ui/table': typeof LibsUiTableRoute
-  '/libs/ui/tabs': typeof LibsUiTabsRoute
-  '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
-  '/libs/ui/textarea': typeof LibsUiTextareaRoute
-  '/libs/ui/theme': typeof LibsUiThemeRoute
-  '/libs/ui/toast': typeof LibsUiToastRoute
-  '/libs/ui/tooltip': typeof LibsUiTooltipRoute
-  '/libs/ui/typography': typeof LibsUiTypographyRoute
-  '/libs/ui/uploader': typeof LibsUiUploaderRoute
-  '/libs/common': typeof LibsCommonIndexRoute
-  '/libs/ui': typeof LibsUiIndexRoute
+  '/libs/architecture-pattern/$section': typeof LibsArchitecturePatternSectionRoute
+  '/libs/backend-config/biome': typeof LibsBackendConfigBiomeRoute
+  '/libs/backend-config/typescript': typeof LibsBackendConfigTypescriptRoute
+  '/libs/backend-pattern/$section': typeof LibsBackendPatternSectionRoute
+  '/libs/cli/api': typeof LibsCliApiRoute
+  '/libs/cli/handler': typeof LibsCliHandlerRoute
+  '/libs/cli/mobile': typeof LibsCliMobileRoute
+  '/libs/cli/monorepo': typeof LibsCliMonorepoRoute
+  '/libs/cli/web': typeof LibsCliWebRoute
+  '/libs/entity/entity': typeof LibsEntityEntityRoute
+  '/libs/exceptions/exceptions': typeof LibsExceptionsExceptionsRoute
+  '/libs/frontend-config/biome': typeof LibsFrontendConfigBiomeRoute
+  '/libs/frontend-config/typescript': typeof LibsFrontendConfigTypescriptRoute
+  '/libs/frontend-pattern/$section': typeof LibsFrontendPatternSectionRoute
+  '/libs/frontend-primitives-pattern/$section': typeof LibsFrontendPrimitivesPatternSectionRoute
+  '/libs/nestjs-cache/cache-del': typeof LibsNestjsCacheCacheDelRoute
+  '/libs/nestjs-cache/cache-get': typeof LibsNestjsCacheCacheGetRoute
+  '/libs/nestjs-cache/cache-module': typeof LibsNestjsCacheCacheModuleRoute
+  '/libs/nestjs-cache/cache-service': typeof LibsNestjsCacheCacheServiceRoute
+  '/libs/nestjs-config/config-module': typeof LibsNestjsConfigConfigModuleRoute
+  '/libs/nestjs-config/config-service': typeof LibsNestjsConfigConfigServiceRoute
+  '/libs/nestjs-config/schema-and-typing': typeof LibsNestjsConfigSchemaAndTypingRoute
+  '/libs/nestjs-context/context-module': typeof LibsNestjsContextContextModuleRoute
+  '/libs/nestjs-context/context-service': typeof LibsNestjsContextContextServiceRoute
+  '/libs/nestjs-context/with-context': typeof LibsNestjsContextWithContextRoute
+  '/libs/nestjs-database/audit': typeof LibsNestjsDatabaseAuditRoute
+  '/libs/nestjs-database/database-module': typeof LibsNestjsDatabaseDatabaseModuleRoute
+  '/libs/nestjs-database/database-service': typeof LibsNestjsDatabaseDatabaseServiceRoute
+  '/libs/nestjs-database/schema-definition': typeof LibsNestjsDatabaseSchemaDefinitionRoute
+  '/libs/nestjs-database/transaction-hooks': typeof LibsNestjsDatabaseTransactionHooksRoute
+  '/libs/nestjs-database/transactional': typeof LibsNestjsDatabaseTransactionalRoute
+  '/libs/nestjs-database/types-and-errors': typeof LibsNestjsDatabaseTypesAndErrorsRoute
+  '/libs/nestjs-iam/acl-decorator': typeof LibsNestjsIamAclDecoratorRoute
+  '/libs/nestjs-iam/acl-service': typeof LibsNestjsIamAclServiceRoute
+  '/libs/nestjs-iam/auth-decorator': typeof LibsNestjsIamAuthDecoratorRoute
+  '/libs/nestjs-iam/authenticated-profile-decorator': typeof LibsNestjsIamAuthenticatedProfileDecoratorRoute
+  '/libs/nestjs-iam/iam-module': typeof LibsNestjsIamIamModuleRoute
+  '/libs/nestjs-iam/token-service': typeof LibsNestjsIamTokenServiceRoute
+  '/libs/nestjs-idempotency/idempotency-module': typeof LibsNestjsIdempotencyIdempotencyModuleRoute
+  '/libs/nestjs-idempotency/idempotency-service': typeof LibsNestjsIdempotencyIdempotencyServiceRoute
+  '/libs/nestjs-idempotency/idempotent-decorator': typeof LibsNestjsIdempotencyIdempotentDecoratorRoute
+  '/libs/nestjs-lock/lock-decorator': typeof LibsNestjsLockLockDecoratorRoute
+  '/libs/nestjs-lock/lock-module': typeof LibsNestjsLockLockModuleRoute
+  '/libs/nestjs-lock/lock-service': typeof LibsNestjsLockLockServiceRoute
+  '/libs/nestjs-logger/logger-module': typeof LibsNestjsLoggerLoggerModuleRoute
+  '/libs/nestjs-logger/logger-service': typeof LibsNestjsLoggerLoggerServiceRoute
+  '/libs/nestjs-observability/measure-decorator': typeof LibsNestjsObservabilityMeasureDecoratorRoute
+  '/libs/nestjs-observability/metrics-service': typeof LibsNestjsObservabilityMetricsServiceRoute
+  '/libs/nestjs-observability/observability-module': typeof LibsNestjsObservabilityObservabilityModuleRoute
+  '/libs/nestjs-observability/tracing': typeof LibsNestjsObservabilityTracingRoute
+  '/libs/nestjs-publisher/outbox': typeof LibsNestjsPublisherOutboxRoute
+  '/libs/nestjs-publisher/publisher-module': typeof LibsNestjsPublisherPublisherModuleRoute
+  '/libs/nestjs-publisher/publisher-service': typeof LibsNestjsPublisherPublisherServiceRoute
+  '/libs/nestjs-publisher/subscriber-decorator': typeof LibsNestjsPublisherSubscriberDecoratorRoute
+  '/libs/nestjs-rate-limit/rate-limit-decorator': typeof LibsNestjsRateLimitRateLimitDecoratorRoute
+  '/libs/nestjs-rate-limit/rate-limit-module': typeof LibsNestjsRateLimitRateLimitModuleRoute
+  '/libs/nestjs-rate-limit/rate-limit-service': typeof LibsNestjsRateLimitRateLimitServiceRoute
+  '/libs/nestjs-resilience/circuit-breaker': typeof LibsNestjsResilienceCircuitBreakerRoute
+  '/libs/nestjs-resilience/retry': typeof LibsNestjsResilienceRetryRoute
+  '/libs/nestjs-resilience/timeout': typeof LibsNestjsResilienceTimeoutRoute
+  '/libs/nestjs-scheduler/schedule-decorator': typeof LibsNestjsSchedulerScheduleDecoratorRoute
+  '/libs/nestjs-scheduler/scheduler-module': typeof LibsNestjsSchedulerSchedulerModuleRoute
+  '/libs/nestjs-server/controller-decorator': typeof LibsNestjsServerControllerDecoratorRoute
+  '/libs/nestjs-server/request-decorator': typeof LibsNestjsServerRequestDecoratorRoute
+  '/libs/nestjs-server/route-decorator': typeof LibsNestjsServerRouteDecoratorRoute
+  '/libs/nestjs-server/server-create': typeof LibsNestjsServerServerCreateRoute
+  '/libs/nestjs-serverless/handler-decorator': typeof LibsNestjsServerlessHandlerDecoratorRoute
+  '/libs/nestjs-serverless/serverless-create': typeof LibsNestjsServerlessServerlessCreateRoute
+  '/libs/nestjs-serverless/serverless-module': typeof LibsNestjsServerlessServerlessModuleRoute
+  '/libs/nestjs-social-auth/social-auth-module': typeof LibsNestjsSocialAuthSocialAuthModuleRoute
+  '/libs/nestjs-social-auth/social-auth-service': typeof LibsNestjsSocialAuthSocialAuthServiceRoute
+  '/libs/nestjs-storage/storage-module': typeof LibsNestjsStorageStorageModuleRoute
+  '/libs/nestjs-storage/storage-service': typeof LibsNestjsStorageStorageServiceRoute
+  '/libs/query-dsl/boolean-schema': typeof LibsQueryDslBooleanSchemaRoute
+  '/libs/query-dsl/date-range-schema': typeof LibsQueryDslDateRangeSchemaRoute
+  '/libs/query-dsl/filter-schema': typeof LibsQueryDslFilterSchemaRoute
+  '/libs/query-dsl/list-schema': typeof LibsQueryDslListSchemaRoute
+  '/libs/query-dsl/pagination-schema': typeof LibsQueryDslPaginationSchemaRoute
+  '/libs/query-dsl/range-schema': typeof LibsQueryDslRangeSchemaRoute
+  '/libs/query-dsl/sort-schema': typeof LibsQueryDslSortSchemaRoute
+  '/libs/react-hooks/$hook': typeof LibsReactHooksHookRoute
+  '/libs/react-icons/playground': typeof LibsReactIconsPlaygroundRoute
+  '/libs/react-web/accordion': typeof LibsReactWebAccordionRoute
+  '/libs/react-web/alert': typeof LibsReactWebAlertRoute
+  '/libs/react-web/avatar': typeof LibsReactWebAvatarRoute
+  '/libs/react-web/badge': typeof LibsReactWebBadgeRoute
+  '/libs/react-web/blocks': typeof LibsReactWebBlocksRoute
+  '/libs/react-web/box': typeof LibsReactWebBoxRoute
+  '/libs/react-web/breadcrumb': typeof LibsReactWebBreadcrumbRoute
+  '/libs/react-web/button': typeof LibsReactWebButtonRoute
+  '/libs/react-web/card': typeof LibsReactWebCardRoute
+  '/libs/react-web/checkbox': typeof LibsReactWebCheckboxRoute
+  '/libs/react-web/color-scheme': typeof LibsReactWebColorSchemeRoute
+  '/libs/react-web/confirm': typeof LibsReactWebConfirmRoute
+  '/libs/react-web/container': typeof LibsReactWebContainerRoute
+  '/libs/react-web/currency-input': typeof LibsReactWebCurrencyInputRoute
+  '/libs/react-web/date-input': typeof LibsReactWebDateInputRoute
+  '/libs/react-web/date-range-input': typeof LibsReactWebDateRangeInputRoute
+  '/libs/react-web/document-input': typeof LibsReactWebDocumentInputRoute
+  '/libs/react-web/dropdown-menu': typeof LibsReactWebDropdownMenuRoute
+  '/libs/react-web/flex': typeof LibsReactWebFlexRoute
+  '/libs/react-web/form': typeof LibsReactWebFormRoute
+  '/libs/react-web/grid': typeof LibsReactWebGridRoute
+  '/libs/react-web/i18n': typeof LibsReactWebI18nRoute
+  '/libs/react-web/input': typeof LibsReactWebInputRoute
+  '/libs/react-web/label': typeof LibsReactWebLabelRoute
+  '/libs/react-web/layout': typeof LibsReactWebLayoutRoute
+  '/libs/react-web/loading-overlay': typeof LibsReactWebLoadingOverlayRoute
+  '/libs/react-web/mask-input': typeof LibsReactWebMaskInputRoute
+  '/libs/react-web/modal': typeof LibsReactWebModalRoute
+  '/libs/react-web/number-input': typeof LibsReactWebNumberInputRoute
+  '/libs/react-web/otp-input': typeof LibsReactWebOtpInputRoute
+  '/libs/react-web/pagination': typeof LibsReactWebPaginationRoute
+  '/libs/react-web/password-input': typeof LibsReactWebPasswordInputRoute
+  '/libs/react-web/phone-input': typeof LibsReactWebPhoneInputRoute
+  '/libs/react-web/playground': typeof LibsReactWebPlaygroundRoute
+  '/libs/react-web/popover': typeof LibsReactWebPopoverRoute
+  '/libs/react-web/progress': typeof LibsReactWebProgressRoute
+  '/libs/react-web/provider': typeof LibsReactWebProviderRoute
+  '/libs/react-web/radio': typeof LibsReactWebRadioRoute
+  '/libs/react-web/select': typeof LibsReactWebSelectRoute
+  '/libs/react-web/separator': typeof LibsReactWebSeparatorRoute
+  '/libs/react-web/sheet': typeof LibsReactWebSheetRoute
+  '/libs/react-web/skeleton': typeof LibsReactWebSkeletonRoute
+  '/libs/react-web/slider': typeof LibsReactWebSliderRoute
+  '/libs/react-web/switch': typeof LibsReactWebSwitchRoute
+  '/libs/react-web/t-loader': typeof LibsReactWebTLoaderRoute
+  '/libs/react-web/table': typeof LibsReactWebTableRoute
+  '/libs/react-web/tabs': typeof LibsReactWebTabsRoute
+  '/libs/react-web/tags-input': typeof LibsReactWebTagsInputRoute
+  '/libs/react-web/textarea': typeof LibsReactWebTextareaRoute
+  '/libs/react-web/theme': typeof LibsReactWebThemeRoute
+  '/libs/react-web/toast': typeof LibsReactWebToastRoute
+  '/libs/react-web/tooltip': typeof LibsReactWebTooltipRoute
+  '/libs/react-web/typography': typeof LibsReactWebTypographyRoute
+  '/libs/react-web/uploader': typeof LibsReactWebUploaderRoute
+  '/libs/saga/saga': typeof LibsSagaSagaRoute
+  '/libs/architecture-pattern': typeof LibsArchitecturePatternIndexRoute
+  '/libs/backend-config': typeof LibsBackendConfigIndexRoute
+  '/libs/backend-pattern': typeof LibsBackendPatternIndexRoute
+  '/libs/cli': typeof LibsCliIndexRoute
+  '/libs/entity': typeof LibsEntityIndexRoute
+  '/libs/exceptions': typeof LibsExceptionsIndexRoute
+  '/libs/frontend-config': typeof LibsFrontendConfigIndexRoute
+  '/libs/frontend-pattern': typeof LibsFrontendPatternIndexRoute
+  '/libs/frontend-primitives-pattern': typeof LibsFrontendPrimitivesPatternIndexRoute
+  '/libs/nestjs-cache': typeof LibsNestjsCacheIndexRoute
+  '/libs/nestjs-config': typeof LibsNestjsConfigIndexRoute
+  '/libs/nestjs-context': typeof LibsNestjsContextIndexRoute
+  '/libs/nestjs-database': typeof LibsNestjsDatabaseIndexRoute
+  '/libs/nestjs-iam': typeof LibsNestjsIamIndexRoute
+  '/libs/nestjs-idempotency': typeof LibsNestjsIdempotencyIndexRoute
+  '/libs/nestjs-lock': typeof LibsNestjsLockIndexRoute
+  '/libs/nestjs-logger': typeof LibsNestjsLoggerIndexRoute
+  '/libs/nestjs-observability': typeof LibsNestjsObservabilityIndexRoute
+  '/libs/nestjs-publisher': typeof LibsNestjsPublisherIndexRoute
+  '/libs/nestjs-rate-limit': typeof LibsNestjsRateLimitIndexRoute
+  '/libs/nestjs-resilience': typeof LibsNestjsResilienceIndexRoute
+  '/libs/nestjs-scheduler': typeof LibsNestjsSchedulerIndexRoute
+  '/libs/nestjs-server': typeof LibsNestjsServerIndexRoute
+  '/libs/nestjs-serverless': typeof LibsNestjsServerlessIndexRoute
+  '/libs/nestjs-social-auth': typeof LibsNestjsSocialAuthIndexRoute
+  '/libs/nestjs-storage': typeof LibsNestjsStorageIndexRoute
+  '/libs/query-dsl': typeof LibsQueryDslIndexRoute
+  '/libs/react-hooks': typeof LibsReactHooksIndexRoute
+  '/libs/react-icons': typeof LibsReactIconsIndexRoute
+  '/libs/react-mobile': typeof LibsReactMobileIndexRoute
+  '/libs/react-web': typeof LibsReactWebIndexRoute
+  '/libs/saga': typeof LibsSagaIndexRoute
+  '/libs/react-mobile/components/$component': typeof LibsReactMobileComponentsComponentRoute
+  '/libs/react-mobile/components': typeof LibsReactMobileComponentsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/_main': typeof MainRouteWithChildren
-  '/libs/common': typeof LibsCommonRouteWithChildren
-  '/libs/ui': typeof LibsUiRouteWithChildren
+  '/libs/architecture-pattern': typeof LibsArchitecturePatternRouteWithChildren
+  '/libs/backend-config': typeof LibsBackendConfigRouteWithChildren
+  '/libs/backend-pattern': typeof LibsBackendPatternRouteWithChildren
+  '/libs/cli': typeof LibsCliRouteWithChildren
+  '/libs/entity': typeof LibsEntityRouteWithChildren
+  '/libs/exceptions': typeof LibsExceptionsRouteWithChildren
+  '/libs/frontend-config': typeof LibsFrontendConfigRouteWithChildren
+  '/libs/frontend-pattern': typeof LibsFrontendPatternRouteWithChildren
+  '/libs/frontend-primitives-pattern': typeof LibsFrontendPrimitivesPatternRouteWithChildren
+  '/libs/nestjs-cache': typeof LibsNestjsCacheRouteWithChildren
+  '/libs/nestjs-config': typeof LibsNestjsConfigRouteWithChildren
+  '/libs/nestjs-context': typeof LibsNestjsContextRouteWithChildren
+  '/libs/nestjs-database': typeof LibsNestjsDatabaseRouteWithChildren
+  '/libs/nestjs-iam': typeof LibsNestjsIamRouteWithChildren
+  '/libs/nestjs-idempotency': typeof LibsNestjsIdempotencyRouteWithChildren
+  '/libs/nestjs-lock': typeof LibsNestjsLockRouteWithChildren
+  '/libs/nestjs-logger': typeof LibsNestjsLoggerRouteWithChildren
+  '/libs/nestjs-observability': typeof LibsNestjsObservabilityRouteWithChildren
+  '/libs/nestjs-publisher': typeof LibsNestjsPublisherRouteWithChildren
+  '/libs/nestjs-rate-limit': typeof LibsNestjsRateLimitRouteWithChildren
+  '/libs/nestjs-resilience': typeof LibsNestjsResilienceRouteWithChildren
+  '/libs/nestjs-scheduler': typeof LibsNestjsSchedulerRouteWithChildren
+  '/libs/nestjs-server': typeof LibsNestjsServerRouteWithChildren
+  '/libs/nestjs-serverless': typeof LibsNestjsServerlessRouteWithChildren
+  '/libs/nestjs-social-auth': typeof LibsNestjsSocialAuthRouteWithChildren
+  '/libs/nestjs-storage': typeof LibsNestjsStorageRouteWithChildren
+  '/libs/query-dsl': typeof LibsQueryDslRouteWithChildren
+  '/libs/react-hooks': typeof LibsReactHooksRouteWithChildren
+  '/libs/react-icons': typeof LibsReactIconsRouteWithChildren
+  '/libs/react-mobile': typeof LibsReactMobileRouteWithChildren
+  '/libs/react-web': typeof LibsReactWebRouteWithChildren
+  '/libs/saga': typeof LibsSagaRouteWithChildren
   '/_main/': typeof MainIndexRoute
-  '/libs/common/multiply': typeof LibsCommonMultiplyRoute
-  '/libs/common/subtract': typeof LibsCommonSubtractRoute
-  '/libs/common/sum': typeof LibsCommonSumRoute
-  '/libs/ui/accordion': typeof LibsUiAccordionRoute
-  '/libs/ui/alert': typeof LibsUiAlertRoute
-  '/libs/ui/avatar': typeof LibsUiAvatarRoute
-  '/libs/ui/badge': typeof LibsUiBadgeRoute
-  '/libs/ui/breadcrumb': typeof LibsUiBreadcrumbRoute
-  '/libs/ui/button': typeof LibsUiButtonRoute
-  '/libs/ui/card': typeof LibsUiCardRoute
-  '/libs/ui/checkbox': typeof LibsUiCheckboxRoute
-  '/libs/ui/color-scheme': typeof LibsUiColorSchemeRoute
-  '/libs/ui/confirm': typeof LibsUiConfirmRoute
-  '/libs/ui/currency-input': typeof LibsUiCurrencyInputRoute
-  '/libs/ui/date-input': typeof LibsUiDateInputRoute
-  '/libs/ui/date-range-input': typeof LibsUiDateRangeInputRoute
-  '/libs/ui/document-input': typeof LibsUiDocumentInputRoute
-  '/libs/ui/dropdown-menu': typeof LibsUiDropdownMenuRoute
-  '/libs/ui/flex': typeof LibsUiFlexRoute
-  '/libs/ui/form': typeof LibsUiFormRoute
-  '/libs/ui/grid': typeof LibsUiGridRoute
-  '/libs/ui/i18n': typeof LibsUiI18nRoute
-  '/libs/ui/input': typeof LibsUiInputRoute
-  '/libs/ui/label': typeof LibsUiLabelRoute
-  '/libs/ui/layout': typeof LibsUiLayoutRoute
-  '/libs/ui/loading-overlay': typeof LibsUiLoadingOverlayRoute
-  '/libs/ui/mask-input': typeof LibsUiMaskInputRoute
-  '/libs/ui/modal': typeof LibsUiModalRoute
-  '/libs/ui/number-input': typeof LibsUiNumberInputRoute
-  '/libs/ui/otp-input': typeof LibsUiOtpInputRoute
-  '/libs/ui/pagination': typeof LibsUiPaginationRoute
-  '/libs/ui/password-input': typeof LibsUiPasswordInputRoute
-  '/libs/ui/phone-input': typeof LibsUiPhoneInputRoute
-  '/libs/ui/playground': typeof LibsUiPlaygroundRoute
-  '/libs/ui/popover': typeof LibsUiPopoverRoute
-  '/libs/ui/progress': typeof LibsUiProgressRoute
-  '/libs/ui/provider': typeof LibsUiProviderRoute
-  '/libs/ui/radio': typeof LibsUiRadioRoute
-  '/libs/ui/select': typeof LibsUiSelectRoute
-  '/libs/ui/separator': typeof LibsUiSeparatorRoute
-  '/libs/ui/sheet': typeof LibsUiSheetRoute
-  '/libs/ui/skeleton': typeof LibsUiSkeletonRoute
-  '/libs/ui/slider': typeof LibsUiSliderRoute
-  '/libs/ui/switch': typeof LibsUiSwitchRoute
-  '/libs/ui/t-loader': typeof LibsUiTLoaderRoute
-  '/libs/ui/table': typeof LibsUiTableRoute
-  '/libs/ui/tabs': typeof LibsUiTabsRoute
-  '/libs/ui/tags-input': typeof LibsUiTagsInputRoute
-  '/libs/ui/textarea': typeof LibsUiTextareaRoute
-  '/libs/ui/theme': typeof LibsUiThemeRoute
-  '/libs/ui/toast': typeof LibsUiToastRoute
-  '/libs/ui/tooltip': typeof LibsUiTooltipRoute
-  '/libs/ui/typography': typeof LibsUiTypographyRoute
-  '/libs/ui/uploader': typeof LibsUiUploaderRoute
-  '/libs/common/': typeof LibsCommonIndexRoute
-  '/libs/ui/': typeof LibsUiIndexRoute
+  '/libs/architecture-pattern/$section': typeof LibsArchitecturePatternSectionRoute
+  '/libs/backend-config/biome': typeof LibsBackendConfigBiomeRoute
+  '/libs/backend-config/typescript': typeof LibsBackendConfigTypescriptRoute
+  '/libs/backend-pattern/$section': typeof LibsBackendPatternSectionRoute
+  '/libs/cli/api': typeof LibsCliApiRoute
+  '/libs/cli/handler': typeof LibsCliHandlerRoute
+  '/libs/cli/mobile': typeof LibsCliMobileRoute
+  '/libs/cli/monorepo': typeof LibsCliMonorepoRoute
+  '/libs/cli/web': typeof LibsCliWebRoute
+  '/libs/entity/entity': typeof LibsEntityEntityRoute
+  '/libs/exceptions/exceptions': typeof LibsExceptionsExceptionsRoute
+  '/libs/frontend-config/biome': typeof LibsFrontendConfigBiomeRoute
+  '/libs/frontend-config/typescript': typeof LibsFrontendConfigTypescriptRoute
+  '/libs/frontend-pattern/$section': typeof LibsFrontendPatternSectionRoute
+  '/libs/frontend-primitives-pattern/$section': typeof LibsFrontendPrimitivesPatternSectionRoute
+  '/libs/nestjs-cache/cache-del': typeof LibsNestjsCacheCacheDelRoute
+  '/libs/nestjs-cache/cache-get': typeof LibsNestjsCacheCacheGetRoute
+  '/libs/nestjs-cache/cache-module': typeof LibsNestjsCacheCacheModuleRoute
+  '/libs/nestjs-cache/cache-service': typeof LibsNestjsCacheCacheServiceRoute
+  '/libs/nestjs-config/config-module': typeof LibsNestjsConfigConfigModuleRoute
+  '/libs/nestjs-config/config-service': typeof LibsNestjsConfigConfigServiceRoute
+  '/libs/nestjs-config/schema-and-typing': typeof LibsNestjsConfigSchemaAndTypingRoute
+  '/libs/nestjs-context/context-module': typeof LibsNestjsContextContextModuleRoute
+  '/libs/nestjs-context/context-service': typeof LibsNestjsContextContextServiceRoute
+  '/libs/nestjs-context/with-context': typeof LibsNestjsContextWithContextRoute
+  '/libs/nestjs-database/audit': typeof LibsNestjsDatabaseAuditRoute
+  '/libs/nestjs-database/database-module': typeof LibsNestjsDatabaseDatabaseModuleRoute
+  '/libs/nestjs-database/database-service': typeof LibsNestjsDatabaseDatabaseServiceRoute
+  '/libs/nestjs-database/schema-definition': typeof LibsNestjsDatabaseSchemaDefinitionRoute
+  '/libs/nestjs-database/transaction-hooks': typeof LibsNestjsDatabaseTransactionHooksRoute
+  '/libs/nestjs-database/transactional': typeof LibsNestjsDatabaseTransactionalRoute
+  '/libs/nestjs-database/types-and-errors': typeof LibsNestjsDatabaseTypesAndErrorsRoute
+  '/libs/nestjs-iam/acl-decorator': typeof LibsNestjsIamAclDecoratorRoute
+  '/libs/nestjs-iam/acl-service': typeof LibsNestjsIamAclServiceRoute
+  '/libs/nestjs-iam/auth-decorator': typeof LibsNestjsIamAuthDecoratorRoute
+  '/libs/nestjs-iam/authenticated-profile-decorator': typeof LibsNestjsIamAuthenticatedProfileDecoratorRoute
+  '/libs/nestjs-iam/iam-module': typeof LibsNestjsIamIamModuleRoute
+  '/libs/nestjs-iam/token-service': typeof LibsNestjsIamTokenServiceRoute
+  '/libs/nestjs-idempotency/idempotency-module': typeof LibsNestjsIdempotencyIdempotencyModuleRoute
+  '/libs/nestjs-idempotency/idempotency-service': typeof LibsNestjsIdempotencyIdempotencyServiceRoute
+  '/libs/nestjs-idempotency/idempotent-decorator': typeof LibsNestjsIdempotencyIdempotentDecoratorRoute
+  '/libs/nestjs-lock/lock-decorator': typeof LibsNestjsLockLockDecoratorRoute
+  '/libs/nestjs-lock/lock-module': typeof LibsNestjsLockLockModuleRoute
+  '/libs/nestjs-lock/lock-service': typeof LibsNestjsLockLockServiceRoute
+  '/libs/nestjs-logger/logger-module': typeof LibsNestjsLoggerLoggerModuleRoute
+  '/libs/nestjs-logger/logger-service': typeof LibsNestjsLoggerLoggerServiceRoute
+  '/libs/nestjs-observability/measure-decorator': typeof LibsNestjsObservabilityMeasureDecoratorRoute
+  '/libs/nestjs-observability/metrics-service': typeof LibsNestjsObservabilityMetricsServiceRoute
+  '/libs/nestjs-observability/observability-module': typeof LibsNestjsObservabilityObservabilityModuleRoute
+  '/libs/nestjs-observability/tracing': typeof LibsNestjsObservabilityTracingRoute
+  '/libs/nestjs-publisher/outbox': typeof LibsNestjsPublisherOutboxRoute
+  '/libs/nestjs-publisher/publisher-module': typeof LibsNestjsPublisherPublisherModuleRoute
+  '/libs/nestjs-publisher/publisher-service': typeof LibsNestjsPublisherPublisherServiceRoute
+  '/libs/nestjs-publisher/subscriber-decorator': typeof LibsNestjsPublisherSubscriberDecoratorRoute
+  '/libs/nestjs-rate-limit/rate-limit-decorator': typeof LibsNestjsRateLimitRateLimitDecoratorRoute
+  '/libs/nestjs-rate-limit/rate-limit-module': typeof LibsNestjsRateLimitRateLimitModuleRoute
+  '/libs/nestjs-rate-limit/rate-limit-service': typeof LibsNestjsRateLimitRateLimitServiceRoute
+  '/libs/nestjs-resilience/circuit-breaker': typeof LibsNestjsResilienceCircuitBreakerRoute
+  '/libs/nestjs-resilience/retry': typeof LibsNestjsResilienceRetryRoute
+  '/libs/nestjs-resilience/timeout': typeof LibsNestjsResilienceTimeoutRoute
+  '/libs/nestjs-scheduler/schedule-decorator': typeof LibsNestjsSchedulerScheduleDecoratorRoute
+  '/libs/nestjs-scheduler/scheduler-module': typeof LibsNestjsSchedulerSchedulerModuleRoute
+  '/libs/nestjs-server/controller-decorator': typeof LibsNestjsServerControllerDecoratorRoute
+  '/libs/nestjs-server/request-decorator': typeof LibsNestjsServerRequestDecoratorRoute
+  '/libs/nestjs-server/route-decorator': typeof LibsNestjsServerRouteDecoratorRoute
+  '/libs/nestjs-server/server-create': typeof LibsNestjsServerServerCreateRoute
+  '/libs/nestjs-serverless/handler-decorator': typeof LibsNestjsServerlessHandlerDecoratorRoute
+  '/libs/nestjs-serverless/serverless-create': typeof LibsNestjsServerlessServerlessCreateRoute
+  '/libs/nestjs-serverless/serverless-module': typeof LibsNestjsServerlessServerlessModuleRoute
+  '/libs/nestjs-social-auth/social-auth-module': typeof LibsNestjsSocialAuthSocialAuthModuleRoute
+  '/libs/nestjs-social-auth/social-auth-service': typeof LibsNestjsSocialAuthSocialAuthServiceRoute
+  '/libs/nestjs-storage/storage-module': typeof LibsNestjsStorageStorageModuleRoute
+  '/libs/nestjs-storage/storage-service': typeof LibsNestjsStorageStorageServiceRoute
+  '/libs/query-dsl/boolean-schema': typeof LibsQueryDslBooleanSchemaRoute
+  '/libs/query-dsl/date-range-schema': typeof LibsQueryDslDateRangeSchemaRoute
+  '/libs/query-dsl/filter-schema': typeof LibsQueryDslFilterSchemaRoute
+  '/libs/query-dsl/list-schema': typeof LibsQueryDslListSchemaRoute
+  '/libs/query-dsl/pagination-schema': typeof LibsQueryDslPaginationSchemaRoute
+  '/libs/query-dsl/range-schema': typeof LibsQueryDslRangeSchemaRoute
+  '/libs/query-dsl/sort-schema': typeof LibsQueryDslSortSchemaRoute
+  '/libs/react-hooks/$hook': typeof LibsReactHooksHookRoute
+  '/libs/react-icons/playground': typeof LibsReactIconsPlaygroundRoute
+  '/libs/react-web/accordion': typeof LibsReactWebAccordionRoute
+  '/libs/react-web/alert': typeof LibsReactWebAlertRoute
+  '/libs/react-web/avatar': typeof LibsReactWebAvatarRoute
+  '/libs/react-web/badge': typeof LibsReactWebBadgeRoute
+  '/libs/react-web/blocks': typeof LibsReactWebBlocksRoute
+  '/libs/react-web/box': typeof LibsReactWebBoxRoute
+  '/libs/react-web/breadcrumb': typeof LibsReactWebBreadcrumbRoute
+  '/libs/react-web/button': typeof LibsReactWebButtonRoute
+  '/libs/react-web/card': typeof LibsReactWebCardRoute
+  '/libs/react-web/checkbox': typeof LibsReactWebCheckboxRoute
+  '/libs/react-web/color-scheme': typeof LibsReactWebColorSchemeRoute
+  '/libs/react-web/confirm': typeof LibsReactWebConfirmRoute
+  '/libs/react-web/container': typeof LibsReactWebContainerRoute
+  '/libs/react-web/currency-input': typeof LibsReactWebCurrencyInputRoute
+  '/libs/react-web/date-input': typeof LibsReactWebDateInputRoute
+  '/libs/react-web/date-range-input': typeof LibsReactWebDateRangeInputRoute
+  '/libs/react-web/document-input': typeof LibsReactWebDocumentInputRoute
+  '/libs/react-web/dropdown-menu': typeof LibsReactWebDropdownMenuRoute
+  '/libs/react-web/flex': typeof LibsReactWebFlexRoute
+  '/libs/react-web/form': typeof LibsReactWebFormRoute
+  '/libs/react-web/grid': typeof LibsReactWebGridRoute
+  '/libs/react-web/i18n': typeof LibsReactWebI18nRoute
+  '/libs/react-web/input': typeof LibsReactWebInputRoute
+  '/libs/react-web/label': typeof LibsReactWebLabelRoute
+  '/libs/react-web/layout': typeof LibsReactWebLayoutRoute
+  '/libs/react-web/loading-overlay': typeof LibsReactWebLoadingOverlayRoute
+  '/libs/react-web/mask-input': typeof LibsReactWebMaskInputRoute
+  '/libs/react-web/modal': typeof LibsReactWebModalRoute
+  '/libs/react-web/number-input': typeof LibsReactWebNumberInputRoute
+  '/libs/react-web/otp-input': typeof LibsReactWebOtpInputRoute
+  '/libs/react-web/pagination': typeof LibsReactWebPaginationRoute
+  '/libs/react-web/password-input': typeof LibsReactWebPasswordInputRoute
+  '/libs/react-web/phone-input': typeof LibsReactWebPhoneInputRoute
+  '/libs/react-web/playground': typeof LibsReactWebPlaygroundRoute
+  '/libs/react-web/popover': typeof LibsReactWebPopoverRoute
+  '/libs/react-web/progress': typeof LibsReactWebProgressRoute
+  '/libs/react-web/provider': typeof LibsReactWebProviderRoute
+  '/libs/react-web/radio': typeof LibsReactWebRadioRoute
+  '/libs/react-web/select': typeof LibsReactWebSelectRoute
+  '/libs/react-web/separator': typeof LibsReactWebSeparatorRoute
+  '/libs/react-web/sheet': typeof LibsReactWebSheetRoute
+  '/libs/react-web/skeleton': typeof LibsReactWebSkeletonRoute
+  '/libs/react-web/slider': typeof LibsReactWebSliderRoute
+  '/libs/react-web/switch': typeof LibsReactWebSwitchRoute
+  '/libs/react-web/t-loader': typeof LibsReactWebTLoaderRoute
+  '/libs/react-web/table': typeof LibsReactWebTableRoute
+  '/libs/react-web/tabs': typeof LibsReactWebTabsRoute
+  '/libs/react-web/tags-input': typeof LibsReactWebTagsInputRoute
+  '/libs/react-web/textarea': typeof LibsReactWebTextareaRoute
+  '/libs/react-web/theme': typeof LibsReactWebThemeRoute
+  '/libs/react-web/toast': typeof LibsReactWebToastRoute
+  '/libs/react-web/tooltip': typeof LibsReactWebTooltipRoute
+  '/libs/react-web/typography': typeof LibsReactWebTypographyRoute
+  '/libs/react-web/uploader': typeof LibsReactWebUploaderRoute
+  '/libs/saga/saga': typeof LibsSagaSagaRoute
+  '/libs/architecture-pattern/': typeof LibsArchitecturePatternIndexRoute
+  '/libs/backend-config/': typeof LibsBackendConfigIndexRoute
+  '/libs/backend-pattern/': typeof LibsBackendPatternIndexRoute
+  '/libs/cli/': typeof LibsCliIndexRoute
+  '/libs/entity/': typeof LibsEntityIndexRoute
+  '/libs/exceptions/': typeof LibsExceptionsIndexRoute
+  '/libs/frontend-config/': typeof LibsFrontendConfigIndexRoute
+  '/libs/frontend-pattern/': typeof LibsFrontendPatternIndexRoute
+  '/libs/frontend-primitives-pattern/': typeof LibsFrontendPrimitivesPatternIndexRoute
+  '/libs/nestjs-cache/': typeof LibsNestjsCacheIndexRoute
+  '/libs/nestjs-config/': typeof LibsNestjsConfigIndexRoute
+  '/libs/nestjs-context/': typeof LibsNestjsContextIndexRoute
+  '/libs/nestjs-database/': typeof LibsNestjsDatabaseIndexRoute
+  '/libs/nestjs-iam/': typeof LibsNestjsIamIndexRoute
+  '/libs/nestjs-idempotency/': typeof LibsNestjsIdempotencyIndexRoute
+  '/libs/nestjs-lock/': typeof LibsNestjsLockIndexRoute
+  '/libs/nestjs-logger/': typeof LibsNestjsLoggerIndexRoute
+  '/libs/nestjs-observability/': typeof LibsNestjsObservabilityIndexRoute
+  '/libs/nestjs-publisher/': typeof LibsNestjsPublisherIndexRoute
+  '/libs/nestjs-rate-limit/': typeof LibsNestjsRateLimitIndexRoute
+  '/libs/nestjs-resilience/': typeof LibsNestjsResilienceIndexRoute
+  '/libs/nestjs-scheduler/': typeof LibsNestjsSchedulerIndexRoute
+  '/libs/nestjs-server/': typeof LibsNestjsServerIndexRoute
+  '/libs/nestjs-serverless/': typeof LibsNestjsServerlessIndexRoute
+  '/libs/nestjs-social-auth/': typeof LibsNestjsSocialAuthIndexRoute
+  '/libs/nestjs-storage/': typeof LibsNestjsStorageIndexRoute
+  '/libs/query-dsl/': typeof LibsQueryDslIndexRoute
+  '/libs/react-hooks/': typeof LibsReactHooksIndexRoute
+  '/libs/react-icons/': typeof LibsReactIconsIndexRoute
+  '/libs/react-mobile/': typeof LibsReactMobileIndexRoute
+  '/libs/react-web/': typeof LibsReactWebIndexRoute
+  '/libs/saga/': typeof LibsSagaIndexRoute
+  '/libs/react-mobile/components/$component': typeof LibsReactMobileComponentsComponentRoute
+  '/libs/react-mobile/components/': typeof LibsReactMobileComponentsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
-    | '/libs/common'
-    | '/libs/ui'
-    | '/libs/common/multiply'
-    | '/libs/common/subtract'
-    | '/libs/common/sum'
-    | '/libs/ui/accordion'
-    | '/libs/ui/alert'
-    | '/libs/ui/avatar'
-    | '/libs/ui/badge'
-    | '/libs/ui/breadcrumb'
-    | '/libs/ui/button'
-    | '/libs/ui/card'
-    | '/libs/ui/checkbox'
-    | '/libs/ui/color-scheme'
-    | '/libs/ui/confirm'
-    | '/libs/ui/currency-input'
-    | '/libs/ui/date-input'
-    | '/libs/ui/date-range-input'
-    | '/libs/ui/document-input'
-    | '/libs/ui/dropdown-menu'
-    | '/libs/ui/flex'
-    | '/libs/ui/form'
-    | '/libs/ui/grid'
-    | '/libs/ui/i18n'
-    | '/libs/ui/input'
-    | '/libs/ui/label'
-    | '/libs/ui/layout'
-    | '/libs/ui/loading-overlay'
-    | '/libs/ui/mask-input'
-    | '/libs/ui/modal'
-    | '/libs/ui/number-input'
-    | '/libs/ui/otp-input'
-    | '/libs/ui/pagination'
-    | '/libs/ui/password-input'
-    | '/libs/ui/phone-input'
-    | '/libs/ui/playground'
-    | '/libs/ui/popover'
-    | '/libs/ui/progress'
-    | '/libs/ui/provider'
-    | '/libs/ui/radio'
-    | '/libs/ui/select'
-    | '/libs/ui/separator'
-    | '/libs/ui/sheet'
-    | '/libs/ui/skeleton'
-    | '/libs/ui/slider'
-    | '/libs/ui/switch'
-    | '/libs/ui/t-loader'
-    | '/libs/ui/table'
-    | '/libs/ui/tabs'
-    | '/libs/ui/tags-input'
-    | '/libs/ui/textarea'
-    | '/libs/ui/theme'
-    | '/libs/ui/toast'
-    | '/libs/ui/tooltip'
-    | '/libs/ui/typography'
-    | '/libs/ui/uploader'
-    | '/libs/common/'
-    | '/libs/ui/'
+    | '/libs/architecture-pattern'
+    | '/libs/backend-config'
+    | '/libs/backend-pattern'
+    | '/libs/cli'
+    | '/libs/entity'
+    | '/libs/exceptions'
+    | '/libs/frontend-config'
+    | '/libs/frontend-pattern'
+    | '/libs/frontend-primitives-pattern'
+    | '/libs/nestjs-cache'
+    | '/libs/nestjs-config'
+    | '/libs/nestjs-context'
+    | '/libs/nestjs-database'
+    | '/libs/nestjs-iam'
+    | '/libs/nestjs-idempotency'
+    | '/libs/nestjs-lock'
+    | '/libs/nestjs-logger'
+    | '/libs/nestjs-observability'
+    | '/libs/nestjs-publisher'
+    | '/libs/nestjs-rate-limit'
+    | '/libs/nestjs-resilience'
+    | '/libs/nestjs-scheduler'
+    | '/libs/nestjs-server'
+    | '/libs/nestjs-serverless'
+    | '/libs/nestjs-social-auth'
+    | '/libs/nestjs-storage'
+    | '/libs/query-dsl'
+    | '/libs/react-hooks'
+    | '/libs/react-icons'
+    | '/libs/react-mobile'
+    | '/libs/react-web'
+    | '/libs/saga'
+    | '/libs/architecture-pattern/$section'
+    | '/libs/backend-config/biome'
+    | '/libs/backend-config/typescript'
+    | '/libs/backend-pattern/$section'
+    | '/libs/cli/api'
+    | '/libs/cli/handler'
+    | '/libs/cli/mobile'
+    | '/libs/cli/monorepo'
+    | '/libs/cli/web'
+    | '/libs/entity/entity'
+    | '/libs/exceptions/exceptions'
+    | '/libs/frontend-config/biome'
+    | '/libs/frontend-config/typescript'
+    | '/libs/frontend-pattern/$section'
+    | '/libs/frontend-primitives-pattern/$section'
+    | '/libs/nestjs-cache/cache-del'
+    | '/libs/nestjs-cache/cache-get'
+    | '/libs/nestjs-cache/cache-module'
+    | '/libs/nestjs-cache/cache-service'
+    | '/libs/nestjs-config/config-module'
+    | '/libs/nestjs-config/config-service'
+    | '/libs/nestjs-config/schema-and-typing'
+    | '/libs/nestjs-context/context-module'
+    | '/libs/nestjs-context/context-service'
+    | '/libs/nestjs-context/with-context'
+    | '/libs/nestjs-database/audit'
+    | '/libs/nestjs-database/database-module'
+    | '/libs/nestjs-database/database-service'
+    | '/libs/nestjs-database/schema-definition'
+    | '/libs/nestjs-database/transaction-hooks'
+    | '/libs/nestjs-database/transactional'
+    | '/libs/nestjs-database/types-and-errors'
+    | '/libs/nestjs-iam/acl-decorator'
+    | '/libs/nestjs-iam/acl-service'
+    | '/libs/nestjs-iam/auth-decorator'
+    | '/libs/nestjs-iam/authenticated-profile-decorator'
+    | '/libs/nestjs-iam/iam-module'
+    | '/libs/nestjs-iam/token-service'
+    | '/libs/nestjs-idempotency/idempotency-module'
+    | '/libs/nestjs-idempotency/idempotency-service'
+    | '/libs/nestjs-idempotency/idempotent-decorator'
+    | '/libs/nestjs-lock/lock-decorator'
+    | '/libs/nestjs-lock/lock-module'
+    | '/libs/nestjs-lock/lock-service'
+    | '/libs/nestjs-logger/logger-module'
+    | '/libs/nestjs-logger/logger-service'
+    | '/libs/nestjs-observability/measure-decorator'
+    | '/libs/nestjs-observability/metrics-service'
+    | '/libs/nestjs-observability/observability-module'
+    | '/libs/nestjs-observability/tracing'
+    | '/libs/nestjs-publisher/outbox'
+    | '/libs/nestjs-publisher/publisher-module'
+    | '/libs/nestjs-publisher/publisher-service'
+    | '/libs/nestjs-publisher/subscriber-decorator'
+    | '/libs/nestjs-rate-limit/rate-limit-decorator'
+    | '/libs/nestjs-rate-limit/rate-limit-module'
+    | '/libs/nestjs-rate-limit/rate-limit-service'
+    | '/libs/nestjs-resilience/circuit-breaker'
+    | '/libs/nestjs-resilience/retry'
+    | '/libs/nestjs-resilience/timeout'
+    | '/libs/nestjs-scheduler/schedule-decorator'
+    | '/libs/nestjs-scheduler/scheduler-module'
+    | '/libs/nestjs-server/controller-decorator'
+    | '/libs/nestjs-server/request-decorator'
+    | '/libs/nestjs-server/route-decorator'
+    | '/libs/nestjs-server/server-create'
+    | '/libs/nestjs-serverless/handler-decorator'
+    | '/libs/nestjs-serverless/serverless-create'
+    | '/libs/nestjs-serverless/serverless-module'
+    | '/libs/nestjs-social-auth/social-auth-module'
+    | '/libs/nestjs-social-auth/social-auth-service'
+    | '/libs/nestjs-storage/storage-module'
+    | '/libs/nestjs-storage/storage-service'
+    | '/libs/query-dsl/boolean-schema'
+    | '/libs/query-dsl/date-range-schema'
+    | '/libs/query-dsl/filter-schema'
+    | '/libs/query-dsl/list-schema'
+    | '/libs/query-dsl/pagination-schema'
+    | '/libs/query-dsl/range-schema'
+    | '/libs/query-dsl/sort-schema'
+    | '/libs/react-hooks/$hook'
+    | '/libs/react-icons/playground'
+    | '/libs/react-web/accordion'
+    | '/libs/react-web/alert'
+    | '/libs/react-web/avatar'
+    | '/libs/react-web/badge'
+    | '/libs/react-web/blocks'
+    | '/libs/react-web/box'
+    | '/libs/react-web/breadcrumb'
+    | '/libs/react-web/button'
+    | '/libs/react-web/card'
+    | '/libs/react-web/checkbox'
+    | '/libs/react-web/color-scheme'
+    | '/libs/react-web/confirm'
+    | '/libs/react-web/container'
+    | '/libs/react-web/currency-input'
+    | '/libs/react-web/date-input'
+    | '/libs/react-web/date-range-input'
+    | '/libs/react-web/document-input'
+    | '/libs/react-web/dropdown-menu'
+    | '/libs/react-web/flex'
+    | '/libs/react-web/form'
+    | '/libs/react-web/grid'
+    | '/libs/react-web/i18n'
+    | '/libs/react-web/input'
+    | '/libs/react-web/label'
+    | '/libs/react-web/layout'
+    | '/libs/react-web/loading-overlay'
+    | '/libs/react-web/mask-input'
+    | '/libs/react-web/modal'
+    | '/libs/react-web/number-input'
+    | '/libs/react-web/otp-input'
+    | '/libs/react-web/pagination'
+    | '/libs/react-web/password-input'
+    | '/libs/react-web/phone-input'
+    | '/libs/react-web/playground'
+    | '/libs/react-web/popover'
+    | '/libs/react-web/progress'
+    | '/libs/react-web/provider'
+    | '/libs/react-web/radio'
+    | '/libs/react-web/select'
+    | '/libs/react-web/separator'
+    | '/libs/react-web/sheet'
+    | '/libs/react-web/skeleton'
+    | '/libs/react-web/slider'
+    | '/libs/react-web/switch'
+    | '/libs/react-web/t-loader'
+    | '/libs/react-web/table'
+    | '/libs/react-web/tabs'
+    | '/libs/react-web/tags-input'
+    | '/libs/react-web/textarea'
+    | '/libs/react-web/theme'
+    | '/libs/react-web/toast'
+    | '/libs/react-web/tooltip'
+    | '/libs/react-web/typography'
+    | '/libs/react-web/uploader'
+    | '/libs/saga/saga'
+    | '/libs/architecture-pattern/'
+    | '/libs/backend-config/'
+    | '/libs/backend-pattern/'
+    | '/libs/cli/'
+    | '/libs/entity/'
+    | '/libs/exceptions/'
+    | '/libs/frontend-config/'
+    | '/libs/frontend-pattern/'
+    | '/libs/frontend-primitives-pattern/'
+    | '/libs/nestjs-cache/'
+    | '/libs/nestjs-config/'
+    | '/libs/nestjs-context/'
+    | '/libs/nestjs-database/'
+    | '/libs/nestjs-iam/'
+    | '/libs/nestjs-idempotency/'
+    | '/libs/nestjs-lock/'
+    | '/libs/nestjs-logger/'
+    | '/libs/nestjs-observability/'
+    | '/libs/nestjs-publisher/'
+    | '/libs/nestjs-rate-limit/'
+    | '/libs/nestjs-resilience/'
+    | '/libs/nestjs-scheduler/'
+    | '/libs/nestjs-server/'
+    | '/libs/nestjs-serverless/'
+    | '/libs/nestjs-social-auth/'
+    | '/libs/nestjs-storage/'
+    | '/libs/query-dsl/'
+    | '/libs/react-hooks/'
+    | '/libs/react-icons/'
+    | '/libs/react-mobile/'
+    | '/libs/react-web/'
+    | '/libs/saga/'
+    | '/libs/react-mobile/components/$component'
+    | '/libs/react-mobile/components/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
-    | '/libs/common/multiply'
-    | '/libs/common/subtract'
-    | '/libs/common/sum'
-    | '/libs/ui/accordion'
-    | '/libs/ui/alert'
-    | '/libs/ui/avatar'
-    | '/libs/ui/badge'
-    | '/libs/ui/breadcrumb'
-    | '/libs/ui/button'
-    | '/libs/ui/card'
-    | '/libs/ui/checkbox'
-    | '/libs/ui/color-scheme'
-    | '/libs/ui/confirm'
-    | '/libs/ui/currency-input'
-    | '/libs/ui/date-input'
-    | '/libs/ui/date-range-input'
-    | '/libs/ui/document-input'
-    | '/libs/ui/dropdown-menu'
-    | '/libs/ui/flex'
-    | '/libs/ui/form'
-    | '/libs/ui/grid'
-    | '/libs/ui/i18n'
-    | '/libs/ui/input'
-    | '/libs/ui/label'
-    | '/libs/ui/layout'
-    | '/libs/ui/loading-overlay'
-    | '/libs/ui/mask-input'
-    | '/libs/ui/modal'
-    | '/libs/ui/number-input'
-    | '/libs/ui/otp-input'
-    | '/libs/ui/pagination'
-    | '/libs/ui/password-input'
-    | '/libs/ui/phone-input'
-    | '/libs/ui/playground'
-    | '/libs/ui/popover'
-    | '/libs/ui/progress'
-    | '/libs/ui/provider'
-    | '/libs/ui/radio'
-    | '/libs/ui/select'
-    | '/libs/ui/separator'
-    | '/libs/ui/sheet'
-    | '/libs/ui/skeleton'
-    | '/libs/ui/slider'
-    | '/libs/ui/switch'
-    | '/libs/ui/t-loader'
-    | '/libs/ui/table'
-    | '/libs/ui/tabs'
-    | '/libs/ui/tags-input'
-    | '/libs/ui/textarea'
-    | '/libs/ui/theme'
-    | '/libs/ui/toast'
-    | '/libs/ui/tooltip'
-    | '/libs/ui/typography'
-    | '/libs/ui/uploader'
-    | '/libs/common'
-    | '/libs/ui'
+    | '/libs/architecture-pattern/$section'
+    | '/libs/backend-config/biome'
+    | '/libs/backend-config/typescript'
+    | '/libs/backend-pattern/$section'
+    | '/libs/cli/api'
+    | '/libs/cli/handler'
+    | '/libs/cli/mobile'
+    | '/libs/cli/monorepo'
+    | '/libs/cli/web'
+    | '/libs/entity/entity'
+    | '/libs/exceptions/exceptions'
+    | '/libs/frontend-config/biome'
+    | '/libs/frontend-config/typescript'
+    | '/libs/frontend-pattern/$section'
+    | '/libs/frontend-primitives-pattern/$section'
+    | '/libs/nestjs-cache/cache-del'
+    | '/libs/nestjs-cache/cache-get'
+    | '/libs/nestjs-cache/cache-module'
+    | '/libs/nestjs-cache/cache-service'
+    | '/libs/nestjs-config/config-module'
+    | '/libs/nestjs-config/config-service'
+    | '/libs/nestjs-config/schema-and-typing'
+    | '/libs/nestjs-context/context-module'
+    | '/libs/nestjs-context/context-service'
+    | '/libs/nestjs-context/with-context'
+    | '/libs/nestjs-database/audit'
+    | '/libs/nestjs-database/database-module'
+    | '/libs/nestjs-database/database-service'
+    | '/libs/nestjs-database/schema-definition'
+    | '/libs/nestjs-database/transaction-hooks'
+    | '/libs/nestjs-database/transactional'
+    | '/libs/nestjs-database/types-and-errors'
+    | '/libs/nestjs-iam/acl-decorator'
+    | '/libs/nestjs-iam/acl-service'
+    | '/libs/nestjs-iam/auth-decorator'
+    | '/libs/nestjs-iam/authenticated-profile-decorator'
+    | '/libs/nestjs-iam/iam-module'
+    | '/libs/nestjs-iam/token-service'
+    | '/libs/nestjs-idempotency/idempotency-module'
+    | '/libs/nestjs-idempotency/idempotency-service'
+    | '/libs/nestjs-idempotency/idempotent-decorator'
+    | '/libs/nestjs-lock/lock-decorator'
+    | '/libs/nestjs-lock/lock-module'
+    | '/libs/nestjs-lock/lock-service'
+    | '/libs/nestjs-logger/logger-module'
+    | '/libs/nestjs-logger/logger-service'
+    | '/libs/nestjs-observability/measure-decorator'
+    | '/libs/nestjs-observability/metrics-service'
+    | '/libs/nestjs-observability/observability-module'
+    | '/libs/nestjs-observability/tracing'
+    | '/libs/nestjs-publisher/outbox'
+    | '/libs/nestjs-publisher/publisher-module'
+    | '/libs/nestjs-publisher/publisher-service'
+    | '/libs/nestjs-publisher/subscriber-decorator'
+    | '/libs/nestjs-rate-limit/rate-limit-decorator'
+    | '/libs/nestjs-rate-limit/rate-limit-module'
+    | '/libs/nestjs-rate-limit/rate-limit-service'
+    | '/libs/nestjs-resilience/circuit-breaker'
+    | '/libs/nestjs-resilience/retry'
+    | '/libs/nestjs-resilience/timeout'
+    | '/libs/nestjs-scheduler/schedule-decorator'
+    | '/libs/nestjs-scheduler/scheduler-module'
+    | '/libs/nestjs-server/controller-decorator'
+    | '/libs/nestjs-server/request-decorator'
+    | '/libs/nestjs-server/route-decorator'
+    | '/libs/nestjs-server/server-create'
+    | '/libs/nestjs-serverless/handler-decorator'
+    | '/libs/nestjs-serverless/serverless-create'
+    | '/libs/nestjs-serverless/serverless-module'
+    | '/libs/nestjs-social-auth/social-auth-module'
+    | '/libs/nestjs-social-auth/social-auth-service'
+    | '/libs/nestjs-storage/storage-module'
+    | '/libs/nestjs-storage/storage-service'
+    | '/libs/query-dsl/boolean-schema'
+    | '/libs/query-dsl/date-range-schema'
+    | '/libs/query-dsl/filter-schema'
+    | '/libs/query-dsl/list-schema'
+    | '/libs/query-dsl/pagination-schema'
+    | '/libs/query-dsl/range-schema'
+    | '/libs/query-dsl/sort-schema'
+    | '/libs/react-hooks/$hook'
+    | '/libs/react-icons/playground'
+    | '/libs/react-web/accordion'
+    | '/libs/react-web/alert'
+    | '/libs/react-web/avatar'
+    | '/libs/react-web/badge'
+    | '/libs/react-web/blocks'
+    | '/libs/react-web/box'
+    | '/libs/react-web/breadcrumb'
+    | '/libs/react-web/button'
+    | '/libs/react-web/card'
+    | '/libs/react-web/checkbox'
+    | '/libs/react-web/color-scheme'
+    | '/libs/react-web/confirm'
+    | '/libs/react-web/container'
+    | '/libs/react-web/currency-input'
+    | '/libs/react-web/date-input'
+    | '/libs/react-web/date-range-input'
+    | '/libs/react-web/document-input'
+    | '/libs/react-web/dropdown-menu'
+    | '/libs/react-web/flex'
+    | '/libs/react-web/form'
+    | '/libs/react-web/grid'
+    | '/libs/react-web/i18n'
+    | '/libs/react-web/input'
+    | '/libs/react-web/label'
+    | '/libs/react-web/layout'
+    | '/libs/react-web/loading-overlay'
+    | '/libs/react-web/mask-input'
+    | '/libs/react-web/modal'
+    | '/libs/react-web/number-input'
+    | '/libs/react-web/otp-input'
+    | '/libs/react-web/pagination'
+    | '/libs/react-web/password-input'
+    | '/libs/react-web/phone-input'
+    | '/libs/react-web/playground'
+    | '/libs/react-web/popover'
+    | '/libs/react-web/progress'
+    | '/libs/react-web/provider'
+    | '/libs/react-web/radio'
+    | '/libs/react-web/select'
+    | '/libs/react-web/separator'
+    | '/libs/react-web/sheet'
+    | '/libs/react-web/skeleton'
+    | '/libs/react-web/slider'
+    | '/libs/react-web/switch'
+    | '/libs/react-web/t-loader'
+    | '/libs/react-web/table'
+    | '/libs/react-web/tabs'
+    | '/libs/react-web/tags-input'
+    | '/libs/react-web/textarea'
+    | '/libs/react-web/theme'
+    | '/libs/react-web/toast'
+    | '/libs/react-web/tooltip'
+    | '/libs/react-web/typography'
+    | '/libs/react-web/uploader'
+    | '/libs/saga/saga'
+    | '/libs/architecture-pattern'
+    | '/libs/backend-config'
+    | '/libs/backend-pattern'
+    | '/libs/cli'
+    | '/libs/entity'
+    | '/libs/exceptions'
+    | '/libs/frontend-config'
+    | '/libs/frontend-pattern'
+    | '/libs/frontend-primitives-pattern'
+    | '/libs/nestjs-cache'
+    | '/libs/nestjs-config'
+    | '/libs/nestjs-context'
+    | '/libs/nestjs-database'
+    | '/libs/nestjs-iam'
+    | '/libs/nestjs-idempotency'
+    | '/libs/nestjs-lock'
+    | '/libs/nestjs-logger'
+    | '/libs/nestjs-observability'
+    | '/libs/nestjs-publisher'
+    | '/libs/nestjs-rate-limit'
+    | '/libs/nestjs-resilience'
+    | '/libs/nestjs-scheduler'
+    | '/libs/nestjs-server'
+    | '/libs/nestjs-serverless'
+    | '/libs/nestjs-social-auth'
+    | '/libs/nestjs-storage'
+    | '/libs/query-dsl'
+    | '/libs/react-hooks'
+    | '/libs/react-icons'
+    | '/libs/react-mobile'
+    | '/libs/react-web'
+    | '/libs/saga'
+    | '/libs/react-mobile/components/$component'
+    | '/libs/react-mobile/components'
   id:
     | '__root__'
     | '/_main'
-    | '/libs/common'
-    | '/libs/ui'
+    | '/libs/architecture-pattern'
+    | '/libs/backend-config'
+    | '/libs/backend-pattern'
+    | '/libs/cli'
+    | '/libs/entity'
+    | '/libs/exceptions'
+    | '/libs/frontend-config'
+    | '/libs/frontend-pattern'
+    | '/libs/frontend-primitives-pattern'
+    | '/libs/nestjs-cache'
+    | '/libs/nestjs-config'
+    | '/libs/nestjs-context'
+    | '/libs/nestjs-database'
+    | '/libs/nestjs-iam'
+    | '/libs/nestjs-idempotency'
+    | '/libs/nestjs-lock'
+    | '/libs/nestjs-logger'
+    | '/libs/nestjs-observability'
+    | '/libs/nestjs-publisher'
+    | '/libs/nestjs-rate-limit'
+    | '/libs/nestjs-resilience'
+    | '/libs/nestjs-scheduler'
+    | '/libs/nestjs-server'
+    | '/libs/nestjs-serverless'
+    | '/libs/nestjs-social-auth'
+    | '/libs/nestjs-storage'
+    | '/libs/query-dsl'
+    | '/libs/react-hooks'
+    | '/libs/react-icons'
+    | '/libs/react-mobile'
+    | '/libs/react-web'
+    | '/libs/saga'
     | '/_main/'
-    | '/libs/common/multiply'
-    | '/libs/common/subtract'
-    | '/libs/common/sum'
-    | '/libs/ui/accordion'
-    | '/libs/ui/alert'
-    | '/libs/ui/avatar'
-    | '/libs/ui/badge'
-    | '/libs/ui/breadcrumb'
-    | '/libs/ui/button'
-    | '/libs/ui/card'
-    | '/libs/ui/checkbox'
-    | '/libs/ui/color-scheme'
-    | '/libs/ui/confirm'
-    | '/libs/ui/currency-input'
-    | '/libs/ui/date-input'
-    | '/libs/ui/date-range-input'
-    | '/libs/ui/document-input'
-    | '/libs/ui/dropdown-menu'
-    | '/libs/ui/flex'
-    | '/libs/ui/form'
-    | '/libs/ui/grid'
-    | '/libs/ui/i18n'
-    | '/libs/ui/input'
-    | '/libs/ui/label'
-    | '/libs/ui/layout'
-    | '/libs/ui/loading-overlay'
-    | '/libs/ui/mask-input'
-    | '/libs/ui/modal'
-    | '/libs/ui/number-input'
-    | '/libs/ui/otp-input'
-    | '/libs/ui/pagination'
-    | '/libs/ui/password-input'
-    | '/libs/ui/phone-input'
-    | '/libs/ui/playground'
-    | '/libs/ui/popover'
-    | '/libs/ui/progress'
-    | '/libs/ui/provider'
-    | '/libs/ui/radio'
-    | '/libs/ui/select'
-    | '/libs/ui/separator'
-    | '/libs/ui/sheet'
-    | '/libs/ui/skeleton'
-    | '/libs/ui/slider'
-    | '/libs/ui/switch'
-    | '/libs/ui/t-loader'
-    | '/libs/ui/table'
-    | '/libs/ui/tabs'
-    | '/libs/ui/tags-input'
-    | '/libs/ui/textarea'
-    | '/libs/ui/theme'
-    | '/libs/ui/toast'
-    | '/libs/ui/tooltip'
-    | '/libs/ui/typography'
-    | '/libs/ui/uploader'
-    | '/libs/common/'
-    | '/libs/ui/'
+    | '/libs/architecture-pattern/$section'
+    | '/libs/backend-config/biome'
+    | '/libs/backend-config/typescript'
+    | '/libs/backend-pattern/$section'
+    | '/libs/cli/api'
+    | '/libs/cli/handler'
+    | '/libs/cli/mobile'
+    | '/libs/cli/monorepo'
+    | '/libs/cli/web'
+    | '/libs/entity/entity'
+    | '/libs/exceptions/exceptions'
+    | '/libs/frontend-config/biome'
+    | '/libs/frontend-config/typescript'
+    | '/libs/frontend-pattern/$section'
+    | '/libs/frontend-primitives-pattern/$section'
+    | '/libs/nestjs-cache/cache-del'
+    | '/libs/nestjs-cache/cache-get'
+    | '/libs/nestjs-cache/cache-module'
+    | '/libs/nestjs-cache/cache-service'
+    | '/libs/nestjs-config/config-module'
+    | '/libs/nestjs-config/config-service'
+    | '/libs/nestjs-config/schema-and-typing'
+    | '/libs/nestjs-context/context-module'
+    | '/libs/nestjs-context/context-service'
+    | '/libs/nestjs-context/with-context'
+    | '/libs/nestjs-database/audit'
+    | '/libs/nestjs-database/database-module'
+    | '/libs/nestjs-database/database-service'
+    | '/libs/nestjs-database/schema-definition'
+    | '/libs/nestjs-database/transaction-hooks'
+    | '/libs/nestjs-database/transactional'
+    | '/libs/nestjs-database/types-and-errors'
+    | '/libs/nestjs-iam/acl-decorator'
+    | '/libs/nestjs-iam/acl-service'
+    | '/libs/nestjs-iam/auth-decorator'
+    | '/libs/nestjs-iam/authenticated-profile-decorator'
+    | '/libs/nestjs-iam/iam-module'
+    | '/libs/nestjs-iam/token-service'
+    | '/libs/nestjs-idempotency/idempotency-module'
+    | '/libs/nestjs-idempotency/idempotency-service'
+    | '/libs/nestjs-idempotency/idempotent-decorator'
+    | '/libs/nestjs-lock/lock-decorator'
+    | '/libs/nestjs-lock/lock-module'
+    | '/libs/nestjs-lock/lock-service'
+    | '/libs/nestjs-logger/logger-module'
+    | '/libs/nestjs-logger/logger-service'
+    | '/libs/nestjs-observability/measure-decorator'
+    | '/libs/nestjs-observability/metrics-service'
+    | '/libs/nestjs-observability/observability-module'
+    | '/libs/nestjs-observability/tracing'
+    | '/libs/nestjs-publisher/outbox'
+    | '/libs/nestjs-publisher/publisher-module'
+    | '/libs/nestjs-publisher/publisher-service'
+    | '/libs/nestjs-publisher/subscriber-decorator'
+    | '/libs/nestjs-rate-limit/rate-limit-decorator'
+    | '/libs/nestjs-rate-limit/rate-limit-module'
+    | '/libs/nestjs-rate-limit/rate-limit-service'
+    | '/libs/nestjs-resilience/circuit-breaker'
+    | '/libs/nestjs-resilience/retry'
+    | '/libs/nestjs-resilience/timeout'
+    | '/libs/nestjs-scheduler/schedule-decorator'
+    | '/libs/nestjs-scheduler/scheduler-module'
+    | '/libs/nestjs-server/controller-decorator'
+    | '/libs/nestjs-server/request-decorator'
+    | '/libs/nestjs-server/route-decorator'
+    | '/libs/nestjs-server/server-create'
+    | '/libs/nestjs-serverless/handler-decorator'
+    | '/libs/nestjs-serverless/serverless-create'
+    | '/libs/nestjs-serverless/serverless-module'
+    | '/libs/nestjs-social-auth/social-auth-module'
+    | '/libs/nestjs-social-auth/social-auth-service'
+    | '/libs/nestjs-storage/storage-module'
+    | '/libs/nestjs-storage/storage-service'
+    | '/libs/query-dsl/boolean-schema'
+    | '/libs/query-dsl/date-range-schema'
+    | '/libs/query-dsl/filter-schema'
+    | '/libs/query-dsl/list-schema'
+    | '/libs/query-dsl/pagination-schema'
+    | '/libs/query-dsl/range-schema'
+    | '/libs/query-dsl/sort-schema'
+    | '/libs/react-hooks/$hook'
+    | '/libs/react-icons/playground'
+    | '/libs/react-web/accordion'
+    | '/libs/react-web/alert'
+    | '/libs/react-web/avatar'
+    | '/libs/react-web/badge'
+    | '/libs/react-web/blocks'
+    | '/libs/react-web/box'
+    | '/libs/react-web/breadcrumb'
+    | '/libs/react-web/button'
+    | '/libs/react-web/card'
+    | '/libs/react-web/checkbox'
+    | '/libs/react-web/color-scheme'
+    | '/libs/react-web/confirm'
+    | '/libs/react-web/container'
+    | '/libs/react-web/currency-input'
+    | '/libs/react-web/date-input'
+    | '/libs/react-web/date-range-input'
+    | '/libs/react-web/document-input'
+    | '/libs/react-web/dropdown-menu'
+    | '/libs/react-web/flex'
+    | '/libs/react-web/form'
+    | '/libs/react-web/grid'
+    | '/libs/react-web/i18n'
+    | '/libs/react-web/input'
+    | '/libs/react-web/label'
+    | '/libs/react-web/layout'
+    | '/libs/react-web/loading-overlay'
+    | '/libs/react-web/mask-input'
+    | '/libs/react-web/modal'
+    | '/libs/react-web/number-input'
+    | '/libs/react-web/otp-input'
+    | '/libs/react-web/pagination'
+    | '/libs/react-web/password-input'
+    | '/libs/react-web/phone-input'
+    | '/libs/react-web/playground'
+    | '/libs/react-web/popover'
+    | '/libs/react-web/progress'
+    | '/libs/react-web/provider'
+    | '/libs/react-web/radio'
+    | '/libs/react-web/select'
+    | '/libs/react-web/separator'
+    | '/libs/react-web/sheet'
+    | '/libs/react-web/skeleton'
+    | '/libs/react-web/slider'
+    | '/libs/react-web/switch'
+    | '/libs/react-web/t-loader'
+    | '/libs/react-web/table'
+    | '/libs/react-web/tabs'
+    | '/libs/react-web/tags-input'
+    | '/libs/react-web/textarea'
+    | '/libs/react-web/theme'
+    | '/libs/react-web/toast'
+    | '/libs/react-web/tooltip'
+    | '/libs/react-web/typography'
+    | '/libs/react-web/uploader'
+    | '/libs/saga/saga'
+    | '/libs/architecture-pattern/'
+    | '/libs/backend-config/'
+    | '/libs/backend-pattern/'
+    | '/libs/cli/'
+    | '/libs/entity/'
+    | '/libs/exceptions/'
+    | '/libs/frontend-config/'
+    | '/libs/frontend-pattern/'
+    | '/libs/frontend-primitives-pattern/'
+    | '/libs/nestjs-cache/'
+    | '/libs/nestjs-config/'
+    | '/libs/nestjs-context/'
+    | '/libs/nestjs-database/'
+    | '/libs/nestjs-iam/'
+    | '/libs/nestjs-idempotency/'
+    | '/libs/nestjs-lock/'
+    | '/libs/nestjs-logger/'
+    | '/libs/nestjs-observability/'
+    | '/libs/nestjs-publisher/'
+    | '/libs/nestjs-rate-limit/'
+    | '/libs/nestjs-resilience/'
+    | '/libs/nestjs-scheduler/'
+    | '/libs/nestjs-server/'
+    | '/libs/nestjs-serverless/'
+    | '/libs/nestjs-social-auth/'
+    | '/libs/nestjs-storage/'
+    | '/libs/query-dsl/'
+    | '/libs/react-hooks/'
+    | '/libs/react-icons/'
+    | '/libs/react-mobile/'
+    | '/libs/react-web/'
+    | '/libs/saga/'
+    | '/libs/react-mobile/components/$component'
+    | '/libs/react-mobile/components/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   MainRoute: typeof MainRouteWithChildren
-  LibsCommonRoute: typeof LibsCommonRouteWithChildren
-  LibsUiRoute: typeof LibsUiRouteWithChildren
+  LibsArchitecturePatternRoute: typeof LibsArchitecturePatternRouteWithChildren
+  LibsBackendConfigRoute: typeof LibsBackendConfigRouteWithChildren
+  LibsBackendPatternRoute: typeof LibsBackendPatternRouteWithChildren
+  LibsCliRoute: typeof LibsCliRouteWithChildren
+  LibsEntityRoute: typeof LibsEntityRouteWithChildren
+  LibsExceptionsRoute: typeof LibsExceptionsRouteWithChildren
+  LibsFrontendConfigRoute: typeof LibsFrontendConfigRouteWithChildren
+  LibsFrontendPatternRoute: typeof LibsFrontendPatternRouteWithChildren
+  LibsFrontendPrimitivesPatternRoute: typeof LibsFrontendPrimitivesPatternRouteWithChildren
+  LibsNestjsCacheRoute: typeof LibsNestjsCacheRouteWithChildren
+  LibsNestjsConfigRoute: typeof LibsNestjsConfigRouteWithChildren
+  LibsNestjsContextRoute: typeof LibsNestjsContextRouteWithChildren
+  LibsNestjsDatabaseRoute: typeof LibsNestjsDatabaseRouteWithChildren
+  LibsNestjsIamRoute: typeof LibsNestjsIamRouteWithChildren
+  LibsNestjsIdempotencyRoute: typeof LibsNestjsIdempotencyRouteWithChildren
+  LibsNestjsLockRoute: typeof LibsNestjsLockRouteWithChildren
+  LibsNestjsLoggerRoute: typeof LibsNestjsLoggerRouteWithChildren
+  LibsNestjsObservabilityRoute: typeof LibsNestjsObservabilityRouteWithChildren
+  LibsNestjsPublisherRoute: typeof LibsNestjsPublisherRouteWithChildren
+  LibsNestjsRateLimitRoute: typeof LibsNestjsRateLimitRouteWithChildren
+  LibsNestjsResilienceRoute: typeof LibsNestjsResilienceRouteWithChildren
+  LibsNestjsSchedulerRoute: typeof LibsNestjsSchedulerRouteWithChildren
+  LibsNestjsServerRoute: typeof LibsNestjsServerRouteWithChildren
+  LibsNestjsServerlessRoute: typeof LibsNestjsServerlessRouteWithChildren
+  LibsNestjsSocialAuthRoute: typeof LibsNestjsSocialAuthRouteWithChildren
+  LibsNestjsStorageRoute: typeof LibsNestjsStorageRouteWithChildren
+  LibsQueryDslRoute: typeof LibsQueryDslRouteWithChildren
+  LibsReactHooksRoute: typeof LibsReactHooksRouteWithChildren
+  LibsReactIconsRoute: typeof LibsReactIconsRouteWithChildren
+  LibsReactMobileRoute: typeof LibsReactMobileRouteWithChildren
+  LibsReactWebRoute: typeof LibsReactWebRouteWithChildren
+  LibsSagaRoute: typeof LibsSagaRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -760,411 +2555,1426 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainIndexRouteImport
       parentRoute: typeof MainRoute
     }
-    '/libs/ui': {
-      id: '/libs/ui'
-      path: '/libs/ui'
-      fullPath: '/libs/ui'
-      preLoaderRoute: typeof LibsUiRouteImport
+    '/libs/saga': {
+      id: '/libs/saga'
+      path: '/libs/saga'
+      fullPath: '/libs/saga'
+      preLoaderRoute: typeof LibsSagaRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/libs/common': {
-      id: '/libs/common'
-      path: '/libs/common'
-      fullPath: '/libs/common'
-      preLoaderRoute: typeof LibsCommonRouteImport
+    '/libs/react-web': {
+      id: '/libs/react-web'
+      path: '/libs/react-web'
+      fullPath: '/libs/react-web'
+      preLoaderRoute: typeof LibsReactWebRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/libs/ui/': {
-      id: '/libs/ui/'
-      path: '/'
-      fullPath: '/libs/ui/'
-      preLoaderRoute: typeof LibsUiIndexRouteImport
-      parentRoute: typeof LibsUiRoute
+    '/libs/react-mobile': {
+      id: '/libs/react-mobile'
+      path: '/libs/react-mobile'
+      fullPath: '/libs/react-mobile'
+      preLoaderRoute: typeof LibsReactMobileRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/libs/common/': {
-      id: '/libs/common/'
-      path: '/'
-      fullPath: '/libs/common/'
-      preLoaderRoute: typeof LibsCommonIndexRouteImport
-      parentRoute: typeof LibsCommonRoute
+    '/libs/react-icons': {
+      id: '/libs/react-icons'
+      path: '/libs/react-icons'
+      fullPath: '/libs/react-icons'
+      preLoaderRoute: typeof LibsReactIconsRouteImport
+      parentRoute: typeof rootRouteImport
     }
-    '/libs/ui/uploader': {
-      id: '/libs/ui/uploader'
+    '/libs/react-hooks': {
+      id: '/libs/react-hooks'
+      path: '/libs/react-hooks'
+      fullPath: '/libs/react-hooks'
+      preLoaderRoute: typeof LibsReactHooksRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/query-dsl': {
+      id: '/libs/query-dsl'
+      path: '/libs/query-dsl'
+      fullPath: '/libs/query-dsl'
+      preLoaderRoute: typeof LibsQueryDslRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-storage': {
+      id: '/libs/nestjs-storage'
+      path: '/libs/nestjs-storage'
+      fullPath: '/libs/nestjs-storage'
+      preLoaderRoute: typeof LibsNestjsStorageRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-social-auth': {
+      id: '/libs/nestjs-social-auth'
+      path: '/libs/nestjs-social-auth'
+      fullPath: '/libs/nestjs-social-auth'
+      preLoaderRoute: typeof LibsNestjsSocialAuthRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-serverless': {
+      id: '/libs/nestjs-serverless'
+      path: '/libs/nestjs-serverless'
+      fullPath: '/libs/nestjs-serverless'
+      preLoaderRoute: typeof LibsNestjsServerlessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-server': {
+      id: '/libs/nestjs-server'
+      path: '/libs/nestjs-server'
+      fullPath: '/libs/nestjs-server'
+      preLoaderRoute: typeof LibsNestjsServerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-scheduler': {
+      id: '/libs/nestjs-scheduler'
+      path: '/libs/nestjs-scheduler'
+      fullPath: '/libs/nestjs-scheduler'
+      preLoaderRoute: typeof LibsNestjsSchedulerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-resilience': {
+      id: '/libs/nestjs-resilience'
+      path: '/libs/nestjs-resilience'
+      fullPath: '/libs/nestjs-resilience'
+      preLoaderRoute: typeof LibsNestjsResilienceRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-rate-limit': {
+      id: '/libs/nestjs-rate-limit'
+      path: '/libs/nestjs-rate-limit'
+      fullPath: '/libs/nestjs-rate-limit'
+      preLoaderRoute: typeof LibsNestjsRateLimitRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-publisher': {
+      id: '/libs/nestjs-publisher'
+      path: '/libs/nestjs-publisher'
+      fullPath: '/libs/nestjs-publisher'
+      preLoaderRoute: typeof LibsNestjsPublisherRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-observability': {
+      id: '/libs/nestjs-observability'
+      path: '/libs/nestjs-observability'
+      fullPath: '/libs/nestjs-observability'
+      preLoaderRoute: typeof LibsNestjsObservabilityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-logger': {
+      id: '/libs/nestjs-logger'
+      path: '/libs/nestjs-logger'
+      fullPath: '/libs/nestjs-logger'
+      preLoaderRoute: typeof LibsNestjsLoggerRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-lock': {
+      id: '/libs/nestjs-lock'
+      path: '/libs/nestjs-lock'
+      fullPath: '/libs/nestjs-lock'
+      preLoaderRoute: typeof LibsNestjsLockRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-idempotency': {
+      id: '/libs/nestjs-idempotency'
+      path: '/libs/nestjs-idempotency'
+      fullPath: '/libs/nestjs-idempotency'
+      preLoaderRoute: typeof LibsNestjsIdempotencyRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-iam': {
+      id: '/libs/nestjs-iam'
+      path: '/libs/nestjs-iam'
+      fullPath: '/libs/nestjs-iam'
+      preLoaderRoute: typeof LibsNestjsIamRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-database': {
+      id: '/libs/nestjs-database'
+      path: '/libs/nestjs-database'
+      fullPath: '/libs/nestjs-database'
+      preLoaderRoute: typeof LibsNestjsDatabaseRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-context': {
+      id: '/libs/nestjs-context'
+      path: '/libs/nestjs-context'
+      fullPath: '/libs/nestjs-context'
+      preLoaderRoute: typeof LibsNestjsContextRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-config': {
+      id: '/libs/nestjs-config'
+      path: '/libs/nestjs-config'
+      fullPath: '/libs/nestjs-config'
+      preLoaderRoute: typeof LibsNestjsConfigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/nestjs-cache': {
+      id: '/libs/nestjs-cache'
+      path: '/libs/nestjs-cache'
+      fullPath: '/libs/nestjs-cache'
+      preLoaderRoute: typeof LibsNestjsCacheRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/frontend-primitives-pattern': {
+      id: '/libs/frontend-primitives-pattern'
+      path: '/libs/frontend-primitives-pattern'
+      fullPath: '/libs/frontend-primitives-pattern'
+      preLoaderRoute: typeof LibsFrontendPrimitivesPatternRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/frontend-pattern': {
+      id: '/libs/frontend-pattern'
+      path: '/libs/frontend-pattern'
+      fullPath: '/libs/frontend-pattern'
+      preLoaderRoute: typeof LibsFrontendPatternRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/frontend-config': {
+      id: '/libs/frontend-config'
+      path: '/libs/frontend-config'
+      fullPath: '/libs/frontend-config'
+      preLoaderRoute: typeof LibsFrontendConfigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/exceptions': {
+      id: '/libs/exceptions'
+      path: '/libs/exceptions'
+      fullPath: '/libs/exceptions'
+      preLoaderRoute: typeof LibsExceptionsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/entity': {
+      id: '/libs/entity'
+      path: '/libs/entity'
+      fullPath: '/libs/entity'
+      preLoaderRoute: typeof LibsEntityRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/cli': {
+      id: '/libs/cli'
+      path: '/libs/cli'
+      fullPath: '/libs/cli'
+      preLoaderRoute: typeof LibsCliRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/backend-pattern': {
+      id: '/libs/backend-pattern'
+      path: '/libs/backend-pattern'
+      fullPath: '/libs/backend-pattern'
+      preLoaderRoute: typeof LibsBackendPatternRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/backend-config': {
+      id: '/libs/backend-config'
+      path: '/libs/backend-config'
+      fullPath: '/libs/backend-config'
+      preLoaderRoute: typeof LibsBackendConfigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/architecture-pattern': {
+      id: '/libs/architecture-pattern'
+      path: '/libs/architecture-pattern'
+      fullPath: '/libs/architecture-pattern'
+      preLoaderRoute: typeof LibsArchitecturePatternRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/saga/': {
+      id: '/libs/saga/'
+      path: '/'
+      fullPath: '/libs/saga/'
+      preLoaderRoute: typeof LibsSagaIndexRouteImport
+      parentRoute: typeof LibsSagaRoute
+    }
+    '/libs/react-web/': {
+      id: '/libs/react-web/'
+      path: '/'
+      fullPath: '/libs/react-web/'
+      preLoaderRoute: typeof LibsReactWebIndexRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-mobile/': {
+      id: '/libs/react-mobile/'
+      path: '/'
+      fullPath: '/libs/react-mobile/'
+      preLoaderRoute: typeof LibsReactMobileIndexRouteImport
+      parentRoute: typeof LibsReactMobileRoute
+    }
+    '/libs/react-icons/': {
+      id: '/libs/react-icons/'
+      path: '/'
+      fullPath: '/libs/react-icons/'
+      preLoaderRoute: typeof LibsReactIconsIndexRouteImport
+      parentRoute: typeof LibsReactIconsRoute
+    }
+    '/libs/react-hooks/': {
+      id: '/libs/react-hooks/'
+      path: '/'
+      fullPath: '/libs/react-hooks/'
+      preLoaderRoute: typeof LibsReactHooksIndexRouteImport
+      parentRoute: typeof LibsReactHooksRoute
+    }
+    '/libs/query-dsl/': {
+      id: '/libs/query-dsl/'
+      path: '/'
+      fullPath: '/libs/query-dsl/'
+      preLoaderRoute: typeof LibsQueryDslIndexRouteImport
+      parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/nestjs-storage/': {
+      id: '/libs/nestjs-storage/'
+      path: '/'
+      fullPath: '/libs/nestjs-storage/'
+      preLoaderRoute: typeof LibsNestjsStorageIndexRouteImport
+      parentRoute: typeof LibsNestjsStorageRoute
+    }
+    '/libs/nestjs-social-auth/': {
+      id: '/libs/nestjs-social-auth/'
+      path: '/'
+      fullPath: '/libs/nestjs-social-auth/'
+      preLoaderRoute: typeof LibsNestjsSocialAuthIndexRouteImport
+      parentRoute: typeof LibsNestjsSocialAuthRoute
+    }
+    '/libs/nestjs-serverless/': {
+      id: '/libs/nestjs-serverless/'
+      path: '/'
+      fullPath: '/libs/nestjs-serverless/'
+      preLoaderRoute: typeof LibsNestjsServerlessIndexRouteImport
+      parentRoute: typeof LibsNestjsServerlessRoute
+    }
+    '/libs/nestjs-server/': {
+      id: '/libs/nestjs-server/'
+      path: '/'
+      fullPath: '/libs/nestjs-server/'
+      preLoaderRoute: typeof LibsNestjsServerIndexRouteImport
+      parentRoute: typeof LibsNestjsServerRoute
+    }
+    '/libs/nestjs-scheduler/': {
+      id: '/libs/nestjs-scheduler/'
+      path: '/'
+      fullPath: '/libs/nestjs-scheduler/'
+      preLoaderRoute: typeof LibsNestjsSchedulerIndexRouteImport
+      parentRoute: typeof LibsNestjsSchedulerRoute
+    }
+    '/libs/nestjs-resilience/': {
+      id: '/libs/nestjs-resilience/'
+      path: '/'
+      fullPath: '/libs/nestjs-resilience/'
+      preLoaderRoute: typeof LibsNestjsResilienceIndexRouteImport
+      parentRoute: typeof LibsNestjsResilienceRoute
+    }
+    '/libs/nestjs-rate-limit/': {
+      id: '/libs/nestjs-rate-limit/'
+      path: '/'
+      fullPath: '/libs/nestjs-rate-limit/'
+      preLoaderRoute: typeof LibsNestjsRateLimitIndexRouteImport
+      parentRoute: typeof LibsNestjsRateLimitRoute
+    }
+    '/libs/nestjs-publisher/': {
+      id: '/libs/nestjs-publisher/'
+      path: '/'
+      fullPath: '/libs/nestjs-publisher/'
+      preLoaderRoute: typeof LibsNestjsPublisherIndexRouteImport
+      parentRoute: typeof LibsNestjsPublisherRoute
+    }
+    '/libs/nestjs-observability/': {
+      id: '/libs/nestjs-observability/'
+      path: '/'
+      fullPath: '/libs/nestjs-observability/'
+      preLoaderRoute: typeof LibsNestjsObservabilityIndexRouteImport
+      parentRoute: typeof LibsNestjsObservabilityRoute
+    }
+    '/libs/nestjs-logger/': {
+      id: '/libs/nestjs-logger/'
+      path: '/'
+      fullPath: '/libs/nestjs-logger/'
+      preLoaderRoute: typeof LibsNestjsLoggerIndexRouteImport
+      parentRoute: typeof LibsNestjsLoggerRoute
+    }
+    '/libs/nestjs-lock/': {
+      id: '/libs/nestjs-lock/'
+      path: '/'
+      fullPath: '/libs/nestjs-lock/'
+      preLoaderRoute: typeof LibsNestjsLockIndexRouteImport
+      parentRoute: typeof LibsNestjsLockRoute
+    }
+    '/libs/nestjs-idempotency/': {
+      id: '/libs/nestjs-idempotency/'
+      path: '/'
+      fullPath: '/libs/nestjs-idempotency/'
+      preLoaderRoute: typeof LibsNestjsIdempotencyIndexRouteImport
+      parentRoute: typeof LibsNestjsIdempotencyRoute
+    }
+    '/libs/nestjs-iam/': {
+      id: '/libs/nestjs-iam/'
+      path: '/'
+      fullPath: '/libs/nestjs-iam/'
+      preLoaderRoute: typeof LibsNestjsIamIndexRouteImport
+      parentRoute: typeof LibsNestjsIamRoute
+    }
+    '/libs/nestjs-database/': {
+      id: '/libs/nestjs-database/'
+      path: '/'
+      fullPath: '/libs/nestjs-database/'
+      preLoaderRoute: typeof LibsNestjsDatabaseIndexRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-context/': {
+      id: '/libs/nestjs-context/'
+      path: '/'
+      fullPath: '/libs/nestjs-context/'
+      preLoaderRoute: typeof LibsNestjsContextIndexRouteImport
+      parentRoute: typeof LibsNestjsContextRoute
+    }
+    '/libs/nestjs-config/': {
+      id: '/libs/nestjs-config/'
+      path: '/'
+      fullPath: '/libs/nestjs-config/'
+      preLoaderRoute: typeof LibsNestjsConfigIndexRouteImport
+      parentRoute: typeof LibsNestjsConfigRoute
+    }
+    '/libs/nestjs-cache/': {
+      id: '/libs/nestjs-cache/'
+      path: '/'
+      fullPath: '/libs/nestjs-cache/'
+      preLoaderRoute: typeof LibsNestjsCacheIndexRouteImport
+      parentRoute: typeof LibsNestjsCacheRoute
+    }
+    '/libs/frontend-primitives-pattern/': {
+      id: '/libs/frontend-primitives-pattern/'
+      path: '/'
+      fullPath: '/libs/frontend-primitives-pattern/'
+      preLoaderRoute: typeof LibsFrontendPrimitivesPatternIndexRouteImport
+      parentRoute: typeof LibsFrontendPrimitivesPatternRoute
+    }
+    '/libs/frontend-pattern/': {
+      id: '/libs/frontend-pattern/'
+      path: '/'
+      fullPath: '/libs/frontend-pattern/'
+      preLoaderRoute: typeof LibsFrontendPatternIndexRouteImport
+      parentRoute: typeof LibsFrontendPatternRoute
+    }
+    '/libs/frontend-config/': {
+      id: '/libs/frontend-config/'
+      path: '/'
+      fullPath: '/libs/frontend-config/'
+      preLoaderRoute: typeof LibsFrontendConfigIndexRouteImport
+      parentRoute: typeof LibsFrontendConfigRoute
+    }
+    '/libs/exceptions/': {
+      id: '/libs/exceptions/'
+      path: '/'
+      fullPath: '/libs/exceptions/'
+      preLoaderRoute: typeof LibsExceptionsIndexRouteImport
+      parentRoute: typeof LibsExceptionsRoute
+    }
+    '/libs/entity/': {
+      id: '/libs/entity/'
+      path: '/'
+      fullPath: '/libs/entity/'
+      preLoaderRoute: typeof LibsEntityIndexRouteImport
+      parentRoute: typeof LibsEntityRoute
+    }
+    '/libs/cli/': {
+      id: '/libs/cli/'
+      path: '/'
+      fullPath: '/libs/cli/'
+      preLoaderRoute: typeof LibsCliIndexRouteImport
+      parentRoute: typeof LibsCliRoute
+    }
+    '/libs/backend-pattern/': {
+      id: '/libs/backend-pattern/'
+      path: '/'
+      fullPath: '/libs/backend-pattern/'
+      preLoaderRoute: typeof LibsBackendPatternIndexRouteImport
+      parentRoute: typeof LibsBackendPatternRoute
+    }
+    '/libs/backend-config/': {
+      id: '/libs/backend-config/'
+      path: '/'
+      fullPath: '/libs/backend-config/'
+      preLoaderRoute: typeof LibsBackendConfigIndexRouteImport
+      parentRoute: typeof LibsBackendConfigRoute
+    }
+    '/libs/architecture-pattern/': {
+      id: '/libs/architecture-pattern/'
+      path: '/'
+      fullPath: '/libs/architecture-pattern/'
+      preLoaderRoute: typeof LibsArchitecturePatternIndexRouteImport
+      parentRoute: typeof LibsArchitecturePatternRoute
+    }
+    '/libs/saga/saga': {
+      id: '/libs/saga/saga'
+      path: '/saga'
+      fullPath: '/libs/saga/saga'
+      preLoaderRoute: typeof LibsSagaSagaRouteImport
+      parentRoute: typeof LibsSagaRoute
+    }
+    '/libs/react-web/uploader': {
+      id: '/libs/react-web/uploader'
       path: '/uploader'
-      fullPath: '/libs/ui/uploader'
-      preLoaderRoute: typeof LibsUiUploaderRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/uploader'
+      preLoaderRoute: typeof LibsReactWebUploaderRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/typography': {
-      id: '/libs/ui/typography'
+    '/libs/react-web/typography': {
+      id: '/libs/react-web/typography'
       path: '/typography'
-      fullPath: '/libs/ui/typography'
-      preLoaderRoute: typeof LibsUiTypographyRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/typography'
+      preLoaderRoute: typeof LibsReactWebTypographyRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/tooltip': {
-      id: '/libs/ui/tooltip'
+    '/libs/react-web/tooltip': {
+      id: '/libs/react-web/tooltip'
       path: '/tooltip'
-      fullPath: '/libs/ui/tooltip'
-      preLoaderRoute: typeof LibsUiTooltipRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/tooltip'
+      preLoaderRoute: typeof LibsReactWebTooltipRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/toast': {
-      id: '/libs/ui/toast'
+    '/libs/react-web/toast': {
+      id: '/libs/react-web/toast'
       path: '/toast'
-      fullPath: '/libs/ui/toast'
-      preLoaderRoute: typeof LibsUiToastRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/toast'
+      preLoaderRoute: typeof LibsReactWebToastRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/theme': {
-      id: '/libs/ui/theme'
+    '/libs/react-web/theme': {
+      id: '/libs/react-web/theme'
       path: '/theme'
-      fullPath: '/libs/ui/theme'
-      preLoaderRoute: typeof LibsUiThemeRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/theme'
+      preLoaderRoute: typeof LibsReactWebThemeRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/textarea': {
-      id: '/libs/ui/textarea'
+    '/libs/react-web/textarea': {
+      id: '/libs/react-web/textarea'
       path: '/textarea'
-      fullPath: '/libs/ui/textarea'
-      preLoaderRoute: typeof LibsUiTextareaRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/textarea'
+      preLoaderRoute: typeof LibsReactWebTextareaRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/tags-input': {
-      id: '/libs/ui/tags-input'
+    '/libs/react-web/tags-input': {
+      id: '/libs/react-web/tags-input'
       path: '/tags-input'
-      fullPath: '/libs/ui/tags-input'
-      preLoaderRoute: typeof LibsUiTagsInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/tags-input'
+      preLoaderRoute: typeof LibsReactWebTagsInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/tabs': {
-      id: '/libs/ui/tabs'
+    '/libs/react-web/tabs': {
+      id: '/libs/react-web/tabs'
       path: '/tabs'
-      fullPath: '/libs/ui/tabs'
-      preLoaderRoute: typeof LibsUiTabsRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/tabs'
+      preLoaderRoute: typeof LibsReactWebTabsRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/table': {
-      id: '/libs/ui/table'
+    '/libs/react-web/table': {
+      id: '/libs/react-web/table'
       path: '/table'
-      fullPath: '/libs/ui/table'
-      preLoaderRoute: typeof LibsUiTableRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/table'
+      preLoaderRoute: typeof LibsReactWebTableRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/t-loader': {
-      id: '/libs/ui/t-loader'
+    '/libs/react-web/t-loader': {
+      id: '/libs/react-web/t-loader'
       path: '/t-loader'
-      fullPath: '/libs/ui/t-loader'
-      preLoaderRoute: typeof LibsUiTLoaderRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/t-loader'
+      preLoaderRoute: typeof LibsReactWebTLoaderRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/switch': {
-      id: '/libs/ui/switch'
+    '/libs/react-web/switch': {
+      id: '/libs/react-web/switch'
       path: '/switch'
-      fullPath: '/libs/ui/switch'
-      preLoaderRoute: typeof LibsUiSwitchRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/switch'
+      preLoaderRoute: typeof LibsReactWebSwitchRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/slider': {
-      id: '/libs/ui/slider'
+    '/libs/react-web/slider': {
+      id: '/libs/react-web/slider'
       path: '/slider'
-      fullPath: '/libs/ui/slider'
-      preLoaderRoute: typeof LibsUiSliderRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/slider'
+      preLoaderRoute: typeof LibsReactWebSliderRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/skeleton': {
-      id: '/libs/ui/skeleton'
+    '/libs/react-web/skeleton': {
+      id: '/libs/react-web/skeleton'
       path: '/skeleton'
-      fullPath: '/libs/ui/skeleton'
-      preLoaderRoute: typeof LibsUiSkeletonRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/skeleton'
+      preLoaderRoute: typeof LibsReactWebSkeletonRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/sheet': {
-      id: '/libs/ui/sheet'
+    '/libs/react-web/sheet': {
+      id: '/libs/react-web/sheet'
       path: '/sheet'
-      fullPath: '/libs/ui/sheet'
-      preLoaderRoute: typeof LibsUiSheetRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/sheet'
+      preLoaderRoute: typeof LibsReactWebSheetRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/separator': {
-      id: '/libs/ui/separator'
+    '/libs/react-web/separator': {
+      id: '/libs/react-web/separator'
       path: '/separator'
-      fullPath: '/libs/ui/separator'
-      preLoaderRoute: typeof LibsUiSeparatorRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/separator'
+      preLoaderRoute: typeof LibsReactWebSeparatorRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/select': {
-      id: '/libs/ui/select'
+    '/libs/react-web/select': {
+      id: '/libs/react-web/select'
       path: '/select'
-      fullPath: '/libs/ui/select'
-      preLoaderRoute: typeof LibsUiSelectRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/select'
+      preLoaderRoute: typeof LibsReactWebSelectRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/radio': {
-      id: '/libs/ui/radio'
+    '/libs/react-web/radio': {
+      id: '/libs/react-web/radio'
       path: '/radio'
-      fullPath: '/libs/ui/radio'
-      preLoaderRoute: typeof LibsUiRadioRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/radio'
+      preLoaderRoute: typeof LibsReactWebRadioRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/provider': {
-      id: '/libs/ui/provider'
+    '/libs/react-web/provider': {
+      id: '/libs/react-web/provider'
       path: '/provider'
-      fullPath: '/libs/ui/provider'
-      preLoaderRoute: typeof LibsUiProviderRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/provider'
+      preLoaderRoute: typeof LibsReactWebProviderRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/progress': {
-      id: '/libs/ui/progress'
+    '/libs/react-web/progress': {
+      id: '/libs/react-web/progress'
       path: '/progress'
-      fullPath: '/libs/ui/progress'
-      preLoaderRoute: typeof LibsUiProgressRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/progress'
+      preLoaderRoute: typeof LibsReactWebProgressRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/popover': {
-      id: '/libs/ui/popover'
+    '/libs/react-web/popover': {
+      id: '/libs/react-web/popover'
       path: '/popover'
-      fullPath: '/libs/ui/popover'
-      preLoaderRoute: typeof LibsUiPopoverRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/popover'
+      preLoaderRoute: typeof LibsReactWebPopoverRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/playground': {
-      id: '/libs/ui/playground'
+    '/libs/react-web/playground': {
+      id: '/libs/react-web/playground'
       path: '/playground'
-      fullPath: '/libs/ui/playground'
-      preLoaderRoute: typeof LibsUiPlaygroundRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/playground'
+      preLoaderRoute: typeof LibsReactWebPlaygroundRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/phone-input': {
-      id: '/libs/ui/phone-input'
+    '/libs/react-web/phone-input': {
+      id: '/libs/react-web/phone-input'
       path: '/phone-input'
-      fullPath: '/libs/ui/phone-input'
-      preLoaderRoute: typeof LibsUiPhoneInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/phone-input'
+      preLoaderRoute: typeof LibsReactWebPhoneInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/password-input': {
-      id: '/libs/ui/password-input'
+    '/libs/react-web/password-input': {
+      id: '/libs/react-web/password-input'
       path: '/password-input'
-      fullPath: '/libs/ui/password-input'
-      preLoaderRoute: typeof LibsUiPasswordInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/password-input'
+      preLoaderRoute: typeof LibsReactWebPasswordInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/pagination': {
-      id: '/libs/ui/pagination'
+    '/libs/react-web/pagination': {
+      id: '/libs/react-web/pagination'
       path: '/pagination'
-      fullPath: '/libs/ui/pagination'
-      preLoaderRoute: typeof LibsUiPaginationRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/pagination'
+      preLoaderRoute: typeof LibsReactWebPaginationRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/otp-input': {
-      id: '/libs/ui/otp-input'
+    '/libs/react-web/otp-input': {
+      id: '/libs/react-web/otp-input'
       path: '/otp-input'
-      fullPath: '/libs/ui/otp-input'
-      preLoaderRoute: typeof LibsUiOtpInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/otp-input'
+      preLoaderRoute: typeof LibsReactWebOtpInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/number-input': {
-      id: '/libs/ui/number-input'
+    '/libs/react-web/number-input': {
+      id: '/libs/react-web/number-input'
       path: '/number-input'
-      fullPath: '/libs/ui/number-input'
-      preLoaderRoute: typeof LibsUiNumberInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/number-input'
+      preLoaderRoute: typeof LibsReactWebNumberInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/modal': {
-      id: '/libs/ui/modal'
+    '/libs/react-web/modal': {
+      id: '/libs/react-web/modal'
       path: '/modal'
-      fullPath: '/libs/ui/modal'
-      preLoaderRoute: typeof LibsUiModalRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/modal'
+      preLoaderRoute: typeof LibsReactWebModalRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/mask-input': {
-      id: '/libs/ui/mask-input'
+    '/libs/react-web/mask-input': {
+      id: '/libs/react-web/mask-input'
       path: '/mask-input'
-      fullPath: '/libs/ui/mask-input'
-      preLoaderRoute: typeof LibsUiMaskInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/mask-input'
+      preLoaderRoute: typeof LibsReactWebMaskInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/loading-overlay': {
-      id: '/libs/ui/loading-overlay'
+    '/libs/react-web/loading-overlay': {
+      id: '/libs/react-web/loading-overlay'
       path: '/loading-overlay'
-      fullPath: '/libs/ui/loading-overlay'
-      preLoaderRoute: typeof LibsUiLoadingOverlayRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/loading-overlay'
+      preLoaderRoute: typeof LibsReactWebLoadingOverlayRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/layout': {
-      id: '/libs/ui/layout'
+    '/libs/react-web/layout': {
+      id: '/libs/react-web/layout'
       path: '/layout'
-      fullPath: '/libs/ui/layout'
-      preLoaderRoute: typeof LibsUiLayoutRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/layout'
+      preLoaderRoute: typeof LibsReactWebLayoutRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/label': {
-      id: '/libs/ui/label'
+    '/libs/react-web/label': {
+      id: '/libs/react-web/label'
       path: '/label'
-      fullPath: '/libs/ui/label'
-      preLoaderRoute: typeof LibsUiLabelRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/label'
+      preLoaderRoute: typeof LibsReactWebLabelRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/input': {
-      id: '/libs/ui/input'
+    '/libs/react-web/input': {
+      id: '/libs/react-web/input'
       path: '/input'
-      fullPath: '/libs/ui/input'
-      preLoaderRoute: typeof LibsUiInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/input'
+      preLoaderRoute: typeof LibsReactWebInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/i18n': {
-      id: '/libs/ui/i18n'
+    '/libs/react-web/i18n': {
+      id: '/libs/react-web/i18n'
       path: '/i18n'
-      fullPath: '/libs/ui/i18n'
-      preLoaderRoute: typeof LibsUiI18nRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/i18n'
+      preLoaderRoute: typeof LibsReactWebI18nRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/grid': {
-      id: '/libs/ui/grid'
+    '/libs/react-web/grid': {
+      id: '/libs/react-web/grid'
       path: '/grid'
-      fullPath: '/libs/ui/grid'
-      preLoaderRoute: typeof LibsUiGridRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/grid'
+      preLoaderRoute: typeof LibsReactWebGridRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/form': {
-      id: '/libs/ui/form'
+    '/libs/react-web/form': {
+      id: '/libs/react-web/form'
       path: '/form'
-      fullPath: '/libs/ui/form'
-      preLoaderRoute: typeof LibsUiFormRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/form'
+      preLoaderRoute: typeof LibsReactWebFormRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/flex': {
-      id: '/libs/ui/flex'
+    '/libs/react-web/flex': {
+      id: '/libs/react-web/flex'
       path: '/flex'
-      fullPath: '/libs/ui/flex'
-      preLoaderRoute: typeof LibsUiFlexRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/flex'
+      preLoaderRoute: typeof LibsReactWebFlexRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/dropdown-menu': {
-      id: '/libs/ui/dropdown-menu'
+    '/libs/react-web/dropdown-menu': {
+      id: '/libs/react-web/dropdown-menu'
       path: '/dropdown-menu'
-      fullPath: '/libs/ui/dropdown-menu'
-      preLoaderRoute: typeof LibsUiDropdownMenuRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/dropdown-menu'
+      preLoaderRoute: typeof LibsReactWebDropdownMenuRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/document-input': {
-      id: '/libs/ui/document-input'
+    '/libs/react-web/document-input': {
+      id: '/libs/react-web/document-input'
       path: '/document-input'
-      fullPath: '/libs/ui/document-input'
-      preLoaderRoute: typeof LibsUiDocumentInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/document-input'
+      preLoaderRoute: typeof LibsReactWebDocumentInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/date-range-input': {
-      id: '/libs/ui/date-range-input'
+    '/libs/react-web/date-range-input': {
+      id: '/libs/react-web/date-range-input'
       path: '/date-range-input'
-      fullPath: '/libs/ui/date-range-input'
-      preLoaderRoute: typeof LibsUiDateRangeInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/date-range-input'
+      preLoaderRoute: typeof LibsReactWebDateRangeInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/date-input': {
-      id: '/libs/ui/date-input'
+    '/libs/react-web/date-input': {
+      id: '/libs/react-web/date-input'
       path: '/date-input'
-      fullPath: '/libs/ui/date-input'
-      preLoaderRoute: typeof LibsUiDateInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/date-input'
+      preLoaderRoute: typeof LibsReactWebDateInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/currency-input': {
-      id: '/libs/ui/currency-input'
+    '/libs/react-web/currency-input': {
+      id: '/libs/react-web/currency-input'
       path: '/currency-input'
-      fullPath: '/libs/ui/currency-input'
-      preLoaderRoute: typeof LibsUiCurrencyInputRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/currency-input'
+      preLoaderRoute: typeof LibsReactWebCurrencyInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/confirm': {
-      id: '/libs/ui/confirm'
+    '/libs/react-web/container': {
+      id: '/libs/react-web/container'
+      path: '/container'
+      fullPath: '/libs/react-web/container'
+      preLoaderRoute: typeof LibsReactWebContainerRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/confirm': {
+      id: '/libs/react-web/confirm'
       path: '/confirm'
-      fullPath: '/libs/ui/confirm'
-      preLoaderRoute: typeof LibsUiConfirmRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/confirm'
+      preLoaderRoute: typeof LibsReactWebConfirmRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/color-scheme': {
-      id: '/libs/ui/color-scheme'
+    '/libs/react-web/color-scheme': {
+      id: '/libs/react-web/color-scheme'
       path: '/color-scheme'
-      fullPath: '/libs/ui/color-scheme'
-      preLoaderRoute: typeof LibsUiColorSchemeRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/color-scheme'
+      preLoaderRoute: typeof LibsReactWebColorSchemeRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/checkbox': {
-      id: '/libs/ui/checkbox'
+    '/libs/react-web/checkbox': {
+      id: '/libs/react-web/checkbox'
       path: '/checkbox'
-      fullPath: '/libs/ui/checkbox'
-      preLoaderRoute: typeof LibsUiCheckboxRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/checkbox'
+      preLoaderRoute: typeof LibsReactWebCheckboxRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/card': {
-      id: '/libs/ui/card'
+    '/libs/react-web/card': {
+      id: '/libs/react-web/card'
       path: '/card'
-      fullPath: '/libs/ui/card'
-      preLoaderRoute: typeof LibsUiCardRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/card'
+      preLoaderRoute: typeof LibsReactWebCardRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/button': {
-      id: '/libs/ui/button'
+    '/libs/react-web/button': {
+      id: '/libs/react-web/button'
       path: '/button'
-      fullPath: '/libs/ui/button'
-      preLoaderRoute: typeof LibsUiButtonRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/button'
+      preLoaderRoute: typeof LibsReactWebButtonRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/breadcrumb': {
-      id: '/libs/ui/breadcrumb'
+    '/libs/react-web/breadcrumb': {
+      id: '/libs/react-web/breadcrumb'
       path: '/breadcrumb'
-      fullPath: '/libs/ui/breadcrumb'
-      preLoaderRoute: typeof LibsUiBreadcrumbRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/breadcrumb'
+      preLoaderRoute: typeof LibsReactWebBreadcrumbRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/badge': {
-      id: '/libs/ui/badge'
+    '/libs/react-web/box': {
+      id: '/libs/react-web/box'
+      path: '/box'
+      fullPath: '/libs/react-web/box'
+      preLoaderRoute: typeof LibsReactWebBoxRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/blocks': {
+      id: '/libs/react-web/blocks'
+      path: '/blocks'
+      fullPath: '/libs/react-web/blocks'
+      preLoaderRoute: typeof LibsReactWebBlocksRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/badge': {
+      id: '/libs/react-web/badge'
       path: '/badge'
-      fullPath: '/libs/ui/badge'
-      preLoaderRoute: typeof LibsUiBadgeRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/badge'
+      preLoaderRoute: typeof LibsReactWebBadgeRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/avatar': {
-      id: '/libs/ui/avatar'
+    '/libs/react-web/avatar': {
+      id: '/libs/react-web/avatar'
       path: '/avatar'
-      fullPath: '/libs/ui/avatar'
-      preLoaderRoute: typeof LibsUiAvatarRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/avatar'
+      preLoaderRoute: typeof LibsReactWebAvatarRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/alert': {
-      id: '/libs/ui/alert'
+    '/libs/react-web/alert': {
+      id: '/libs/react-web/alert'
       path: '/alert'
-      fullPath: '/libs/ui/alert'
-      preLoaderRoute: typeof LibsUiAlertRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/alert'
+      preLoaderRoute: typeof LibsReactWebAlertRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/ui/accordion': {
-      id: '/libs/ui/accordion'
+    '/libs/react-web/accordion': {
+      id: '/libs/react-web/accordion'
       path: '/accordion'
-      fullPath: '/libs/ui/accordion'
-      preLoaderRoute: typeof LibsUiAccordionRouteImport
-      parentRoute: typeof LibsUiRoute
+      fullPath: '/libs/react-web/accordion'
+      preLoaderRoute: typeof LibsReactWebAccordionRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/common/sum': {
-      id: '/libs/common/sum'
-      path: '/sum'
-      fullPath: '/libs/common/sum'
-      preLoaderRoute: typeof LibsCommonSumRouteImport
-      parentRoute: typeof LibsCommonRoute
+    '/libs/react-icons/playground': {
+      id: '/libs/react-icons/playground'
+      path: '/playground'
+      fullPath: '/libs/react-icons/playground'
+      preLoaderRoute: typeof LibsReactIconsPlaygroundRouteImport
+      parentRoute: typeof LibsReactIconsRoute
     }
-    '/libs/common/subtract': {
-      id: '/libs/common/subtract'
-      path: '/subtract'
-      fullPath: '/libs/common/subtract'
-      preLoaderRoute: typeof LibsCommonSubtractRouteImport
-      parentRoute: typeof LibsCommonRoute
+    '/libs/react-hooks/$hook': {
+      id: '/libs/react-hooks/$hook'
+      path: '/$hook'
+      fullPath: '/libs/react-hooks/$hook'
+      preLoaderRoute: typeof LibsReactHooksHookRouteImport
+      parentRoute: typeof LibsReactHooksRoute
     }
-    '/libs/common/multiply': {
-      id: '/libs/common/multiply'
-      path: '/multiply'
-      fullPath: '/libs/common/multiply'
-      preLoaderRoute: typeof LibsCommonMultiplyRouteImport
-      parentRoute: typeof LibsCommonRoute
+    '/libs/query-dsl/sort-schema': {
+      id: '/libs/query-dsl/sort-schema'
+      path: '/sort-schema'
+      fullPath: '/libs/query-dsl/sort-schema'
+      preLoaderRoute: typeof LibsQueryDslSortSchemaRouteImport
+      parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/query-dsl/range-schema': {
+      id: '/libs/query-dsl/range-schema'
+      path: '/range-schema'
+      fullPath: '/libs/query-dsl/range-schema'
+      preLoaderRoute: typeof LibsQueryDslRangeSchemaRouteImport
+      parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/query-dsl/pagination-schema': {
+      id: '/libs/query-dsl/pagination-schema'
+      path: '/pagination-schema'
+      fullPath: '/libs/query-dsl/pagination-schema'
+      preLoaderRoute: typeof LibsQueryDslPaginationSchemaRouteImport
+      parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/query-dsl/list-schema': {
+      id: '/libs/query-dsl/list-schema'
+      path: '/list-schema'
+      fullPath: '/libs/query-dsl/list-schema'
+      preLoaderRoute: typeof LibsQueryDslListSchemaRouteImport
+      parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/query-dsl/filter-schema': {
+      id: '/libs/query-dsl/filter-schema'
+      path: '/filter-schema'
+      fullPath: '/libs/query-dsl/filter-schema'
+      preLoaderRoute: typeof LibsQueryDslFilterSchemaRouteImport
+      parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/query-dsl/date-range-schema': {
+      id: '/libs/query-dsl/date-range-schema'
+      path: '/date-range-schema'
+      fullPath: '/libs/query-dsl/date-range-schema'
+      preLoaderRoute: typeof LibsQueryDslDateRangeSchemaRouteImport
+      parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/query-dsl/boolean-schema': {
+      id: '/libs/query-dsl/boolean-schema'
+      path: '/boolean-schema'
+      fullPath: '/libs/query-dsl/boolean-schema'
+      preLoaderRoute: typeof LibsQueryDslBooleanSchemaRouteImport
+      parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/nestjs-storage/storage-service': {
+      id: '/libs/nestjs-storage/storage-service'
+      path: '/storage-service'
+      fullPath: '/libs/nestjs-storage/storage-service'
+      preLoaderRoute: typeof LibsNestjsStorageStorageServiceRouteImport
+      parentRoute: typeof LibsNestjsStorageRoute
+    }
+    '/libs/nestjs-storage/storage-module': {
+      id: '/libs/nestjs-storage/storage-module'
+      path: '/storage-module'
+      fullPath: '/libs/nestjs-storage/storage-module'
+      preLoaderRoute: typeof LibsNestjsStorageStorageModuleRouteImport
+      parentRoute: typeof LibsNestjsStorageRoute
+    }
+    '/libs/nestjs-social-auth/social-auth-service': {
+      id: '/libs/nestjs-social-auth/social-auth-service'
+      path: '/social-auth-service'
+      fullPath: '/libs/nestjs-social-auth/social-auth-service'
+      preLoaderRoute: typeof LibsNestjsSocialAuthSocialAuthServiceRouteImport
+      parentRoute: typeof LibsNestjsSocialAuthRoute
+    }
+    '/libs/nestjs-social-auth/social-auth-module': {
+      id: '/libs/nestjs-social-auth/social-auth-module'
+      path: '/social-auth-module'
+      fullPath: '/libs/nestjs-social-auth/social-auth-module'
+      preLoaderRoute: typeof LibsNestjsSocialAuthSocialAuthModuleRouteImport
+      parentRoute: typeof LibsNestjsSocialAuthRoute
+    }
+    '/libs/nestjs-serverless/serverless-module': {
+      id: '/libs/nestjs-serverless/serverless-module'
+      path: '/serverless-module'
+      fullPath: '/libs/nestjs-serverless/serverless-module'
+      preLoaderRoute: typeof LibsNestjsServerlessServerlessModuleRouteImport
+      parentRoute: typeof LibsNestjsServerlessRoute
+    }
+    '/libs/nestjs-serverless/serverless-create': {
+      id: '/libs/nestjs-serverless/serverless-create'
+      path: '/serverless-create'
+      fullPath: '/libs/nestjs-serverless/serverless-create'
+      preLoaderRoute: typeof LibsNestjsServerlessServerlessCreateRouteImport
+      parentRoute: typeof LibsNestjsServerlessRoute
+    }
+    '/libs/nestjs-serverless/handler-decorator': {
+      id: '/libs/nestjs-serverless/handler-decorator'
+      path: '/handler-decorator'
+      fullPath: '/libs/nestjs-serverless/handler-decorator'
+      preLoaderRoute: typeof LibsNestjsServerlessHandlerDecoratorRouteImport
+      parentRoute: typeof LibsNestjsServerlessRoute
+    }
+    '/libs/nestjs-server/server-create': {
+      id: '/libs/nestjs-server/server-create'
+      path: '/server-create'
+      fullPath: '/libs/nestjs-server/server-create'
+      preLoaderRoute: typeof LibsNestjsServerServerCreateRouteImport
+      parentRoute: typeof LibsNestjsServerRoute
+    }
+    '/libs/nestjs-server/route-decorator': {
+      id: '/libs/nestjs-server/route-decorator'
+      path: '/route-decorator'
+      fullPath: '/libs/nestjs-server/route-decorator'
+      preLoaderRoute: typeof LibsNestjsServerRouteDecoratorRouteImport
+      parentRoute: typeof LibsNestjsServerRoute
+    }
+    '/libs/nestjs-server/request-decorator': {
+      id: '/libs/nestjs-server/request-decorator'
+      path: '/request-decorator'
+      fullPath: '/libs/nestjs-server/request-decorator'
+      preLoaderRoute: typeof LibsNestjsServerRequestDecoratorRouteImport
+      parentRoute: typeof LibsNestjsServerRoute
+    }
+    '/libs/nestjs-server/controller-decorator': {
+      id: '/libs/nestjs-server/controller-decorator'
+      path: '/controller-decorator'
+      fullPath: '/libs/nestjs-server/controller-decorator'
+      preLoaderRoute: typeof LibsNestjsServerControllerDecoratorRouteImport
+      parentRoute: typeof LibsNestjsServerRoute
+    }
+    '/libs/nestjs-scheduler/scheduler-module': {
+      id: '/libs/nestjs-scheduler/scheduler-module'
+      path: '/scheduler-module'
+      fullPath: '/libs/nestjs-scheduler/scheduler-module'
+      preLoaderRoute: typeof LibsNestjsSchedulerSchedulerModuleRouteImport
+      parentRoute: typeof LibsNestjsSchedulerRoute
+    }
+    '/libs/nestjs-scheduler/schedule-decorator': {
+      id: '/libs/nestjs-scheduler/schedule-decorator'
+      path: '/schedule-decorator'
+      fullPath: '/libs/nestjs-scheduler/schedule-decorator'
+      preLoaderRoute: typeof LibsNestjsSchedulerScheduleDecoratorRouteImport
+      parentRoute: typeof LibsNestjsSchedulerRoute
+    }
+    '/libs/nestjs-resilience/timeout': {
+      id: '/libs/nestjs-resilience/timeout'
+      path: '/timeout'
+      fullPath: '/libs/nestjs-resilience/timeout'
+      preLoaderRoute: typeof LibsNestjsResilienceTimeoutRouteImport
+      parentRoute: typeof LibsNestjsResilienceRoute
+    }
+    '/libs/nestjs-resilience/retry': {
+      id: '/libs/nestjs-resilience/retry'
+      path: '/retry'
+      fullPath: '/libs/nestjs-resilience/retry'
+      preLoaderRoute: typeof LibsNestjsResilienceRetryRouteImport
+      parentRoute: typeof LibsNestjsResilienceRoute
+    }
+    '/libs/nestjs-resilience/circuit-breaker': {
+      id: '/libs/nestjs-resilience/circuit-breaker'
+      path: '/circuit-breaker'
+      fullPath: '/libs/nestjs-resilience/circuit-breaker'
+      preLoaderRoute: typeof LibsNestjsResilienceCircuitBreakerRouteImport
+      parentRoute: typeof LibsNestjsResilienceRoute
+    }
+    '/libs/nestjs-rate-limit/rate-limit-service': {
+      id: '/libs/nestjs-rate-limit/rate-limit-service'
+      path: '/rate-limit-service'
+      fullPath: '/libs/nestjs-rate-limit/rate-limit-service'
+      preLoaderRoute: typeof LibsNestjsRateLimitRateLimitServiceRouteImport
+      parentRoute: typeof LibsNestjsRateLimitRoute
+    }
+    '/libs/nestjs-rate-limit/rate-limit-module': {
+      id: '/libs/nestjs-rate-limit/rate-limit-module'
+      path: '/rate-limit-module'
+      fullPath: '/libs/nestjs-rate-limit/rate-limit-module'
+      preLoaderRoute: typeof LibsNestjsRateLimitRateLimitModuleRouteImport
+      parentRoute: typeof LibsNestjsRateLimitRoute
+    }
+    '/libs/nestjs-rate-limit/rate-limit-decorator': {
+      id: '/libs/nestjs-rate-limit/rate-limit-decorator'
+      path: '/rate-limit-decorator'
+      fullPath: '/libs/nestjs-rate-limit/rate-limit-decorator'
+      preLoaderRoute: typeof LibsNestjsRateLimitRateLimitDecoratorRouteImport
+      parentRoute: typeof LibsNestjsRateLimitRoute
+    }
+    '/libs/nestjs-publisher/subscriber-decorator': {
+      id: '/libs/nestjs-publisher/subscriber-decorator'
+      path: '/subscriber-decorator'
+      fullPath: '/libs/nestjs-publisher/subscriber-decorator'
+      preLoaderRoute: typeof LibsNestjsPublisherSubscriberDecoratorRouteImport
+      parentRoute: typeof LibsNestjsPublisherRoute
+    }
+    '/libs/nestjs-publisher/publisher-service': {
+      id: '/libs/nestjs-publisher/publisher-service'
+      path: '/publisher-service'
+      fullPath: '/libs/nestjs-publisher/publisher-service'
+      preLoaderRoute: typeof LibsNestjsPublisherPublisherServiceRouteImport
+      parentRoute: typeof LibsNestjsPublisherRoute
+    }
+    '/libs/nestjs-publisher/publisher-module': {
+      id: '/libs/nestjs-publisher/publisher-module'
+      path: '/publisher-module'
+      fullPath: '/libs/nestjs-publisher/publisher-module'
+      preLoaderRoute: typeof LibsNestjsPublisherPublisherModuleRouteImport
+      parentRoute: typeof LibsNestjsPublisherRoute
+    }
+    '/libs/nestjs-publisher/outbox': {
+      id: '/libs/nestjs-publisher/outbox'
+      path: '/outbox'
+      fullPath: '/libs/nestjs-publisher/outbox'
+      preLoaderRoute: typeof LibsNestjsPublisherOutboxRouteImport
+      parentRoute: typeof LibsNestjsPublisherRoute
+    }
+    '/libs/nestjs-observability/tracing': {
+      id: '/libs/nestjs-observability/tracing'
+      path: '/tracing'
+      fullPath: '/libs/nestjs-observability/tracing'
+      preLoaderRoute: typeof LibsNestjsObservabilityTracingRouteImport
+      parentRoute: typeof LibsNestjsObservabilityRoute
+    }
+    '/libs/nestjs-observability/observability-module': {
+      id: '/libs/nestjs-observability/observability-module'
+      path: '/observability-module'
+      fullPath: '/libs/nestjs-observability/observability-module'
+      preLoaderRoute: typeof LibsNestjsObservabilityObservabilityModuleRouteImport
+      parentRoute: typeof LibsNestjsObservabilityRoute
+    }
+    '/libs/nestjs-observability/metrics-service': {
+      id: '/libs/nestjs-observability/metrics-service'
+      path: '/metrics-service'
+      fullPath: '/libs/nestjs-observability/metrics-service'
+      preLoaderRoute: typeof LibsNestjsObservabilityMetricsServiceRouteImport
+      parentRoute: typeof LibsNestjsObservabilityRoute
+    }
+    '/libs/nestjs-observability/measure-decorator': {
+      id: '/libs/nestjs-observability/measure-decorator'
+      path: '/measure-decorator'
+      fullPath: '/libs/nestjs-observability/measure-decorator'
+      preLoaderRoute: typeof LibsNestjsObservabilityMeasureDecoratorRouteImport
+      parentRoute: typeof LibsNestjsObservabilityRoute
+    }
+    '/libs/nestjs-logger/logger-service': {
+      id: '/libs/nestjs-logger/logger-service'
+      path: '/logger-service'
+      fullPath: '/libs/nestjs-logger/logger-service'
+      preLoaderRoute: typeof LibsNestjsLoggerLoggerServiceRouteImport
+      parentRoute: typeof LibsNestjsLoggerRoute
+    }
+    '/libs/nestjs-logger/logger-module': {
+      id: '/libs/nestjs-logger/logger-module'
+      path: '/logger-module'
+      fullPath: '/libs/nestjs-logger/logger-module'
+      preLoaderRoute: typeof LibsNestjsLoggerLoggerModuleRouteImport
+      parentRoute: typeof LibsNestjsLoggerRoute
+    }
+    '/libs/nestjs-lock/lock-service': {
+      id: '/libs/nestjs-lock/lock-service'
+      path: '/lock-service'
+      fullPath: '/libs/nestjs-lock/lock-service'
+      preLoaderRoute: typeof LibsNestjsLockLockServiceRouteImport
+      parentRoute: typeof LibsNestjsLockRoute
+    }
+    '/libs/nestjs-lock/lock-module': {
+      id: '/libs/nestjs-lock/lock-module'
+      path: '/lock-module'
+      fullPath: '/libs/nestjs-lock/lock-module'
+      preLoaderRoute: typeof LibsNestjsLockLockModuleRouteImport
+      parentRoute: typeof LibsNestjsLockRoute
+    }
+    '/libs/nestjs-lock/lock-decorator': {
+      id: '/libs/nestjs-lock/lock-decorator'
+      path: '/lock-decorator'
+      fullPath: '/libs/nestjs-lock/lock-decorator'
+      preLoaderRoute: typeof LibsNestjsLockLockDecoratorRouteImport
+      parentRoute: typeof LibsNestjsLockRoute
+    }
+    '/libs/nestjs-idempotency/idempotent-decorator': {
+      id: '/libs/nestjs-idempotency/idempotent-decorator'
+      path: '/idempotent-decorator'
+      fullPath: '/libs/nestjs-idempotency/idempotent-decorator'
+      preLoaderRoute: typeof LibsNestjsIdempotencyIdempotentDecoratorRouteImport
+      parentRoute: typeof LibsNestjsIdempotencyRoute
+    }
+    '/libs/nestjs-idempotency/idempotency-service': {
+      id: '/libs/nestjs-idempotency/idempotency-service'
+      path: '/idempotency-service'
+      fullPath: '/libs/nestjs-idempotency/idempotency-service'
+      preLoaderRoute: typeof LibsNestjsIdempotencyIdempotencyServiceRouteImport
+      parentRoute: typeof LibsNestjsIdempotencyRoute
+    }
+    '/libs/nestjs-idempotency/idempotency-module': {
+      id: '/libs/nestjs-idempotency/idempotency-module'
+      path: '/idempotency-module'
+      fullPath: '/libs/nestjs-idempotency/idempotency-module'
+      preLoaderRoute: typeof LibsNestjsIdempotencyIdempotencyModuleRouteImport
+      parentRoute: typeof LibsNestjsIdempotencyRoute
+    }
+    '/libs/nestjs-iam/token-service': {
+      id: '/libs/nestjs-iam/token-service'
+      path: '/token-service'
+      fullPath: '/libs/nestjs-iam/token-service'
+      preLoaderRoute: typeof LibsNestjsIamTokenServiceRouteImport
+      parentRoute: typeof LibsNestjsIamRoute
+    }
+    '/libs/nestjs-iam/iam-module': {
+      id: '/libs/nestjs-iam/iam-module'
+      path: '/iam-module'
+      fullPath: '/libs/nestjs-iam/iam-module'
+      preLoaderRoute: typeof LibsNestjsIamIamModuleRouteImport
+      parentRoute: typeof LibsNestjsIamRoute
+    }
+    '/libs/nestjs-iam/authenticated-profile-decorator': {
+      id: '/libs/nestjs-iam/authenticated-profile-decorator'
+      path: '/authenticated-profile-decorator'
+      fullPath: '/libs/nestjs-iam/authenticated-profile-decorator'
+      preLoaderRoute: typeof LibsNestjsIamAuthenticatedProfileDecoratorRouteImport
+      parentRoute: typeof LibsNestjsIamRoute
+    }
+    '/libs/nestjs-iam/auth-decorator': {
+      id: '/libs/nestjs-iam/auth-decorator'
+      path: '/auth-decorator'
+      fullPath: '/libs/nestjs-iam/auth-decorator'
+      preLoaderRoute: typeof LibsNestjsIamAuthDecoratorRouteImport
+      parentRoute: typeof LibsNestjsIamRoute
+    }
+    '/libs/nestjs-iam/acl-service': {
+      id: '/libs/nestjs-iam/acl-service'
+      path: '/acl-service'
+      fullPath: '/libs/nestjs-iam/acl-service'
+      preLoaderRoute: typeof LibsNestjsIamAclServiceRouteImport
+      parentRoute: typeof LibsNestjsIamRoute
+    }
+    '/libs/nestjs-iam/acl-decorator': {
+      id: '/libs/nestjs-iam/acl-decorator'
+      path: '/acl-decorator'
+      fullPath: '/libs/nestjs-iam/acl-decorator'
+      preLoaderRoute: typeof LibsNestjsIamAclDecoratorRouteImport
+      parentRoute: typeof LibsNestjsIamRoute
+    }
+    '/libs/nestjs-database/types-and-errors': {
+      id: '/libs/nestjs-database/types-and-errors'
+      path: '/types-and-errors'
+      fullPath: '/libs/nestjs-database/types-and-errors'
+      preLoaderRoute: typeof LibsNestjsDatabaseTypesAndErrorsRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-database/transactional': {
+      id: '/libs/nestjs-database/transactional'
+      path: '/transactional'
+      fullPath: '/libs/nestjs-database/transactional'
+      preLoaderRoute: typeof LibsNestjsDatabaseTransactionalRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-database/transaction-hooks': {
+      id: '/libs/nestjs-database/transaction-hooks'
+      path: '/transaction-hooks'
+      fullPath: '/libs/nestjs-database/transaction-hooks'
+      preLoaderRoute: typeof LibsNestjsDatabaseTransactionHooksRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-database/schema-definition': {
+      id: '/libs/nestjs-database/schema-definition'
+      path: '/schema-definition'
+      fullPath: '/libs/nestjs-database/schema-definition'
+      preLoaderRoute: typeof LibsNestjsDatabaseSchemaDefinitionRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-database/database-service': {
+      id: '/libs/nestjs-database/database-service'
+      path: '/database-service'
+      fullPath: '/libs/nestjs-database/database-service'
+      preLoaderRoute: typeof LibsNestjsDatabaseDatabaseServiceRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-database/database-module': {
+      id: '/libs/nestjs-database/database-module'
+      path: '/database-module'
+      fullPath: '/libs/nestjs-database/database-module'
+      preLoaderRoute: typeof LibsNestjsDatabaseDatabaseModuleRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-database/audit': {
+      id: '/libs/nestjs-database/audit'
+      path: '/audit'
+      fullPath: '/libs/nestjs-database/audit'
+      preLoaderRoute: typeof LibsNestjsDatabaseAuditRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-context/with-context': {
+      id: '/libs/nestjs-context/with-context'
+      path: '/with-context'
+      fullPath: '/libs/nestjs-context/with-context'
+      preLoaderRoute: typeof LibsNestjsContextWithContextRouteImport
+      parentRoute: typeof LibsNestjsContextRoute
+    }
+    '/libs/nestjs-context/context-service': {
+      id: '/libs/nestjs-context/context-service'
+      path: '/context-service'
+      fullPath: '/libs/nestjs-context/context-service'
+      preLoaderRoute: typeof LibsNestjsContextContextServiceRouteImport
+      parentRoute: typeof LibsNestjsContextRoute
+    }
+    '/libs/nestjs-context/context-module': {
+      id: '/libs/nestjs-context/context-module'
+      path: '/context-module'
+      fullPath: '/libs/nestjs-context/context-module'
+      preLoaderRoute: typeof LibsNestjsContextContextModuleRouteImport
+      parentRoute: typeof LibsNestjsContextRoute
+    }
+    '/libs/nestjs-config/schema-and-typing': {
+      id: '/libs/nestjs-config/schema-and-typing'
+      path: '/schema-and-typing'
+      fullPath: '/libs/nestjs-config/schema-and-typing'
+      preLoaderRoute: typeof LibsNestjsConfigSchemaAndTypingRouteImport
+      parentRoute: typeof LibsNestjsConfigRoute
+    }
+    '/libs/nestjs-config/config-service': {
+      id: '/libs/nestjs-config/config-service'
+      path: '/config-service'
+      fullPath: '/libs/nestjs-config/config-service'
+      preLoaderRoute: typeof LibsNestjsConfigConfigServiceRouteImport
+      parentRoute: typeof LibsNestjsConfigRoute
+    }
+    '/libs/nestjs-config/config-module': {
+      id: '/libs/nestjs-config/config-module'
+      path: '/config-module'
+      fullPath: '/libs/nestjs-config/config-module'
+      preLoaderRoute: typeof LibsNestjsConfigConfigModuleRouteImport
+      parentRoute: typeof LibsNestjsConfigRoute
+    }
+    '/libs/nestjs-cache/cache-service': {
+      id: '/libs/nestjs-cache/cache-service'
+      path: '/cache-service'
+      fullPath: '/libs/nestjs-cache/cache-service'
+      preLoaderRoute: typeof LibsNestjsCacheCacheServiceRouteImport
+      parentRoute: typeof LibsNestjsCacheRoute
+    }
+    '/libs/nestjs-cache/cache-module': {
+      id: '/libs/nestjs-cache/cache-module'
+      path: '/cache-module'
+      fullPath: '/libs/nestjs-cache/cache-module'
+      preLoaderRoute: typeof LibsNestjsCacheCacheModuleRouteImport
+      parentRoute: typeof LibsNestjsCacheRoute
+    }
+    '/libs/nestjs-cache/cache-get': {
+      id: '/libs/nestjs-cache/cache-get'
+      path: '/cache-get'
+      fullPath: '/libs/nestjs-cache/cache-get'
+      preLoaderRoute: typeof LibsNestjsCacheCacheGetRouteImport
+      parentRoute: typeof LibsNestjsCacheRoute
+    }
+    '/libs/nestjs-cache/cache-del': {
+      id: '/libs/nestjs-cache/cache-del'
+      path: '/cache-del'
+      fullPath: '/libs/nestjs-cache/cache-del'
+      preLoaderRoute: typeof LibsNestjsCacheCacheDelRouteImport
+      parentRoute: typeof LibsNestjsCacheRoute
+    }
+    '/libs/frontend-primitives-pattern/$section': {
+      id: '/libs/frontend-primitives-pattern/$section'
+      path: '/$section'
+      fullPath: '/libs/frontend-primitives-pattern/$section'
+      preLoaderRoute: typeof LibsFrontendPrimitivesPatternSectionRouteImport
+      parentRoute: typeof LibsFrontendPrimitivesPatternRoute
+    }
+    '/libs/frontend-pattern/$section': {
+      id: '/libs/frontend-pattern/$section'
+      path: '/$section'
+      fullPath: '/libs/frontend-pattern/$section'
+      preLoaderRoute: typeof LibsFrontendPatternSectionRouteImport
+      parentRoute: typeof LibsFrontendPatternRoute
+    }
+    '/libs/frontend-config/typescript': {
+      id: '/libs/frontend-config/typescript'
+      path: '/typescript'
+      fullPath: '/libs/frontend-config/typescript'
+      preLoaderRoute: typeof LibsFrontendConfigTypescriptRouteImport
+      parentRoute: typeof LibsFrontendConfigRoute
+    }
+    '/libs/frontend-config/biome': {
+      id: '/libs/frontend-config/biome'
+      path: '/biome'
+      fullPath: '/libs/frontend-config/biome'
+      preLoaderRoute: typeof LibsFrontendConfigBiomeRouteImport
+      parentRoute: typeof LibsFrontendConfigRoute
+    }
+    '/libs/exceptions/exceptions': {
+      id: '/libs/exceptions/exceptions'
+      path: '/exceptions'
+      fullPath: '/libs/exceptions/exceptions'
+      preLoaderRoute: typeof LibsExceptionsExceptionsRouteImport
+      parentRoute: typeof LibsExceptionsRoute
+    }
+    '/libs/entity/entity': {
+      id: '/libs/entity/entity'
+      path: '/entity'
+      fullPath: '/libs/entity/entity'
+      preLoaderRoute: typeof LibsEntityEntityRouteImport
+      parentRoute: typeof LibsEntityRoute
+    }
+    '/libs/cli/web': {
+      id: '/libs/cli/web'
+      path: '/web'
+      fullPath: '/libs/cli/web'
+      preLoaderRoute: typeof LibsCliWebRouteImport
+      parentRoute: typeof LibsCliRoute
+    }
+    '/libs/cli/monorepo': {
+      id: '/libs/cli/monorepo'
+      path: '/monorepo'
+      fullPath: '/libs/cli/monorepo'
+      preLoaderRoute: typeof LibsCliMonorepoRouteImport
+      parentRoute: typeof LibsCliRoute
+    }
+    '/libs/cli/mobile': {
+      id: '/libs/cli/mobile'
+      path: '/mobile'
+      fullPath: '/libs/cli/mobile'
+      preLoaderRoute: typeof LibsCliMobileRouteImport
+      parentRoute: typeof LibsCliRoute
+    }
+    '/libs/cli/handler': {
+      id: '/libs/cli/handler'
+      path: '/handler'
+      fullPath: '/libs/cli/handler'
+      preLoaderRoute: typeof LibsCliHandlerRouteImport
+      parentRoute: typeof LibsCliRoute
+    }
+    '/libs/cli/api': {
+      id: '/libs/cli/api'
+      path: '/api'
+      fullPath: '/libs/cli/api'
+      preLoaderRoute: typeof LibsCliApiRouteImport
+      parentRoute: typeof LibsCliRoute
+    }
+    '/libs/backend-pattern/$section': {
+      id: '/libs/backend-pattern/$section'
+      path: '/$section'
+      fullPath: '/libs/backend-pattern/$section'
+      preLoaderRoute: typeof LibsBackendPatternSectionRouteImport
+      parentRoute: typeof LibsBackendPatternRoute
+    }
+    '/libs/backend-config/typescript': {
+      id: '/libs/backend-config/typescript'
+      path: '/typescript'
+      fullPath: '/libs/backend-config/typescript'
+      preLoaderRoute: typeof LibsBackendConfigTypescriptRouteImport
+      parentRoute: typeof LibsBackendConfigRoute
+    }
+    '/libs/backend-config/biome': {
+      id: '/libs/backend-config/biome'
+      path: '/biome'
+      fullPath: '/libs/backend-config/biome'
+      preLoaderRoute: typeof LibsBackendConfigBiomeRouteImport
+      parentRoute: typeof LibsBackendConfigRoute
+    }
+    '/libs/architecture-pattern/$section': {
+      id: '/libs/architecture-pattern/$section'
+      path: '/$section'
+      fullPath: '/libs/architecture-pattern/$section'
+      preLoaderRoute: typeof LibsArchitecturePatternSectionRouteImport
+      parentRoute: typeof LibsArchitecturePatternRoute
+    }
+    '/libs/react-mobile/components/': {
+      id: '/libs/react-mobile/components/'
+      path: '/components'
+      fullPath: '/libs/react-mobile/components/'
+      preLoaderRoute: typeof LibsReactMobileComponentsIndexRouteImport
+      parentRoute: typeof LibsReactMobileRoute
+    }
+    '/libs/react-mobile/components/$component': {
+      id: '/libs/react-mobile/components/$component'
+      path: '/components/$component'
+      fullPath: '/libs/react-mobile/components/$component'
+      preLoaderRoute: typeof LibsReactMobileComponentsComponentRouteImport
+      parentRoute: typeof LibsReactMobileRoute
     }
   }
 }
@@ -1179,141 +3989,721 @@ const MainRouteChildren: MainRouteChildren = {
 
 const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
 
-interface LibsCommonRouteChildren {
-  LibsCommonMultiplyRoute: typeof LibsCommonMultiplyRoute
-  LibsCommonSubtractRoute: typeof LibsCommonSubtractRoute
-  LibsCommonSumRoute: typeof LibsCommonSumRoute
-  LibsCommonIndexRoute: typeof LibsCommonIndexRoute
+interface LibsArchitecturePatternRouteChildren {
+  LibsArchitecturePatternSectionRoute: typeof LibsArchitecturePatternSectionRoute
+  LibsArchitecturePatternIndexRoute: typeof LibsArchitecturePatternIndexRoute
 }
 
-const LibsCommonRouteChildren: LibsCommonRouteChildren = {
-  LibsCommonMultiplyRoute: LibsCommonMultiplyRoute,
-  LibsCommonSubtractRoute: LibsCommonSubtractRoute,
-  LibsCommonSumRoute: LibsCommonSumRoute,
-  LibsCommonIndexRoute: LibsCommonIndexRoute,
+const LibsArchitecturePatternRouteChildren: LibsArchitecturePatternRouteChildren =
+  {
+    LibsArchitecturePatternSectionRoute: LibsArchitecturePatternSectionRoute,
+    LibsArchitecturePatternIndexRoute: LibsArchitecturePatternIndexRoute,
+  }
+
+const LibsArchitecturePatternRouteWithChildren =
+  LibsArchitecturePatternRoute._addFileChildren(
+    LibsArchitecturePatternRouteChildren,
+  )
+
+interface LibsBackendConfigRouteChildren {
+  LibsBackendConfigBiomeRoute: typeof LibsBackendConfigBiomeRoute
+  LibsBackendConfigTypescriptRoute: typeof LibsBackendConfigTypescriptRoute
+  LibsBackendConfigIndexRoute: typeof LibsBackendConfigIndexRoute
 }
 
-const LibsCommonRouteWithChildren = LibsCommonRoute._addFileChildren(
-  LibsCommonRouteChildren,
+const LibsBackendConfigRouteChildren: LibsBackendConfigRouteChildren = {
+  LibsBackendConfigBiomeRoute: LibsBackendConfigBiomeRoute,
+  LibsBackendConfigTypescriptRoute: LibsBackendConfigTypescriptRoute,
+  LibsBackendConfigIndexRoute: LibsBackendConfigIndexRoute,
+}
+
+const LibsBackendConfigRouteWithChildren =
+  LibsBackendConfigRoute._addFileChildren(LibsBackendConfigRouteChildren)
+
+interface LibsBackendPatternRouteChildren {
+  LibsBackendPatternSectionRoute: typeof LibsBackendPatternSectionRoute
+  LibsBackendPatternIndexRoute: typeof LibsBackendPatternIndexRoute
+}
+
+const LibsBackendPatternRouteChildren: LibsBackendPatternRouteChildren = {
+  LibsBackendPatternSectionRoute: LibsBackendPatternSectionRoute,
+  LibsBackendPatternIndexRoute: LibsBackendPatternIndexRoute,
+}
+
+const LibsBackendPatternRouteWithChildren =
+  LibsBackendPatternRoute._addFileChildren(LibsBackendPatternRouteChildren)
+
+interface LibsCliRouteChildren {
+  LibsCliApiRoute: typeof LibsCliApiRoute
+  LibsCliHandlerRoute: typeof LibsCliHandlerRoute
+  LibsCliMobileRoute: typeof LibsCliMobileRoute
+  LibsCliMonorepoRoute: typeof LibsCliMonorepoRoute
+  LibsCliWebRoute: typeof LibsCliWebRoute
+  LibsCliIndexRoute: typeof LibsCliIndexRoute
+}
+
+const LibsCliRouteChildren: LibsCliRouteChildren = {
+  LibsCliApiRoute: LibsCliApiRoute,
+  LibsCliHandlerRoute: LibsCliHandlerRoute,
+  LibsCliMobileRoute: LibsCliMobileRoute,
+  LibsCliMonorepoRoute: LibsCliMonorepoRoute,
+  LibsCliWebRoute: LibsCliWebRoute,
+  LibsCliIndexRoute: LibsCliIndexRoute,
+}
+
+const LibsCliRouteWithChildren =
+  LibsCliRoute._addFileChildren(LibsCliRouteChildren)
+
+interface LibsEntityRouteChildren {
+  LibsEntityEntityRoute: typeof LibsEntityEntityRoute
+  LibsEntityIndexRoute: typeof LibsEntityIndexRoute
+}
+
+const LibsEntityRouteChildren: LibsEntityRouteChildren = {
+  LibsEntityEntityRoute: LibsEntityEntityRoute,
+  LibsEntityIndexRoute: LibsEntityIndexRoute,
+}
+
+const LibsEntityRouteWithChildren = LibsEntityRoute._addFileChildren(
+  LibsEntityRouteChildren,
 )
 
-interface LibsUiRouteChildren {
-  LibsUiAccordionRoute: typeof LibsUiAccordionRoute
-  LibsUiAlertRoute: typeof LibsUiAlertRoute
-  LibsUiAvatarRoute: typeof LibsUiAvatarRoute
-  LibsUiBadgeRoute: typeof LibsUiBadgeRoute
-  LibsUiBreadcrumbRoute: typeof LibsUiBreadcrumbRoute
-  LibsUiButtonRoute: typeof LibsUiButtonRoute
-  LibsUiCardRoute: typeof LibsUiCardRoute
-  LibsUiCheckboxRoute: typeof LibsUiCheckboxRoute
-  LibsUiColorSchemeRoute: typeof LibsUiColorSchemeRoute
-  LibsUiConfirmRoute: typeof LibsUiConfirmRoute
-  LibsUiCurrencyInputRoute: typeof LibsUiCurrencyInputRoute
-  LibsUiDateInputRoute: typeof LibsUiDateInputRoute
-  LibsUiDateRangeInputRoute: typeof LibsUiDateRangeInputRoute
-  LibsUiDocumentInputRoute: typeof LibsUiDocumentInputRoute
-  LibsUiDropdownMenuRoute: typeof LibsUiDropdownMenuRoute
-  LibsUiFlexRoute: typeof LibsUiFlexRoute
-  LibsUiFormRoute: typeof LibsUiFormRoute
-  LibsUiGridRoute: typeof LibsUiGridRoute
-  LibsUiI18nRoute: typeof LibsUiI18nRoute
-  LibsUiInputRoute: typeof LibsUiInputRoute
-  LibsUiLabelRoute: typeof LibsUiLabelRoute
-  LibsUiLayoutRoute: typeof LibsUiLayoutRoute
-  LibsUiLoadingOverlayRoute: typeof LibsUiLoadingOverlayRoute
-  LibsUiMaskInputRoute: typeof LibsUiMaskInputRoute
-  LibsUiModalRoute: typeof LibsUiModalRoute
-  LibsUiNumberInputRoute: typeof LibsUiNumberInputRoute
-  LibsUiOtpInputRoute: typeof LibsUiOtpInputRoute
-  LibsUiPaginationRoute: typeof LibsUiPaginationRoute
-  LibsUiPasswordInputRoute: typeof LibsUiPasswordInputRoute
-  LibsUiPhoneInputRoute: typeof LibsUiPhoneInputRoute
-  LibsUiPlaygroundRoute: typeof LibsUiPlaygroundRoute
-  LibsUiPopoverRoute: typeof LibsUiPopoverRoute
-  LibsUiProgressRoute: typeof LibsUiProgressRoute
-  LibsUiProviderRoute: typeof LibsUiProviderRoute
-  LibsUiRadioRoute: typeof LibsUiRadioRoute
-  LibsUiSelectRoute: typeof LibsUiSelectRoute
-  LibsUiSeparatorRoute: typeof LibsUiSeparatorRoute
-  LibsUiSheetRoute: typeof LibsUiSheetRoute
-  LibsUiSkeletonRoute: typeof LibsUiSkeletonRoute
-  LibsUiSliderRoute: typeof LibsUiSliderRoute
-  LibsUiSwitchRoute: typeof LibsUiSwitchRoute
-  LibsUiTLoaderRoute: typeof LibsUiTLoaderRoute
-  LibsUiTableRoute: typeof LibsUiTableRoute
-  LibsUiTabsRoute: typeof LibsUiTabsRoute
-  LibsUiTagsInputRoute: typeof LibsUiTagsInputRoute
-  LibsUiTextareaRoute: typeof LibsUiTextareaRoute
-  LibsUiThemeRoute: typeof LibsUiThemeRoute
-  LibsUiToastRoute: typeof LibsUiToastRoute
-  LibsUiTooltipRoute: typeof LibsUiTooltipRoute
-  LibsUiTypographyRoute: typeof LibsUiTypographyRoute
-  LibsUiUploaderRoute: typeof LibsUiUploaderRoute
-  LibsUiIndexRoute: typeof LibsUiIndexRoute
+interface LibsExceptionsRouteChildren {
+  LibsExceptionsExceptionsRoute: typeof LibsExceptionsExceptionsRoute
+  LibsExceptionsIndexRoute: typeof LibsExceptionsIndexRoute
 }
 
-const LibsUiRouteChildren: LibsUiRouteChildren = {
-  LibsUiAccordionRoute: LibsUiAccordionRoute,
-  LibsUiAlertRoute: LibsUiAlertRoute,
-  LibsUiAvatarRoute: LibsUiAvatarRoute,
-  LibsUiBadgeRoute: LibsUiBadgeRoute,
-  LibsUiBreadcrumbRoute: LibsUiBreadcrumbRoute,
-  LibsUiButtonRoute: LibsUiButtonRoute,
-  LibsUiCardRoute: LibsUiCardRoute,
-  LibsUiCheckboxRoute: LibsUiCheckboxRoute,
-  LibsUiColorSchemeRoute: LibsUiColorSchemeRoute,
-  LibsUiConfirmRoute: LibsUiConfirmRoute,
-  LibsUiCurrencyInputRoute: LibsUiCurrencyInputRoute,
-  LibsUiDateInputRoute: LibsUiDateInputRoute,
-  LibsUiDateRangeInputRoute: LibsUiDateRangeInputRoute,
-  LibsUiDocumentInputRoute: LibsUiDocumentInputRoute,
-  LibsUiDropdownMenuRoute: LibsUiDropdownMenuRoute,
-  LibsUiFlexRoute: LibsUiFlexRoute,
-  LibsUiFormRoute: LibsUiFormRoute,
-  LibsUiGridRoute: LibsUiGridRoute,
-  LibsUiI18nRoute: LibsUiI18nRoute,
-  LibsUiInputRoute: LibsUiInputRoute,
-  LibsUiLabelRoute: LibsUiLabelRoute,
-  LibsUiLayoutRoute: LibsUiLayoutRoute,
-  LibsUiLoadingOverlayRoute: LibsUiLoadingOverlayRoute,
-  LibsUiMaskInputRoute: LibsUiMaskInputRoute,
-  LibsUiModalRoute: LibsUiModalRoute,
-  LibsUiNumberInputRoute: LibsUiNumberInputRoute,
-  LibsUiOtpInputRoute: LibsUiOtpInputRoute,
-  LibsUiPaginationRoute: LibsUiPaginationRoute,
-  LibsUiPasswordInputRoute: LibsUiPasswordInputRoute,
-  LibsUiPhoneInputRoute: LibsUiPhoneInputRoute,
-  LibsUiPlaygroundRoute: LibsUiPlaygroundRoute,
-  LibsUiPopoverRoute: LibsUiPopoverRoute,
-  LibsUiProgressRoute: LibsUiProgressRoute,
-  LibsUiProviderRoute: LibsUiProviderRoute,
-  LibsUiRadioRoute: LibsUiRadioRoute,
-  LibsUiSelectRoute: LibsUiSelectRoute,
-  LibsUiSeparatorRoute: LibsUiSeparatorRoute,
-  LibsUiSheetRoute: LibsUiSheetRoute,
-  LibsUiSkeletonRoute: LibsUiSkeletonRoute,
-  LibsUiSliderRoute: LibsUiSliderRoute,
-  LibsUiSwitchRoute: LibsUiSwitchRoute,
-  LibsUiTLoaderRoute: LibsUiTLoaderRoute,
-  LibsUiTableRoute: LibsUiTableRoute,
-  LibsUiTabsRoute: LibsUiTabsRoute,
-  LibsUiTagsInputRoute: LibsUiTagsInputRoute,
-  LibsUiTextareaRoute: LibsUiTextareaRoute,
-  LibsUiThemeRoute: LibsUiThemeRoute,
-  LibsUiToastRoute: LibsUiToastRoute,
-  LibsUiTooltipRoute: LibsUiTooltipRoute,
-  LibsUiTypographyRoute: LibsUiTypographyRoute,
-  LibsUiUploaderRoute: LibsUiUploaderRoute,
-  LibsUiIndexRoute: LibsUiIndexRoute,
+const LibsExceptionsRouteChildren: LibsExceptionsRouteChildren = {
+  LibsExceptionsExceptionsRoute: LibsExceptionsExceptionsRoute,
+  LibsExceptionsIndexRoute: LibsExceptionsIndexRoute,
 }
 
-const LibsUiRouteWithChildren =
-  LibsUiRoute._addFileChildren(LibsUiRouteChildren)
+const LibsExceptionsRouteWithChildren = LibsExceptionsRoute._addFileChildren(
+  LibsExceptionsRouteChildren,
+)
+
+interface LibsFrontendConfigRouteChildren {
+  LibsFrontendConfigBiomeRoute: typeof LibsFrontendConfigBiomeRoute
+  LibsFrontendConfigTypescriptRoute: typeof LibsFrontendConfigTypescriptRoute
+  LibsFrontendConfigIndexRoute: typeof LibsFrontendConfigIndexRoute
+}
+
+const LibsFrontendConfigRouteChildren: LibsFrontendConfigRouteChildren = {
+  LibsFrontendConfigBiomeRoute: LibsFrontendConfigBiomeRoute,
+  LibsFrontendConfigTypescriptRoute: LibsFrontendConfigTypescriptRoute,
+  LibsFrontendConfigIndexRoute: LibsFrontendConfigIndexRoute,
+}
+
+const LibsFrontendConfigRouteWithChildren =
+  LibsFrontendConfigRoute._addFileChildren(LibsFrontendConfigRouteChildren)
+
+interface LibsFrontendPatternRouteChildren {
+  LibsFrontendPatternSectionRoute: typeof LibsFrontendPatternSectionRoute
+  LibsFrontendPatternIndexRoute: typeof LibsFrontendPatternIndexRoute
+}
+
+const LibsFrontendPatternRouteChildren: LibsFrontendPatternRouteChildren = {
+  LibsFrontendPatternSectionRoute: LibsFrontendPatternSectionRoute,
+  LibsFrontendPatternIndexRoute: LibsFrontendPatternIndexRoute,
+}
+
+const LibsFrontendPatternRouteWithChildren =
+  LibsFrontendPatternRoute._addFileChildren(LibsFrontendPatternRouteChildren)
+
+interface LibsFrontendPrimitivesPatternRouteChildren {
+  LibsFrontendPrimitivesPatternSectionRoute: typeof LibsFrontendPrimitivesPatternSectionRoute
+  LibsFrontendPrimitivesPatternIndexRoute: typeof LibsFrontendPrimitivesPatternIndexRoute
+}
+
+const LibsFrontendPrimitivesPatternRouteChildren: LibsFrontendPrimitivesPatternRouteChildren =
+  {
+    LibsFrontendPrimitivesPatternSectionRoute:
+      LibsFrontendPrimitivesPatternSectionRoute,
+    LibsFrontendPrimitivesPatternIndexRoute:
+      LibsFrontendPrimitivesPatternIndexRoute,
+  }
+
+const LibsFrontendPrimitivesPatternRouteWithChildren =
+  LibsFrontendPrimitivesPatternRoute._addFileChildren(
+    LibsFrontendPrimitivesPatternRouteChildren,
+  )
+
+interface LibsNestjsCacheRouteChildren {
+  LibsNestjsCacheCacheDelRoute: typeof LibsNestjsCacheCacheDelRoute
+  LibsNestjsCacheCacheGetRoute: typeof LibsNestjsCacheCacheGetRoute
+  LibsNestjsCacheCacheModuleRoute: typeof LibsNestjsCacheCacheModuleRoute
+  LibsNestjsCacheCacheServiceRoute: typeof LibsNestjsCacheCacheServiceRoute
+  LibsNestjsCacheIndexRoute: typeof LibsNestjsCacheIndexRoute
+}
+
+const LibsNestjsCacheRouteChildren: LibsNestjsCacheRouteChildren = {
+  LibsNestjsCacheCacheDelRoute: LibsNestjsCacheCacheDelRoute,
+  LibsNestjsCacheCacheGetRoute: LibsNestjsCacheCacheGetRoute,
+  LibsNestjsCacheCacheModuleRoute: LibsNestjsCacheCacheModuleRoute,
+  LibsNestjsCacheCacheServiceRoute: LibsNestjsCacheCacheServiceRoute,
+  LibsNestjsCacheIndexRoute: LibsNestjsCacheIndexRoute,
+}
+
+const LibsNestjsCacheRouteWithChildren = LibsNestjsCacheRoute._addFileChildren(
+  LibsNestjsCacheRouteChildren,
+)
+
+interface LibsNestjsConfigRouteChildren {
+  LibsNestjsConfigConfigModuleRoute: typeof LibsNestjsConfigConfigModuleRoute
+  LibsNestjsConfigConfigServiceRoute: typeof LibsNestjsConfigConfigServiceRoute
+  LibsNestjsConfigSchemaAndTypingRoute: typeof LibsNestjsConfigSchemaAndTypingRoute
+  LibsNestjsConfigIndexRoute: typeof LibsNestjsConfigIndexRoute
+}
+
+const LibsNestjsConfigRouteChildren: LibsNestjsConfigRouteChildren = {
+  LibsNestjsConfigConfigModuleRoute: LibsNestjsConfigConfigModuleRoute,
+  LibsNestjsConfigConfigServiceRoute: LibsNestjsConfigConfigServiceRoute,
+  LibsNestjsConfigSchemaAndTypingRoute: LibsNestjsConfigSchemaAndTypingRoute,
+  LibsNestjsConfigIndexRoute: LibsNestjsConfigIndexRoute,
+}
+
+const LibsNestjsConfigRouteWithChildren =
+  LibsNestjsConfigRoute._addFileChildren(LibsNestjsConfigRouteChildren)
+
+interface LibsNestjsContextRouteChildren {
+  LibsNestjsContextContextModuleRoute: typeof LibsNestjsContextContextModuleRoute
+  LibsNestjsContextContextServiceRoute: typeof LibsNestjsContextContextServiceRoute
+  LibsNestjsContextWithContextRoute: typeof LibsNestjsContextWithContextRoute
+  LibsNestjsContextIndexRoute: typeof LibsNestjsContextIndexRoute
+}
+
+const LibsNestjsContextRouteChildren: LibsNestjsContextRouteChildren = {
+  LibsNestjsContextContextModuleRoute: LibsNestjsContextContextModuleRoute,
+  LibsNestjsContextContextServiceRoute: LibsNestjsContextContextServiceRoute,
+  LibsNestjsContextWithContextRoute: LibsNestjsContextWithContextRoute,
+  LibsNestjsContextIndexRoute: LibsNestjsContextIndexRoute,
+}
+
+const LibsNestjsContextRouteWithChildren =
+  LibsNestjsContextRoute._addFileChildren(LibsNestjsContextRouteChildren)
+
+interface LibsNestjsDatabaseRouteChildren {
+  LibsNestjsDatabaseAuditRoute: typeof LibsNestjsDatabaseAuditRoute
+  LibsNestjsDatabaseDatabaseModuleRoute: typeof LibsNestjsDatabaseDatabaseModuleRoute
+  LibsNestjsDatabaseDatabaseServiceRoute: typeof LibsNestjsDatabaseDatabaseServiceRoute
+  LibsNestjsDatabaseSchemaDefinitionRoute: typeof LibsNestjsDatabaseSchemaDefinitionRoute
+  LibsNestjsDatabaseTransactionHooksRoute: typeof LibsNestjsDatabaseTransactionHooksRoute
+  LibsNestjsDatabaseTransactionalRoute: typeof LibsNestjsDatabaseTransactionalRoute
+  LibsNestjsDatabaseTypesAndErrorsRoute: typeof LibsNestjsDatabaseTypesAndErrorsRoute
+  LibsNestjsDatabaseIndexRoute: typeof LibsNestjsDatabaseIndexRoute
+}
+
+const LibsNestjsDatabaseRouteChildren: LibsNestjsDatabaseRouteChildren = {
+  LibsNestjsDatabaseAuditRoute: LibsNestjsDatabaseAuditRoute,
+  LibsNestjsDatabaseDatabaseModuleRoute: LibsNestjsDatabaseDatabaseModuleRoute,
+  LibsNestjsDatabaseDatabaseServiceRoute:
+    LibsNestjsDatabaseDatabaseServiceRoute,
+  LibsNestjsDatabaseSchemaDefinitionRoute:
+    LibsNestjsDatabaseSchemaDefinitionRoute,
+  LibsNestjsDatabaseTransactionHooksRoute:
+    LibsNestjsDatabaseTransactionHooksRoute,
+  LibsNestjsDatabaseTransactionalRoute: LibsNestjsDatabaseTransactionalRoute,
+  LibsNestjsDatabaseTypesAndErrorsRoute: LibsNestjsDatabaseTypesAndErrorsRoute,
+  LibsNestjsDatabaseIndexRoute: LibsNestjsDatabaseIndexRoute,
+}
+
+const LibsNestjsDatabaseRouteWithChildren =
+  LibsNestjsDatabaseRoute._addFileChildren(LibsNestjsDatabaseRouteChildren)
+
+interface LibsNestjsIamRouteChildren {
+  LibsNestjsIamAclDecoratorRoute: typeof LibsNestjsIamAclDecoratorRoute
+  LibsNestjsIamAclServiceRoute: typeof LibsNestjsIamAclServiceRoute
+  LibsNestjsIamAuthDecoratorRoute: typeof LibsNestjsIamAuthDecoratorRoute
+  LibsNestjsIamAuthenticatedProfileDecoratorRoute: typeof LibsNestjsIamAuthenticatedProfileDecoratorRoute
+  LibsNestjsIamIamModuleRoute: typeof LibsNestjsIamIamModuleRoute
+  LibsNestjsIamTokenServiceRoute: typeof LibsNestjsIamTokenServiceRoute
+  LibsNestjsIamIndexRoute: typeof LibsNestjsIamIndexRoute
+}
+
+const LibsNestjsIamRouteChildren: LibsNestjsIamRouteChildren = {
+  LibsNestjsIamAclDecoratorRoute: LibsNestjsIamAclDecoratorRoute,
+  LibsNestjsIamAclServiceRoute: LibsNestjsIamAclServiceRoute,
+  LibsNestjsIamAuthDecoratorRoute: LibsNestjsIamAuthDecoratorRoute,
+  LibsNestjsIamAuthenticatedProfileDecoratorRoute:
+    LibsNestjsIamAuthenticatedProfileDecoratorRoute,
+  LibsNestjsIamIamModuleRoute: LibsNestjsIamIamModuleRoute,
+  LibsNestjsIamTokenServiceRoute: LibsNestjsIamTokenServiceRoute,
+  LibsNestjsIamIndexRoute: LibsNestjsIamIndexRoute,
+}
+
+const LibsNestjsIamRouteWithChildren = LibsNestjsIamRoute._addFileChildren(
+  LibsNestjsIamRouteChildren,
+)
+
+interface LibsNestjsIdempotencyRouteChildren {
+  LibsNestjsIdempotencyIdempotencyModuleRoute: typeof LibsNestjsIdempotencyIdempotencyModuleRoute
+  LibsNestjsIdempotencyIdempotencyServiceRoute: typeof LibsNestjsIdempotencyIdempotencyServiceRoute
+  LibsNestjsIdempotencyIdempotentDecoratorRoute: typeof LibsNestjsIdempotencyIdempotentDecoratorRoute
+  LibsNestjsIdempotencyIndexRoute: typeof LibsNestjsIdempotencyIndexRoute
+}
+
+const LibsNestjsIdempotencyRouteChildren: LibsNestjsIdempotencyRouteChildren = {
+  LibsNestjsIdempotencyIdempotencyModuleRoute:
+    LibsNestjsIdempotencyIdempotencyModuleRoute,
+  LibsNestjsIdempotencyIdempotencyServiceRoute:
+    LibsNestjsIdempotencyIdempotencyServiceRoute,
+  LibsNestjsIdempotencyIdempotentDecoratorRoute:
+    LibsNestjsIdempotencyIdempotentDecoratorRoute,
+  LibsNestjsIdempotencyIndexRoute: LibsNestjsIdempotencyIndexRoute,
+}
+
+const LibsNestjsIdempotencyRouteWithChildren =
+  LibsNestjsIdempotencyRoute._addFileChildren(
+    LibsNestjsIdempotencyRouteChildren,
+  )
+
+interface LibsNestjsLockRouteChildren {
+  LibsNestjsLockLockDecoratorRoute: typeof LibsNestjsLockLockDecoratorRoute
+  LibsNestjsLockLockModuleRoute: typeof LibsNestjsLockLockModuleRoute
+  LibsNestjsLockLockServiceRoute: typeof LibsNestjsLockLockServiceRoute
+  LibsNestjsLockIndexRoute: typeof LibsNestjsLockIndexRoute
+}
+
+const LibsNestjsLockRouteChildren: LibsNestjsLockRouteChildren = {
+  LibsNestjsLockLockDecoratorRoute: LibsNestjsLockLockDecoratorRoute,
+  LibsNestjsLockLockModuleRoute: LibsNestjsLockLockModuleRoute,
+  LibsNestjsLockLockServiceRoute: LibsNestjsLockLockServiceRoute,
+  LibsNestjsLockIndexRoute: LibsNestjsLockIndexRoute,
+}
+
+const LibsNestjsLockRouteWithChildren = LibsNestjsLockRoute._addFileChildren(
+  LibsNestjsLockRouteChildren,
+)
+
+interface LibsNestjsLoggerRouteChildren {
+  LibsNestjsLoggerLoggerModuleRoute: typeof LibsNestjsLoggerLoggerModuleRoute
+  LibsNestjsLoggerLoggerServiceRoute: typeof LibsNestjsLoggerLoggerServiceRoute
+  LibsNestjsLoggerIndexRoute: typeof LibsNestjsLoggerIndexRoute
+}
+
+const LibsNestjsLoggerRouteChildren: LibsNestjsLoggerRouteChildren = {
+  LibsNestjsLoggerLoggerModuleRoute: LibsNestjsLoggerLoggerModuleRoute,
+  LibsNestjsLoggerLoggerServiceRoute: LibsNestjsLoggerLoggerServiceRoute,
+  LibsNestjsLoggerIndexRoute: LibsNestjsLoggerIndexRoute,
+}
+
+const LibsNestjsLoggerRouteWithChildren =
+  LibsNestjsLoggerRoute._addFileChildren(LibsNestjsLoggerRouteChildren)
+
+interface LibsNestjsObservabilityRouteChildren {
+  LibsNestjsObservabilityMeasureDecoratorRoute: typeof LibsNestjsObservabilityMeasureDecoratorRoute
+  LibsNestjsObservabilityMetricsServiceRoute: typeof LibsNestjsObservabilityMetricsServiceRoute
+  LibsNestjsObservabilityObservabilityModuleRoute: typeof LibsNestjsObservabilityObservabilityModuleRoute
+  LibsNestjsObservabilityTracingRoute: typeof LibsNestjsObservabilityTracingRoute
+  LibsNestjsObservabilityIndexRoute: typeof LibsNestjsObservabilityIndexRoute
+}
+
+const LibsNestjsObservabilityRouteChildren: LibsNestjsObservabilityRouteChildren =
+  {
+    LibsNestjsObservabilityMeasureDecoratorRoute:
+      LibsNestjsObservabilityMeasureDecoratorRoute,
+    LibsNestjsObservabilityMetricsServiceRoute:
+      LibsNestjsObservabilityMetricsServiceRoute,
+    LibsNestjsObservabilityObservabilityModuleRoute:
+      LibsNestjsObservabilityObservabilityModuleRoute,
+    LibsNestjsObservabilityTracingRoute: LibsNestjsObservabilityTracingRoute,
+    LibsNestjsObservabilityIndexRoute: LibsNestjsObservabilityIndexRoute,
+  }
+
+const LibsNestjsObservabilityRouteWithChildren =
+  LibsNestjsObservabilityRoute._addFileChildren(
+    LibsNestjsObservabilityRouteChildren,
+  )
+
+interface LibsNestjsPublisherRouteChildren {
+  LibsNestjsPublisherOutboxRoute: typeof LibsNestjsPublisherOutboxRoute
+  LibsNestjsPublisherPublisherModuleRoute: typeof LibsNestjsPublisherPublisherModuleRoute
+  LibsNestjsPublisherPublisherServiceRoute: typeof LibsNestjsPublisherPublisherServiceRoute
+  LibsNestjsPublisherSubscriberDecoratorRoute: typeof LibsNestjsPublisherSubscriberDecoratorRoute
+  LibsNestjsPublisherIndexRoute: typeof LibsNestjsPublisherIndexRoute
+}
+
+const LibsNestjsPublisherRouteChildren: LibsNestjsPublisherRouteChildren = {
+  LibsNestjsPublisherOutboxRoute: LibsNestjsPublisherOutboxRoute,
+  LibsNestjsPublisherPublisherModuleRoute:
+    LibsNestjsPublisherPublisherModuleRoute,
+  LibsNestjsPublisherPublisherServiceRoute:
+    LibsNestjsPublisherPublisherServiceRoute,
+  LibsNestjsPublisherSubscriberDecoratorRoute:
+    LibsNestjsPublisherSubscriberDecoratorRoute,
+  LibsNestjsPublisherIndexRoute: LibsNestjsPublisherIndexRoute,
+}
+
+const LibsNestjsPublisherRouteWithChildren =
+  LibsNestjsPublisherRoute._addFileChildren(LibsNestjsPublisherRouteChildren)
+
+interface LibsNestjsRateLimitRouteChildren {
+  LibsNestjsRateLimitRateLimitDecoratorRoute: typeof LibsNestjsRateLimitRateLimitDecoratorRoute
+  LibsNestjsRateLimitRateLimitModuleRoute: typeof LibsNestjsRateLimitRateLimitModuleRoute
+  LibsNestjsRateLimitRateLimitServiceRoute: typeof LibsNestjsRateLimitRateLimitServiceRoute
+  LibsNestjsRateLimitIndexRoute: typeof LibsNestjsRateLimitIndexRoute
+}
+
+const LibsNestjsRateLimitRouteChildren: LibsNestjsRateLimitRouteChildren = {
+  LibsNestjsRateLimitRateLimitDecoratorRoute:
+    LibsNestjsRateLimitRateLimitDecoratorRoute,
+  LibsNestjsRateLimitRateLimitModuleRoute:
+    LibsNestjsRateLimitRateLimitModuleRoute,
+  LibsNestjsRateLimitRateLimitServiceRoute:
+    LibsNestjsRateLimitRateLimitServiceRoute,
+  LibsNestjsRateLimitIndexRoute: LibsNestjsRateLimitIndexRoute,
+}
+
+const LibsNestjsRateLimitRouteWithChildren =
+  LibsNestjsRateLimitRoute._addFileChildren(LibsNestjsRateLimitRouteChildren)
+
+interface LibsNestjsResilienceRouteChildren {
+  LibsNestjsResilienceCircuitBreakerRoute: typeof LibsNestjsResilienceCircuitBreakerRoute
+  LibsNestjsResilienceRetryRoute: typeof LibsNestjsResilienceRetryRoute
+  LibsNestjsResilienceTimeoutRoute: typeof LibsNestjsResilienceTimeoutRoute
+  LibsNestjsResilienceIndexRoute: typeof LibsNestjsResilienceIndexRoute
+}
+
+const LibsNestjsResilienceRouteChildren: LibsNestjsResilienceRouteChildren = {
+  LibsNestjsResilienceCircuitBreakerRoute:
+    LibsNestjsResilienceCircuitBreakerRoute,
+  LibsNestjsResilienceRetryRoute: LibsNestjsResilienceRetryRoute,
+  LibsNestjsResilienceTimeoutRoute: LibsNestjsResilienceTimeoutRoute,
+  LibsNestjsResilienceIndexRoute: LibsNestjsResilienceIndexRoute,
+}
+
+const LibsNestjsResilienceRouteWithChildren =
+  LibsNestjsResilienceRoute._addFileChildren(LibsNestjsResilienceRouteChildren)
+
+interface LibsNestjsSchedulerRouteChildren {
+  LibsNestjsSchedulerScheduleDecoratorRoute: typeof LibsNestjsSchedulerScheduleDecoratorRoute
+  LibsNestjsSchedulerSchedulerModuleRoute: typeof LibsNestjsSchedulerSchedulerModuleRoute
+  LibsNestjsSchedulerIndexRoute: typeof LibsNestjsSchedulerIndexRoute
+}
+
+const LibsNestjsSchedulerRouteChildren: LibsNestjsSchedulerRouteChildren = {
+  LibsNestjsSchedulerScheduleDecoratorRoute:
+    LibsNestjsSchedulerScheduleDecoratorRoute,
+  LibsNestjsSchedulerSchedulerModuleRoute:
+    LibsNestjsSchedulerSchedulerModuleRoute,
+  LibsNestjsSchedulerIndexRoute: LibsNestjsSchedulerIndexRoute,
+}
+
+const LibsNestjsSchedulerRouteWithChildren =
+  LibsNestjsSchedulerRoute._addFileChildren(LibsNestjsSchedulerRouteChildren)
+
+interface LibsNestjsServerRouteChildren {
+  LibsNestjsServerControllerDecoratorRoute: typeof LibsNestjsServerControllerDecoratorRoute
+  LibsNestjsServerRequestDecoratorRoute: typeof LibsNestjsServerRequestDecoratorRoute
+  LibsNestjsServerRouteDecoratorRoute: typeof LibsNestjsServerRouteDecoratorRoute
+  LibsNestjsServerServerCreateRoute: typeof LibsNestjsServerServerCreateRoute
+  LibsNestjsServerIndexRoute: typeof LibsNestjsServerIndexRoute
+}
+
+const LibsNestjsServerRouteChildren: LibsNestjsServerRouteChildren = {
+  LibsNestjsServerControllerDecoratorRoute:
+    LibsNestjsServerControllerDecoratorRoute,
+  LibsNestjsServerRequestDecoratorRoute: LibsNestjsServerRequestDecoratorRoute,
+  LibsNestjsServerRouteDecoratorRoute: LibsNestjsServerRouteDecoratorRoute,
+  LibsNestjsServerServerCreateRoute: LibsNestjsServerServerCreateRoute,
+  LibsNestjsServerIndexRoute: LibsNestjsServerIndexRoute,
+}
+
+const LibsNestjsServerRouteWithChildren =
+  LibsNestjsServerRoute._addFileChildren(LibsNestjsServerRouteChildren)
+
+interface LibsNestjsServerlessRouteChildren {
+  LibsNestjsServerlessHandlerDecoratorRoute: typeof LibsNestjsServerlessHandlerDecoratorRoute
+  LibsNestjsServerlessServerlessCreateRoute: typeof LibsNestjsServerlessServerlessCreateRoute
+  LibsNestjsServerlessServerlessModuleRoute: typeof LibsNestjsServerlessServerlessModuleRoute
+  LibsNestjsServerlessIndexRoute: typeof LibsNestjsServerlessIndexRoute
+}
+
+const LibsNestjsServerlessRouteChildren: LibsNestjsServerlessRouteChildren = {
+  LibsNestjsServerlessHandlerDecoratorRoute:
+    LibsNestjsServerlessHandlerDecoratorRoute,
+  LibsNestjsServerlessServerlessCreateRoute:
+    LibsNestjsServerlessServerlessCreateRoute,
+  LibsNestjsServerlessServerlessModuleRoute:
+    LibsNestjsServerlessServerlessModuleRoute,
+  LibsNestjsServerlessIndexRoute: LibsNestjsServerlessIndexRoute,
+}
+
+const LibsNestjsServerlessRouteWithChildren =
+  LibsNestjsServerlessRoute._addFileChildren(LibsNestjsServerlessRouteChildren)
+
+interface LibsNestjsSocialAuthRouteChildren {
+  LibsNestjsSocialAuthSocialAuthModuleRoute: typeof LibsNestjsSocialAuthSocialAuthModuleRoute
+  LibsNestjsSocialAuthSocialAuthServiceRoute: typeof LibsNestjsSocialAuthSocialAuthServiceRoute
+  LibsNestjsSocialAuthIndexRoute: typeof LibsNestjsSocialAuthIndexRoute
+}
+
+const LibsNestjsSocialAuthRouteChildren: LibsNestjsSocialAuthRouteChildren = {
+  LibsNestjsSocialAuthSocialAuthModuleRoute:
+    LibsNestjsSocialAuthSocialAuthModuleRoute,
+  LibsNestjsSocialAuthSocialAuthServiceRoute:
+    LibsNestjsSocialAuthSocialAuthServiceRoute,
+  LibsNestjsSocialAuthIndexRoute: LibsNestjsSocialAuthIndexRoute,
+}
+
+const LibsNestjsSocialAuthRouteWithChildren =
+  LibsNestjsSocialAuthRoute._addFileChildren(LibsNestjsSocialAuthRouteChildren)
+
+interface LibsNestjsStorageRouteChildren {
+  LibsNestjsStorageStorageModuleRoute: typeof LibsNestjsStorageStorageModuleRoute
+  LibsNestjsStorageStorageServiceRoute: typeof LibsNestjsStorageStorageServiceRoute
+  LibsNestjsStorageIndexRoute: typeof LibsNestjsStorageIndexRoute
+}
+
+const LibsNestjsStorageRouteChildren: LibsNestjsStorageRouteChildren = {
+  LibsNestjsStorageStorageModuleRoute: LibsNestjsStorageStorageModuleRoute,
+  LibsNestjsStorageStorageServiceRoute: LibsNestjsStorageStorageServiceRoute,
+  LibsNestjsStorageIndexRoute: LibsNestjsStorageIndexRoute,
+}
+
+const LibsNestjsStorageRouteWithChildren =
+  LibsNestjsStorageRoute._addFileChildren(LibsNestjsStorageRouteChildren)
+
+interface LibsQueryDslRouteChildren {
+  LibsQueryDslBooleanSchemaRoute: typeof LibsQueryDslBooleanSchemaRoute
+  LibsQueryDslDateRangeSchemaRoute: typeof LibsQueryDslDateRangeSchemaRoute
+  LibsQueryDslFilterSchemaRoute: typeof LibsQueryDslFilterSchemaRoute
+  LibsQueryDslListSchemaRoute: typeof LibsQueryDslListSchemaRoute
+  LibsQueryDslPaginationSchemaRoute: typeof LibsQueryDslPaginationSchemaRoute
+  LibsQueryDslRangeSchemaRoute: typeof LibsQueryDslRangeSchemaRoute
+  LibsQueryDslSortSchemaRoute: typeof LibsQueryDslSortSchemaRoute
+  LibsQueryDslIndexRoute: typeof LibsQueryDslIndexRoute
+}
+
+const LibsQueryDslRouteChildren: LibsQueryDslRouteChildren = {
+  LibsQueryDslBooleanSchemaRoute: LibsQueryDslBooleanSchemaRoute,
+  LibsQueryDslDateRangeSchemaRoute: LibsQueryDslDateRangeSchemaRoute,
+  LibsQueryDslFilterSchemaRoute: LibsQueryDslFilterSchemaRoute,
+  LibsQueryDslListSchemaRoute: LibsQueryDslListSchemaRoute,
+  LibsQueryDslPaginationSchemaRoute: LibsQueryDslPaginationSchemaRoute,
+  LibsQueryDslRangeSchemaRoute: LibsQueryDslRangeSchemaRoute,
+  LibsQueryDslSortSchemaRoute: LibsQueryDslSortSchemaRoute,
+  LibsQueryDslIndexRoute: LibsQueryDslIndexRoute,
+}
+
+const LibsQueryDslRouteWithChildren = LibsQueryDslRoute._addFileChildren(
+  LibsQueryDslRouteChildren,
+)
+
+interface LibsReactHooksRouteChildren {
+  LibsReactHooksHookRoute: typeof LibsReactHooksHookRoute
+  LibsReactHooksIndexRoute: typeof LibsReactHooksIndexRoute
+}
+
+const LibsReactHooksRouteChildren: LibsReactHooksRouteChildren = {
+  LibsReactHooksHookRoute: LibsReactHooksHookRoute,
+  LibsReactHooksIndexRoute: LibsReactHooksIndexRoute,
+}
+
+const LibsReactHooksRouteWithChildren = LibsReactHooksRoute._addFileChildren(
+  LibsReactHooksRouteChildren,
+)
+
+interface LibsReactIconsRouteChildren {
+  LibsReactIconsPlaygroundRoute: typeof LibsReactIconsPlaygroundRoute
+  LibsReactIconsIndexRoute: typeof LibsReactIconsIndexRoute
+}
+
+const LibsReactIconsRouteChildren: LibsReactIconsRouteChildren = {
+  LibsReactIconsPlaygroundRoute: LibsReactIconsPlaygroundRoute,
+  LibsReactIconsIndexRoute: LibsReactIconsIndexRoute,
+}
+
+const LibsReactIconsRouteWithChildren = LibsReactIconsRoute._addFileChildren(
+  LibsReactIconsRouteChildren,
+)
+
+interface LibsReactMobileRouteChildren {
+  LibsReactMobileIndexRoute: typeof LibsReactMobileIndexRoute
+  LibsReactMobileComponentsComponentRoute: typeof LibsReactMobileComponentsComponentRoute
+  LibsReactMobileComponentsIndexRoute: typeof LibsReactMobileComponentsIndexRoute
+}
+
+const LibsReactMobileRouteChildren: LibsReactMobileRouteChildren = {
+  LibsReactMobileIndexRoute: LibsReactMobileIndexRoute,
+  LibsReactMobileComponentsComponentRoute:
+    LibsReactMobileComponentsComponentRoute,
+  LibsReactMobileComponentsIndexRoute: LibsReactMobileComponentsIndexRoute,
+}
+
+const LibsReactMobileRouteWithChildren = LibsReactMobileRoute._addFileChildren(
+  LibsReactMobileRouteChildren,
+)
+
+interface LibsReactWebRouteChildren {
+  LibsReactWebAccordionRoute: typeof LibsReactWebAccordionRoute
+  LibsReactWebAlertRoute: typeof LibsReactWebAlertRoute
+  LibsReactWebAvatarRoute: typeof LibsReactWebAvatarRoute
+  LibsReactWebBadgeRoute: typeof LibsReactWebBadgeRoute
+  LibsReactWebBlocksRoute: typeof LibsReactWebBlocksRoute
+  LibsReactWebBoxRoute: typeof LibsReactWebBoxRoute
+  LibsReactWebBreadcrumbRoute: typeof LibsReactWebBreadcrumbRoute
+  LibsReactWebButtonRoute: typeof LibsReactWebButtonRoute
+  LibsReactWebCardRoute: typeof LibsReactWebCardRoute
+  LibsReactWebCheckboxRoute: typeof LibsReactWebCheckboxRoute
+  LibsReactWebColorSchemeRoute: typeof LibsReactWebColorSchemeRoute
+  LibsReactWebConfirmRoute: typeof LibsReactWebConfirmRoute
+  LibsReactWebContainerRoute: typeof LibsReactWebContainerRoute
+  LibsReactWebCurrencyInputRoute: typeof LibsReactWebCurrencyInputRoute
+  LibsReactWebDateInputRoute: typeof LibsReactWebDateInputRoute
+  LibsReactWebDateRangeInputRoute: typeof LibsReactWebDateRangeInputRoute
+  LibsReactWebDocumentInputRoute: typeof LibsReactWebDocumentInputRoute
+  LibsReactWebDropdownMenuRoute: typeof LibsReactWebDropdownMenuRoute
+  LibsReactWebFlexRoute: typeof LibsReactWebFlexRoute
+  LibsReactWebFormRoute: typeof LibsReactWebFormRoute
+  LibsReactWebGridRoute: typeof LibsReactWebGridRoute
+  LibsReactWebI18nRoute: typeof LibsReactWebI18nRoute
+  LibsReactWebInputRoute: typeof LibsReactWebInputRoute
+  LibsReactWebLabelRoute: typeof LibsReactWebLabelRoute
+  LibsReactWebLayoutRoute: typeof LibsReactWebLayoutRoute
+  LibsReactWebLoadingOverlayRoute: typeof LibsReactWebLoadingOverlayRoute
+  LibsReactWebMaskInputRoute: typeof LibsReactWebMaskInputRoute
+  LibsReactWebModalRoute: typeof LibsReactWebModalRoute
+  LibsReactWebNumberInputRoute: typeof LibsReactWebNumberInputRoute
+  LibsReactWebOtpInputRoute: typeof LibsReactWebOtpInputRoute
+  LibsReactWebPaginationRoute: typeof LibsReactWebPaginationRoute
+  LibsReactWebPasswordInputRoute: typeof LibsReactWebPasswordInputRoute
+  LibsReactWebPhoneInputRoute: typeof LibsReactWebPhoneInputRoute
+  LibsReactWebPlaygroundRoute: typeof LibsReactWebPlaygroundRoute
+  LibsReactWebPopoverRoute: typeof LibsReactWebPopoverRoute
+  LibsReactWebProgressRoute: typeof LibsReactWebProgressRoute
+  LibsReactWebProviderRoute: typeof LibsReactWebProviderRoute
+  LibsReactWebRadioRoute: typeof LibsReactWebRadioRoute
+  LibsReactWebSelectRoute: typeof LibsReactWebSelectRoute
+  LibsReactWebSeparatorRoute: typeof LibsReactWebSeparatorRoute
+  LibsReactWebSheetRoute: typeof LibsReactWebSheetRoute
+  LibsReactWebSkeletonRoute: typeof LibsReactWebSkeletonRoute
+  LibsReactWebSliderRoute: typeof LibsReactWebSliderRoute
+  LibsReactWebSwitchRoute: typeof LibsReactWebSwitchRoute
+  LibsReactWebTLoaderRoute: typeof LibsReactWebTLoaderRoute
+  LibsReactWebTableRoute: typeof LibsReactWebTableRoute
+  LibsReactWebTabsRoute: typeof LibsReactWebTabsRoute
+  LibsReactWebTagsInputRoute: typeof LibsReactWebTagsInputRoute
+  LibsReactWebTextareaRoute: typeof LibsReactWebTextareaRoute
+  LibsReactWebThemeRoute: typeof LibsReactWebThemeRoute
+  LibsReactWebToastRoute: typeof LibsReactWebToastRoute
+  LibsReactWebTooltipRoute: typeof LibsReactWebTooltipRoute
+  LibsReactWebTypographyRoute: typeof LibsReactWebTypographyRoute
+  LibsReactWebUploaderRoute: typeof LibsReactWebUploaderRoute
+  LibsReactWebIndexRoute: typeof LibsReactWebIndexRoute
+}
+
+const LibsReactWebRouteChildren: LibsReactWebRouteChildren = {
+  LibsReactWebAccordionRoute: LibsReactWebAccordionRoute,
+  LibsReactWebAlertRoute: LibsReactWebAlertRoute,
+  LibsReactWebAvatarRoute: LibsReactWebAvatarRoute,
+  LibsReactWebBadgeRoute: LibsReactWebBadgeRoute,
+  LibsReactWebBlocksRoute: LibsReactWebBlocksRoute,
+  LibsReactWebBoxRoute: LibsReactWebBoxRoute,
+  LibsReactWebBreadcrumbRoute: LibsReactWebBreadcrumbRoute,
+  LibsReactWebButtonRoute: LibsReactWebButtonRoute,
+  LibsReactWebCardRoute: LibsReactWebCardRoute,
+  LibsReactWebCheckboxRoute: LibsReactWebCheckboxRoute,
+  LibsReactWebColorSchemeRoute: LibsReactWebColorSchemeRoute,
+  LibsReactWebConfirmRoute: LibsReactWebConfirmRoute,
+  LibsReactWebContainerRoute: LibsReactWebContainerRoute,
+  LibsReactWebCurrencyInputRoute: LibsReactWebCurrencyInputRoute,
+  LibsReactWebDateInputRoute: LibsReactWebDateInputRoute,
+  LibsReactWebDateRangeInputRoute: LibsReactWebDateRangeInputRoute,
+  LibsReactWebDocumentInputRoute: LibsReactWebDocumentInputRoute,
+  LibsReactWebDropdownMenuRoute: LibsReactWebDropdownMenuRoute,
+  LibsReactWebFlexRoute: LibsReactWebFlexRoute,
+  LibsReactWebFormRoute: LibsReactWebFormRoute,
+  LibsReactWebGridRoute: LibsReactWebGridRoute,
+  LibsReactWebI18nRoute: LibsReactWebI18nRoute,
+  LibsReactWebInputRoute: LibsReactWebInputRoute,
+  LibsReactWebLabelRoute: LibsReactWebLabelRoute,
+  LibsReactWebLayoutRoute: LibsReactWebLayoutRoute,
+  LibsReactWebLoadingOverlayRoute: LibsReactWebLoadingOverlayRoute,
+  LibsReactWebMaskInputRoute: LibsReactWebMaskInputRoute,
+  LibsReactWebModalRoute: LibsReactWebModalRoute,
+  LibsReactWebNumberInputRoute: LibsReactWebNumberInputRoute,
+  LibsReactWebOtpInputRoute: LibsReactWebOtpInputRoute,
+  LibsReactWebPaginationRoute: LibsReactWebPaginationRoute,
+  LibsReactWebPasswordInputRoute: LibsReactWebPasswordInputRoute,
+  LibsReactWebPhoneInputRoute: LibsReactWebPhoneInputRoute,
+  LibsReactWebPlaygroundRoute: LibsReactWebPlaygroundRoute,
+  LibsReactWebPopoverRoute: LibsReactWebPopoverRoute,
+  LibsReactWebProgressRoute: LibsReactWebProgressRoute,
+  LibsReactWebProviderRoute: LibsReactWebProviderRoute,
+  LibsReactWebRadioRoute: LibsReactWebRadioRoute,
+  LibsReactWebSelectRoute: LibsReactWebSelectRoute,
+  LibsReactWebSeparatorRoute: LibsReactWebSeparatorRoute,
+  LibsReactWebSheetRoute: LibsReactWebSheetRoute,
+  LibsReactWebSkeletonRoute: LibsReactWebSkeletonRoute,
+  LibsReactWebSliderRoute: LibsReactWebSliderRoute,
+  LibsReactWebSwitchRoute: LibsReactWebSwitchRoute,
+  LibsReactWebTLoaderRoute: LibsReactWebTLoaderRoute,
+  LibsReactWebTableRoute: LibsReactWebTableRoute,
+  LibsReactWebTabsRoute: LibsReactWebTabsRoute,
+  LibsReactWebTagsInputRoute: LibsReactWebTagsInputRoute,
+  LibsReactWebTextareaRoute: LibsReactWebTextareaRoute,
+  LibsReactWebThemeRoute: LibsReactWebThemeRoute,
+  LibsReactWebToastRoute: LibsReactWebToastRoute,
+  LibsReactWebTooltipRoute: LibsReactWebTooltipRoute,
+  LibsReactWebTypographyRoute: LibsReactWebTypographyRoute,
+  LibsReactWebUploaderRoute: LibsReactWebUploaderRoute,
+  LibsReactWebIndexRoute: LibsReactWebIndexRoute,
+}
+
+const LibsReactWebRouteWithChildren = LibsReactWebRoute._addFileChildren(
+  LibsReactWebRouteChildren,
+)
+
+interface LibsSagaRouteChildren {
+  LibsSagaSagaRoute: typeof LibsSagaSagaRoute
+  LibsSagaIndexRoute: typeof LibsSagaIndexRoute
+}
+
+const LibsSagaRouteChildren: LibsSagaRouteChildren = {
+  LibsSagaSagaRoute: LibsSagaSagaRoute,
+  LibsSagaIndexRoute: LibsSagaIndexRoute,
+}
+
+const LibsSagaRouteWithChildren = LibsSagaRoute._addFileChildren(
+  LibsSagaRouteChildren,
+)
 
 const rootRouteChildren: RootRouteChildren = {
   MainRoute: MainRouteWithChildren,
-  LibsCommonRoute: LibsCommonRouteWithChildren,
-  LibsUiRoute: LibsUiRouteWithChildren,
+  LibsArchitecturePatternRoute: LibsArchitecturePatternRouteWithChildren,
+  LibsBackendConfigRoute: LibsBackendConfigRouteWithChildren,
+  LibsBackendPatternRoute: LibsBackendPatternRouteWithChildren,
+  LibsCliRoute: LibsCliRouteWithChildren,
+  LibsEntityRoute: LibsEntityRouteWithChildren,
+  LibsExceptionsRoute: LibsExceptionsRouteWithChildren,
+  LibsFrontendConfigRoute: LibsFrontendConfigRouteWithChildren,
+  LibsFrontendPatternRoute: LibsFrontendPatternRouteWithChildren,
+  LibsFrontendPrimitivesPatternRoute:
+    LibsFrontendPrimitivesPatternRouteWithChildren,
+  LibsNestjsCacheRoute: LibsNestjsCacheRouteWithChildren,
+  LibsNestjsConfigRoute: LibsNestjsConfigRouteWithChildren,
+  LibsNestjsContextRoute: LibsNestjsContextRouteWithChildren,
+  LibsNestjsDatabaseRoute: LibsNestjsDatabaseRouteWithChildren,
+  LibsNestjsIamRoute: LibsNestjsIamRouteWithChildren,
+  LibsNestjsIdempotencyRoute: LibsNestjsIdempotencyRouteWithChildren,
+  LibsNestjsLockRoute: LibsNestjsLockRouteWithChildren,
+  LibsNestjsLoggerRoute: LibsNestjsLoggerRouteWithChildren,
+  LibsNestjsObservabilityRoute: LibsNestjsObservabilityRouteWithChildren,
+  LibsNestjsPublisherRoute: LibsNestjsPublisherRouteWithChildren,
+  LibsNestjsRateLimitRoute: LibsNestjsRateLimitRouteWithChildren,
+  LibsNestjsResilienceRoute: LibsNestjsResilienceRouteWithChildren,
+  LibsNestjsSchedulerRoute: LibsNestjsSchedulerRouteWithChildren,
+  LibsNestjsServerRoute: LibsNestjsServerRouteWithChildren,
+  LibsNestjsServerlessRoute: LibsNestjsServerlessRouteWithChildren,
+  LibsNestjsSocialAuthRoute: LibsNestjsSocialAuthRouteWithChildren,
+  LibsNestjsStorageRoute: LibsNestjsStorageRouteWithChildren,
+  LibsQueryDslRoute: LibsQueryDslRouteWithChildren,
+  LibsReactHooksRoute: LibsReactHooksRouteWithChildren,
+  LibsReactIconsRoute: LibsReactIconsRouteWithChildren,
+  LibsReactMobileRoute: LibsReactMobileRouteWithChildren,
+  LibsReactWebRoute: LibsReactWebRouteWithChildren,
+  LibsSagaRoute: LibsSagaRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

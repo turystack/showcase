@@ -59,7 +59,7 @@ export function CodeBlock({
 							className={cn(
 								'px-4 py-2 text-xs transition-colors',
 								i === activeTab
-									? 'border-tury-cyan border-b-2 text-tury-cyan'
+									? 'border-lib border-b-2 text-lib'
 									: 'text-zinc-400 hover:text-zinc-200',
 							)}
 							key={tab.label}

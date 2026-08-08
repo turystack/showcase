@@ -7,7 +7,9 @@
 
 @plugin "tailwindcss-animate";
 
-@variant dark (&:is(.dark *));
+@variant dark
+(
+&:is(.dark *));
 
 @theme inline {
 	--color-background: var(--background);
@@ -31,10 +33,46 @@
 	--color-ring: var(--ring);
 	--color-tury-cyan: var(--tury-cyan);
 	--color-tury-green: var(--tury-green);
+	--color-tury-lime: var(--tury-lime);
+	--color-tury-violet: var(--tury-violet);
+	--color-tury-slate: var(--tury-slate);
 	--color-tury-orange: var(--tury-orange);
 	--color-tury-pink: var(--tury-pink);
 	--color-tury-yellow: var(--tury-yellow);
 	--color-tury-purple: var(--tury-purple);
+	--color-tury-blue: var(--tury-blue);
+	--color-tury-red: var(--tury-red);
+	--color-tury-teal: var(--tury-teal);
+	--color-tury-indigo: var(--tury-indigo);
+	--color-tury-amber: var(--tury-amber);
+	--color-tury-rose: var(--tury-rose);
+	--color-tury-charcoal: var(--tury-charcoal);
+	--color-tury-sand: var(--tury-sand);
+	--color-tury-taupe: var(--tury-taupe);
+	--color-tury-terracotta: var(--tury-terracotta);
+	--color-tury-olive: var(--tury-olive);
+	--color-tury-ochre: var(--tury-ochre);
+	--color-tury-mint: var(--tury-mint);
+	--color-tury-lavender: var(--tury-lavender);
+	--color-tury-peach: var(--tury-peach);
+	--color-tury-emerald: var(--tury-emerald);
+	--color-tury-navy: var(--tury-navy);
+	--color-tury-burgundy: var(--tury-burgundy);
+	--color-tury-fuchsia: var(--tury-fuchsia);
+	--color-tury-electric: var(--tury-electric);
+	--color-tury-sulfur: var(--tury-sulfur);
+
+	/* Accent da lib ativa nas páginas de docs; fallback = cor da marca */
+	--color-lib: var(--lib-accent, var(--tury-green));
+
+	--color-sidebar: var(--sidebar);
+	--color-sidebar-foreground: var(--sidebar-foreground);
+	--color-sidebar-primary: var(--sidebar-primary);
+	--color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+	--color-sidebar-accent: var(--sidebar-accent);
+	--color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+	--color-sidebar-border: var(--sidebar-border);
+	--color-sidebar-ring: var(--sidebar-ring);
 
 	--radius-lg: var(--radius);
 	--radius-md: calc(var(--radius) - 2px);
@@ -75,23 +113,103 @@
 	--ring: hsl(142 70% 40%);
 	--radius: 0rem;
 
-	--tury-cyan: hsl(142 70% 40%);
+	--sidebar: hsl(30 10% 98%);
+	--sidebar-foreground: hsl(30 8% 10%);
+	--sidebar-primary: hsl(30 8% 10%);
+	--sidebar-primary-foreground: hsl(30 10% 98%);
+	--sidebar-accent: hsl(30 6% 92%);
+	--sidebar-accent-foreground: hsl(30 8% 10%);
+	--sidebar-border: hsl(30 8% 88%);
+	--sidebar-ring: hsl(142 70% 40%);
+
+	--tury-slate: hsl(220 10% 50%);
+	--tury-cyan: hsl(190 90% 50%);
+	--tury-blue: hsl(210 90% 55%);
+	--tury-indigo: hsl(235 80% 60%);
+
+	--tury-purple: hsl(265 75% 65%);
+	--tury-violet: hsl(285 75% 65%);
+	--tury-pink: hsl(320 85% 60%);
+	--tury-rose: hsl(345 80% 60%);
+
+	--tury-red: hsl(5 85% 55%);
 	--tury-orange: hsl(25 95% 55%);
-	--tury-green: hsl(142 70% 40%);
-	--tury-pink: hsl(330 85% 60%);
-	--tury-yellow: hsl(45 95% 55%);
-	--tury-purple: hsl(270 75% 60%);
+	--tury-amber: hsl(38 95% 55%);
+	--tury-yellow: hsl(55 95% 60%);
+
+	--tury-lime: hsl(85 70% 50%);
+	--tury-green: hsl(135 65% 45%);
+	--tury-teal: hsl(165 70% 40%);
 
 	--hero-gradient: linear-gradient(135deg, hsl(142 70% 40%), hsl(142 60% 25%));
-	--glow-cyan: 0 0 60px hsl(142 70% 40% / 0.15);
+
+	/* Tons Neutros e Profundos */
+	--tury-charcoal: hsl(200 25% 60%);
+	--tury-sand: hsl(40 80% 58%);
+	--tury-taupe: hsl(25 15% 45%);
+
+	/* Tons de Outono/Terrosos */
+	--tury-terracotta: hsl(15 60% 45%);
+	--tury-olive: hsl(75 55% 45%);
+	--tury-ochre: hsl(45 90% 50%);
+
+	/* Tons Pastel e Suaves */
+	--tury-mint: hsl(155 70% 50%);
+	--tury-lavender: hsl(250 85% 70%);
+	--tury-peach: hsl(18 90% 62%);
+
+	/* Tons "Gema" e Oceânicos */
+	--tury-emerald: hsl(160 85% 42%);
+	--tury-navy: hsl(225 60% 20%);
+	--tury-burgundy: hsl(345 55% 30%);
+
+	/* Tons Neon e Vibrantes Distintos */
+	--tury-fuchsia: hsl(310 95% 50%);
+	--tury-electric: hsl(200 100% 50%);
+	--tury-sulfur: hsl(65 90% 50%);
+
+	--glow-slate: 0 0 60px hsl(220 10% 50% / 0.15);
+	--glow-cyan: 0 0 60px hsl(190 90% 50% / 0.15);
+	--glow-blue: 0 0 60px hsl(210 90% 55% / 0.15);
+	--glow-indigo: 0 0 60px hsl(235 80% 60% / 0.15);
+
+	--glow-purple: 0 0 60px hsl(265 75% 65% / 0.15);
+	--glow-violet: 0 0 60px hsl(285 75% 65% / 0.15);
+	--glow-pink: 0 0 60px hsl(320 85% 60% / 0.15);
+	--glow-rose: 0 0 60px hsl(345 80% 60% / 0.15);
+
+	--glow-red: 0 0 60px hsl(5 85% 55% / 0.15);
 	--glow-orange: 0 0 60px hsl(25 95% 55% / 0.15);
-	--glow-green: 0 0 60px hsl(142 70% 40% / 0.15);
-	--glow-pink: 0 0 60px hsl(330 85% 60% / 0.15);
-	--glow-yellow: 0 0 60px hsl(45 95% 55% / 0.15);
-	--glow-purple: 0 0 60px hsl(270 75% 60% / 0.15);
+	--glow-amber: 0 0 60px hsl(38 95% 55% / 0.15);
+	--glow-yellow: 0 0 70px hsl(55 95% 60% / 0.25);
+
+	--glow-lime: 0 0 60px hsl(85 70% 50% / 0.15);
+	--glow-green: 0 0 60px hsl(135 65% 45% / 0.15);
+	--glow-teal: 0 0 60px hsl(165 70% 40% / 0.15);
+	--glow-fuchsia: 0 0 60px hsl(310 95% 50% / 0.15);
+	--glow-burgundy: 0 0 60px hsl(345 55% 30% / 0.15);
+	--glow-sulfur: 0 0 60px hsl(65 90% 50% / 0.15);
+	--glow-electric: 0 0 60px hsl(200 100% 50% / 0.15);
+	--glow-emerald: 0 0 60px hsl(160 85% 42% / 0.15);
+	--glow-lavender: 0 0 60px hsl(250 85% 70% / 0.15);
+	--glow-mint: 0 0 60px hsl(155 70% 50% / 0.15);
+	--glow-peach: 0 0 60px hsl(18 90% 62% / 0.15);
+	--glow-sand: 0 0 60px hsl(40 80% 58% / 0.15);
+	--glow-olive: 0 0 60px hsl(75 55% 45% / 0.15);
+	--glow-ochre: 0 0 60px hsl(45 90% 50% / 0.15);
+	--glow-charcoal: 0 0 60px hsl(200 25% 60% / 0.15);
 }
 
 .dark {
+	--sidebar: hsl(30 6% 9%);
+	--sidebar-foreground: hsl(30 8% 92%);
+	--sidebar-primary: hsl(142 65% 45%);
+	--sidebar-primary-foreground: hsl(30 8% 92%);
+	--sidebar-accent: hsl(30 5% 14%);
+	--sidebar-accent-foreground: hsl(30 8% 92%);
+	--sidebar-border: hsl(30 5% 16%);
+	--sidebar-ring: hsl(142 65% 45%);
+
 	--background: hsl(30 6% 6%);
 	--foreground: hsl(30 8% 92%);
 	--card: hsl(30 6% 9%);
@@ -120,6 +238,7 @@
 	--glow-pink: 0 0 80px hsl(330 85% 60% / 0.2);
 	--glow-yellow: 0 0 80px hsl(45 95% 55% / 0.2);
 	--glow-purple: 0 0 80px hsl(270 75% 60% / 0.2);
+	--glow-rose: 0 0 80px hsl(350 85% 60% / 0.2);
 }
 
 @utility container {

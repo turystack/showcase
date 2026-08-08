@@ -31,6 +31,16 @@ export function PropsTable({ props }: PropsTableProps) {
 					</tr>
 				</thead>
 				<tbody>
+					{props.length === 0 && (
+						<tr>
+							<td
+								className="px-4 py-5 text-center text-muted-foreground"
+								colSpan={4}
+							>
+								No semantic props.
+							</td>
+						</tr>
+					)}
 					{props.map((prop, i) => (
 						<tr
 							className={i < props.length - 1 ? 'border-border border-b' : ''}
@@ -45,7 +55,7 @@ export function PropsTable({ props }: PropsTableProps) {
 								)}
 							</td>
 							<td className="px-4 py-3">
-								<code className="rounded bg-muted px-1.5 py-0.5 text-tury-cyan text-xs">
+								<code className="rounded bg-muted px-1.5 py-0.5 text-lib text-xs">
 									{prop.type}
 								</code>
 							</td>

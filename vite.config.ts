@@ -15,15 +15,14 @@ export default defineConfig({
 		react(),
 	],
 	resolve: {
-		dedupe: ["react", "react-dom"],
 		alias: {
 			'@': path.resolve(__dirname, './src'),
 		},
 	},
 	server: {
-		port: 3000,
-		watch: {
-			ignored: ['**/src/routeTree.gen.ts'],
+		fs: {
+			allow: ['..'],
 		},
+		port: 3000,
 	},
 })

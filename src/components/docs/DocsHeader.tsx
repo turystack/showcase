@@ -1,6 +1,10 @@
 import { Link } from '@tanstack/react-router'
-import { ChevronRight, Github, Menu, Terminal, X } from 'lucide-react'
+import { ChevronRight, Github, Menu, X } from 'lucide-react'
 
+import { LibrarySwitcher } from './LibrarySwitcher'
+
+import { TuryMark } from '@/components/Logo'
+import { SpotlightTrigger } from '@/components/SpotlightSearch'
 import { ThemeToggle } from '@/components/ThemeToggle'
 
 type DocsHeaderProps = {
@@ -33,9 +37,9 @@ export function DocsHeader({
 						className="flex items-center gap-2 hover:opacity-80"
 						to="/"
 					>
-						<Terminal className="h-5 w-5 text-tury-cyan" />
+						<TuryMark size={20} />
 						<span className="font-bold font-display text-sm tracking-tight">
-							tury<span className="text-tury-cyan">.dev</span>
+							tury<span className="text-tury-green">.dev</span>
 						</span>
 					</Link>
 
@@ -45,24 +49,32 @@ export function DocsHeader({
 								className="text-muted-foreground"
 								size={14}
 							/>
-							<span className="font-medium text-foreground text-sm">
-								{libraryName}
-							</span>
+							<LibrarySwitcher current={libraryName} />
 						</>
 					)}
 				</div>
 
-				<div className="ml-auto flex items-center gap-3">
-					<a
-						className="text-muted-foreground transition-colors hover:text-foreground"
-						href={githubUrl}
-						rel="noreferrer"
-						target="_blank"
-					>
-						<Github size={18} />
-					</a>
+				<div className="mx-auto hidden md:block">
+					<SpotlightTrigger className="w-[600px]" />
+				</div>
 
-					<ThemeToggle />
+				<div className="ml-auto flex items-center gap-3 md:ml-0">
+					<div className="md:hidden">
+						<SpotlightTrigger />
+					</div>
+
+					<div className="flex items-center gap-1">
+						<a
+							className="cursor-pointer rounded-lg p-2 text-muted-foreground transition-colors hover:bg-secondary hover:text-foreground"
+							href={githubUrl}
+							rel="noreferrer"
+							target="_blank"
+						>
+							<Github size={18} />
+						</a>
+
+						<ThemeToggle />
+					</div>
 				</div>
 			</div>
 		</header>
