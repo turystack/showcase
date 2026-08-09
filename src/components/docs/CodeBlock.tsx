@@ -16,13 +16,6 @@ type CodeBlockProps = {
 	tabs?: Tab[]
 }
 
-function stripComments(code: string): string {
-	return code
-		.split('\n')
-		.filter((line) => !line.trim().startsWith('//'))
-		.join('\n')
-}
-
 export function CodeBlock({
 	code,
 	language = 'tsx',
@@ -34,18 +27,17 @@ export function CodeBlock({
 	const [highlightedHtml, setHighlightedHtml] = useState<string | null>(null)
 
 	const activeCode = tabs ? tabs[activeTab].code : (code ?? '')
-	const cleanedCode = stripComments(activeCode)
 
 	useEffect(() => {
 		setHighlightedHtml(null)
-		highlight(cleanedCode, language).then(setHighlightedHtml)
+		highlight(activeCode, language).then(setHighlightedHtml)
 	}, [
-		cleanedCode,
+		activeCode,
 		language,
 	])
 
 	const handleCopy = async () => {
-		await navigator.clipboard.writeText(cleanedCode)
+		await navigator.clipboard.writeText(activeCode)
 		setCopied(true)
 		setTimeout(() => setCopied(false), 2000)
 	}
@@ -98,7 +90,7 @@ export function CodeBlock({
 							}}
 						/>
 					) : (
-						<code className="text-zinc-100">{cleanedCode}</code>
+						<code className="text-zinc-100">{activeCode}</code>
 					)}
 				</pre>
 			</div>
