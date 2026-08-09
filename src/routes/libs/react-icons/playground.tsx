@@ -162,12 +162,12 @@ function Page() {
 					</div>
 
 					{/*
-					 * One scrolling row rather than a wrapping block: 38 categories
-					 * wrapped would take four rows off the top of the catalogue, and
-					 * this bar is supposed to stay out of the way.
+					 * Every category on screen at once. Hidden behind a scrollbar,
+					 * the ones past the fold were unreachable without knowing they
+					 * were there — which is the opposite of what a filter is for.
 					 */}
 					<div
-						className="-mx-1 flex shrink-0 gap-2 overflow-x-auto px-1 pb-1"
+						className="flex shrink-0 flex-wrap gap-1.5"
 						data-testid="icon-category-filter"
 					>
 						<CategoryChip
@@ -383,7 +383,9 @@ function CategoryChip({ active, count, label, onSelect }: CategoryChipProps) {
 		<button
 			aria-pressed={active}
 			className={cn(
-				'shrink-0 whitespace-nowrap rounded-full border px-3 py-1.5 font-medium text-xs transition-colors focus-visible:outline-2 focus-visible:outline-lib focus-visible:outline-offset-2',
+				// Tight, because 39 of these share the fixed header with the search
+				// field — every row they take is a row of icons you cannot see.
+				'whitespace-nowrap rounded-full border px-2.5 py-1 font-medium text-xs transition-colors focus-visible:outline-2 focus-visible:outline-lib focus-visible:outline-offset-2',
 				active
 					? 'border-lib bg-lib/10 text-foreground'
 					: 'border-border text-muted-foreground hover:border-lib/50 hover:text-foreground',
