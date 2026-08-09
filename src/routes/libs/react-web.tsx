@@ -9,16 +9,14 @@ function Page() {
 	const isPlayground = matchRoute({
 		to: '/libs/react-web/playground',
 	})
-	const isBlocks = matchRoute({
-		to: '/libs/react-web/blocks',
-	})
 
 	return (
 		<LibraryLayout
 			contentClassName={
-				isPlayground || isBlocks ? 'max-w-none py-8 px-10' : undefined
+				isPlayground ? 'max-w-none px-6 py-8 lg:px-10' : undefined
 			}
-			githubUrl="https://github.com/turystack/ui"
+			fillViewport={Boolean(isPlayground)}
+			githubUrl="https://github.com/turystack/react-web"
 			libraryName="@turystack/react-web"
 			sections={uiSections}
 		>

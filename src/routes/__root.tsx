@@ -1,14 +1,14 @@
 import { createRootRoute, Outlet } from '@tanstack/react-router'
-import { Provider } from '@turystack/ui'
+import { TuryProvider } from '@turystack/react-web'
 
 import { SpotlightSearch } from '@/components/SpotlightSearch'
 
 export const Route = createRootRoute({
 	component: () => (
-		<Provider defaultColorScheme="system">
+		<TuryProvider defaultColorScheme="system">
 			<SpotlightSearch />
 			<Outlet />
-		</Provider>
+		</TuryProvider>
 	),
 
 	notFoundComponent: () => (

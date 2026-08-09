@@ -1,5 +1,5 @@
 import { Link } from '@tanstack/react-router'
-import { DropdownMenu } from '@turystack/ui'
+import { DropdownMenu } from '@turystack/react-web'
 import { Check, ChevronDown, Search } from 'lucide-react'
 import { useState } from 'react'
 

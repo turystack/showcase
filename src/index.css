@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap");
 
-@import "@turystack/ui/index.css";
+@import "@turystack/react-web/styles.css";
 @import "tailwindcss";
 
-@source "../node_modules/@turystack/ui/src";
+@source "../node_modules/@turystack/react-web/src";
 
 @plugin "tailwindcss-animate";
 

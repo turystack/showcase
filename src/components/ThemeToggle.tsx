@@ -1,4 +1,4 @@
-import { useColorScheme } from '@turystack/ui'
+import { useColorScheme } from '@turystack/react-web'
 import { Moon, Sun } from 'lucide-react'
 
 export function ThemeToggle() {
