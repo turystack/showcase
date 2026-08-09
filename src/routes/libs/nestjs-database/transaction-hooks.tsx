@@ -25,6 +25,7 @@ function Page() {
 				<h2 className="font-display font-semibold text-xl">Signature</h2>
 				<CodeBlock
 					code={`import {
+  getCurrentTx,
   onAfterCommit,
   onBeforeCommit,
   transactionState,
@@ -32,14 +33,19 @@ function Page() {
   type BeforeCommitHook,
 } from '@turystack/nestjs-database'
 
-onBeforeCommit(hook: (tx: unknown) => Promise<void> | void): boolean
+// BeforeCommitHook — receives the transaction handle in flight
+onBeforeCommit(hook: (tx: ResolvedDatabase) => Promise<void> | void): boolean
+
+// AfterCommitHook — takes nothing; the transaction is already gone
 onAfterCommit(hook: () => Promise<void> | void): boolean
-transactionState<T>(key: symbol, create: () => T): T | undefined`}
+
+transactionState<T>(key: symbol, create: () => T): T | undefined
+getCurrentTx(): ResolvedDatabase | undefined`}
 					filename="transaction-context.d.ts"
 					language="ts"
 				/>
 				<p className="text-muted-foreground text-sm">
-					All three report <code>false</code>/<code>undefined</code> outside a
+					All of them report <code>false</code>/<code>undefined</code> outside a
 					transaction, so a caller can fall back to acting immediately instead
 					of guarding first.
 				</p>

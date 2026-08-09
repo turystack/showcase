@@ -25,7 +25,9 @@ function Page() {
 				<CodeBlock
 					code={`import { Serverless } from '@turystack/nestjs-serverless'
 
-Serverless.create(module: Type<any>): (event: unknown, context: unknown) => Promise<unknown>`}
+Serverless.create(
+  module: new (...args: unknown[]) => unknown,
+): (event: unknown, context: unknown) => Promise<unknown>`}
 					filename="serverless.d.ts"
 					language="ts"
 				/>
@@ -68,8 +70,24 @@ export const handler = Serverless.create(AppModule)`}
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Parses incoming events and routes them to the correct handler
-							based on event source
+							One lambda, one handler — the app must declare exactly one
+							@Handler class, and the cold start throws otherwise
+						</span>
+					</li>
+					<li className="flex items-start gap-2">
+						<span className="mt-1 text-lib">→</span>
+						<span>
+							Parses the incoming event into records and runs execute once per
+							record, each in its own context scope; an unrecognized event is
+							logged and skipped
+						</span>
+					</li>
+					<li className="flex items-start gap-2">
+						<span className="mt-1 text-lib">→</span>
+						<span>
+							A record that throws is logged and — on the SQS-delivered sources
+							— returned as a batchItemFailure, so only it is redelivered; the
+							rest of the batch still runs
 						</span>
 					</li>
 					<li className="flex items-start gap-2">

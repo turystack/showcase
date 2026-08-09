@@ -269,8 +269,8 @@ async generate() {}`}
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Generates @ApiParam, @ApiQuery, @ApiBody, @ApiResponse, and
-							@ApiExtraModels from Zod schemas
+							Generates @ApiParam, @ApiQuery, @ApiHeader, @ApiBody, and
+							@ApiResponse from Zod schemas
 						</span>
 					</li>
 					<li className="flex items-start gap-2">

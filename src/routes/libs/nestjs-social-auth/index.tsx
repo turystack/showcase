@@ -57,8 +57,9 @@ function Page() {
 						<span>
 							Normalized profile output:{' '}
 							<code className="font-mono text-sm">
-								{'{ id, name, email, avatar }'}
-							</code>
+								{'{ provider, id, name, email, avatar }'}
+							</code>{' '}
+							— a union discriminated by <code>provider</code>
 						</span>
 					</li>
 					<li className="flex items-start gap-2">
@@ -85,7 +86,11 @@ function Page() {
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
-						<span>Factory-based registration with async config support</span>
+						<span>
+							Registration by plain options object or by a{' '}
+							<code className="font-mono text-sm">(config) =&gt; options</code>{' '}
+							factory
+						</span>
 					</li>
 				</ul>
 			</div>

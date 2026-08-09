@@ -13,40 +13,40 @@ const contextMethods = [
 			'Validates the content type and signs a POST policy for a temp key. Output discriminated by visibility.',
 		name: 'signUpload',
 		required: true,
-		type: '({ context, fileName, contentType, ownerId }) => SignUploadOutputOf<C>',
+		type: '({ context, fileName, contentType, ownerId }) => Promise<SignUploadOutputOf<C>>',
 	},
 	{
 		description:
 			'Existence check, then copies temp → final key. url is string (PUBLIC) or null (PRIVATE).',
 		name: 'commitUpload',
 		required: true,
-		type: '({ context, sourceKey, targetId?, secondaryTargetId? }) => CommitUploadOutputOf<C>',
+		type: '({ context, sourceKey, targetId?, secondaryTargetId? }) => Promise<CommitUploadOutputOf<C>>',
 	},
 	{
 		description:
 			'For update inputs: temp key → commit and return the public URL; anything else → pass through.',
 		name: 'resolvePublicUpload',
 		required: true,
-		type: '({ context, value, targetId?, secondaryTargetId? }) => string | null | undefined',
+		type: '({ context, value, targetId?, secondaryTargetId? }) => Promise<string | null | undefined>',
 	},
 	{
 		description: 'Commit a PRIVATE upload and return { key, fileName }.',
 		name: 'resolvePrivateUpload',
 		required: true,
-		type: '({ context, value, targetId?, secondaryTargetId? }) => { key, fileName }',
+		type: '({ context, value, targetId?, secondaryTargetId? }) => Promise<{ key, fileName }>',
 	},
 	{
 		description:
 			'Presigned GET with the original file name restored via Content-Disposition.',
 		name: 'signDownload',
 		required: true,
-		type: '({ key }) => { downloadUrl, fileName, expiresIn }',
+		type: '({ key }) => Promise<{ downloadUrl, fileName, expiresIn }>',
 	},
 	{
 		description: 'Deletes an object from the app bucket.',
 		name: 'deleteByKey',
 		required: true,
-		type: '(key) => void',
+		type: '(key) => Promise<void>',
 	},
 ]
 
@@ -115,26 +115,26 @@ function Page() {
 				</p>
 				<CodeBlock
 					code={`@Injectable()
-export class UserService {
+export class UpdateUserUseCase {
   constructor(
     private readonly storage: StorageService,
     private readonly db: Database,
   ) {}
 
-  async updateUser(userId: string, input: UpdateUserInput) {
+  async execute(input: UpdateUserInput) {
     const avatar = await this.storage.resolvePublicUpload({
       context: 'USER_AVATAR',
       value: input.avatar,
-      targetId: userId, // forwarded to buildFinalKey
+      targetId: input.userId, // forwarded to buildFinalKey
     })
 
     return this.db.user.update({
-      where: { id: userId },
+      where: { id: input.userId },
       data: { name: input.name, avatar },
     })
   }
 }`}
-					filename="user.service.ts"
+					filename="update-user.use-case.ts"
 					language="ts"
 				/>
 			</div>
@@ -150,29 +150,37 @@ export class UserService {
 				</p>
 				<CodeBlock
 					code={`@Injectable()
-export class UserDocumentService {
+export class AttachUserDocumentUseCase {
   constructor(
     private readonly storage: StorageService,
     private readonly db: Database,
   ) {}
 
-  async attachDocument(userId: string, input: AttachDocumentInput) {
+  async execute(input: AttachDocumentInput) {
     // commits temp → private/users/{userId}/user-document/... and returns { key, fileName }
     const document = await this.storage.resolvePrivateUpload({
       context: 'USER_DOCUMENT',
       value: input.document, // temp key from signUpload
-      targetId: userId, // forwarded to buildFinalKey
+      targetId: input.userId, // forwarded to buildFinalKey
     })
 
     return this.db.user.update({
-      where: { id: userId },
+      where: { id: input.userId },
       data: { documentKey: document.key, documentFileName: document.fileName },
     })
   }
+}
 
-  async downloadDocument(userId: string) {
+@Injectable()
+export class DownloadUserDocumentUseCase {
+  constructor(
+    private readonly storage: StorageService,
+    private readonly db: Database,
+  ) {}
+
+  async execute(input: DownloadDocumentInput) {
     const { documentKey } = await this.db.user.findUniqueOrThrow({
-      where: { id: userId },
+      where: { id: input.userId },
     })
 
     // presigned GET; Content-Disposition restores the original file name
@@ -180,7 +188,7 @@ export class UserDocumentService {
     // { downloadUrl, fileName, expiresIn }
   }
 }`}
-					filename="user-document.service.ts"
+					filename="user-document.use-cases.ts"
 					language="ts"
 				/>
 			</div>

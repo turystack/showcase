@@ -54,7 +54,9 @@ function Page() {
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
-						<span>Sliding window counter algorithm</span>
+						<span>
+							Atomic counter per key, expiring with the configured window
+						</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>

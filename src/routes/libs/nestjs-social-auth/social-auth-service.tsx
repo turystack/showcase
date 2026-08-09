@@ -95,40 +95,59 @@ resolveIdentity<P extends SocialAuthProvider>(provider: P, token: string): Promi
 					code={`import { Injectable } from '@nestjs/common'
 import {
   SocialAuthService,
-  SocialAuthProvider,
+  type SocialAuthProfile,
+  type SocialAuthProvider,
 } from '@turystack/nestjs-social-auth'
 
+export type LoginWithSocialInput = {
+  provider: SocialAuthProvider
+  token: string
+}
+
 @Injectable()
-export class AuthService {
-  constructor(private readonly socialAuth: SocialAuthService) {}
+export class LoginWithSocialUseCase {
+  constructor(
+    private readonly socialAuth: SocialAuthService,
+    private readonly users: UserRepository,
+    private readonly tokens: TokenService,
+  ) {}
 
-  async loginWithSocial(provider: SocialAuthProvider, token: string) {
-    const profile = await this.socialAuth.resolveIdentity(provider, token)
+  async execute(input: LoginWithSocialInput) {
+    // Invalid, expired, or unconfigured provider → SocialAuthUnauthorizedException
+    const profile = await this.socialAuth.resolveIdentity(
+      input.provider,
+      input.token,
+    )
 
-    const user = await this.userService.findOrCreate({
+    const user = await this.users.findOrCreate({
       socialId: profile.id,
       name: profile.name,
       email: profile.email,
       avatar: profile.avatar,
     })
 
-    return this.issueJwt(user)
+    return this.tokens.issue(user)
   }
+}
 
-  // Narrowing via the provider discriminant:
-  async handleProfile(profile: SocialAuthProfile) {
-    if (profile.provider === 'APPLE') {
-      // profile.name and profile.avatar are typed null here
-    }
+// Narrowing via the provider discriminant:
+function describe(profile: SocialAuthProfile) {
+  if (profile.provider === 'APPLE') {
+    // profile.name and profile.avatar are typed null here
   }
 }`}
-					filename="auth.service.ts"
+					filename="login-with-social.use-case.ts"
 					language="ts"
 				/>
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">SocialAuthInput</h2>
+				<h2 className="font-display font-semibold text-xl">
+					resolveIdentity parameters
+				</h2>
+				<p className="text-muted-foreground">
+					Two positional arguments — there is no options object.
+				</p>
 				<PropsTable props={inputProps} />
 			</div>
 
@@ -179,10 +198,10 @@ export class AuthService {
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							<strong>Apple</strong> — verifies ID token JWT via Apple JWKS
-							(ES256). Returns id and email. Name and avatar are not available
-							in the token — name is only sent on the first sign-in via the
-							frontend.
+							<strong>Apple</strong> — verifies ID token JWT via Apple JWKS,
+							checking issuer and audience. Returns id and email. Name and
+							avatar are not available in the token — name is only sent on the
+							first sign-in via the frontend.
 						</span>
 					</li>
 				</ul>

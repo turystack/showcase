@@ -38,23 +38,33 @@ function Page() {
 					controller to protect all routes.
 				</p>
 				<CodeBlock
-					code={`import { Controller, Route, Request } from '@turystack/nestjs-server'
+					code={`import { Controller, Route, Request, createRequestSchema, type RequestInput } from '@turystack/nestjs-server'
 import { Auth, AuthenticatedProfile } from '@turystack/nestjs-iam'
+import type { IamProfile } from '@turystack/nestjs-iam'
+import { z } from 'zod'
+
+const getOrganizationSchema = createRequestSchema({
+  params: z.object({ organizationId: z.string().uuid() }),
+})
+
+const createOrganizationSchema = createRequestSchema({
+  body: z.object({ name: z.string() }),
+})
 
 @Controller({ path: 'organizations', tag: 'Organizations' })
 @Auth()
 export class OrganizationController {
   @Route({ method: 'GET', path: ':organizationId', summary: 'Get Organization', description: 'Returns a organization by ID.' })
-  getOrganization(@Request() { params }) {
-    return this.organizationService.getOrganization(params.organizationId)
+  getOrganization(@Request(getOrganizationSchema) req: RequestInput<typeof getOrganizationSchema>) {
+    return this.organizationService.getOrganization(req.params.organizationId)
   }
 
   @Route({ method: 'POST', summary: 'Create Organization', description: 'Creates a new organization.' })
   createOrganization(
-    @AuthenticatedProfile() profile,
-    @Request() { body },
+    @AuthenticatedProfile() profile: IamProfile,
+    @Request(createOrganizationSchema) req: RequestInput<typeof createOrganizationSchema>,
   ) {
-    return this.organizationService.createOrganization(profile.userId, body)
+    return this.organizationService.createOrganization(profile.userId, req.body)
   }
 }`}
 					filename="organization.controller.ts"
@@ -71,25 +81,35 @@ export class OrganizationController {
 					methods for controllers that mix public and private routes.
 				</p>
 				<CodeBlock
-					code={`import { Controller, Route, Request } from '@turystack/nestjs-server'
+					code={`import { Controller, Route, Request, createRequestSchema, type RequestInput } from '@turystack/nestjs-server'
 import { Auth, AuthenticatedProfile } from '@turystack/nestjs-iam'
+import type { IamProfile } from '@turystack/nestjs-iam'
+import { z } from 'zod'
+
+const getPublicInfoSchema = createRequestSchema({
+  params: z.object({ organizationId: z.string().uuid() }),
+})
+
+const createOrganizationSchema = createRequestSchema({
+  body: z.object({ name: z.string() }),
+})
 
 @Controller({ path: 'organizations', tag: 'Organizations' })
 export class OrganizationController {
   // Public — no decorator
   @Route({ method: 'GET', path: ':organizationId/public-info', summary: 'Get Public Info', description: 'Returns public organization info.' })
-  getPublicInfo(@Request() { params }) {
-    return this.organizationService.getPublicInfo(params.organizationId)
+  getPublicInfo(@Request(getPublicInfoSchema) req: RequestInput<typeof getPublicInfoSchema>) {
+    return this.organizationService.getPublicInfo(req.params.organizationId)
   }
 
   // Private — requires valid JWT
   @Route({ method: 'POST', summary: 'Create Organization', description: 'Creates a new organization.' })
   @Auth()
   createOrganization(
-    @AuthenticatedProfile() profile,
-    @Request() { body },
+    @AuthenticatedProfile() profile: IamProfile,
+    @Request(createOrganizationSchema) req: RequestInput<typeof createOrganizationSchema>,
   ) {
-    return this.organizationService.createOrganization(profile.userId, body)
+    return this.organizationService.createOrganization(profile.userId, req.body)
   }
 }`}
 					filename="organization.controller.ts"

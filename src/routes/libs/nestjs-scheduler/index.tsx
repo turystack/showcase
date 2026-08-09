@@ -98,8 +98,8 @@ export class AppModule {}`}
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Custom adapters via ISchedulerAdapter + the SCHEDULER_ADAPTER
-							token
+							Backends sit behind ISchedulerAdapter, resolved through the
+							SCHEDULER_ADAPTER token — 'local' is the one that ships
 						</span>
 					</li>
 				</ul>

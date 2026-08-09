@@ -20,6 +20,14 @@ const props = [
 		required: true,
 		type: 'string',
 	},
+	{
+		default: '"fail-open"',
+		description:
+			'Behaviour when the storage is unavailable, passed through to the CacheModule this registers. Under fail-open a failed write reports false, so an outage denies the lock instead of granting it.',
+		name: 'onError',
+		required: false,
+		type: "'fail-open' | 'fail-closed'",
+	},
 ]
 
 function Page() {
@@ -38,7 +46,8 @@ function Page() {
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Usage</h2>
 				<CodeBlock
-					code={`import { ConfigModule, defineConfigSchema } from '@turystack/nestjs-config'
+					code={`import { CacheModule } from '@turystack/nestjs-cache'
+import { ConfigModule, defineConfigSchema } from '@turystack/nestjs-config'
 import { LockModule } from '@turystack/nestjs-lock'
 import { z } from 'zod'
 
@@ -59,6 +68,7 @@ const configSchema = defineConfigSchema({ REDIS_URL: z.string() })
 export class AppModule {}
 
 // Standalone: dedicated connection (only when isolation is intentional)
+// register also accepts a plain options object
 @Module({
   imports: [
     ConfigModule.register({ schema: configSchema }),
@@ -79,7 +89,8 @@ export class AppModule {}`}
 				<p className="text-muted-foreground">
 					The entire <code className="text-sm">options</code> object is
 					optional. When omitted, the module reuses the existing CacheModule
-					from DI. When provided, all fields are required.
+					from DI. When provided, it mirrors CacheModuleOptions — adapter and
+					redis.url are required.
 				</p>
 				<PropsTable props={props} />
 			</div>

@@ -35,9 +35,21 @@ function Page() {
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Usage</h2>
 				<CodeBlock
-					code={`import { Controller, Route, Request } from '@turystack/nestjs-server'
+					code={`import { Controller, Route, Request, createRequestSchema, type RequestInput } from '@turystack/nestjs-server'
 import { Auth, ACL, AuthenticatedProfile } from '@turystack/nestjs-iam'
 import type { IamProfile } from '@turystack/nestjs-iam'
+import { z } from 'zod'
+
+type OrganizationRequest = { params: { organizationId: string } }
+
+const createOrganizationSchema = createRequestSchema({
+  body: z.object({ name: z.string() }),
+})
+
+const updateOrganizationSchema = createRequestSchema({
+  params: z.object({ organizationId: z.string().uuid() }),
+  body: z.object({ name: z.string().optional() }),
+})
 
 @Controller({ path: 'organizations', tag: 'Organizations' })
 export class OrganizationController {
@@ -46,25 +58,25 @@ export class OrganizationController {
   @Auth()
   createOrganization(
     @AuthenticatedProfile() profile: IamProfile,
-    @Request() { body },
+    @Request(createOrganizationSchema) req: RequestInput<typeof createOrganizationSchema>,
   ) {
     return this.organizationService.createOrganization(profile.userId, {
-      ...body,
+      ...req.body,
       status: 'ACTIVE',
     })
   }
 
   // With @ACL() — combine permission check + profile access
   @Route({ method: 'PATCH', path: ':organizationId', summary: 'Update Organization', description: 'Updates a organization.' })
-  @ACL('organization:update', ({ params }) => ({
+  @ACL<OrganizationRequest>('organization:update', ({ params }) => ({
     organizationId: params.organizationId,
   }))
   updateOrganization(
     @AuthenticatedProfile() profile: IamProfile,
-    @Request() { params, body },
+    @Request(updateOrganizationSchema) req: RequestInput<typeof updateOrganizationSchema>,
   ) {
-    return this.organizationService.updateOrganization(params.organizationId, {
-      ...body,
+    return this.organizationService.updateOrganization(req.params.organizationId, {
+      ...req.body,
       updatedBy: profile.userId,
     })
   }

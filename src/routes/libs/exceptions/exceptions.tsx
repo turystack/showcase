@@ -47,31 +47,41 @@ export const OrderExceptions = createExceptions((e) => ({
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">
-					Throwing from a service
+					Throwing from a use case
 				</h2>
 				<CodeBlock
-					code={`import { OrderExceptions } from './order.exceptions'
+					code={`import { Injectable } from '@nestjs/common'
 
-class OrderService {
+import { OrderExceptions } from './order.exceptions'
+
+export type PayOrderInput = {
+  orderId: string
+}
+
+@Injectable()
+export class PayOrderUseCase {
   constructor(private readonly orders: OrderRepository) {}
 
-  async pay(orderId: string) {
-    const order = await this.orders.findById(orderId)
+  async execute(input: PayOrderInput) {
+    const order = await this.orders.findById(input.orderId)
 
+    // Existence is proven before the rule runs.
     if (!order) {
-      throw new OrderExceptions.order.notFound({ orderId })
+      throw new OrderExceptions.order.notFound({ orderId: input.orderId })
     }
 
     order.markAsPaid()
-    await this.orders.save(order)
+
+    return this.orders.save(order)
   }
 }`}
-					filename="order.service.ts"
+					filename="pay-order.use-case.ts"
 					language="ts"
 				/>
 				<p className="text-muted-foreground">
-					The service handles the missing aggregate; the entity can throw{' '}
-					<code>alreadyPaid</code> while protecting its own state transition.
+					The use case handles the missing aggregate; the entity throws{' '}
+					<code>alreadyPaid</code> while protecting its own state transition —
+					the rule never becomes a duplicated <code>if</code> in the caller.
 					Metadata keeps diagnostic context separate from the stable public
 					error code. Tests can assert the generated class directly with{' '}
 					<code>toThrow(OrderExceptions.order.alreadyPaid)</code>.
@@ -83,28 +93,42 @@ class OrderService {
 					Documenting an HTTP route
 				</h2>
 				<CodeBlock
-					code={`const payOrderRoute = {
-  output: {
-    204: null,
-    404: [OrderExceptions.order.notFound.code],
-    409: [OrderExceptions.order.alreadyPaid.code],
-  },
-}
+					code={`import { Route } from '@turystack/nestjs-server'
 
+import { OrderExceptions } from './order.exceptions'
+
+@Route({
+  method: 'POST',
+  path: ':orderId::pay',
+  summary: 'Pay Order',
+  description: 'Pays a pending order.',
+  responses: {
+    204: { description: 'Order paid' },
+    exceptions: [
+      OrderExceptions.order.notFound,
+      OrderExceptions.order.alreadyPaid,
+    ],
+  },
+})
+async pay() {}
+
+// The static .code is the stable domain code, for schemas and client contracts:
 OrderExceptions.order.notFound.code
 // 'order.not_found'
 
 OrderExceptions.order.alreadyPaid.code
 // 'order.already_paid'`}
-					filename="pay-order.route.ts"
+					filename="orders.controller.ts"
 					language="ts"
 				/>
 				<p className="text-muted-foreground">
-					Use the static <code>.code</code> when a schema, route, or client
-					contract needs the stable domain code. Instantiating the class
-					produces an <code>AppError</code> with <code>statusCode</code>, HTTP
-					category in the instance <code>code</code>, and the supplied{' '}
-					<code>metadata</code>.
+					The route lists the exception <em>classes</em>, not codes —{' '}
+					<code>@turystack/nestjs-server</code> derives the status, the code and
+					the OpenAPI example from each class. Use the static <code>.code</code>{' '}
+					when a schema or client contract needs the domain code as a value.
+					Instantiating the class produces an <code>AppError</code> with{' '}
+					<code>statusCode</code>, the HTTP category in the instance{' '}
+					<code>code</code>, and the supplied <code>metadata</code>.
 				</p>
 			</div>
 

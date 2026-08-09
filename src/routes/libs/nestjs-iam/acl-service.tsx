@@ -122,10 +122,20 @@ export class OrderService {
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							When <code className="font-mono text-sm">workspaceId</code> is
-							provided, the service also checks{' '}
-							<code className="font-mono text-sm">workspace:manage</code> as a
-							fallback
+							<code className="font-mono text-sm">workspace:manage</code> held
+							in a workspace role grants everything inside that workspace — the
+							grant carries the role's own workspaceId, so it never matches
+							another workspace, and never authorizes an organization-level
+							check
+						</span>
+					</li>
+					<li className="flex items-start gap-2">
+						<span className="mt-1 text-lib">→</span>
+						<span>
+							The checked resource is the profile's{' '}
+							<code className="font-mono text-sm">organizationId</code> merged
+							with whatever the caller passes — a mismatched id simply fails the
+							ability conditions
 						</span>
 					</li>
 				</ul>

@@ -103,7 +103,7 @@ function Page() {
 					code={`import { Injectable, Module } from '@nestjs/common'
 import { ConfigModule } from '@turystack/nestjs-config'
 import { IamModule, type IamPermissions, type IamProfile, type IamProfileResolver } from '@turystack/nestjs-iam'
-import { type User, UserRepository } from '@turystack/libs-user'
+import { type User, UserRepository } from '@/domains/user'
 import { configSchema } from './config.schema'
 
 // everything IAM needs lives here: the permission catalog...
@@ -113,7 +113,8 @@ const PERMISSIONS: IamPermissions = {
   organization: ['manage', 'read', 'update'],
 }
 
-// ...and the resolver — the single bridge to your libs
+// ...and the resolver — the single bridge to your application.
+// UserRepository is your own; IAM never ships a user model.
 @Injectable()
 class ProfileResolverService implements IamProfileResolver {
   constructor(private readonly userRepository: UserRepository) {}
@@ -151,6 +152,9 @@ class ProfileResolverService implements IamProfileResolver {
 @Module({
   imports: [
     ConfigModule.register({ schema: configSchema }),
+    // factory form: the resolver is built through the module injector, so
+    // UserModule has to be global. Use the plain object form with
+    // imports: [UserModule] when it is not.
     IamModule.register((config) => ({
       secret: config.get('JWT_SECRET'),
       permissions: PERMISSIONS,

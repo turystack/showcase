@@ -34,7 +34,8 @@ const options = [
 		type: 'string',
 	},
 	{
-		description: 'Base URL for PUBLIC objects (e.g. the CDN).',
+		description:
+			'Base URL for PUBLIC objects (e.g. the CDN). Required if any context is PUBLIC.',
 		name: 'publicBaseUrl',
 		required: false,
 		type: 'string',
@@ -87,7 +88,7 @@ StorageModule.register(
 				<p className="text-muted-foreground text-sm">
 					The factory form injects the ConfigService from
 					@turystack/nestjs-config — requires ConfigModule.register({'{'} schema{' '}
-					{'}'}) in the app.
+					{'}'}) in the app. register also accepts a plain options object.
 				</p>
 			</div>
 

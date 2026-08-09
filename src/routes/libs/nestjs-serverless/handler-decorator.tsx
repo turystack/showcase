@@ -263,8 +263,9 @@ class NightlyJobHandler {
 				<h2 className="font-display font-semibold text-xl">EventSource</h2>
 				<p className="mb-4 text-muted-foreground">
 					Explicit trigger names, typed per adapter — the union available in
-					@Handler comes from the adapter chosen in ServerlessModule.register.
-					With the built-in AWS adapter:
+					@Handler is the union of every installed adapter's source names,
+					contributed through the ServerlessSourceMap interface. With only the
+					built-in AWS adapter:
 				</p>
 				<CodeBlock
 					code={`type AwsEventSource =
@@ -323,13 +324,18 @@ attempt                    delivery count, when the source reports it`}
 				/>
 				<CodeBlock
 					code={`SQS           ApproximateReceiveCount → attempt
+*-SQS         same counter — the chain is still delivered by SQS
 SNS           no retry counter → attempt is undefined
+S3            no retry counter → attempt is undefined
 EventBridge   no retry counter → attempt is undefined`}
 					filename="per source"
 					language="bash"
 				/>
 				<p className="text-muted-foreground text-sm">
-					A handler must not assume the field exists: only SQS reports it.
+					A handler must not assume the field exists: only the queue-delivered
+					sources report it — SQS, EVENTBRIDGE-SQS, SNS-SQS and
+					EVENTBRIDGE-SNS-SQS. A handler bound to SNS, S3 or EVENTBRIDGE always
+					sees <code>undefined</code>.
 				</p>
 			</div>
 		</div>

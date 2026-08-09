@@ -108,16 +108,20 @@ export class AppModule {}`}
 				<p className="text-muted-foreground">
 					Scheduling is abstracted behind <code>ISchedulerAdapter</code> —{' '}
 					<code>register</code> receives each job plus its metadata,{' '}
-					<code>start</code> and <code>stop</code> drive the lifecycle. To add a
-					backend, implement the interface and bind it to the{' '}
-					<code>SCHEDULER_ADAPTER</code> token (exported by the module).
+					<code>start</code> and <code>stop</code> drive the lifecycle. The
+					orchestrator only ever talks to this interface, resolved through the{' '}
+					<code>SCHEDULER_ADAPTER</code> token the module exports. Today{' '}
+					<code>register</code> ships one implementation,{' '}
+					<code>adapter: 'local'</code>; a new backend is a new value of that
+					option, not a provider a consumer overrides.
 				</p>
 				<CodeBlock
-					code={`import {
-  SCHEDULER_ADAPTER,
-  type ISchedulerAdapter,
-  type RegisteredJob,
-} from '@turystack/nestjs-scheduler'
+					code={`type ScheduleMetadata = {
+  cron: string
+  lock: boolean
+  name: string
+  timezone?: string
+}
 
 type RegisteredJob = {
   execute: () => Promise<unknown> | unknown

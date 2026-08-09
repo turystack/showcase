@@ -14,6 +14,13 @@ const issueTokensParams = [
 		required: true,
 		type: 'string',
 	},
+	{
+		description:
+			'The workspace the pair is minted for. Omit it for organization-only sessions — switching workspaces means issuing a new pair.',
+		name: 'options.workspaceId',
+		required: false,
+		type: 'string',
+	},
 ]
 
 const verifyRefreshTokenParams = [
@@ -138,8 +145,9 @@ export class AuthService {
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Access token contains{' '}
-							<code className="font-mono text-sm">userId</code> — refresh token
+							Both tokens carry{' '}
+							<code className="font-mono text-sm">userId</code>, plus
+							workspaceId when the pair was minted for one — the refresh token
 							adds an <code className="font-mono text-sm">rt: true</code> flag
 						</span>
 					</li>

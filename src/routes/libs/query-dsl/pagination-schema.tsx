@@ -66,9 +66,9 @@ PaginationSchema.parse({ nextCursor: 'abc' }) // { mode: 'cursor', limit: 10, ne
 
 PaginationSchema.parse({ page: '2', nextCursor: 'abc' }) // throws paginationMixedModes — one mode only
 
-type Pagination =
-  | { mode: 'page'; page: number; limit: number }
-  | { mode: 'cursor'; limit: number; nextCursor?: string; previousCursor?: string }`}
+// Pagination — the parsed output type:
+//   | { mode: 'page'; page: number; limit: number }
+//   | { mode: 'cursor'; limit: number; nextCursor?: string; previousCursor?: string }`}
 					filename="example.ts"
 					language="ts"
 				/>

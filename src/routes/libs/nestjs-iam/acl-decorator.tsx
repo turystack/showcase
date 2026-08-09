@@ -17,7 +17,7 @@ const params = [
 	},
 	{
 		description:
-			'Optional — declares the workspace (or organization) the route targets. Organization-level routes usually omit it.',
+			'Optional — declares the workspace (or organization) the route targets, read from the raw (unvalidated) request. Organization-level routes usually omit it.',
 		name: 'getContext',
 		required: false,
 		type: '(request: T) => IamAclContext',
@@ -38,10 +38,21 @@ function Page() {
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Signature</h2>
 				<CodeBlock
-					code="ACL<T = {}>(permission: string, getContext?: (request: T) => IamAclContext): MethodDecorator & ClassDecorator"
+					code="ACL<T = {}>(permission: string, getContext?: (request: T) => IamAclContext): MethodDecorator"
 					filename="acl.decorator.d.ts"
 					language="ts"
 				/>
+				<p className="text-muted-foreground text-sm">
+					Method level only. The guard reads the metadata off the route handler,
+					so an @ACL on the class is never seen — the route would authenticate
+					but skip the permission check entirely. Use @Auth() on the class when
+					you want a blanket rule.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					T is the raw request shape passed to getContext. It defaults to{' '}
+					<code className="font-mono text-sm">{'{}'}</code>, so annotate it (or
+					pass the generic) whenever the callback destructures the request.
+				</p>
 			</div>
 
 			<div className="space-y-4">
@@ -54,9 +65,14 @@ function Page() {
 					never authorize organization-level routes.
 				</p>
 				<CodeBlock
-					code={`import { Controller, Route, Request } from '@turystack/nestjs-server'
+					code={`import { Controller, Route, Request, createRequestSchema, type RequestInput } from '@turystack/nestjs-server'
 import { ACL, AuthenticatedProfile } from '@turystack/nestjs-iam'
 import type { IamProfile } from '@turystack/nestjs-iam'
+import { z } from 'zod'
+
+const updateBillingSchema = createRequestSchema({
+  body: z.object({ plan: z.string() }),
+})
 
 @Controller({ path: 'billing', tag: 'Billing' })
 export class BillingController {
@@ -68,8 +84,11 @@ export class BillingController {
 
   @Route({ method: 'PATCH', summary: 'Update Billing', description: 'Updates billing info.' })
   @ACL('billing:update')
-  updateBilling(@AuthenticatedProfile() profile: IamProfile, @Request() { body }) {
-    return this.billingService.updateBilling(profile.organizationId, body)
+  updateBilling(
+    @AuthenticatedProfile() profile: IamProfile,
+    @Request(updateBillingSchema) req: RequestInput<typeof updateBillingSchema>,
+  ) {
+    return this.billingService.updateBilling(profile.organizationId, req.body)
   }
 }`}
 					filename="billing.controller.ts"
@@ -87,26 +106,41 @@ export class BillingController {
 					workspace.
 				</p>
 				<CodeBlock
-					code={`import { Controller, Route, Request } from '@turystack/nestjs-server'
+					code={`import { Controller, Route, Request, createRequestSchema, type RequestInput } from '@turystack/nestjs-server'
 import { ACL } from '@turystack/nestjs-iam'
+import { z } from 'zod'
+
+// getContext reads the raw request, before validation — type it so the
+// generic resolves; it defaults to {} and destructuring would not compile.
+type WorkspaceRequest = { params: { workspaceId: string } }
+
+const listProductsSchema = createRequestSchema({
+  params: z.object({ workspaceId: z.string().uuid() }),
+  query: z.object({ limit: z.coerce.number().default(20) }),
+})
+
+const createProductSchema = createRequestSchema({
+  params: z.object({ workspaceId: z.string().uuid() }),
+  body: z.object({ name: z.string(), price: z.number() }),
+})
 
 @Controller({ path: 'workspaces/:workspaceId/products', tag: 'Products' })
 export class ProductController {
   @Route({ method: 'GET', summary: 'List Products', description: 'Returns paginated products.' })
-  @ACL('product:read', ({ params }) => ({ workspaceId: params.workspaceId }))
-  listProducts(@Request() { params, query }) {
+  @ACL<WorkspaceRequest>('product:read', ({ params }) => ({ workspaceId: params.workspaceId }))
+  listProducts(@Request(listProductsSchema) req: RequestInput<typeof listProductsSchema>) {
     return this.productService.getPaginatedProducts({
-      ...query,
-      workspaceId: params.workspaceId,
+      ...req.query,
+      workspaceId: req.params.workspaceId,
     })
   }
 
   @Route({ method: 'POST', summary: 'Create Product', description: 'Creates a new product.' })
-  @ACL('product:create', ({ params }) => ({ workspaceId: params.workspaceId }))
-  createProduct(@Request() { params, body }) {
+  @ACL<WorkspaceRequest>('product:create', ({ params }) => ({ workspaceId: params.workspaceId }))
+  createProduct(@Request(createProductSchema) req: RequestInput<typeof createProductSchema>) {
     return this.productService.createProduct({
-      ...body,
-      workspaceId: params.workspaceId,
+      ...req.body,
+      workspaceId: req.params.workspaceId,
     })
   }
 }`}

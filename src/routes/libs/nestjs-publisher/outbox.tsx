@@ -215,12 +215,15 @@ RETURNING ...`}
 					trigger.
 				</p>
 				<CodeBlock
-					code={`@Handler('SCHEDULE')
+					code={`import { OutboxDispatcher } from '@turystack/nestjs-publisher'
+import { Handler } from '@turystack/nestjs-serverless'
+
+@Handler('SCHEDULE')
 export class OutboxDispatcherHandler {
   constructor(private readonly dispatcher: OutboxDispatcher) {}
 
-  execute() {
-    return this.dispatcher.drain({ maxDuration: 50_000 })
+  async execute() {
+    await this.dispatcher.drain({ maxDuration: 50_000 })
   }
 }`}
 					filename="outbox-dispatcher.handler.ts"
@@ -264,6 +267,11 @@ export class OutboxDispatcherHandler {
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Metrics to watch</h2>
+				<p className="text-muted-foreground">
+					The library emits no metrics of its own — these are the signals worth
+					exporting. The last three are the counters <code>drain()</code>{' '}
+					returns; the first two are queries against the table.
+				</p>
 				<CodeBlock
 					code={`outbox.pending       backlog size
 outbox.oldest_age    ← the signal that matters

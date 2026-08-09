@@ -73,21 +73,46 @@ function Page() {
 
 PublisherModule.register(
   options: PublisherModuleOptions | ((config: ConfigService) => PublisherModuleOptions),
+  outbox?: OutboxOptions,
 ): DynamicModule`}
 					filename="publisher-module.d.ts"
 					language="ts"
 				/>
 				<p className="text-muted-foreground text-sm">
-					The factory form injects the ConfigService from
-					@turystack/nestjs-config — requires ConfigModule.register({'{'} schema{' '}
-					{'}'}) in the app.
+					Registration is global — register it once in the app root. The factory
+					form injects the ConfigService from @turystack/nestjs-config —
+					requires ConfigModule.register({'{'} schema {'}'}) in the app. The
+					second argument is opt-in: pass it and publishes join the transaction
+					that produced them (see Transactional Outbox).
 				</p>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Usage</h2>
 				<CodeBlock
-					code={`import { ConfigModule, defineConfigSchema } from '@turystack/nestjs-config'
+					tabs={[
+						{
+							code: `import { PublisherModule } from '@turystack/nestjs-publisher'
+
+@Module({
+  imports: [
+    PublisherModule.register({
+      adapter: 'aws',
+      aws: {
+        region: 'us-east-1',
+        eventBridge: {
+          busName: 'orders-bus', // defaults to 'default'
+          source: 'orders-api', // defaults to 'app'
+        },
+      },
+    }),
+  ],
+})
+export class AppModule {}`,
+							label: 'Static',
+						},
+						{
+							code: `import { ConfigModule, defineConfigSchema } from '@turystack/nestjs-config'
 import { PublisherModule } from '@turystack/nestjs-publisher'
 import { z } from 'zod'
 
@@ -111,9 +136,10 @@ const configSchema = defineConfigSchema({
     })),
   ],
 })
-export class AppModule {}`}
-					filename="app.module.ts"
-					language="ts"
+export class AppModule {}`,
+							label: 'From config',
+						},
+					]}
 				/>
 			</div>
 

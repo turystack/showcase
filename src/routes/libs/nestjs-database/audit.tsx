@@ -29,19 +29,23 @@ function Page() {
 					table that does not is untouched.
 				</p>
 				<CodeBlock
-					code={`// stamped
-export const orders = pgTable('orders', {
-  id: uuid('id').primaryKey(),
-  status: text('status').notNull(),
-  createdBy: text('created_by'),   // filled on create / createMany
-  updatedBy: text('updated_by'),   // filled on update / updateById
-})
+					code={`import { defineDatabaseSchema } from '@turystack/nestjs-database'
 
-// not stamped — nothing changes
-export const countries = pgTable('countries', {
-  id: uuid('id').primaryKey(),
-  name: text('name').notNull(),
-})`}
+export const databaseSchema = defineDatabaseSchema((schema) => ({
+  // stamped
+  orders: schema.table({
+    id: schema.uuid('id').primaryKey(),
+    status: schema.text('status').notNull(),
+    createdBy: schema.text('created_by'),  // filled on create / createMany
+    updatedBy: schema.text('updated_by'),  // filled on update / updateById
+  }),
+
+  // not stamped — nothing changes
+  countries: schema.table({
+    id: schema.uuid('id').primaryKey(),
+    name: schema.text('name').notNull(),
+  }),
+}))`}
 					filename="database.schema.ts"
 					language="ts"
 				/>
@@ -113,10 +117,17 @@ await this.db.orders.create({ status: 'NEW', createdBy: 'system' })`}
 							@turystack/nestjs-context is not registered in the application
 						</span>
 					</li>
+					<li className="flex items-start gap-2">
+						<span className="mt-1 text-lib">→</span>
+						<span>
+							The write is an <code>upsert</code> — it lands as an insert or an
+							update depending on the conflict, so neither column is stamped
+						</span>
+					</li>
 				</ul>
 				<p className="text-muted-foreground text-sm">
-					In all three the write proceeds normally; the column is simply left
-					alone.
+					In each of these the write proceeds normally; the column is simply
+					left alone.
 				</p>
 			</div>
 

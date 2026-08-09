@@ -92,7 +92,7 @@ IamModule.register(
 					code={`import { Injectable, Module } from '@nestjs/common'
 import { ConfigModule, defineConfigSchema } from '@turystack/nestjs-config'
 import { IamModule, type IamPermissions, type IamProfile, type IamProfileResolver } from '@turystack/nestjs-iam'
-import { type User, UserRepository } from '@turystack/libs-user'
+import { type User, UserRepository } from '@/domains/user'
 import { z } from 'zod'
 
 // everything IAM needs lives here: the permission catalog...
@@ -102,7 +102,8 @@ const PERMISSIONS: IamPermissions = {
   organization: ['manage', 'read', 'update'],
 }
 
-// ...and the resolver — the single bridge to your libs
+// ...and the resolver — the single bridge to your application.
+// UserRepository is your own; IAM never ships a user model.
 @Injectable()
 class ProfileResolverService implements IamProfileResolver {
   constructor(private readonly userRepository: UserRepository) {}
@@ -153,6 +154,40 @@ export class AppModule {}`}
 					filename="app.module.ts"
 					language="ts"
 				/>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
+					Plain options form
+				</h2>
+				<p className="text-muted-foreground">
+					<code className="font-mono text-sm">register</code> also takes the
+					options object directly. This is the only form that accepts{' '}
+					<code className="font-mono text-sm">imports</code>: the class is known
+					at register time and bound with{' '}
+					<code className="font-mono text-sm">useClass</code>, so the listed
+					modules can provide the resolver's dependencies.
+				</p>
+				<CodeBlock
+					code={`@Module({
+  imports: [
+    IamModule.register({
+      secret: process.env.JWT_SECRET!,
+      permissions: PERMISSIONS,
+      profileResolver: ProfileResolverService,
+      imports: [UserModule], // provides UserRepository to the resolver
+    }),
+  ],
+})
+export class AppModule {}`}
+					filename="app.module.ts"
+					language="ts"
+				/>
+				<p className="text-muted-foreground text-sm">
+					In the factory form the module structure is built before the
+					ConfigService exists, so the resolver is created through the module
+					injector and its dependencies must come from global modules.
+				</p>
 			</div>
 
 			<div className="space-y-4">

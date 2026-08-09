@@ -142,6 +142,24 @@ export class AppModule {}`}
 			</div>
 
 			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
+					Every tick is its own operation
+				</h2>
+				<p className="text-muted-foreground">
+					Each tick runs inside its own context scope from
+					@turystack/nestjs-context (an optional peer — without it the tick just
+					runs unscoped). The scope carries a fresh correlation id and the job
+					name, so every log line of one run ties back to that run.
+				</p>
+				<CodeBlock
+					code={`turystack.correlation_id   generated per tick
+job                        the job name (options.name, or the class name)`}
+					filename="context attributes"
+					language="bash"
+				/>
+			</div>
+
+			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Notes</h2>
 				<ul className="space-y-2 text-muted-foreground">
 					<li className="flex items-start gap-2">

@@ -17,7 +17,7 @@ const rateLimitOptions = [
 		type: 'number',
 	},
 	{
-		description: 'Sliding window duration in milliseconds.',
+		description: 'Time window in milliseconds.',
 		name: 'window',
 		required: true,
 		type: 'number',
@@ -32,8 +32,8 @@ function Page() {
 					RateLimitService
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
-					Injectable service that enforces distributed rate limits using a
-					sliding window counter.
+					Injectable service that enforces distributed rate limits with an
+					atomic counter per key.
 				</p>
 			</div>
 
@@ -82,7 +82,7 @@ export class PaymentService {
 				<p className="text-muted-foreground">
 					Extends <code className="text-sm">HttpException</code> (HTTP 429).
 					Thrown when the number of requests exceeds the configured limit within
-					the sliding window.
+					the window.
 				</p>
 				<CodeBlock
 					code={`import { RateLimitExceededError, RateLimitService } from '@turystack/nestjs-rate-limit'

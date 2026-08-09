@@ -75,6 +75,7 @@ import { ConfigModule } from '@turystack/nestjs-config'
 import { DatabaseModule } from '@turystack/nestjs-database'
 
 import { configSchema } from './config.schema'
+import { databaseSchema } from './database.schema'
 
 @Module({
   imports: [
@@ -82,6 +83,7 @@ import { configSchema } from './config.schema'
     DatabaseModule.register((config) => ({
       adapter: 'postgresql',
       postgresql: { url: config.get('DATABASE_URL') },
+      schemaResolver: databaseSchema,
     })),
     CacheModule.register((config) => ({
       adapter: 'redis',

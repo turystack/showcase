@@ -68,6 +68,7 @@ declare module '@turystack/nestjs-config' {
 import { ConfigModule } from '@turystack/nestjs-config'
 
 import { configSchema } from './config.schema'
+import { databaseSchema } from './database.schema'
 
 @Module({
   imports: [
@@ -75,6 +76,7 @@ import { configSchema } from './config.schema'
     DatabaseModule.register((config) => ({
       adapter: 'postgresql',
       postgresql: { url: config.get('DATABASE_URL') },
+      schemaResolver: databaseSchema,
     })),
   ],
 })

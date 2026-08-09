@@ -102,7 +102,7 @@ import { configSchema } from './config.schema'
 })
 export class AppModule {}
 
-// then, in any domain service — the avatar as the commit target:
+// then, in any use case — the user as the commit target:
 const avatar = await this.storage.resolvePublicUpload({
   context: 'USER_AVATAR',
   value: input.avatar,

@@ -58,8 +58,9 @@ function Page() {
 					code={`import { Controller } from '@turystack/nestjs-server'
 
 @Controller(options: {
-  path: string
+  path?: string | string[]
   tag: string
+  prefix?: string
   schemas?: Record<string, { schema: ZodSchema }>
 })`}
 					filename="controller.d.ts"

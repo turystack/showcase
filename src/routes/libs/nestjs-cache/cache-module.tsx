@@ -23,7 +23,7 @@ const options = [
 	{
 		default: '"fail-open"',
 		description:
-			'Behaviour when the storage is unavailable. fail-open degrades reads and writes to a cache miss; fail-closed propagates every failure.',
+			'Behaviour when the storage is unavailable. fail-open degrades keys, get, exists, set and del to a cache miss; fail-closed propagates every failure. incr and decr always propagate, on both settings.',
 		name: 'onError',
 		required: false,
 		type: "'fail-open' | 'fail-closed'",

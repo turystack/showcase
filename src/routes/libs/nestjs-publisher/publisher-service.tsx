@@ -11,7 +11,8 @@ export const Route = createFileRoute(
 
 const publishInputProps = [
 	{
-		description: 'The topic ARN or queue URL.',
+		description:
+			"For TOPIC, the event name — it becomes the EventBridge event's DetailType. For QUEUE, the queue URL.",
 		name: 'name',
 		required: true,
 		type: 'string',
@@ -73,25 +74,46 @@ flush(): Promise<void>                   // awaits everything in flight`}
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Usage</h2>
 				<p className="text-muted-foreground">
-					The service does the simple thing — work, commit the transaction,
-					publish the event. Delivery happens in the background; failures are
-					logged, never thrown to the caller.
+					The use case does the simple thing — work, commit the write, then
+					publish the event. <code>publish()</code> returns <code>void</code>,
+					so there is nothing to await: delivery happens in the background and
+					failures are logged, never thrown to the caller.
+				</p>
+				<p className="text-muted-foreground">
+					What <code>name</code> means depends on the destination. For{' '}
+					<code>'TOPIC'</code> it is the event name —{' '}
+					<code>{'<domain>.<action>'}</code> in the past, like{' '}
+					<code>order.created</code> — and it becomes the EventBridge event's{' '}
+					<code>DetailType</code>. For <code>'QUEUE'</code> it is the queue URL
+					the SQS message is sent to.
 				</p>
 				<CodeBlock
-					code={`// TOPIC → EventBridge event; name becomes the event's DetailType
-this.publisher.publish({
-  name: 'order.created',
-  destination: 'TOPIC',
-  data: { orderId: '123', status: 'created' },
-})
+					code={`@Injectable()
+export class CreateOrderUseCase {
+  constructor(
+    private readonly orders: OrderRepository,
+    private readonly publisher: PublisherService,
+  ) {}
 
-// QUEUE → SQS message; name is the queue URL
-this.publisher.publish({
-  name: 'https://sqs.us-east-1.amazonaws.com/123456/orders',
-  destination: 'QUEUE',
-  data: { orderId: '123' },
-})`}
-					filename="orders.service.ts"
+  async execute(input: CreateOrderInput) {
+    const order = await this.orders.create(input) // committed before the event
+
+    this.publisher.publish({
+      name: 'order.created', // → EventBridge DetailType
+      destination: 'TOPIC',
+      data: { orderId: order.id, total: order.total },
+    })
+
+    this.publisher.publish({
+      name: 'https://sqs.us-east-1.amazonaws.com/123456/orders', // → SQS QueueUrl
+      destination: 'QUEUE',
+      data: { orderId: order.id },
+    })
+
+    return order
+  }
+}`}
+					filename="create-order.use-case.ts"
 					language="ts"
 				/>
 			</div>
@@ -125,13 +147,21 @@ this.publisher.publish({
 					to get full type inference on <code>publish()</code> — no generics or
 					schema arguments needed.
 				</p>
+				<p className="text-muted-foreground">
+					Each key is a <code>name</code>, so a <code>'TOPIC'</code> entry is
+					keyed by the event name and a <code>'QUEUE'</code> entry by the queue
+					URL.
+				</p>
 				<CodeBlock
 					code={`import '@turystack/nestjs-publisher'
 
 declare module '@turystack/nestjs-publisher' {
   interface PublisherEventMap {
     'order.created': { destination: 'TOPIC'; data: { orderId: string; total: number } }
-    'order.process': { destination: 'QUEUE'; data: { orderId: string } }
+    'https://sqs.us-east-1.amazonaws.com/123456/orders': {
+      destination: 'QUEUE'
+      data: { orderId: string }
+    }
   }
 }`}
 					filename="publisher.d.ts"
@@ -139,25 +169,24 @@ declare module '@turystack/nestjs-publisher' {
 				/>
 				<p className="text-muted-foreground">
 					Now <code>publish()</code> infers <code>name</code>,{' '}
-					<code>destination</code>, and <code>data</code> automatically:
+					<code>destination</code>, and <code>data</code> automatically —{' '}
+					<code>name</code> autocompletes to every key of the map,{' '}
+					<code>destination</code> is restricted by the name, and{' '}
+					<code>data</code> is typed per name:
 				</p>
 				<CodeBlock
-					code={`// name autocompletes to 'order.created' | 'order.process'
-// destination is restricted by name
-// data is typed per name
-
-this.publisher.publish({
+					code={`this.publisher.publish({
   name: 'order.created',
   destination: 'TOPIC',
   data: { orderId: '123', total: 99.9 }, // { orderId: string; total: number }
 })
 
 this.publisher.publish({
-  name: 'order.process',
+  name: 'https://sqs.us-east-1.amazonaws.com/123456/orders',
   destination: 'QUEUE',
   data: { orderId: '123' }, // { orderId: string }
 })`}
-					filename="orders.service.ts"
+					filename="create-order.use-case.ts"
 					language="ts"
 				/>
 			</div>
@@ -167,7 +196,8 @@ this.publisher.publish({
 					PublisherEventMap
 				</h2>
 				<p className="text-muted-foreground">
-					Empty interface exported by the library. Each key is an event name,
+					Empty interface exported by the library. Each key is a{' '}
+					<code>name</code> — an event name for TOPIC, a queue URL for QUEUE —
 					and the value describes its destination and data type.
 				</p>
 				<PropsTable props={eventMapEntryProps} />

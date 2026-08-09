@@ -24,7 +24,7 @@ function Page() {
 				<CodeBlock
 					code={`function ListSchema<T extends string>(
   schema: z.ZodSchema<T>,
-	list: readonly T[],
+  list: readonly T[],
 ): z.ZodPipe<z.ZodOptional<z.ZodString>, z.ZodTransform<List<T>, string | undefined>>`}
 					filename="list.d.ts"
 					language="ts"

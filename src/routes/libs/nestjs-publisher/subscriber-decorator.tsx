@@ -49,11 +49,11 @@ function Page() {
   type SubscriberPayload,
 } from '@turystack/nestjs-publisher'
 
-@Subscriber('OrderCreated')
+@Subscriber('order.created')
 export class OrderCreatedSubscriber {
   constructor(private readonly billing: BillingService) {}
 
-  async execute(payload: SubscriberPayload<'OrderCreated'>) {
+  async execute(payload: SubscriberPayload<'order.created'>) {
     await this.billing.charge(payload.orderId)
   }
 }`,
@@ -68,8 +68,8 @@ import {
 
 @Injectable()
 export class BillingService {
-  @Subscriber('OrderCreated')
-  async onOrderCreated(payload: SubscriberPayload<'OrderCreated'>) {
+  @Subscriber('order.created')
+  async onOrderCreated(payload: SubscriberPayload<'order.created'>) {
     await this.charge(payload.orderId)
   }
 }`,
