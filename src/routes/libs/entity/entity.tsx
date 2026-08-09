@@ -74,51 +74,62 @@ class Order {
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">
-					Using the entity in a service
+					Using the entity in a use case
 				</h2>
 				<CodeBlock
 					code={`import { Injectable } from '@nestjs/common'
+import { Transactional } from '@turystack/nestjs-database'
 import { PublisherService } from '@turystack/nestjs-publisher'
 
+export type PayOrderInput = {
+  orderId: Order['id']
+}
+
 @Injectable()
-class OrderService {
-  constructor(private readonly publisher: PublisherService) {}
+export class PayOrderUseCase {
+  constructor(
+    private readonly orderRepository: OrderRepository,
+    private readonly publisher: PublisherService,
+  ) {}
 
-  async create(customerId: string, total: number) {
-    const order = new Order(
-      crypto.randomUUID(),
-      customerId,
-      total,
-      new Date(),
-    )
+  @Transactional()
+  async execute(input: PayOrderInput) {
+    const order = await this.orderRepository.findById(input.orderId)
 
-    await this.publisher.publish({
-      name: 'order-created',
-      destination: 'TOPIC',
-      data: order,
-    })
-
-    return order
-  }
-
-  async pay(order: Order) {
+    // The invariant lives in the entity, never here.
     order.markAsPaid()
 
-    await this.publisher.publish({
-      name: 'order-paid',
+    const updated = await this.orderRepository.updateById(order.id, order)
+
+    // After the write, never before: a consumer must not react to a payment
+    // a rollback can still erase. publish() returns void — no await.
+    this.publisher.publish({
+      data: updated,
       destination: 'TOPIC',
-      data: order,
+      name: 'order.paid',
     })
+
+    return updated
   }
 }`}
-					filename="order.service.ts"
+					filename="pay-order.use-case.ts"
 					language="ts"
 				/>
 				<p className="text-muted-foreground">
-					The service only works with the domain object. The publisher owns
-					serialization; application services should never call SuperJSON
-					directly. Load the entity module in producer and consumer processes so
-					the transport layer knows the same stable identifier on both sides.
+					The use case only works with the domain object — the invariant stays
+					in <code className="text-lib">markAsPaid()</code>, not in the caller.
+					The publisher owns serialization; application code never calls
+					SuperJSON directly. Load the entity module in producer and consumer
+					processes so the transport layer knows the same stable identifier on
+					both sides.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					Two rules the example follows on purpose:{' '}
+					<code className="text-lib">publish()</code> returns{' '}
+					<code className="text-lib">void</code> and is fire-and-forget, so
+					awaiting it buys nothing and suggests a delivery guarantee that does
+					not exist; and the event leaves only after the write has committed —
+					publishing first announces a fact that a rollback can still erase.
 				</p>
 			</div>
 

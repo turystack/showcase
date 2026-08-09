@@ -80,7 +80,7 @@ flush(): Promise<void>                   // awaits everything in flight`}
 				<CodeBlock
 					code={`// TOPIC → EventBridge event; name becomes the event's DetailType
 this.publisher.publish({
-  name: 'order-created',
+  name: 'order.created',
   destination: 'TOPIC',
   data: { orderId: '123', status: 'created' },
 })
@@ -130,8 +130,8 @@ this.publisher.publish({
 
 declare module '@turystack/nestjs-publisher' {
   interface PublisherEventMap {
-    'order-created': { destination: 'TOPIC'; data: { orderId: string; total: number } }
-    'process-order': { destination: 'QUEUE'; data: { orderId: string } }
+    'order.created': { destination: 'TOPIC'; data: { orderId: string; total: number } }
+    'order.process': { destination: 'QUEUE'; data: { orderId: string } }
   }
 }`}
 					filename="publisher.d.ts"
@@ -142,18 +142,18 @@ declare module '@turystack/nestjs-publisher' {
 					<code>destination</code>, and <code>data</code> automatically:
 				</p>
 				<CodeBlock
-					code={`// name autocompletes to 'order-created' | 'process-order'
+					code={`// name autocompletes to 'order.created' | 'order.process'
 // destination is restricted by name
 // data is typed per name
 
 this.publisher.publish({
-  name: 'order-created',
+  name: 'order.created',
   destination: 'TOPIC',
   data: { orderId: '123', total: 99.9 }, // { orderId: string; total: number }
 })
 
 this.publisher.publish({
-  name: 'process-order',
+  name: 'order.process',
   destination: 'QUEUE',
   data: { orderId: '123' }, // { orderId: string }
 })`}
