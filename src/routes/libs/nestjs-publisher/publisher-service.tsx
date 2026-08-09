@@ -119,6 +119,39 @@ export class CreateOrderUseCase {
 			</div>
 
 			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
+					What goes on the wire
+				</h2>
+				<p className="text-muted-foreground">
+					The payload is serialized with superjson — so a{' '}
+					<code className="text-sm">Date</code>,{' '}
+					<code className="text-sm">Map</code> or{' '}
+					<code className="text-sm">Set</code> survives the trip — and wrapped
+					in an envelope carrying the correlation id of the operation that
+					published:
+				</p>
+				<CodeBlock
+					code={`{
+  "turystack": { "v": 1, "correlationId": "req-abc" },
+  "data": { "orderId": "123" }
+}`}
+					filename="message body"
+					language="json"
+				/>
+				<p className="text-muted-foreground text-sm">
+					The id travels inside the payload because no transport carries one
+					everywhere: SQS and SNS have{' '}
+					<code className="text-sm">MessageAttributes</code>, EventBridge has
+					nothing usable. A consumer built on{' '}
+					<code className="text-lib">@turystack/nestjs-serverless</code> unwraps
+					both layers before the handler runs, so{' '}
+					<code className="text-sm">execute(event)</code> receives exactly what
+					was passed to <code className="text-sm">data</code>. A payload from
+					before the envelope existed passes through untouched.
+				</p>
+			</div>
+
+			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">flush</h2>
 				<p className="text-muted-foreground">
 					Awaits every delivery still in flight. App code never calls it: the

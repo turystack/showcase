@@ -60,7 +60,9 @@ function Page() {
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
-						<span>superjson serialization</span>
+						<span>
+							superjson serialization, with the correlation id carried alongside
+						</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
