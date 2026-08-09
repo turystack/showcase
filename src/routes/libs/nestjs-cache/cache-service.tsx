@@ -47,7 +47,7 @@ set<T>(key: string, value: T, options?: CacheOptions): Promise<boolean>
 
 exists(key: string): Promise<boolean>
 
-incr(key: string, options?: { ttl?: number }): Promise<number>
+incr(key: string, options?: { ttl?: number; expiry?: 'always' | 'on-create' }): Promise<number>
 
 decr(key: string): Promise<number>
 

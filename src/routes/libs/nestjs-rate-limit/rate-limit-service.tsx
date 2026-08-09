@@ -77,6 +77,36 @@ export class PaymentService {
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">
+					How the window behaves
+				</h2>
+				<p className="text-muted-foreground">
+					Fixed window. The window opens on the first request for a key and
+					closes <code className="text-sm">window</code> milliseconds later —
+					requests in between, <strong>including the rejected ones</strong>, do
+					not push it further away. A caller that keeps retrying while throttled
+					is let back in when the original window ends, not after they fall
+					silent for a full window.
+				</p>
+				<CodeBlock
+					code={`limit: 2, window: 60_000
+
+t=0s    request 1   allowed     window opens, closes at t=60s
+t=10s   request 2   allowed
+t=20s   request 3   rejected    the window still closes at t=60s
+t=50s   request 4   rejected
+t=61s   request 5   allowed     new window`}
+					filename="fixed window"
+					language="bash"
+				/>
+				<p className="text-muted-foreground text-sm">
+					The counter is a single key incremented atomically, and the expiry is
+					applied by the same operation that creates it — so two concurrent
+					first requests cannot produce a counter that never expires.
+				</p>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
 					RateLimitExceededError
 				</h2>
 				<p className="text-muted-foreground">
