@@ -8,6 +8,20 @@ type NpmInfo = {
 const memoryCache = new Map<string, NpmInfo>()
 const inflight = new Map<string, Promise<NpmInfo>>()
 
+/**
+ * How long a stored answer is trusted.
+ *
+ * Without it the first answer of a session was the only one: a package
+ * published — or bumped — after the tab opened kept showing whatever was read
+ * before, and a whole scope sat on `v0.0.0` long after it went live.
+ */
+const TTL = 10 * 60 * 1000
+
+type StoredNpmInfo = NpmInfo & {
+	/** When this was read, so a stale answer can be told from a fresh one. */
+	at: number
+}
+
 function formatDownloads(count: number): string {
 	if (count >= 1_000_000) {
 		return `${(count / 1_000_000).toFixed(1)}M`
@@ -18,7 +32,10 @@ function formatDownloads(count: number): string {
 	return String(count)
 }
 
-async function fetchNpmInfo(packageName: string): Promise<NpmInfo> {
+async function fetchNpmInfo(packageName: string): Promise<{
+	info: NpmInfo
+	found: boolean
+}> {
 	const encoded = packageName.replace('/', '%2F')
 	const [versionResult, downloadsResult] = await Promise.allSettled([
 		fetch(`https://registry.npmjs.org/${encoded}/latest`).then((response) =>
@@ -44,7 +61,24 @@ async function fetchNpmInfo(packageName: string): Promise<NpmInfo> {
 		info.downloads = formatDownloads(downloadsResult.value.downloads)
 	}
 
-	return info
+	return {
+		found: versionResult.status === 'fulfilled' && !!versionResult.value,
+		info,
+	}
+}
+
+function readStored(packageName: string): NpmInfo | undefined {
+	const raw = sessionStorage.getItem(`npm-info:${packageName}`)
+	if (!raw) {
+		return undefined
+	}
+
+	try {
+		const { at, ...info } = JSON.parse(raw) as StoredNpmInfo
+		return Date.now() - at < TTL ? info : undefined
+	} catch {
+		return undefined
+	}
 }
 
 function loadNpmInfo(packageName: string): Promise<NpmInfo> {
@@ -53,18 +87,28 @@ function loadNpmInfo(packageName: string): Promise<NpmInfo> {
 		return Promise.resolve(cached)
 	}
 
-	const stored = sessionStorage.getItem(`npm-info:${packageName}`)
+	const stored = readStored(packageName)
 	if (stored) {
-		const parsed = JSON.parse(stored) as NpmInfo
-		memoryCache.set(packageName, parsed)
-		return Promise.resolve(parsed)
+		memoryCache.set(packageName, stored)
+		return Promise.resolve(stored)
 	}
 
 	let pending = inflight.get(packageName)
 	if (!pending) {
-		pending = fetchNpmInfo(packageName).then((info) => {
+		pending = fetchNpmInfo(packageName).then(({ found, info }) => {
 			memoryCache.set(packageName, info)
-			sessionStorage.setItem(`npm-info:${packageName}`, JSON.stringify(info))
+			// Only a real answer is worth storing. Persisting the "no such
+			// package" fallback pinned a whole scope to v0.0.0 for the rest of
+			// the session on the one page load that happened before it shipped.
+			if (found) {
+				sessionStorage.setItem(
+					`npm-info:${packageName}`,
+					JSON.stringify({
+						...info,
+						at: Date.now(),
+					}),
+				)
+			}
 			inflight.delete(packageName)
 			return info
 		})
