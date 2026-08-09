@@ -15,6 +15,7 @@ function Page() {
 			contentClassName={
 				isPlayground ? 'max-w-none px-6 py-8 lg:px-10' : undefined
 			}
+			fillViewport={Boolean(isPlayground)}
 			githubUrl="https://github.com/turystack/react-icons"
 			libraryName="@turystack/react-icons"
 			sections={reactIconsSections}

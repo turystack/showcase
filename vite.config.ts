@@ -10,6 +10,10 @@ export default defineConfig({
 	plugins: [
 		tailwindcss(),
 		tanstackRouter({
+			// Each route becomes its own chunk. Without it every page paid for
+			// every other one, and the icon playground alone — which has to load
+			// the whole catalogue to show it — put ~300 kB of SVG on the home page.
+			autoCodeSplitting: true,
 			routesDirectory: './src/routes',
 		}),
 		react(),
@@ -21,7 +25,9 @@ export default defineConfig({
 	},
 	server: {
 		fs: {
-			allow: ['..'],
+			allow: [
+				'..',
+			],
 		},
 		port: 3000,
 	},

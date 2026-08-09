@@ -13,11 +13,18 @@ type LibraryLayoutProps = PropsWithChildren<{
 	githubUrl: string
 	sections: SidebarSection[]
 	contentClassName?: string
+	/**
+	 * Hand the page the exact height left over and let it scroll its own parts.
+	 * A catalogue that scrolls as one document drags its search field off the
+	 * top the moment you start reading, which is the one control you still need.
+	 */
+	fillViewport?: boolean
 }>
 
 export function LibraryLayout({
 	children,
 	contentClassName,
+	fillViewport,
 	libraryName,
 	githubUrl,
 	sections,
@@ -56,11 +63,18 @@ export function LibraryLayout({
 
 			<main
 				className={cn(
-					'fixed top-16 right-0 bottom-0 overflow-y-auto transition-all duration-300',
+					'fixed top-16 right-0 bottom-0 transition-all duration-300',
+					fillViewport ? 'overflow-hidden' : 'overflow-y-auto',
 					sidebarOpen && !isMobile ? 'left-64' : 'left-0',
 				)}
 			>
-				<div className={cn('mx-auto max-w-6xl p-8', contentClassName)}>
+				<div
+					className={cn(
+						'mx-auto max-w-6xl p-8',
+						fillViewport && 'flex h-full min-h-0 flex-col',
+						contentClassName,
+					)}
+				>
 					{children}
 				</div>
 			</main>

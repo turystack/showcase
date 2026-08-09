@@ -21,6 +21,50 @@ function Page() {
 			</div>
 
 			<section className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
+					What is in the set
+				</h2>
+				<p className="text-muted-foreground">
+					605 icons, grouped into 38 categories taken from Solar&apos;s own
+					grouping rather than a taxonomy invented here. They all share one API
+					and one set of props; where a name came from only tells you how stable
+					it is.
+				</p>
+				<ul className="space-y-3 text-muted-foreground text-sm">
+					<li>
+						<strong className="text-foreground">66 semantic names</strong> —
+						named for the job, not the drawing.{' '}
+						<code className="text-lib">DeleteIcon</code> stays{' '}
+						<code className="text-lib">DeleteIcon</code> if the artwork behind
+						it ever changes.
+					</li>
+					<li>
+						<strong className="text-foreground">481 lucide names</strong> —
+						named after <code className="text-lib">lucide-react</code> so
+						existing code ports across, drawn by Solar. A lucide name Solar has
+						no glyph for is left out rather than approximated with a different
+						picture.
+					</li>
+					<li>
+						<strong className="text-foreground">29 brand marks</strong> —
+						including every provider{' '}
+						<code className="text-lib">nestjs-social-auth</code> supports. Each
+						comes twice: <code className="text-lib">GoogleIcon</code> inherits{' '}
+						<code className="text-lib">color</code> like any other icon, and{' '}
+						<code className="text-lib">GoogleColorIcon</code> keeps the official
+						palette that sign-in buttons need.
+					</li>
+				</ul>
+				<p className="text-muted-foreground text-sm">
+					One icon costs roughly 0.6 kB gzipped and only what you import is
+					bundled, so the size of the set is not the size of your build. To
+					build a picker, read{' '}
+					<code className="text-lib">@turystack/react-icons/manifest</code> — a
+					separate entry point listing every name, category and origin.
+				</p>
+			</section>
+
+			<section className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Installation</h2>
 				<CodeBlock
 					tabs={[
