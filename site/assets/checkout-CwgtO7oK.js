@@ -1,1 +1,0 @@
-import{j as o,bV as e}from"./index-CQ2_D3U_.js";import{A as r}from"./AudienceStage-CCUf31my.js";import"./minimize2-icon-B8EY6A80.js";import"./CodeBlock-ftRQod4w.js";import"./highlight-C4-SKK4T.js";import"./copy-uXspHRur.js";const t=e("checkout");function s(){return t?o.jsx(r,{audience:t}):null}export{s as component};

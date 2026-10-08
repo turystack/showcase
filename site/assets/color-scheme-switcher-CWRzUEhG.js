@@ -1,0 +1,27 @@
+import{j as e,bF as o,U as r,a$ as l,bG as c}from"./index-B7Ig6kNO.js";import{C as a}from"./CodeBlock-jMISp3qZ.js";import{C as t}from"./ComponentPreview-BlMdAug8.js";import{P as d}from"./PropsTable-r9MRwph6.js";import{S as i}from"./SlotsTable-CHbQbO6v.js";import"./highlight-XlOl9cwO.js";import"./copy-DmxgNTfX.js";const n=[{default:'"md"',description:"Track height and icon size: sm 28px, md 32px, lg 44px.",name:"size",type:'"sm" | "md" | "lg"'}],m=`import {
+  ColorSchemeSwitcher,
+  TuryProvider,
+  useColorScheme,
+} from '@turystack/react-web'
+
+// The switcher reads and writes the provider's state, so it needs
+// a TuryProvider (or a bare ColorSchemeProvider) above it.
+<TuryProvider defaultColorScheme="system">
+  <App />
+</TuryProvider>
+
+// Drop it in a header — it is self-contained, no props required
+<ColorSchemeSwitcher />
+<ColorSchemeSwitcher size="sm" />
+<ColorSchemeSwitcher size="lg" />
+
+// Same state, reachable from your own code
+function SchemeLabel() {
+  const { colorScheme, changeColorScheme } = useColorScheme()
+
+  return (
+    <button onClick={() => changeColorScheme('dark')} type="button">
+      Currently {colorScheme}
+    </button>
+  )
+}`,x={colorSchemeSwitcher:{dark:"Escuro",label:"Esquema de cores",light:"Claro",system:"Sistema"}};function h(){const{colorScheme:s}=c();return e.jsxs("div",{className:"flex flex-col items-center gap-3",children:[e.jsx(o,{}),e.jsxs("p",{className:"text-muted-foreground text-sm",children:[e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"colorScheme"})," ","is"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:s})]})]})}function N(){return e.jsxs("div",{className:"space-y-10",children:[e.jsxs("header",{children:[e.jsx("p",{className:"font-medium text-lib text-xs uppercase tracking-wider",children:"Core"}),e.jsx("h1",{className:"mt-2 font-bold font-display text-3xl tracking-tight",children:"ColorSchemeSwitcher"}),e.jsx("p",{className:"mt-3 max-w-prose text-lg text-muted-foreground",children:"A stateless light / dark / system control wired to the colour scheme provider."})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Props"}),e.jsx(d,{props:n})]}),e.jsx(i,{slug:"color-scheme-switcher"}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Live"}),e.jsx("p",{className:"max-w-prose text-muted-foreground text-sm",children:"Not sandboxed: this site is wrapped in a TuryProvider, so clicking really does switch the page."}),e.jsx(t,{title:"The switcher, and what the provider now holds",children:e.jsx(h,{})})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Sizes"}),e.jsx("p",{className:"max-w-prose text-muted-foreground text-sm",children:"Every switcher on the page shares one piece of state, so all three below move together."}),e.jsx(t,{title:"sm, md and lg",children:e.jsx("div",{className:"flex flex-wrap items-center justify-center gap-6",children:["sm","md","lg"].map(s=>e.jsxs("div",{className:"flex flex-col items-center gap-2",children:[e.jsx(o,{size:s}),e.jsx("code",{className:"text-muted-foreground text-xs",children:s})]},s))})})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"The three options"}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:["The options are fixed and in this order: sun for"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"light"}),", moon for"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"dark"}),", monitor for"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"system"}),"."]})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Accessibility"}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:["The control is a"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:'role="radiogroup"'})," ",'labelled "Color scheme", holding three'," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:'role="radio"'})," ","buttons labelled Light, Dark and System."]}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:["Its four names come from the"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"colorSchemeSwitcher"})," ","group of"," ",e.jsx(r,{className:"text-lib underline underline-offset-4",to:"/libs/react-web/components/labels-provider",children:"LabelsProvider"}),":"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"label"})," ","names the group, and"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"light"}),","," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"dark"})," ","and"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"system"})," ","the options."]}),e.jsx(t,{title:"Inside LabelsProvider, in pt-BR",children:e.jsx(l,{labels:x,children:e.jsx(o,{})})})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Usage"}),e.jsx(a,{code:m,filename:"example.tsx",language:"tsx"})]})]})}export{N as component};

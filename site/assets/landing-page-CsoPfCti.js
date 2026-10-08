@@ -1,0 +1,1 @@
+import{j as t,bV as e}from"./index-B7Ig6kNO.js";import{A as i}from"./AudienceStage-BBBGYtYV.js";import"./minimize2-icon-gZ8PA8Kr.js";import"./CodeBlock-jMISp3qZ.js";import"./highlight-XlOl9cwO.js";import"./copy-DmxgNTfX.js";const n=e("landing-page");function u(){return n?t.jsx(i,{audience:n}):null}export{u as component};

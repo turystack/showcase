@@ -1,13 +1,13 @@
-import { createFileRoute, Link } from '@tanstack/react-router'
-import { ArrowRight } from 'lucide-react'
+import { createFileRoute } from '@tanstack/react-router'
 
 import { TuryMark } from '@/components/Logo'
 
 /**
- * The front door: the mark, one line, one way in.
+ * The front door: the mark and the name, nothing else.
  *
- * Everything the site documents lives at `/showcase`. This page stays outside
- * `_main` on purpose — no header, no search, no library grid.
+ * `/showcase` is internal — reachable by its URL, linked from nowhere here.
+ * This page stays outside `_main` on purpose: no header, no search, no
+ * library grid.
  */
 function Page() {
 	return (
@@ -17,14 +17,6 @@ function Page() {
 			<h1 className="font-bold font-display text-4xl tracking-tight md:text-5xl">
 				tury<span className="text-tury-green">.dev</span>
 			</h1>
-
-			<Link
-				className="inline-flex items-center gap-2 text-muted-foreground text-sm transition-colors hover:text-foreground"
-				to="/showcase"
-			>
-				Showcase
-				<ArrowRight size={14} />
-			</Link>
 		</main>
 	)
 }

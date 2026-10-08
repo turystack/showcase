@@ -1,0 +1,16 @@
+import{j as e}from"./index-B7Ig6kNO.js";import{C as t}from"./CodeBlock-jMISp3qZ.js";import"./highlight-XlOl9cwO.js";import"./copy-DmxgNTfX.js";function l(){return e.jsxs("div",{className:"space-y-10",children:[e.jsxs("div",{children:[e.jsx("h1",{className:"font-bold font-display text-3xl tracking-tight",children:"@turystack/nestjs-context"}),e.jsx("p",{className:"mt-3 text-lg text-muted-foreground",children:"Request-scoped context propagated across use-cases, events and handlers without threading it through method signatures."})]}),e.jsxs("div",{className:"space-y-3",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Installation"}),e.jsx(t,{tabs:[{code:"npm install @turystack/nestjs-context",label:"npm"},{code:"pnpm add @turystack/nestjs-context",label:"pnpm"},{code:"yarn add @turystack/nestjs-context",label:"yarn"},{code:"bun add @turystack/nestjs-context",label:"bun"}]})]}),e.jsxs("div",{className:"space-y-3",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Features"}),e.jsxs("ul",{className:"space-y-2 text-muted-foreground",children:[e.jsxs("li",{className:"flex items-start gap-2",children:[e.jsx("span",{className:"mt-1 text-lib",children:"→"}),e.jsx("span",{children:"Correlation id generated at the entrypoint and carried to every layer"})]}),e.jsxs("li",{className:"flex items-start gap-2",children:[e.jsx("span",{className:"mt-1 text-lib",children:"→"}),e.jsx("span",{children:"Authenticated actor and tenant attached once, read anywhere"})]}),e.jsxs("li",{className:"flex items-start gap-2",children:[e.jsx("span",{className:"mt-1 text-lib",children:"→"}),e.jsx("span",{children:"AsyncLocalStorage under the hood — survives await, isolates concurrent operations"})]}),e.jsxs("li",{className:"flex items-start gap-2",children:[e.jsx("span",{className:"mt-1 text-lib",children:"→"}),e.jsx("span",{children:"@WithContext opens a scope for queue handlers, scheduled ticks and CLI commands"})]})]})]}),e.jsxs("div",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"What it is for"}),e.jsx("p",{className:"text-muted-foreground",children:"One operation crosses many layers, and every one of them wants the same few facts: which request am I part of, who is acting, which tenant. Passing them down as parameters pollutes every signature between the entrypoint and the code that actually needs them."}),e.jsx(t,{code:`HTTP Request → Use Case → Event → Handler → External API
+     └──────────── one correlation id ────────────┘`,filename:"propagation",language:"bash"})]}),e.jsxs("div",{className:"space-y-3",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Quick Usage"}),e.jsx(t,{code:`import { ContextModule } from '@turystack/nestjs-context'
+
+@Module({
+  imports: [ContextModule.register()],
+})
+export class AppModule {}`,filename:"app.module.ts",language:"ts"}),e.jsx(t,{code:`import { ContextService } from '@turystack/nestjs-context'
+
+@Injectable()
+export class CancelOrderUseCase {
+  constructor(private readonly context: ContextService) {}
+
+  async execute(input: CancelOrderInput) {
+    const { correlationId, actor } = this.context.require()
+  }
+}`,filename:"cancel-order.ts",language:"ts"})]})]})}export{l as component};

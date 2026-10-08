@@ -1,1 +1,0 @@
-import{j as o,bV as r}from"./index-CQ2_D3U_.js";import{A as e}from"./AudienceStage-CCUf31my.js";import"./minimize2-icon-B8EY6A80.js";import"./CodeBlock-ftRQod4w.js";import"./highlight-C4-SKK4T.js";import"./copy-uXspHRur.js";const t=r("b2b");function a(){return t?o.jsx(e,{audience:t}):null}export{a as component};

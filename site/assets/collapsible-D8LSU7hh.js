@@ -1,0 +1,36 @@
+import{E as l,j as e,ca as s,a5 as t,aa as o}from"./index-B7Ig6kNO.js";import{C as a}from"./CodeBlock-jMISp3qZ.js";import{C as i}from"./ComponentPreview-BlMdAug8.js";import{P as n}from"./PropsTable-r9MRwph6.js";import{S as r}from"./SlotsTable-CHbQbO6v.js";import{C as d}from"./chevron-down-DvfCOzKQ.js";import"./highlight-XlOl9cwO.js";import"./copy-DmxgNTfX.js";const c=[["path",{d:"M16 10a4 4 0 0 1-8 0",key:"1ltviw"}],["path",{d:"M3.103 6.034h17.794",key:"awc11p"}],["path",{d:"M3.4 5.467a2 2 0 0 0-.4 1.2V20a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6.667a2 2 0 0 0-.4-1.2l-2-2.667A2 2 0 0 0 17 2H7a2 2 0 0 0-1.6.8z",key:"o988cm"}]],p=l("shopping-bag",c),h=[{description:"Controlled state.",name:"open",type:"boolean"},{description:"Uncontrolled initial state.",name:"defaultOpen",type:"boolean"},{description:"Fires when it opens or closes.",name:"onChange",type:"(open: boolean) => void"},{description:"Refuses to open or close.",name:"disabled",type:"boolean"},{description:"Trigger only: the child becomes the trigger, own look kept.",name:"asChild",type:"boolean"},{description:"Trigger only: a muted second line under the title.",name:"description",type:"React.ReactNode"},{description:"Trigger only: a leading element, typically an icon.",name:"leftSection",type:"React.ReactNode"},{description:"Trigger only: a right-aligned element, typically a price.",name:"rightSection",type:"React.ReactNode"},{default:"false",description:"Trigger only: a chevron that turns over while open.",name:"indicator",type:"boolean"},{description:"Panel only: keeps the content in the document while closed.",name:"keepMounted",type:"boolean"}],m=`import { Button, Collapsible, MoneyText } from '@turystack/react-web'
+import { ChevronDown, ShoppingBag } from 'lucide-react'
+
+<Collapsible defaultOpen>
+  <Collapsible.Trigger indicator>Advanced options</Collapsible.Trigger>
+  <Collapsible.Panel>
+    <FilterFields />
+  </Collapsible.Panel>
+</Collapsible>
+
+// A two-line trigger: title, muted second line, a price and the chevron
+<Collapsible>
+  <Collapsible.Trigger
+    description="Suíte Master · 3 noites"
+    indicator
+    leftSection={<ShoppingBag aria-hidden size={18} />}
+    rightSection={<MoneyText value={186000} weight="semibold" />}
+  >
+    Resumo do pedido
+  </Collapsible.Trigger>
+  <Collapsible.Panel>…</Collapsible.Panel>
+</Collapsible>
+
+// A form field the browser has to be able to reach while closed
+<Collapsible.Panel keepMounted>
+  <Input name="code" />
+</Collapsible.Panel>
+
+// Your own control as the trigger, keeping its own look.
+// description / leftSection / rightSection / indicator are typed never here.
+<Collapsible>
+  <Collapsible.Trigger asChild>
+    <Button size="sm" variant="ghost">Ver mais 4 comodidades</Button>
+  </Collapsible.Trigger>
+  <Collapsible.Panel>…</Collapsible.Panel>
+</Collapsible>`;function C(){return e.jsxs("div",{className:"space-y-10",children:[e.jsxs("header",{children:[e.jsx("p",{className:"font-medium text-lib text-xs uppercase tracking-wider",children:"Layout"}),e.jsx("h1",{className:"mt-2 font-bold font-display text-3xl tracking-tight",children:"Collapsible"}),e.jsx("p",{className:"mt-3 max-w-prose text-lg text-muted-foreground",children:"One section that opens and closes."})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Props"}),e.jsx("p",{className:"max-w-prose text-muted-foreground text-sm",children:"The table covers the root, Trigger and Panel."}),e.jsx(n,{props:h})]}),e.jsx(r,{slug:"collapsible"}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Open and closed"}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:["The trigger carries ",e.jsx("code",{children:"aria-expanded"})," and"," ",e.jsx("code",{children:"aria-controls"}),", which is the whole reason to reach for the primitive rather than a div and a boolean."]}),e.jsx(i,{title:"Two sections, one already open",children:e.jsxs("div",{className:"flex w-full max-w-md flex-col gap-2",children:[e.jsxs(s,{defaultOpen:!0,children:[e.jsx(s.Trigger,{indicator:!0,children:"Advanced options"}),e.jsx(s.Panel,{children:e.jsx("p",{className:"pb-2 text-muted-foreground text-sm",children:"Rates, taxes and the cancellation window."})})]}),e.jsxs(s,{children:[e.jsx(s.Trigger,{indicator:!0,children:"Guest notes"}),e.jsx(s.Panel,{children:e.jsx("p",{className:"pb-2 text-muted-foreground text-sm",children:"Arriving late, needs a cot."})})]})]})})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"A two-line trigger"}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:[e.jsx("code",{children:"description"}),", ",e.jsx("code",{children:"leftSection"}),","," ",e.jsx("code",{children:"rightSection"})," and ",e.jsx("code",{children:"indicator"})," build a two-line trigger like this order summary."]}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:["They render as spans, since the trigger is a"," ",e.jsx("code",{children:"<button>"}),"; the title alone names it."]}),e.jsx(i,{title:"A checkout's order summary, folded on mobile",children:e.jsx("div",{className:"w-full max-w-sm rounded-lg border px-4",children:e.jsxs(s,{children:[e.jsx(s.Trigger,{description:"Suíte Master · 3 noites",indicator:!0,leftSection:e.jsx(p,{"aria-hidden":!0,size:18}),rightSection:e.jsx(t,{value:186e3,weight:"semibold"}),children:"Resumo do pedido"}),e.jsx(s.Panel,{children:e.jsxs("dl",{className:"grid grid-cols-[1fr_auto] gap-y-1 pb-3 text-muted-foreground text-sm",children:[e.jsx("dt",{children:"3 diárias"}),e.jsx("dd",{className:"text-right",children:e.jsx(t,{value:165e3})}),e.jsx("dt",{children:"Taxa de serviço"}),e.jsx("dd",{className:"text-right",children:e.jsx(t,{value:21e3})})]})})]})})})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Your own trigger"}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:[e.jsx("code",{children:"asChild"})," makes the child the trigger with its own look; the layout props are then typed ",e.jsx("code",{children:"never"}),"."]}),e.jsx(i,{title:"A ghost Button that reveals the rest of a list",children:e.jsxs("div",{className:"flex w-full max-w-md flex-col items-start gap-2 text-sm",children:[e.jsxs("ul",{className:"list-disc space-y-1 pl-5",children:[e.jsx("li",{children:"Wi-Fi gratuito"}),e.jsx("li",{children:"Café da manhã incluso"})]}),e.jsxs(s,{children:[e.jsx(s.Panel,{children:e.jsxs("ul",{className:"list-disc space-y-1 pb-2 pl-5",children:[e.jsx("li",{children:"Piscina aquecida"}),e.jsx("li",{children:"Estacionamento"}),e.jsx("li",{children:"Academia 24h"}),e.jsx("li",{children:"Aceita pets"})]})}),e.jsx(s.Trigger,{asChild:!0,children:e.jsx(o,{rightSection:e.jsx(d,{}),size:"sm",variant:"ghost",children:"Ver mais 4 comodidades"})})]})]})})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Usage"}),e.jsx(a,{code:m,filename:"example.tsx",language:"tsx"})]})]})}export{C as component};
