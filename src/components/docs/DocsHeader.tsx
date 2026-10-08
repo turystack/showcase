@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { ChevronRight, Github, Menu, X } from 'lucide-react'
 
 import { LibrarySwitcher } from './LibrarySwitcher'
+import { ThemeLabTrigger } from './ThemeLab'
 
 import { TuryMark } from '@/components/Logo'
 import { SpotlightTrigger } from '@/components/SpotlightSearch'
@@ -35,7 +36,7 @@ export function DocsHeader({
 				<div className="flex items-center gap-2">
 					<Link
 						className="flex items-center gap-2 hover:opacity-80"
-						to="/"
+						to="/showcase"
 					>
 						<TuryMark size={20} />
 						<span className="font-bold font-display text-sm tracking-tight">
@@ -73,6 +74,7 @@ export function DocsHeader({
 							<Github size={18} />
 						</a>
 
+						<ThemeLabTrigger />
 						<ThemeToggle />
 					</div>
 				</div>

@@ -1,0 +1,15 @@
+import{j as e}from"./index-CQ2_D3U_.js";import{C as s}from"./CodeBlock-ftRQod4w.js";import"./highlight-C4-SKK4T.js";import"./copy-uXspHRur.js";function r(){return e.jsxs("div",{className:"space-y-10",children:[e.jsxs("div",{children:[e.jsx("h1",{className:"font-bold font-display text-3xl tracking-tight",children:"@turystack/nestjs-idempotency"}),e.jsx("p",{className:"mt-3 text-lg text-muted-foreground",children:"Runs an operation at most once per key — for repeatable requests and redeliverable events."})]}),e.jsxs("div",{className:"space-y-3",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Installation"}),e.jsx(s,{tabs:[{code:"npm install @turystack/nestjs-idempotency",label:"npm"},{code:"pnpm add @turystack/nestjs-idempotency",label:"pnpm"},{code:"yarn add @turystack/nestjs-idempotency",label:"yarn"},{code:"bun add @turystack/nestjs-idempotency",label:"bun"}]})]}),e.jsxs("div",{className:"space-y-3",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Features"}),e.jsxs("ul",{className:"space-y-2 text-muted-foreground",children:[e.jsxs("li",{className:"flex items-start gap-2",children:[e.jsx("span",{className:"mt-1 text-lib",children:"→"}),e.jsx("span",{children:"Replay the first result for an HTTP caller, or skip silently for a queue handler"})]}),e.jsxs("li",{className:"flex items-start gap-2",children:[e.jsx("span",{className:"mt-1 text-lib",children:"→"}),e.jsx("span",{children:"Concurrent callers of the same key wait instead of running twice"})]}),e.jsxs("li",{className:"flex items-start gap-2",children:[e.jsx("span",{className:"mt-1 text-lib",children:"→"}),e.jsx("span",{children:"A key reused with a different payload is reported, not served the wrong result"})]}),e.jsxs("li",{className:"flex items-start gap-2",children:[e.jsx("span",{className:"mt-1 text-lib",children:"→"}),e.jsx("span",{children:"Built on @turystack/nestjs-cache storage and @turystack/nestjs-lock mutual exclusion"})]})]})]}),e.jsxs("div",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Why it is needed"}),e.jsx("p",{className:"text-muted-foreground",children:"Delivery is at-least-once. A queue redelivers, a client retries a timed-out request, a lambda is invoked again — none of them can tell a lost response from a failed call. Without a key, the effect is applied twice."})]}),e.jsxs("div",{className:"space-y-3",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Quick Usage"}),e.jsx(s,{code:`import { CacheModule } from '@turystack/nestjs-cache'
+import { LockModule } from '@turystack/nestjs-lock'
+import { IdempotencyModule } from '@turystack/nestjs-idempotency'
+
+@Module({
+  imports: [
+    CacheModule.register({
+      adapter: 'redis',
+      redis: { url: 'redis://localhost:6379' },
+    }),
+    LockModule.register(),
+    IdempotencyModule.register({ ttl: 604_800 }),
+  ],
+})
+export class AppModule {}`,filename:"app.module.ts",language:"ts"})]})]})}export{r as component};

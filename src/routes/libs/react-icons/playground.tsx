@@ -18,7 +18,7 @@ type IconEntry = {
 	name: string
 	category: IconCategory
 	Component: DisplayIcon
-	/** Precomputed so filtering never lowercases the same 605 names again. */
+	/** Precomputed so filtering never lowercases every name again. */
 	haystack: string
 }
 
@@ -69,7 +69,7 @@ const categoryCounts = iconEntries.reduce<Record<string, number>>(
 
 /**
  * Biggest groups first. Alphabetical would open the filter on `arrows` and
- * `astronomy` — six icons of planets ahead of the ninety-six interface ones
+ * `astronomy` — six icons of planets ahead of the ninety-seven interface ones
  * people are actually looking for.
  */
 const CATEGORIES = Object.keys(categoryCounts).sort(
@@ -96,7 +96,7 @@ function Page() {
 	const [size, setSize] = useState(defaultPlaygroundProps.size)
 
 	// Typing stays responsive while the grid catches up behind it — filtering
-	// 605 icons on every keystroke is enough to make the field feel stuck.
+	// every icon on every keystroke is enough to make the field feel stuck.
 	const deferredQuery = useDeferredValue(query)
 	const deferredCategory = useDeferredValue(category)
 
@@ -131,6 +131,10 @@ function Page() {
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
 					Tune shared props and compare all {iconEntries.length} icons at once.
+				</p>
+				<p className="mt-1 text-muted-foreground text-sm">
+					Previews render the web build. React Native exports the same names and
+					props.
 				</p>
 			</div>
 
@@ -189,7 +193,7 @@ function Page() {
 
 					{/*
 					 * The only scrolling region on the page: heading, search and
-					 * filters stay put, so the controls you need to narrow 605 icons
+					 * filters stay put, so the controls you need to narrow the set
 					 * are never the thing you scrolled past.
 					 */}
 					<div
@@ -318,8 +322,7 @@ function Page() {
 								/>
 							</div>
 							<p className="text-muted-foreground text-xs">
-								Brand marks in their official palette ignore this — that is what
-								makes them on-brand.
+								Most ColorIcon brand marks keep their palette and ignore this.
 							</p>
 						</div>
 
@@ -385,7 +388,7 @@ function CategoryChip({ active, count, label, onSelect }: CategoryChipProps) {
 			className={cn(
 				// Tight, because 39 of these share the fixed header with the search
 				// field — every row they take is a row of icons you cannot see.
-				'whitespace-nowrap rounded-full border px-2.5 py-1 font-medium text-xs transition-colors focus-visible:outline-2 focus-visible:outline-lib focus-visible:outline-offset-2',
+				'whitespace-nowrap rounded-lg border px-2.5 py-1 font-medium text-xs transition-colors focus-visible:outline-2 focus-visible:outline-lib focus-visible:outline-offset-2',
 				active
 					? 'border-lib bg-lib/10 text-foreground'
 					: 'border-border text-muted-foreground hover:border-lib/50 hover:text-foreground',

@@ -109,7 +109,7 @@ export class CancelOrderUseCase {
 context.run({ correlationId: request.headers['x-correlation-id'] }, () => next())
 
 // later, once the token is verified
-context.setActor({ id: profile.userId, organizationId: profile.organizationId })`}
+context.setActor({ id: profile.user_id, organizationId: profile.organization_id })`}
 					filename="auth.guard.ts"
 					language="ts"
 				/>

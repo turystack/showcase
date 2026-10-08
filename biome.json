@@ -30,7 +30,7 @@
 		}
 	},
 	"files": {
-		"includes": ["**", "!**/routeTree.gen.ts", "!**/*.css"]
+		"includes": ["**", "!**/routeTree.gen.ts", "!**/proof-mode-report.ts", "!**/*.css"]
 	},
 	"formatter": {
 		"attributePosition": "auto",
@@ -58,6 +58,16 @@
 			"unsafeParameterDecoratorsEnabled": true
 		}
 	},
+	"plugins": [
+		{
+			"includes": [
+				"**/src/components/audiences/**",
+				"!**/src/components/audiences/AudienceStage.tsx",
+				"!**/src/components/audiences/acme-logo.tsx"
+			],
+			"path": "./plugins/audiences-no-raw-html.grit"
+		}
+	],
 	"linter": {
 		"enabled": true,
 		"rules": {
@@ -117,6 +127,23 @@
 				"actions": {
 					"source": {
 						"useSortedKeys": { "level": "off" }
+					}
+				}
+			}
+		},
+		{
+			"includes": ["**/src/components/audiences/**"],
+			"linter": {
+				"rules": {
+					"style": {
+						"noRestrictedImports": {
+							"level": "error",
+							"options": {
+								"paths": {
+									"lucide-react": "Audience screens take icons from @turystack/react-icons (lucide names + Icon suffix, e.g. Search -> SearchIcon). If an icon is missing, add it to react-icons (scripts/curated.mjs) instead of importing lucide."
+								}
+							}
+						}
 					}
 				}
 			}

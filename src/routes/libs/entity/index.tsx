@@ -58,7 +58,7 @@ function Page() {
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
-						<span>Works seamlessly with messaging systems like SNS/SQS</span>
+						<span>Survives the trip through EventBridge events and queues</span>
 					</li>
 				</ul>
 			</div>
@@ -71,12 +71,12 @@ function Page() {
 @Entity('orders.order')
 class Order {
   id: string
-  createdAt: Date
+  created_at: Date
 }
 
 @Entity('orders.order-item')
 class OrderItem {
-  productId: string
+  product_id: string
   quantity: number
   price: number
 }`}

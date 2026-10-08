@@ -25,19 +25,23 @@ function Page() {
 				</h2>
 				<p className="text-muted-foreground">
 					There is no configuration. A table that declares{' '}
-					<code>createdBy</code> or <code>updatedBy</code> gets them stamped; a
-					table that does not is untouched.
+					<code>created_by</code> or <code>updated_by</code> gets them stamped;
+					a table that does not is untouched.
 				</p>
 				<CodeBlock
-					code={`import { defineDatabaseSchema } from '@turystack/nestjs-database'
+					filename="database.schema.ts"
+					language="ts"
+					tabs={[
+						{
+							code: `import { defineDatabaseSchema } from '@turystack/nestjs-database'
 
 export const databaseSchema = defineDatabaseSchema((schema) => ({
   // stamped
   orders: schema.table({
     id: schema.uuid('id').primaryKey(),
     status: schema.text('status').notNull(),
-    createdBy: schema.text('created_by'),  // filled on create / createMany
-    updatedBy: schema.text('updated_by'),  // filled on update / updateById
+    created_by: schema.text('created_by'),  // filled on create / createMany
+    updated_by: schema.text('updated_by'),  // filled on update / updateById
   }),
 
   // not stamped — nothing changes
@@ -45,13 +49,44 @@ export const databaseSchema = defineDatabaseSchema((schema) => ({
     id: schema.uuid('id').primaryKey(),
     name: schema.text('name').notNull(),
   }),
-}))`}
-					filename="database.schema.ts"
-					language="ts"
+}))`,
+							label: 'PostgreSQL',
+						},
+						{
+							code: `import { defineDynamoDatabaseSchema } from '@turystack/nestjs-database'
+
+export const databaseSchema = defineDynamoDatabaseSchema((t) => ({
+  // stamped
+  orders: t.table({
+    attributes: {
+      user_id: t.string(),
+      order_id: t.string(),
+      status: t.string(),
+      created_by: t.string().optional(),  // filled on create / createMany / upsert
+      updated_by: t.string().optional(),  // filled on updateById
+    },
+    key: { partition: 'user_id', sort: 'order_id' },
+  }),
+
+  // not stamped — nothing changes
+  countries: t.table({
+    attributes: { code: t.string(), name: t.string() },
+    key: { partition: 'code' },
+  }),
+}))`,
+							label: 'DynamoDB',
+						},
+					]}
 				/>
 				<p className="text-muted-foreground text-sm">
+					The rule is the same on both engines, because the stamping is record
+					work rather than engine work: a table that declared the attribute gets
+					it filled, a table that did not is untouched, and an explicit value
+					always wins.
+				</p>
+				<p className="text-muted-foreground text-sm">
 					Only these two columns are supported. Anything else — a{' '}
-					<code>deletedBy</code>, a reason, a source — is domain data and is
+					<code>deleted_by</code>, a reason, a source — is domain data and is
 					passed explicitly from the edge, like any other field.
 				</p>
 			</div>
@@ -65,7 +100,7 @@ export const databaseSchema = defineDatabaseSchema((schema) => ({
       ↓
 publishes the profile into the operation's context   (@turystack/nestjs-iam)
       ↓
-createdBy / updatedBy = context.actor.id             (this package)`}
+created_by / updated_by = context.actor.id             (this package)`}
 					filename="chain"
 					language="bash"
 				/>
@@ -86,10 +121,10 @@ createdBy / updatedBy = context.actor.id             (this package)`}
 				</p>
 				<CodeBlock
 					code={`// stamped with the authenticated actor
-await this.db.orders.create({ status: 'NEW' })
+await this.db.orders.create({ status: 'new' })
 
 // stamped with what you passed
-await this.db.orders.create({ status: 'NEW', createdBy: 'system' })`}
+await this.db.orders.create({ status: 'new', created_by: 'system' })`}
 					filename="orders.service.ts"
 					language="ts"
 				/>

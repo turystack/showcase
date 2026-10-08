@@ -14,9 +14,8 @@ function Page() {
 					@turystack/cli
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
-					The CLI scaffolds standalone NestJS APIs and React web applications,
-					and installs the pattern skills into your repository. Mobile, handler,
-					and monorepo commands are not available yet.
+					The CLI builds monorepos, and only monorepos. A new repository already
+					signs people in; you grow it one audience or domain at a time.
 				</p>
 			</div>
 
@@ -25,49 +24,29 @@ function Page() {
 					Local-first usage
 				</h2>
 				<p className="text-muted-foreground">
-					Build the CLI from this repository and point it at the Turystack
-					source root. Generated dependencies use local file links, so library
-					changes can be tested before any package is published.
+					Build the CLI here and point it at this source root. Dependencies
+					become local file links, testable before any publish.
 				</p>
 				<CodeBlock
 					code={`$ pnpm --dir cli build
-$ node cli/dist/index.js create api my-api --local-root .
+$ node cli/dist/index.js create acme --local-root .
 
-┌  Turystack · Create API
-◆  How should the API surface be organized?
-│  ○ Single audience
-│  ● Multi-audience
-◇  Audience 1
-│  admin
-◇  Audiences
-│  1. admin
-◇  Add another audience?
-◇  Audience 2
-│  app
-◇  Audiences
-│  1. admin
-│  2. app
-◇  Which optional capabilities does this API need?
-│  ◻ Access & operations
-│  ◻ Data & consistency
-│  ◻ Delivery & integrations
-◆  Which package manager should this project use?
-│  ● pnpm
-│  ○ npm / npx
-│  ○ Yarn
-│  ○ Bun
-◇  Install dependencies after creating the project?
-◇  API summary
-│  Project     my-api
-│  Format      Multi-audience (admin, app)
-│  Modules     None — minimal API
-│  Packages    Local Turystack source
-│  Manager     pnpm
-│  Install     Yes
-◆  Create this API?
-│  ● Create
-◇  Project formatted
-└  Next: cd my-api && pnpm dev`}
+┌  Create a Turystack monorepo
+◇  Install the Turystack skills into this repository?
+│  Yes
+◇  Repository summary
+│  Name       acme
+│  Location   ~/projects/acme
+│  Shape      apps/ · domains/ · libs/
+│  Skills     installed
+│  Install    pnpm install
+◇  Create this repository?
+│  Create
+✓ Repository created
+✓ Source written
+✓ Repository formatted
+✓ Skills installed
+└  cd acme && pnpm docker:up && pnpm build && pnpm db:generate && pnpm db:migrate && pnpm db:seed && pnpm dev`}
 					filename="terminal"
 					language="bash"
 				/>
@@ -80,23 +59,64 @@ $ node cli/dist/index.js create api my-api --local-root .
 				<CodeBlock
 					tabs={[
 						{
-							code: 'npx @turystack/cli create api my-api',
-							label: 'npm / npx',
+							code: 'npx @turystack/cli create acme',
+							label: 'npx',
 						},
 						{
-							code: 'pnpm dlx @turystack/cli create api my-api',
+							code: 'pnpm dlx @turystack/cli create acme',
 							label: 'pnpm',
-						},
-						{
-							code: 'yarn dlx @turystack/cli create api my-api',
-							label: 'Yarn',
-						},
-						{
-							code: 'bunx @turystack/cli create api my-api',
-							label: 'Bun',
 						},
 					]}
 				/>
+				<p className="text-muted-foreground text-sm">
+					The generated repository is pnpm only: its workspace file is how the
+					law detects a Turystack repository.
+				</p>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
+					What create produces
+				</h2>
+				<CodeBlock
+					code={`acme/
+├── apps/
+│   ├── api          the API, its audiences, the authorization server (:3000)
+│   ├── auth         the sign-in app — every auth screen (:3100)
+│   ├── console      the customer's app, one organization (:3200)
+│   └── backoffice   the operator's app, every organization (:3300)
+├── domains/
+│   └── iam          people, organizations, memberships, roles
+├── libs/
+│   ├── database     schema, relations, migrations
+│   ├── ui           the design, as one stylesheet
+│   └── oauth-clients  who may sign a person in
+├── docker-compose.yml
+├── .env · .env.example
+└── pnpm-workspace.yaml`}
+					filename="acme"
+					language="bash"
+				/>
+				<p className="text-muted-foreground text-sm">
+					Each audience is one API surface, one OpenAPI document and one app. A
+					product app holds no auth code: {'<AuthProvider>'} is the integration.
+				</p>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">Audiences</h2>
+				<CodeBlock
+					code={`audience     surface               app              permissions
+auth         /api/v1/auth          apps/auth        auth:
+console      /api/v1/console       apps/console     console:
+backoffice   /api/v1/backoffice    apps/backoffice  backoffice:`}
+					filename="audiences"
+					language="bash"
+				/>
+				<p className="text-muted-foreground text-sm">
+					console reads one organization from the session. backoffice reads
+					across them, so it is a separate app, never a route.
+				</p>
 			</div>
 
 			<div className="space-y-4">
@@ -106,67 +126,71 @@ $ node cli/dist/index.js create api my-api --local-root .
 				<CodeBlock
 					tabs={[
 						{
-							code: `node cli/dist/index.js create api my-api \\
+							code: `node cli/dist/index.js create acme \\
   --yes \\
   --local-root .`,
-							label: 'Single audience',
+							label: 'Create',
 						},
 						{
-							code: `node cli/dist/index.js create api my-api \\
-  --yes \\
-  --format multi-audience \\
-  --audiences admin,app \\
-  --package-manager npm \\
-  --modules database,logger,cache,iam \\
-  --local-root .`,
-							label: 'Multi-audience',
-						},
-						{
-							code: `node cli/dist/index.js create api my-api \\
+							code: `node cli/dist/index.js create acme \\
   --yes \\
   --registry`,
 							label: 'Registry',
 						},
 						{
-							code: `node cli/dist/index.js create web my-web \\
-  --yes \\
-  --local-root .`,
-							label: 'Web · Auth API',
+							code: `cd acme
+turystack add audience partner --yes --port 3400`,
+							label: 'Add audience',
 						},
 						{
-							code: `node cli/dist/index.js create web my-web \\
-  --yes \\
-  --audience admin \\
-  --local-root .`,
-							label: 'Web · Admin API',
+							code: `cd acme
+turystack add domain order --yes`,
+							label: 'Add domain',
+						},
+						{
+							code: `cd acme
+turystack skills --yes --claude --skills harness,proof-mode,backend`,
+							label: 'Skills',
 						},
 					]}
 				/>
+				<p className="text-muted-foreground text-sm">
+					add runs inside the repository. add audience writes /api/v1/partner,
+					apps/partner, its OAuth client and PARTNER_ORIGIN.
+				</p>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Options</h2>
 				<CodeBlock
-					code={`--format <single|multi-audience>
---audiences <admin,app>
---modules <database,logger,...>
---package-manager <pnpm|npm|yarn|bun>
---local-root <path>     Turystack source root for local file links
---registry              use published package versions
---skip-install
---yes
---help
---version`}
-					filename="turystack create api"
+					code={`turystack create <name> [options]
+turystack add audience <name> [options]
+turystack add domain <name> [options]
+turystack skills [options]
+
+Audience
+  --port <number>       where the app runs in development; its origin
+
+Skills
+  --claude              install into .claude/skills
+  --codex               install into .codex/skills
+  --skills <ids>        harness,proof-mode,architecture,modeling,backend,
+                        frontend,frontend-primitives,spec,uiux
+  --project <name>      names the project's own skills
+
+Shared
+  --local-root <path>   Turystack source root for local file links
+  --registry            use published package versions
+  --skip-install
+  --yes                 use defaults and disable prompts
+  --help
+  --version`}
+					filename="turystack --help"
 					language="bash"
 				/>
 				<p className="text-muted-foreground text-sm">
-					Lock and rate-limit automatically include the cache module they depend
-					on. The CLI shows these derived decisions in the confirmation summary.
-					No fake domain is generated. The CLI creates only one temporary
-					smoke-test controller per selected API surface, without service
-					injection. Every project is formatted with Biome before the CLI
-					finishes, including when installation is skipped.
+					Every generated package is formatted with Biome before the CLI
+					finishes, with --skip-install too.
 				</p>
 			</div>
 
@@ -175,29 +199,23 @@ $ node cli/dist/index.js create api my-api --local-root .
 					Command organization
 				</h2>
 				<p className="text-muted-foreground">
-					The entrypoint only routes execution. Each CLI operation owns its
-					parser, prompts, types, template, runner, and tests under its command
-					path.
+					The entrypoint only routes. Each command owns its parser, prompts,
+					runner and tests; workspace/ holds what they share.
 				</p>
 				<CodeBlock
 					code={`src/
 ├── index.ts
-└── commands/
-    ├── create/
-    │   ├── api/
-    │   │   ├── args.ts
-    │   │   ├── prompts.ts
-    │   │   ├── api-template.ts
-    │   │   └── create-api.ts
-    │   └── web/
-    │       ├── args.ts
-    │       ├── prompts.ts
-    │       ├── web-template.ts
-    │       └── create-web.ts
-    └── skills/
-        ├── args.ts
-        ├── prompts.ts
-        └── skills.ts`}
+├── commands/
+│   ├── create/
+│   │   ├── args.ts
+│   │   ├── prompts.ts
+│   │   ├── create-workspace.ts
+│   │   └── templates/     api · web · iam · database · oauth-clients · ui
+│   ├── add/
+│   │   ├── audience/      args · prompts · add-audience
+│   │   └── domain/        args · prompts · add-domain · domain-template
+│   └── skills/            args · prompts · skills
+└── workspace/             env · oauth-clients · biome · manifest · names`}
 					filename="@turystack/cli"
 					language="bash"
 				/>

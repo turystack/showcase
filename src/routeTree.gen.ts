@@ -10,75 +10,96 @@
 
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as MainRouteImport } from './routes/_main'
-import { Route as MainIndexRouteImport } from './routes/_main/index'
+import { Route as IndexRouteImport } from './routes/index'
+import { Route as LibsUiuxTemplateRouteImport } from './routes/libs/uiux-template'
 import { Route as LibsSagaRouteImport } from './routes/libs/saga'
 import { Route as LibsReactWebRouteImport } from './routes/libs/react-web'
-import { Route as LibsReactMobileRouteImport } from './routes/libs/react-mobile'
 import { Route as LibsReactIconsRouteImport } from './routes/libs/react-icons'
+import { Route as LibsReactI18nRouteImport } from './routes/libs/react-i18n'
 import { Route as LibsReactHooksRouteImport } from './routes/libs/react-hooks'
+import { Route as LibsReactChartsRouteImport } from './routes/libs/react-charts'
 import { Route as LibsQueryDslRouteImport } from './routes/libs/query-dsl'
+import { Route as LibsProofModeGatesRouteImport } from './routes/libs/proof-mode-gates'
+import { Route as LibsProofModeRouteImport } from './routes/libs/proof-mode'
+import { Route as LibsOpenapiSdkRouteImport } from './routes/libs/openapi-sdk'
 import { Route as LibsNestjsStorageRouteImport } from './routes/libs/nestjs-storage'
 import { Route as LibsNestjsSocialAuthRouteImport } from './routes/libs/nestjs-social-auth'
-import { Route as LibsNestjsServerlessRouteImport } from './routes/libs/nestjs-serverless'
 import { Route as LibsNestjsServerRouteImport } from './routes/libs/nestjs-server'
-import { Route as LibsNestjsSchedulerRouteImport } from './routes/libs/nestjs-scheduler'
 import { Route as LibsNestjsResilienceRouteImport } from './routes/libs/nestjs-resilience'
 import { Route as LibsNestjsRateLimitRouteImport } from './routes/libs/nestjs-rate-limit'
-import { Route as LibsNestjsPublisherRouteImport } from './routes/libs/nestjs-publisher'
 import { Route as LibsNestjsObservabilityRouteImport } from './routes/libs/nestjs-observability'
 import { Route as LibsNestjsLoggerRouteImport } from './routes/libs/nestjs-logger'
 import { Route as LibsNestjsLockRouteImport } from './routes/libs/nestjs-lock'
 import { Route as LibsNestjsIdempotencyRouteImport } from './routes/libs/nestjs-idempotency'
 import { Route as LibsNestjsIamRouteImport } from './routes/libs/nestjs-iam'
+import { Route as LibsNestjsEventsRouteImport } from './routes/libs/nestjs-events'
 import { Route as LibsNestjsDatabaseRouteImport } from './routes/libs/nestjs-database'
 import { Route as LibsNestjsContextRouteImport } from './routes/libs/nestjs-context'
 import { Route as LibsNestjsConfigRouteImport } from './routes/libs/nestjs-config'
 import { Route as LibsNestjsCacheRouteImport } from './routes/libs/nestjs-cache'
+import { Route as LibsModelingRouteImport } from './routes/libs/modeling'
+import { Route as LibsHarnessRouteImport } from './routes/libs/harness'
 import { Route as LibsFrontendPrimitivesPatternRouteImport } from './routes/libs/frontend-primitives-pattern'
 import { Route as LibsFrontendPatternRouteImport } from './routes/libs/frontend-pattern'
 import { Route as LibsFrontendConfigRouteImport } from './routes/libs/frontend-config'
+import { Route as LibsFieldsRouteImport } from './routes/libs/fields'
 import { Route as LibsExceptionsRouteImport } from './routes/libs/exceptions'
 import { Route as LibsEntityRouteImport } from './routes/libs/entity'
 import { Route as LibsCliRouteImport } from './routes/libs/cli'
+import { Route as LibsBlueprintTemplateRouteImport } from './routes/libs/blueprint-template'
 import { Route as LibsBackendPatternRouteImport } from './routes/libs/backend-pattern'
 import { Route as LibsBackendConfigRouteImport } from './routes/libs/backend-config'
 import { Route as LibsArchitecturePatternRouteImport } from './routes/libs/architecture-pattern'
+import { Route as MainShowcaseRouteImport } from './routes/_main/showcase'
+import { Route as LibsUiuxTemplateIndexRouteImport } from './routes/libs/uiux-template/index'
 import { Route as LibsSagaIndexRouteImport } from './routes/libs/saga/index'
 import { Route as LibsReactWebIndexRouteImport } from './routes/libs/react-web/index'
-import { Route as LibsReactMobileIndexRouteImport } from './routes/libs/react-mobile/index'
 import { Route as LibsReactIconsIndexRouteImport } from './routes/libs/react-icons/index'
+import { Route as LibsReactI18nIndexRouteImport } from './routes/libs/react-i18n/index'
 import { Route as LibsReactHooksIndexRouteImport } from './routes/libs/react-hooks/index'
+import { Route as LibsReactChartsIndexRouteImport } from './routes/libs/react-charts/index'
 import { Route as LibsQueryDslIndexRouteImport } from './routes/libs/query-dsl/index'
+import { Route as LibsProofModeIndexRouteImport } from './routes/libs/proof-mode/index'
+import { Route as LibsOpenapiSdkIndexRouteImport } from './routes/libs/openapi-sdk/index'
 import { Route as LibsNestjsStorageIndexRouteImport } from './routes/libs/nestjs-storage/index'
 import { Route as LibsNestjsSocialAuthIndexRouteImport } from './routes/libs/nestjs-social-auth/index'
-import { Route as LibsNestjsServerlessIndexRouteImport } from './routes/libs/nestjs-serverless/index'
 import { Route as LibsNestjsServerIndexRouteImport } from './routes/libs/nestjs-server/index'
-import { Route as LibsNestjsSchedulerIndexRouteImport } from './routes/libs/nestjs-scheduler/index'
 import { Route as LibsNestjsResilienceIndexRouteImport } from './routes/libs/nestjs-resilience/index'
 import { Route as LibsNestjsRateLimitIndexRouteImport } from './routes/libs/nestjs-rate-limit/index'
-import { Route as LibsNestjsPublisherIndexRouteImport } from './routes/libs/nestjs-publisher/index'
 import { Route as LibsNestjsObservabilityIndexRouteImport } from './routes/libs/nestjs-observability/index'
 import { Route as LibsNestjsLoggerIndexRouteImport } from './routes/libs/nestjs-logger/index'
 import { Route as LibsNestjsLockIndexRouteImport } from './routes/libs/nestjs-lock/index'
 import { Route as LibsNestjsIdempotencyIndexRouteImport } from './routes/libs/nestjs-idempotency/index'
 import { Route as LibsNestjsIamIndexRouteImport } from './routes/libs/nestjs-iam/index'
+import { Route as LibsNestjsEventsIndexRouteImport } from './routes/libs/nestjs-events/index'
 import { Route as LibsNestjsDatabaseIndexRouteImport } from './routes/libs/nestjs-database/index'
 import { Route as LibsNestjsContextIndexRouteImport } from './routes/libs/nestjs-context/index'
 import { Route as LibsNestjsConfigIndexRouteImport } from './routes/libs/nestjs-config/index'
 import { Route as LibsNestjsCacheIndexRouteImport } from './routes/libs/nestjs-cache/index'
+import { Route as LibsModelingIndexRouteImport } from './routes/libs/modeling/index'
+import { Route as LibsHarnessIndexRouteImport } from './routes/libs/harness/index'
 import { Route as LibsFrontendPrimitivesPatternIndexRouteImport } from './routes/libs/frontend-primitives-pattern/index'
 import { Route as LibsFrontendPatternIndexRouteImport } from './routes/libs/frontend-pattern/index'
 import { Route as LibsFrontendConfigIndexRouteImport } from './routes/libs/frontend-config/index'
+import { Route as LibsFieldsIndexRouteImport } from './routes/libs/fields/index'
 import { Route as LibsExceptionsIndexRouteImport } from './routes/libs/exceptions/index'
 import { Route as LibsEntityIndexRouteImport } from './routes/libs/entity/index'
 import { Route as LibsCliIndexRouteImport } from './routes/libs/cli/index'
+import { Route as LibsBlueprintTemplateIndexRouteImport } from './routes/libs/blueprint-template/index'
 import { Route as LibsBackendPatternIndexRouteImport } from './routes/libs/backend-pattern/index'
 import { Route as LibsBackendConfigIndexRouteImport } from './routes/libs/backend-config/index'
 import { Route as LibsArchitecturePatternIndexRouteImport } from './routes/libs/architecture-pattern/index'
+import { Route as LibsUiuxTemplateThemeRouteImport } from './routes/libs/uiux-template/theme'
+import { Route as LibsUiuxTemplateSectionRouteImport } from './routes/libs/uiux-template/$section'
 import { Route as LibsSagaSagaRouteImport } from './routes/libs/saga/saga'
-import { Route as LibsReactWebPlaygroundRouteImport } from './routes/libs/react-web/playground'
 import { Route as LibsReactIconsPlaygroundRouteImport } from './routes/libs/react-icons/playground'
+import { Route as LibsReactI18nUiLabelsRouteImport } from './routes/libs/react-i18n/ui-labels'
+import { Route as LibsReactI18nProviderRouteImport } from './routes/libs/react-i18n/provider'
+import { Route as LibsReactI18nDictionaryRouteImport } from './routes/libs/react-i18n/dictionary'
+import { Route as LibsReactI18nApiRouteImport } from './routes/libs/react-i18n/api'
 import { Route as LibsReactHooksHookRouteImport } from './routes/libs/react-hooks/$hook'
+import { Route as LibsReactChartsSparklineRouteImport } from './routes/libs/react-charts/sparkline'
+import { Route as LibsReactChartsChartRouteImport } from './routes/libs/react-charts/chart'
 import { Route as LibsQueryDslSortSchemaRouteImport } from './routes/libs/query-dsl/sort-schema'
 import { Route as LibsQueryDslRangeSchemaRouteImport } from './routes/libs/query-dsl/range-schema'
 import { Route as LibsQueryDslPaginationSchemaRouteImport } from './routes/libs/query-dsl/pagination-schema'
@@ -86,29 +107,24 @@ import { Route as LibsQueryDslListSchemaRouteImport } from './routes/libs/query-
 import { Route as LibsQueryDslFilterSchemaRouteImport } from './routes/libs/query-dsl/filter-schema'
 import { Route as LibsQueryDslDateRangeSchemaRouteImport } from './routes/libs/query-dsl/date-range-schema'
 import { Route as LibsQueryDslBooleanSchemaRouteImport } from './routes/libs/query-dsl/boolean-schema'
+import { Route as LibsProofModeSectionRouteImport } from './routes/libs/proof-mode/$section'
+import { Route as LibsOpenapiSdkNamingRouteImport } from './routes/libs/openapi-sdk/naming'
+import { Route as LibsOpenapiSdkConfigRouteImport } from './routes/libs/openapi-sdk/config'
+import { Route as LibsOpenapiSdkClientRouteImport } from './routes/libs/openapi-sdk/client'
 import { Route as LibsNestjsStorageStorageServiceRouteImport } from './routes/libs/nestjs-storage/storage-service'
 import { Route as LibsNestjsStorageStorageModuleRouteImport } from './routes/libs/nestjs-storage/storage-module'
 import { Route as LibsNestjsSocialAuthSocialAuthServiceRouteImport } from './routes/libs/nestjs-social-auth/social-auth-service'
 import { Route as LibsNestjsSocialAuthSocialAuthModuleRouteImport } from './routes/libs/nestjs-social-auth/social-auth-module'
-import { Route as LibsNestjsServerlessServerlessModuleRouteImport } from './routes/libs/nestjs-serverless/serverless-module'
-import { Route as LibsNestjsServerlessServerlessCreateRouteImport } from './routes/libs/nestjs-serverless/serverless-create'
-import { Route as LibsNestjsServerlessHandlerDecoratorRouteImport } from './routes/libs/nestjs-serverless/handler-decorator'
 import { Route as LibsNestjsServerServerCreateRouteImport } from './routes/libs/nestjs-server/server-create'
 import { Route as LibsNestjsServerRouteDecoratorRouteImport } from './routes/libs/nestjs-server/route-decorator'
 import { Route as LibsNestjsServerRequestDecoratorRouteImport } from './routes/libs/nestjs-server/request-decorator'
 import { Route as LibsNestjsServerControllerDecoratorRouteImport } from './routes/libs/nestjs-server/controller-decorator'
-import { Route as LibsNestjsSchedulerSchedulerModuleRouteImport } from './routes/libs/nestjs-scheduler/scheduler-module'
-import { Route as LibsNestjsSchedulerScheduleDecoratorRouteImport } from './routes/libs/nestjs-scheduler/schedule-decorator'
 import { Route as LibsNestjsResilienceTimeoutRouteImport } from './routes/libs/nestjs-resilience/timeout'
 import { Route as LibsNestjsResilienceRetryRouteImport } from './routes/libs/nestjs-resilience/retry'
 import { Route as LibsNestjsResilienceCircuitBreakerRouteImport } from './routes/libs/nestjs-resilience/circuit-breaker'
 import { Route as LibsNestjsRateLimitRateLimitServiceRouteImport } from './routes/libs/nestjs-rate-limit/rate-limit-service'
 import { Route as LibsNestjsRateLimitRateLimitModuleRouteImport } from './routes/libs/nestjs-rate-limit/rate-limit-module'
 import { Route as LibsNestjsRateLimitRateLimitDecoratorRouteImport } from './routes/libs/nestjs-rate-limit/rate-limit-decorator'
-import { Route as LibsNestjsPublisherSubscriberDecoratorRouteImport } from './routes/libs/nestjs-publisher/subscriber-decorator'
-import { Route as LibsNestjsPublisherPublisherServiceRouteImport } from './routes/libs/nestjs-publisher/publisher-service'
-import { Route as LibsNestjsPublisherPublisherModuleRouteImport } from './routes/libs/nestjs-publisher/publisher-module'
-import { Route as LibsNestjsPublisherOutboxRouteImport } from './routes/libs/nestjs-publisher/outbox'
 import { Route as LibsNestjsObservabilityTracingRouteImport } from './routes/libs/nestjs-observability/tracing'
 import { Route as LibsNestjsObservabilityObservabilityModuleRouteImport } from './routes/libs/nestjs-observability/observability-module'
 import { Route as LibsNestjsObservabilityMetricsServiceRouteImport } from './routes/libs/nestjs-observability/metrics-service'
@@ -127,10 +143,18 @@ import { Route as LibsNestjsIamAuthenticatedProfileDecoratorRouteImport } from '
 import { Route as LibsNestjsIamAuthDecoratorRouteImport } from './routes/libs/nestjs-iam/auth-decorator'
 import { Route as LibsNestjsIamAclServiceRouteImport } from './routes/libs/nestjs-iam/acl-service'
 import { Route as LibsNestjsIamAclDecoratorRouteImport } from './routes/libs/nestjs-iam/acl-decorator'
+import { Route as LibsNestjsEventsWorkersModuleRouteImport } from './routes/libs/nestjs-events/workers-module'
+import { Route as LibsNestjsEventsServerlessCreateRouteImport } from './routes/libs/nestjs-events/serverless-create'
+import { Route as LibsNestjsEventsPublisherRouteImport } from './routes/libs/nestjs-events/publisher'
+import { Route as LibsNestjsEventsInfraRouteImport } from './routes/libs/nestjs-events/infra'
+import { Route as LibsNestjsEventsHandlerDecoratorRouteImport } from './routes/libs/nestjs-events/handler-decorator'
+import { Route as LibsNestjsEventsContractsRouteImport } from './routes/libs/nestjs-events/contracts'
 import { Route as LibsNestjsDatabaseTypesAndErrorsRouteImport } from './routes/libs/nestjs-database/types-and-errors'
 import { Route as LibsNestjsDatabaseTransactionalRouteImport } from './routes/libs/nestjs-database/transactional'
 import { Route as LibsNestjsDatabaseTransactionHooksRouteImport } from './routes/libs/nestjs-database/transaction-hooks'
 import { Route as LibsNestjsDatabaseSchemaDefinitionRouteImport } from './routes/libs/nestjs-database/schema-definition'
+import { Route as LibsNestjsDatabasePostgresqlRouteImport } from './routes/libs/nestjs-database/postgresql'
+import { Route as LibsNestjsDatabaseDynamodbRouteImport } from './routes/libs/nestjs-database/dynamodb'
 import { Route as LibsNestjsDatabaseDatabaseServiceRouteImport } from './routes/libs/nestjs-database/database-service'
 import { Route as LibsNestjsDatabaseDatabaseModuleRouteImport } from './routes/libs/nestjs-database/database-module'
 import { Route as LibsNestjsDatabaseAuditRouteImport } from './routes/libs/nestjs-database/audit'
@@ -144,32 +168,169 @@ import { Route as LibsNestjsCacheCacheServiceRouteImport } from './routes/libs/n
 import { Route as LibsNestjsCacheCacheModuleRouteImport } from './routes/libs/nestjs-cache/cache-module'
 import { Route as LibsNestjsCacheCacheGetRouteImport } from './routes/libs/nestjs-cache/cache-get'
 import { Route as LibsNestjsCacheCacheDelRouteImport } from './routes/libs/nestjs-cache/cache-del'
+import { Route as LibsModelingSectionRouteImport } from './routes/libs/modeling/$section'
+import { Route as LibsHarnessFlowRouteImport } from './routes/libs/harness/flow'
+import { Route as LibsHarnessSectionRouteImport } from './routes/libs/harness/$section'
 import { Route as LibsFrontendPrimitivesPatternSectionRouteImport } from './routes/libs/frontend-primitives-pattern/$section'
 import { Route as LibsFrontendPatternSectionRouteImport } from './routes/libs/frontend-pattern/$section'
 import { Route as LibsFrontendConfigTypescriptRouteImport } from './routes/libs/frontend-config/typescript'
 import { Route as LibsFrontendConfigBiomeRouteImport } from './routes/libs/frontend-config/biome'
+import { Route as LibsFieldsTextRouteImport } from './routes/libs/fields/text'
+import { Route as LibsFieldsNumbersRouteImport } from './routes/libs/fields/numbers'
+import { Route as LibsFieldsIdentityRouteImport } from './routes/libs/fields/identity'
+import { Route as LibsFieldsFilesRouteImport } from './routes/libs/fields/files'
+import { Route as LibsFieldsErrorCodesRouteImport } from './routes/libs/fields/error-codes'
+import { Route as LibsFieldsDatesRouteImport } from './routes/libs/fields/dates'
+import { Route as LibsFieldsCrossFieldRouteImport } from './routes/libs/fields/cross-field'
+import { Route as LibsFieldsCollectionsRouteImport } from './routes/libs/fields/collections'
+import { Route as LibsFieldsBrazilRouteImport } from './routes/libs/fields/brazil'
+import { Route as LibsFieldsBooleansRouteImport } from './routes/libs/fields/booleans'
 import { Route as LibsExceptionsExceptionsRouteImport } from './routes/libs/exceptions/exceptions'
 import { Route as LibsEntityEntityRouteImport } from './routes/libs/entity/entity'
 import { Route as LibsCliWebRouteImport } from './routes/libs/cli/web'
 import { Route as LibsCliMonorepoRouteImport } from './routes/libs/cli/monorepo'
-import { Route as LibsCliMobileRouteImport } from './routes/libs/cli/mobile'
 import { Route as LibsCliHandlerRouteImport } from './routes/libs/cli/handler'
 import { Route as LibsCliApiRouteImport } from './routes/libs/cli/api'
+import { Route as LibsBlueprintTemplateBoardRouteImport } from './routes/libs/blueprint-template/board'
+import { Route as LibsBlueprintTemplateSectionRouteImport } from './routes/libs/blueprint-template/$section'
 import { Route as LibsBackendPatternSectionRouteImport } from './routes/libs/backend-pattern/$section'
 import { Route as LibsBackendConfigTypescriptRouteImport } from './routes/libs/backend-config/typescript'
 import { Route as LibsBackendConfigBiomeRouteImport } from './routes/libs/backend-config/biome'
 import { Route as LibsArchitecturePatternSectionRouteImport } from './routes/libs/architecture-pattern/$section'
-import { Route as LibsReactMobileComponentsIndexRouteImport } from './routes/libs/react-mobile/components/index'
-import { Route as LibsReactMobileComponentsComponentRouteImport } from './routes/libs/react-mobile/components/$component'
+import { Route as LibsReactWebHooksIndexRouteImport } from './routes/libs/react-web/hooks/index'
+import { Route as LibsReactWebComponentsIndexRouteImport } from './routes/libs/react-web/components/index'
+import { Route as LibsReactWebAudiencesIndexRouteImport } from './routes/libs/react-web/audiences/index'
+import { Route as LibsReactWebHooksHookRouteImport } from './routes/libs/react-web/hooks/$hook'
+import { Route as LibsReactWebComponentsUploaderRouteImport } from './routes/libs/react-web/components/uploader'
+import { Route as LibsReactWebComponentsTypographyRouteImport } from './routes/libs/react-web/components/typography'
+import { Route as LibsReactWebComponentsTuryProviderRouteImport } from './routes/libs/react-web/components/tury-provider'
+import { Route as LibsReactWebComponentsTruncatedTextRouteImport } from './routes/libs/react-web/components/truncated-text'
+import { Route as LibsReactWebComponentsTreeRouteImport } from './routes/libs/react-web/components/tree'
+import { Route as LibsReactWebComponentsTooltipRouteImport } from './routes/libs/react-web/components/tooltip'
+import { Route as LibsReactWebComponentsToggleRouteImport } from './routes/libs/react-web/components/toggle'
+import { Route as LibsReactWebComponentsToastRouteImport } from './routes/libs/react-web/components/toast'
+import { Route as LibsReactWebComponentsTimelineRouteImport } from './routes/libs/react-web/components/timeline'
+import { Route as LibsReactWebComponentsTimeInputRouteImport } from './routes/libs/react-web/components/time-input'
+import { Route as LibsReactWebComponentsTextareaRouteImport } from './routes/libs/react-web/components/textarea'
+import { Route as LibsReactWebComponentsTagsInputRouteImport } from './routes/libs/react-web/components/tags-input'
+import { Route as LibsReactWebComponentsTagRouteImport } from './routes/libs/react-web/components/tag'
+import { Route as LibsReactWebComponentsTabsRouteImport } from './routes/libs/react-web/components/tabs'
+import { Route as LibsReactWebComponentsTableRouteImport } from './routes/libs/react-web/components/table'
+import { Route as LibsReactWebComponentsSwitchRouteImport } from './routes/libs/react-web/components/switch'
+import { Route as LibsReactWebComponentsStepperRouteImport } from './routes/libs/react-web/components/stepper'
+import { Route as LibsReactWebComponentsStatRouteImport } from './routes/libs/react-web/components/stat'
+import { Route as LibsReactWebComponentsSpotlightSearchRouteImport } from './routes/libs/react-web/components/spotlight-search'
+import { Route as LibsReactWebComponentsSliderRouteImport } from './routes/libs/react-web/components/slider'
+import { Route as LibsReactWebComponentsSkeletonRouteImport } from './routes/libs/react-web/components/skeleton'
+import { Route as LibsReactWebComponentsSheetRouteImport } from './routes/libs/react-web/components/sheet'
+import { Route as LibsReactWebComponentsSeparatorRouteImport } from './routes/libs/react-web/components/separator'
+import { Route as LibsReactWebComponentsSelectRouteImport } from './routes/libs/react-web/components/select'
+import { Route as LibsReactWebComponentsSegmentedControlRouteImport } from './routes/libs/react-web/components/segmented-control'
+import { Route as LibsReactWebComponentsSearchRouteImport } from './routes/libs/react-web/components/search'
+import { Route as LibsReactWebComponentsScrollAreaRouteImport } from './routes/libs/react-web/components/scroll-area'
+import { Route as LibsReactWebComponentsResizableRouteImport } from './routes/libs/react-web/components/resizable'
+import { Route as LibsReactWebComponentsRatingRouteImport } from './routes/libs/react-web/components/rating'
+import { Route as LibsReactWebComponentsRadioRouteImport } from './routes/libs/react-web/components/radio'
+import { Route as LibsReactWebComponentsQrCodeRouteImport } from './routes/libs/react-web/components/qr-code'
+import { Route as LibsReactWebComponentsProtectedProviderRouteImport } from './routes/libs/react-web/components/protected-provider'
+import { Route as LibsReactWebComponentsProtectedRouteImport } from './routes/libs/react-web/components/protected'
+import { Route as LibsReactWebComponentsProgressRouteImport } from './routes/libs/react-web/components/progress'
+import { Route as LibsReactWebComponentsPortalProviderRouteImport } from './routes/libs/react-web/components/portal-provider'
+import { Route as LibsReactWebComponentsPopoverRouteImport } from './routes/libs/react-web/components/popover'
+import { Route as LibsReactWebComponentsPopconfirmRouteImport } from './routes/libs/react-web/components/popconfirm'
+import { Route as LibsReactWebComponentsPhoneTextRouteImport } from './routes/libs/react-web/components/phone-text'
+import { Route as LibsReactWebComponentsPhoneInputRouteImport } from './routes/libs/react-web/components/phone-input'
+import { Route as LibsReactWebComponentsPasswordInputRouteImport } from './routes/libs/react-web/components/password-input'
+import { Route as LibsReactWebComponentsPaginationRouteImport } from './routes/libs/react-web/components/pagination'
+import { Route as LibsReactWebComponentsPageRouteImport } from './routes/libs/react-web/components/page'
+import { Route as LibsReactWebComponentsOtpInputRouteImport } from './routes/libs/react-web/components/otp-input'
+import { Route as LibsReactWebComponentsNumberTextRouteImport } from './routes/libs/react-web/components/number-text'
+import { Route as LibsReactWebComponentsNumberInputRouteImport } from './routes/libs/react-web/components/number-input'
+import { Route as LibsReactWebComponentsNotificationListRouteImport } from './routes/libs/react-web/components/notification-list'
+import { Route as LibsReactWebComponentsNotificationFilterRouteImport } from './routes/libs/react-web/components/notification-filter'
+import { Route as LibsReactWebComponentsNotificationCenterRouteImport } from './routes/libs/react-web/components/notification-center'
+import { Route as LibsReactWebComponentsNotificationCardRouteImport } from './routes/libs/react-web/components/notification-card'
+import { Route as LibsReactWebComponentsMoneyTextRouteImport } from './routes/libs/react-web/components/money-text'
+import { Route as LibsReactWebComponentsModalRouteImport } from './routes/libs/react-web/components/modal'
+import { Route as LibsReactWebComponentsMaskInputRouteImport } from './routes/libs/react-web/components/mask-input'
+import { Route as LibsReactWebComponentsLoadingOverlayRouteImport } from './routes/libs/react-web/components/loading-overlay'
+import { Route as LibsReactWebComponentsLoadingBarRouteImport } from './routes/libs/react-web/components/loading-bar'
+import { Route as LibsReactWebComponentsLoadedRouteImport } from './routes/libs/react-web/components/loaded'
+import { Route as LibsReactWebComponentsListRouteImport } from './routes/libs/react-web/components/list'
+import { Route as LibsReactWebComponentsLayoutRouteImport } from './routes/libs/react-web/components/layout'
+import { Route as LibsReactWebComponentsLabelsProviderRouteImport } from './routes/libs/react-web/components/labels-provider'
+import { Route as LibsReactWebComponentsLabelRouteImport } from './routes/libs/react-web/components/label'
+import { Route as LibsReactWebComponentsInputRouteImport } from './routes/libs/react-web/components/input'
+import { Route as LibsReactWebComponentsIndicatorRouteImport } from './routes/libs/react-web/components/indicator'
+import { Route as LibsReactWebComponentsImageRouteImport } from './routes/libs/react-web/components/image'
+import { Route as LibsReactWebComponentsIdentityRouteImport } from './routes/libs/react-web/components/identity'
+import { Route as LibsReactWebComponentsGridRouteImport } from './routes/libs/react-web/components/grid'
+import { Route as LibsReactWebComponentsFormatProviderRouteImport } from './routes/libs/react-web/components/format-provider'
+import { Route as LibsReactWebComponentsFormRouteImport } from './routes/libs/react-web/components/form'
+import { Route as LibsReactWebComponentsFlexRouteImport } from './routes/libs/react-web/components/flex'
+import { Route as LibsReactWebComponentsFilterChipRouteImport } from './routes/libs/react-web/components/filter-chip'
+import { Route as LibsReactWebComponentsFilterBarRouteImport } from './routes/libs/react-web/components/filter-bar'
+import { Route as LibsReactWebComponentsFileSizeTextRouteImport } from './routes/libs/react-web/components/file-size-text'
+import { Route as LibsReactWebComponentsEmptyStateRouteImport } from './routes/libs/react-web/components/empty-state'
+import { Route as LibsReactWebComponentsEditableTextRouteImport } from './routes/libs/react-web/components/editable-text'
+import { Route as LibsReactWebComponentsDurationTextRouteImport } from './routes/libs/react-web/components/duration-text'
+import { Route as LibsReactWebComponentsDropdownMenuRouteImport } from './routes/libs/react-web/components/dropdown-menu'
+import { Route as LibsReactWebComponentsDocumentTextRouteImport } from './routes/libs/react-web/components/document-text'
+import { Route as LibsReactWebComponentsDocumentInputRouteImport } from './routes/libs/react-web/components/document-input'
+import { Route as LibsReactWebComponentsDescriptionListRouteImport } from './routes/libs/react-web/components/description-list'
+import { Route as LibsReactWebComponentsDateTimeInputRouteImport } from './routes/libs/react-web/components/date-time-input'
+import { Route as LibsReactWebComponentsDateTextRouteImport } from './routes/libs/react-web/components/date-text'
+import { Route as LibsReactWebComponentsDateRangeInputRouteImport } from './routes/libs/react-web/components/date-range-input'
+import { Route as LibsReactWebComponentsDateInputRouteImport } from './routes/libs/react-web/components/date-input'
+import { Route as LibsReactWebComponentsDataTransferImportRouteImport } from './routes/libs/react-web/components/data-transfer-import'
+import { Route as LibsReactWebComponentsDataTransferExportRouteImport } from './routes/libs/react-web/components/data-transfer-export'
+import { Route as LibsReactWebComponentsCurrencyInputRouteImport } from './routes/libs/react-web/components/currency-input'
+import { Route as LibsReactWebComponentsCopyButtonRouteImport } from './routes/libs/react-web/components/copy-button'
+import { Route as LibsReactWebComponentsContainerRouteImport } from './routes/libs/react-web/components/container'
+import { Route as LibsReactWebComponentsConfirmRouteImport } from './routes/libs/react-web/components/confirm'
+import { Route as LibsReactWebComponentsColorSchemeSwitcherRouteImport } from './routes/libs/react-web/components/color-scheme-switcher'
+import { Route as LibsReactWebComponentsColorSchemeProviderRouteImport } from './routes/libs/react-web/components/color-scheme-provider'
+import { Route as LibsReactWebComponentsColorPickerRouteImport } from './routes/libs/react-web/components/color-picker'
+import { Route as LibsReactWebComponentsCollapsibleRouteImport } from './routes/libs/react-web/components/collapsible'
+import { Route as LibsReactWebComponentsCodeBlockRouteImport } from './routes/libs/react-web/components/code-block'
+import { Route as LibsReactWebComponentsChecklistRouteImport } from './routes/libs/react-web/components/checklist'
+import { Route as LibsReactWebComponentsCheckboxRouteImport } from './routes/libs/react-web/components/checkbox'
+import { Route as LibsReactWebComponentsCarouselRouteImport } from './routes/libs/react-web/components/carousel'
+import { Route as LibsReactWebComponentsCardRouteImport } from './routes/libs/react-web/components/card'
+import { Route as LibsReactWebComponentsCalendarRouteImport } from './routes/libs/react-web/components/calendar'
+import { Route as LibsReactWebComponentsButtonRouteImport } from './routes/libs/react-web/components/button'
+import { Route as LibsReactWebComponentsBulkActionsRouteImport } from './routes/libs/react-web/components/bulk-actions'
+import { Route as LibsReactWebComponentsBreadcrumbRouteImport } from './routes/libs/react-web/components/breadcrumb'
+import { Route as LibsReactWebComponentsBoxRouteImport } from './routes/libs/react-web/components/box'
+import { Route as LibsReactWebComponentsBooleanTextRouteImport } from './routes/libs/react-web/components/boolean-text'
+import { Route as LibsReactWebComponentsBoardRouteImport } from './routes/libs/react-web/components/board'
+import { Route as LibsReactWebComponentsBadgeRouteImport } from './routes/libs/react-web/components/badge'
+import { Route as LibsReactWebComponentsAvatarRouteImport } from './routes/libs/react-web/components/avatar'
+import { Route as LibsReactWebComponentsAnchorNavRouteImport } from './routes/libs/react-web/components/anchor-nav'
+import { Route as LibsReactWebComponentsAlertRouteImport } from './routes/libs/react-web/components/alert'
+import { Route as LibsReactWebComponentsAccordionRouteImport } from './routes/libs/react-web/components/accordion'
+import { Route as LibsReactWebComponentsComponentRouteImport } from './routes/libs/react-web/components/$component'
+import { Route as LibsReactWebAudiencesLandingPageRouteImport } from './routes/libs/react-web/audiences/landing-page'
+import { Route as LibsReactWebAudiencesCheckoutRouteImport } from './routes/libs/react-web/audiences/checkout'
+import { Route as LibsReactWebAudiencesBackofficeRouteImport } from './routes/libs/react-web/audiences/backoffice'
+import { Route as LibsReactWebAudiencesB2cRouteImport } from './routes/libs/react-web/audiences/b2c'
+import { Route as LibsReactWebAudiencesB2bRouteImport } from './routes/libs/react-web/audiences/b2b'
+import { Route as LibsReactWebAudiencesAuthRouteImport } from './routes/libs/react-web/audiences/auth'
+import { Route as LibsReactWebComponentsLoaderRouteRouteImport } from './routes/libs/react-web/components/loader/route'
 
 const MainRoute = MainRouteImport.update({
   id: '/_main',
   getParentRoute: () => rootRouteImport,
 } as any)
-const MainIndexRoute = MainIndexRouteImport.update({
+const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
-  getParentRoute: () => MainRoute,
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsUiuxTemplateRoute = LibsUiuxTemplateRouteImport.update({
+  id: '/libs/uiux-template',
+  path: '/libs/uiux-template',
+  getParentRoute: () => rootRouteImport,
 } as any)
 const LibsSagaRoute = LibsSagaRouteImport.update({
   id: '/libs/saga',
@@ -181,14 +342,14 @@ const LibsReactWebRoute = LibsReactWebRouteImport.update({
   path: '/libs/react-web',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LibsReactMobileRoute = LibsReactMobileRouteImport.update({
-  id: '/libs/react-mobile',
-  path: '/libs/react-mobile',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LibsReactIconsRoute = LibsReactIconsRouteImport.update({
   id: '/libs/react-icons',
   path: '/libs/react-icons',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsReactI18nRoute = LibsReactI18nRouteImport.update({
+  id: '/libs/react-i18n',
+  path: '/libs/react-i18n',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibsReactHooksRoute = LibsReactHooksRouteImport.update({
@@ -196,9 +357,29 @@ const LibsReactHooksRoute = LibsReactHooksRouteImport.update({
   path: '/libs/react-hooks',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LibsReactChartsRoute = LibsReactChartsRouteImport.update({
+  id: '/libs/react-charts',
+  path: '/libs/react-charts',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LibsQueryDslRoute = LibsQueryDslRouteImport.update({
   id: '/libs/query-dsl',
   path: '/libs/query-dsl',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsProofModeGatesRoute = LibsProofModeGatesRouteImport.update({
+  id: '/libs/proof-mode-gates',
+  path: '/libs/proof-mode-gates',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsProofModeRoute = LibsProofModeRouteImport.update({
+  id: '/libs/proof-mode',
+  path: '/libs/proof-mode',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsOpenapiSdkRoute = LibsOpenapiSdkRouteImport.update({
+  id: '/libs/openapi-sdk',
+  path: '/libs/openapi-sdk',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibsNestjsStorageRoute = LibsNestjsStorageRouteImport.update({
@@ -211,19 +392,9 @@ const LibsNestjsSocialAuthRoute = LibsNestjsSocialAuthRouteImport.update({
   path: '/libs/nestjs-social-auth',
   getParentRoute: () => rootRouteImport,
 } as any)
-const LibsNestjsServerlessRoute = LibsNestjsServerlessRouteImport.update({
-  id: '/libs/nestjs-serverless',
-  path: '/libs/nestjs-serverless',
-  getParentRoute: () => rootRouteImport,
-} as any)
 const LibsNestjsServerRoute = LibsNestjsServerRouteImport.update({
   id: '/libs/nestjs-server',
   path: '/libs/nestjs-server',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LibsNestjsSchedulerRoute = LibsNestjsSchedulerRouteImport.update({
-  id: '/libs/nestjs-scheduler',
-  path: '/libs/nestjs-scheduler',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibsNestjsResilienceRoute = LibsNestjsResilienceRouteImport.update({
@@ -234,11 +405,6 @@ const LibsNestjsResilienceRoute = LibsNestjsResilienceRouteImport.update({
 const LibsNestjsRateLimitRoute = LibsNestjsRateLimitRouteImport.update({
   id: '/libs/nestjs-rate-limit',
   path: '/libs/nestjs-rate-limit',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const LibsNestjsPublisherRoute = LibsNestjsPublisherRouteImport.update({
-  id: '/libs/nestjs-publisher',
-  path: '/libs/nestjs-publisher',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibsNestjsObservabilityRoute = LibsNestjsObservabilityRouteImport.update({
@@ -266,6 +432,11 @@ const LibsNestjsIamRoute = LibsNestjsIamRouteImport.update({
   path: '/libs/nestjs-iam',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LibsNestjsEventsRoute = LibsNestjsEventsRouteImport.update({
+  id: '/libs/nestjs-events',
+  path: '/libs/nestjs-events',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LibsNestjsDatabaseRoute = LibsNestjsDatabaseRouteImport.update({
   id: '/libs/nestjs-database',
   path: '/libs/nestjs-database',
@@ -286,6 +457,16 @@ const LibsNestjsCacheRoute = LibsNestjsCacheRouteImport.update({
   path: '/libs/nestjs-cache',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LibsModelingRoute = LibsModelingRouteImport.update({
+  id: '/libs/modeling',
+  path: '/libs/modeling',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsHarnessRoute = LibsHarnessRouteImport.update({
+  id: '/libs/harness',
+  path: '/libs/harness',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LibsFrontendPrimitivesPatternRoute =
   LibsFrontendPrimitivesPatternRouteImport.update({
     id: '/libs/frontend-primitives-pattern',
@@ -300,6 +481,11 @@ const LibsFrontendPatternRoute = LibsFrontendPatternRouteImport.update({
 const LibsFrontendConfigRoute = LibsFrontendConfigRouteImport.update({
   id: '/libs/frontend-config',
   path: '/libs/frontend-config',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const LibsFieldsRoute = LibsFieldsRouteImport.update({
+  id: '/libs/fields',
+  path: '/libs/fields',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LibsExceptionsRoute = LibsExceptionsRouteImport.update({
@@ -317,6 +503,11 @@ const LibsCliRoute = LibsCliRouteImport.update({
   path: '/libs/cli',
   getParentRoute: () => rootRouteImport,
 } as any)
+const LibsBlueprintTemplateRoute = LibsBlueprintTemplateRouteImport.update({
+  id: '/libs/blueprint-template',
+  path: '/libs/blueprint-template',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const LibsBackendPatternRoute = LibsBackendPatternRouteImport.update({
   id: '/libs/backend-pattern',
   path: '/libs/backend-pattern',
@@ -332,6 +523,16 @@ const LibsArchitecturePatternRoute = LibsArchitecturePatternRouteImport.update({
   path: '/libs/architecture-pattern',
   getParentRoute: () => rootRouteImport,
 } as any)
+const MainShowcaseRoute = MainShowcaseRouteImport.update({
+  id: '/showcase',
+  path: '/showcase',
+  getParentRoute: () => MainRoute,
+} as any)
+const LibsUiuxTemplateIndexRoute = LibsUiuxTemplateIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsUiuxTemplateRoute,
+} as any)
 const LibsSagaIndexRoute = LibsSagaIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -342,25 +543,40 @@ const LibsReactWebIndexRoute = LibsReactWebIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LibsReactWebRoute,
 } as any)
-const LibsReactMobileIndexRoute = LibsReactMobileIndexRouteImport.update({
-  id: '/',
-  path: '/',
-  getParentRoute: () => LibsReactMobileRoute,
-} as any)
 const LibsReactIconsIndexRoute = LibsReactIconsIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => LibsReactIconsRoute,
+} as any)
+const LibsReactI18nIndexRoute = LibsReactI18nIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsReactI18nRoute,
 } as any)
 const LibsReactHooksIndexRoute = LibsReactHooksIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => LibsReactHooksRoute,
 } as any)
+const LibsReactChartsIndexRoute = LibsReactChartsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsReactChartsRoute,
+} as any)
 const LibsQueryDslIndexRoute = LibsQueryDslIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => LibsQueryDslRoute,
+} as any)
+const LibsProofModeIndexRoute = LibsProofModeIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsProofModeRoute,
+} as any)
+const LibsOpenapiSdkIndexRoute = LibsOpenapiSdkIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsOpenapiSdkRoute,
 } as any)
 const LibsNestjsStorageIndexRoute = LibsNestjsStorageIndexRouteImport.update({
   id: '/',
@@ -373,23 +589,11 @@ const LibsNestjsSocialAuthIndexRoute =
     path: '/',
     getParentRoute: () => LibsNestjsSocialAuthRoute,
   } as any)
-const LibsNestjsServerlessIndexRoute =
-  LibsNestjsServerlessIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => LibsNestjsServerlessRoute,
-  } as any)
 const LibsNestjsServerIndexRoute = LibsNestjsServerIndexRouteImport.update({
   id: '/',
   path: '/',
   getParentRoute: () => LibsNestjsServerRoute,
 } as any)
-const LibsNestjsSchedulerIndexRoute =
-  LibsNestjsSchedulerIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => LibsNestjsSchedulerRoute,
-  } as any)
 const LibsNestjsResilienceIndexRoute =
   LibsNestjsResilienceIndexRouteImport.update({
     id: '/',
@@ -401,12 +605,6 @@ const LibsNestjsRateLimitIndexRoute =
     id: '/',
     path: '/',
     getParentRoute: () => LibsNestjsRateLimitRoute,
-  } as any)
-const LibsNestjsPublisherIndexRoute =
-  LibsNestjsPublisherIndexRouteImport.update({
-    id: '/',
-    path: '/',
-    getParentRoute: () => LibsNestjsPublisherRoute,
   } as any)
 const LibsNestjsObservabilityIndexRoute =
   LibsNestjsObservabilityIndexRouteImport.update({
@@ -435,6 +633,11 @@ const LibsNestjsIamIndexRoute = LibsNestjsIamIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LibsNestjsIamRoute,
 } as any)
+const LibsNestjsEventsIndexRoute = LibsNestjsEventsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsNestjsEventsRoute,
+} as any)
 const LibsNestjsDatabaseIndexRoute = LibsNestjsDatabaseIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -455,6 +658,16 @@ const LibsNestjsCacheIndexRoute = LibsNestjsCacheIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LibsNestjsCacheRoute,
 } as any)
+const LibsModelingIndexRoute = LibsModelingIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsModelingRoute,
+} as any)
+const LibsHarnessIndexRoute = LibsHarnessIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsHarnessRoute,
+} as any)
 const LibsFrontendPrimitivesPatternIndexRoute =
   LibsFrontendPrimitivesPatternIndexRouteImport.update({
     id: '/',
@@ -472,6 +685,11 @@ const LibsFrontendConfigIndexRoute = LibsFrontendConfigIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LibsFrontendConfigRoute,
 } as any)
+const LibsFieldsIndexRoute = LibsFieldsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
 const LibsExceptionsIndexRoute = LibsExceptionsIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -487,6 +705,12 @@ const LibsCliIndexRoute = LibsCliIndexRouteImport.update({
   path: '/',
   getParentRoute: () => LibsCliRoute,
 } as any)
+const LibsBlueprintTemplateIndexRoute =
+  LibsBlueprintTemplateIndexRouteImport.update({
+    id: '/',
+    path: '/',
+    getParentRoute: () => LibsBlueprintTemplateRoute,
+  } as any)
 const LibsBackendPatternIndexRoute = LibsBackendPatternIndexRouteImport.update({
   id: '/',
   path: '/',
@@ -503,15 +727,20 @@ const LibsArchitecturePatternIndexRoute =
     path: '/',
     getParentRoute: () => LibsArchitecturePatternRoute,
   } as any)
+const LibsUiuxTemplateThemeRoute = LibsUiuxTemplateThemeRouteImport.update({
+  id: '/theme',
+  path: '/theme',
+  getParentRoute: () => LibsUiuxTemplateRoute,
+} as any)
+const LibsUiuxTemplateSectionRoute = LibsUiuxTemplateSectionRouteImport.update({
+  id: '/$section',
+  path: '/$section',
+  getParentRoute: () => LibsUiuxTemplateRoute,
+} as any)
 const LibsSagaSagaRoute = LibsSagaSagaRouteImport.update({
   id: '/saga',
   path: '/saga',
   getParentRoute: () => LibsSagaRoute,
-} as any)
-const LibsReactWebPlaygroundRoute = LibsReactWebPlaygroundRouteImport.update({
-  id: '/playground',
-  path: '/playground',
-  getParentRoute: () => LibsReactWebRoute,
 } as any)
 const LibsReactIconsPlaygroundRoute =
   LibsReactIconsPlaygroundRouteImport.update({
@@ -519,10 +748,41 @@ const LibsReactIconsPlaygroundRoute =
     path: '/playground',
     getParentRoute: () => LibsReactIconsRoute,
   } as any)
+const LibsReactI18nUiLabelsRoute = LibsReactI18nUiLabelsRouteImport.update({
+  id: '/ui-labels',
+  path: '/ui-labels',
+  getParentRoute: () => LibsReactI18nRoute,
+} as any)
+const LibsReactI18nProviderRoute = LibsReactI18nProviderRouteImport.update({
+  id: '/provider',
+  path: '/provider',
+  getParentRoute: () => LibsReactI18nRoute,
+} as any)
+const LibsReactI18nDictionaryRoute = LibsReactI18nDictionaryRouteImport.update({
+  id: '/dictionary',
+  path: '/dictionary',
+  getParentRoute: () => LibsReactI18nRoute,
+} as any)
+const LibsReactI18nApiRoute = LibsReactI18nApiRouteImport.update({
+  id: '/api',
+  path: '/api',
+  getParentRoute: () => LibsReactI18nRoute,
+} as any)
 const LibsReactHooksHookRoute = LibsReactHooksHookRouteImport.update({
   id: '/$hook',
   path: '/$hook',
   getParentRoute: () => LibsReactHooksRoute,
+} as any)
+const LibsReactChartsSparklineRoute =
+  LibsReactChartsSparklineRouteImport.update({
+    id: '/sparkline',
+    path: '/sparkline',
+    getParentRoute: () => LibsReactChartsRoute,
+  } as any)
+const LibsReactChartsChartRoute = LibsReactChartsChartRouteImport.update({
+  id: '/chart',
+  path: '/chart',
+  getParentRoute: () => LibsReactChartsRoute,
 } as any)
 const LibsQueryDslSortSchemaRoute = LibsQueryDslSortSchemaRouteImport.update({
   id: '/sort-schema',
@@ -563,6 +823,26 @@ const LibsQueryDslBooleanSchemaRoute =
     path: '/boolean-schema',
     getParentRoute: () => LibsQueryDslRoute,
   } as any)
+const LibsProofModeSectionRoute = LibsProofModeSectionRouteImport.update({
+  id: '/$section',
+  path: '/$section',
+  getParentRoute: () => LibsProofModeRoute,
+} as any)
+const LibsOpenapiSdkNamingRoute = LibsOpenapiSdkNamingRouteImport.update({
+  id: '/naming',
+  path: '/naming',
+  getParentRoute: () => LibsOpenapiSdkRoute,
+} as any)
+const LibsOpenapiSdkConfigRoute = LibsOpenapiSdkConfigRouteImport.update({
+  id: '/config',
+  path: '/config',
+  getParentRoute: () => LibsOpenapiSdkRoute,
+} as any)
+const LibsOpenapiSdkClientRoute = LibsOpenapiSdkClientRouteImport.update({
+  id: '/client',
+  path: '/client',
+  getParentRoute: () => LibsOpenapiSdkRoute,
+} as any)
 const LibsNestjsStorageStorageServiceRoute =
   LibsNestjsStorageStorageServiceRouteImport.update({
     id: '/storage-service',
@@ -587,24 +867,6 @@ const LibsNestjsSocialAuthSocialAuthModuleRoute =
     path: '/social-auth-module',
     getParentRoute: () => LibsNestjsSocialAuthRoute,
   } as any)
-const LibsNestjsServerlessServerlessModuleRoute =
-  LibsNestjsServerlessServerlessModuleRouteImport.update({
-    id: '/serverless-module',
-    path: '/serverless-module',
-    getParentRoute: () => LibsNestjsServerlessRoute,
-  } as any)
-const LibsNestjsServerlessServerlessCreateRoute =
-  LibsNestjsServerlessServerlessCreateRouteImport.update({
-    id: '/serverless-create',
-    path: '/serverless-create',
-    getParentRoute: () => LibsNestjsServerlessRoute,
-  } as any)
-const LibsNestjsServerlessHandlerDecoratorRoute =
-  LibsNestjsServerlessHandlerDecoratorRouteImport.update({
-    id: '/handler-decorator',
-    path: '/handler-decorator',
-    getParentRoute: () => LibsNestjsServerlessRoute,
-  } as any)
 const LibsNestjsServerServerCreateRoute =
   LibsNestjsServerServerCreateRouteImport.update({
     id: '/server-create',
@@ -628,18 +890,6 @@ const LibsNestjsServerControllerDecoratorRoute =
     id: '/controller-decorator',
     path: '/controller-decorator',
     getParentRoute: () => LibsNestjsServerRoute,
-  } as any)
-const LibsNestjsSchedulerSchedulerModuleRoute =
-  LibsNestjsSchedulerSchedulerModuleRouteImport.update({
-    id: '/scheduler-module',
-    path: '/scheduler-module',
-    getParentRoute: () => LibsNestjsSchedulerRoute,
-  } as any)
-const LibsNestjsSchedulerScheduleDecoratorRoute =
-  LibsNestjsSchedulerScheduleDecoratorRouteImport.update({
-    id: '/schedule-decorator',
-    path: '/schedule-decorator',
-    getParentRoute: () => LibsNestjsSchedulerRoute,
   } as any)
 const LibsNestjsResilienceTimeoutRoute =
   LibsNestjsResilienceTimeoutRouteImport.update({
@@ -676,30 +926,6 @@ const LibsNestjsRateLimitRateLimitDecoratorRoute =
     id: '/rate-limit-decorator',
     path: '/rate-limit-decorator',
     getParentRoute: () => LibsNestjsRateLimitRoute,
-  } as any)
-const LibsNestjsPublisherSubscriberDecoratorRoute =
-  LibsNestjsPublisherSubscriberDecoratorRouteImport.update({
-    id: '/subscriber-decorator',
-    path: '/subscriber-decorator',
-    getParentRoute: () => LibsNestjsPublisherRoute,
-  } as any)
-const LibsNestjsPublisherPublisherServiceRoute =
-  LibsNestjsPublisherPublisherServiceRouteImport.update({
-    id: '/publisher-service',
-    path: '/publisher-service',
-    getParentRoute: () => LibsNestjsPublisherRoute,
-  } as any)
-const LibsNestjsPublisherPublisherModuleRoute =
-  LibsNestjsPublisherPublisherModuleRouteImport.update({
-    id: '/publisher-module',
-    path: '/publisher-module',
-    getParentRoute: () => LibsNestjsPublisherRoute,
-  } as any)
-const LibsNestjsPublisherOutboxRoute =
-  LibsNestjsPublisherOutboxRouteImport.update({
-    id: '/outbox',
-    path: '/outbox',
-    getParentRoute: () => LibsNestjsPublisherRoute,
   } as any)
 const LibsNestjsObservabilityTracingRoute =
   LibsNestjsObservabilityTracingRouteImport.update({
@@ -807,6 +1033,41 @@ const LibsNestjsIamAclDecoratorRoute =
     path: '/acl-decorator',
     getParentRoute: () => LibsNestjsIamRoute,
   } as any)
+const LibsNestjsEventsWorkersModuleRoute =
+  LibsNestjsEventsWorkersModuleRouteImport.update({
+    id: '/workers-module',
+    path: '/workers-module',
+    getParentRoute: () => LibsNestjsEventsRoute,
+  } as any)
+const LibsNestjsEventsServerlessCreateRoute =
+  LibsNestjsEventsServerlessCreateRouteImport.update({
+    id: '/serverless-create',
+    path: '/serverless-create',
+    getParentRoute: () => LibsNestjsEventsRoute,
+  } as any)
+const LibsNestjsEventsPublisherRoute =
+  LibsNestjsEventsPublisherRouteImport.update({
+    id: '/publisher',
+    path: '/publisher',
+    getParentRoute: () => LibsNestjsEventsRoute,
+  } as any)
+const LibsNestjsEventsInfraRoute = LibsNestjsEventsInfraRouteImport.update({
+  id: '/infra',
+  path: '/infra',
+  getParentRoute: () => LibsNestjsEventsRoute,
+} as any)
+const LibsNestjsEventsHandlerDecoratorRoute =
+  LibsNestjsEventsHandlerDecoratorRouteImport.update({
+    id: '/handler-decorator',
+    path: '/handler-decorator',
+    getParentRoute: () => LibsNestjsEventsRoute,
+  } as any)
+const LibsNestjsEventsContractsRoute =
+  LibsNestjsEventsContractsRouteImport.update({
+    id: '/contracts',
+    path: '/contracts',
+    getParentRoute: () => LibsNestjsEventsRoute,
+  } as any)
 const LibsNestjsDatabaseTypesAndErrorsRoute =
   LibsNestjsDatabaseTypesAndErrorsRouteImport.update({
     id: '/types-and-errors',
@@ -829,6 +1090,18 @@ const LibsNestjsDatabaseSchemaDefinitionRoute =
   LibsNestjsDatabaseSchemaDefinitionRouteImport.update({
     id: '/schema-definition',
     path: '/schema-definition',
+    getParentRoute: () => LibsNestjsDatabaseRoute,
+  } as any)
+const LibsNestjsDatabasePostgresqlRoute =
+  LibsNestjsDatabasePostgresqlRouteImport.update({
+    id: '/postgresql',
+    path: '/postgresql',
+    getParentRoute: () => LibsNestjsDatabaseRoute,
+  } as any)
+const LibsNestjsDatabaseDynamodbRoute =
+  LibsNestjsDatabaseDynamodbRouteImport.update({
+    id: '/dynamodb',
+    path: '/dynamodb',
     getParentRoute: () => LibsNestjsDatabaseRoute,
   } as any)
 const LibsNestjsDatabaseDatabaseServiceRoute =
@@ -906,6 +1179,21 @@ const LibsNestjsCacheCacheDelRoute = LibsNestjsCacheCacheDelRouteImport.update({
   path: '/cache-del',
   getParentRoute: () => LibsNestjsCacheRoute,
 } as any)
+const LibsModelingSectionRoute = LibsModelingSectionRouteImport.update({
+  id: '/$section',
+  path: '/$section',
+  getParentRoute: () => LibsModelingRoute,
+} as any)
+const LibsHarnessFlowRoute = LibsHarnessFlowRouteImport.update({
+  id: '/flow',
+  path: '/flow',
+  getParentRoute: () => LibsHarnessRoute,
+} as any)
+const LibsHarnessSectionRoute = LibsHarnessSectionRouteImport.update({
+  id: '/$section',
+  path: '/$section',
+  getParentRoute: () => LibsHarnessRoute,
+} as any)
 const LibsFrontendPrimitivesPatternSectionRoute =
   LibsFrontendPrimitivesPatternSectionRouteImport.update({
     id: '/$section',
@@ -929,6 +1217,56 @@ const LibsFrontendConfigBiomeRoute = LibsFrontendConfigBiomeRouteImport.update({
   path: '/biome',
   getParentRoute: () => LibsFrontendConfigRoute,
 } as any)
+const LibsFieldsTextRoute = LibsFieldsTextRouteImport.update({
+  id: '/text',
+  path: '/text',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsNumbersRoute = LibsFieldsNumbersRouteImport.update({
+  id: '/numbers',
+  path: '/numbers',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsIdentityRoute = LibsFieldsIdentityRouteImport.update({
+  id: '/identity',
+  path: '/identity',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsFilesRoute = LibsFieldsFilesRouteImport.update({
+  id: '/files',
+  path: '/files',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsErrorCodesRoute = LibsFieldsErrorCodesRouteImport.update({
+  id: '/error-codes',
+  path: '/error-codes',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsDatesRoute = LibsFieldsDatesRouteImport.update({
+  id: '/dates',
+  path: '/dates',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsCrossFieldRoute = LibsFieldsCrossFieldRouteImport.update({
+  id: '/cross-field',
+  path: '/cross-field',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsCollectionsRoute = LibsFieldsCollectionsRouteImport.update({
+  id: '/collections',
+  path: '/collections',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsBrazilRoute = LibsFieldsBrazilRouteImport.update({
+  id: '/brazil',
+  path: '/brazil',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
+const LibsFieldsBooleansRoute = LibsFieldsBooleansRouteImport.update({
+  id: '/booleans',
+  path: '/booleans',
+  getParentRoute: () => LibsFieldsRoute,
+} as any)
 const LibsExceptionsExceptionsRoute =
   LibsExceptionsExceptionsRouteImport.update({
     id: '/exceptions',
@@ -950,11 +1288,6 @@ const LibsCliMonorepoRoute = LibsCliMonorepoRouteImport.update({
   path: '/monorepo',
   getParentRoute: () => LibsCliRoute,
 } as any)
-const LibsCliMobileRoute = LibsCliMobileRouteImport.update({
-  id: '/mobile',
-  path: '/mobile',
-  getParentRoute: () => LibsCliRoute,
-} as any)
 const LibsCliHandlerRoute = LibsCliHandlerRouteImport.update({
   id: '/handler',
   path: '/handler',
@@ -965,6 +1298,18 @@ const LibsCliApiRoute = LibsCliApiRouteImport.update({
   path: '/api',
   getParentRoute: () => LibsCliRoute,
 } as any)
+const LibsBlueprintTemplateBoardRoute =
+  LibsBlueprintTemplateBoardRouteImport.update({
+    id: '/board',
+    path: '/board',
+    getParentRoute: () => LibsBlueprintTemplateRoute,
+  } as any)
+const LibsBlueprintTemplateSectionRoute =
+  LibsBlueprintTemplateSectionRouteImport.update({
+    id: '/$section',
+    path: '/$section',
+    getParentRoute: () => LibsBlueprintTemplateRoute,
+  } as any)
 const LibsBackendPatternSectionRoute =
   LibsBackendPatternSectionRouteImport.update({
     id: '/$section',
@@ -988,68 +1333,796 @@ const LibsArchitecturePatternSectionRoute =
     path: '/$section',
     getParentRoute: () => LibsArchitecturePatternRoute,
   } as any)
-const LibsReactMobileComponentsIndexRoute =
-  LibsReactMobileComponentsIndexRouteImport.update({
+const LibsReactWebHooksIndexRoute = LibsReactWebHooksIndexRouteImport.update({
+  id: '/hooks/',
+  path: '/hooks/',
+  getParentRoute: () => LibsReactWebRoute,
+} as any)
+const LibsReactWebComponentsIndexRoute =
+  LibsReactWebComponentsIndexRouteImport.update({
     id: '/components/',
     path: '/components/',
-    getParentRoute: () => LibsReactMobileRoute,
+    getParentRoute: () => LibsReactWebRoute,
   } as any)
-const LibsReactMobileComponentsComponentRoute =
-  LibsReactMobileComponentsComponentRouteImport.update({
+const LibsReactWebAudiencesIndexRoute =
+  LibsReactWebAudiencesIndexRouteImport.update({
+    id: '/audiences/',
+    path: '/audiences/',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebHooksHookRoute = LibsReactWebHooksHookRouteImport.update({
+  id: '/hooks/$hook',
+  path: '/hooks/$hook',
+  getParentRoute: () => LibsReactWebRoute,
+} as any)
+const LibsReactWebComponentsUploaderRoute =
+  LibsReactWebComponentsUploaderRouteImport.update({
+    id: '/components/uploader',
+    path: '/components/uploader',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTypographyRoute =
+  LibsReactWebComponentsTypographyRouteImport.update({
+    id: '/components/typography',
+    path: '/components/typography',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTuryProviderRoute =
+  LibsReactWebComponentsTuryProviderRouteImport.update({
+    id: '/components/tury-provider',
+    path: '/components/tury-provider',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTruncatedTextRoute =
+  LibsReactWebComponentsTruncatedTextRouteImport.update({
+    id: '/components/truncated-text',
+    path: '/components/truncated-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTreeRoute =
+  LibsReactWebComponentsTreeRouteImport.update({
+    id: '/components/tree',
+    path: '/components/tree',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTooltipRoute =
+  LibsReactWebComponentsTooltipRouteImport.update({
+    id: '/components/tooltip',
+    path: '/components/tooltip',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsToggleRoute =
+  LibsReactWebComponentsToggleRouteImport.update({
+    id: '/components/toggle',
+    path: '/components/toggle',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsToastRoute =
+  LibsReactWebComponentsToastRouteImport.update({
+    id: '/components/toast',
+    path: '/components/toast',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTimelineRoute =
+  LibsReactWebComponentsTimelineRouteImport.update({
+    id: '/components/timeline',
+    path: '/components/timeline',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTimeInputRoute =
+  LibsReactWebComponentsTimeInputRouteImport.update({
+    id: '/components/time-input',
+    path: '/components/time-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTextareaRoute =
+  LibsReactWebComponentsTextareaRouteImport.update({
+    id: '/components/textarea',
+    path: '/components/textarea',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTagsInputRoute =
+  LibsReactWebComponentsTagsInputRouteImport.update({
+    id: '/components/tags-input',
+    path: '/components/tags-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTagRoute =
+  LibsReactWebComponentsTagRouteImport.update({
+    id: '/components/tag',
+    path: '/components/tag',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTabsRoute =
+  LibsReactWebComponentsTabsRouteImport.update({
+    id: '/components/tabs',
+    path: '/components/tabs',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsTableRoute =
+  LibsReactWebComponentsTableRouteImport.update({
+    id: '/components/table',
+    path: '/components/table',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSwitchRoute =
+  LibsReactWebComponentsSwitchRouteImport.update({
+    id: '/components/switch',
+    path: '/components/switch',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsStepperRoute =
+  LibsReactWebComponentsStepperRouteImport.update({
+    id: '/components/stepper',
+    path: '/components/stepper',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsStatRoute =
+  LibsReactWebComponentsStatRouteImport.update({
+    id: '/components/stat',
+    path: '/components/stat',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSpotlightSearchRoute =
+  LibsReactWebComponentsSpotlightSearchRouteImport.update({
+    id: '/components/spotlight-search',
+    path: '/components/spotlight-search',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSliderRoute =
+  LibsReactWebComponentsSliderRouteImport.update({
+    id: '/components/slider',
+    path: '/components/slider',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSkeletonRoute =
+  LibsReactWebComponentsSkeletonRouteImport.update({
+    id: '/components/skeleton',
+    path: '/components/skeleton',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSheetRoute =
+  LibsReactWebComponentsSheetRouteImport.update({
+    id: '/components/sheet',
+    path: '/components/sheet',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSeparatorRoute =
+  LibsReactWebComponentsSeparatorRouteImport.update({
+    id: '/components/separator',
+    path: '/components/separator',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSelectRoute =
+  LibsReactWebComponentsSelectRouteImport.update({
+    id: '/components/select',
+    path: '/components/select',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSegmentedControlRoute =
+  LibsReactWebComponentsSegmentedControlRouteImport.update({
+    id: '/components/segmented-control',
+    path: '/components/segmented-control',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsSearchRoute =
+  LibsReactWebComponentsSearchRouteImport.update({
+    id: '/components/search',
+    path: '/components/search',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsScrollAreaRoute =
+  LibsReactWebComponentsScrollAreaRouteImport.update({
+    id: '/components/scroll-area',
+    path: '/components/scroll-area',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsResizableRoute =
+  LibsReactWebComponentsResizableRouteImport.update({
+    id: '/components/resizable',
+    path: '/components/resizable',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsRatingRoute =
+  LibsReactWebComponentsRatingRouteImport.update({
+    id: '/components/rating',
+    path: '/components/rating',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsRadioRoute =
+  LibsReactWebComponentsRadioRouteImport.update({
+    id: '/components/radio',
+    path: '/components/radio',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsQrCodeRoute =
+  LibsReactWebComponentsQrCodeRouteImport.update({
+    id: '/components/qr-code',
+    path: '/components/qr-code',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsProtectedProviderRoute =
+  LibsReactWebComponentsProtectedProviderRouteImport.update({
+    id: '/components/protected-provider',
+    path: '/components/protected-provider',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsProtectedRoute =
+  LibsReactWebComponentsProtectedRouteImport.update({
+    id: '/components/protected',
+    path: '/components/protected',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsProgressRoute =
+  LibsReactWebComponentsProgressRouteImport.update({
+    id: '/components/progress',
+    path: '/components/progress',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsPortalProviderRoute =
+  LibsReactWebComponentsPortalProviderRouteImport.update({
+    id: '/components/portal-provider',
+    path: '/components/portal-provider',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsPopoverRoute =
+  LibsReactWebComponentsPopoverRouteImport.update({
+    id: '/components/popover',
+    path: '/components/popover',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsPopconfirmRoute =
+  LibsReactWebComponentsPopconfirmRouteImport.update({
+    id: '/components/popconfirm',
+    path: '/components/popconfirm',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsPhoneTextRoute =
+  LibsReactWebComponentsPhoneTextRouteImport.update({
+    id: '/components/phone-text',
+    path: '/components/phone-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsPhoneInputRoute =
+  LibsReactWebComponentsPhoneInputRouteImport.update({
+    id: '/components/phone-input',
+    path: '/components/phone-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsPasswordInputRoute =
+  LibsReactWebComponentsPasswordInputRouteImport.update({
+    id: '/components/password-input',
+    path: '/components/password-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsPaginationRoute =
+  LibsReactWebComponentsPaginationRouteImport.update({
+    id: '/components/pagination',
+    path: '/components/pagination',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsPageRoute =
+  LibsReactWebComponentsPageRouteImport.update({
+    id: '/components/page',
+    path: '/components/page',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsOtpInputRoute =
+  LibsReactWebComponentsOtpInputRouteImport.update({
+    id: '/components/otp-input',
+    path: '/components/otp-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsNumberTextRoute =
+  LibsReactWebComponentsNumberTextRouteImport.update({
+    id: '/components/number-text',
+    path: '/components/number-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsNumberInputRoute =
+  LibsReactWebComponentsNumberInputRouteImport.update({
+    id: '/components/number-input',
+    path: '/components/number-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsNotificationListRoute =
+  LibsReactWebComponentsNotificationListRouteImport.update({
+    id: '/components/notification-list',
+    path: '/components/notification-list',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsNotificationFilterRoute =
+  LibsReactWebComponentsNotificationFilterRouteImport.update({
+    id: '/components/notification-filter',
+    path: '/components/notification-filter',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsNotificationCenterRoute =
+  LibsReactWebComponentsNotificationCenterRouteImport.update({
+    id: '/components/notification-center',
+    path: '/components/notification-center',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsNotificationCardRoute =
+  LibsReactWebComponentsNotificationCardRouteImport.update({
+    id: '/components/notification-card',
+    path: '/components/notification-card',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsMoneyTextRoute =
+  LibsReactWebComponentsMoneyTextRouteImport.update({
+    id: '/components/money-text',
+    path: '/components/money-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsModalRoute =
+  LibsReactWebComponentsModalRouteImport.update({
+    id: '/components/modal',
+    path: '/components/modal',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsMaskInputRoute =
+  LibsReactWebComponentsMaskInputRouteImport.update({
+    id: '/components/mask-input',
+    path: '/components/mask-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsLoadingOverlayRoute =
+  LibsReactWebComponentsLoadingOverlayRouteImport.update({
+    id: '/components/loading-overlay',
+    path: '/components/loading-overlay',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsLoadingBarRoute =
+  LibsReactWebComponentsLoadingBarRouteImport.update({
+    id: '/components/loading-bar',
+    path: '/components/loading-bar',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsLoadedRoute =
+  LibsReactWebComponentsLoadedRouteImport.update({
+    id: '/components/loaded',
+    path: '/components/loaded',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsListRoute =
+  LibsReactWebComponentsListRouteImport.update({
+    id: '/components/list',
+    path: '/components/list',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsLayoutRoute =
+  LibsReactWebComponentsLayoutRouteImport.update({
+    id: '/components/layout',
+    path: '/components/layout',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsLabelsProviderRoute =
+  LibsReactWebComponentsLabelsProviderRouteImport.update({
+    id: '/components/labels-provider',
+    path: '/components/labels-provider',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsLabelRoute =
+  LibsReactWebComponentsLabelRouteImport.update({
+    id: '/components/label',
+    path: '/components/label',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsInputRoute =
+  LibsReactWebComponentsInputRouteImport.update({
+    id: '/components/input',
+    path: '/components/input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsIndicatorRoute =
+  LibsReactWebComponentsIndicatorRouteImport.update({
+    id: '/components/indicator',
+    path: '/components/indicator',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsImageRoute =
+  LibsReactWebComponentsImageRouteImport.update({
+    id: '/components/image',
+    path: '/components/image',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsIdentityRoute =
+  LibsReactWebComponentsIdentityRouteImport.update({
+    id: '/components/identity',
+    path: '/components/identity',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsGridRoute =
+  LibsReactWebComponentsGridRouteImport.update({
+    id: '/components/grid',
+    path: '/components/grid',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsFormatProviderRoute =
+  LibsReactWebComponentsFormatProviderRouteImport.update({
+    id: '/components/format-provider',
+    path: '/components/format-provider',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsFormRoute =
+  LibsReactWebComponentsFormRouteImport.update({
+    id: '/components/form',
+    path: '/components/form',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsFlexRoute =
+  LibsReactWebComponentsFlexRouteImport.update({
+    id: '/components/flex',
+    path: '/components/flex',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsFilterChipRoute =
+  LibsReactWebComponentsFilterChipRouteImport.update({
+    id: '/components/filter-chip',
+    path: '/components/filter-chip',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsFilterBarRoute =
+  LibsReactWebComponentsFilterBarRouteImport.update({
+    id: '/components/filter-bar',
+    path: '/components/filter-bar',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsFileSizeTextRoute =
+  LibsReactWebComponentsFileSizeTextRouteImport.update({
+    id: '/components/file-size-text',
+    path: '/components/file-size-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsEmptyStateRoute =
+  LibsReactWebComponentsEmptyStateRouteImport.update({
+    id: '/components/empty-state',
+    path: '/components/empty-state',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsEditableTextRoute =
+  LibsReactWebComponentsEditableTextRouteImport.update({
+    id: '/components/editable-text',
+    path: '/components/editable-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDurationTextRoute =
+  LibsReactWebComponentsDurationTextRouteImport.update({
+    id: '/components/duration-text',
+    path: '/components/duration-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDropdownMenuRoute =
+  LibsReactWebComponentsDropdownMenuRouteImport.update({
+    id: '/components/dropdown-menu',
+    path: '/components/dropdown-menu',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDocumentTextRoute =
+  LibsReactWebComponentsDocumentTextRouteImport.update({
+    id: '/components/document-text',
+    path: '/components/document-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDocumentInputRoute =
+  LibsReactWebComponentsDocumentInputRouteImport.update({
+    id: '/components/document-input',
+    path: '/components/document-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDescriptionListRoute =
+  LibsReactWebComponentsDescriptionListRouteImport.update({
+    id: '/components/description-list',
+    path: '/components/description-list',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDateTimeInputRoute =
+  LibsReactWebComponentsDateTimeInputRouteImport.update({
+    id: '/components/date-time-input',
+    path: '/components/date-time-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDateTextRoute =
+  LibsReactWebComponentsDateTextRouteImport.update({
+    id: '/components/date-text',
+    path: '/components/date-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDateRangeInputRoute =
+  LibsReactWebComponentsDateRangeInputRouteImport.update({
+    id: '/components/date-range-input',
+    path: '/components/date-range-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDateInputRoute =
+  LibsReactWebComponentsDateInputRouteImport.update({
+    id: '/components/date-input',
+    path: '/components/date-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDataTransferImportRoute =
+  LibsReactWebComponentsDataTransferImportRouteImport.update({
+    id: '/components/data-transfer-import',
+    path: '/components/data-transfer-import',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsDataTransferExportRoute =
+  LibsReactWebComponentsDataTransferExportRouteImport.update({
+    id: '/components/data-transfer-export',
+    path: '/components/data-transfer-export',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsCurrencyInputRoute =
+  LibsReactWebComponentsCurrencyInputRouteImport.update({
+    id: '/components/currency-input',
+    path: '/components/currency-input',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsCopyButtonRoute =
+  LibsReactWebComponentsCopyButtonRouteImport.update({
+    id: '/components/copy-button',
+    path: '/components/copy-button',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsContainerRoute =
+  LibsReactWebComponentsContainerRouteImport.update({
+    id: '/components/container',
+    path: '/components/container',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsConfirmRoute =
+  LibsReactWebComponentsConfirmRouteImport.update({
+    id: '/components/confirm',
+    path: '/components/confirm',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsColorSchemeSwitcherRoute =
+  LibsReactWebComponentsColorSchemeSwitcherRouteImport.update({
+    id: '/components/color-scheme-switcher',
+    path: '/components/color-scheme-switcher',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsColorSchemeProviderRoute =
+  LibsReactWebComponentsColorSchemeProviderRouteImport.update({
+    id: '/components/color-scheme-provider',
+    path: '/components/color-scheme-provider',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsColorPickerRoute =
+  LibsReactWebComponentsColorPickerRouteImport.update({
+    id: '/components/color-picker',
+    path: '/components/color-picker',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsCollapsibleRoute =
+  LibsReactWebComponentsCollapsibleRouteImport.update({
+    id: '/components/collapsible',
+    path: '/components/collapsible',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsCodeBlockRoute =
+  LibsReactWebComponentsCodeBlockRouteImport.update({
+    id: '/components/code-block',
+    path: '/components/code-block',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsChecklistRoute =
+  LibsReactWebComponentsChecklistRouteImport.update({
+    id: '/components/checklist',
+    path: '/components/checklist',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsCheckboxRoute =
+  LibsReactWebComponentsCheckboxRouteImport.update({
+    id: '/components/checkbox',
+    path: '/components/checkbox',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsCarouselRoute =
+  LibsReactWebComponentsCarouselRouteImport.update({
+    id: '/components/carousel',
+    path: '/components/carousel',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsCardRoute =
+  LibsReactWebComponentsCardRouteImport.update({
+    id: '/components/card',
+    path: '/components/card',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsCalendarRoute =
+  LibsReactWebComponentsCalendarRouteImport.update({
+    id: '/components/calendar',
+    path: '/components/calendar',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsButtonRoute =
+  LibsReactWebComponentsButtonRouteImport.update({
+    id: '/components/button',
+    path: '/components/button',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsBulkActionsRoute =
+  LibsReactWebComponentsBulkActionsRouteImport.update({
+    id: '/components/bulk-actions',
+    path: '/components/bulk-actions',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsBreadcrumbRoute =
+  LibsReactWebComponentsBreadcrumbRouteImport.update({
+    id: '/components/breadcrumb',
+    path: '/components/breadcrumb',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsBoxRoute =
+  LibsReactWebComponentsBoxRouteImport.update({
+    id: '/components/box',
+    path: '/components/box',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsBooleanTextRoute =
+  LibsReactWebComponentsBooleanTextRouteImport.update({
+    id: '/components/boolean-text',
+    path: '/components/boolean-text',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsBoardRoute =
+  LibsReactWebComponentsBoardRouteImport.update({
+    id: '/components/board',
+    path: '/components/board',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsBadgeRoute =
+  LibsReactWebComponentsBadgeRouteImport.update({
+    id: '/components/badge',
+    path: '/components/badge',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsAvatarRoute =
+  LibsReactWebComponentsAvatarRouteImport.update({
+    id: '/components/avatar',
+    path: '/components/avatar',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsAnchorNavRoute =
+  LibsReactWebComponentsAnchorNavRouteImport.update({
+    id: '/components/anchor-nav',
+    path: '/components/anchor-nav',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsAlertRoute =
+  LibsReactWebComponentsAlertRouteImport.update({
+    id: '/components/alert',
+    path: '/components/alert',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsAccordionRoute =
+  LibsReactWebComponentsAccordionRouteImport.update({
+    id: '/components/accordion',
+    path: '/components/accordion',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsComponentRoute =
+  LibsReactWebComponentsComponentRouteImport.update({
     id: '/components/$component',
     path: '/components/$component',
-    getParentRoute: () => LibsReactMobileRoute,
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebAudiencesLandingPageRoute =
+  LibsReactWebAudiencesLandingPageRouteImport.update({
+    id: '/audiences/landing-page',
+    path: '/audiences/landing-page',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebAudiencesCheckoutRoute =
+  LibsReactWebAudiencesCheckoutRouteImport.update({
+    id: '/audiences/checkout',
+    path: '/audiences/checkout',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebAudiencesBackofficeRoute =
+  LibsReactWebAudiencesBackofficeRouteImport.update({
+    id: '/audiences/backoffice',
+    path: '/audiences/backoffice',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebAudiencesB2cRoute =
+  LibsReactWebAudiencesB2cRouteImport.update({
+    id: '/audiences/b2c',
+    path: '/audiences/b2c',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebAudiencesB2bRoute =
+  LibsReactWebAudiencesB2bRouteImport.update({
+    id: '/audiences/b2b',
+    path: '/audiences/b2b',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebAudiencesAuthRoute =
+  LibsReactWebAudiencesAuthRouteImport.update({
+    id: '/audiences/auth',
+    path: '/audiences/auth',
+    getParentRoute: () => LibsReactWebRoute,
+  } as any)
+const LibsReactWebComponentsLoaderRouteRoute =
+  LibsReactWebComponentsLoaderRouteRouteImport.update({
+    id: '/components/loader',
+    path: '/components/loader',
+    getParentRoute: () => LibsReactWebRoute,
   } as any)
 
 export interface FileRoutesByFullPath {
-  '/': typeof MainIndexRoute
+  '/': typeof IndexRoute
+  '/showcase': typeof MainShowcaseRoute
   '/libs/architecture-pattern': typeof LibsArchitecturePatternRouteWithChildren
   '/libs/backend-config': typeof LibsBackendConfigRouteWithChildren
   '/libs/backend-pattern': typeof LibsBackendPatternRouteWithChildren
+  '/libs/blueprint-template': typeof LibsBlueprintTemplateRouteWithChildren
   '/libs/cli': typeof LibsCliRouteWithChildren
   '/libs/entity': typeof LibsEntityRouteWithChildren
   '/libs/exceptions': typeof LibsExceptionsRouteWithChildren
+  '/libs/fields': typeof LibsFieldsRouteWithChildren
   '/libs/frontend-config': typeof LibsFrontendConfigRouteWithChildren
   '/libs/frontend-pattern': typeof LibsFrontendPatternRouteWithChildren
   '/libs/frontend-primitives-pattern': typeof LibsFrontendPrimitivesPatternRouteWithChildren
+  '/libs/harness': typeof LibsHarnessRouteWithChildren
+  '/libs/modeling': typeof LibsModelingRouteWithChildren
   '/libs/nestjs-cache': typeof LibsNestjsCacheRouteWithChildren
   '/libs/nestjs-config': typeof LibsNestjsConfigRouteWithChildren
   '/libs/nestjs-context': typeof LibsNestjsContextRouteWithChildren
   '/libs/nestjs-database': typeof LibsNestjsDatabaseRouteWithChildren
+  '/libs/nestjs-events': typeof LibsNestjsEventsRouteWithChildren
   '/libs/nestjs-iam': typeof LibsNestjsIamRouteWithChildren
   '/libs/nestjs-idempotency': typeof LibsNestjsIdempotencyRouteWithChildren
   '/libs/nestjs-lock': typeof LibsNestjsLockRouteWithChildren
   '/libs/nestjs-logger': typeof LibsNestjsLoggerRouteWithChildren
   '/libs/nestjs-observability': typeof LibsNestjsObservabilityRouteWithChildren
-  '/libs/nestjs-publisher': typeof LibsNestjsPublisherRouteWithChildren
   '/libs/nestjs-rate-limit': typeof LibsNestjsRateLimitRouteWithChildren
   '/libs/nestjs-resilience': typeof LibsNestjsResilienceRouteWithChildren
-  '/libs/nestjs-scheduler': typeof LibsNestjsSchedulerRouteWithChildren
   '/libs/nestjs-server': typeof LibsNestjsServerRouteWithChildren
-  '/libs/nestjs-serverless': typeof LibsNestjsServerlessRouteWithChildren
   '/libs/nestjs-social-auth': typeof LibsNestjsSocialAuthRouteWithChildren
   '/libs/nestjs-storage': typeof LibsNestjsStorageRouteWithChildren
+  '/libs/openapi-sdk': typeof LibsOpenapiSdkRouteWithChildren
+  '/libs/proof-mode': typeof LibsProofModeRouteWithChildren
+  '/libs/proof-mode-gates': typeof LibsProofModeGatesRoute
   '/libs/query-dsl': typeof LibsQueryDslRouteWithChildren
+  '/libs/react-charts': typeof LibsReactChartsRouteWithChildren
   '/libs/react-hooks': typeof LibsReactHooksRouteWithChildren
+  '/libs/react-i18n': typeof LibsReactI18nRouteWithChildren
   '/libs/react-icons': typeof LibsReactIconsRouteWithChildren
-  '/libs/react-mobile': typeof LibsReactMobileRouteWithChildren
   '/libs/react-web': typeof LibsReactWebRouteWithChildren
   '/libs/saga': typeof LibsSagaRouteWithChildren
+  '/libs/uiux-template': typeof LibsUiuxTemplateRouteWithChildren
   '/libs/architecture-pattern/$section': typeof LibsArchitecturePatternSectionRoute
   '/libs/backend-config/biome': typeof LibsBackendConfigBiomeRoute
   '/libs/backend-config/typescript': typeof LibsBackendConfigTypescriptRoute
   '/libs/backend-pattern/$section': typeof LibsBackendPatternSectionRoute
+  '/libs/blueprint-template/$section': typeof LibsBlueprintTemplateSectionRoute
+  '/libs/blueprint-template/board': typeof LibsBlueprintTemplateBoardRoute
   '/libs/cli/api': typeof LibsCliApiRoute
   '/libs/cli/handler': typeof LibsCliHandlerRoute
-  '/libs/cli/mobile': typeof LibsCliMobileRoute
   '/libs/cli/monorepo': typeof LibsCliMonorepoRoute
   '/libs/cli/web': typeof LibsCliWebRoute
   '/libs/entity/entity': typeof LibsEntityEntityRoute
   '/libs/exceptions/exceptions': typeof LibsExceptionsExceptionsRoute
+  '/libs/fields/booleans': typeof LibsFieldsBooleansRoute
+  '/libs/fields/brazil': typeof LibsFieldsBrazilRoute
+  '/libs/fields/collections': typeof LibsFieldsCollectionsRoute
+  '/libs/fields/cross-field': typeof LibsFieldsCrossFieldRoute
+  '/libs/fields/dates': typeof LibsFieldsDatesRoute
+  '/libs/fields/error-codes': typeof LibsFieldsErrorCodesRoute
+  '/libs/fields/files': typeof LibsFieldsFilesRoute
+  '/libs/fields/identity': typeof LibsFieldsIdentityRoute
+  '/libs/fields/numbers': typeof LibsFieldsNumbersRoute
+  '/libs/fields/text': typeof LibsFieldsTextRoute
   '/libs/frontend-config/biome': typeof LibsFrontendConfigBiomeRoute
   '/libs/frontend-config/typescript': typeof LibsFrontendConfigTypescriptRoute
   '/libs/frontend-pattern/$section': typeof LibsFrontendPatternSectionRoute
   '/libs/frontend-primitives-pattern/$section': typeof LibsFrontendPrimitivesPatternSectionRoute
+  '/libs/harness/$section': typeof LibsHarnessSectionRoute
+  '/libs/harness/flow': typeof LibsHarnessFlowRoute
+  '/libs/modeling/$section': typeof LibsModelingSectionRoute
   '/libs/nestjs-cache/cache-del': typeof LibsNestjsCacheCacheDelRoute
   '/libs/nestjs-cache/cache-get': typeof LibsNestjsCacheCacheGetRoute
   '/libs/nestjs-cache/cache-module': typeof LibsNestjsCacheCacheModuleRoute
@@ -1063,10 +2136,18 @@ export interface FileRoutesByFullPath {
   '/libs/nestjs-database/audit': typeof LibsNestjsDatabaseAuditRoute
   '/libs/nestjs-database/database-module': typeof LibsNestjsDatabaseDatabaseModuleRoute
   '/libs/nestjs-database/database-service': typeof LibsNestjsDatabaseDatabaseServiceRoute
+  '/libs/nestjs-database/dynamodb': typeof LibsNestjsDatabaseDynamodbRoute
+  '/libs/nestjs-database/postgresql': typeof LibsNestjsDatabasePostgresqlRoute
   '/libs/nestjs-database/schema-definition': typeof LibsNestjsDatabaseSchemaDefinitionRoute
   '/libs/nestjs-database/transaction-hooks': typeof LibsNestjsDatabaseTransactionHooksRoute
   '/libs/nestjs-database/transactional': typeof LibsNestjsDatabaseTransactionalRoute
   '/libs/nestjs-database/types-and-errors': typeof LibsNestjsDatabaseTypesAndErrorsRoute
+  '/libs/nestjs-events/contracts': typeof LibsNestjsEventsContractsRoute
+  '/libs/nestjs-events/handler-decorator': typeof LibsNestjsEventsHandlerDecoratorRoute
+  '/libs/nestjs-events/infra': typeof LibsNestjsEventsInfraRoute
+  '/libs/nestjs-events/publisher': typeof LibsNestjsEventsPublisherRoute
+  '/libs/nestjs-events/serverless-create': typeof LibsNestjsEventsServerlessCreateRoute
+  '/libs/nestjs-events/workers-module': typeof LibsNestjsEventsWorkersModuleRoute
   '/libs/nestjs-iam/acl-decorator': typeof LibsNestjsIamAclDecoratorRoute
   '/libs/nestjs-iam/acl-service': typeof LibsNestjsIamAclServiceRoute
   '/libs/nestjs-iam/auth-decorator': typeof LibsNestjsIamAuthDecoratorRoute
@@ -1085,29 +2166,24 @@ export interface FileRoutesByFullPath {
   '/libs/nestjs-observability/metrics-service': typeof LibsNestjsObservabilityMetricsServiceRoute
   '/libs/nestjs-observability/observability-module': typeof LibsNestjsObservabilityObservabilityModuleRoute
   '/libs/nestjs-observability/tracing': typeof LibsNestjsObservabilityTracingRoute
-  '/libs/nestjs-publisher/outbox': typeof LibsNestjsPublisherOutboxRoute
-  '/libs/nestjs-publisher/publisher-module': typeof LibsNestjsPublisherPublisherModuleRoute
-  '/libs/nestjs-publisher/publisher-service': typeof LibsNestjsPublisherPublisherServiceRoute
-  '/libs/nestjs-publisher/subscriber-decorator': typeof LibsNestjsPublisherSubscriberDecoratorRoute
   '/libs/nestjs-rate-limit/rate-limit-decorator': typeof LibsNestjsRateLimitRateLimitDecoratorRoute
   '/libs/nestjs-rate-limit/rate-limit-module': typeof LibsNestjsRateLimitRateLimitModuleRoute
   '/libs/nestjs-rate-limit/rate-limit-service': typeof LibsNestjsRateLimitRateLimitServiceRoute
   '/libs/nestjs-resilience/circuit-breaker': typeof LibsNestjsResilienceCircuitBreakerRoute
   '/libs/nestjs-resilience/retry': typeof LibsNestjsResilienceRetryRoute
   '/libs/nestjs-resilience/timeout': typeof LibsNestjsResilienceTimeoutRoute
-  '/libs/nestjs-scheduler/schedule-decorator': typeof LibsNestjsSchedulerScheduleDecoratorRoute
-  '/libs/nestjs-scheduler/scheduler-module': typeof LibsNestjsSchedulerSchedulerModuleRoute
   '/libs/nestjs-server/controller-decorator': typeof LibsNestjsServerControllerDecoratorRoute
   '/libs/nestjs-server/request-decorator': typeof LibsNestjsServerRequestDecoratorRoute
   '/libs/nestjs-server/route-decorator': typeof LibsNestjsServerRouteDecoratorRoute
   '/libs/nestjs-server/server-create': typeof LibsNestjsServerServerCreateRoute
-  '/libs/nestjs-serverless/handler-decorator': typeof LibsNestjsServerlessHandlerDecoratorRoute
-  '/libs/nestjs-serverless/serverless-create': typeof LibsNestjsServerlessServerlessCreateRoute
-  '/libs/nestjs-serverless/serverless-module': typeof LibsNestjsServerlessServerlessModuleRoute
   '/libs/nestjs-social-auth/social-auth-module': typeof LibsNestjsSocialAuthSocialAuthModuleRoute
   '/libs/nestjs-social-auth/social-auth-service': typeof LibsNestjsSocialAuthSocialAuthServiceRoute
   '/libs/nestjs-storage/storage-module': typeof LibsNestjsStorageStorageModuleRoute
   '/libs/nestjs-storage/storage-service': typeof LibsNestjsStorageStorageServiceRoute
+  '/libs/openapi-sdk/client': typeof LibsOpenapiSdkClientRoute
+  '/libs/openapi-sdk/config': typeof LibsOpenapiSdkConfigRoute
+  '/libs/openapi-sdk/naming': typeof LibsOpenapiSdkNamingRoute
+  '/libs/proof-mode/$section': typeof LibsProofModeSectionRoute
   '/libs/query-dsl/boolean-schema': typeof LibsQueryDslBooleanSchemaRoute
   '/libs/query-dsl/date-range-schema': typeof LibsQueryDslDateRangeSchemaRoute
   '/libs/query-dsl/filter-schema': typeof LibsQueryDslFilterSchemaRoute
@@ -1115,62 +2191,209 @@ export interface FileRoutesByFullPath {
   '/libs/query-dsl/pagination-schema': typeof LibsQueryDslPaginationSchemaRoute
   '/libs/query-dsl/range-schema': typeof LibsQueryDslRangeSchemaRoute
   '/libs/query-dsl/sort-schema': typeof LibsQueryDslSortSchemaRoute
+  '/libs/react-charts/chart': typeof LibsReactChartsChartRoute
+  '/libs/react-charts/sparkline': typeof LibsReactChartsSparklineRoute
   '/libs/react-hooks/$hook': typeof LibsReactHooksHookRoute
+  '/libs/react-i18n/api': typeof LibsReactI18nApiRoute
+  '/libs/react-i18n/dictionary': typeof LibsReactI18nDictionaryRoute
+  '/libs/react-i18n/provider': typeof LibsReactI18nProviderRoute
+  '/libs/react-i18n/ui-labels': typeof LibsReactI18nUiLabelsRoute
   '/libs/react-icons/playground': typeof LibsReactIconsPlaygroundRoute
-  '/libs/react-web/playground': typeof LibsReactWebPlaygroundRoute
   '/libs/saga/saga': typeof LibsSagaSagaRoute
+  '/libs/uiux-template/$section': typeof LibsUiuxTemplateSectionRoute
+  '/libs/uiux-template/theme': typeof LibsUiuxTemplateThemeRoute
   '/libs/architecture-pattern/': typeof LibsArchitecturePatternIndexRoute
   '/libs/backend-config/': typeof LibsBackendConfigIndexRoute
   '/libs/backend-pattern/': typeof LibsBackendPatternIndexRoute
+  '/libs/blueprint-template/': typeof LibsBlueprintTemplateIndexRoute
   '/libs/cli/': typeof LibsCliIndexRoute
   '/libs/entity/': typeof LibsEntityIndexRoute
   '/libs/exceptions/': typeof LibsExceptionsIndexRoute
+  '/libs/fields/': typeof LibsFieldsIndexRoute
   '/libs/frontend-config/': typeof LibsFrontendConfigIndexRoute
   '/libs/frontend-pattern/': typeof LibsFrontendPatternIndexRoute
   '/libs/frontend-primitives-pattern/': typeof LibsFrontendPrimitivesPatternIndexRoute
+  '/libs/harness/': typeof LibsHarnessIndexRoute
+  '/libs/modeling/': typeof LibsModelingIndexRoute
   '/libs/nestjs-cache/': typeof LibsNestjsCacheIndexRoute
   '/libs/nestjs-config/': typeof LibsNestjsConfigIndexRoute
   '/libs/nestjs-context/': typeof LibsNestjsContextIndexRoute
   '/libs/nestjs-database/': typeof LibsNestjsDatabaseIndexRoute
+  '/libs/nestjs-events/': typeof LibsNestjsEventsIndexRoute
   '/libs/nestjs-iam/': typeof LibsNestjsIamIndexRoute
   '/libs/nestjs-idempotency/': typeof LibsNestjsIdempotencyIndexRoute
   '/libs/nestjs-lock/': typeof LibsNestjsLockIndexRoute
   '/libs/nestjs-logger/': typeof LibsNestjsLoggerIndexRoute
   '/libs/nestjs-observability/': typeof LibsNestjsObservabilityIndexRoute
-  '/libs/nestjs-publisher/': typeof LibsNestjsPublisherIndexRoute
   '/libs/nestjs-rate-limit/': typeof LibsNestjsRateLimitIndexRoute
   '/libs/nestjs-resilience/': typeof LibsNestjsResilienceIndexRoute
-  '/libs/nestjs-scheduler/': typeof LibsNestjsSchedulerIndexRoute
   '/libs/nestjs-server/': typeof LibsNestjsServerIndexRoute
-  '/libs/nestjs-serverless/': typeof LibsNestjsServerlessIndexRoute
   '/libs/nestjs-social-auth/': typeof LibsNestjsSocialAuthIndexRoute
   '/libs/nestjs-storage/': typeof LibsNestjsStorageIndexRoute
+  '/libs/openapi-sdk/': typeof LibsOpenapiSdkIndexRoute
+  '/libs/proof-mode/': typeof LibsProofModeIndexRoute
   '/libs/query-dsl/': typeof LibsQueryDslIndexRoute
+  '/libs/react-charts/': typeof LibsReactChartsIndexRoute
   '/libs/react-hooks/': typeof LibsReactHooksIndexRoute
+  '/libs/react-i18n/': typeof LibsReactI18nIndexRoute
   '/libs/react-icons/': typeof LibsReactIconsIndexRoute
-  '/libs/react-mobile/': typeof LibsReactMobileIndexRoute
   '/libs/react-web/': typeof LibsReactWebIndexRoute
   '/libs/saga/': typeof LibsSagaIndexRoute
-  '/libs/react-mobile/components/$component': typeof LibsReactMobileComponentsComponentRoute
-  '/libs/react-mobile/components/': typeof LibsReactMobileComponentsIndexRoute
+  '/libs/uiux-template/': typeof LibsUiuxTemplateIndexRoute
+  '/libs/react-web/components/loader': typeof LibsReactWebComponentsLoaderRouteRoute
+  '/libs/react-web/audiences/auth': typeof LibsReactWebAudiencesAuthRoute
+  '/libs/react-web/audiences/b2b': typeof LibsReactWebAudiencesB2bRoute
+  '/libs/react-web/audiences/b2c': typeof LibsReactWebAudiencesB2cRoute
+  '/libs/react-web/audiences/backoffice': typeof LibsReactWebAudiencesBackofficeRoute
+  '/libs/react-web/audiences/checkout': typeof LibsReactWebAudiencesCheckoutRoute
+  '/libs/react-web/audiences/landing-page': typeof LibsReactWebAudiencesLandingPageRoute
+  '/libs/react-web/components/$component': typeof LibsReactWebComponentsComponentRoute
+  '/libs/react-web/components/accordion': typeof LibsReactWebComponentsAccordionRoute
+  '/libs/react-web/components/alert': typeof LibsReactWebComponentsAlertRoute
+  '/libs/react-web/components/anchor-nav': typeof LibsReactWebComponentsAnchorNavRoute
+  '/libs/react-web/components/avatar': typeof LibsReactWebComponentsAvatarRoute
+  '/libs/react-web/components/badge': typeof LibsReactWebComponentsBadgeRoute
+  '/libs/react-web/components/board': typeof LibsReactWebComponentsBoardRoute
+  '/libs/react-web/components/boolean-text': typeof LibsReactWebComponentsBooleanTextRoute
+  '/libs/react-web/components/box': typeof LibsReactWebComponentsBoxRoute
+  '/libs/react-web/components/breadcrumb': typeof LibsReactWebComponentsBreadcrumbRoute
+  '/libs/react-web/components/bulk-actions': typeof LibsReactWebComponentsBulkActionsRoute
+  '/libs/react-web/components/button': typeof LibsReactWebComponentsButtonRoute
+  '/libs/react-web/components/calendar': typeof LibsReactWebComponentsCalendarRoute
+  '/libs/react-web/components/card': typeof LibsReactWebComponentsCardRoute
+  '/libs/react-web/components/carousel': typeof LibsReactWebComponentsCarouselRoute
+  '/libs/react-web/components/checkbox': typeof LibsReactWebComponentsCheckboxRoute
+  '/libs/react-web/components/checklist': typeof LibsReactWebComponentsChecklistRoute
+  '/libs/react-web/components/code-block': typeof LibsReactWebComponentsCodeBlockRoute
+  '/libs/react-web/components/collapsible': typeof LibsReactWebComponentsCollapsibleRoute
+  '/libs/react-web/components/color-picker': typeof LibsReactWebComponentsColorPickerRoute
+  '/libs/react-web/components/color-scheme-provider': typeof LibsReactWebComponentsColorSchemeProviderRoute
+  '/libs/react-web/components/color-scheme-switcher': typeof LibsReactWebComponentsColorSchemeSwitcherRoute
+  '/libs/react-web/components/confirm': typeof LibsReactWebComponentsConfirmRoute
+  '/libs/react-web/components/container': typeof LibsReactWebComponentsContainerRoute
+  '/libs/react-web/components/copy-button': typeof LibsReactWebComponentsCopyButtonRoute
+  '/libs/react-web/components/currency-input': typeof LibsReactWebComponentsCurrencyInputRoute
+  '/libs/react-web/components/data-transfer-export': typeof LibsReactWebComponentsDataTransferExportRoute
+  '/libs/react-web/components/data-transfer-import': typeof LibsReactWebComponentsDataTransferImportRoute
+  '/libs/react-web/components/date-input': typeof LibsReactWebComponentsDateInputRoute
+  '/libs/react-web/components/date-range-input': typeof LibsReactWebComponentsDateRangeInputRoute
+  '/libs/react-web/components/date-text': typeof LibsReactWebComponentsDateTextRoute
+  '/libs/react-web/components/date-time-input': typeof LibsReactWebComponentsDateTimeInputRoute
+  '/libs/react-web/components/description-list': typeof LibsReactWebComponentsDescriptionListRoute
+  '/libs/react-web/components/document-input': typeof LibsReactWebComponentsDocumentInputRoute
+  '/libs/react-web/components/document-text': typeof LibsReactWebComponentsDocumentTextRoute
+  '/libs/react-web/components/dropdown-menu': typeof LibsReactWebComponentsDropdownMenuRoute
+  '/libs/react-web/components/duration-text': typeof LibsReactWebComponentsDurationTextRoute
+  '/libs/react-web/components/editable-text': typeof LibsReactWebComponentsEditableTextRoute
+  '/libs/react-web/components/empty-state': typeof LibsReactWebComponentsEmptyStateRoute
+  '/libs/react-web/components/file-size-text': typeof LibsReactWebComponentsFileSizeTextRoute
+  '/libs/react-web/components/filter-bar': typeof LibsReactWebComponentsFilterBarRoute
+  '/libs/react-web/components/filter-chip': typeof LibsReactWebComponentsFilterChipRoute
+  '/libs/react-web/components/flex': typeof LibsReactWebComponentsFlexRoute
+  '/libs/react-web/components/form': typeof LibsReactWebComponentsFormRoute
+  '/libs/react-web/components/format-provider': typeof LibsReactWebComponentsFormatProviderRoute
+  '/libs/react-web/components/grid': typeof LibsReactWebComponentsGridRoute
+  '/libs/react-web/components/identity': typeof LibsReactWebComponentsIdentityRoute
+  '/libs/react-web/components/image': typeof LibsReactWebComponentsImageRoute
+  '/libs/react-web/components/indicator': typeof LibsReactWebComponentsIndicatorRoute
+  '/libs/react-web/components/input': typeof LibsReactWebComponentsInputRoute
+  '/libs/react-web/components/label': typeof LibsReactWebComponentsLabelRoute
+  '/libs/react-web/components/labels-provider': typeof LibsReactWebComponentsLabelsProviderRoute
+  '/libs/react-web/components/layout': typeof LibsReactWebComponentsLayoutRoute
+  '/libs/react-web/components/list': typeof LibsReactWebComponentsListRoute
+  '/libs/react-web/components/loaded': typeof LibsReactWebComponentsLoadedRoute
+  '/libs/react-web/components/loading-bar': typeof LibsReactWebComponentsLoadingBarRoute
+  '/libs/react-web/components/loading-overlay': typeof LibsReactWebComponentsLoadingOverlayRoute
+  '/libs/react-web/components/mask-input': typeof LibsReactWebComponentsMaskInputRoute
+  '/libs/react-web/components/modal': typeof LibsReactWebComponentsModalRoute
+  '/libs/react-web/components/money-text': typeof LibsReactWebComponentsMoneyTextRoute
+  '/libs/react-web/components/notification-card': typeof LibsReactWebComponentsNotificationCardRoute
+  '/libs/react-web/components/notification-center': typeof LibsReactWebComponentsNotificationCenterRoute
+  '/libs/react-web/components/notification-filter': typeof LibsReactWebComponentsNotificationFilterRoute
+  '/libs/react-web/components/notification-list': typeof LibsReactWebComponentsNotificationListRoute
+  '/libs/react-web/components/number-input': typeof LibsReactWebComponentsNumberInputRoute
+  '/libs/react-web/components/number-text': typeof LibsReactWebComponentsNumberTextRoute
+  '/libs/react-web/components/otp-input': typeof LibsReactWebComponentsOtpInputRoute
+  '/libs/react-web/components/page': typeof LibsReactWebComponentsPageRoute
+  '/libs/react-web/components/pagination': typeof LibsReactWebComponentsPaginationRoute
+  '/libs/react-web/components/password-input': typeof LibsReactWebComponentsPasswordInputRoute
+  '/libs/react-web/components/phone-input': typeof LibsReactWebComponentsPhoneInputRoute
+  '/libs/react-web/components/phone-text': typeof LibsReactWebComponentsPhoneTextRoute
+  '/libs/react-web/components/popconfirm': typeof LibsReactWebComponentsPopconfirmRoute
+  '/libs/react-web/components/popover': typeof LibsReactWebComponentsPopoverRoute
+  '/libs/react-web/components/portal-provider': typeof LibsReactWebComponentsPortalProviderRoute
+  '/libs/react-web/components/progress': typeof LibsReactWebComponentsProgressRoute
+  '/libs/react-web/components/protected': typeof LibsReactWebComponentsProtectedRoute
+  '/libs/react-web/components/protected-provider': typeof LibsReactWebComponentsProtectedProviderRoute
+  '/libs/react-web/components/qr-code': typeof LibsReactWebComponentsQrCodeRoute
+  '/libs/react-web/components/radio': typeof LibsReactWebComponentsRadioRoute
+  '/libs/react-web/components/rating': typeof LibsReactWebComponentsRatingRoute
+  '/libs/react-web/components/resizable': typeof LibsReactWebComponentsResizableRoute
+  '/libs/react-web/components/scroll-area': typeof LibsReactWebComponentsScrollAreaRoute
+  '/libs/react-web/components/search': typeof LibsReactWebComponentsSearchRoute
+  '/libs/react-web/components/segmented-control': typeof LibsReactWebComponentsSegmentedControlRoute
+  '/libs/react-web/components/select': typeof LibsReactWebComponentsSelectRoute
+  '/libs/react-web/components/separator': typeof LibsReactWebComponentsSeparatorRoute
+  '/libs/react-web/components/sheet': typeof LibsReactWebComponentsSheetRoute
+  '/libs/react-web/components/skeleton': typeof LibsReactWebComponentsSkeletonRoute
+  '/libs/react-web/components/slider': typeof LibsReactWebComponentsSliderRoute
+  '/libs/react-web/components/spotlight-search': typeof LibsReactWebComponentsSpotlightSearchRoute
+  '/libs/react-web/components/stat': typeof LibsReactWebComponentsStatRoute
+  '/libs/react-web/components/stepper': typeof LibsReactWebComponentsStepperRoute
+  '/libs/react-web/components/switch': typeof LibsReactWebComponentsSwitchRoute
+  '/libs/react-web/components/table': typeof LibsReactWebComponentsTableRoute
+  '/libs/react-web/components/tabs': typeof LibsReactWebComponentsTabsRoute
+  '/libs/react-web/components/tag': typeof LibsReactWebComponentsTagRoute
+  '/libs/react-web/components/tags-input': typeof LibsReactWebComponentsTagsInputRoute
+  '/libs/react-web/components/textarea': typeof LibsReactWebComponentsTextareaRoute
+  '/libs/react-web/components/time-input': typeof LibsReactWebComponentsTimeInputRoute
+  '/libs/react-web/components/timeline': typeof LibsReactWebComponentsTimelineRoute
+  '/libs/react-web/components/toast': typeof LibsReactWebComponentsToastRoute
+  '/libs/react-web/components/toggle': typeof LibsReactWebComponentsToggleRoute
+  '/libs/react-web/components/tooltip': typeof LibsReactWebComponentsTooltipRoute
+  '/libs/react-web/components/tree': typeof LibsReactWebComponentsTreeRoute
+  '/libs/react-web/components/truncated-text': typeof LibsReactWebComponentsTruncatedTextRoute
+  '/libs/react-web/components/tury-provider': typeof LibsReactWebComponentsTuryProviderRoute
+  '/libs/react-web/components/typography': typeof LibsReactWebComponentsTypographyRoute
+  '/libs/react-web/components/uploader': typeof LibsReactWebComponentsUploaderRoute
+  '/libs/react-web/hooks/$hook': typeof LibsReactWebHooksHookRoute
+  '/libs/react-web/audiences/': typeof LibsReactWebAudiencesIndexRoute
+  '/libs/react-web/components/': typeof LibsReactWebComponentsIndexRoute
+  '/libs/react-web/hooks/': typeof LibsReactWebHooksIndexRoute
 }
 export interface FileRoutesByTo {
-  '/': typeof MainIndexRoute
+  '/': typeof IndexRoute
+  '/showcase': typeof MainShowcaseRoute
+  '/libs/proof-mode-gates': typeof LibsProofModeGatesRoute
   '/libs/architecture-pattern/$section': typeof LibsArchitecturePatternSectionRoute
   '/libs/backend-config/biome': typeof LibsBackendConfigBiomeRoute
   '/libs/backend-config/typescript': typeof LibsBackendConfigTypescriptRoute
   '/libs/backend-pattern/$section': typeof LibsBackendPatternSectionRoute
+  '/libs/blueprint-template/$section': typeof LibsBlueprintTemplateSectionRoute
+  '/libs/blueprint-template/board': typeof LibsBlueprintTemplateBoardRoute
   '/libs/cli/api': typeof LibsCliApiRoute
   '/libs/cli/handler': typeof LibsCliHandlerRoute
-  '/libs/cli/mobile': typeof LibsCliMobileRoute
   '/libs/cli/monorepo': typeof LibsCliMonorepoRoute
   '/libs/cli/web': typeof LibsCliWebRoute
   '/libs/entity/entity': typeof LibsEntityEntityRoute
   '/libs/exceptions/exceptions': typeof LibsExceptionsExceptionsRoute
+  '/libs/fields/booleans': typeof LibsFieldsBooleansRoute
+  '/libs/fields/brazil': typeof LibsFieldsBrazilRoute
+  '/libs/fields/collections': typeof LibsFieldsCollectionsRoute
+  '/libs/fields/cross-field': typeof LibsFieldsCrossFieldRoute
+  '/libs/fields/dates': typeof LibsFieldsDatesRoute
+  '/libs/fields/error-codes': typeof LibsFieldsErrorCodesRoute
+  '/libs/fields/files': typeof LibsFieldsFilesRoute
+  '/libs/fields/identity': typeof LibsFieldsIdentityRoute
+  '/libs/fields/numbers': typeof LibsFieldsNumbersRoute
+  '/libs/fields/text': typeof LibsFieldsTextRoute
   '/libs/frontend-config/biome': typeof LibsFrontendConfigBiomeRoute
   '/libs/frontend-config/typescript': typeof LibsFrontendConfigTypescriptRoute
   '/libs/frontend-pattern/$section': typeof LibsFrontendPatternSectionRoute
   '/libs/frontend-primitives-pattern/$section': typeof LibsFrontendPrimitivesPatternSectionRoute
+  '/libs/harness/$section': typeof LibsHarnessSectionRoute
+  '/libs/harness/flow': typeof LibsHarnessFlowRoute
+  '/libs/modeling/$section': typeof LibsModelingSectionRoute
   '/libs/nestjs-cache/cache-del': typeof LibsNestjsCacheCacheDelRoute
   '/libs/nestjs-cache/cache-get': typeof LibsNestjsCacheCacheGetRoute
   '/libs/nestjs-cache/cache-module': typeof LibsNestjsCacheCacheModuleRoute
@@ -1184,10 +2407,18 @@ export interface FileRoutesByTo {
   '/libs/nestjs-database/audit': typeof LibsNestjsDatabaseAuditRoute
   '/libs/nestjs-database/database-module': typeof LibsNestjsDatabaseDatabaseModuleRoute
   '/libs/nestjs-database/database-service': typeof LibsNestjsDatabaseDatabaseServiceRoute
+  '/libs/nestjs-database/dynamodb': typeof LibsNestjsDatabaseDynamodbRoute
+  '/libs/nestjs-database/postgresql': typeof LibsNestjsDatabasePostgresqlRoute
   '/libs/nestjs-database/schema-definition': typeof LibsNestjsDatabaseSchemaDefinitionRoute
   '/libs/nestjs-database/transaction-hooks': typeof LibsNestjsDatabaseTransactionHooksRoute
   '/libs/nestjs-database/transactional': typeof LibsNestjsDatabaseTransactionalRoute
   '/libs/nestjs-database/types-and-errors': typeof LibsNestjsDatabaseTypesAndErrorsRoute
+  '/libs/nestjs-events/contracts': typeof LibsNestjsEventsContractsRoute
+  '/libs/nestjs-events/handler-decorator': typeof LibsNestjsEventsHandlerDecoratorRoute
+  '/libs/nestjs-events/infra': typeof LibsNestjsEventsInfraRoute
+  '/libs/nestjs-events/publisher': typeof LibsNestjsEventsPublisherRoute
+  '/libs/nestjs-events/serverless-create': typeof LibsNestjsEventsServerlessCreateRoute
+  '/libs/nestjs-events/workers-module': typeof LibsNestjsEventsWorkersModuleRoute
   '/libs/nestjs-iam/acl-decorator': typeof LibsNestjsIamAclDecoratorRoute
   '/libs/nestjs-iam/acl-service': typeof LibsNestjsIamAclServiceRoute
   '/libs/nestjs-iam/auth-decorator': typeof LibsNestjsIamAuthDecoratorRoute
@@ -1206,29 +2437,24 @@ export interface FileRoutesByTo {
   '/libs/nestjs-observability/metrics-service': typeof LibsNestjsObservabilityMetricsServiceRoute
   '/libs/nestjs-observability/observability-module': typeof LibsNestjsObservabilityObservabilityModuleRoute
   '/libs/nestjs-observability/tracing': typeof LibsNestjsObservabilityTracingRoute
-  '/libs/nestjs-publisher/outbox': typeof LibsNestjsPublisherOutboxRoute
-  '/libs/nestjs-publisher/publisher-module': typeof LibsNestjsPublisherPublisherModuleRoute
-  '/libs/nestjs-publisher/publisher-service': typeof LibsNestjsPublisherPublisherServiceRoute
-  '/libs/nestjs-publisher/subscriber-decorator': typeof LibsNestjsPublisherSubscriberDecoratorRoute
   '/libs/nestjs-rate-limit/rate-limit-decorator': typeof LibsNestjsRateLimitRateLimitDecoratorRoute
   '/libs/nestjs-rate-limit/rate-limit-module': typeof LibsNestjsRateLimitRateLimitModuleRoute
   '/libs/nestjs-rate-limit/rate-limit-service': typeof LibsNestjsRateLimitRateLimitServiceRoute
   '/libs/nestjs-resilience/circuit-breaker': typeof LibsNestjsResilienceCircuitBreakerRoute
   '/libs/nestjs-resilience/retry': typeof LibsNestjsResilienceRetryRoute
   '/libs/nestjs-resilience/timeout': typeof LibsNestjsResilienceTimeoutRoute
-  '/libs/nestjs-scheduler/schedule-decorator': typeof LibsNestjsSchedulerScheduleDecoratorRoute
-  '/libs/nestjs-scheduler/scheduler-module': typeof LibsNestjsSchedulerSchedulerModuleRoute
   '/libs/nestjs-server/controller-decorator': typeof LibsNestjsServerControllerDecoratorRoute
   '/libs/nestjs-server/request-decorator': typeof LibsNestjsServerRequestDecoratorRoute
   '/libs/nestjs-server/route-decorator': typeof LibsNestjsServerRouteDecoratorRoute
   '/libs/nestjs-server/server-create': typeof LibsNestjsServerServerCreateRoute
-  '/libs/nestjs-serverless/handler-decorator': typeof LibsNestjsServerlessHandlerDecoratorRoute
-  '/libs/nestjs-serverless/serverless-create': typeof LibsNestjsServerlessServerlessCreateRoute
-  '/libs/nestjs-serverless/serverless-module': typeof LibsNestjsServerlessServerlessModuleRoute
   '/libs/nestjs-social-auth/social-auth-module': typeof LibsNestjsSocialAuthSocialAuthModuleRoute
   '/libs/nestjs-social-auth/social-auth-service': typeof LibsNestjsSocialAuthSocialAuthServiceRoute
   '/libs/nestjs-storage/storage-module': typeof LibsNestjsStorageStorageModuleRoute
   '/libs/nestjs-storage/storage-service': typeof LibsNestjsStorageStorageServiceRoute
+  '/libs/openapi-sdk/client': typeof LibsOpenapiSdkClientRoute
+  '/libs/openapi-sdk/config': typeof LibsOpenapiSdkConfigRoute
+  '/libs/openapi-sdk/naming': typeof LibsOpenapiSdkNamingRoute
+  '/libs/proof-mode/$section': typeof LibsProofModeSectionRoute
   '/libs/query-dsl/boolean-schema': typeof LibsQueryDslBooleanSchemaRoute
   '/libs/query-dsl/date-range-schema': typeof LibsQueryDslDateRangeSchemaRoute
   '/libs/query-dsl/filter-schema': typeof LibsQueryDslFilterSchemaRoute
@@ -1236,96 +2462,249 @@ export interface FileRoutesByTo {
   '/libs/query-dsl/pagination-schema': typeof LibsQueryDslPaginationSchemaRoute
   '/libs/query-dsl/range-schema': typeof LibsQueryDslRangeSchemaRoute
   '/libs/query-dsl/sort-schema': typeof LibsQueryDslSortSchemaRoute
+  '/libs/react-charts/chart': typeof LibsReactChartsChartRoute
+  '/libs/react-charts/sparkline': typeof LibsReactChartsSparklineRoute
   '/libs/react-hooks/$hook': typeof LibsReactHooksHookRoute
+  '/libs/react-i18n/api': typeof LibsReactI18nApiRoute
+  '/libs/react-i18n/dictionary': typeof LibsReactI18nDictionaryRoute
+  '/libs/react-i18n/provider': typeof LibsReactI18nProviderRoute
+  '/libs/react-i18n/ui-labels': typeof LibsReactI18nUiLabelsRoute
   '/libs/react-icons/playground': typeof LibsReactIconsPlaygroundRoute
-  '/libs/react-web/playground': typeof LibsReactWebPlaygroundRoute
   '/libs/saga/saga': typeof LibsSagaSagaRoute
+  '/libs/uiux-template/$section': typeof LibsUiuxTemplateSectionRoute
+  '/libs/uiux-template/theme': typeof LibsUiuxTemplateThemeRoute
   '/libs/architecture-pattern': typeof LibsArchitecturePatternIndexRoute
   '/libs/backend-config': typeof LibsBackendConfigIndexRoute
   '/libs/backend-pattern': typeof LibsBackendPatternIndexRoute
+  '/libs/blueprint-template': typeof LibsBlueprintTemplateIndexRoute
   '/libs/cli': typeof LibsCliIndexRoute
   '/libs/entity': typeof LibsEntityIndexRoute
   '/libs/exceptions': typeof LibsExceptionsIndexRoute
+  '/libs/fields': typeof LibsFieldsIndexRoute
   '/libs/frontend-config': typeof LibsFrontendConfigIndexRoute
   '/libs/frontend-pattern': typeof LibsFrontendPatternIndexRoute
   '/libs/frontend-primitives-pattern': typeof LibsFrontendPrimitivesPatternIndexRoute
+  '/libs/harness': typeof LibsHarnessIndexRoute
+  '/libs/modeling': typeof LibsModelingIndexRoute
   '/libs/nestjs-cache': typeof LibsNestjsCacheIndexRoute
   '/libs/nestjs-config': typeof LibsNestjsConfigIndexRoute
   '/libs/nestjs-context': typeof LibsNestjsContextIndexRoute
   '/libs/nestjs-database': typeof LibsNestjsDatabaseIndexRoute
+  '/libs/nestjs-events': typeof LibsNestjsEventsIndexRoute
   '/libs/nestjs-iam': typeof LibsNestjsIamIndexRoute
   '/libs/nestjs-idempotency': typeof LibsNestjsIdempotencyIndexRoute
   '/libs/nestjs-lock': typeof LibsNestjsLockIndexRoute
   '/libs/nestjs-logger': typeof LibsNestjsLoggerIndexRoute
   '/libs/nestjs-observability': typeof LibsNestjsObservabilityIndexRoute
-  '/libs/nestjs-publisher': typeof LibsNestjsPublisherIndexRoute
   '/libs/nestjs-rate-limit': typeof LibsNestjsRateLimitIndexRoute
   '/libs/nestjs-resilience': typeof LibsNestjsResilienceIndexRoute
-  '/libs/nestjs-scheduler': typeof LibsNestjsSchedulerIndexRoute
   '/libs/nestjs-server': typeof LibsNestjsServerIndexRoute
-  '/libs/nestjs-serverless': typeof LibsNestjsServerlessIndexRoute
   '/libs/nestjs-social-auth': typeof LibsNestjsSocialAuthIndexRoute
   '/libs/nestjs-storage': typeof LibsNestjsStorageIndexRoute
+  '/libs/openapi-sdk': typeof LibsOpenapiSdkIndexRoute
+  '/libs/proof-mode': typeof LibsProofModeIndexRoute
   '/libs/query-dsl': typeof LibsQueryDslIndexRoute
+  '/libs/react-charts': typeof LibsReactChartsIndexRoute
   '/libs/react-hooks': typeof LibsReactHooksIndexRoute
+  '/libs/react-i18n': typeof LibsReactI18nIndexRoute
   '/libs/react-icons': typeof LibsReactIconsIndexRoute
-  '/libs/react-mobile': typeof LibsReactMobileIndexRoute
   '/libs/react-web': typeof LibsReactWebIndexRoute
   '/libs/saga': typeof LibsSagaIndexRoute
-  '/libs/react-mobile/components/$component': typeof LibsReactMobileComponentsComponentRoute
-  '/libs/react-mobile/components': typeof LibsReactMobileComponentsIndexRoute
+  '/libs/uiux-template': typeof LibsUiuxTemplateIndexRoute
+  '/libs/react-web/components/loader': typeof LibsReactWebComponentsLoaderRouteRoute
+  '/libs/react-web/audiences/auth': typeof LibsReactWebAudiencesAuthRoute
+  '/libs/react-web/audiences/b2b': typeof LibsReactWebAudiencesB2bRoute
+  '/libs/react-web/audiences/b2c': typeof LibsReactWebAudiencesB2cRoute
+  '/libs/react-web/audiences/backoffice': typeof LibsReactWebAudiencesBackofficeRoute
+  '/libs/react-web/audiences/checkout': typeof LibsReactWebAudiencesCheckoutRoute
+  '/libs/react-web/audiences/landing-page': typeof LibsReactWebAudiencesLandingPageRoute
+  '/libs/react-web/components/$component': typeof LibsReactWebComponentsComponentRoute
+  '/libs/react-web/components/accordion': typeof LibsReactWebComponentsAccordionRoute
+  '/libs/react-web/components/alert': typeof LibsReactWebComponentsAlertRoute
+  '/libs/react-web/components/anchor-nav': typeof LibsReactWebComponentsAnchorNavRoute
+  '/libs/react-web/components/avatar': typeof LibsReactWebComponentsAvatarRoute
+  '/libs/react-web/components/badge': typeof LibsReactWebComponentsBadgeRoute
+  '/libs/react-web/components/board': typeof LibsReactWebComponentsBoardRoute
+  '/libs/react-web/components/boolean-text': typeof LibsReactWebComponentsBooleanTextRoute
+  '/libs/react-web/components/box': typeof LibsReactWebComponentsBoxRoute
+  '/libs/react-web/components/breadcrumb': typeof LibsReactWebComponentsBreadcrumbRoute
+  '/libs/react-web/components/bulk-actions': typeof LibsReactWebComponentsBulkActionsRoute
+  '/libs/react-web/components/button': typeof LibsReactWebComponentsButtonRoute
+  '/libs/react-web/components/calendar': typeof LibsReactWebComponentsCalendarRoute
+  '/libs/react-web/components/card': typeof LibsReactWebComponentsCardRoute
+  '/libs/react-web/components/carousel': typeof LibsReactWebComponentsCarouselRoute
+  '/libs/react-web/components/checkbox': typeof LibsReactWebComponentsCheckboxRoute
+  '/libs/react-web/components/checklist': typeof LibsReactWebComponentsChecklistRoute
+  '/libs/react-web/components/code-block': typeof LibsReactWebComponentsCodeBlockRoute
+  '/libs/react-web/components/collapsible': typeof LibsReactWebComponentsCollapsibleRoute
+  '/libs/react-web/components/color-picker': typeof LibsReactWebComponentsColorPickerRoute
+  '/libs/react-web/components/color-scheme-provider': typeof LibsReactWebComponentsColorSchemeProviderRoute
+  '/libs/react-web/components/color-scheme-switcher': typeof LibsReactWebComponentsColorSchemeSwitcherRoute
+  '/libs/react-web/components/confirm': typeof LibsReactWebComponentsConfirmRoute
+  '/libs/react-web/components/container': typeof LibsReactWebComponentsContainerRoute
+  '/libs/react-web/components/copy-button': typeof LibsReactWebComponentsCopyButtonRoute
+  '/libs/react-web/components/currency-input': typeof LibsReactWebComponentsCurrencyInputRoute
+  '/libs/react-web/components/data-transfer-export': typeof LibsReactWebComponentsDataTransferExportRoute
+  '/libs/react-web/components/data-transfer-import': typeof LibsReactWebComponentsDataTransferImportRoute
+  '/libs/react-web/components/date-input': typeof LibsReactWebComponentsDateInputRoute
+  '/libs/react-web/components/date-range-input': typeof LibsReactWebComponentsDateRangeInputRoute
+  '/libs/react-web/components/date-text': typeof LibsReactWebComponentsDateTextRoute
+  '/libs/react-web/components/date-time-input': typeof LibsReactWebComponentsDateTimeInputRoute
+  '/libs/react-web/components/description-list': typeof LibsReactWebComponentsDescriptionListRoute
+  '/libs/react-web/components/document-input': typeof LibsReactWebComponentsDocumentInputRoute
+  '/libs/react-web/components/document-text': typeof LibsReactWebComponentsDocumentTextRoute
+  '/libs/react-web/components/dropdown-menu': typeof LibsReactWebComponentsDropdownMenuRoute
+  '/libs/react-web/components/duration-text': typeof LibsReactWebComponentsDurationTextRoute
+  '/libs/react-web/components/editable-text': typeof LibsReactWebComponentsEditableTextRoute
+  '/libs/react-web/components/empty-state': typeof LibsReactWebComponentsEmptyStateRoute
+  '/libs/react-web/components/file-size-text': typeof LibsReactWebComponentsFileSizeTextRoute
+  '/libs/react-web/components/filter-bar': typeof LibsReactWebComponentsFilterBarRoute
+  '/libs/react-web/components/filter-chip': typeof LibsReactWebComponentsFilterChipRoute
+  '/libs/react-web/components/flex': typeof LibsReactWebComponentsFlexRoute
+  '/libs/react-web/components/form': typeof LibsReactWebComponentsFormRoute
+  '/libs/react-web/components/format-provider': typeof LibsReactWebComponentsFormatProviderRoute
+  '/libs/react-web/components/grid': typeof LibsReactWebComponentsGridRoute
+  '/libs/react-web/components/identity': typeof LibsReactWebComponentsIdentityRoute
+  '/libs/react-web/components/image': typeof LibsReactWebComponentsImageRoute
+  '/libs/react-web/components/indicator': typeof LibsReactWebComponentsIndicatorRoute
+  '/libs/react-web/components/input': typeof LibsReactWebComponentsInputRoute
+  '/libs/react-web/components/label': typeof LibsReactWebComponentsLabelRoute
+  '/libs/react-web/components/labels-provider': typeof LibsReactWebComponentsLabelsProviderRoute
+  '/libs/react-web/components/layout': typeof LibsReactWebComponentsLayoutRoute
+  '/libs/react-web/components/list': typeof LibsReactWebComponentsListRoute
+  '/libs/react-web/components/loaded': typeof LibsReactWebComponentsLoadedRoute
+  '/libs/react-web/components/loading-bar': typeof LibsReactWebComponentsLoadingBarRoute
+  '/libs/react-web/components/loading-overlay': typeof LibsReactWebComponentsLoadingOverlayRoute
+  '/libs/react-web/components/mask-input': typeof LibsReactWebComponentsMaskInputRoute
+  '/libs/react-web/components/modal': typeof LibsReactWebComponentsModalRoute
+  '/libs/react-web/components/money-text': typeof LibsReactWebComponentsMoneyTextRoute
+  '/libs/react-web/components/notification-card': typeof LibsReactWebComponentsNotificationCardRoute
+  '/libs/react-web/components/notification-center': typeof LibsReactWebComponentsNotificationCenterRoute
+  '/libs/react-web/components/notification-filter': typeof LibsReactWebComponentsNotificationFilterRoute
+  '/libs/react-web/components/notification-list': typeof LibsReactWebComponentsNotificationListRoute
+  '/libs/react-web/components/number-input': typeof LibsReactWebComponentsNumberInputRoute
+  '/libs/react-web/components/number-text': typeof LibsReactWebComponentsNumberTextRoute
+  '/libs/react-web/components/otp-input': typeof LibsReactWebComponentsOtpInputRoute
+  '/libs/react-web/components/page': typeof LibsReactWebComponentsPageRoute
+  '/libs/react-web/components/pagination': typeof LibsReactWebComponentsPaginationRoute
+  '/libs/react-web/components/password-input': typeof LibsReactWebComponentsPasswordInputRoute
+  '/libs/react-web/components/phone-input': typeof LibsReactWebComponentsPhoneInputRoute
+  '/libs/react-web/components/phone-text': typeof LibsReactWebComponentsPhoneTextRoute
+  '/libs/react-web/components/popconfirm': typeof LibsReactWebComponentsPopconfirmRoute
+  '/libs/react-web/components/popover': typeof LibsReactWebComponentsPopoverRoute
+  '/libs/react-web/components/portal-provider': typeof LibsReactWebComponentsPortalProviderRoute
+  '/libs/react-web/components/progress': typeof LibsReactWebComponentsProgressRoute
+  '/libs/react-web/components/protected': typeof LibsReactWebComponentsProtectedRoute
+  '/libs/react-web/components/protected-provider': typeof LibsReactWebComponentsProtectedProviderRoute
+  '/libs/react-web/components/qr-code': typeof LibsReactWebComponentsQrCodeRoute
+  '/libs/react-web/components/radio': typeof LibsReactWebComponentsRadioRoute
+  '/libs/react-web/components/rating': typeof LibsReactWebComponentsRatingRoute
+  '/libs/react-web/components/resizable': typeof LibsReactWebComponentsResizableRoute
+  '/libs/react-web/components/scroll-area': typeof LibsReactWebComponentsScrollAreaRoute
+  '/libs/react-web/components/search': typeof LibsReactWebComponentsSearchRoute
+  '/libs/react-web/components/segmented-control': typeof LibsReactWebComponentsSegmentedControlRoute
+  '/libs/react-web/components/select': typeof LibsReactWebComponentsSelectRoute
+  '/libs/react-web/components/separator': typeof LibsReactWebComponentsSeparatorRoute
+  '/libs/react-web/components/sheet': typeof LibsReactWebComponentsSheetRoute
+  '/libs/react-web/components/skeleton': typeof LibsReactWebComponentsSkeletonRoute
+  '/libs/react-web/components/slider': typeof LibsReactWebComponentsSliderRoute
+  '/libs/react-web/components/spotlight-search': typeof LibsReactWebComponentsSpotlightSearchRoute
+  '/libs/react-web/components/stat': typeof LibsReactWebComponentsStatRoute
+  '/libs/react-web/components/stepper': typeof LibsReactWebComponentsStepperRoute
+  '/libs/react-web/components/switch': typeof LibsReactWebComponentsSwitchRoute
+  '/libs/react-web/components/table': typeof LibsReactWebComponentsTableRoute
+  '/libs/react-web/components/tabs': typeof LibsReactWebComponentsTabsRoute
+  '/libs/react-web/components/tag': typeof LibsReactWebComponentsTagRoute
+  '/libs/react-web/components/tags-input': typeof LibsReactWebComponentsTagsInputRoute
+  '/libs/react-web/components/textarea': typeof LibsReactWebComponentsTextareaRoute
+  '/libs/react-web/components/time-input': typeof LibsReactWebComponentsTimeInputRoute
+  '/libs/react-web/components/timeline': typeof LibsReactWebComponentsTimelineRoute
+  '/libs/react-web/components/toast': typeof LibsReactWebComponentsToastRoute
+  '/libs/react-web/components/toggle': typeof LibsReactWebComponentsToggleRoute
+  '/libs/react-web/components/tooltip': typeof LibsReactWebComponentsTooltipRoute
+  '/libs/react-web/components/tree': typeof LibsReactWebComponentsTreeRoute
+  '/libs/react-web/components/truncated-text': typeof LibsReactWebComponentsTruncatedTextRoute
+  '/libs/react-web/components/tury-provider': typeof LibsReactWebComponentsTuryProviderRoute
+  '/libs/react-web/components/typography': typeof LibsReactWebComponentsTypographyRoute
+  '/libs/react-web/components/uploader': typeof LibsReactWebComponentsUploaderRoute
+  '/libs/react-web/hooks/$hook': typeof LibsReactWebHooksHookRoute
+  '/libs/react-web/audiences': typeof LibsReactWebAudiencesIndexRoute
+  '/libs/react-web/components': typeof LibsReactWebComponentsIndexRoute
+  '/libs/react-web/hooks': typeof LibsReactWebHooksIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
+  '/': typeof IndexRoute
   '/_main': typeof MainRouteWithChildren
+  '/_main/showcase': typeof MainShowcaseRoute
   '/libs/architecture-pattern': typeof LibsArchitecturePatternRouteWithChildren
   '/libs/backend-config': typeof LibsBackendConfigRouteWithChildren
   '/libs/backend-pattern': typeof LibsBackendPatternRouteWithChildren
+  '/libs/blueprint-template': typeof LibsBlueprintTemplateRouteWithChildren
   '/libs/cli': typeof LibsCliRouteWithChildren
   '/libs/entity': typeof LibsEntityRouteWithChildren
   '/libs/exceptions': typeof LibsExceptionsRouteWithChildren
+  '/libs/fields': typeof LibsFieldsRouteWithChildren
   '/libs/frontend-config': typeof LibsFrontendConfigRouteWithChildren
   '/libs/frontend-pattern': typeof LibsFrontendPatternRouteWithChildren
   '/libs/frontend-primitives-pattern': typeof LibsFrontendPrimitivesPatternRouteWithChildren
+  '/libs/harness': typeof LibsHarnessRouteWithChildren
+  '/libs/modeling': typeof LibsModelingRouteWithChildren
   '/libs/nestjs-cache': typeof LibsNestjsCacheRouteWithChildren
   '/libs/nestjs-config': typeof LibsNestjsConfigRouteWithChildren
   '/libs/nestjs-context': typeof LibsNestjsContextRouteWithChildren
   '/libs/nestjs-database': typeof LibsNestjsDatabaseRouteWithChildren
+  '/libs/nestjs-events': typeof LibsNestjsEventsRouteWithChildren
   '/libs/nestjs-iam': typeof LibsNestjsIamRouteWithChildren
   '/libs/nestjs-idempotency': typeof LibsNestjsIdempotencyRouteWithChildren
   '/libs/nestjs-lock': typeof LibsNestjsLockRouteWithChildren
   '/libs/nestjs-logger': typeof LibsNestjsLoggerRouteWithChildren
   '/libs/nestjs-observability': typeof LibsNestjsObservabilityRouteWithChildren
-  '/libs/nestjs-publisher': typeof LibsNestjsPublisherRouteWithChildren
   '/libs/nestjs-rate-limit': typeof LibsNestjsRateLimitRouteWithChildren
   '/libs/nestjs-resilience': typeof LibsNestjsResilienceRouteWithChildren
-  '/libs/nestjs-scheduler': typeof LibsNestjsSchedulerRouteWithChildren
   '/libs/nestjs-server': typeof LibsNestjsServerRouteWithChildren
-  '/libs/nestjs-serverless': typeof LibsNestjsServerlessRouteWithChildren
   '/libs/nestjs-social-auth': typeof LibsNestjsSocialAuthRouteWithChildren
   '/libs/nestjs-storage': typeof LibsNestjsStorageRouteWithChildren
+  '/libs/openapi-sdk': typeof LibsOpenapiSdkRouteWithChildren
+  '/libs/proof-mode': typeof LibsProofModeRouteWithChildren
+  '/libs/proof-mode-gates': typeof LibsProofModeGatesRoute
   '/libs/query-dsl': typeof LibsQueryDslRouteWithChildren
+  '/libs/react-charts': typeof LibsReactChartsRouteWithChildren
   '/libs/react-hooks': typeof LibsReactHooksRouteWithChildren
+  '/libs/react-i18n': typeof LibsReactI18nRouteWithChildren
   '/libs/react-icons': typeof LibsReactIconsRouteWithChildren
-  '/libs/react-mobile': typeof LibsReactMobileRouteWithChildren
   '/libs/react-web': typeof LibsReactWebRouteWithChildren
   '/libs/saga': typeof LibsSagaRouteWithChildren
-  '/_main/': typeof MainIndexRoute
+  '/libs/uiux-template': typeof LibsUiuxTemplateRouteWithChildren
   '/libs/architecture-pattern/$section': typeof LibsArchitecturePatternSectionRoute
   '/libs/backend-config/biome': typeof LibsBackendConfigBiomeRoute
   '/libs/backend-config/typescript': typeof LibsBackendConfigTypescriptRoute
   '/libs/backend-pattern/$section': typeof LibsBackendPatternSectionRoute
+  '/libs/blueprint-template/$section': typeof LibsBlueprintTemplateSectionRoute
+  '/libs/blueprint-template/board': typeof LibsBlueprintTemplateBoardRoute
   '/libs/cli/api': typeof LibsCliApiRoute
   '/libs/cli/handler': typeof LibsCliHandlerRoute
-  '/libs/cli/mobile': typeof LibsCliMobileRoute
   '/libs/cli/monorepo': typeof LibsCliMonorepoRoute
   '/libs/cli/web': typeof LibsCliWebRoute
   '/libs/entity/entity': typeof LibsEntityEntityRoute
   '/libs/exceptions/exceptions': typeof LibsExceptionsExceptionsRoute
+  '/libs/fields/booleans': typeof LibsFieldsBooleansRoute
+  '/libs/fields/brazil': typeof LibsFieldsBrazilRoute
+  '/libs/fields/collections': typeof LibsFieldsCollectionsRoute
+  '/libs/fields/cross-field': typeof LibsFieldsCrossFieldRoute
+  '/libs/fields/dates': typeof LibsFieldsDatesRoute
+  '/libs/fields/error-codes': typeof LibsFieldsErrorCodesRoute
+  '/libs/fields/files': typeof LibsFieldsFilesRoute
+  '/libs/fields/identity': typeof LibsFieldsIdentityRoute
+  '/libs/fields/numbers': typeof LibsFieldsNumbersRoute
+  '/libs/fields/text': typeof LibsFieldsTextRoute
   '/libs/frontend-config/biome': typeof LibsFrontendConfigBiomeRoute
   '/libs/frontend-config/typescript': typeof LibsFrontendConfigTypescriptRoute
   '/libs/frontend-pattern/$section': typeof LibsFrontendPatternSectionRoute
   '/libs/frontend-primitives-pattern/$section': typeof LibsFrontendPrimitivesPatternSectionRoute
+  '/libs/harness/$section': typeof LibsHarnessSectionRoute
+  '/libs/harness/flow': typeof LibsHarnessFlowRoute
+  '/libs/modeling/$section': typeof LibsModelingSectionRoute
   '/libs/nestjs-cache/cache-del': typeof LibsNestjsCacheCacheDelRoute
   '/libs/nestjs-cache/cache-get': typeof LibsNestjsCacheCacheGetRoute
   '/libs/nestjs-cache/cache-module': typeof LibsNestjsCacheCacheModuleRoute
@@ -1339,10 +2718,18 @@ export interface FileRoutesById {
   '/libs/nestjs-database/audit': typeof LibsNestjsDatabaseAuditRoute
   '/libs/nestjs-database/database-module': typeof LibsNestjsDatabaseDatabaseModuleRoute
   '/libs/nestjs-database/database-service': typeof LibsNestjsDatabaseDatabaseServiceRoute
+  '/libs/nestjs-database/dynamodb': typeof LibsNestjsDatabaseDynamodbRoute
+  '/libs/nestjs-database/postgresql': typeof LibsNestjsDatabasePostgresqlRoute
   '/libs/nestjs-database/schema-definition': typeof LibsNestjsDatabaseSchemaDefinitionRoute
   '/libs/nestjs-database/transaction-hooks': typeof LibsNestjsDatabaseTransactionHooksRoute
   '/libs/nestjs-database/transactional': typeof LibsNestjsDatabaseTransactionalRoute
   '/libs/nestjs-database/types-and-errors': typeof LibsNestjsDatabaseTypesAndErrorsRoute
+  '/libs/nestjs-events/contracts': typeof LibsNestjsEventsContractsRoute
+  '/libs/nestjs-events/handler-decorator': typeof LibsNestjsEventsHandlerDecoratorRoute
+  '/libs/nestjs-events/infra': typeof LibsNestjsEventsInfraRoute
+  '/libs/nestjs-events/publisher': typeof LibsNestjsEventsPublisherRoute
+  '/libs/nestjs-events/serverless-create': typeof LibsNestjsEventsServerlessCreateRoute
+  '/libs/nestjs-events/workers-module': typeof LibsNestjsEventsWorkersModuleRoute
   '/libs/nestjs-iam/acl-decorator': typeof LibsNestjsIamAclDecoratorRoute
   '/libs/nestjs-iam/acl-service': typeof LibsNestjsIamAclServiceRoute
   '/libs/nestjs-iam/auth-decorator': typeof LibsNestjsIamAuthDecoratorRoute
@@ -1361,29 +2748,24 @@ export interface FileRoutesById {
   '/libs/nestjs-observability/metrics-service': typeof LibsNestjsObservabilityMetricsServiceRoute
   '/libs/nestjs-observability/observability-module': typeof LibsNestjsObservabilityObservabilityModuleRoute
   '/libs/nestjs-observability/tracing': typeof LibsNestjsObservabilityTracingRoute
-  '/libs/nestjs-publisher/outbox': typeof LibsNestjsPublisherOutboxRoute
-  '/libs/nestjs-publisher/publisher-module': typeof LibsNestjsPublisherPublisherModuleRoute
-  '/libs/nestjs-publisher/publisher-service': typeof LibsNestjsPublisherPublisherServiceRoute
-  '/libs/nestjs-publisher/subscriber-decorator': typeof LibsNestjsPublisherSubscriberDecoratorRoute
   '/libs/nestjs-rate-limit/rate-limit-decorator': typeof LibsNestjsRateLimitRateLimitDecoratorRoute
   '/libs/nestjs-rate-limit/rate-limit-module': typeof LibsNestjsRateLimitRateLimitModuleRoute
   '/libs/nestjs-rate-limit/rate-limit-service': typeof LibsNestjsRateLimitRateLimitServiceRoute
   '/libs/nestjs-resilience/circuit-breaker': typeof LibsNestjsResilienceCircuitBreakerRoute
   '/libs/nestjs-resilience/retry': typeof LibsNestjsResilienceRetryRoute
   '/libs/nestjs-resilience/timeout': typeof LibsNestjsResilienceTimeoutRoute
-  '/libs/nestjs-scheduler/schedule-decorator': typeof LibsNestjsSchedulerScheduleDecoratorRoute
-  '/libs/nestjs-scheduler/scheduler-module': typeof LibsNestjsSchedulerSchedulerModuleRoute
   '/libs/nestjs-server/controller-decorator': typeof LibsNestjsServerControllerDecoratorRoute
   '/libs/nestjs-server/request-decorator': typeof LibsNestjsServerRequestDecoratorRoute
   '/libs/nestjs-server/route-decorator': typeof LibsNestjsServerRouteDecoratorRoute
   '/libs/nestjs-server/server-create': typeof LibsNestjsServerServerCreateRoute
-  '/libs/nestjs-serverless/handler-decorator': typeof LibsNestjsServerlessHandlerDecoratorRoute
-  '/libs/nestjs-serverless/serverless-create': typeof LibsNestjsServerlessServerlessCreateRoute
-  '/libs/nestjs-serverless/serverless-module': typeof LibsNestjsServerlessServerlessModuleRoute
   '/libs/nestjs-social-auth/social-auth-module': typeof LibsNestjsSocialAuthSocialAuthModuleRoute
   '/libs/nestjs-social-auth/social-auth-service': typeof LibsNestjsSocialAuthSocialAuthServiceRoute
   '/libs/nestjs-storage/storage-module': typeof LibsNestjsStorageStorageModuleRoute
   '/libs/nestjs-storage/storage-service': typeof LibsNestjsStorageStorageServiceRoute
+  '/libs/openapi-sdk/client': typeof LibsOpenapiSdkClientRoute
+  '/libs/openapi-sdk/config': typeof LibsOpenapiSdkConfigRoute
+  '/libs/openapi-sdk/naming': typeof LibsOpenapiSdkNamingRoute
+  '/libs/proof-mode/$section': typeof LibsProofModeSectionRoute
   '/libs/query-dsl/boolean-schema': typeof LibsQueryDslBooleanSchemaRoute
   '/libs/query-dsl/date-range-schema': typeof LibsQueryDslDateRangeSchemaRoute
   '/libs/query-dsl/filter-schema': typeof LibsQueryDslFilterSchemaRoute
@@ -1391,96 +2773,249 @@ export interface FileRoutesById {
   '/libs/query-dsl/pagination-schema': typeof LibsQueryDslPaginationSchemaRoute
   '/libs/query-dsl/range-schema': typeof LibsQueryDslRangeSchemaRoute
   '/libs/query-dsl/sort-schema': typeof LibsQueryDslSortSchemaRoute
+  '/libs/react-charts/chart': typeof LibsReactChartsChartRoute
+  '/libs/react-charts/sparkline': typeof LibsReactChartsSparklineRoute
   '/libs/react-hooks/$hook': typeof LibsReactHooksHookRoute
+  '/libs/react-i18n/api': typeof LibsReactI18nApiRoute
+  '/libs/react-i18n/dictionary': typeof LibsReactI18nDictionaryRoute
+  '/libs/react-i18n/provider': typeof LibsReactI18nProviderRoute
+  '/libs/react-i18n/ui-labels': typeof LibsReactI18nUiLabelsRoute
   '/libs/react-icons/playground': typeof LibsReactIconsPlaygroundRoute
-  '/libs/react-web/playground': typeof LibsReactWebPlaygroundRoute
   '/libs/saga/saga': typeof LibsSagaSagaRoute
+  '/libs/uiux-template/$section': typeof LibsUiuxTemplateSectionRoute
+  '/libs/uiux-template/theme': typeof LibsUiuxTemplateThemeRoute
   '/libs/architecture-pattern/': typeof LibsArchitecturePatternIndexRoute
   '/libs/backend-config/': typeof LibsBackendConfigIndexRoute
   '/libs/backend-pattern/': typeof LibsBackendPatternIndexRoute
+  '/libs/blueprint-template/': typeof LibsBlueprintTemplateIndexRoute
   '/libs/cli/': typeof LibsCliIndexRoute
   '/libs/entity/': typeof LibsEntityIndexRoute
   '/libs/exceptions/': typeof LibsExceptionsIndexRoute
+  '/libs/fields/': typeof LibsFieldsIndexRoute
   '/libs/frontend-config/': typeof LibsFrontendConfigIndexRoute
   '/libs/frontend-pattern/': typeof LibsFrontendPatternIndexRoute
   '/libs/frontend-primitives-pattern/': typeof LibsFrontendPrimitivesPatternIndexRoute
+  '/libs/harness/': typeof LibsHarnessIndexRoute
+  '/libs/modeling/': typeof LibsModelingIndexRoute
   '/libs/nestjs-cache/': typeof LibsNestjsCacheIndexRoute
   '/libs/nestjs-config/': typeof LibsNestjsConfigIndexRoute
   '/libs/nestjs-context/': typeof LibsNestjsContextIndexRoute
   '/libs/nestjs-database/': typeof LibsNestjsDatabaseIndexRoute
+  '/libs/nestjs-events/': typeof LibsNestjsEventsIndexRoute
   '/libs/nestjs-iam/': typeof LibsNestjsIamIndexRoute
   '/libs/nestjs-idempotency/': typeof LibsNestjsIdempotencyIndexRoute
   '/libs/nestjs-lock/': typeof LibsNestjsLockIndexRoute
   '/libs/nestjs-logger/': typeof LibsNestjsLoggerIndexRoute
   '/libs/nestjs-observability/': typeof LibsNestjsObservabilityIndexRoute
-  '/libs/nestjs-publisher/': typeof LibsNestjsPublisherIndexRoute
   '/libs/nestjs-rate-limit/': typeof LibsNestjsRateLimitIndexRoute
   '/libs/nestjs-resilience/': typeof LibsNestjsResilienceIndexRoute
-  '/libs/nestjs-scheduler/': typeof LibsNestjsSchedulerIndexRoute
   '/libs/nestjs-server/': typeof LibsNestjsServerIndexRoute
-  '/libs/nestjs-serverless/': typeof LibsNestjsServerlessIndexRoute
   '/libs/nestjs-social-auth/': typeof LibsNestjsSocialAuthIndexRoute
   '/libs/nestjs-storage/': typeof LibsNestjsStorageIndexRoute
+  '/libs/openapi-sdk/': typeof LibsOpenapiSdkIndexRoute
+  '/libs/proof-mode/': typeof LibsProofModeIndexRoute
   '/libs/query-dsl/': typeof LibsQueryDslIndexRoute
+  '/libs/react-charts/': typeof LibsReactChartsIndexRoute
   '/libs/react-hooks/': typeof LibsReactHooksIndexRoute
+  '/libs/react-i18n/': typeof LibsReactI18nIndexRoute
   '/libs/react-icons/': typeof LibsReactIconsIndexRoute
-  '/libs/react-mobile/': typeof LibsReactMobileIndexRoute
   '/libs/react-web/': typeof LibsReactWebIndexRoute
   '/libs/saga/': typeof LibsSagaIndexRoute
-  '/libs/react-mobile/components/$component': typeof LibsReactMobileComponentsComponentRoute
-  '/libs/react-mobile/components/': typeof LibsReactMobileComponentsIndexRoute
+  '/libs/uiux-template/': typeof LibsUiuxTemplateIndexRoute
+  '/libs/react-web/components/loader': typeof LibsReactWebComponentsLoaderRouteRoute
+  '/libs/react-web/audiences/auth': typeof LibsReactWebAudiencesAuthRoute
+  '/libs/react-web/audiences/b2b': typeof LibsReactWebAudiencesB2bRoute
+  '/libs/react-web/audiences/b2c': typeof LibsReactWebAudiencesB2cRoute
+  '/libs/react-web/audiences/backoffice': typeof LibsReactWebAudiencesBackofficeRoute
+  '/libs/react-web/audiences/checkout': typeof LibsReactWebAudiencesCheckoutRoute
+  '/libs/react-web/audiences/landing-page': typeof LibsReactWebAudiencesLandingPageRoute
+  '/libs/react-web/components/$component': typeof LibsReactWebComponentsComponentRoute
+  '/libs/react-web/components/accordion': typeof LibsReactWebComponentsAccordionRoute
+  '/libs/react-web/components/alert': typeof LibsReactWebComponentsAlertRoute
+  '/libs/react-web/components/anchor-nav': typeof LibsReactWebComponentsAnchorNavRoute
+  '/libs/react-web/components/avatar': typeof LibsReactWebComponentsAvatarRoute
+  '/libs/react-web/components/badge': typeof LibsReactWebComponentsBadgeRoute
+  '/libs/react-web/components/board': typeof LibsReactWebComponentsBoardRoute
+  '/libs/react-web/components/boolean-text': typeof LibsReactWebComponentsBooleanTextRoute
+  '/libs/react-web/components/box': typeof LibsReactWebComponentsBoxRoute
+  '/libs/react-web/components/breadcrumb': typeof LibsReactWebComponentsBreadcrumbRoute
+  '/libs/react-web/components/bulk-actions': typeof LibsReactWebComponentsBulkActionsRoute
+  '/libs/react-web/components/button': typeof LibsReactWebComponentsButtonRoute
+  '/libs/react-web/components/calendar': typeof LibsReactWebComponentsCalendarRoute
+  '/libs/react-web/components/card': typeof LibsReactWebComponentsCardRoute
+  '/libs/react-web/components/carousel': typeof LibsReactWebComponentsCarouselRoute
+  '/libs/react-web/components/checkbox': typeof LibsReactWebComponentsCheckboxRoute
+  '/libs/react-web/components/checklist': typeof LibsReactWebComponentsChecklistRoute
+  '/libs/react-web/components/code-block': typeof LibsReactWebComponentsCodeBlockRoute
+  '/libs/react-web/components/collapsible': typeof LibsReactWebComponentsCollapsibleRoute
+  '/libs/react-web/components/color-picker': typeof LibsReactWebComponentsColorPickerRoute
+  '/libs/react-web/components/color-scheme-provider': typeof LibsReactWebComponentsColorSchemeProviderRoute
+  '/libs/react-web/components/color-scheme-switcher': typeof LibsReactWebComponentsColorSchemeSwitcherRoute
+  '/libs/react-web/components/confirm': typeof LibsReactWebComponentsConfirmRoute
+  '/libs/react-web/components/container': typeof LibsReactWebComponentsContainerRoute
+  '/libs/react-web/components/copy-button': typeof LibsReactWebComponentsCopyButtonRoute
+  '/libs/react-web/components/currency-input': typeof LibsReactWebComponentsCurrencyInputRoute
+  '/libs/react-web/components/data-transfer-export': typeof LibsReactWebComponentsDataTransferExportRoute
+  '/libs/react-web/components/data-transfer-import': typeof LibsReactWebComponentsDataTransferImportRoute
+  '/libs/react-web/components/date-input': typeof LibsReactWebComponentsDateInputRoute
+  '/libs/react-web/components/date-range-input': typeof LibsReactWebComponentsDateRangeInputRoute
+  '/libs/react-web/components/date-text': typeof LibsReactWebComponentsDateTextRoute
+  '/libs/react-web/components/date-time-input': typeof LibsReactWebComponentsDateTimeInputRoute
+  '/libs/react-web/components/description-list': typeof LibsReactWebComponentsDescriptionListRoute
+  '/libs/react-web/components/document-input': typeof LibsReactWebComponentsDocumentInputRoute
+  '/libs/react-web/components/document-text': typeof LibsReactWebComponentsDocumentTextRoute
+  '/libs/react-web/components/dropdown-menu': typeof LibsReactWebComponentsDropdownMenuRoute
+  '/libs/react-web/components/duration-text': typeof LibsReactWebComponentsDurationTextRoute
+  '/libs/react-web/components/editable-text': typeof LibsReactWebComponentsEditableTextRoute
+  '/libs/react-web/components/empty-state': typeof LibsReactWebComponentsEmptyStateRoute
+  '/libs/react-web/components/file-size-text': typeof LibsReactWebComponentsFileSizeTextRoute
+  '/libs/react-web/components/filter-bar': typeof LibsReactWebComponentsFilterBarRoute
+  '/libs/react-web/components/filter-chip': typeof LibsReactWebComponentsFilterChipRoute
+  '/libs/react-web/components/flex': typeof LibsReactWebComponentsFlexRoute
+  '/libs/react-web/components/form': typeof LibsReactWebComponentsFormRoute
+  '/libs/react-web/components/format-provider': typeof LibsReactWebComponentsFormatProviderRoute
+  '/libs/react-web/components/grid': typeof LibsReactWebComponentsGridRoute
+  '/libs/react-web/components/identity': typeof LibsReactWebComponentsIdentityRoute
+  '/libs/react-web/components/image': typeof LibsReactWebComponentsImageRoute
+  '/libs/react-web/components/indicator': typeof LibsReactWebComponentsIndicatorRoute
+  '/libs/react-web/components/input': typeof LibsReactWebComponentsInputRoute
+  '/libs/react-web/components/label': typeof LibsReactWebComponentsLabelRoute
+  '/libs/react-web/components/labels-provider': typeof LibsReactWebComponentsLabelsProviderRoute
+  '/libs/react-web/components/layout': typeof LibsReactWebComponentsLayoutRoute
+  '/libs/react-web/components/list': typeof LibsReactWebComponentsListRoute
+  '/libs/react-web/components/loaded': typeof LibsReactWebComponentsLoadedRoute
+  '/libs/react-web/components/loading-bar': typeof LibsReactWebComponentsLoadingBarRoute
+  '/libs/react-web/components/loading-overlay': typeof LibsReactWebComponentsLoadingOverlayRoute
+  '/libs/react-web/components/mask-input': typeof LibsReactWebComponentsMaskInputRoute
+  '/libs/react-web/components/modal': typeof LibsReactWebComponentsModalRoute
+  '/libs/react-web/components/money-text': typeof LibsReactWebComponentsMoneyTextRoute
+  '/libs/react-web/components/notification-card': typeof LibsReactWebComponentsNotificationCardRoute
+  '/libs/react-web/components/notification-center': typeof LibsReactWebComponentsNotificationCenterRoute
+  '/libs/react-web/components/notification-filter': typeof LibsReactWebComponentsNotificationFilterRoute
+  '/libs/react-web/components/notification-list': typeof LibsReactWebComponentsNotificationListRoute
+  '/libs/react-web/components/number-input': typeof LibsReactWebComponentsNumberInputRoute
+  '/libs/react-web/components/number-text': typeof LibsReactWebComponentsNumberTextRoute
+  '/libs/react-web/components/otp-input': typeof LibsReactWebComponentsOtpInputRoute
+  '/libs/react-web/components/page': typeof LibsReactWebComponentsPageRoute
+  '/libs/react-web/components/pagination': typeof LibsReactWebComponentsPaginationRoute
+  '/libs/react-web/components/password-input': typeof LibsReactWebComponentsPasswordInputRoute
+  '/libs/react-web/components/phone-input': typeof LibsReactWebComponentsPhoneInputRoute
+  '/libs/react-web/components/phone-text': typeof LibsReactWebComponentsPhoneTextRoute
+  '/libs/react-web/components/popconfirm': typeof LibsReactWebComponentsPopconfirmRoute
+  '/libs/react-web/components/popover': typeof LibsReactWebComponentsPopoverRoute
+  '/libs/react-web/components/portal-provider': typeof LibsReactWebComponentsPortalProviderRoute
+  '/libs/react-web/components/progress': typeof LibsReactWebComponentsProgressRoute
+  '/libs/react-web/components/protected': typeof LibsReactWebComponentsProtectedRoute
+  '/libs/react-web/components/protected-provider': typeof LibsReactWebComponentsProtectedProviderRoute
+  '/libs/react-web/components/qr-code': typeof LibsReactWebComponentsQrCodeRoute
+  '/libs/react-web/components/radio': typeof LibsReactWebComponentsRadioRoute
+  '/libs/react-web/components/rating': typeof LibsReactWebComponentsRatingRoute
+  '/libs/react-web/components/resizable': typeof LibsReactWebComponentsResizableRoute
+  '/libs/react-web/components/scroll-area': typeof LibsReactWebComponentsScrollAreaRoute
+  '/libs/react-web/components/search': typeof LibsReactWebComponentsSearchRoute
+  '/libs/react-web/components/segmented-control': typeof LibsReactWebComponentsSegmentedControlRoute
+  '/libs/react-web/components/select': typeof LibsReactWebComponentsSelectRoute
+  '/libs/react-web/components/separator': typeof LibsReactWebComponentsSeparatorRoute
+  '/libs/react-web/components/sheet': typeof LibsReactWebComponentsSheetRoute
+  '/libs/react-web/components/skeleton': typeof LibsReactWebComponentsSkeletonRoute
+  '/libs/react-web/components/slider': typeof LibsReactWebComponentsSliderRoute
+  '/libs/react-web/components/spotlight-search': typeof LibsReactWebComponentsSpotlightSearchRoute
+  '/libs/react-web/components/stat': typeof LibsReactWebComponentsStatRoute
+  '/libs/react-web/components/stepper': typeof LibsReactWebComponentsStepperRoute
+  '/libs/react-web/components/switch': typeof LibsReactWebComponentsSwitchRoute
+  '/libs/react-web/components/table': typeof LibsReactWebComponentsTableRoute
+  '/libs/react-web/components/tabs': typeof LibsReactWebComponentsTabsRoute
+  '/libs/react-web/components/tag': typeof LibsReactWebComponentsTagRoute
+  '/libs/react-web/components/tags-input': typeof LibsReactWebComponentsTagsInputRoute
+  '/libs/react-web/components/textarea': typeof LibsReactWebComponentsTextareaRoute
+  '/libs/react-web/components/time-input': typeof LibsReactWebComponentsTimeInputRoute
+  '/libs/react-web/components/timeline': typeof LibsReactWebComponentsTimelineRoute
+  '/libs/react-web/components/toast': typeof LibsReactWebComponentsToastRoute
+  '/libs/react-web/components/toggle': typeof LibsReactWebComponentsToggleRoute
+  '/libs/react-web/components/tooltip': typeof LibsReactWebComponentsTooltipRoute
+  '/libs/react-web/components/tree': typeof LibsReactWebComponentsTreeRoute
+  '/libs/react-web/components/truncated-text': typeof LibsReactWebComponentsTruncatedTextRoute
+  '/libs/react-web/components/tury-provider': typeof LibsReactWebComponentsTuryProviderRoute
+  '/libs/react-web/components/typography': typeof LibsReactWebComponentsTypographyRoute
+  '/libs/react-web/components/uploader': typeof LibsReactWebComponentsUploaderRoute
+  '/libs/react-web/hooks/$hook': typeof LibsReactWebHooksHookRoute
+  '/libs/react-web/audiences/': typeof LibsReactWebAudiencesIndexRoute
+  '/libs/react-web/components/': typeof LibsReactWebComponentsIndexRoute
+  '/libs/react-web/hooks/': typeof LibsReactWebHooksIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
+    | '/showcase'
     | '/libs/architecture-pattern'
     | '/libs/backend-config'
     | '/libs/backend-pattern'
+    | '/libs/blueprint-template'
     | '/libs/cli'
     | '/libs/entity'
     | '/libs/exceptions'
+    | '/libs/fields'
     | '/libs/frontend-config'
     | '/libs/frontend-pattern'
     | '/libs/frontend-primitives-pattern'
+    | '/libs/harness'
+    | '/libs/modeling'
     | '/libs/nestjs-cache'
     | '/libs/nestjs-config'
     | '/libs/nestjs-context'
     | '/libs/nestjs-database'
+    | '/libs/nestjs-events'
     | '/libs/nestjs-iam'
     | '/libs/nestjs-idempotency'
     | '/libs/nestjs-lock'
     | '/libs/nestjs-logger'
     | '/libs/nestjs-observability'
-    | '/libs/nestjs-publisher'
     | '/libs/nestjs-rate-limit'
     | '/libs/nestjs-resilience'
-    | '/libs/nestjs-scheduler'
     | '/libs/nestjs-server'
-    | '/libs/nestjs-serverless'
     | '/libs/nestjs-social-auth'
     | '/libs/nestjs-storage'
+    | '/libs/openapi-sdk'
+    | '/libs/proof-mode'
+    | '/libs/proof-mode-gates'
     | '/libs/query-dsl'
+    | '/libs/react-charts'
     | '/libs/react-hooks'
+    | '/libs/react-i18n'
     | '/libs/react-icons'
-    | '/libs/react-mobile'
     | '/libs/react-web'
     | '/libs/saga'
+    | '/libs/uiux-template'
     | '/libs/architecture-pattern/$section'
     | '/libs/backend-config/biome'
     | '/libs/backend-config/typescript'
     | '/libs/backend-pattern/$section'
+    | '/libs/blueprint-template/$section'
+    | '/libs/blueprint-template/board'
     | '/libs/cli/api'
     | '/libs/cli/handler'
-    | '/libs/cli/mobile'
     | '/libs/cli/monorepo'
     | '/libs/cli/web'
     | '/libs/entity/entity'
     | '/libs/exceptions/exceptions'
+    | '/libs/fields/booleans'
+    | '/libs/fields/brazil'
+    | '/libs/fields/collections'
+    | '/libs/fields/cross-field'
+    | '/libs/fields/dates'
+    | '/libs/fields/error-codes'
+    | '/libs/fields/files'
+    | '/libs/fields/identity'
+    | '/libs/fields/numbers'
+    | '/libs/fields/text'
     | '/libs/frontend-config/biome'
     | '/libs/frontend-config/typescript'
     | '/libs/frontend-pattern/$section'
     | '/libs/frontend-primitives-pattern/$section'
+    | '/libs/harness/$section'
+    | '/libs/harness/flow'
+    | '/libs/modeling/$section'
     | '/libs/nestjs-cache/cache-del'
     | '/libs/nestjs-cache/cache-get'
     | '/libs/nestjs-cache/cache-module'
@@ -1494,10 +3029,18 @@ export interface FileRouteTypes {
     | '/libs/nestjs-database/audit'
     | '/libs/nestjs-database/database-module'
     | '/libs/nestjs-database/database-service'
+    | '/libs/nestjs-database/dynamodb'
+    | '/libs/nestjs-database/postgresql'
     | '/libs/nestjs-database/schema-definition'
     | '/libs/nestjs-database/transaction-hooks'
     | '/libs/nestjs-database/transactional'
     | '/libs/nestjs-database/types-and-errors'
+    | '/libs/nestjs-events/contracts'
+    | '/libs/nestjs-events/handler-decorator'
+    | '/libs/nestjs-events/infra'
+    | '/libs/nestjs-events/publisher'
+    | '/libs/nestjs-events/serverless-create'
+    | '/libs/nestjs-events/workers-module'
     | '/libs/nestjs-iam/acl-decorator'
     | '/libs/nestjs-iam/acl-service'
     | '/libs/nestjs-iam/auth-decorator'
@@ -1516,29 +3059,24 @@ export interface FileRouteTypes {
     | '/libs/nestjs-observability/metrics-service'
     | '/libs/nestjs-observability/observability-module'
     | '/libs/nestjs-observability/tracing'
-    | '/libs/nestjs-publisher/outbox'
-    | '/libs/nestjs-publisher/publisher-module'
-    | '/libs/nestjs-publisher/publisher-service'
-    | '/libs/nestjs-publisher/subscriber-decorator'
     | '/libs/nestjs-rate-limit/rate-limit-decorator'
     | '/libs/nestjs-rate-limit/rate-limit-module'
     | '/libs/nestjs-rate-limit/rate-limit-service'
     | '/libs/nestjs-resilience/circuit-breaker'
     | '/libs/nestjs-resilience/retry'
     | '/libs/nestjs-resilience/timeout'
-    | '/libs/nestjs-scheduler/schedule-decorator'
-    | '/libs/nestjs-scheduler/scheduler-module'
     | '/libs/nestjs-server/controller-decorator'
     | '/libs/nestjs-server/request-decorator'
     | '/libs/nestjs-server/route-decorator'
     | '/libs/nestjs-server/server-create'
-    | '/libs/nestjs-serverless/handler-decorator'
-    | '/libs/nestjs-serverless/serverless-create'
-    | '/libs/nestjs-serverless/serverless-module'
     | '/libs/nestjs-social-auth/social-auth-module'
     | '/libs/nestjs-social-auth/social-auth-service'
     | '/libs/nestjs-storage/storage-module'
     | '/libs/nestjs-storage/storage-service'
+    | '/libs/openapi-sdk/client'
+    | '/libs/openapi-sdk/config'
+    | '/libs/openapi-sdk/naming'
+    | '/libs/proof-mode/$section'
     | '/libs/query-dsl/boolean-schema'
     | '/libs/query-dsl/date-range-schema'
     | '/libs/query-dsl/filter-schema'
@@ -1546,62 +3084,209 @@ export interface FileRouteTypes {
     | '/libs/query-dsl/pagination-schema'
     | '/libs/query-dsl/range-schema'
     | '/libs/query-dsl/sort-schema'
+    | '/libs/react-charts/chart'
+    | '/libs/react-charts/sparkline'
     | '/libs/react-hooks/$hook'
+    | '/libs/react-i18n/api'
+    | '/libs/react-i18n/dictionary'
+    | '/libs/react-i18n/provider'
+    | '/libs/react-i18n/ui-labels'
     | '/libs/react-icons/playground'
-    | '/libs/react-web/playground'
     | '/libs/saga/saga'
+    | '/libs/uiux-template/$section'
+    | '/libs/uiux-template/theme'
     | '/libs/architecture-pattern/'
     | '/libs/backend-config/'
     | '/libs/backend-pattern/'
+    | '/libs/blueprint-template/'
     | '/libs/cli/'
     | '/libs/entity/'
     | '/libs/exceptions/'
+    | '/libs/fields/'
     | '/libs/frontend-config/'
     | '/libs/frontend-pattern/'
     | '/libs/frontend-primitives-pattern/'
+    | '/libs/harness/'
+    | '/libs/modeling/'
     | '/libs/nestjs-cache/'
     | '/libs/nestjs-config/'
     | '/libs/nestjs-context/'
     | '/libs/nestjs-database/'
+    | '/libs/nestjs-events/'
     | '/libs/nestjs-iam/'
     | '/libs/nestjs-idempotency/'
     | '/libs/nestjs-lock/'
     | '/libs/nestjs-logger/'
     | '/libs/nestjs-observability/'
-    | '/libs/nestjs-publisher/'
     | '/libs/nestjs-rate-limit/'
     | '/libs/nestjs-resilience/'
-    | '/libs/nestjs-scheduler/'
     | '/libs/nestjs-server/'
-    | '/libs/nestjs-serverless/'
     | '/libs/nestjs-social-auth/'
     | '/libs/nestjs-storage/'
+    | '/libs/openapi-sdk/'
+    | '/libs/proof-mode/'
     | '/libs/query-dsl/'
+    | '/libs/react-charts/'
     | '/libs/react-hooks/'
+    | '/libs/react-i18n/'
     | '/libs/react-icons/'
-    | '/libs/react-mobile/'
     | '/libs/react-web/'
     | '/libs/saga/'
-    | '/libs/react-mobile/components/$component'
-    | '/libs/react-mobile/components/'
+    | '/libs/uiux-template/'
+    | '/libs/react-web/components/loader'
+    | '/libs/react-web/audiences/auth'
+    | '/libs/react-web/audiences/b2b'
+    | '/libs/react-web/audiences/b2c'
+    | '/libs/react-web/audiences/backoffice'
+    | '/libs/react-web/audiences/checkout'
+    | '/libs/react-web/audiences/landing-page'
+    | '/libs/react-web/components/$component'
+    | '/libs/react-web/components/accordion'
+    | '/libs/react-web/components/alert'
+    | '/libs/react-web/components/anchor-nav'
+    | '/libs/react-web/components/avatar'
+    | '/libs/react-web/components/badge'
+    | '/libs/react-web/components/board'
+    | '/libs/react-web/components/boolean-text'
+    | '/libs/react-web/components/box'
+    | '/libs/react-web/components/breadcrumb'
+    | '/libs/react-web/components/bulk-actions'
+    | '/libs/react-web/components/button'
+    | '/libs/react-web/components/calendar'
+    | '/libs/react-web/components/card'
+    | '/libs/react-web/components/carousel'
+    | '/libs/react-web/components/checkbox'
+    | '/libs/react-web/components/checklist'
+    | '/libs/react-web/components/code-block'
+    | '/libs/react-web/components/collapsible'
+    | '/libs/react-web/components/color-picker'
+    | '/libs/react-web/components/color-scheme-provider'
+    | '/libs/react-web/components/color-scheme-switcher'
+    | '/libs/react-web/components/confirm'
+    | '/libs/react-web/components/container'
+    | '/libs/react-web/components/copy-button'
+    | '/libs/react-web/components/currency-input'
+    | '/libs/react-web/components/data-transfer-export'
+    | '/libs/react-web/components/data-transfer-import'
+    | '/libs/react-web/components/date-input'
+    | '/libs/react-web/components/date-range-input'
+    | '/libs/react-web/components/date-text'
+    | '/libs/react-web/components/date-time-input'
+    | '/libs/react-web/components/description-list'
+    | '/libs/react-web/components/document-input'
+    | '/libs/react-web/components/document-text'
+    | '/libs/react-web/components/dropdown-menu'
+    | '/libs/react-web/components/duration-text'
+    | '/libs/react-web/components/editable-text'
+    | '/libs/react-web/components/empty-state'
+    | '/libs/react-web/components/file-size-text'
+    | '/libs/react-web/components/filter-bar'
+    | '/libs/react-web/components/filter-chip'
+    | '/libs/react-web/components/flex'
+    | '/libs/react-web/components/form'
+    | '/libs/react-web/components/format-provider'
+    | '/libs/react-web/components/grid'
+    | '/libs/react-web/components/identity'
+    | '/libs/react-web/components/image'
+    | '/libs/react-web/components/indicator'
+    | '/libs/react-web/components/input'
+    | '/libs/react-web/components/label'
+    | '/libs/react-web/components/labels-provider'
+    | '/libs/react-web/components/layout'
+    | '/libs/react-web/components/list'
+    | '/libs/react-web/components/loaded'
+    | '/libs/react-web/components/loading-bar'
+    | '/libs/react-web/components/loading-overlay'
+    | '/libs/react-web/components/mask-input'
+    | '/libs/react-web/components/modal'
+    | '/libs/react-web/components/money-text'
+    | '/libs/react-web/components/notification-card'
+    | '/libs/react-web/components/notification-center'
+    | '/libs/react-web/components/notification-filter'
+    | '/libs/react-web/components/notification-list'
+    | '/libs/react-web/components/number-input'
+    | '/libs/react-web/components/number-text'
+    | '/libs/react-web/components/otp-input'
+    | '/libs/react-web/components/page'
+    | '/libs/react-web/components/pagination'
+    | '/libs/react-web/components/password-input'
+    | '/libs/react-web/components/phone-input'
+    | '/libs/react-web/components/phone-text'
+    | '/libs/react-web/components/popconfirm'
+    | '/libs/react-web/components/popover'
+    | '/libs/react-web/components/portal-provider'
+    | '/libs/react-web/components/progress'
+    | '/libs/react-web/components/protected'
+    | '/libs/react-web/components/protected-provider'
+    | '/libs/react-web/components/qr-code'
+    | '/libs/react-web/components/radio'
+    | '/libs/react-web/components/rating'
+    | '/libs/react-web/components/resizable'
+    | '/libs/react-web/components/scroll-area'
+    | '/libs/react-web/components/search'
+    | '/libs/react-web/components/segmented-control'
+    | '/libs/react-web/components/select'
+    | '/libs/react-web/components/separator'
+    | '/libs/react-web/components/sheet'
+    | '/libs/react-web/components/skeleton'
+    | '/libs/react-web/components/slider'
+    | '/libs/react-web/components/spotlight-search'
+    | '/libs/react-web/components/stat'
+    | '/libs/react-web/components/stepper'
+    | '/libs/react-web/components/switch'
+    | '/libs/react-web/components/table'
+    | '/libs/react-web/components/tabs'
+    | '/libs/react-web/components/tag'
+    | '/libs/react-web/components/tags-input'
+    | '/libs/react-web/components/textarea'
+    | '/libs/react-web/components/time-input'
+    | '/libs/react-web/components/timeline'
+    | '/libs/react-web/components/toast'
+    | '/libs/react-web/components/toggle'
+    | '/libs/react-web/components/tooltip'
+    | '/libs/react-web/components/tree'
+    | '/libs/react-web/components/truncated-text'
+    | '/libs/react-web/components/tury-provider'
+    | '/libs/react-web/components/typography'
+    | '/libs/react-web/components/uploader'
+    | '/libs/react-web/hooks/$hook'
+    | '/libs/react-web/audiences/'
+    | '/libs/react-web/components/'
+    | '/libs/react-web/hooks/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
+    | '/showcase'
+    | '/libs/proof-mode-gates'
     | '/libs/architecture-pattern/$section'
     | '/libs/backend-config/biome'
     | '/libs/backend-config/typescript'
     | '/libs/backend-pattern/$section'
+    | '/libs/blueprint-template/$section'
+    | '/libs/blueprint-template/board'
     | '/libs/cli/api'
     | '/libs/cli/handler'
-    | '/libs/cli/mobile'
     | '/libs/cli/monorepo'
     | '/libs/cli/web'
     | '/libs/entity/entity'
     | '/libs/exceptions/exceptions'
+    | '/libs/fields/booleans'
+    | '/libs/fields/brazil'
+    | '/libs/fields/collections'
+    | '/libs/fields/cross-field'
+    | '/libs/fields/dates'
+    | '/libs/fields/error-codes'
+    | '/libs/fields/files'
+    | '/libs/fields/identity'
+    | '/libs/fields/numbers'
+    | '/libs/fields/text'
     | '/libs/frontend-config/biome'
     | '/libs/frontend-config/typescript'
     | '/libs/frontend-pattern/$section'
     | '/libs/frontend-primitives-pattern/$section'
+    | '/libs/harness/$section'
+    | '/libs/harness/flow'
+    | '/libs/modeling/$section'
     | '/libs/nestjs-cache/cache-del'
     | '/libs/nestjs-cache/cache-get'
     | '/libs/nestjs-cache/cache-module'
@@ -1615,10 +3300,18 @@ export interface FileRouteTypes {
     | '/libs/nestjs-database/audit'
     | '/libs/nestjs-database/database-module'
     | '/libs/nestjs-database/database-service'
+    | '/libs/nestjs-database/dynamodb'
+    | '/libs/nestjs-database/postgresql'
     | '/libs/nestjs-database/schema-definition'
     | '/libs/nestjs-database/transaction-hooks'
     | '/libs/nestjs-database/transactional'
     | '/libs/nestjs-database/types-and-errors'
+    | '/libs/nestjs-events/contracts'
+    | '/libs/nestjs-events/handler-decorator'
+    | '/libs/nestjs-events/infra'
+    | '/libs/nestjs-events/publisher'
+    | '/libs/nestjs-events/serverless-create'
+    | '/libs/nestjs-events/workers-module'
     | '/libs/nestjs-iam/acl-decorator'
     | '/libs/nestjs-iam/acl-service'
     | '/libs/nestjs-iam/auth-decorator'
@@ -1637,29 +3330,24 @@ export interface FileRouteTypes {
     | '/libs/nestjs-observability/metrics-service'
     | '/libs/nestjs-observability/observability-module'
     | '/libs/nestjs-observability/tracing'
-    | '/libs/nestjs-publisher/outbox'
-    | '/libs/nestjs-publisher/publisher-module'
-    | '/libs/nestjs-publisher/publisher-service'
-    | '/libs/nestjs-publisher/subscriber-decorator'
     | '/libs/nestjs-rate-limit/rate-limit-decorator'
     | '/libs/nestjs-rate-limit/rate-limit-module'
     | '/libs/nestjs-rate-limit/rate-limit-service'
     | '/libs/nestjs-resilience/circuit-breaker'
     | '/libs/nestjs-resilience/retry'
     | '/libs/nestjs-resilience/timeout'
-    | '/libs/nestjs-scheduler/schedule-decorator'
-    | '/libs/nestjs-scheduler/scheduler-module'
     | '/libs/nestjs-server/controller-decorator'
     | '/libs/nestjs-server/request-decorator'
     | '/libs/nestjs-server/route-decorator'
     | '/libs/nestjs-server/server-create'
-    | '/libs/nestjs-serverless/handler-decorator'
-    | '/libs/nestjs-serverless/serverless-create'
-    | '/libs/nestjs-serverless/serverless-module'
     | '/libs/nestjs-social-auth/social-auth-module'
     | '/libs/nestjs-social-auth/social-auth-service'
     | '/libs/nestjs-storage/storage-module'
     | '/libs/nestjs-storage/storage-service'
+    | '/libs/openapi-sdk/client'
+    | '/libs/openapi-sdk/config'
+    | '/libs/openapi-sdk/naming'
+    | '/libs/proof-mode/$section'
     | '/libs/query-dsl/boolean-schema'
     | '/libs/query-dsl/date-range-schema'
     | '/libs/query-dsl/filter-schema'
@@ -1667,95 +3355,248 @@ export interface FileRouteTypes {
     | '/libs/query-dsl/pagination-schema'
     | '/libs/query-dsl/range-schema'
     | '/libs/query-dsl/sort-schema'
+    | '/libs/react-charts/chart'
+    | '/libs/react-charts/sparkline'
     | '/libs/react-hooks/$hook'
+    | '/libs/react-i18n/api'
+    | '/libs/react-i18n/dictionary'
+    | '/libs/react-i18n/provider'
+    | '/libs/react-i18n/ui-labels'
     | '/libs/react-icons/playground'
-    | '/libs/react-web/playground'
     | '/libs/saga/saga'
+    | '/libs/uiux-template/$section'
+    | '/libs/uiux-template/theme'
     | '/libs/architecture-pattern'
     | '/libs/backend-config'
     | '/libs/backend-pattern'
+    | '/libs/blueprint-template'
     | '/libs/cli'
     | '/libs/entity'
     | '/libs/exceptions'
+    | '/libs/fields'
     | '/libs/frontend-config'
     | '/libs/frontend-pattern'
     | '/libs/frontend-primitives-pattern'
+    | '/libs/harness'
+    | '/libs/modeling'
     | '/libs/nestjs-cache'
     | '/libs/nestjs-config'
     | '/libs/nestjs-context'
     | '/libs/nestjs-database'
+    | '/libs/nestjs-events'
     | '/libs/nestjs-iam'
     | '/libs/nestjs-idempotency'
     | '/libs/nestjs-lock'
     | '/libs/nestjs-logger'
     | '/libs/nestjs-observability'
-    | '/libs/nestjs-publisher'
     | '/libs/nestjs-rate-limit'
     | '/libs/nestjs-resilience'
-    | '/libs/nestjs-scheduler'
     | '/libs/nestjs-server'
-    | '/libs/nestjs-serverless'
     | '/libs/nestjs-social-auth'
     | '/libs/nestjs-storage'
+    | '/libs/openapi-sdk'
+    | '/libs/proof-mode'
     | '/libs/query-dsl'
+    | '/libs/react-charts'
     | '/libs/react-hooks'
+    | '/libs/react-i18n'
     | '/libs/react-icons'
-    | '/libs/react-mobile'
     | '/libs/react-web'
     | '/libs/saga'
-    | '/libs/react-mobile/components/$component'
-    | '/libs/react-mobile/components'
+    | '/libs/uiux-template'
+    | '/libs/react-web/components/loader'
+    | '/libs/react-web/audiences/auth'
+    | '/libs/react-web/audiences/b2b'
+    | '/libs/react-web/audiences/b2c'
+    | '/libs/react-web/audiences/backoffice'
+    | '/libs/react-web/audiences/checkout'
+    | '/libs/react-web/audiences/landing-page'
+    | '/libs/react-web/components/$component'
+    | '/libs/react-web/components/accordion'
+    | '/libs/react-web/components/alert'
+    | '/libs/react-web/components/anchor-nav'
+    | '/libs/react-web/components/avatar'
+    | '/libs/react-web/components/badge'
+    | '/libs/react-web/components/board'
+    | '/libs/react-web/components/boolean-text'
+    | '/libs/react-web/components/box'
+    | '/libs/react-web/components/breadcrumb'
+    | '/libs/react-web/components/bulk-actions'
+    | '/libs/react-web/components/button'
+    | '/libs/react-web/components/calendar'
+    | '/libs/react-web/components/card'
+    | '/libs/react-web/components/carousel'
+    | '/libs/react-web/components/checkbox'
+    | '/libs/react-web/components/checklist'
+    | '/libs/react-web/components/code-block'
+    | '/libs/react-web/components/collapsible'
+    | '/libs/react-web/components/color-picker'
+    | '/libs/react-web/components/color-scheme-provider'
+    | '/libs/react-web/components/color-scheme-switcher'
+    | '/libs/react-web/components/confirm'
+    | '/libs/react-web/components/container'
+    | '/libs/react-web/components/copy-button'
+    | '/libs/react-web/components/currency-input'
+    | '/libs/react-web/components/data-transfer-export'
+    | '/libs/react-web/components/data-transfer-import'
+    | '/libs/react-web/components/date-input'
+    | '/libs/react-web/components/date-range-input'
+    | '/libs/react-web/components/date-text'
+    | '/libs/react-web/components/date-time-input'
+    | '/libs/react-web/components/description-list'
+    | '/libs/react-web/components/document-input'
+    | '/libs/react-web/components/document-text'
+    | '/libs/react-web/components/dropdown-menu'
+    | '/libs/react-web/components/duration-text'
+    | '/libs/react-web/components/editable-text'
+    | '/libs/react-web/components/empty-state'
+    | '/libs/react-web/components/file-size-text'
+    | '/libs/react-web/components/filter-bar'
+    | '/libs/react-web/components/filter-chip'
+    | '/libs/react-web/components/flex'
+    | '/libs/react-web/components/form'
+    | '/libs/react-web/components/format-provider'
+    | '/libs/react-web/components/grid'
+    | '/libs/react-web/components/identity'
+    | '/libs/react-web/components/image'
+    | '/libs/react-web/components/indicator'
+    | '/libs/react-web/components/input'
+    | '/libs/react-web/components/label'
+    | '/libs/react-web/components/labels-provider'
+    | '/libs/react-web/components/layout'
+    | '/libs/react-web/components/list'
+    | '/libs/react-web/components/loaded'
+    | '/libs/react-web/components/loading-bar'
+    | '/libs/react-web/components/loading-overlay'
+    | '/libs/react-web/components/mask-input'
+    | '/libs/react-web/components/modal'
+    | '/libs/react-web/components/money-text'
+    | '/libs/react-web/components/notification-card'
+    | '/libs/react-web/components/notification-center'
+    | '/libs/react-web/components/notification-filter'
+    | '/libs/react-web/components/notification-list'
+    | '/libs/react-web/components/number-input'
+    | '/libs/react-web/components/number-text'
+    | '/libs/react-web/components/otp-input'
+    | '/libs/react-web/components/page'
+    | '/libs/react-web/components/pagination'
+    | '/libs/react-web/components/password-input'
+    | '/libs/react-web/components/phone-input'
+    | '/libs/react-web/components/phone-text'
+    | '/libs/react-web/components/popconfirm'
+    | '/libs/react-web/components/popover'
+    | '/libs/react-web/components/portal-provider'
+    | '/libs/react-web/components/progress'
+    | '/libs/react-web/components/protected'
+    | '/libs/react-web/components/protected-provider'
+    | '/libs/react-web/components/qr-code'
+    | '/libs/react-web/components/radio'
+    | '/libs/react-web/components/rating'
+    | '/libs/react-web/components/resizable'
+    | '/libs/react-web/components/scroll-area'
+    | '/libs/react-web/components/search'
+    | '/libs/react-web/components/segmented-control'
+    | '/libs/react-web/components/select'
+    | '/libs/react-web/components/separator'
+    | '/libs/react-web/components/sheet'
+    | '/libs/react-web/components/skeleton'
+    | '/libs/react-web/components/slider'
+    | '/libs/react-web/components/spotlight-search'
+    | '/libs/react-web/components/stat'
+    | '/libs/react-web/components/stepper'
+    | '/libs/react-web/components/switch'
+    | '/libs/react-web/components/table'
+    | '/libs/react-web/components/tabs'
+    | '/libs/react-web/components/tag'
+    | '/libs/react-web/components/tags-input'
+    | '/libs/react-web/components/textarea'
+    | '/libs/react-web/components/time-input'
+    | '/libs/react-web/components/timeline'
+    | '/libs/react-web/components/toast'
+    | '/libs/react-web/components/toggle'
+    | '/libs/react-web/components/tooltip'
+    | '/libs/react-web/components/tree'
+    | '/libs/react-web/components/truncated-text'
+    | '/libs/react-web/components/tury-provider'
+    | '/libs/react-web/components/typography'
+    | '/libs/react-web/components/uploader'
+    | '/libs/react-web/hooks/$hook'
+    | '/libs/react-web/audiences'
+    | '/libs/react-web/components'
+    | '/libs/react-web/hooks'
   id:
     | '__root__'
+    | '/'
     | '/_main'
+    | '/_main/showcase'
     | '/libs/architecture-pattern'
     | '/libs/backend-config'
     | '/libs/backend-pattern'
+    | '/libs/blueprint-template'
     | '/libs/cli'
     | '/libs/entity'
     | '/libs/exceptions'
+    | '/libs/fields'
     | '/libs/frontend-config'
     | '/libs/frontend-pattern'
     | '/libs/frontend-primitives-pattern'
+    | '/libs/harness'
+    | '/libs/modeling'
     | '/libs/nestjs-cache'
     | '/libs/nestjs-config'
     | '/libs/nestjs-context'
     | '/libs/nestjs-database'
+    | '/libs/nestjs-events'
     | '/libs/nestjs-iam'
     | '/libs/nestjs-idempotency'
     | '/libs/nestjs-lock'
     | '/libs/nestjs-logger'
     | '/libs/nestjs-observability'
-    | '/libs/nestjs-publisher'
     | '/libs/nestjs-rate-limit'
     | '/libs/nestjs-resilience'
-    | '/libs/nestjs-scheduler'
     | '/libs/nestjs-server'
-    | '/libs/nestjs-serverless'
     | '/libs/nestjs-social-auth'
     | '/libs/nestjs-storage'
+    | '/libs/openapi-sdk'
+    | '/libs/proof-mode'
+    | '/libs/proof-mode-gates'
     | '/libs/query-dsl'
+    | '/libs/react-charts'
     | '/libs/react-hooks'
+    | '/libs/react-i18n'
     | '/libs/react-icons'
-    | '/libs/react-mobile'
     | '/libs/react-web'
     | '/libs/saga'
-    | '/_main/'
+    | '/libs/uiux-template'
     | '/libs/architecture-pattern/$section'
     | '/libs/backend-config/biome'
     | '/libs/backend-config/typescript'
     | '/libs/backend-pattern/$section'
+    | '/libs/blueprint-template/$section'
+    | '/libs/blueprint-template/board'
     | '/libs/cli/api'
     | '/libs/cli/handler'
-    | '/libs/cli/mobile'
     | '/libs/cli/monorepo'
     | '/libs/cli/web'
     | '/libs/entity/entity'
     | '/libs/exceptions/exceptions'
+    | '/libs/fields/booleans'
+    | '/libs/fields/brazil'
+    | '/libs/fields/collections'
+    | '/libs/fields/cross-field'
+    | '/libs/fields/dates'
+    | '/libs/fields/error-codes'
+    | '/libs/fields/files'
+    | '/libs/fields/identity'
+    | '/libs/fields/numbers'
+    | '/libs/fields/text'
     | '/libs/frontend-config/biome'
     | '/libs/frontend-config/typescript'
     | '/libs/frontend-pattern/$section'
     | '/libs/frontend-primitives-pattern/$section'
+    | '/libs/harness/$section'
+    | '/libs/harness/flow'
+    | '/libs/modeling/$section'
     | '/libs/nestjs-cache/cache-del'
     | '/libs/nestjs-cache/cache-get'
     | '/libs/nestjs-cache/cache-module'
@@ -1769,10 +3610,18 @@ export interface FileRouteTypes {
     | '/libs/nestjs-database/audit'
     | '/libs/nestjs-database/database-module'
     | '/libs/nestjs-database/database-service'
+    | '/libs/nestjs-database/dynamodb'
+    | '/libs/nestjs-database/postgresql'
     | '/libs/nestjs-database/schema-definition'
     | '/libs/nestjs-database/transaction-hooks'
     | '/libs/nestjs-database/transactional'
     | '/libs/nestjs-database/types-and-errors'
+    | '/libs/nestjs-events/contracts'
+    | '/libs/nestjs-events/handler-decorator'
+    | '/libs/nestjs-events/infra'
+    | '/libs/nestjs-events/publisher'
+    | '/libs/nestjs-events/serverless-create'
+    | '/libs/nestjs-events/workers-module'
     | '/libs/nestjs-iam/acl-decorator'
     | '/libs/nestjs-iam/acl-service'
     | '/libs/nestjs-iam/auth-decorator'
@@ -1791,29 +3640,24 @@ export interface FileRouteTypes {
     | '/libs/nestjs-observability/metrics-service'
     | '/libs/nestjs-observability/observability-module'
     | '/libs/nestjs-observability/tracing'
-    | '/libs/nestjs-publisher/outbox'
-    | '/libs/nestjs-publisher/publisher-module'
-    | '/libs/nestjs-publisher/publisher-service'
-    | '/libs/nestjs-publisher/subscriber-decorator'
     | '/libs/nestjs-rate-limit/rate-limit-decorator'
     | '/libs/nestjs-rate-limit/rate-limit-module'
     | '/libs/nestjs-rate-limit/rate-limit-service'
     | '/libs/nestjs-resilience/circuit-breaker'
     | '/libs/nestjs-resilience/retry'
     | '/libs/nestjs-resilience/timeout'
-    | '/libs/nestjs-scheduler/schedule-decorator'
-    | '/libs/nestjs-scheduler/scheduler-module'
     | '/libs/nestjs-server/controller-decorator'
     | '/libs/nestjs-server/request-decorator'
     | '/libs/nestjs-server/route-decorator'
     | '/libs/nestjs-server/server-create'
-    | '/libs/nestjs-serverless/handler-decorator'
-    | '/libs/nestjs-serverless/serverless-create'
-    | '/libs/nestjs-serverless/serverless-module'
     | '/libs/nestjs-social-auth/social-auth-module'
     | '/libs/nestjs-social-auth/social-auth-service'
     | '/libs/nestjs-storage/storage-module'
     | '/libs/nestjs-storage/storage-service'
+    | '/libs/openapi-sdk/client'
+    | '/libs/openapi-sdk/config'
+    | '/libs/openapi-sdk/naming'
+    | '/libs/proof-mode/$section'
     | '/libs/query-dsl/boolean-schema'
     | '/libs/query-dsl/date-range-schema'
     | '/libs/query-dsl/filter-schema'
@@ -1821,80 +3665,219 @@ export interface FileRouteTypes {
     | '/libs/query-dsl/pagination-schema'
     | '/libs/query-dsl/range-schema'
     | '/libs/query-dsl/sort-schema'
+    | '/libs/react-charts/chart'
+    | '/libs/react-charts/sparkline'
     | '/libs/react-hooks/$hook'
+    | '/libs/react-i18n/api'
+    | '/libs/react-i18n/dictionary'
+    | '/libs/react-i18n/provider'
+    | '/libs/react-i18n/ui-labels'
     | '/libs/react-icons/playground'
-    | '/libs/react-web/playground'
     | '/libs/saga/saga'
+    | '/libs/uiux-template/$section'
+    | '/libs/uiux-template/theme'
     | '/libs/architecture-pattern/'
     | '/libs/backend-config/'
     | '/libs/backend-pattern/'
+    | '/libs/blueprint-template/'
     | '/libs/cli/'
     | '/libs/entity/'
     | '/libs/exceptions/'
+    | '/libs/fields/'
     | '/libs/frontend-config/'
     | '/libs/frontend-pattern/'
     | '/libs/frontend-primitives-pattern/'
+    | '/libs/harness/'
+    | '/libs/modeling/'
     | '/libs/nestjs-cache/'
     | '/libs/nestjs-config/'
     | '/libs/nestjs-context/'
     | '/libs/nestjs-database/'
+    | '/libs/nestjs-events/'
     | '/libs/nestjs-iam/'
     | '/libs/nestjs-idempotency/'
     | '/libs/nestjs-lock/'
     | '/libs/nestjs-logger/'
     | '/libs/nestjs-observability/'
-    | '/libs/nestjs-publisher/'
     | '/libs/nestjs-rate-limit/'
     | '/libs/nestjs-resilience/'
-    | '/libs/nestjs-scheduler/'
     | '/libs/nestjs-server/'
-    | '/libs/nestjs-serverless/'
     | '/libs/nestjs-social-auth/'
     | '/libs/nestjs-storage/'
+    | '/libs/openapi-sdk/'
+    | '/libs/proof-mode/'
     | '/libs/query-dsl/'
+    | '/libs/react-charts/'
     | '/libs/react-hooks/'
+    | '/libs/react-i18n/'
     | '/libs/react-icons/'
-    | '/libs/react-mobile/'
     | '/libs/react-web/'
     | '/libs/saga/'
-    | '/libs/react-mobile/components/$component'
-    | '/libs/react-mobile/components/'
+    | '/libs/uiux-template/'
+    | '/libs/react-web/components/loader'
+    | '/libs/react-web/audiences/auth'
+    | '/libs/react-web/audiences/b2b'
+    | '/libs/react-web/audiences/b2c'
+    | '/libs/react-web/audiences/backoffice'
+    | '/libs/react-web/audiences/checkout'
+    | '/libs/react-web/audiences/landing-page'
+    | '/libs/react-web/components/$component'
+    | '/libs/react-web/components/accordion'
+    | '/libs/react-web/components/alert'
+    | '/libs/react-web/components/anchor-nav'
+    | '/libs/react-web/components/avatar'
+    | '/libs/react-web/components/badge'
+    | '/libs/react-web/components/board'
+    | '/libs/react-web/components/boolean-text'
+    | '/libs/react-web/components/box'
+    | '/libs/react-web/components/breadcrumb'
+    | '/libs/react-web/components/bulk-actions'
+    | '/libs/react-web/components/button'
+    | '/libs/react-web/components/calendar'
+    | '/libs/react-web/components/card'
+    | '/libs/react-web/components/carousel'
+    | '/libs/react-web/components/checkbox'
+    | '/libs/react-web/components/checklist'
+    | '/libs/react-web/components/code-block'
+    | '/libs/react-web/components/collapsible'
+    | '/libs/react-web/components/color-picker'
+    | '/libs/react-web/components/color-scheme-provider'
+    | '/libs/react-web/components/color-scheme-switcher'
+    | '/libs/react-web/components/confirm'
+    | '/libs/react-web/components/container'
+    | '/libs/react-web/components/copy-button'
+    | '/libs/react-web/components/currency-input'
+    | '/libs/react-web/components/data-transfer-export'
+    | '/libs/react-web/components/data-transfer-import'
+    | '/libs/react-web/components/date-input'
+    | '/libs/react-web/components/date-range-input'
+    | '/libs/react-web/components/date-text'
+    | '/libs/react-web/components/date-time-input'
+    | '/libs/react-web/components/description-list'
+    | '/libs/react-web/components/document-input'
+    | '/libs/react-web/components/document-text'
+    | '/libs/react-web/components/dropdown-menu'
+    | '/libs/react-web/components/duration-text'
+    | '/libs/react-web/components/editable-text'
+    | '/libs/react-web/components/empty-state'
+    | '/libs/react-web/components/file-size-text'
+    | '/libs/react-web/components/filter-bar'
+    | '/libs/react-web/components/filter-chip'
+    | '/libs/react-web/components/flex'
+    | '/libs/react-web/components/form'
+    | '/libs/react-web/components/format-provider'
+    | '/libs/react-web/components/grid'
+    | '/libs/react-web/components/identity'
+    | '/libs/react-web/components/image'
+    | '/libs/react-web/components/indicator'
+    | '/libs/react-web/components/input'
+    | '/libs/react-web/components/label'
+    | '/libs/react-web/components/labels-provider'
+    | '/libs/react-web/components/layout'
+    | '/libs/react-web/components/list'
+    | '/libs/react-web/components/loaded'
+    | '/libs/react-web/components/loading-bar'
+    | '/libs/react-web/components/loading-overlay'
+    | '/libs/react-web/components/mask-input'
+    | '/libs/react-web/components/modal'
+    | '/libs/react-web/components/money-text'
+    | '/libs/react-web/components/notification-card'
+    | '/libs/react-web/components/notification-center'
+    | '/libs/react-web/components/notification-filter'
+    | '/libs/react-web/components/notification-list'
+    | '/libs/react-web/components/number-input'
+    | '/libs/react-web/components/number-text'
+    | '/libs/react-web/components/otp-input'
+    | '/libs/react-web/components/page'
+    | '/libs/react-web/components/pagination'
+    | '/libs/react-web/components/password-input'
+    | '/libs/react-web/components/phone-input'
+    | '/libs/react-web/components/phone-text'
+    | '/libs/react-web/components/popconfirm'
+    | '/libs/react-web/components/popover'
+    | '/libs/react-web/components/portal-provider'
+    | '/libs/react-web/components/progress'
+    | '/libs/react-web/components/protected'
+    | '/libs/react-web/components/protected-provider'
+    | '/libs/react-web/components/qr-code'
+    | '/libs/react-web/components/radio'
+    | '/libs/react-web/components/rating'
+    | '/libs/react-web/components/resizable'
+    | '/libs/react-web/components/scroll-area'
+    | '/libs/react-web/components/search'
+    | '/libs/react-web/components/segmented-control'
+    | '/libs/react-web/components/select'
+    | '/libs/react-web/components/separator'
+    | '/libs/react-web/components/sheet'
+    | '/libs/react-web/components/skeleton'
+    | '/libs/react-web/components/slider'
+    | '/libs/react-web/components/spotlight-search'
+    | '/libs/react-web/components/stat'
+    | '/libs/react-web/components/stepper'
+    | '/libs/react-web/components/switch'
+    | '/libs/react-web/components/table'
+    | '/libs/react-web/components/tabs'
+    | '/libs/react-web/components/tag'
+    | '/libs/react-web/components/tags-input'
+    | '/libs/react-web/components/textarea'
+    | '/libs/react-web/components/time-input'
+    | '/libs/react-web/components/timeline'
+    | '/libs/react-web/components/toast'
+    | '/libs/react-web/components/toggle'
+    | '/libs/react-web/components/tooltip'
+    | '/libs/react-web/components/tree'
+    | '/libs/react-web/components/truncated-text'
+    | '/libs/react-web/components/tury-provider'
+    | '/libs/react-web/components/typography'
+    | '/libs/react-web/components/uploader'
+    | '/libs/react-web/hooks/$hook'
+    | '/libs/react-web/audiences/'
+    | '/libs/react-web/components/'
+    | '/libs/react-web/hooks/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
+  IndexRoute: typeof IndexRoute
   MainRoute: typeof MainRouteWithChildren
   LibsArchitecturePatternRoute: typeof LibsArchitecturePatternRouteWithChildren
   LibsBackendConfigRoute: typeof LibsBackendConfigRouteWithChildren
   LibsBackendPatternRoute: typeof LibsBackendPatternRouteWithChildren
+  LibsBlueprintTemplateRoute: typeof LibsBlueprintTemplateRouteWithChildren
   LibsCliRoute: typeof LibsCliRouteWithChildren
   LibsEntityRoute: typeof LibsEntityRouteWithChildren
   LibsExceptionsRoute: typeof LibsExceptionsRouteWithChildren
+  LibsFieldsRoute: typeof LibsFieldsRouteWithChildren
   LibsFrontendConfigRoute: typeof LibsFrontendConfigRouteWithChildren
   LibsFrontendPatternRoute: typeof LibsFrontendPatternRouteWithChildren
   LibsFrontendPrimitivesPatternRoute: typeof LibsFrontendPrimitivesPatternRouteWithChildren
+  LibsHarnessRoute: typeof LibsHarnessRouteWithChildren
+  LibsModelingRoute: typeof LibsModelingRouteWithChildren
   LibsNestjsCacheRoute: typeof LibsNestjsCacheRouteWithChildren
   LibsNestjsConfigRoute: typeof LibsNestjsConfigRouteWithChildren
   LibsNestjsContextRoute: typeof LibsNestjsContextRouteWithChildren
   LibsNestjsDatabaseRoute: typeof LibsNestjsDatabaseRouteWithChildren
+  LibsNestjsEventsRoute: typeof LibsNestjsEventsRouteWithChildren
   LibsNestjsIamRoute: typeof LibsNestjsIamRouteWithChildren
   LibsNestjsIdempotencyRoute: typeof LibsNestjsIdempotencyRouteWithChildren
   LibsNestjsLockRoute: typeof LibsNestjsLockRouteWithChildren
   LibsNestjsLoggerRoute: typeof LibsNestjsLoggerRouteWithChildren
   LibsNestjsObservabilityRoute: typeof LibsNestjsObservabilityRouteWithChildren
-  LibsNestjsPublisherRoute: typeof LibsNestjsPublisherRouteWithChildren
   LibsNestjsRateLimitRoute: typeof LibsNestjsRateLimitRouteWithChildren
   LibsNestjsResilienceRoute: typeof LibsNestjsResilienceRouteWithChildren
-  LibsNestjsSchedulerRoute: typeof LibsNestjsSchedulerRouteWithChildren
   LibsNestjsServerRoute: typeof LibsNestjsServerRouteWithChildren
-  LibsNestjsServerlessRoute: typeof LibsNestjsServerlessRouteWithChildren
   LibsNestjsSocialAuthRoute: typeof LibsNestjsSocialAuthRouteWithChildren
   LibsNestjsStorageRoute: typeof LibsNestjsStorageRouteWithChildren
+  LibsOpenapiSdkRoute: typeof LibsOpenapiSdkRouteWithChildren
+  LibsProofModeRoute: typeof LibsProofModeRouteWithChildren
+  LibsProofModeGatesRoute: typeof LibsProofModeGatesRoute
   LibsQueryDslRoute: typeof LibsQueryDslRouteWithChildren
+  LibsReactChartsRoute: typeof LibsReactChartsRouteWithChildren
   LibsReactHooksRoute: typeof LibsReactHooksRouteWithChildren
+  LibsReactI18nRoute: typeof LibsReactI18nRouteWithChildren
   LibsReactIconsRoute: typeof LibsReactIconsRouteWithChildren
-  LibsReactMobileRoute: typeof LibsReactMobileRouteWithChildren
   LibsReactWebRoute: typeof LibsReactWebRouteWithChildren
   LibsSagaRoute: typeof LibsSagaRouteWithChildren
+  LibsUiuxTemplateRoute: typeof LibsUiuxTemplateRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -1906,12 +3889,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof MainRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/_main/': {
-      id: '/_main/'
+    '/': {
+      id: '/'
       path: '/'
       fullPath: '/'
-      preLoaderRoute: typeof MainIndexRouteImport
-      parentRoute: typeof MainRoute
+      preLoaderRoute: typeof IndexRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/uiux-template': {
+      id: '/libs/uiux-template'
+      path: '/libs/uiux-template'
+      fullPath: '/libs/uiux-template'
+      preLoaderRoute: typeof LibsUiuxTemplateRouteImport
+      parentRoute: typeof rootRouteImport
     }
     '/libs/saga': {
       id: '/libs/saga'
@@ -1927,18 +3917,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsReactWebRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/libs/react-mobile': {
-      id: '/libs/react-mobile'
-      path: '/libs/react-mobile'
-      fullPath: '/libs/react-mobile'
-      preLoaderRoute: typeof LibsReactMobileRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/libs/react-icons': {
       id: '/libs/react-icons'
       path: '/libs/react-icons'
       fullPath: '/libs/react-icons'
       preLoaderRoute: typeof LibsReactIconsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/react-i18n': {
+      id: '/libs/react-i18n'
+      path: '/libs/react-i18n'
+      fullPath: '/libs/react-i18n'
+      preLoaderRoute: typeof LibsReactI18nRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/libs/react-hooks': {
@@ -1948,11 +3938,39 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsReactHooksRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/libs/react-charts': {
+      id: '/libs/react-charts'
+      path: '/libs/react-charts'
+      fullPath: '/libs/react-charts'
+      preLoaderRoute: typeof LibsReactChartsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/libs/query-dsl': {
       id: '/libs/query-dsl'
       path: '/libs/query-dsl'
       fullPath: '/libs/query-dsl'
       preLoaderRoute: typeof LibsQueryDslRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/proof-mode-gates': {
+      id: '/libs/proof-mode-gates'
+      path: '/libs/proof-mode-gates'
+      fullPath: '/libs/proof-mode-gates'
+      preLoaderRoute: typeof LibsProofModeGatesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/proof-mode': {
+      id: '/libs/proof-mode'
+      path: '/libs/proof-mode'
+      fullPath: '/libs/proof-mode'
+      preLoaderRoute: typeof LibsProofModeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/openapi-sdk': {
+      id: '/libs/openapi-sdk'
+      path: '/libs/openapi-sdk'
+      fullPath: '/libs/openapi-sdk'
+      preLoaderRoute: typeof LibsOpenapiSdkRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/libs/nestjs-storage': {
@@ -1969,25 +3987,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsSocialAuthRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/libs/nestjs-serverless': {
-      id: '/libs/nestjs-serverless'
-      path: '/libs/nestjs-serverless'
-      fullPath: '/libs/nestjs-serverless'
-      preLoaderRoute: typeof LibsNestjsServerlessRouteImport
-      parentRoute: typeof rootRouteImport
-    }
     '/libs/nestjs-server': {
       id: '/libs/nestjs-server'
       path: '/libs/nestjs-server'
       fullPath: '/libs/nestjs-server'
       preLoaderRoute: typeof LibsNestjsServerRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/libs/nestjs-scheduler': {
-      id: '/libs/nestjs-scheduler'
-      path: '/libs/nestjs-scheduler'
-      fullPath: '/libs/nestjs-scheduler'
-      preLoaderRoute: typeof LibsNestjsSchedulerRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/libs/nestjs-resilience': {
@@ -2002,13 +4006,6 @@ declare module '@tanstack/react-router' {
       path: '/libs/nestjs-rate-limit'
       fullPath: '/libs/nestjs-rate-limit'
       preLoaderRoute: typeof LibsNestjsRateLimitRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/libs/nestjs-publisher': {
-      id: '/libs/nestjs-publisher'
-      path: '/libs/nestjs-publisher'
-      fullPath: '/libs/nestjs-publisher'
-      preLoaderRoute: typeof LibsNestjsPublisherRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/libs/nestjs-observability': {
@@ -2046,6 +4043,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsIamRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/libs/nestjs-events': {
+      id: '/libs/nestjs-events'
+      path: '/libs/nestjs-events'
+      fullPath: '/libs/nestjs-events'
+      preLoaderRoute: typeof LibsNestjsEventsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/libs/nestjs-database': {
       id: '/libs/nestjs-database'
       path: '/libs/nestjs-database'
@@ -2074,6 +4078,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsCacheRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/libs/modeling': {
+      id: '/libs/modeling'
+      path: '/libs/modeling'
+      fullPath: '/libs/modeling'
+      preLoaderRoute: typeof LibsModelingRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/harness': {
+      id: '/libs/harness'
+      path: '/libs/harness'
+      fullPath: '/libs/harness'
+      preLoaderRoute: typeof LibsHarnessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/libs/frontend-primitives-pattern': {
       id: '/libs/frontend-primitives-pattern'
       path: '/libs/frontend-primitives-pattern'
@@ -2093,6 +4111,13 @@ declare module '@tanstack/react-router' {
       path: '/libs/frontend-config'
       fullPath: '/libs/frontend-config'
       preLoaderRoute: typeof LibsFrontendConfigRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/libs/fields': {
+      id: '/libs/fields'
+      path: '/libs/fields'
+      fullPath: '/libs/fields'
+      preLoaderRoute: typeof LibsFieldsRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/libs/exceptions': {
@@ -2116,6 +4141,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsCliRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/libs/blueprint-template': {
+      id: '/libs/blueprint-template'
+      path: '/libs/blueprint-template'
+      fullPath: '/libs/blueprint-template'
+      preLoaderRoute: typeof LibsBlueprintTemplateRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/libs/backend-pattern': {
       id: '/libs/backend-pattern'
       path: '/libs/backend-pattern'
@@ -2137,6 +4169,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsArchitecturePatternRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/_main/showcase': {
+      id: '/_main/showcase'
+      path: '/showcase'
+      fullPath: '/showcase'
+      preLoaderRoute: typeof MainShowcaseRouteImport
+      parentRoute: typeof MainRoute
+    }
+    '/libs/uiux-template/': {
+      id: '/libs/uiux-template/'
+      path: '/'
+      fullPath: '/libs/uiux-template/'
+      preLoaderRoute: typeof LibsUiuxTemplateIndexRouteImport
+      parentRoute: typeof LibsUiuxTemplateRoute
+    }
     '/libs/saga/': {
       id: '/libs/saga/'
       path: '/'
@@ -2151,19 +4197,19 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsReactWebIndexRouteImport
       parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/react-mobile/': {
-      id: '/libs/react-mobile/'
-      path: '/'
-      fullPath: '/libs/react-mobile/'
-      preLoaderRoute: typeof LibsReactMobileIndexRouteImport
-      parentRoute: typeof LibsReactMobileRoute
-    }
     '/libs/react-icons/': {
       id: '/libs/react-icons/'
       path: '/'
       fullPath: '/libs/react-icons/'
       preLoaderRoute: typeof LibsReactIconsIndexRouteImport
       parentRoute: typeof LibsReactIconsRoute
+    }
+    '/libs/react-i18n/': {
+      id: '/libs/react-i18n/'
+      path: '/'
+      fullPath: '/libs/react-i18n/'
+      preLoaderRoute: typeof LibsReactI18nIndexRouteImport
+      parentRoute: typeof LibsReactI18nRoute
     }
     '/libs/react-hooks/': {
       id: '/libs/react-hooks/'
@@ -2172,12 +4218,33 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsReactHooksIndexRouteImport
       parentRoute: typeof LibsReactHooksRoute
     }
+    '/libs/react-charts/': {
+      id: '/libs/react-charts/'
+      path: '/'
+      fullPath: '/libs/react-charts/'
+      preLoaderRoute: typeof LibsReactChartsIndexRouteImport
+      parentRoute: typeof LibsReactChartsRoute
+    }
     '/libs/query-dsl/': {
       id: '/libs/query-dsl/'
       path: '/'
       fullPath: '/libs/query-dsl/'
       preLoaderRoute: typeof LibsQueryDslIndexRouteImport
       parentRoute: typeof LibsQueryDslRoute
+    }
+    '/libs/proof-mode/': {
+      id: '/libs/proof-mode/'
+      path: '/'
+      fullPath: '/libs/proof-mode/'
+      preLoaderRoute: typeof LibsProofModeIndexRouteImport
+      parentRoute: typeof LibsProofModeRoute
+    }
+    '/libs/openapi-sdk/': {
+      id: '/libs/openapi-sdk/'
+      path: '/'
+      fullPath: '/libs/openapi-sdk/'
+      preLoaderRoute: typeof LibsOpenapiSdkIndexRouteImport
+      parentRoute: typeof LibsOpenapiSdkRoute
     }
     '/libs/nestjs-storage/': {
       id: '/libs/nestjs-storage/'
@@ -2193,26 +4260,12 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsSocialAuthIndexRouteImport
       parentRoute: typeof LibsNestjsSocialAuthRoute
     }
-    '/libs/nestjs-serverless/': {
-      id: '/libs/nestjs-serverless/'
-      path: '/'
-      fullPath: '/libs/nestjs-serverless/'
-      preLoaderRoute: typeof LibsNestjsServerlessIndexRouteImport
-      parentRoute: typeof LibsNestjsServerlessRoute
-    }
     '/libs/nestjs-server/': {
       id: '/libs/nestjs-server/'
       path: '/'
       fullPath: '/libs/nestjs-server/'
       preLoaderRoute: typeof LibsNestjsServerIndexRouteImport
       parentRoute: typeof LibsNestjsServerRoute
-    }
-    '/libs/nestjs-scheduler/': {
-      id: '/libs/nestjs-scheduler/'
-      path: '/'
-      fullPath: '/libs/nestjs-scheduler/'
-      preLoaderRoute: typeof LibsNestjsSchedulerIndexRouteImport
-      parentRoute: typeof LibsNestjsSchedulerRoute
     }
     '/libs/nestjs-resilience/': {
       id: '/libs/nestjs-resilience/'
@@ -2227,13 +4280,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/libs/nestjs-rate-limit/'
       preLoaderRoute: typeof LibsNestjsRateLimitIndexRouteImport
       parentRoute: typeof LibsNestjsRateLimitRoute
-    }
-    '/libs/nestjs-publisher/': {
-      id: '/libs/nestjs-publisher/'
-      path: '/'
-      fullPath: '/libs/nestjs-publisher/'
-      preLoaderRoute: typeof LibsNestjsPublisherIndexRouteImport
-      parentRoute: typeof LibsNestjsPublisherRoute
     }
     '/libs/nestjs-observability/': {
       id: '/libs/nestjs-observability/'
@@ -2270,6 +4316,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsIamIndexRouteImport
       parentRoute: typeof LibsNestjsIamRoute
     }
+    '/libs/nestjs-events/': {
+      id: '/libs/nestjs-events/'
+      path: '/'
+      fullPath: '/libs/nestjs-events/'
+      preLoaderRoute: typeof LibsNestjsEventsIndexRouteImport
+      parentRoute: typeof LibsNestjsEventsRoute
+    }
     '/libs/nestjs-database/': {
       id: '/libs/nestjs-database/'
       path: '/'
@@ -2298,6 +4351,20 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsCacheIndexRouteImport
       parentRoute: typeof LibsNestjsCacheRoute
     }
+    '/libs/modeling/': {
+      id: '/libs/modeling/'
+      path: '/'
+      fullPath: '/libs/modeling/'
+      preLoaderRoute: typeof LibsModelingIndexRouteImport
+      parentRoute: typeof LibsModelingRoute
+    }
+    '/libs/harness/': {
+      id: '/libs/harness/'
+      path: '/'
+      fullPath: '/libs/harness/'
+      preLoaderRoute: typeof LibsHarnessIndexRouteImport
+      parentRoute: typeof LibsHarnessRoute
+    }
     '/libs/frontend-primitives-pattern/': {
       id: '/libs/frontend-primitives-pattern/'
       path: '/'
@@ -2318,6 +4385,13 @@ declare module '@tanstack/react-router' {
       fullPath: '/libs/frontend-config/'
       preLoaderRoute: typeof LibsFrontendConfigIndexRouteImport
       parentRoute: typeof LibsFrontendConfigRoute
+    }
+    '/libs/fields/': {
+      id: '/libs/fields/'
+      path: '/'
+      fullPath: '/libs/fields/'
+      preLoaderRoute: typeof LibsFieldsIndexRouteImport
+      parentRoute: typeof LibsFieldsRoute
     }
     '/libs/exceptions/': {
       id: '/libs/exceptions/'
@@ -2340,6 +4414,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsCliIndexRouteImport
       parentRoute: typeof LibsCliRoute
     }
+    '/libs/blueprint-template/': {
+      id: '/libs/blueprint-template/'
+      path: '/'
+      fullPath: '/libs/blueprint-template/'
+      preLoaderRoute: typeof LibsBlueprintTemplateIndexRouteImport
+      parentRoute: typeof LibsBlueprintTemplateRoute
+    }
     '/libs/backend-pattern/': {
       id: '/libs/backend-pattern/'
       path: '/'
@@ -2361,19 +4442,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsArchitecturePatternIndexRouteImport
       parentRoute: typeof LibsArchitecturePatternRoute
     }
+    '/libs/uiux-template/theme': {
+      id: '/libs/uiux-template/theme'
+      path: '/theme'
+      fullPath: '/libs/uiux-template/theme'
+      preLoaderRoute: typeof LibsUiuxTemplateThemeRouteImport
+      parentRoute: typeof LibsUiuxTemplateRoute
+    }
+    '/libs/uiux-template/$section': {
+      id: '/libs/uiux-template/$section'
+      path: '/$section'
+      fullPath: '/libs/uiux-template/$section'
+      preLoaderRoute: typeof LibsUiuxTemplateSectionRouteImport
+      parentRoute: typeof LibsUiuxTemplateRoute
+    }
     '/libs/saga/saga': {
       id: '/libs/saga/saga'
       path: '/saga'
       fullPath: '/libs/saga/saga'
       preLoaderRoute: typeof LibsSagaSagaRouteImport
       parentRoute: typeof LibsSagaRoute
-    }
-    '/libs/react-web/playground': {
-      id: '/libs/react-web/playground'
-      path: '/playground'
-      fullPath: '/libs/react-web/playground'
-      preLoaderRoute: typeof LibsReactWebPlaygroundRouteImport
-      parentRoute: typeof LibsReactWebRoute
     }
     '/libs/react-icons/playground': {
       id: '/libs/react-icons/playground'
@@ -2382,12 +4470,54 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsReactIconsPlaygroundRouteImport
       parentRoute: typeof LibsReactIconsRoute
     }
+    '/libs/react-i18n/ui-labels': {
+      id: '/libs/react-i18n/ui-labels'
+      path: '/ui-labels'
+      fullPath: '/libs/react-i18n/ui-labels'
+      preLoaderRoute: typeof LibsReactI18nUiLabelsRouteImport
+      parentRoute: typeof LibsReactI18nRoute
+    }
+    '/libs/react-i18n/provider': {
+      id: '/libs/react-i18n/provider'
+      path: '/provider'
+      fullPath: '/libs/react-i18n/provider'
+      preLoaderRoute: typeof LibsReactI18nProviderRouteImport
+      parentRoute: typeof LibsReactI18nRoute
+    }
+    '/libs/react-i18n/dictionary': {
+      id: '/libs/react-i18n/dictionary'
+      path: '/dictionary'
+      fullPath: '/libs/react-i18n/dictionary'
+      preLoaderRoute: typeof LibsReactI18nDictionaryRouteImport
+      parentRoute: typeof LibsReactI18nRoute
+    }
+    '/libs/react-i18n/api': {
+      id: '/libs/react-i18n/api'
+      path: '/api'
+      fullPath: '/libs/react-i18n/api'
+      preLoaderRoute: typeof LibsReactI18nApiRouteImport
+      parentRoute: typeof LibsReactI18nRoute
+    }
     '/libs/react-hooks/$hook': {
       id: '/libs/react-hooks/$hook'
       path: '/$hook'
       fullPath: '/libs/react-hooks/$hook'
       preLoaderRoute: typeof LibsReactHooksHookRouteImport
       parentRoute: typeof LibsReactHooksRoute
+    }
+    '/libs/react-charts/sparkline': {
+      id: '/libs/react-charts/sparkline'
+      path: '/sparkline'
+      fullPath: '/libs/react-charts/sparkline'
+      preLoaderRoute: typeof LibsReactChartsSparklineRouteImport
+      parentRoute: typeof LibsReactChartsRoute
+    }
+    '/libs/react-charts/chart': {
+      id: '/libs/react-charts/chart'
+      path: '/chart'
+      fullPath: '/libs/react-charts/chart'
+      preLoaderRoute: typeof LibsReactChartsChartRouteImport
+      parentRoute: typeof LibsReactChartsRoute
     }
     '/libs/query-dsl/sort-schema': {
       id: '/libs/query-dsl/sort-schema'
@@ -2438,6 +4568,34 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsQueryDslBooleanSchemaRouteImport
       parentRoute: typeof LibsQueryDslRoute
     }
+    '/libs/proof-mode/$section': {
+      id: '/libs/proof-mode/$section'
+      path: '/$section'
+      fullPath: '/libs/proof-mode/$section'
+      preLoaderRoute: typeof LibsProofModeSectionRouteImport
+      parentRoute: typeof LibsProofModeRoute
+    }
+    '/libs/openapi-sdk/naming': {
+      id: '/libs/openapi-sdk/naming'
+      path: '/naming'
+      fullPath: '/libs/openapi-sdk/naming'
+      preLoaderRoute: typeof LibsOpenapiSdkNamingRouteImport
+      parentRoute: typeof LibsOpenapiSdkRoute
+    }
+    '/libs/openapi-sdk/config': {
+      id: '/libs/openapi-sdk/config'
+      path: '/config'
+      fullPath: '/libs/openapi-sdk/config'
+      preLoaderRoute: typeof LibsOpenapiSdkConfigRouteImport
+      parentRoute: typeof LibsOpenapiSdkRoute
+    }
+    '/libs/openapi-sdk/client': {
+      id: '/libs/openapi-sdk/client'
+      path: '/client'
+      fullPath: '/libs/openapi-sdk/client'
+      preLoaderRoute: typeof LibsOpenapiSdkClientRouteImport
+      parentRoute: typeof LibsOpenapiSdkRoute
+    }
     '/libs/nestjs-storage/storage-service': {
       id: '/libs/nestjs-storage/storage-service'
       path: '/storage-service'
@@ -2466,27 +4624,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsSocialAuthSocialAuthModuleRouteImport
       parentRoute: typeof LibsNestjsSocialAuthRoute
     }
-    '/libs/nestjs-serverless/serverless-module': {
-      id: '/libs/nestjs-serverless/serverless-module'
-      path: '/serverless-module'
-      fullPath: '/libs/nestjs-serverless/serverless-module'
-      preLoaderRoute: typeof LibsNestjsServerlessServerlessModuleRouteImport
-      parentRoute: typeof LibsNestjsServerlessRoute
-    }
-    '/libs/nestjs-serverless/serverless-create': {
-      id: '/libs/nestjs-serverless/serverless-create'
-      path: '/serverless-create'
-      fullPath: '/libs/nestjs-serverless/serverless-create'
-      preLoaderRoute: typeof LibsNestjsServerlessServerlessCreateRouteImport
-      parentRoute: typeof LibsNestjsServerlessRoute
-    }
-    '/libs/nestjs-serverless/handler-decorator': {
-      id: '/libs/nestjs-serverless/handler-decorator'
-      path: '/handler-decorator'
-      fullPath: '/libs/nestjs-serverless/handler-decorator'
-      preLoaderRoute: typeof LibsNestjsServerlessHandlerDecoratorRouteImport
-      parentRoute: typeof LibsNestjsServerlessRoute
-    }
     '/libs/nestjs-server/server-create': {
       id: '/libs/nestjs-server/server-create'
       path: '/server-create'
@@ -2514,20 +4651,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/libs/nestjs-server/controller-decorator'
       preLoaderRoute: typeof LibsNestjsServerControllerDecoratorRouteImport
       parentRoute: typeof LibsNestjsServerRoute
-    }
-    '/libs/nestjs-scheduler/scheduler-module': {
-      id: '/libs/nestjs-scheduler/scheduler-module'
-      path: '/scheduler-module'
-      fullPath: '/libs/nestjs-scheduler/scheduler-module'
-      preLoaderRoute: typeof LibsNestjsSchedulerSchedulerModuleRouteImport
-      parentRoute: typeof LibsNestjsSchedulerRoute
-    }
-    '/libs/nestjs-scheduler/schedule-decorator': {
-      id: '/libs/nestjs-scheduler/schedule-decorator'
-      path: '/schedule-decorator'
-      fullPath: '/libs/nestjs-scheduler/schedule-decorator'
-      preLoaderRoute: typeof LibsNestjsSchedulerScheduleDecoratorRouteImport
-      parentRoute: typeof LibsNestjsSchedulerRoute
     }
     '/libs/nestjs-resilience/timeout': {
       id: '/libs/nestjs-resilience/timeout'
@@ -2570,34 +4693,6 @@ declare module '@tanstack/react-router' {
       fullPath: '/libs/nestjs-rate-limit/rate-limit-decorator'
       preLoaderRoute: typeof LibsNestjsRateLimitRateLimitDecoratorRouteImport
       parentRoute: typeof LibsNestjsRateLimitRoute
-    }
-    '/libs/nestjs-publisher/subscriber-decorator': {
-      id: '/libs/nestjs-publisher/subscriber-decorator'
-      path: '/subscriber-decorator'
-      fullPath: '/libs/nestjs-publisher/subscriber-decorator'
-      preLoaderRoute: typeof LibsNestjsPublisherSubscriberDecoratorRouteImport
-      parentRoute: typeof LibsNestjsPublisherRoute
-    }
-    '/libs/nestjs-publisher/publisher-service': {
-      id: '/libs/nestjs-publisher/publisher-service'
-      path: '/publisher-service'
-      fullPath: '/libs/nestjs-publisher/publisher-service'
-      preLoaderRoute: typeof LibsNestjsPublisherPublisherServiceRouteImport
-      parentRoute: typeof LibsNestjsPublisherRoute
-    }
-    '/libs/nestjs-publisher/publisher-module': {
-      id: '/libs/nestjs-publisher/publisher-module'
-      path: '/publisher-module'
-      fullPath: '/libs/nestjs-publisher/publisher-module'
-      preLoaderRoute: typeof LibsNestjsPublisherPublisherModuleRouteImport
-      parentRoute: typeof LibsNestjsPublisherRoute
-    }
-    '/libs/nestjs-publisher/outbox': {
-      id: '/libs/nestjs-publisher/outbox'
-      path: '/outbox'
-      fullPath: '/libs/nestjs-publisher/outbox'
-      preLoaderRoute: typeof LibsNestjsPublisherOutboxRouteImport
-      parentRoute: typeof LibsNestjsPublisherRoute
     }
     '/libs/nestjs-observability/tracing': {
       id: '/libs/nestjs-observability/tracing'
@@ -2725,6 +4820,48 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsIamAclDecoratorRouteImport
       parentRoute: typeof LibsNestjsIamRoute
     }
+    '/libs/nestjs-events/workers-module': {
+      id: '/libs/nestjs-events/workers-module'
+      path: '/workers-module'
+      fullPath: '/libs/nestjs-events/workers-module'
+      preLoaderRoute: typeof LibsNestjsEventsWorkersModuleRouteImport
+      parentRoute: typeof LibsNestjsEventsRoute
+    }
+    '/libs/nestjs-events/serverless-create': {
+      id: '/libs/nestjs-events/serverless-create'
+      path: '/serverless-create'
+      fullPath: '/libs/nestjs-events/serverless-create'
+      preLoaderRoute: typeof LibsNestjsEventsServerlessCreateRouteImport
+      parentRoute: typeof LibsNestjsEventsRoute
+    }
+    '/libs/nestjs-events/publisher': {
+      id: '/libs/nestjs-events/publisher'
+      path: '/publisher'
+      fullPath: '/libs/nestjs-events/publisher'
+      preLoaderRoute: typeof LibsNestjsEventsPublisherRouteImport
+      parentRoute: typeof LibsNestjsEventsRoute
+    }
+    '/libs/nestjs-events/infra': {
+      id: '/libs/nestjs-events/infra'
+      path: '/infra'
+      fullPath: '/libs/nestjs-events/infra'
+      preLoaderRoute: typeof LibsNestjsEventsInfraRouteImport
+      parentRoute: typeof LibsNestjsEventsRoute
+    }
+    '/libs/nestjs-events/handler-decorator': {
+      id: '/libs/nestjs-events/handler-decorator'
+      path: '/handler-decorator'
+      fullPath: '/libs/nestjs-events/handler-decorator'
+      preLoaderRoute: typeof LibsNestjsEventsHandlerDecoratorRouteImport
+      parentRoute: typeof LibsNestjsEventsRoute
+    }
+    '/libs/nestjs-events/contracts': {
+      id: '/libs/nestjs-events/contracts'
+      path: '/contracts'
+      fullPath: '/libs/nestjs-events/contracts'
+      preLoaderRoute: typeof LibsNestjsEventsContractsRouteImport
+      parentRoute: typeof LibsNestjsEventsRoute
+    }
     '/libs/nestjs-database/types-and-errors': {
       id: '/libs/nestjs-database/types-and-errors'
       path: '/types-and-errors'
@@ -2751,6 +4888,20 @@ declare module '@tanstack/react-router' {
       path: '/schema-definition'
       fullPath: '/libs/nestjs-database/schema-definition'
       preLoaderRoute: typeof LibsNestjsDatabaseSchemaDefinitionRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-database/postgresql': {
+      id: '/libs/nestjs-database/postgresql'
+      path: '/postgresql'
+      fullPath: '/libs/nestjs-database/postgresql'
+      preLoaderRoute: typeof LibsNestjsDatabasePostgresqlRouteImport
+      parentRoute: typeof LibsNestjsDatabaseRoute
+    }
+    '/libs/nestjs-database/dynamodb': {
+      id: '/libs/nestjs-database/dynamodb'
+      path: '/dynamodb'
+      fullPath: '/libs/nestjs-database/dynamodb'
+      preLoaderRoute: typeof LibsNestjsDatabaseDynamodbRouteImport
       parentRoute: typeof LibsNestjsDatabaseRoute
     }
     '/libs/nestjs-database/database-service': {
@@ -2844,6 +4995,27 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsNestjsCacheCacheDelRouteImport
       parentRoute: typeof LibsNestjsCacheRoute
     }
+    '/libs/modeling/$section': {
+      id: '/libs/modeling/$section'
+      path: '/$section'
+      fullPath: '/libs/modeling/$section'
+      preLoaderRoute: typeof LibsModelingSectionRouteImport
+      parentRoute: typeof LibsModelingRoute
+    }
+    '/libs/harness/flow': {
+      id: '/libs/harness/flow'
+      path: '/flow'
+      fullPath: '/libs/harness/flow'
+      preLoaderRoute: typeof LibsHarnessFlowRouteImport
+      parentRoute: typeof LibsHarnessRoute
+    }
+    '/libs/harness/$section': {
+      id: '/libs/harness/$section'
+      path: '/$section'
+      fullPath: '/libs/harness/$section'
+      preLoaderRoute: typeof LibsHarnessSectionRouteImport
+      parentRoute: typeof LibsHarnessRoute
+    }
     '/libs/frontend-primitives-pattern/$section': {
       id: '/libs/frontend-primitives-pattern/$section'
       path: '/$section'
@@ -2871,6 +5043,76 @@ declare module '@tanstack/react-router' {
       fullPath: '/libs/frontend-config/biome'
       preLoaderRoute: typeof LibsFrontendConfigBiomeRouteImport
       parentRoute: typeof LibsFrontendConfigRoute
+    }
+    '/libs/fields/text': {
+      id: '/libs/fields/text'
+      path: '/text'
+      fullPath: '/libs/fields/text'
+      preLoaderRoute: typeof LibsFieldsTextRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/numbers': {
+      id: '/libs/fields/numbers'
+      path: '/numbers'
+      fullPath: '/libs/fields/numbers'
+      preLoaderRoute: typeof LibsFieldsNumbersRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/identity': {
+      id: '/libs/fields/identity'
+      path: '/identity'
+      fullPath: '/libs/fields/identity'
+      preLoaderRoute: typeof LibsFieldsIdentityRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/files': {
+      id: '/libs/fields/files'
+      path: '/files'
+      fullPath: '/libs/fields/files'
+      preLoaderRoute: typeof LibsFieldsFilesRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/error-codes': {
+      id: '/libs/fields/error-codes'
+      path: '/error-codes'
+      fullPath: '/libs/fields/error-codes'
+      preLoaderRoute: typeof LibsFieldsErrorCodesRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/dates': {
+      id: '/libs/fields/dates'
+      path: '/dates'
+      fullPath: '/libs/fields/dates'
+      preLoaderRoute: typeof LibsFieldsDatesRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/cross-field': {
+      id: '/libs/fields/cross-field'
+      path: '/cross-field'
+      fullPath: '/libs/fields/cross-field'
+      preLoaderRoute: typeof LibsFieldsCrossFieldRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/collections': {
+      id: '/libs/fields/collections'
+      path: '/collections'
+      fullPath: '/libs/fields/collections'
+      preLoaderRoute: typeof LibsFieldsCollectionsRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/brazil': {
+      id: '/libs/fields/brazil'
+      path: '/brazil'
+      fullPath: '/libs/fields/brazil'
+      preLoaderRoute: typeof LibsFieldsBrazilRouteImport
+      parentRoute: typeof LibsFieldsRoute
+    }
+    '/libs/fields/booleans': {
+      id: '/libs/fields/booleans'
+      path: '/booleans'
+      fullPath: '/libs/fields/booleans'
+      preLoaderRoute: typeof LibsFieldsBooleansRouteImport
+      parentRoute: typeof LibsFieldsRoute
     }
     '/libs/exceptions/exceptions': {
       id: '/libs/exceptions/exceptions'
@@ -2900,13 +5142,6 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsCliMonorepoRouteImport
       parentRoute: typeof LibsCliRoute
     }
-    '/libs/cli/mobile': {
-      id: '/libs/cli/mobile'
-      path: '/mobile'
-      fullPath: '/libs/cli/mobile'
-      preLoaderRoute: typeof LibsCliMobileRouteImport
-      parentRoute: typeof LibsCliRoute
-    }
     '/libs/cli/handler': {
       id: '/libs/cli/handler'
       path: '/handler'
@@ -2920,6 +5155,20 @@ declare module '@tanstack/react-router' {
       fullPath: '/libs/cli/api'
       preLoaderRoute: typeof LibsCliApiRouteImport
       parentRoute: typeof LibsCliRoute
+    }
+    '/libs/blueprint-template/board': {
+      id: '/libs/blueprint-template/board'
+      path: '/board'
+      fullPath: '/libs/blueprint-template/board'
+      preLoaderRoute: typeof LibsBlueprintTemplateBoardRouteImport
+      parentRoute: typeof LibsBlueprintTemplateRoute
+    }
+    '/libs/blueprint-template/$section': {
+      id: '/libs/blueprint-template/$section'
+      path: '/$section'
+      fullPath: '/libs/blueprint-template/$section'
+      preLoaderRoute: typeof LibsBlueprintTemplateSectionRouteImport
+      parentRoute: typeof LibsBlueprintTemplateRoute
     }
     '/libs/backend-pattern/$section': {
       id: '/libs/backend-pattern/$section'
@@ -2949,29 +5198,855 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof LibsArchitecturePatternSectionRouteImport
       parentRoute: typeof LibsArchitecturePatternRoute
     }
-    '/libs/react-mobile/components/': {
-      id: '/libs/react-mobile/components/'
-      path: '/components'
-      fullPath: '/libs/react-mobile/components/'
-      preLoaderRoute: typeof LibsReactMobileComponentsIndexRouteImport
-      parentRoute: typeof LibsReactMobileRoute
+    '/libs/react-web/hooks/': {
+      id: '/libs/react-web/hooks/'
+      path: '/hooks'
+      fullPath: '/libs/react-web/hooks/'
+      preLoaderRoute: typeof LibsReactWebHooksIndexRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
-    '/libs/react-mobile/components/$component': {
-      id: '/libs/react-mobile/components/$component'
+    '/libs/react-web/components/': {
+      id: '/libs/react-web/components/'
+      path: '/components'
+      fullPath: '/libs/react-web/components/'
+      preLoaderRoute: typeof LibsReactWebComponentsIndexRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/audiences/': {
+      id: '/libs/react-web/audiences/'
+      path: '/audiences'
+      fullPath: '/libs/react-web/audiences/'
+      preLoaderRoute: typeof LibsReactWebAudiencesIndexRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/hooks/$hook': {
+      id: '/libs/react-web/hooks/$hook'
+      path: '/hooks/$hook'
+      fullPath: '/libs/react-web/hooks/$hook'
+      preLoaderRoute: typeof LibsReactWebHooksHookRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/uploader': {
+      id: '/libs/react-web/components/uploader'
+      path: '/components/uploader'
+      fullPath: '/libs/react-web/components/uploader'
+      preLoaderRoute: typeof LibsReactWebComponentsUploaderRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/typography': {
+      id: '/libs/react-web/components/typography'
+      path: '/components/typography'
+      fullPath: '/libs/react-web/components/typography'
+      preLoaderRoute: typeof LibsReactWebComponentsTypographyRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/tury-provider': {
+      id: '/libs/react-web/components/tury-provider'
+      path: '/components/tury-provider'
+      fullPath: '/libs/react-web/components/tury-provider'
+      preLoaderRoute: typeof LibsReactWebComponentsTuryProviderRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/truncated-text': {
+      id: '/libs/react-web/components/truncated-text'
+      path: '/components/truncated-text'
+      fullPath: '/libs/react-web/components/truncated-text'
+      preLoaderRoute: typeof LibsReactWebComponentsTruncatedTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/tree': {
+      id: '/libs/react-web/components/tree'
+      path: '/components/tree'
+      fullPath: '/libs/react-web/components/tree'
+      preLoaderRoute: typeof LibsReactWebComponentsTreeRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/tooltip': {
+      id: '/libs/react-web/components/tooltip'
+      path: '/components/tooltip'
+      fullPath: '/libs/react-web/components/tooltip'
+      preLoaderRoute: typeof LibsReactWebComponentsTooltipRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/toggle': {
+      id: '/libs/react-web/components/toggle'
+      path: '/components/toggle'
+      fullPath: '/libs/react-web/components/toggle'
+      preLoaderRoute: typeof LibsReactWebComponentsToggleRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/toast': {
+      id: '/libs/react-web/components/toast'
+      path: '/components/toast'
+      fullPath: '/libs/react-web/components/toast'
+      preLoaderRoute: typeof LibsReactWebComponentsToastRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/timeline': {
+      id: '/libs/react-web/components/timeline'
+      path: '/components/timeline'
+      fullPath: '/libs/react-web/components/timeline'
+      preLoaderRoute: typeof LibsReactWebComponentsTimelineRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/time-input': {
+      id: '/libs/react-web/components/time-input'
+      path: '/components/time-input'
+      fullPath: '/libs/react-web/components/time-input'
+      preLoaderRoute: typeof LibsReactWebComponentsTimeInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/textarea': {
+      id: '/libs/react-web/components/textarea'
+      path: '/components/textarea'
+      fullPath: '/libs/react-web/components/textarea'
+      preLoaderRoute: typeof LibsReactWebComponentsTextareaRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/tags-input': {
+      id: '/libs/react-web/components/tags-input'
+      path: '/components/tags-input'
+      fullPath: '/libs/react-web/components/tags-input'
+      preLoaderRoute: typeof LibsReactWebComponentsTagsInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/tag': {
+      id: '/libs/react-web/components/tag'
+      path: '/components/tag'
+      fullPath: '/libs/react-web/components/tag'
+      preLoaderRoute: typeof LibsReactWebComponentsTagRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/tabs': {
+      id: '/libs/react-web/components/tabs'
+      path: '/components/tabs'
+      fullPath: '/libs/react-web/components/tabs'
+      preLoaderRoute: typeof LibsReactWebComponentsTabsRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/table': {
+      id: '/libs/react-web/components/table'
+      path: '/components/table'
+      fullPath: '/libs/react-web/components/table'
+      preLoaderRoute: typeof LibsReactWebComponentsTableRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/switch': {
+      id: '/libs/react-web/components/switch'
+      path: '/components/switch'
+      fullPath: '/libs/react-web/components/switch'
+      preLoaderRoute: typeof LibsReactWebComponentsSwitchRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/stepper': {
+      id: '/libs/react-web/components/stepper'
+      path: '/components/stepper'
+      fullPath: '/libs/react-web/components/stepper'
+      preLoaderRoute: typeof LibsReactWebComponentsStepperRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/stat': {
+      id: '/libs/react-web/components/stat'
+      path: '/components/stat'
+      fullPath: '/libs/react-web/components/stat'
+      preLoaderRoute: typeof LibsReactWebComponentsStatRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/spotlight-search': {
+      id: '/libs/react-web/components/spotlight-search'
+      path: '/components/spotlight-search'
+      fullPath: '/libs/react-web/components/spotlight-search'
+      preLoaderRoute: typeof LibsReactWebComponentsSpotlightSearchRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/slider': {
+      id: '/libs/react-web/components/slider'
+      path: '/components/slider'
+      fullPath: '/libs/react-web/components/slider'
+      preLoaderRoute: typeof LibsReactWebComponentsSliderRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/skeleton': {
+      id: '/libs/react-web/components/skeleton'
+      path: '/components/skeleton'
+      fullPath: '/libs/react-web/components/skeleton'
+      preLoaderRoute: typeof LibsReactWebComponentsSkeletonRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/sheet': {
+      id: '/libs/react-web/components/sheet'
+      path: '/components/sheet'
+      fullPath: '/libs/react-web/components/sheet'
+      preLoaderRoute: typeof LibsReactWebComponentsSheetRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/separator': {
+      id: '/libs/react-web/components/separator'
+      path: '/components/separator'
+      fullPath: '/libs/react-web/components/separator'
+      preLoaderRoute: typeof LibsReactWebComponentsSeparatorRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/select': {
+      id: '/libs/react-web/components/select'
+      path: '/components/select'
+      fullPath: '/libs/react-web/components/select'
+      preLoaderRoute: typeof LibsReactWebComponentsSelectRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/segmented-control': {
+      id: '/libs/react-web/components/segmented-control'
+      path: '/components/segmented-control'
+      fullPath: '/libs/react-web/components/segmented-control'
+      preLoaderRoute: typeof LibsReactWebComponentsSegmentedControlRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/search': {
+      id: '/libs/react-web/components/search'
+      path: '/components/search'
+      fullPath: '/libs/react-web/components/search'
+      preLoaderRoute: typeof LibsReactWebComponentsSearchRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/scroll-area': {
+      id: '/libs/react-web/components/scroll-area'
+      path: '/components/scroll-area'
+      fullPath: '/libs/react-web/components/scroll-area'
+      preLoaderRoute: typeof LibsReactWebComponentsScrollAreaRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/resizable': {
+      id: '/libs/react-web/components/resizable'
+      path: '/components/resizable'
+      fullPath: '/libs/react-web/components/resizable'
+      preLoaderRoute: typeof LibsReactWebComponentsResizableRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/rating': {
+      id: '/libs/react-web/components/rating'
+      path: '/components/rating'
+      fullPath: '/libs/react-web/components/rating'
+      preLoaderRoute: typeof LibsReactWebComponentsRatingRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/radio': {
+      id: '/libs/react-web/components/radio'
+      path: '/components/radio'
+      fullPath: '/libs/react-web/components/radio'
+      preLoaderRoute: typeof LibsReactWebComponentsRadioRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/qr-code': {
+      id: '/libs/react-web/components/qr-code'
+      path: '/components/qr-code'
+      fullPath: '/libs/react-web/components/qr-code'
+      preLoaderRoute: typeof LibsReactWebComponentsQrCodeRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/protected-provider': {
+      id: '/libs/react-web/components/protected-provider'
+      path: '/components/protected-provider'
+      fullPath: '/libs/react-web/components/protected-provider'
+      preLoaderRoute: typeof LibsReactWebComponentsProtectedProviderRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/protected': {
+      id: '/libs/react-web/components/protected'
+      path: '/components/protected'
+      fullPath: '/libs/react-web/components/protected'
+      preLoaderRoute: typeof LibsReactWebComponentsProtectedRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/progress': {
+      id: '/libs/react-web/components/progress'
+      path: '/components/progress'
+      fullPath: '/libs/react-web/components/progress'
+      preLoaderRoute: typeof LibsReactWebComponentsProgressRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/portal-provider': {
+      id: '/libs/react-web/components/portal-provider'
+      path: '/components/portal-provider'
+      fullPath: '/libs/react-web/components/portal-provider'
+      preLoaderRoute: typeof LibsReactWebComponentsPortalProviderRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/popover': {
+      id: '/libs/react-web/components/popover'
+      path: '/components/popover'
+      fullPath: '/libs/react-web/components/popover'
+      preLoaderRoute: typeof LibsReactWebComponentsPopoverRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/popconfirm': {
+      id: '/libs/react-web/components/popconfirm'
+      path: '/components/popconfirm'
+      fullPath: '/libs/react-web/components/popconfirm'
+      preLoaderRoute: typeof LibsReactWebComponentsPopconfirmRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/phone-text': {
+      id: '/libs/react-web/components/phone-text'
+      path: '/components/phone-text'
+      fullPath: '/libs/react-web/components/phone-text'
+      preLoaderRoute: typeof LibsReactWebComponentsPhoneTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/phone-input': {
+      id: '/libs/react-web/components/phone-input'
+      path: '/components/phone-input'
+      fullPath: '/libs/react-web/components/phone-input'
+      preLoaderRoute: typeof LibsReactWebComponentsPhoneInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/password-input': {
+      id: '/libs/react-web/components/password-input'
+      path: '/components/password-input'
+      fullPath: '/libs/react-web/components/password-input'
+      preLoaderRoute: typeof LibsReactWebComponentsPasswordInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/pagination': {
+      id: '/libs/react-web/components/pagination'
+      path: '/components/pagination'
+      fullPath: '/libs/react-web/components/pagination'
+      preLoaderRoute: typeof LibsReactWebComponentsPaginationRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/page': {
+      id: '/libs/react-web/components/page'
+      path: '/components/page'
+      fullPath: '/libs/react-web/components/page'
+      preLoaderRoute: typeof LibsReactWebComponentsPageRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/otp-input': {
+      id: '/libs/react-web/components/otp-input'
+      path: '/components/otp-input'
+      fullPath: '/libs/react-web/components/otp-input'
+      preLoaderRoute: typeof LibsReactWebComponentsOtpInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/number-text': {
+      id: '/libs/react-web/components/number-text'
+      path: '/components/number-text'
+      fullPath: '/libs/react-web/components/number-text'
+      preLoaderRoute: typeof LibsReactWebComponentsNumberTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/number-input': {
+      id: '/libs/react-web/components/number-input'
+      path: '/components/number-input'
+      fullPath: '/libs/react-web/components/number-input'
+      preLoaderRoute: typeof LibsReactWebComponentsNumberInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/notification-list': {
+      id: '/libs/react-web/components/notification-list'
+      path: '/components/notification-list'
+      fullPath: '/libs/react-web/components/notification-list'
+      preLoaderRoute: typeof LibsReactWebComponentsNotificationListRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/notification-filter': {
+      id: '/libs/react-web/components/notification-filter'
+      path: '/components/notification-filter'
+      fullPath: '/libs/react-web/components/notification-filter'
+      preLoaderRoute: typeof LibsReactWebComponentsNotificationFilterRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/notification-center': {
+      id: '/libs/react-web/components/notification-center'
+      path: '/components/notification-center'
+      fullPath: '/libs/react-web/components/notification-center'
+      preLoaderRoute: typeof LibsReactWebComponentsNotificationCenterRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/notification-card': {
+      id: '/libs/react-web/components/notification-card'
+      path: '/components/notification-card'
+      fullPath: '/libs/react-web/components/notification-card'
+      preLoaderRoute: typeof LibsReactWebComponentsNotificationCardRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/money-text': {
+      id: '/libs/react-web/components/money-text'
+      path: '/components/money-text'
+      fullPath: '/libs/react-web/components/money-text'
+      preLoaderRoute: typeof LibsReactWebComponentsMoneyTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/modal': {
+      id: '/libs/react-web/components/modal'
+      path: '/components/modal'
+      fullPath: '/libs/react-web/components/modal'
+      preLoaderRoute: typeof LibsReactWebComponentsModalRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/mask-input': {
+      id: '/libs/react-web/components/mask-input'
+      path: '/components/mask-input'
+      fullPath: '/libs/react-web/components/mask-input'
+      preLoaderRoute: typeof LibsReactWebComponentsMaskInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/loading-overlay': {
+      id: '/libs/react-web/components/loading-overlay'
+      path: '/components/loading-overlay'
+      fullPath: '/libs/react-web/components/loading-overlay'
+      preLoaderRoute: typeof LibsReactWebComponentsLoadingOverlayRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/loading-bar': {
+      id: '/libs/react-web/components/loading-bar'
+      path: '/components/loading-bar'
+      fullPath: '/libs/react-web/components/loading-bar'
+      preLoaderRoute: typeof LibsReactWebComponentsLoadingBarRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/loaded': {
+      id: '/libs/react-web/components/loaded'
+      path: '/components/loaded'
+      fullPath: '/libs/react-web/components/loaded'
+      preLoaderRoute: typeof LibsReactWebComponentsLoadedRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/list': {
+      id: '/libs/react-web/components/list'
+      path: '/components/list'
+      fullPath: '/libs/react-web/components/list'
+      preLoaderRoute: typeof LibsReactWebComponentsListRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/layout': {
+      id: '/libs/react-web/components/layout'
+      path: '/components/layout'
+      fullPath: '/libs/react-web/components/layout'
+      preLoaderRoute: typeof LibsReactWebComponentsLayoutRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/labels-provider': {
+      id: '/libs/react-web/components/labels-provider'
+      path: '/components/labels-provider'
+      fullPath: '/libs/react-web/components/labels-provider'
+      preLoaderRoute: typeof LibsReactWebComponentsLabelsProviderRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/label': {
+      id: '/libs/react-web/components/label'
+      path: '/components/label'
+      fullPath: '/libs/react-web/components/label'
+      preLoaderRoute: typeof LibsReactWebComponentsLabelRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/input': {
+      id: '/libs/react-web/components/input'
+      path: '/components/input'
+      fullPath: '/libs/react-web/components/input'
+      preLoaderRoute: typeof LibsReactWebComponentsInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/indicator': {
+      id: '/libs/react-web/components/indicator'
+      path: '/components/indicator'
+      fullPath: '/libs/react-web/components/indicator'
+      preLoaderRoute: typeof LibsReactWebComponentsIndicatorRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/image': {
+      id: '/libs/react-web/components/image'
+      path: '/components/image'
+      fullPath: '/libs/react-web/components/image'
+      preLoaderRoute: typeof LibsReactWebComponentsImageRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/identity': {
+      id: '/libs/react-web/components/identity'
+      path: '/components/identity'
+      fullPath: '/libs/react-web/components/identity'
+      preLoaderRoute: typeof LibsReactWebComponentsIdentityRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/grid': {
+      id: '/libs/react-web/components/grid'
+      path: '/components/grid'
+      fullPath: '/libs/react-web/components/grid'
+      preLoaderRoute: typeof LibsReactWebComponentsGridRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/format-provider': {
+      id: '/libs/react-web/components/format-provider'
+      path: '/components/format-provider'
+      fullPath: '/libs/react-web/components/format-provider'
+      preLoaderRoute: typeof LibsReactWebComponentsFormatProviderRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/form': {
+      id: '/libs/react-web/components/form'
+      path: '/components/form'
+      fullPath: '/libs/react-web/components/form'
+      preLoaderRoute: typeof LibsReactWebComponentsFormRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/flex': {
+      id: '/libs/react-web/components/flex'
+      path: '/components/flex'
+      fullPath: '/libs/react-web/components/flex'
+      preLoaderRoute: typeof LibsReactWebComponentsFlexRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/filter-chip': {
+      id: '/libs/react-web/components/filter-chip'
+      path: '/components/filter-chip'
+      fullPath: '/libs/react-web/components/filter-chip'
+      preLoaderRoute: typeof LibsReactWebComponentsFilterChipRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/filter-bar': {
+      id: '/libs/react-web/components/filter-bar'
+      path: '/components/filter-bar'
+      fullPath: '/libs/react-web/components/filter-bar'
+      preLoaderRoute: typeof LibsReactWebComponentsFilterBarRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/file-size-text': {
+      id: '/libs/react-web/components/file-size-text'
+      path: '/components/file-size-text'
+      fullPath: '/libs/react-web/components/file-size-text'
+      preLoaderRoute: typeof LibsReactWebComponentsFileSizeTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/empty-state': {
+      id: '/libs/react-web/components/empty-state'
+      path: '/components/empty-state'
+      fullPath: '/libs/react-web/components/empty-state'
+      preLoaderRoute: typeof LibsReactWebComponentsEmptyStateRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/editable-text': {
+      id: '/libs/react-web/components/editable-text'
+      path: '/components/editable-text'
+      fullPath: '/libs/react-web/components/editable-text'
+      preLoaderRoute: typeof LibsReactWebComponentsEditableTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/duration-text': {
+      id: '/libs/react-web/components/duration-text'
+      path: '/components/duration-text'
+      fullPath: '/libs/react-web/components/duration-text'
+      preLoaderRoute: typeof LibsReactWebComponentsDurationTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/dropdown-menu': {
+      id: '/libs/react-web/components/dropdown-menu'
+      path: '/components/dropdown-menu'
+      fullPath: '/libs/react-web/components/dropdown-menu'
+      preLoaderRoute: typeof LibsReactWebComponentsDropdownMenuRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/document-text': {
+      id: '/libs/react-web/components/document-text'
+      path: '/components/document-text'
+      fullPath: '/libs/react-web/components/document-text'
+      preLoaderRoute: typeof LibsReactWebComponentsDocumentTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/document-input': {
+      id: '/libs/react-web/components/document-input'
+      path: '/components/document-input'
+      fullPath: '/libs/react-web/components/document-input'
+      preLoaderRoute: typeof LibsReactWebComponentsDocumentInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/description-list': {
+      id: '/libs/react-web/components/description-list'
+      path: '/components/description-list'
+      fullPath: '/libs/react-web/components/description-list'
+      preLoaderRoute: typeof LibsReactWebComponentsDescriptionListRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/date-time-input': {
+      id: '/libs/react-web/components/date-time-input'
+      path: '/components/date-time-input'
+      fullPath: '/libs/react-web/components/date-time-input'
+      preLoaderRoute: typeof LibsReactWebComponentsDateTimeInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/date-text': {
+      id: '/libs/react-web/components/date-text'
+      path: '/components/date-text'
+      fullPath: '/libs/react-web/components/date-text'
+      preLoaderRoute: typeof LibsReactWebComponentsDateTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/date-range-input': {
+      id: '/libs/react-web/components/date-range-input'
+      path: '/components/date-range-input'
+      fullPath: '/libs/react-web/components/date-range-input'
+      preLoaderRoute: typeof LibsReactWebComponentsDateRangeInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/date-input': {
+      id: '/libs/react-web/components/date-input'
+      path: '/components/date-input'
+      fullPath: '/libs/react-web/components/date-input'
+      preLoaderRoute: typeof LibsReactWebComponentsDateInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/data-transfer-import': {
+      id: '/libs/react-web/components/data-transfer-import'
+      path: '/components/data-transfer-import'
+      fullPath: '/libs/react-web/components/data-transfer-import'
+      preLoaderRoute: typeof LibsReactWebComponentsDataTransferImportRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/data-transfer-export': {
+      id: '/libs/react-web/components/data-transfer-export'
+      path: '/components/data-transfer-export'
+      fullPath: '/libs/react-web/components/data-transfer-export'
+      preLoaderRoute: typeof LibsReactWebComponentsDataTransferExportRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/currency-input': {
+      id: '/libs/react-web/components/currency-input'
+      path: '/components/currency-input'
+      fullPath: '/libs/react-web/components/currency-input'
+      preLoaderRoute: typeof LibsReactWebComponentsCurrencyInputRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/copy-button': {
+      id: '/libs/react-web/components/copy-button'
+      path: '/components/copy-button'
+      fullPath: '/libs/react-web/components/copy-button'
+      preLoaderRoute: typeof LibsReactWebComponentsCopyButtonRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/container': {
+      id: '/libs/react-web/components/container'
+      path: '/components/container'
+      fullPath: '/libs/react-web/components/container'
+      preLoaderRoute: typeof LibsReactWebComponentsContainerRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/confirm': {
+      id: '/libs/react-web/components/confirm'
+      path: '/components/confirm'
+      fullPath: '/libs/react-web/components/confirm'
+      preLoaderRoute: typeof LibsReactWebComponentsConfirmRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/color-scheme-switcher': {
+      id: '/libs/react-web/components/color-scheme-switcher'
+      path: '/components/color-scheme-switcher'
+      fullPath: '/libs/react-web/components/color-scheme-switcher'
+      preLoaderRoute: typeof LibsReactWebComponentsColorSchemeSwitcherRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/color-scheme-provider': {
+      id: '/libs/react-web/components/color-scheme-provider'
+      path: '/components/color-scheme-provider'
+      fullPath: '/libs/react-web/components/color-scheme-provider'
+      preLoaderRoute: typeof LibsReactWebComponentsColorSchemeProviderRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/color-picker': {
+      id: '/libs/react-web/components/color-picker'
+      path: '/components/color-picker'
+      fullPath: '/libs/react-web/components/color-picker'
+      preLoaderRoute: typeof LibsReactWebComponentsColorPickerRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/collapsible': {
+      id: '/libs/react-web/components/collapsible'
+      path: '/components/collapsible'
+      fullPath: '/libs/react-web/components/collapsible'
+      preLoaderRoute: typeof LibsReactWebComponentsCollapsibleRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/code-block': {
+      id: '/libs/react-web/components/code-block'
+      path: '/components/code-block'
+      fullPath: '/libs/react-web/components/code-block'
+      preLoaderRoute: typeof LibsReactWebComponentsCodeBlockRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/checklist': {
+      id: '/libs/react-web/components/checklist'
+      path: '/components/checklist'
+      fullPath: '/libs/react-web/components/checklist'
+      preLoaderRoute: typeof LibsReactWebComponentsChecklistRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/checkbox': {
+      id: '/libs/react-web/components/checkbox'
+      path: '/components/checkbox'
+      fullPath: '/libs/react-web/components/checkbox'
+      preLoaderRoute: typeof LibsReactWebComponentsCheckboxRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/carousel': {
+      id: '/libs/react-web/components/carousel'
+      path: '/components/carousel'
+      fullPath: '/libs/react-web/components/carousel'
+      preLoaderRoute: typeof LibsReactWebComponentsCarouselRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/card': {
+      id: '/libs/react-web/components/card'
+      path: '/components/card'
+      fullPath: '/libs/react-web/components/card'
+      preLoaderRoute: typeof LibsReactWebComponentsCardRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/calendar': {
+      id: '/libs/react-web/components/calendar'
+      path: '/components/calendar'
+      fullPath: '/libs/react-web/components/calendar'
+      preLoaderRoute: typeof LibsReactWebComponentsCalendarRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/button': {
+      id: '/libs/react-web/components/button'
+      path: '/components/button'
+      fullPath: '/libs/react-web/components/button'
+      preLoaderRoute: typeof LibsReactWebComponentsButtonRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/bulk-actions': {
+      id: '/libs/react-web/components/bulk-actions'
+      path: '/components/bulk-actions'
+      fullPath: '/libs/react-web/components/bulk-actions'
+      preLoaderRoute: typeof LibsReactWebComponentsBulkActionsRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/breadcrumb': {
+      id: '/libs/react-web/components/breadcrumb'
+      path: '/components/breadcrumb'
+      fullPath: '/libs/react-web/components/breadcrumb'
+      preLoaderRoute: typeof LibsReactWebComponentsBreadcrumbRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/box': {
+      id: '/libs/react-web/components/box'
+      path: '/components/box'
+      fullPath: '/libs/react-web/components/box'
+      preLoaderRoute: typeof LibsReactWebComponentsBoxRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/boolean-text': {
+      id: '/libs/react-web/components/boolean-text'
+      path: '/components/boolean-text'
+      fullPath: '/libs/react-web/components/boolean-text'
+      preLoaderRoute: typeof LibsReactWebComponentsBooleanTextRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/board': {
+      id: '/libs/react-web/components/board'
+      path: '/components/board'
+      fullPath: '/libs/react-web/components/board'
+      preLoaderRoute: typeof LibsReactWebComponentsBoardRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/badge': {
+      id: '/libs/react-web/components/badge'
+      path: '/components/badge'
+      fullPath: '/libs/react-web/components/badge'
+      preLoaderRoute: typeof LibsReactWebComponentsBadgeRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/avatar': {
+      id: '/libs/react-web/components/avatar'
+      path: '/components/avatar'
+      fullPath: '/libs/react-web/components/avatar'
+      preLoaderRoute: typeof LibsReactWebComponentsAvatarRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/anchor-nav': {
+      id: '/libs/react-web/components/anchor-nav'
+      path: '/components/anchor-nav'
+      fullPath: '/libs/react-web/components/anchor-nav'
+      preLoaderRoute: typeof LibsReactWebComponentsAnchorNavRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/alert': {
+      id: '/libs/react-web/components/alert'
+      path: '/components/alert'
+      fullPath: '/libs/react-web/components/alert'
+      preLoaderRoute: typeof LibsReactWebComponentsAlertRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/accordion': {
+      id: '/libs/react-web/components/accordion'
+      path: '/components/accordion'
+      fullPath: '/libs/react-web/components/accordion'
+      preLoaderRoute: typeof LibsReactWebComponentsAccordionRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/$component': {
+      id: '/libs/react-web/components/$component'
       path: '/components/$component'
-      fullPath: '/libs/react-mobile/components/$component'
-      preLoaderRoute: typeof LibsReactMobileComponentsComponentRouteImport
-      parentRoute: typeof LibsReactMobileRoute
+      fullPath: '/libs/react-web/components/$component'
+      preLoaderRoute: typeof LibsReactWebComponentsComponentRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/audiences/landing-page': {
+      id: '/libs/react-web/audiences/landing-page'
+      path: '/audiences/landing-page'
+      fullPath: '/libs/react-web/audiences/landing-page'
+      preLoaderRoute: typeof LibsReactWebAudiencesLandingPageRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/audiences/checkout': {
+      id: '/libs/react-web/audiences/checkout'
+      path: '/audiences/checkout'
+      fullPath: '/libs/react-web/audiences/checkout'
+      preLoaderRoute: typeof LibsReactWebAudiencesCheckoutRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/audiences/backoffice': {
+      id: '/libs/react-web/audiences/backoffice'
+      path: '/audiences/backoffice'
+      fullPath: '/libs/react-web/audiences/backoffice'
+      preLoaderRoute: typeof LibsReactWebAudiencesBackofficeRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/audiences/b2c': {
+      id: '/libs/react-web/audiences/b2c'
+      path: '/audiences/b2c'
+      fullPath: '/libs/react-web/audiences/b2c'
+      preLoaderRoute: typeof LibsReactWebAudiencesB2cRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/audiences/b2b': {
+      id: '/libs/react-web/audiences/b2b'
+      path: '/audiences/b2b'
+      fullPath: '/libs/react-web/audiences/b2b'
+      preLoaderRoute: typeof LibsReactWebAudiencesB2bRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/audiences/auth': {
+      id: '/libs/react-web/audiences/auth'
+      path: '/audiences/auth'
+      fullPath: '/libs/react-web/audiences/auth'
+      preLoaderRoute: typeof LibsReactWebAudiencesAuthRouteImport
+      parentRoute: typeof LibsReactWebRoute
+    }
+    '/libs/react-web/components/loader': {
+      id: '/libs/react-web/components/loader'
+      path: '/components/loader'
+      fullPath: '/libs/react-web/components/loader'
+      preLoaderRoute: typeof LibsReactWebComponentsLoaderRouteRouteImport
+      parentRoute: typeof LibsReactWebRoute
     }
   }
 }
 
 interface MainRouteChildren {
-  MainIndexRoute: typeof MainIndexRoute
+  MainShowcaseRoute: typeof MainShowcaseRoute
 }
 
 const MainRouteChildren: MainRouteChildren = {
-  MainIndexRoute: MainIndexRoute,
+  MainShowcaseRoute: MainShowcaseRoute,
 }
 
 const MainRouteWithChildren = MainRoute._addFileChildren(MainRouteChildren)
@@ -3020,10 +6095,26 @@ const LibsBackendPatternRouteChildren: LibsBackendPatternRouteChildren = {
 const LibsBackendPatternRouteWithChildren =
   LibsBackendPatternRoute._addFileChildren(LibsBackendPatternRouteChildren)
 
+interface LibsBlueprintTemplateRouteChildren {
+  LibsBlueprintTemplateSectionRoute: typeof LibsBlueprintTemplateSectionRoute
+  LibsBlueprintTemplateBoardRoute: typeof LibsBlueprintTemplateBoardRoute
+  LibsBlueprintTemplateIndexRoute: typeof LibsBlueprintTemplateIndexRoute
+}
+
+const LibsBlueprintTemplateRouteChildren: LibsBlueprintTemplateRouteChildren = {
+  LibsBlueprintTemplateSectionRoute: LibsBlueprintTemplateSectionRoute,
+  LibsBlueprintTemplateBoardRoute: LibsBlueprintTemplateBoardRoute,
+  LibsBlueprintTemplateIndexRoute: LibsBlueprintTemplateIndexRoute,
+}
+
+const LibsBlueprintTemplateRouteWithChildren =
+  LibsBlueprintTemplateRoute._addFileChildren(
+    LibsBlueprintTemplateRouteChildren,
+  )
+
 interface LibsCliRouteChildren {
   LibsCliApiRoute: typeof LibsCliApiRoute
   LibsCliHandlerRoute: typeof LibsCliHandlerRoute
-  LibsCliMobileRoute: typeof LibsCliMobileRoute
   LibsCliMonorepoRoute: typeof LibsCliMonorepoRoute
   LibsCliWebRoute: typeof LibsCliWebRoute
   LibsCliIndexRoute: typeof LibsCliIndexRoute
@@ -3032,7 +6123,6 @@ interface LibsCliRouteChildren {
 const LibsCliRouteChildren: LibsCliRouteChildren = {
   LibsCliApiRoute: LibsCliApiRoute,
   LibsCliHandlerRoute: LibsCliHandlerRoute,
-  LibsCliMobileRoute: LibsCliMobileRoute,
   LibsCliMonorepoRoute: LibsCliMonorepoRoute,
   LibsCliWebRoute: LibsCliWebRoute,
   LibsCliIndexRoute: LibsCliIndexRoute,
@@ -3067,6 +6157,38 @@ const LibsExceptionsRouteChildren: LibsExceptionsRouteChildren = {
 
 const LibsExceptionsRouteWithChildren = LibsExceptionsRoute._addFileChildren(
   LibsExceptionsRouteChildren,
+)
+
+interface LibsFieldsRouteChildren {
+  LibsFieldsBooleansRoute: typeof LibsFieldsBooleansRoute
+  LibsFieldsBrazilRoute: typeof LibsFieldsBrazilRoute
+  LibsFieldsCollectionsRoute: typeof LibsFieldsCollectionsRoute
+  LibsFieldsCrossFieldRoute: typeof LibsFieldsCrossFieldRoute
+  LibsFieldsDatesRoute: typeof LibsFieldsDatesRoute
+  LibsFieldsErrorCodesRoute: typeof LibsFieldsErrorCodesRoute
+  LibsFieldsFilesRoute: typeof LibsFieldsFilesRoute
+  LibsFieldsIdentityRoute: typeof LibsFieldsIdentityRoute
+  LibsFieldsNumbersRoute: typeof LibsFieldsNumbersRoute
+  LibsFieldsTextRoute: typeof LibsFieldsTextRoute
+  LibsFieldsIndexRoute: typeof LibsFieldsIndexRoute
+}
+
+const LibsFieldsRouteChildren: LibsFieldsRouteChildren = {
+  LibsFieldsBooleansRoute: LibsFieldsBooleansRoute,
+  LibsFieldsBrazilRoute: LibsFieldsBrazilRoute,
+  LibsFieldsCollectionsRoute: LibsFieldsCollectionsRoute,
+  LibsFieldsCrossFieldRoute: LibsFieldsCrossFieldRoute,
+  LibsFieldsDatesRoute: LibsFieldsDatesRoute,
+  LibsFieldsErrorCodesRoute: LibsFieldsErrorCodesRoute,
+  LibsFieldsFilesRoute: LibsFieldsFilesRoute,
+  LibsFieldsIdentityRoute: LibsFieldsIdentityRoute,
+  LibsFieldsNumbersRoute: LibsFieldsNumbersRoute,
+  LibsFieldsTextRoute: LibsFieldsTextRoute,
+  LibsFieldsIndexRoute: LibsFieldsIndexRoute,
+}
+
+const LibsFieldsRouteWithChildren = LibsFieldsRoute._addFileChildren(
+  LibsFieldsRouteChildren,
 )
 
 interface LibsFrontendConfigRouteChildren {
@@ -3114,6 +6236,36 @@ const LibsFrontendPrimitivesPatternRouteWithChildren =
   LibsFrontendPrimitivesPatternRoute._addFileChildren(
     LibsFrontendPrimitivesPatternRouteChildren,
   )
+
+interface LibsHarnessRouteChildren {
+  LibsHarnessSectionRoute: typeof LibsHarnessSectionRoute
+  LibsHarnessFlowRoute: typeof LibsHarnessFlowRoute
+  LibsHarnessIndexRoute: typeof LibsHarnessIndexRoute
+}
+
+const LibsHarnessRouteChildren: LibsHarnessRouteChildren = {
+  LibsHarnessSectionRoute: LibsHarnessSectionRoute,
+  LibsHarnessFlowRoute: LibsHarnessFlowRoute,
+  LibsHarnessIndexRoute: LibsHarnessIndexRoute,
+}
+
+const LibsHarnessRouteWithChildren = LibsHarnessRoute._addFileChildren(
+  LibsHarnessRouteChildren,
+)
+
+interface LibsModelingRouteChildren {
+  LibsModelingSectionRoute: typeof LibsModelingSectionRoute
+  LibsModelingIndexRoute: typeof LibsModelingIndexRoute
+}
+
+const LibsModelingRouteChildren: LibsModelingRouteChildren = {
+  LibsModelingSectionRoute: LibsModelingSectionRoute,
+  LibsModelingIndexRoute: LibsModelingIndexRoute,
+}
+
+const LibsModelingRouteWithChildren = LibsModelingRoute._addFileChildren(
+  LibsModelingRouteChildren,
+)
 
 interface LibsNestjsCacheRouteChildren {
   LibsNestjsCacheCacheDelRoute: typeof LibsNestjsCacheCacheDelRoute
@@ -3173,6 +6325,8 @@ interface LibsNestjsDatabaseRouteChildren {
   LibsNestjsDatabaseAuditRoute: typeof LibsNestjsDatabaseAuditRoute
   LibsNestjsDatabaseDatabaseModuleRoute: typeof LibsNestjsDatabaseDatabaseModuleRoute
   LibsNestjsDatabaseDatabaseServiceRoute: typeof LibsNestjsDatabaseDatabaseServiceRoute
+  LibsNestjsDatabaseDynamodbRoute: typeof LibsNestjsDatabaseDynamodbRoute
+  LibsNestjsDatabasePostgresqlRoute: typeof LibsNestjsDatabasePostgresqlRoute
   LibsNestjsDatabaseSchemaDefinitionRoute: typeof LibsNestjsDatabaseSchemaDefinitionRoute
   LibsNestjsDatabaseTransactionHooksRoute: typeof LibsNestjsDatabaseTransactionHooksRoute
   LibsNestjsDatabaseTransactionalRoute: typeof LibsNestjsDatabaseTransactionalRoute
@@ -3185,6 +6339,8 @@ const LibsNestjsDatabaseRouteChildren: LibsNestjsDatabaseRouteChildren = {
   LibsNestjsDatabaseDatabaseModuleRoute: LibsNestjsDatabaseDatabaseModuleRoute,
   LibsNestjsDatabaseDatabaseServiceRoute:
     LibsNestjsDatabaseDatabaseServiceRoute,
+  LibsNestjsDatabaseDynamodbRoute: LibsNestjsDatabaseDynamodbRoute,
+  LibsNestjsDatabasePostgresqlRoute: LibsNestjsDatabasePostgresqlRoute,
   LibsNestjsDatabaseSchemaDefinitionRoute:
     LibsNestjsDatabaseSchemaDefinitionRoute,
   LibsNestjsDatabaseTransactionHooksRoute:
@@ -3196,6 +6352,29 @@ const LibsNestjsDatabaseRouteChildren: LibsNestjsDatabaseRouteChildren = {
 
 const LibsNestjsDatabaseRouteWithChildren =
   LibsNestjsDatabaseRoute._addFileChildren(LibsNestjsDatabaseRouteChildren)
+
+interface LibsNestjsEventsRouteChildren {
+  LibsNestjsEventsContractsRoute: typeof LibsNestjsEventsContractsRoute
+  LibsNestjsEventsHandlerDecoratorRoute: typeof LibsNestjsEventsHandlerDecoratorRoute
+  LibsNestjsEventsInfraRoute: typeof LibsNestjsEventsInfraRoute
+  LibsNestjsEventsPublisherRoute: typeof LibsNestjsEventsPublisherRoute
+  LibsNestjsEventsServerlessCreateRoute: typeof LibsNestjsEventsServerlessCreateRoute
+  LibsNestjsEventsWorkersModuleRoute: typeof LibsNestjsEventsWorkersModuleRoute
+  LibsNestjsEventsIndexRoute: typeof LibsNestjsEventsIndexRoute
+}
+
+const LibsNestjsEventsRouteChildren: LibsNestjsEventsRouteChildren = {
+  LibsNestjsEventsContractsRoute: LibsNestjsEventsContractsRoute,
+  LibsNestjsEventsHandlerDecoratorRoute: LibsNestjsEventsHandlerDecoratorRoute,
+  LibsNestjsEventsInfraRoute: LibsNestjsEventsInfraRoute,
+  LibsNestjsEventsPublisherRoute: LibsNestjsEventsPublisherRoute,
+  LibsNestjsEventsServerlessCreateRoute: LibsNestjsEventsServerlessCreateRoute,
+  LibsNestjsEventsWorkersModuleRoute: LibsNestjsEventsWorkersModuleRoute,
+  LibsNestjsEventsIndexRoute: LibsNestjsEventsIndexRoute,
+}
+
+const LibsNestjsEventsRouteWithChildren =
+  LibsNestjsEventsRoute._addFileChildren(LibsNestjsEventsRouteChildren)
 
 interface LibsNestjsIamRouteChildren {
   LibsNestjsIamAclDecoratorRoute: typeof LibsNestjsIamAclDecoratorRoute
@@ -3302,28 +6481,6 @@ const LibsNestjsObservabilityRouteWithChildren =
     LibsNestjsObservabilityRouteChildren,
   )
 
-interface LibsNestjsPublisherRouteChildren {
-  LibsNestjsPublisherOutboxRoute: typeof LibsNestjsPublisherOutboxRoute
-  LibsNestjsPublisherPublisherModuleRoute: typeof LibsNestjsPublisherPublisherModuleRoute
-  LibsNestjsPublisherPublisherServiceRoute: typeof LibsNestjsPublisherPublisherServiceRoute
-  LibsNestjsPublisherSubscriberDecoratorRoute: typeof LibsNestjsPublisherSubscriberDecoratorRoute
-  LibsNestjsPublisherIndexRoute: typeof LibsNestjsPublisherIndexRoute
-}
-
-const LibsNestjsPublisherRouteChildren: LibsNestjsPublisherRouteChildren = {
-  LibsNestjsPublisherOutboxRoute: LibsNestjsPublisherOutboxRoute,
-  LibsNestjsPublisherPublisherModuleRoute:
-    LibsNestjsPublisherPublisherModuleRoute,
-  LibsNestjsPublisherPublisherServiceRoute:
-    LibsNestjsPublisherPublisherServiceRoute,
-  LibsNestjsPublisherSubscriberDecoratorRoute:
-    LibsNestjsPublisherSubscriberDecoratorRoute,
-  LibsNestjsPublisherIndexRoute: LibsNestjsPublisherIndexRoute,
-}
-
-const LibsNestjsPublisherRouteWithChildren =
-  LibsNestjsPublisherRoute._addFileChildren(LibsNestjsPublisherRouteChildren)
-
 interface LibsNestjsRateLimitRouteChildren {
   LibsNestjsRateLimitRateLimitDecoratorRoute: typeof LibsNestjsRateLimitRateLimitDecoratorRoute
   LibsNestjsRateLimitRateLimitModuleRoute: typeof LibsNestjsRateLimitRateLimitModuleRoute
@@ -3362,23 +6519,6 @@ const LibsNestjsResilienceRouteChildren: LibsNestjsResilienceRouteChildren = {
 const LibsNestjsResilienceRouteWithChildren =
   LibsNestjsResilienceRoute._addFileChildren(LibsNestjsResilienceRouteChildren)
 
-interface LibsNestjsSchedulerRouteChildren {
-  LibsNestjsSchedulerScheduleDecoratorRoute: typeof LibsNestjsSchedulerScheduleDecoratorRoute
-  LibsNestjsSchedulerSchedulerModuleRoute: typeof LibsNestjsSchedulerSchedulerModuleRoute
-  LibsNestjsSchedulerIndexRoute: typeof LibsNestjsSchedulerIndexRoute
-}
-
-const LibsNestjsSchedulerRouteChildren: LibsNestjsSchedulerRouteChildren = {
-  LibsNestjsSchedulerScheduleDecoratorRoute:
-    LibsNestjsSchedulerScheduleDecoratorRoute,
-  LibsNestjsSchedulerSchedulerModuleRoute:
-    LibsNestjsSchedulerSchedulerModuleRoute,
-  LibsNestjsSchedulerIndexRoute: LibsNestjsSchedulerIndexRoute,
-}
-
-const LibsNestjsSchedulerRouteWithChildren =
-  LibsNestjsSchedulerRoute._addFileChildren(LibsNestjsSchedulerRouteChildren)
-
 interface LibsNestjsServerRouteChildren {
   LibsNestjsServerControllerDecoratorRoute: typeof LibsNestjsServerControllerDecoratorRoute
   LibsNestjsServerRequestDecoratorRoute: typeof LibsNestjsServerRequestDecoratorRoute
@@ -3398,26 +6538,6 @@ const LibsNestjsServerRouteChildren: LibsNestjsServerRouteChildren = {
 
 const LibsNestjsServerRouteWithChildren =
   LibsNestjsServerRoute._addFileChildren(LibsNestjsServerRouteChildren)
-
-interface LibsNestjsServerlessRouteChildren {
-  LibsNestjsServerlessHandlerDecoratorRoute: typeof LibsNestjsServerlessHandlerDecoratorRoute
-  LibsNestjsServerlessServerlessCreateRoute: typeof LibsNestjsServerlessServerlessCreateRoute
-  LibsNestjsServerlessServerlessModuleRoute: typeof LibsNestjsServerlessServerlessModuleRoute
-  LibsNestjsServerlessIndexRoute: typeof LibsNestjsServerlessIndexRoute
-}
-
-const LibsNestjsServerlessRouteChildren: LibsNestjsServerlessRouteChildren = {
-  LibsNestjsServerlessHandlerDecoratorRoute:
-    LibsNestjsServerlessHandlerDecoratorRoute,
-  LibsNestjsServerlessServerlessCreateRoute:
-    LibsNestjsServerlessServerlessCreateRoute,
-  LibsNestjsServerlessServerlessModuleRoute:
-    LibsNestjsServerlessServerlessModuleRoute,
-  LibsNestjsServerlessIndexRoute: LibsNestjsServerlessIndexRoute,
-}
-
-const LibsNestjsServerlessRouteWithChildren =
-  LibsNestjsServerlessRoute._addFileChildren(LibsNestjsServerlessRouteChildren)
 
 interface LibsNestjsSocialAuthRouteChildren {
   LibsNestjsSocialAuthSocialAuthModuleRoute: typeof LibsNestjsSocialAuthSocialAuthModuleRoute
@@ -3451,6 +6571,38 @@ const LibsNestjsStorageRouteChildren: LibsNestjsStorageRouteChildren = {
 const LibsNestjsStorageRouteWithChildren =
   LibsNestjsStorageRoute._addFileChildren(LibsNestjsStorageRouteChildren)
 
+interface LibsOpenapiSdkRouteChildren {
+  LibsOpenapiSdkClientRoute: typeof LibsOpenapiSdkClientRoute
+  LibsOpenapiSdkConfigRoute: typeof LibsOpenapiSdkConfigRoute
+  LibsOpenapiSdkNamingRoute: typeof LibsOpenapiSdkNamingRoute
+  LibsOpenapiSdkIndexRoute: typeof LibsOpenapiSdkIndexRoute
+}
+
+const LibsOpenapiSdkRouteChildren: LibsOpenapiSdkRouteChildren = {
+  LibsOpenapiSdkClientRoute: LibsOpenapiSdkClientRoute,
+  LibsOpenapiSdkConfigRoute: LibsOpenapiSdkConfigRoute,
+  LibsOpenapiSdkNamingRoute: LibsOpenapiSdkNamingRoute,
+  LibsOpenapiSdkIndexRoute: LibsOpenapiSdkIndexRoute,
+}
+
+const LibsOpenapiSdkRouteWithChildren = LibsOpenapiSdkRoute._addFileChildren(
+  LibsOpenapiSdkRouteChildren,
+)
+
+interface LibsProofModeRouteChildren {
+  LibsProofModeSectionRoute: typeof LibsProofModeSectionRoute
+  LibsProofModeIndexRoute: typeof LibsProofModeIndexRoute
+}
+
+const LibsProofModeRouteChildren: LibsProofModeRouteChildren = {
+  LibsProofModeSectionRoute: LibsProofModeSectionRoute,
+  LibsProofModeIndexRoute: LibsProofModeIndexRoute,
+}
+
+const LibsProofModeRouteWithChildren = LibsProofModeRoute._addFileChildren(
+  LibsProofModeRouteChildren,
+)
+
 interface LibsQueryDslRouteChildren {
   LibsQueryDslBooleanSchemaRoute: typeof LibsQueryDslBooleanSchemaRoute
   LibsQueryDslDateRangeSchemaRoute: typeof LibsQueryDslDateRangeSchemaRoute
@@ -3477,6 +6629,22 @@ const LibsQueryDslRouteWithChildren = LibsQueryDslRoute._addFileChildren(
   LibsQueryDslRouteChildren,
 )
 
+interface LibsReactChartsRouteChildren {
+  LibsReactChartsChartRoute: typeof LibsReactChartsChartRoute
+  LibsReactChartsSparklineRoute: typeof LibsReactChartsSparklineRoute
+  LibsReactChartsIndexRoute: typeof LibsReactChartsIndexRoute
+}
+
+const LibsReactChartsRouteChildren: LibsReactChartsRouteChildren = {
+  LibsReactChartsChartRoute: LibsReactChartsChartRoute,
+  LibsReactChartsSparklineRoute: LibsReactChartsSparklineRoute,
+  LibsReactChartsIndexRoute: LibsReactChartsIndexRoute,
+}
+
+const LibsReactChartsRouteWithChildren = LibsReactChartsRoute._addFileChildren(
+  LibsReactChartsRouteChildren,
+)
+
 interface LibsReactHooksRouteChildren {
   LibsReactHooksHookRoute: typeof LibsReactHooksHookRoute
   LibsReactHooksIndexRoute: typeof LibsReactHooksIndexRoute
@@ -3489,6 +6657,26 @@ const LibsReactHooksRouteChildren: LibsReactHooksRouteChildren = {
 
 const LibsReactHooksRouteWithChildren = LibsReactHooksRoute._addFileChildren(
   LibsReactHooksRouteChildren,
+)
+
+interface LibsReactI18nRouteChildren {
+  LibsReactI18nApiRoute: typeof LibsReactI18nApiRoute
+  LibsReactI18nDictionaryRoute: typeof LibsReactI18nDictionaryRoute
+  LibsReactI18nProviderRoute: typeof LibsReactI18nProviderRoute
+  LibsReactI18nUiLabelsRoute: typeof LibsReactI18nUiLabelsRoute
+  LibsReactI18nIndexRoute: typeof LibsReactI18nIndexRoute
+}
+
+const LibsReactI18nRouteChildren: LibsReactI18nRouteChildren = {
+  LibsReactI18nApiRoute: LibsReactI18nApiRoute,
+  LibsReactI18nDictionaryRoute: LibsReactI18nDictionaryRoute,
+  LibsReactI18nProviderRoute: LibsReactI18nProviderRoute,
+  LibsReactI18nUiLabelsRoute: LibsReactI18nUiLabelsRoute,
+  LibsReactI18nIndexRoute: LibsReactI18nIndexRoute,
+}
+
+const LibsReactI18nRouteWithChildren = LibsReactI18nRoute._addFileChildren(
+  LibsReactI18nRouteChildren,
 )
 
 interface LibsReactIconsRouteChildren {
@@ -3505,31 +6693,286 @@ const LibsReactIconsRouteWithChildren = LibsReactIconsRoute._addFileChildren(
   LibsReactIconsRouteChildren,
 )
 
-interface LibsReactMobileRouteChildren {
-  LibsReactMobileIndexRoute: typeof LibsReactMobileIndexRoute
-  LibsReactMobileComponentsComponentRoute: typeof LibsReactMobileComponentsComponentRoute
-  LibsReactMobileComponentsIndexRoute: typeof LibsReactMobileComponentsIndexRoute
-}
-
-const LibsReactMobileRouteChildren: LibsReactMobileRouteChildren = {
-  LibsReactMobileIndexRoute: LibsReactMobileIndexRoute,
-  LibsReactMobileComponentsComponentRoute:
-    LibsReactMobileComponentsComponentRoute,
-  LibsReactMobileComponentsIndexRoute: LibsReactMobileComponentsIndexRoute,
-}
-
-const LibsReactMobileRouteWithChildren = LibsReactMobileRoute._addFileChildren(
-  LibsReactMobileRouteChildren,
-)
-
 interface LibsReactWebRouteChildren {
-  LibsReactWebPlaygroundRoute: typeof LibsReactWebPlaygroundRoute
   LibsReactWebIndexRoute: typeof LibsReactWebIndexRoute
+  LibsReactWebComponentsLoaderRouteRoute: typeof LibsReactWebComponentsLoaderRouteRoute
+  LibsReactWebAudiencesAuthRoute: typeof LibsReactWebAudiencesAuthRoute
+  LibsReactWebAudiencesB2bRoute: typeof LibsReactWebAudiencesB2bRoute
+  LibsReactWebAudiencesB2cRoute: typeof LibsReactWebAudiencesB2cRoute
+  LibsReactWebAudiencesBackofficeRoute: typeof LibsReactWebAudiencesBackofficeRoute
+  LibsReactWebAudiencesCheckoutRoute: typeof LibsReactWebAudiencesCheckoutRoute
+  LibsReactWebAudiencesLandingPageRoute: typeof LibsReactWebAudiencesLandingPageRoute
+  LibsReactWebComponentsComponentRoute: typeof LibsReactWebComponentsComponentRoute
+  LibsReactWebComponentsAccordionRoute: typeof LibsReactWebComponentsAccordionRoute
+  LibsReactWebComponentsAlertRoute: typeof LibsReactWebComponentsAlertRoute
+  LibsReactWebComponentsAnchorNavRoute: typeof LibsReactWebComponentsAnchorNavRoute
+  LibsReactWebComponentsAvatarRoute: typeof LibsReactWebComponentsAvatarRoute
+  LibsReactWebComponentsBadgeRoute: typeof LibsReactWebComponentsBadgeRoute
+  LibsReactWebComponentsBoardRoute: typeof LibsReactWebComponentsBoardRoute
+  LibsReactWebComponentsBooleanTextRoute: typeof LibsReactWebComponentsBooleanTextRoute
+  LibsReactWebComponentsBoxRoute: typeof LibsReactWebComponentsBoxRoute
+  LibsReactWebComponentsBreadcrumbRoute: typeof LibsReactWebComponentsBreadcrumbRoute
+  LibsReactWebComponentsBulkActionsRoute: typeof LibsReactWebComponentsBulkActionsRoute
+  LibsReactWebComponentsButtonRoute: typeof LibsReactWebComponentsButtonRoute
+  LibsReactWebComponentsCalendarRoute: typeof LibsReactWebComponentsCalendarRoute
+  LibsReactWebComponentsCardRoute: typeof LibsReactWebComponentsCardRoute
+  LibsReactWebComponentsCarouselRoute: typeof LibsReactWebComponentsCarouselRoute
+  LibsReactWebComponentsCheckboxRoute: typeof LibsReactWebComponentsCheckboxRoute
+  LibsReactWebComponentsChecklistRoute: typeof LibsReactWebComponentsChecklistRoute
+  LibsReactWebComponentsCodeBlockRoute: typeof LibsReactWebComponentsCodeBlockRoute
+  LibsReactWebComponentsCollapsibleRoute: typeof LibsReactWebComponentsCollapsibleRoute
+  LibsReactWebComponentsColorPickerRoute: typeof LibsReactWebComponentsColorPickerRoute
+  LibsReactWebComponentsColorSchemeProviderRoute: typeof LibsReactWebComponentsColorSchemeProviderRoute
+  LibsReactWebComponentsColorSchemeSwitcherRoute: typeof LibsReactWebComponentsColorSchemeSwitcherRoute
+  LibsReactWebComponentsConfirmRoute: typeof LibsReactWebComponentsConfirmRoute
+  LibsReactWebComponentsContainerRoute: typeof LibsReactWebComponentsContainerRoute
+  LibsReactWebComponentsCopyButtonRoute: typeof LibsReactWebComponentsCopyButtonRoute
+  LibsReactWebComponentsCurrencyInputRoute: typeof LibsReactWebComponentsCurrencyInputRoute
+  LibsReactWebComponentsDataTransferExportRoute: typeof LibsReactWebComponentsDataTransferExportRoute
+  LibsReactWebComponentsDataTransferImportRoute: typeof LibsReactWebComponentsDataTransferImportRoute
+  LibsReactWebComponentsDateInputRoute: typeof LibsReactWebComponentsDateInputRoute
+  LibsReactWebComponentsDateRangeInputRoute: typeof LibsReactWebComponentsDateRangeInputRoute
+  LibsReactWebComponentsDateTextRoute: typeof LibsReactWebComponentsDateTextRoute
+  LibsReactWebComponentsDateTimeInputRoute: typeof LibsReactWebComponentsDateTimeInputRoute
+  LibsReactWebComponentsDescriptionListRoute: typeof LibsReactWebComponentsDescriptionListRoute
+  LibsReactWebComponentsDocumentInputRoute: typeof LibsReactWebComponentsDocumentInputRoute
+  LibsReactWebComponentsDocumentTextRoute: typeof LibsReactWebComponentsDocumentTextRoute
+  LibsReactWebComponentsDropdownMenuRoute: typeof LibsReactWebComponentsDropdownMenuRoute
+  LibsReactWebComponentsDurationTextRoute: typeof LibsReactWebComponentsDurationTextRoute
+  LibsReactWebComponentsEditableTextRoute: typeof LibsReactWebComponentsEditableTextRoute
+  LibsReactWebComponentsEmptyStateRoute: typeof LibsReactWebComponentsEmptyStateRoute
+  LibsReactWebComponentsFileSizeTextRoute: typeof LibsReactWebComponentsFileSizeTextRoute
+  LibsReactWebComponentsFilterBarRoute: typeof LibsReactWebComponentsFilterBarRoute
+  LibsReactWebComponentsFilterChipRoute: typeof LibsReactWebComponentsFilterChipRoute
+  LibsReactWebComponentsFlexRoute: typeof LibsReactWebComponentsFlexRoute
+  LibsReactWebComponentsFormRoute: typeof LibsReactWebComponentsFormRoute
+  LibsReactWebComponentsFormatProviderRoute: typeof LibsReactWebComponentsFormatProviderRoute
+  LibsReactWebComponentsGridRoute: typeof LibsReactWebComponentsGridRoute
+  LibsReactWebComponentsIdentityRoute: typeof LibsReactWebComponentsIdentityRoute
+  LibsReactWebComponentsImageRoute: typeof LibsReactWebComponentsImageRoute
+  LibsReactWebComponentsIndicatorRoute: typeof LibsReactWebComponentsIndicatorRoute
+  LibsReactWebComponentsInputRoute: typeof LibsReactWebComponentsInputRoute
+  LibsReactWebComponentsLabelRoute: typeof LibsReactWebComponentsLabelRoute
+  LibsReactWebComponentsLabelsProviderRoute: typeof LibsReactWebComponentsLabelsProviderRoute
+  LibsReactWebComponentsLayoutRoute: typeof LibsReactWebComponentsLayoutRoute
+  LibsReactWebComponentsListRoute: typeof LibsReactWebComponentsListRoute
+  LibsReactWebComponentsLoadedRoute: typeof LibsReactWebComponentsLoadedRoute
+  LibsReactWebComponentsLoadingBarRoute: typeof LibsReactWebComponentsLoadingBarRoute
+  LibsReactWebComponentsLoadingOverlayRoute: typeof LibsReactWebComponentsLoadingOverlayRoute
+  LibsReactWebComponentsMaskInputRoute: typeof LibsReactWebComponentsMaskInputRoute
+  LibsReactWebComponentsModalRoute: typeof LibsReactWebComponentsModalRoute
+  LibsReactWebComponentsMoneyTextRoute: typeof LibsReactWebComponentsMoneyTextRoute
+  LibsReactWebComponentsNotificationCardRoute: typeof LibsReactWebComponentsNotificationCardRoute
+  LibsReactWebComponentsNotificationCenterRoute: typeof LibsReactWebComponentsNotificationCenterRoute
+  LibsReactWebComponentsNotificationFilterRoute: typeof LibsReactWebComponentsNotificationFilterRoute
+  LibsReactWebComponentsNotificationListRoute: typeof LibsReactWebComponentsNotificationListRoute
+  LibsReactWebComponentsNumberInputRoute: typeof LibsReactWebComponentsNumberInputRoute
+  LibsReactWebComponentsNumberTextRoute: typeof LibsReactWebComponentsNumberTextRoute
+  LibsReactWebComponentsOtpInputRoute: typeof LibsReactWebComponentsOtpInputRoute
+  LibsReactWebComponentsPageRoute: typeof LibsReactWebComponentsPageRoute
+  LibsReactWebComponentsPaginationRoute: typeof LibsReactWebComponentsPaginationRoute
+  LibsReactWebComponentsPasswordInputRoute: typeof LibsReactWebComponentsPasswordInputRoute
+  LibsReactWebComponentsPhoneInputRoute: typeof LibsReactWebComponentsPhoneInputRoute
+  LibsReactWebComponentsPhoneTextRoute: typeof LibsReactWebComponentsPhoneTextRoute
+  LibsReactWebComponentsPopconfirmRoute: typeof LibsReactWebComponentsPopconfirmRoute
+  LibsReactWebComponentsPopoverRoute: typeof LibsReactWebComponentsPopoverRoute
+  LibsReactWebComponentsPortalProviderRoute: typeof LibsReactWebComponentsPortalProviderRoute
+  LibsReactWebComponentsProgressRoute: typeof LibsReactWebComponentsProgressRoute
+  LibsReactWebComponentsProtectedRoute: typeof LibsReactWebComponentsProtectedRoute
+  LibsReactWebComponentsProtectedProviderRoute: typeof LibsReactWebComponentsProtectedProviderRoute
+  LibsReactWebComponentsQrCodeRoute: typeof LibsReactWebComponentsQrCodeRoute
+  LibsReactWebComponentsRadioRoute: typeof LibsReactWebComponentsRadioRoute
+  LibsReactWebComponentsRatingRoute: typeof LibsReactWebComponentsRatingRoute
+  LibsReactWebComponentsResizableRoute: typeof LibsReactWebComponentsResizableRoute
+  LibsReactWebComponentsScrollAreaRoute: typeof LibsReactWebComponentsScrollAreaRoute
+  LibsReactWebComponentsSearchRoute: typeof LibsReactWebComponentsSearchRoute
+  LibsReactWebComponentsSegmentedControlRoute: typeof LibsReactWebComponentsSegmentedControlRoute
+  LibsReactWebComponentsSelectRoute: typeof LibsReactWebComponentsSelectRoute
+  LibsReactWebComponentsSeparatorRoute: typeof LibsReactWebComponentsSeparatorRoute
+  LibsReactWebComponentsSheetRoute: typeof LibsReactWebComponentsSheetRoute
+  LibsReactWebComponentsSkeletonRoute: typeof LibsReactWebComponentsSkeletonRoute
+  LibsReactWebComponentsSliderRoute: typeof LibsReactWebComponentsSliderRoute
+  LibsReactWebComponentsSpotlightSearchRoute: typeof LibsReactWebComponentsSpotlightSearchRoute
+  LibsReactWebComponentsStatRoute: typeof LibsReactWebComponentsStatRoute
+  LibsReactWebComponentsStepperRoute: typeof LibsReactWebComponentsStepperRoute
+  LibsReactWebComponentsSwitchRoute: typeof LibsReactWebComponentsSwitchRoute
+  LibsReactWebComponentsTableRoute: typeof LibsReactWebComponentsTableRoute
+  LibsReactWebComponentsTabsRoute: typeof LibsReactWebComponentsTabsRoute
+  LibsReactWebComponentsTagRoute: typeof LibsReactWebComponentsTagRoute
+  LibsReactWebComponentsTagsInputRoute: typeof LibsReactWebComponentsTagsInputRoute
+  LibsReactWebComponentsTextareaRoute: typeof LibsReactWebComponentsTextareaRoute
+  LibsReactWebComponentsTimeInputRoute: typeof LibsReactWebComponentsTimeInputRoute
+  LibsReactWebComponentsTimelineRoute: typeof LibsReactWebComponentsTimelineRoute
+  LibsReactWebComponentsToastRoute: typeof LibsReactWebComponentsToastRoute
+  LibsReactWebComponentsToggleRoute: typeof LibsReactWebComponentsToggleRoute
+  LibsReactWebComponentsTooltipRoute: typeof LibsReactWebComponentsTooltipRoute
+  LibsReactWebComponentsTreeRoute: typeof LibsReactWebComponentsTreeRoute
+  LibsReactWebComponentsTruncatedTextRoute: typeof LibsReactWebComponentsTruncatedTextRoute
+  LibsReactWebComponentsTuryProviderRoute: typeof LibsReactWebComponentsTuryProviderRoute
+  LibsReactWebComponentsTypographyRoute: typeof LibsReactWebComponentsTypographyRoute
+  LibsReactWebComponentsUploaderRoute: typeof LibsReactWebComponentsUploaderRoute
+  LibsReactWebHooksHookRoute: typeof LibsReactWebHooksHookRoute
+  LibsReactWebAudiencesIndexRoute: typeof LibsReactWebAudiencesIndexRoute
+  LibsReactWebComponentsIndexRoute: typeof LibsReactWebComponentsIndexRoute
+  LibsReactWebHooksIndexRoute: typeof LibsReactWebHooksIndexRoute
 }
 
 const LibsReactWebRouteChildren: LibsReactWebRouteChildren = {
-  LibsReactWebPlaygroundRoute: LibsReactWebPlaygroundRoute,
   LibsReactWebIndexRoute: LibsReactWebIndexRoute,
+  LibsReactWebComponentsLoaderRouteRoute:
+    LibsReactWebComponentsLoaderRouteRoute,
+  LibsReactWebAudiencesAuthRoute: LibsReactWebAudiencesAuthRoute,
+  LibsReactWebAudiencesB2bRoute: LibsReactWebAudiencesB2bRoute,
+  LibsReactWebAudiencesB2cRoute: LibsReactWebAudiencesB2cRoute,
+  LibsReactWebAudiencesBackofficeRoute: LibsReactWebAudiencesBackofficeRoute,
+  LibsReactWebAudiencesCheckoutRoute: LibsReactWebAudiencesCheckoutRoute,
+  LibsReactWebAudiencesLandingPageRoute: LibsReactWebAudiencesLandingPageRoute,
+  LibsReactWebComponentsComponentRoute: LibsReactWebComponentsComponentRoute,
+  LibsReactWebComponentsAccordionRoute: LibsReactWebComponentsAccordionRoute,
+  LibsReactWebComponentsAlertRoute: LibsReactWebComponentsAlertRoute,
+  LibsReactWebComponentsAnchorNavRoute: LibsReactWebComponentsAnchorNavRoute,
+  LibsReactWebComponentsAvatarRoute: LibsReactWebComponentsAvatarRoute,
+  LibsReactWebComponentsBadgeRoute: LibsReactWebComponentsBadgeRoute,
+  LibsReactWebComponentsBoardRoute: LibsReactWebComponentsBoardRoute,
+  LibsReactWebComponentsBooleanTextRoute:
+    LibsReactWebComponentsBooleanTextRoute,
+  LibsReactWebComponentsBoxRoute: LibsReactWebComponentsBoxRoute,
+  LibsReactWebComponentsBreadcrumbRoute: LibsReactWebComponentsBreadcrumbRoute,
+  LibsReactWebComponentsBulkActionsRoute:
+    LibsReactWebComponentsBulkActionsRoute,
+  LibsReactWebComponentsButtonRoute: LibsReactWebComponentsButtonRoute,
+  LibsReactWebComponentsCalendarRoute: LibsReactWebComponentsCalendarRoute,
+  LibsReactWebComponentsCardRoute: LibsReactWebComponentsCardRoute,
+  LibsReactWebComponentsCarouselRoute: LibsReactWebComponentsCarouselRoute,
+  LibsReactWebComponentsCheckboxRoute: LibsReactWebComponentsCheckboxRoute,
+  LibsReactWebComponentsChecklistRoute: LibsReactWebComponentsChecklistRoute,
+  LibsReactWebComponentsCodeBlockRoute: LibsReactWebComponentsCodeBlockRoute,
+  LibsReactWebComponentsCollapsibleRoute:
+    LibsReactWebComponentsCollapsibleRoute,
+  LibsReactWebComponentsColorPickerRoute:
+    LibsReactWebComponentsColorPickerRoute,
+  LibsReactWebComponentsColorSchemeProviderRoute:
+    LibsReactWebComponentsColorSchemeProviderRoute,
+  LibsReactWebComponentsColorSchemeSwitcherRoute:
+    LibsReactWebComponentsColorSchemeSwitcherRoute,
+  LibsReactWebComponentsConfirmRoute: LibsReactWebComponentsConfirmRoute,
+  LibsReactWebComponentsContainerRoute: LibsReactWebComponentsContainerRoute,
+  LibsReactWebComponentsCopyButtonRoute: LibsReactWebComponentsCopyButtonRoute,
+  LibsReactWebComponentsCurrencyInputRoute:
+    LibsReactWebComponentsCurrencyInputRoute,
+  LibsReactWebComponentsDataTransferExportRoute:
+    LibsReactWebComponentsDataTransferExportRoute,
+  LibsReactWebComponentsDataTransferImportRoute:
+    LibsReactWebComponentsDataTransferImportRoute,
+  LibsReactWebComponentsDateInputRoute: LibsReactWebComponentsDateInputRoute,
+  LibsReactWebComponentsDateRangeInputRoute:
+    LibsReactWebComponentsDateRangeInputRoute,
+  LibsReactWebComponentsDateTextRoute: LibsReactWebComponentsDateTextRoute,
+  LibsReactWebComponentsDateTimeInputRoute:
+    LibsReactWebComponentsDateTimeInputRoute,
+  LibsReactWebComponentsDescriptionListRoute:
+    LibsReactWebComponentsDescriptionListRoute,
+  LibsReactWebComponentsDocumentInputRoute:
+    LibsReactWebComponentsDocumentInputRoute,
+  LibsReactWebComponentsDocumentTextRoute:
+    LibsReactWebComponentsDocumentTextRoute,
+  LibsReactWebComponentsDropdownMenuRoute:
+    LibsReactWebComponentsDropdownMenuRoute,
+  LibsReactWebComponentsDurationTextRoute:
+    LibsReactWebComponentsDurationTextRoute,
+  LibsReactWebComponentsEditableTextRoute:
+    LibsReactWebComponentsEditableTextRoute,
+  LibsReactWebComponentsEmptyStateRoute: LibsReactWebComponentsEmptyStateRoute,
+  LibsReactWebComponentsFileSizeTextRoute:
+    LibsReactWebComponentsFileSizeTextRoute,
+  LibsReactWebComponentsFilterBarRoute: LibsReactWebComponentsFilterBarRoute,
+  LibsReactWebComponentsFilterChipRoute: LibsReactWebComponentsFilterChipRoute,
+  LibsReactWebComponentsFlexRoute: LibsReactWebComponentsFlexRoute,
+  LibsReactWebComponentsFormRoute: LibsReactWebComponentsFormRoute,
+  LibsReactWebComponentsFormatProviderRoute:
+    LibsReactWebComponentsFormatProviderRoute,
+  LibsReactWebComponentsGridRoute: LibsReactWebComponentsGridRoute,
+  LibsReactWebComponentsIdentityRoute: LibsReactWebComponentsIdentityRoute,
+  LibsReactWebComponentsImageRoute: LibsReactWebComponentsImageRoute,
+  LibsReactWebComponentsIndicatorRoute: LibsReactWebComponentsIndicatorRoute,
+  LibsReactWebComponentsInputRoute: LibsReactWebComponentsInputRoute,
+  LibsReactWebComponentsLabelRoute: LibsReactWebComponentsLabelRoute,
+  LibsReactWebComponentsLabelsProviderRoute:
+    LibsReactWebComponentsLabelsProviderRoute,
+  LibsReactWebComponentsLayoutRoute: LibsReactWebComponentsLayoutRoute,
+  LibsReactWebComponentsListRoute: LibsReactWebComponentsListRoute,
+  LibsReactWebComponentsLoadedRoute: LibsReactWebComponentsLoadedRoute,
+  LibsReactWebComponentsLoadingBarRoute: LibsReactWebComponentsLoadingBarRoute,
+  LibsReactWebComponentsLoadingOverlayRoute:
+    LibsReactWebComponentsLoadingOverlayRoute,
+  LibsReactWebComponentsMaskInputRoute: LibsReactWebComponentsMaskInputRoute,
+  LibsReactWebComponentsModalRoute: LibsReactWebComponentsModalRoute,
+  LibsReactWebComponentsMoneyTextRoute: LibsReactWebComponentsMoneyTextRoute,
+  LibsReactWebComponentsNotificationCardRoute:
+    LibsReactWebComponentsNotificationCardRoute,
+  LibsReactWebComponentsNotificationCenterRoute:
+    LibsReactWebComponentsNotificationCenterRoute,
+  LibsReactWebComponentsNotificationFilterRoute:
+    LibsReactWebComponentsNotificationFilterRoute,
+  LibsReactWebComponentsNotificationListRoute:
+    LibsReactWebComponentsNotificationListRoute,
+  LibsReactWebComponentsNumberInputRoute:
+    LibsReactWebComponentsNumberInputRoute,
+  LibsReactWebComponentsNumberTextRoute: LibsReactWebComponentsNumberTextRoute,
+  LibsReactWebComponentsOtpInputRoute: LibsReactWebComponentsOtpInputRoute,
+  LibsReactWebComponentsPageRoute: LibsReactWebComponentsPageRoute,
+  LibsReactWebComponentsPaginationRoute: LibsReactWebComponentsPaginationRoute,
+  LibsReactWebComponentsPasswordInputRoute:
+    LibsReactWebComponentsPasswordInputRoute,
+  LibsReactWebComponentsPhoneInputRoute: LibsReactWebComponentsPhoneInputRoute,
+  LibsReactWebComponentsPhoneTextRoute: LibsReactWebComponentsPhoneTextRoute,
+  LibsReactWebComponentsPopconfirmRoute: LibsReactWebComponentsPopconfirmRoute,
+  LibsReactWebComponentsPopoverRoute: LibsReactWebComponentsPopoverRoute,
+  LibsReactWebComponentsPortalProviderRoute:
+    LibsReactWebComponentsPortalProviderRoute,
+  LibsReactWebComponentsProgressRoute: LibsReactWebComponentsProgressRoute,
+  LibsReactWebComponentsProtectedRoute: LibsReactWebComponentsProtectedRoute,
+  LibsReactWebComponentsProtectedProviderRoute:
+    LibsReactWebComponentsProtectedProviderRoute,
+  LibsReactWebComponentsQrCodeRoute: LibsReactWebComponentsQrCodeRoute,
+  LibsReactWebComponentsRadioRoute: LibsReactWebComponentsRadioRoute,
+  LibsReactWebComponentsRatingRoute: LibsReactWebComponentsRatingRoute,
+  LibsReactWebComponentsResizableRoute: LibsReactWebComponentsResizableRoute,
+  LibsReactWebComponentsScrollAreaRoute: LibsReactWebComponentsScrollAreaRoute,
+  LibsReactWebComponentsSearchRoute: LibsReactWebComponentsSearchRoute,
+  LibsReactWebComponentsSegmentedControlRoute:
+    LibsReactWebComponentsSegmentedControlRoute,
+  LibsReactWebComponentsSelectRoute: LibsReactWebComponentsSelectRoute,
+  LibsReactWebComponentsSeparatorRoute: LibsReactWebComponentsSeparatorRoute,
+  LibsReactWebComponentsSheetRoute: LibsReactWebComponentsSheetRoute,
+  LibsReactWebComponentsSkeletonRoute: LibsReactWebComponentsSkeletonRoute,
+  LibsReactWebComponentsSliderRoute: LibsReactWebComponentsSliderRoute,
+  LibsReactWebComponentsSpotlightSearchRoute:
+    LibsReactWebComponentsSpotlightSearchRoute,
+  LibsReactWebComponentsStatRoute: LibsReactWebComponentsStatRoute,
+  LibsReactWebComponentsStepperRoute: LibsReactWebComponentsStepperRoute,
+  LibsReactWebComponentsSwitchRoute: LibsReactWebComponentsSwitchRoute,
+  LibsReactWebComponentsTableRoute: LibsReactWebComponentsTableRoute,
+  LibsReactWebComponentsTabsRoute: LibsReactWebComponentsTabsRoute,
+  LibsReactWebComponentsTagRoute: LibsReactWebComponentsTagRoute,
+  LibsReactWebComponentsTagsInputRoute: LibsReactWebComponentsTagsInputRoute,
+  LibsReactWebComponentsTextareaRoute: LibsReactWebComponentsTextareaRoute,
+  LibsReactWebComponentsTimeInputRoute: LibsReactWebComponentsTimeInputRoute,
+  LibsReactWebComponentsTimelineRoute: LibsReactWebComponentsTimelineRoute,
+  LibsReactWebComponentsToastRoute: LibsReactWebComponentsToastRoute,
+  LibsReactWebComponentsToggleRoute: LibsReactWebComponentsToggleRoute,
+  LibsReactWebComponentsTooltipRoute: LibsReactWebComponentsTooltipRoute,
+  LibsReactWebComponentsTreeRoute: LibsReactWebComponentsTreeRoute,
+  LibsReactWebComponentsTruncatedTextRoute:
+    LibsReactWebComponentsTruncatedTextRoute,
+  LibsReactWebComponentsTuryProviderRoute:
+    LibsReactWebComponentsTuryProviderRoute,
+  LibsReactWebComponentsTypographyRoute: LibsReactWebComponentsTypographyRoute,
+  LibsReactWebComponentsUploaderRoute: LibsReactWebComponentsUploaderRoute,
+  LibsReactWebHooksHookRoute: LibsReactWebHooksHookRoute,
+  LibsReactWebAudiencesIndexRoute: LibsReactWebAudiencesIndexRoute,
+  LibsReactWebComponentsIndexRoute: LibsReactWebComponentsIndexRoute,
+  LibsReactWebHooksIndexRoute: LibsReactWebHooksIndexRoute,
 }
 
 const LibsReactWebRouteWithChildren = LibsReactWebRoute._addFileChildren(
@@ -3550,41 +6993,64 @@ const LibsSagaRouteWithChildren = LibsSagaRoute._addFileChildren(
   LibsSagaRouteChildren,
 )
 
+interface LibsUiuxTemplateRouteChildren {
+  LibsUiuxTemplateSectionRoute: typeof LibsUiuxTemplateSectionRoute
+  LibsUiuxTemplateThemeRoute: typeof LibsUiuxTemplateThemeRoute
+  LibsUiuxTemplateIndexRoute: typeof LibsUiuxTemplateIndexRoute
+}
+
+const LibsUiuxTemplateRouteChildren: LibsUiuxTemplateRouteChildren = {
+  LibsUiuxTemplateSectionRoute: LibsUiuxTemplateSectionRoute,
+  LibsUiuxTemplateThemeRoute: LibsUiuxTemplateThemeRoute,
+  LibsUiuxTemplateIndexRoute: LibsUiuxTemplateIndexRoute,
+}
+
+const LibsUiuxTemplateRouteWithChildren =
+  LibsUiuxTemplateRoute._addFileChildren(LibsUiuxTemplateRouteChildren)
+
 const rootRouteChildren: RootRouteChildren = {
+  IndexRoute: IndexRoute,
   MainRoute: MainRouteWithChildren,
   LibsArchitecturePatternRoute: LibsArchitecturePatternRouteWithChildren,
   LibsBackendConfigRoute: LibsBackendConfigRouteWithChildren,
   LibsBackendPatternRoute: LibsBackendPatternRouteWithChildren,
+  LibsBlueprintTemplateRoute: LibsBlueprintTemplateRouteWithChildren,
   LibsCliRoute: LibsCliRouteWithChildren,
   LibsEntityRoute: LibsEntityRouteWithChildren,
   LibsExceptionsRoute: LibsExceptionsRouteWithChildren,
+  LibsFieldsRoute: LibsFieldsRouteWithChildren,
   LibsFrontendConfigRoute: LibsFrontendConfigRouteWithChildren,
   LibsFrontendPatternRoute: LibsFrontendPatternRouteWithChildren,
   LibsFrontendPrimitivesPatternRoute:
     LibsFrontendPrimitivesPatternRouteWithChildren,
+  LibsHarnessRoute: LibsHarnessRouteWithChildren,
+  LibsModelingRoute: LibsModelingRouteWithChildren,
   LibsNestjsCacheRoute: LibsNestjsCacheRouteWithChildren,
   LibsNestjsConfigRoute: LibsNestjsConfigRouteWithChildren,
   LibsNestjsContextRoute: LibsNestjsContextRouteWithChildren,
   LibsNestjsDatabaseRoute: LibsNestjsDatabaseRouteWithChildren,
+  LibsNestjsEventsRoute: LibsNestjsEventsRouteWithChildren,
   LibsNestjsIamRoute: LibsNestjsIamRouteWithChildren,
   LibsNestjsIdempotencyRoute: LibsNestjsIdempotencyRouteWithChildren,
   LibsNestjsLockRoute: LibsNestjsLockRouteWithChildren,
   LibsNestjsLoggerRoute: LibsNestjsLoggerRouteWithChildren,
   LibsNestjsObservabilityRoute: LibsNestjsObservabilityRouteWithChildren,
-  LibsNestjsPublisherRoute: LibsNestjsPublisherRouteWithChildren,
   LibsNestjsRateLimitRoute: LibsNestjsRateLimitRouteWithChildren,
   LibsNestjsResilienceRoute: LibsNestjsResilienceRouteWithChildren,
-  LibsNestjsSchedulerRoute: LibsNestjsSchedulerRouteWithChildren,
   LibsNestjsServerRoute: LibsNestjsServerRouteWithChildren,
-  LibsNestjsServerlessRoute: LibsNestjsServerlessRouteWithChildren,
   LibsNestjsSocialAuthRoute: LibsNestjsSocialAuthRouteWithChildren,
   LibsNestjsStorageRoute: LibsNestjsStorageRouteWithChildren,
+  LibsOpenapiSdkRoute: LibsOpenapiSdkRouteWithChildren,
+  LibsProofModeRoute: LibsProofModeRouteWithChildren,
+  LibsProofModeGatesRoute: LibsProofModeGatesRoute,
   LibsQueryDslRoute: LibsQueryDslRouteWithChildren,
+  LibsReactChartsRoute: LibsReactChartsRouteWithChildren,
   LibsReactHooksRoute: LibsReactHooksRouteWithChildren,
+  LibsReactI18nRoute: LibsReactI18nRouteWithChildren,
   LibsReactIconsRoute: LibsReactIconsRouteWithChildren,
-  LibsReactMobileRoute: LibsReactMobileRouteWithChildren,
   LibsReactWebRoute: LibsReactWebRouteWithChildren,
   LibsSagaRoute: LibsSagaRouteWithChildren,
+  LibsUiuxTemplateRoute: LibsUiuxTemplateRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)

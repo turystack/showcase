@@ -66,7 +66,7 @@ export function CodeBlock({
 				filename && (
 					<div className="flex items-center justify-between border-border border-b px-4 py-2">
 						<span className="text-muted-foreground text-xs">{filename}</span>
-						<span className="rounded bg-zinc-800 px-1.5 py-0.5 text-xs text-zinc-400">
+						<span className="rounded-lg bg-zinc-800 px-1.5 py-0.5 text-xs text-zinc-400">
 							{language}
 						</span>
 					</div>

@@ -1,0 +1,24 @@
+import{F as i,j as e,bc as o,aa as n}from"./index-CQ2_D3U_.js";import{C as c}from"./CodeBlock-ftRQod4w.js";import{C as l}from"./ComponentPreview-x9-jqN-p.js";import{P as m}from"./PropsTable-CmvKG47z.js";import{S as x}from"./SlotsTable-DcNRogj3.js";import"./highlight-C4-SKK4T.js";import"./copy-uXspHRur.js";const h=[{default:"false",description:"Shows the overlay; when false it stays mounted, hidden.",name:"visible",type:"boolean"}],p=`import { LoadingOverlay } from '@turystack/react-web'
+
+// The overlay is absolutely positioned — the box it should cover must be
+// relative, or it climbs to the nearest ancestor that is. It fades its
+// siblings, so it sits directly beside the content, not wrapped on its own
+<div className="relative">
+  <LoadingOverlay visible={isLoading} />
+  <BookingsTable rows={rows} />
+</div>
+
+// Around an async action
+async function save() {
+  setSaving(true)
+  try {
+    await api.save(draft)
+  } finally {
+    setSaving(false)
+  }
+}
+
+<div className="relative rounded-lg border p-4">
+  <LoadingOverlay visible={saving} />
+  <Form onSubmit={save} />
+</div>`;function w(){const[t,r]=i.useState(!1),[d,a]=i.useState(!1);return e.jsxs("div",{className:"space-y-10",children:[e.jsxs("header",{children:[e.jsx("p",{className:"font-medium text-lib text-xs uppercase tracking-wider",children:"Feedback"}),e.jsx("h1",{className:"mt-2 font-bold font-display text-3xl tracking-tight",children:"LoadingOverlay"}),e.jsx("p",{className:"mt-3 max-w-prose text-lg text-muted-foreground",children:"A spinner over a busy region, which fades the region’s own content instead of painting over it."})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Props"}),e.jsx(m,{props:h})]}),e.jsx(x,{slug:"loading-overlay"}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Positioning"}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:["The overlay is"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:"absolute inset-0"})," ","with no positioning context of its own, so it fills the nearest positioned ancestor."]})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"No veil, a fade"}),e.jsx("p",{className:"max-w-prose text-muted-foreground text-sm",children:"The overlay paints no background. While busy, the host's other children drop to half opacity; the spinner stays at full strength."}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:["The fade needs the overlay as a ",e.jsx("em",{children:"direct"})," child of the host: put it beside the content, not in a wrapper."]})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Visibility"}),e.jsxs("p",{className:"max-w-prose text-muted-foreground text-sm",children:["Flip it by hand. Hidden, it stays in the DOM with"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:'aria-hidden="true"'})," ","and"," ",e.jsx("code",{className:"rounded-lg bg-muted px-1.5 py-0.5 text-xs",children:'aria-busy="false"'}),"."]}),e.jsx(l,{title:"Toggled",children:e.jsxs("div",{className:"flex w-full max-w-md flex-col items-center gap-4",children:[e.jsxs("div",{className:"relative w-full rounded-lg border border-border p-4",children:[e.jsx(o,{visible:t}),e.jsx("p",{className:"font-medium text-sm",children:"Lisbon → Porto"}),e.jsx("p",{className:"text-muted-foreground text-sm",children:"Two adults, one child. Departing 14 March, returning 21 March."}),e.jsx("p",{className:"mt-2 text-muted-foreground text-sm",children:"The content stays where it is — it fades to half rather than being covered or replaced."})]}),e.jsx(n,{onClick:()=>r(s=>!s),variant:"outline",children:t?"Hide the overlay":"Show the overlay"})]})})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Around an action"}),e.jsx(l,{title:"Covers the region while the work runs",children:e.jsxs("div",{className:"relative w-full max-w-md rounded-lg border border-border p-4",children:[e.jsx(o,{visible:d}),e.jsx("p",{className:"font-medium text-sm",children:"Passenger details"}),e.jsx("p",{className:"mt-1 mb-3 text-muted-foreground text-sm",children:"Saving takes a second and a half. The button underneath is unreachable while it does."}),e.jsx(n,{onClick:async()=>{a(!0);try{await new Promise(s=>setTimeout(s,1500))}finally{a(!1)}},size:"sm",children:"Save"})]})})]}),e.jsxs("section",{className:"space-y-4",children:[e.jsx("h2",{className:"font-display font-semibold text-xl",children:"Usage"}),e.jsx(c,{code:p,filename:"example.tsx",language:"tsx"})]})]})}export{w as component};

@@ -128,22 +128,22 @@ class ProfileResolverService implements IamProfileResolver {
   // maps your domain user to the shape IAM expects
   private toProfile(user: User, workspaceId?: string): IamProfile {
     const membership = workspaceId
-      ? user.memberships.find((m) => m.workspaceId === workspaceId)
+      ? user.memberships.find((m) => m.workspace_id === workspaceId)
       : undefined
 
     return {
-      userId: user.id,
-      organizationId: user.organizationId,
-      organizationRole: user.organizationRole && {
-        roleId: user.organizationRole.id,
-        name: user.organizationRole.name,
-        permissionIds: user.organizationRole.permissionIds,
+      user_id: user.id,
+      organization_id: user.organization_id,
+      organization_role: user.organization_role && {
+        role_id: user.organization_role.id,
+        name: user.organization_role.name,
+        permission_ids: user.organization_role.permission_ids,
       },
-      workspaceRole: membership && {
-        workspaceId: membership.workspaceId,
-        roleId: membership.role.id,
+      workspace_role: membership && {
+        workspace_id: membership.workspace_id,
+        role_id: membership.role.id,
         name: membership.role.name,
-        permissionIds: membership.role.permissionIds,
+        permission_ids: membership.role.permission_ids,
       },
     }
   }

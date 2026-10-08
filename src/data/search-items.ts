@@ -1,6 +1,8 @@
 import type { SidebarSection } from '@/components/docs/DocsSidebar'
 import { reactHookGroups } from '@/data/react-hooks-docs'
-import { reactMobileDocGroups, reactMobileDocs } from '@/data/react-mobile-docs'
+import { audiences } from '@/data/react-web-audiences'
+import { componentGroups } from '@/data/react-web-components'
+import { hookGroups } from '@/data/react-web-hooks'
 
 export type SearchItem = {
 	label: string
@@ -22,11 +24,47 @@ export const uiSections: SidebarSection[] = [
 	{
 		items: [
 			{
-				label: 'Playground',
-				to: '/libs/react-web/playground',
+				label: 'Overview',
+				to: '/libs/react-web/audiences',
+			},
+			...audiences.map((audience) => ({
+				label: audience.title,
+				to: audience.to,
+			})),
+		],
+		title: 'Audiences',
+	},
+	{
+		items: [
+			{
+				label: 'Overview',
+				to: '/libs/react-web/components',
 			},
 		],
-		title: 'Playground',
+		subsections: componentGroups.map((group) => ({
+			items: group.components.map((component) => ({
+				label: component.name,
+				to: `/libs/react-web/components/${component.slug}`,
+			})),
+			title: group.title,
+		})),
+		title: 'Components',
+	},
+	{
+		items: [
+			{
+				label: 'Overview',
+				to: '/libs/react-web/hooks',
+			},
+		],
+		subsections: hookGroups.map((group) => ({
+			items: group.hooks.map((hook) => ({
+				label: hook.name,
+				to: `/libs/react-web/hooks/${hook.slug}`,
+			})),
+			title: group.title,
+		})),
+		title: 'Hooks',
 	},
 ]
 
@@ -309,6 +347,19 @@ export const nestjsDatabaseSections: SidebarSection[] = [
 	{
 		items: [
 			{
+				label: 'PostgreSQL',
+				to: '/libs/nestjs-database/postgresql',
+			},
+			{
+				label: 'DynamoDB',
+				to: '/libs/nestjs-database/dynamodb',
+			},
+		],
+		title: 'Adapters',
+	},
+	{
+		items: [
+			{
 				label: 'Types & Errors',
 				to: '/libs/nestjs-database/types-and-errors',
 			},
@@ -376,44 +427,6 @@ export const nestjsLoggerSections: SidebarSection[] = [
 	},
 ]
 
-export const nestjsPublisherSections: SidebarSection[] = [
-	{
-		items: [
-			{
-				label: 'Introduction',
-				to: '/libs/nestjs-publisher',
-			},
-		],
-		title: 'Getting Started',
-	},
-	{
-		items: [
-			{
-				label: 'PublisherModule',
-				to: '/libs/nestjs-publisher/publisher-module',
-			},
-			{
-				label: 'PublisherService',
-				to: '/libs/nestjs-publisher/publisher-service',
-			},
-			{
-				label: 'Outbox',
-				to: '/libs/nestjs-publisher/outbox',
-			},
-		],
-		title: 'Module',
-	},
-	{
-		items: [
-			{
-				label: 'Subscriber',
-				to: '/libs/nestjs-publisher/subscriber-decorator',
-			},
-		],
-		title: 'Decorators',
-	},
-]
-
 export const nestjsObservabilitySections: SidebarSection[] = [
 	{
 		items: [
@@ -446,36 +459,6 @@ export const nestjsObservabilitySections: SidebarSection[] = [
 			{
 				label: 'Tracing',
 				to: '/libs/nestjs-observability/tracing',
-			},
-		],
-		title: 'Decorators',
-	},
-]
-
-export const nestjsSchedulerSections: SidebarSection[] = [
-	{
-		items: [
-			{
-				label: 'Introduction',
-				to: '/libs/nestjs-scheduler',
-			},
-		],
-		title: 'Getting Started',
-	},
-	{
-		items: [
-			{
-				label: 'SchedulerModule',
-				to: '/libs/nestjs-scheduler/scheduler-module',
-			},
-		],
-		title: 'Module',
-	},
-	{
-		items: [
-			{
-				label: 'Schedule',
-				to: '/libs/nestjs-scheduler/schedule-decorator',
 			},
 		],
 		title: 'Decorators',
@@ -554,12 +537,12 @@ export const nestjsServerSections: SidebarSection[] = [
 	},
 ]
 
-export const nestjsServerlessSections: SidebarSection[] = [
+export const nestjsEventsSections: SidebarSection[] = [
 	{
 		items: [
 			{
 				label: 'Introduction',
-				to: '/libs/nestjs-serverless',
+				to: '/libs/nestjs-events',
 			},
 		],
 		title: 'Getting Started',
@@ -567,24 +550,46 @@ export const nestjsServerlessSections: SidebarSection[] = [
 	{
 		items: [
 			{
-				label: 'ServerlessModule',
-				to: '/libs/nestjs-serverless/serverless-module',
-			},
-			{
-				label: 'Factory',
-				to: '/libs/nestjs-serverless/serverless-create',
+				label: 'Event contracts',
+				to: '/libs/nestjs-events/contracts',
 			},
 		],
-		title: 'Module',
+		title: 'Contract',
 	},
 	{
 		items: [
 			{
-				label: 'Handler',
-				to: '/libs/nestjs-serverless/handler-decorator',
+				label: 'Publisher',
+				to: '/libs/nestjs-events/publisher',
 			},
 		],
-		title: 'Decorators',
+		title: 'API',
+	},
+	{
+		items: [
+			{
+				label: 'WorkersModule',
+				to: '/libs/nestjs-events/workers-module',
+			},
+			{
+				label: 'Handler',
+				to: '/libs/nestjs-events/handler-decorator',
+			},
+			{
+				label: 'Factory',
+				to: '/libs/nestjs-events/serverless-create',
+			},
+		],
+		title: 'Workers',
+	},
+	{
+		items: [
+			{
+				label: 'Infra & CLI',
+				to: '/libs/nestjs-events/infra',
+			},
+		],
+		title: 'Deploy',
 	},
 ]
 
@@ -719,6 +724,107 @@ export const queryDslSections: SidebarSection[] = [
 	},
 ]
 
+export const openapiSdkSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/openapi-sdk',
+			},
+		],
+		title: 'Getting Started',
+	},
+	{
+		items: [
+			{
+				label: 'Config & CLI',
+				to: '/libs/openapi-sdk/config',
+			},
+			{
+				label: 'Naming',
+				to: '/libs/openapi-sdk/naming',
+			},
+		],
+		title: 'Generate',
+	},
+	{
+		items: [
+			{
+				label: 'Client',
+				to: '/libs/openapi-sdk/client',
+			},
+		],
+		title: 'Use',
+	},
+]
+
+export const fieldsSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/fields',
+			},
+		],
+		title: 'Getting Started',
+	},
+	{
+		items: [
+			{
+				label: 'Text',
+				to: '/libs/fields/text',
+			},
+			{
+				label: 'Identity',
+				to: '/libs/fields/identity',
+			},
+			{
+				label: 'Numbers and money',
+				to: '/libs/fields/numbers',
+			},
+			{
+				label: 'Dates and time',
+				to: '/libs/fields/dates',
+			},
+			{
+				label: 'Booleans and consent',
+				to: '/libs/fields/booleans',
+			},
+			{
+				label: 'Files and URLs',
+				to: '/libs/fields/files',
+			},
+			{
+				label: 'Collections and identifiers',
+				to: '/libs/fields/collections',
+			},
+		],
+		title: 'Fields',
+	},
+	{
+		items: [
+			{
+				label: 'Cross-field rules',
+				to: '/libs/fields/cross-field',
+			},
+			{
+				label: 'Error codes',
+				to: '/libs/fields/error-codes',
+			},
+		],
+		title: 'Composition',
+	},
+	{
+		items: [
+			{
+				label: 'Brazilian documents',
+				to: '/libs/fields/brazil',
+			},
+		],
+		title: 'Locale',
+	},
+]
+
 export const nestjsStorageSections: SidebarSection[] = [
 	{
 		items: [
@@ -800,6 +906,49 @@ export const reactHooksSections: SidebarSection[] = [
 	},
 ]
 
+export const reactI18nSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/react-i18n',
+			},
+		],
+		title: 'Getting Started',
+	},
+	{
+		items: [
+			{
+				label: 'Base and locales',
+				to: '/libs/react-i18n/dictionary',
+			},
+			{
+				label: 'Provider and hooks',
+				to: '/libs/react-i18n/provider',
+			},
+		],
+		title: 'Translations',
+	},
+	{
+		items: [
+			{
+				label: 'The words the components own',
+				to: '/libs/react-i18n/ui-labels',
+			},
+		],
+		title: 'UI labels',
+	},
+	{
+		items: [
+			{
+				label: 'API',
+				to: '/libs/react-i18n/api',
+			},
+		],
+		title: 'Reference',
+	},
+]
+
 export const reactIconsSections: SidebarSection[] = [
 	{
 		items: [
@@ -821,12 +970,12 @@ export const reactIconsSections: SidebarSection[] = [
 	},
 ]
 
-export const reactMobileSections: SidebarSection[] = [
+export const reactChartsSections: SidebarSection[] = [
 	{
 		items: [
 			{
 				label: 'Introduction',
-				to: '/libs/react-mobile',
+				to: '/libs/react-charts',
 			},
 		],
 		title: 'Getting Started',
@@ -834,19 +983,14 @@ export const reactMobileSections: SidebarSection[] = [
 	{
 		items: [
 			{
-				label: 'Overview',
-				to: '/libs/react-mobile/components',
+				label: 'Chart',
+				to: '/libs/react-charts/chart',
+			},
+			{
+				label: 'Sparkline',
+				to: '/libs/react-charts/sparkline',
 			},
 		],
-		subsections: reactMobileDocGroups.map((category) => ({
-			items: reactMobileDocs
-				.filter((component) => component.category === category)
-				.map((component) => ({
-					label: component.name,
-					to: `/libs/react-mobile/components/${component.slug}`,
-				})),
-			title: category,
-		})),
 		title: 'Components',
 	},
 ]
@@ -954,8 +1098,61 @@ export const frontendPatternSections: SidebarSection[] = [
 				label: 'Telemetry',
 				to: '/libs/frontend-pattern/14-telemetry',
 			},
+			{
+				label: 'Performance',
+				to: '/libs/frontend-pattern/15-performance',
+			},
+			{
+				label: 'File Uploads',
+				to: '/libs/frontend-pattern/16-file-uploads',
+			},
 		],
 		title: 'Quality',
+	},
+]
+
+export const modelingSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/modeling',
+			},
+			{
+				label: 'The pattern',
+				to: '/libs/modeling/01-pattern',
+			},
+		],
+		title: 'Getting Started',
+	},
+	{
+		items: [
+			{
+				label: 'IAM',
+				to: '/libs/modeling/10-model-iam',
+			},
+			{
+				label: 'Billing',
+				to: '/libs/modeling/11-model-billing',
+			},
+			{
+				label: 'Notifications',
+				to: '/libs/modeling/12-model-notifications',
+			},
+			{
+				label: 'Storage',
+				to: '/libs/modeling/13-model-storage',
+			},
+			{
+				label: 'Data Transfer',
+				to: '/libs/modeling/14-model-data-transfer',
+			},
+			{
+				label: 'Audit Trail',
+				to: '/libs/modeling/15-model-audit-trail',
+			},
+		],
+		title: 'Domain models',
 	},
 ]
 
@@ -1023,6 +1220,10 @@ export const architecturePatternSections: SidebarSection[] = [
 			{
 				label: 'Testing',
 				to: '/libs/architecture-pattern/11-testing',
+			},
+			{
+				label: 'Data Lifecycle',
+				to: '/libs/architecture-pattern/12-data-lifecycle',
 			},
 		],
 		title: 'Cross-cutting',
@@ -1107,8 +1308,290 @@ export const backendPatternSections: SidebarSection[] = [
 				label: 'Telemetry Policy',
 				to: '/libs/backend-pattern/13-telemetry',
 			},
+			{
+				label: 'Resilience',
+				to: '/libs/backend-pattern/14-resilience',
+			},
+			{
+				label: 'Idempotency',
+				to: '/libs/backend-pattern/15-idempotency',
+			},
 		],
 		title: 'Quality',
+	},
+]
+
+export const harnessSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/harness',
+			},
+			{
+				label: 'Overview',
+				to: '/libs/harness/00-overview',
+			},
+		],
+		title: 'Getting Started',
+	},
+	{
+		items: [
+			{
+				label: 'Entry',
+				to: '/libs/harness/01-entry',
+			},
+			{
+				label: 'Design Source',
+				to: '/libs/harness/02-design-source',
+			},
+			{
+				label: 'Blueprint Bootstrap',
+				to: '/libs/harness/04-blueprint-bootstrap',
+			},
+			{
+				label: 'UI/UX Bootstrap',
+				to: '/libs/harness/03-uiux-bootstrap',
+			},
+			{
+				label: 'Board',
+				to: '/libs/harness/05-board',
+			},
+		],
+		title: 'Bootstrap',
+	},
+	{
+		items: [
+			{
+				label: 'Implementation',
+				to: '/libs/harness/06-implementation',
+			},
+			{
+				label: 'Routine',
+				to: '/libs/harness/07-routine',
+			},
+		],
+		title: 'Every session after',
+	},
+	{
+		items: [
+			{
+				label: 'The flow',
+				to: '/libs/harness/flow',
+			},
+		],
+		title: 'Live',
+	},
+]
+
+export const proofModeSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/proof-mode',
+			},
+			{
+				label: 'Overview',
+				to: '/libs/proof-mode/00-overview',
+			},
+		],
+		title: 'Getting Started',
+	},
+	{
+		items: [
+			{
+				label: 'Context',
+				to: '/libs/proof-mode/01-context',
+			},
+			{
+				label: 'Plan',
+				to: '/libs/proof-mode/02-plan',
+			},
+			{
+				label: 'Build',
+				to: '/libs/proof-mode/03-build',
+			},
+			{
+				label: 'Gates',
+				to: '/libs/proof-mode/04-gates',
+			},
+			{
+				label: 'Evidence',
+				to: '/libs/proof-mode/05-evidence',
+			},
+			{
+				label: 'Delivery',
+				to: '/libs/proof-mode/06-delivery',
+			},
+		],
+		title: 'Sections',
+	},
+]
+
+export const blueprintTemplateSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/blueprint-template',
+			},
+		],
+		title: 'Getting Started',
+	},
+	{
+		items: [
+			{
+				label: 'Product',
+				to: '/libs/blueprint-template/index',
+			},
+			{
+				label: 'Glossary',
+				to: '/libs/blueprint-template/glossary',
+			},
+			{
+				label: 'Modeling conventions',
+				to: '/libs/blueprint-template/conventions',
+			},
+			{
+				label: 'Entity relationships',
+				to: '/libs/blueprint-template/erd',
+			},
+			{
+				label: 'Cross-domain rules',
+				to: '/libs/blueprint-template/cross-domain',
+			},
+		],
+		title: 'Product',
+	},
+	{
+		items: [
+			{
+				label: 'Overview',
+				to: '/libs/blueprint-template/domain-overview',
+			},
+			{
+				label: 'Rules',
+				to: '/libs/blueprint-template/domain-rules',
+			},
+			{
+				label: 'Model',
+				to: '/libs/blueprint-template/domain-model',
+			},
+			{
+				label: 'Events & schedules',
+				to: '/libs/blueprint-template/domain-flows',
+			},
+		],
+		title: 'Domain skeleton',
+	},
+	{
+		items: [
+			{
+				label: 'Product & domains',
+				to: '/libs/blueprint-template/guide-domain',
+			},
+			{
+				label: 'Rules',
+				to: '/libs/blueprint-template/guide-rules',
+			},
+			{
+				label: 'Model',
+				to: '/libs/blueprint-template/guide-model',
+			},
+			{
+				label: 'Events & schedules',
+				to: '/libs/blueprint-template/guide-flows',
+			},
+			{
+				label: 'Tasks',
+				to: '/libs/blueprint-template/guide-task',
+			},
+			{
+				label: 'Bootstrapping',
+				to: '/libs/blueprint-template/guide-filling',
+			},
+		],
+		title: 'Guide',
+	},
+	{
+		items: [
+			{
+				label: 'Board example',
+				to: '/libs/blueprint-template/board',
+			},
+		],
+		title: 'Live',
+	},
+]
+
+export const uiuxTemplateSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/uiux-template',
+			},
+			{
+				label: 'Overview',
+				to: '/libs/uiux-template/00-overview',
+			},
+		],
+		title: 'Getting Started',
+	},
+	{
+		items: [
+			{
+				label: 'Brand',
+				to: '/libs/uiux-template/01-brand',
+			},
+			{
+				label: 'Layout',
+				to: '/libs/uiux-template/02-layout',
+			},
+			{
+				label: 'Copy',
+				to: '/libs/uiux-template/03-copy',
+			},
+			{
+				label: 'Components',
+				to: '/libs/uiux-template/04-components',
+			},
+			{
+				label: 'Assets',
+				to: '/libs/uiux-template/05-assets',
+			},
+			{
+				label: 'Filling',
+				to: '/libs/uiux-template/06-filling',
+			},
+			{
+				label: 'Theme',
+				to: '/libs/uiux-template/07-theme',
+			},
+		],
+		title: 'Sections',
+	},
+	{
+		items: [
+			{
+				label: 'Theme example',
+				to: '/libs/uiux-template/theme',
+			},
+		],
+		title: 'Live',
+	},
+]
+
+export const proofModeGatesSections: SidebarSection[] = [
+	{
+		items: [
+			{
+				label: 'Introduction',
+				to: '/libs/proof-mode-gates',
+			},
+		],
+		title: 'Getting Started',
 	},
 ]
 
@@ -1160,6 +1643,10 @@ export const frontendPrimitivesPatternSections: SidebarSection[] = [
 			{
 				label: 'Consumption',
 				to: '/libs/frontend-primitives-pattern/07-consumption',
+			},
+			{
+				label: 'Accessibility',
+				to: '/libs/frontend-primitives-pattern/08-accessibility',
 			},
 		],
 		title: 'Proving & consuming',
@@ -1217,6 +1704,14 @@ export const backendConfigSections: SidebarSection[] = [
 ]
 
 export const allSearchItems: SearchItem[] = [
+	...flattenSections(harnessSections, '@turystack/harness'),
+	...flattenSections(proofModeSections, '@turystack/proof-mode'),
+	...flattenSections(
+		blueprintTemplateSections,
+		'@turystack/blueprint-template',
+	),
+	...flattenSections(uiuxTemplateSections, '@turystack/uiux-template'),
+	...flattenSections(proofModeGatesSections, '@turystack/proof-mode-gates'),
 	...flattenSections(uiSections, '@turystack/react-web'),
 	...flattenSections(entitySections, '@turystack/entity'),
 	...flattenSections(exceptionsSections, '@turystack/exceptions'),
@@ -1226,8 +1721,7 @@ export const allSearchItems: SearchItem[] = [
 	...flattenSections(nestjsDatabaseSections, '@turystack/nestjs-database'),
 	...flattenSections(nestjsLockSections, '@turystack/nestjs-lock'),
 	...flattenSections(nestjsLoggerSections, '@turystack/nestjs-logger'),
-	...flattenSections(nestjsPublisherSections, '@turystack/nestjs-publisher'),
-	...flattenSections(nestjsSchedulerSections, '@turystack/nestjs-scheduler'),
+	...flattenSections(nestjsEventsSections, '@turystack/nestjs-events'),
 	...flattenSections(
 		nestjsObservabilitySections,
 		'@turystack/nestjs-observability',
@@ -1240,14 +1734,16 @@ export const allSearchItems: SearchItem[] = [
 		'@turystack/nestjs-idempotency',
 	),
 	...flattenSections(nestjsServerSections, '@turystack/nestjs-server'),
-	...flattenSections(nestjsServerlessSections, '@turystack/nestjs-serverless'),
 	...flattenSections(nestjsIamSections, '@turystack/nestjs-iam'),
 	...flattenSections(nestjsSocialAuthSections, '@turystack/nestjs-social-auth'),
 	...flattenSections(nestjsStorageSections, '@turystack/nestjs-storage'),
+	...flattenSections(fieldsSections, '@turystack/fields'),
 	...flattenSections(queryDslSections, '@turystack/query-dsl'),
+	...flattenSections(openapiSdkSections, '@turystack/openapi-sdk'),
 	...flattenSections(reactHooksSections, '@turystack/react-hooks'),
+	...flattenSections(reactI18nSections, '@turystack/react-i18n'),
 	...flattenSections(reactIconsSections, '@turystack/react-icons'),
-	...flattenSections(reactMobileSections, '@turystack/react-mobile'),
+	...flattenSections(reactChartsSections, '@turystack/react-charts'),
 	...flattenSections(cliSections, '@turystack/cli'),
 	...flattenSections(frontendPatternSections, '@turystack/frontend-pattern'),
 	...flattenSections(
@@ -1261,4 +1757,5 @@ export const allSearchItems: SearchItem[] = [
 	),
 	...flattenSections(frontendConfigSections, '@turystack/frontend-config'),
 	...flattenSections(backendConfigSections, '@turystack/backend-config'),
+	...flattenSections(modelingSections, '@turystack/modeling'),
 ]

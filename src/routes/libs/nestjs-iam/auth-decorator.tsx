@@ -44,7 +44,7 @@ import type { IamProfile } from '@turystack/nestjs-iam'
 import { z } from 'zod'
 
 const getOrganizationSchema = createRequestSchema({
-  params: z.object({ organizationId: z.string().uuid() }),
+  params: z.object({ organization_id: z.string().uuid() }),
 })
 
 const createOrganizationSchema = createRequestSchema({
@@ -54,9 +54,9 @@ const createOrganizationSchema = createRequestSchema({
 @Controller({ path: 'organizations', tag: 'Organizations' })
 @Auth()
 export class OrganizationController {
-  @Route({ method: 'GET', path: ':organizationId', summary: 'Get Organization', description: 'Returns a organization by ID.' })
+  @Route({ method: 'GET', path: ':organization_id', summary: 'Get Organization', description: 'Returns a organization by ID.' })
   getOrganization(@Request(getOrganizationSchema) req: RequestInput<typeof getOrganizationSchema>) {
-    return this.organizationService.getOrganization(req.params.organizationId)
+    return this.organizationService.getOrganization(req.params.organization_id)
   }
 
   @Route({ method: 'POST', summary: 'Create Organization', description: 'Creates a new organization.' })
@@ -64,7 +64,7 @@ export class OrganizationController {
     @AuthenticatedProfile() profile: IamProfile,
     @Request(createOrganizationSchema) req: RequestInput<typeof createOrganizationSchema>,
   ) {
-    return this.organizationService.createOrganization(profile.userId, req.body)
+    return this.organizationService.createOrganization(profile.user_id, req.body)
   }
 }`}
 					filename="organization.controller.ts"
@@ -87,7 +87,7 @@ import type { IamProfile } from '@turystack/nestjs-iam'
 import { z } from 'zod'
 
 const getPublicInfoSchema = createRequestSchema({
-  params: z.object({ organizationId: z.string().uuid() }),
+  params: z.object({ organization_id: z.string().uuid() }),
 })
 
 const createOrganizationSchema = createRequestSchema({
@@ -97,9 +97,9 @@ const createOrganizationSchema = createRequestSchema({
 @Controller({ path: 'organizations', tag: 'Organizations' })
 export class OrganizationController {
   // Public — no decorator
-  @Route({ method: 'GET', path: ':organizationId/public-info', summary: 'Get Public Info', description: 'Returns public organization info.' })
+  @Route({ method: 'GET', path: ':organization_id/public-info', summary: 'Get Public Info', description: 'Returns public organization info.' })
   getPublicInfo(@Request(getPublicInfoSchema) req: RequestInput<typeof getPublicInfoSchema>) {
-    return this.organizationService.getPublicInfo(req.params.organizationId)
+    return this.organizationService.getPublicInfo(req.params.organization_id)
   }
 
   // Private — requires valid JWT
@@ -109,7 +109,7 @@ export class OrganizationController {
     @AuthenticatedProfile() profile: IamProfile,
     @Request(createOrganizationSchema) req: RequestInput<typeof createOrganizationSchema>,
   ) {
-    return this.organizationService.createOrganization(profile.userId, req.body)
+    return this.organizationService.createOrganization(profile.user_id, req.body)
   }
 }`}
 					filename="organization.controller.ts"
@@ -134,7 +134,7 @@ context.actor    = { id, organizationId }
 context.tenantId = organizationId
       ↓
 ├── nestjs-logger        every log line carries actorId
-├── nestjs-database      createdBy / updatedBy stamped
+├── nestjs-database      created_by / updated_by stamped
 └── nestjs-observability spans carry turystack.actor_id`}
 					filename="propagation"
 					language="bash"

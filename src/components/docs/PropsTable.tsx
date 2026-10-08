@@ -47,7 +47,7 @@ export function PropsTable({ props }: PropsTableProps) {
 							key={prop.name}
 						>
 							<td className="px-4 py-3">
-								<code className="rounded bg-muted px-1.5 py-0.5 font-medium text-foreground text-xs">
+								<code className="rounded-lg bg-muted px-1.5 py-0.5 font-medium text-foreground text-xs">
 									{prop.name}
 								</code>
 								{prop.required && (
@@ -55,13 +55,13 @@ export function PropsTable({ props }: PropsTableProps) {
 								)}
 							</td>
 							<td className="px-4 py-3">
-								<code className="rounded bg-muted px-1.5 py-0.5 text-lib text-xs">
+								<code className="rounded-lg bg-muted px-1.5 py-0.5 text-lib text-xs">
 									{prop.type}
 								</code>
 							</td>
 							<td className="px-4 py-3 text-muted-foreground">
 								{prop.default ? (
-									<code className="rounded bg-muted px-1.5 py-0.5 text-xs">
+									<code className="rounded-lg bg-muted px-1.5 py-0.5 text-xs">
 										{prop.default}
 									</code>
 								) : (

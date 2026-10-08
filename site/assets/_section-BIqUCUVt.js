@@ -1,0 +1,1 @@
+import{ah as n,j as e}from"./index-CQ2_D3U_.js";import{f as r,M as s}from"./skill-docs-5uc29ntr.js";import"./highlight-C4-SKK4T.js";function i(){const{section:t}=n.useParams(),o=r(t);return o?e.jsx(s,{content:o.content}):e.jsxs("p",{className:"text-muted-foreground",children:["Section not found: ",t]})}export{i as component};

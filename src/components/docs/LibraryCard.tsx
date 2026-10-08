@@ -272,7 +272,7 @@ export function LibraryCard({
 
 	return (
 		<div
-			className={`group relative flex flex-col rounded-lg border ${c.border} bg-card p-6 transition-all duration-300 hover:${c.glow}`}
+			className={`group relative flex h-full flex-col rounded-lg border ${c.border} bg-card p-6 transition-all duration-300 hover:${c.glow}`}
 		>
 			<div className="flex items-start justify-between">
 				<div

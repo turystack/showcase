@@ -25,7 +25,6 @@ function Page() {
 					code={`my-product/
 ├── apps/
 │   ├── backoffice/          # web app (create web structure)
-│   ├── app/                 # mobile app (create mobile structure)
 │   ├── api/                 # API app (create api structure)
 │   ├── create-subscription/ # handler (create handler structure)
 │   └── process-payment/     # handler (create handler structure)
@@ -63,10 +62,9 @@ function Page() {
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Every web/mobile app owns required layouts/ and feature
-							boundaries. api/ and its SDK target exist only for apps with API
-							integration; ui/, hooks/, support/, auth/ and telemetry/ are also
-							conditional
+							Every web app owns required layouts/ and feature boundaries. api/
+							and its SDK target exist only for apps with API integration; ui/,
+							hooks/, support/, auth/ and telemetry/ are also conditional
 						</span>
 					</li>
 					<li className="flex items-start gap-2">
@@ -100,9 +98,9 @@ function Page() {
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Web and mobile with API integration point kubb at the API OpenAPI
-							(per audience prefix in multi-audience format) — the contract
-							stays in sync end to end
+							Web apps with API integration point kubb at the API OpenAPI (per
+							audience prefix in multi-audience format) — the contract stays in
+							sync end to end
 						</span>
 					</li>
 				</ul>

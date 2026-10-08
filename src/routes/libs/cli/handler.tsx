@@ -30,7 +30,6 @@ function Page() {
 ├── src/
 │   ├── process-payment.handler.ts      # the @Handler class
 │   ├── process-payment.module.ts       # HandlerModule wiring
-│   ├── process-payment.schemas.ts      # event schema + inferred types
 │   ├── process-payment.handler.test.ts # tests colocated
 │   ├── config.schema.ts                # validated env owned by this app
 │   └── main.ts                         # export const handler
@@ -45,19 +44,16 @@ function Page() {
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">The handler file</h2>
 				<CodeBlock
-					code={`import { Handler } from '@turystack/nestjs-serverless'
+					code={`import type { EventPayload } from '@turystack/nestjs-events'
+import { Handler } from '@turystack/nestjs-events/workers'
 import { ProcessPaymentUseCase } from '@repo/domains'
+import { PaymentRequested } from '@repo/events'
 
-import {
-  type ProcessPaymentEvent,
-  processPaymentSchema,
-} from './process-payment.schemas'
-
-@Handler('SQS', { schema: processPaymentSchema })
+@Handler('EVENTBRIDGE-SQS', { event: PaymentRequested })
 export class ProcessPaymentHandler {
   constructor(private readonly processPayment: ProcessPaymentUseCase) {}
 
-  async execute(event: ProcessPaymentEvent) {
+  async execute(event: EventPayload<typeof PaymentRequested>) {
     await this.processPayment.execute({ paymentId: event.paymentId })
   }
 }`}
@@ -71,7 +67,7 @@ export class ProcessPaymentHandler {
 				<CodeBlock
 					code={`import { Module } from '@nestjs/common'
 import { ConfigModule } from '@turystack/nestjs-config'
-import { ServerlessModule } from '@turystack/nestjs-serverless'
+import { WorkersModule } from '@turystack/nestjs-events/workers'
 
 import { ProcessPaymentUseCase } from '@repo/domains'
 
@@ -81,7 +77,7 @@ import { ProcessPaymentHandler } from './process-payment.handler'
 @Module({
   imports: [
     ConfigModule.register({ schema: configSchema }),
-    ServerlessModule.register({ adapter: 'aws' }),
+    WorkersModule.register({ adapter: 'aws', project: 'acme' }),
     // global lib modules the domain libs need: logger, database...
   ],
   providers: [
@@ -99,7 +95,7 @@ export class HandlerModule {}`}
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">The entry point</h2>
 				<CodeBlock
-					code={`import { Serverless } from '@turystack/nestjs-serverless'
+					code={`import { Serverless } from '@turystack/nestjs-events/workers'
 
 import { HandlerModule } from './process-payment.module'
 
@@ -110,19 +106,17 @@ export const handler = Serverless.create(HandlerModule)`}
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">The types file</h2>
+				<h2 className="font-display font-semibold text-xl">The event</h2>
 				<CodeBlock
-					code={`import { createHandlerSchema } from '@turystack/nestjs-serverless'
+					code={`import { defineEvent } from '@turystack/nestjs-events'
 import { z } from 'zod'
 
-export const processPaymentSchema = createHandlerSchema(
-  z.object({
-    paymentId: z.string(),
-  }),
-)
-
-export type ProcessPaymentEvent = z.infer<typeof processPaymentSchema>`}
-					filename="src/process-payment.schemas.ts"
+// shared with the producer: the name is the bus rule, the schema validates
+export const PaymentRequested = defineEvent(
+  'payment.requested',
+  z.object({ identifier: z.string(), paymentId: z.string() }),
+)`}
+					filename="packages/events/src/payment-requested.ts"
 					language="ts"
 				/>
 				<p className="text-muted-foreground text-sm">

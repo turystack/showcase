@@ -1,18 +1,24 @@
 import {
 	Activity,
-	AlarmClock,
+	Boxes,
+	Braces,
+	ChartLine,
 	CircleAlert,
-	Cloud,
+	ClipboardList,
 	Compass,
 	Database,
 	FileCog,
 	FileText,
 	Fingerprint,
+	FlagTriangleRight,
 	HardDrive,
 	KeyRound,
+	Languages,
 	LayoutTemplate,
 	Lock,
+	Milestone,
 	Network,
+	Paintbrush,
 	Palette,
 	Radio,
 	Server,
@@ -22,8 +28,8 @@ import {
 	Shield,
 	ShieldCheck,
 	SlidersHorizontal,
-	Smartphone,
 	Sparkles,
+	SpellCheck,
 	Terminal,
 	Users,
 	Webhook,
@@ -37,6 +43,7 @@ export const categories = [
 	'NestJS',
 	'Frontend Utilities',
 	'Backend Utilities',
+	'Shared',
 	'Skills',
 ] as const
 
@@ -53,23 +60,23 @@ export const libraries = [
 	},
 	{
 		category: 'React' as const,
-		color: 'terracotta' as const,
-		description:
-			'UI components for React Native apps — the same design language as react-web, on mobile.',
-		href: '/libs/react-mobile' as const,
-		icon: <Smartphone size={20} />,
-		name: '@turystack/react-mobile',
-		tagline: 'React Mobile UI',
-	},
-	{
-		category: 'React' as const,
 		color: 'lavender' as const,
 		description:
-			'Semantic icons with a stable API shared by web, React Native, and Expo applications.',
+			'Semantic icons with a stable API for web applications, backed by Solar Icons.',
 		href: '/libs/react-icons' as const,
 		icon: <Sparkles size={20} />,
 		name: '@turystack/react-icons',
 		tagline: 'React Icons',
+	},
+	{
+		category: 'React' as const,
+		color: 'ochre' as const,
+		description:
+			'Line, area and bar charts plus KPI sparklines, painted with react-web tokens.',
+		href: '/libs/react-charts' as const,
+		icon: <ChartLine size={20} />,
+		name: '@turystack/react-charts',
+		tagline: 'React Charts',
 	},
 	{
 		category: 'Backend Utilities' as const,
@@ -125,7 +132,7 @@ export const libraries = [
 		category: 'NestJS' as const,
 		color: 'blue' as const,
 		description:
-			'Typed schema builder with per-table repositories and transactional decorator. PostgreSQL (Drizzle) built-in.',
+			'Typed schema builder with per-table repositories and a transactional decorator. Two engines: PostgreSQL through Drizzle, and DynamoDB.',
 		href: '/libs/nestjs-database' as const,
 		icon: <Database size={20} />,
 		name: '@turystack/nestjs-database',
@@ -185,11 +192,11 @@ export const libraries = [
 		category: 'NestJS' as const,
 		color: 'pink' as const,
 		description:
-			'Adapter-based message publishing to topics and queues with superjson serialization. AWS EventBridge/SQS built-in.',
-		href: '/libs/nestjs-publisher' as const,
+			'Events on one EventBridge bus: shared contracts, a publisher for the API, typed handlers for the workers, and the generated SST stack.',
+		href: '/libs/nestjs-events' as const,
 		icon: <Radio size={20} />,
-		name: '@turystack/nestjs-publisher',
-		tagline: 'NestJS Publisher',
+		name: '@turystack/nestjs-events',
+		tagline: 'NestJS Events',
 	},
 	{
 		category: 'NestJS' as const,
@@ -210,16 +217,6 @@ export const libraries = [
 		icon: <Server size={20} />,
 		name: '@turystack/nestjs-server',
 		tagline: 'NestJS Server',
-	},
-	{
-		category: 'NestJS' as const,
-		color: 'rose' as const,
-		description:
-			'Serverless handler wrapper: normalizes any event source (queues, topics, buses, schedules, envelope chains) with Zod validation. AWS built-in.',
-		href: '/libs/nestjs-serverless' as const,
-		icon: <Cloud size={20} />,
-		name: '@turystack/nestjs-serverless',
-		tagline: 'NestJS Serverless',
 	},
 	{
 		category: 'NestJS' as const,
@@ -253,16 +250,6 @@ export const libraries = [
 	},
 	{
 		category: 'NestJS' as const,
-		color: 'ochre' as const,
-		description:
-			'Scheduler abstraction: declare cron jobs as classes with optional distributed lock. Local (in-process) adapter built-in.',
-		href: '/libs/nestjs-scheduler' as const,
-		icon: <AlarmClock size={20} />,
-		name: '@turystack/nestjs-scheduler',
-		tagline: 'NestJS Scheduler',
-	},
-	{
-		category: 'NestJS' as const,
 		color: 'charcoal' as const,
 		description:
 			'CloudWatch-first metrics via EMF: fire-and-forget counters, gauges, durations, and a @Measure decorator. Local adapter built-in.',
@@ -272,14 +259,53 @@ export const libraries = [
 		tagline: 'NestJS Observability',
 	},
 	{
-		category: 'Backend Utilities' as const,
+		/**
+		 * Shared, not backend.
+		 *
+		 * The same schema validates the request body and the form that fills it —
+		 * that is the whole point of the package, and filing it under Backend
+		 * hides it from the half of the readers who need it most.
+		 */
+		category: 'Shared' as const,
+		color: 'navy' as const,
+		description:
+			'Zod schemas for entity fields — required text, money, dates, uploads and Brazilian documents — one definition behind both the request body and the form.',
+		href: '/libs/fields' as const,
+		icon: <SpellCheck size={20} />,
+		name: '@turystack/fields',
+		tagline: 'Fields',
+	},
+	{
+		/**
+		 * Shared, not backend.
+		 *
+		 * The backend parses the query string with these schemas and the
+		 * frontend writes it with their serializers — one grammar on both ends.
+		 */
+		category: 'Shared' as const,
 		color: 'sulfur' as const,
 		description:
-			'Zod schemas for query-string parameters: pagination, sort, ranges, date ranges, lists, booleans, and filters.',
+			'Zod schemas for query-string parameters — pagination, sort, ranges, lists, filters — parsed by the API, written by the frontend.',
 		href: '/libs/query-dsl' as const,
 		icon: <Wrench size={20} />,
 		name: '@turystack/query-dsl',
 		tagline: 'Query DSL',
+	},
+	{
+		/**
+		 * Shared, not frontend.
+		 *
+		 * The generated SDK runs on fetch alone, so a backend calling another
+		 * service uses it exactly as a web app calls its own API.
+		 */
+		category: 'Shared' as const,
+		color: 'terracotta' as const,
+		description:
+			'Generates a typed, dependency-free SDK from any OpenAPI document — sdk.tag.operation(), in the browser or in Node.',
+		href: '/libs/openapi-sdk' as const,
+		icon: <Braces size={20} />,
+		name: '@turystack/openapi-sdk',
+		tagline: 'OpenAPI SDK',
 	},
 	{
 		category: 'React' as const,
@@ -292,10 +318,20 @@ export const libraries = [
 		tagline: 'React Hooks',
 	},
 	{
+		category: 'React' as const,
+		color: 'sand' as const,
+		description:
+			'Typed translations for React: a Provider, hooks, and define* helpers.',
+		href: '/libs/react-i18n' as const,
+		icon: <Languages size={20} />,
+		name: '@turystack/react-i18n',
+		tagline: 'React i18n',
+	},
+	{
 		category: 'Frontend Utilities' as const,
 		color: 'slate' as const,
 		description:
-			'Shared biome + TypeScript config for web and mobile apps — every frontend extends it.',
+			'Shared biome + TypeScript config for web apps — every frontend extends it.',
 		href: '/libs/frontend-config' as const,
 		icon: <Settings2 size={20} />,
 		name: '@turystack/frontend-config',
@@ -315,7 +351,7 @@ export const libraries = [
 		category: 'CLI' as const,
 		color: 'emerald' as const,
 		description:
-			'Scaffolds standalone NestJS APIs with Turystack conventions and local-first package links.',
+			'Builds Turystack monorepos that sign people in on the first run, then grows them by audience and domain.',
 		href: '/libs/cli' as const,
 		icon: <Terminal size={20} />,
 		name: '@turystack/cli',
@@ -330,6 +366,16 @@ export const libraries = [
 		icon: <LayoutTemplate size={20} />,
 		name: '@turystack/frontend-pattern',
 		tagline: 'Frontend Pattern',
+	},
+	{
+		category: 'Skills' as const,
+		color: 'teal' as const,
+		description:
+			'What exists and how it relates — entities, cardinalities, tenancy and evolution, plus the canonical models the CLI generates literally, IAM first.',
+		href: '/libs/modeling' as const,
+		icon: <Boxes size={20} />,
+		name: '@turystack/modeling',
+		tagline: 'Modeling',
 	},
 	{
 		category: 'Skills' as const,
@@ -360,6 +406,67 @@ export const libraries = [
 		icon: <Shapes size={20} />,
 		name: '@turystack/frontend-primitives-pattern',
 		tagline: 'Primitives Pattern',
+	},
+	{
+		category: 'Skills' as const,
+		color: 'indigo' as const,
+		description:
+			"The session's entry point: bootstraps a project from its design into its own spec and UI/UX skills, derives the board, then asks whether this session implements, audits or hunts.",
+		href: '/libs/harness' as const,
+		icon: <Milestone size={20} />,
+		name: '@turystack/harness',
+		tagline: 'Project Harness',
+	},
+	{
+		category: 'Skills' as const,
+		color: 'electric' as const,
+		description:
+			'The delivery harness: it takes one task, resolves its context, routes to the pattern skills, runs the gate ladder per slice, and closes with an evidence-backed report.',
+		href: '/libs/proof-mode' as const,
+		icon: <FlagTriangleRight size={20} />,
+		name: '@turystack/proof-mode',
+		tagline: 'Delivery Harness',
+	},
+	{
+		/**
+		 * Filed under Skills, not Backend Utilities.
+		 *
+		 * Only 24% of its 114 checks come from the backend skill — the rest are
+		 * architecture, frontend, primitives, modeling, harness, proof, spec and
+		 * uiux laws, including `PROP-*`, `STY-*`, `AXS-*` and `TAB-*`. Someone asking why `story-coverage` went
+		 * red would never look for the answer under a backend heading.
+		 *
+		 * A category is about what the reader is after, not what the artifact is
+		 * made of. Skills is where the laws are; this is what executes them.
+		 */
+		category: 'Skills' as const,
+		color: 'sulfur' as const,
+		description:
+			'The runner behind every `gate:` the skills declare: the proof ladder, 114 structural checks across all nine skills, and a report whose verdict is computed rather than declared.',
+		href: '/libs/proof-mode-gates' as const,
+		icon: <ShieldCheck size={20} />,
+		name: '@turystack/proof-mode-gates',
+		tagline: 'Gate Runner',
+	},
+	{
+		category: 'Skills' as const,
+		color: 'mint' as const,
+		description:
+			"Template for a project's own blueprint skill — materialized once as <project>-blueprint: per-domain business rules and modeling as a Mintlify site, plus the continuous board.",
+		href: '/libs/blueprint-template' as const,
+		icon: <ClipboardList size={20} />,
+		name: '@turystack/blueprint-template',
+		tagline: 'Project Blueprint',
+	},
+	{
+		category: 'Skills' as const,
+		color: 'rose' as const,
+		description:
+			"Template for a project's own UI/UX skill — materialized once as <project>-uiux: tokens, layout, copy, component mapping and design exports.",
+		href: '/libs/uiux-template' as const,
+		icon: <Paintbrush size={20} />,
+		name: '@turystack/uiux-template',
+		tagline: 'Project UI/UX',
 	},
 ]
 

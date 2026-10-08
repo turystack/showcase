@@ -17,8 +17,8 @@ function Page() {
 					@turystack/frontend-pattern
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
-					Frontend application decisions for web and mobile, without repeating
-					library APIs. 15 focused sections, browsable below.
+					Frontend application decisions for web apps, without repeating library
+					APIs. 15 focused sections, browsable below.
 				</p>
 			</div>
 

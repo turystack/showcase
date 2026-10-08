@@ -23,6 +23,11 @@ const validLangs = [
 	'json',
 ]
 
+/** Whether `lang` gets real highlighting; anything else (`text`, `sql`) is plain. */
+export function canHighlight(lang: string): boolean {
+	return validLangs.includes(lang)
+}
+
 export async function highlight(code: string, lang: string): Promise<string> {
 	const highlighter = await highlighterPromise
 	const language = validLangs.includes(lang) ? lang : 'tsx'

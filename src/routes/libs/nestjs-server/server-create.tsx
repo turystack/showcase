@@ -184,15 +184,15 @@ await Server.create(AppModule, (config) => ({
   docs: { provider: 'scalar', theme: 'default' },
   projects: [
     { name: 'main', title: 'Main API' }, // unprefixed routes
-    { name: 'admin', prefix: 'admin', theme: 'moon', title: 'Admin API' },
+    { name: 'console', prefix: 'console', theme: 'moon', title: 'Console API' },
     { name: 'partner', prefix: 'partner', theme: 'purple', title: 'Partner API' },
   ],
 }))
 
 // GET /api/v1/openapi            → Main API spec
 // GET /api/v1/reference          → Main API reference
-// GET /api/v1/admin/openapi      → Admin API spec (only admin/* routes)
-// GET /api/v1/admin/reference    → Admin API reference
+// GET /api/v1/console/openapi    → Console API spec (only console/* routes)
+// GET /api/v1/console/reference  → Console API reference
 // GET /api/v1/partner/openapi    → Partner API spec
 // GET /api/v1/partner/reference  → Partner API reference`}
 					filename="main.ts"

@@ -35,19 +35,19 @@ const verifyRefreshTokenParams = [
 const tokenPairProps = [
 	{
 		description: 'The signed JWT access token.',
-		name: 'accessToken',
+		name: 'access_token',
 		required: true,
 		type: 'string',
 	},
 	{
 		description: 'The signed JWT refresh token (contains rt: true flag).',
-		name: 'refreshToken',
+		name: 'refresh_token',
 		required: true,
 		type: 'string',
 	},
 	{
 		description: 'Access token TTL in seconds, derived from accessExpiresIn.',
-		name: 'expiresIn',
+		name: 'expires_in',
 		required: true,
 		type: 'number',
 	},
@@ -72,7 +72,7 @@ function Page() {
 					code={`import { IamTokenService } from '@turystack/nestjs-iam'
 
 issueTokens(userId: string, options?: { workspaceId?: string }): Promise<TokenPair>
-verifyRefreshToken(token: string): Promise<{ userId: string; workspaceId?: string }>
+verifyRefreshToken(token: string): Promise<{ user_id: string; workspace_id?: string }>
 
 // tokens are minted for at most one workspace — omit workspaceId for
 // organization-only sessions; switching workspaces issues new tokens`}
@@ -110,7 +110,7 @@ export class AuthService {
 				</h2>
 				<CodeBlock
 					code={`async refresh(refreshToken: string): Promise<TokenPair> {
-  const { userId, workspaceId } = await this.tokenService.verifyRefreshToken(refreshToken)
+  const { user_id: userId, workspace_id: workspaceId } = await this.tokenService.verifyRefreshToken(refreshToken)
   return this.tokenService.issueTokens(userId, { workspaceId })
 }`}
 					filename="auth.service.ts"
@@ -146,8 +146,8 @@ export class AuthService {
 						<span className="mt-1 text-lib">→</span>
 						<span>
 							Both tokens carry{' '}
-							<code className="font-mono text-sm">userId</code>, plus
-							workspaceId when the pair was minted for one — the refresh token
+							<code className="font-mono text-sm">user_id</code>, plus
+							workspace_id when the pair was minted for one — the refresh token
 							adds an <code className="font-mono text-sm">rt: true</code> flag
 						</span>
 					</li>
@@ -162,7 +162,7 @@ export class AuthService {
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							<code className="font-mono text-sm">expiresIn</code> is parsed
+							<code className="font-mono text-sm">expires_in</code> is parsed
 							from the duration string — supports{' '}
 							<code className="font-mono text-sm">s</code>,{' '}
 							<code className="font-mono text-sm">m</code>,{' '}

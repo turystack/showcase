@@ -16,8 +16,11 @@ function Page() {
 				<p className="mt-3 text-lg text-muted-foreground">
 					Zod-based schemas for query-string parameters: pagination, sort,
 					ranges, date ranges, comma-separated lists, booleans, and free-text
-					filters. Mandatory in every turystack backend — in a monorepo it lives
-					in the domains lib, typing the repository contracts.
+					filters. Every turystack backend parses the query with them; the
+					frontend writes it with <code>rangeToQuery</code>,{' '}
+					<code>listToQuery</code> and <code>dateRangeToQuery</code>. In a
+					monorepo it lives in the domains lib, so both ends import the same
+					contract.
 				</p>
 			</div>
 

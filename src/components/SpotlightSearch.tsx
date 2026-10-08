@@ -196,7 +196,7 @@ export function SpotlightSearch() {
 			/>
 
 			<div className="fade-in zoom-in-95 relative z-10 mx-4 w-full max-w-lg animate-in duration-150">
-				<div className="overflow-hidden rounded-xl border border-border bg-background shadow-2xl">
+				<div className="overflow-hidden rounded-lg border border-border bg-background shadow-2xl">
 					<div className="flex items-center gap-3 border-border border-b px-4">
 						<Search className="h-4 w-4 shrink-0 text-muted-foreground" />
 						<input
@@ -208,7 +208,7 @@ export function SpotlightSearch() {
 							type="text"
 							value={query}
 						/>
-						<kbd className="pointer-events-none shrink-0 select-none rounded border border-border bg-muted px-1.5 py-0.5 font-mono text-muted-foreground text-xs">
+						<kbd className="pointer-events-none shrink-0 select-none rounded-lg border border-border bg-muted px-1.5 py-0.5 font-mono text-muted-foreground text-xs">
 							ESC
 						</kbd>
 					</div>
@@ -283,7 +283,7 @@ export function SpotlightTrigger({ className }: { className?: string }) {
 		>
 			<Search className="h-3.5 w-3.5" />
 			<span className="hidden sm:inline">Search...</span>
-			<kbd className="pointer-events-none ml-auto hidden select-none rounded border border-border bg-background px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground sm:inline">
+			<kbd className="pointer-events-none ml-auto hidden select-none rounded-lg border border-border bg-background px-1.5 py-0.5 font-mono text-[10px] text-muted-foreground sm:inline">
 				⌘K
 			</kbd>
 		</button>

@@ -1,9 +1,19 @@
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700;800;900&display=swap");
 
 @import "@turystack/react-web/styles.css";
+/*
+ * Compiled utilities plus Tailwind's stock theme values; it declares none of
+ * the design tokens, it reads react-web's (--chart-1…5, --border,
+ * --muted-foreground, --popover). So it needs no scope of its own: inside a
+ * .react-web-surface those resolve to the library's palette.
+ */
+@import "@turystack/react-charts/styles.css";
 @import "tailwindcss";
 
-@source "../node_modules/@turystack/react-web/src";
+/* Restores react-web's own tokens inside `.react-web-surface`. Generated. */
+@import "./react-web-scope.css";
+
+@source "../node_modules/@turystack/react-web/dist";
 
 @plugin "tailwindcss-animate";
 
@@ -12,6 +22,18 @@
 &:is(.dark *));
 
 @theme inline {
+	/*
+	 * react-web's shadows read its elevation tokens; this build compiles the same
+	 * utilities and wins, so it has to read them too — or a theme's elevation
+	 * would move the library and not this site.
+	 */
+	--shadow-2xs: var(--elevation-2xs);
+	--shadow-xs: var(--elevation-xs);
+	--shadow-sm: var(--elevation-sm);
+	--shadow-md: var(--elevation-md);
+	--shadow-lg: var(--elevation-lg);
+	--shadow-xl: var(--elevation-xl);
+	--shadow-2xl: var(--elevation-2xl);
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
 	--color-card: var(--card);
@@ -86,7 +108,14 @@
 	--animate-fade-in-up: fade-in-up 0.6s ease-out forwards;
 	--animate-glow-pulse: glow-pulse 3s ease-in-out infinite;
 
-	--container-2xl: 1400px;
+	/*
+	 * No `--container-*` here. This build re-emits react-web's own utilities
+	 * (the @source above), and a container size inlines into them: an override
+	 * turned the library's `max-w-2xl` — Modal and Sheet `lg`, Layout's narrow
+	 * content — into 1400px, and made Search's three-column grid lose to its
+	 * two-column rule at every width. The site's 1400px lives in
+	 * `@utility container` below.
+	 */
 }
 
 :root {
@@ -122,51 +151,51 @@
 	--sidebar-border: hsl(30 8% 88%);
 	--sidebar-ring: hsl(142 70% 40%);
 
-	--tury-slate: hsl(220 10% 50%);
-	--tury-cyan: hsl(190 90% 50%);
-	--tury-blue: hsl(210 90% 55%);
+	--tury-slate: hsl(220 10% 47%);
+	--tury-cyan: hsl(190 90% 31%);
+	--tury-blue: hsl(210 90% 45%);
 	--tury-indigo: hsl(235 80% 60%);
 
-	--tury-purple: hsl(265 75% 65%);
-	--tury-violet: hsl(285 75% 65%);
-	--tury-pink: hsl(320 85% 60%);
-	--tury-rose: hsl(345 80% 60%);
+	--tury-purple: hsl(265 75% 60%);
+	--tury-violet: hsl(285 75% 53%);
+	--tury-pink: hsl(320 85% 45%);
+	--tury-rose: hsl(345 80% 49%);
 
-	--tury-red: hsl(5 85% 55%);
-	--tury-orange: hsl(25 95% 55%);
-	--tury-amber: hsl(38 95% 55%);
-	--tury-yellow: hsl(55 95% 60%);
+	--tury-red: hsl(5 85% 47%);
+	--tury-orange: hsl(25 95% 38%);
+	--tury-amber: hsl(38 95% 32%);
+	--tury-yellow: hsl(55 95% 25%);
 
-	--tury-lime: hsl(85 70% 50%);
-	--tury-green: hsl(135 65% 45%);
-	--tury-teal: hsl(165 70% 40%);
+	--tury-lime: hsl(85 70% 29%);
+	--tury-green: hsl(135 65% 31%);
+	--tury-teal: hsl(165 70% 30%);
 
 	--hero-gradient: linear-gradient(135deg, hsl(142 70% 40%), hsl(142 60% 25%));
 
 	/* Tons Neutros e Profundos */
-	--tury-charcoal: hsl(200 25% 60%);
-	--tury-sand: hsl(40 80% 58%);
+	--tury-charcoal: hsl(200 25% 43%);
+	--tury-sand: hsl(40 80% 33%);
 	--tury-taupe: hsl(25 15% 45%);
 
 	/* Tons de Outono/Terrosos */
 	--tury-terracotta: hsl(15 60% 45%);
-	--tury-olive: hsl(75 55% 45%);
-	--tury-ochre: hsl(45 90% 50%);
+	--tury-olive: hsl(75 55% 31%);
+	--tury-ochre: hsl(45 90% 29%);
 
 	/* Tons Pastel e Suaves */
-	--tury-mint: hsl(155 70% 50%);
-	--tury-lavender: hsl(250 85% 70%);
-	--tury-peach: hsl(18 90% 62%);
+	--tury-mint: hsl(155 70% 30%);
+	--tury-lavender: hsl(250 85% 65%);
+	--tury-peach: hsl(18 90% 42%);
 
 	/* Tons "Gema" e Oceânicos */
-	--tury-emerald: hsl(160 85% 42%);
+	--tury-emerald: hsl(160 85% 27%);
 	--tury-navy: hsl(225 60% 20%);
 	--tury-burgundy: hsl(345 55% 30%);
 
 	/* Tons Neon e Vibrantes Distintos */
-	--tury-fuchsia: hsl(310 95% 50%);
-	--tury-electric: hsl(200 100% 50%);
-	--tury-sulfur: hsl(65 90% 50%);
+	--tury-fuchsia: hsl(310 95% 42%);
+	--tury-electric: hsl(200 100% 35%);
+	--tury-sulfur: hsl(65 90% 25%);
 
 	--glow-slate: 0 0 60px hsl(220 10% 50% / 0.15);
 	--glow-cyan: 0 0 60px hsl(190 90% 50% / 0.15);
@@ -231,6 +260,43 @@
 	--border: hsl(30 5% 16%);
 	--input: hsl(30 5% 16%);
 	--ring: hsl(142 65% 45%);
+
+	/* The accent palette, for ink instead of paper.
+	   These are text colours on the cards, and the palette was tuned for one
+	   scheme only: `navy` came out at 1.27:1 against this background and
+	   `burgundy` at 1.88:1 — a package name nobody could read. Hue and
+	   saturation are the identity and are kept; only lightness moves, and only
+	   as far as 4.5:1 requires. */
+	--tury-slate: hsl(220 10% 50%);
+	--tury-cyan: hsl(190 90% 50%);
+	--tury-blue: hsl(210 90% 55%);
+	--tury-indigo: hsl(235 80% 66%);
+	--tury-purple: hsl(265 75% 65%);
+	--tury-violet: hsl(285 75% 65%);
+	--tury-pink: hsl(320 85% 60%);
+	--tury-rose: hsl(345 80% 60%);
+	--tury-red: hsl(5 85% 55%);
+	--tury-orange: hsl(25 95% 55%);
+	--tury-amber: hsl(38 95% 55%);
+	--tury-yellow: hsl(55 95% 60%);
+	--tury-lime: hsl(85 70% 50%);
+	--tury-green: hsl(135 65% 45%);
+	--tury-teal: hsl(165 70% 40%);
+	--tury-charcoal: hsl(200 25% 60%);
+	--tury-sand: hsl(40 80% 58%);
+	--tury-taupe: hsl(25 15% 48%);
+	--tury-terracotta: hsl(15 60% 50%);
+	--tury-olive: hsl(75 55% 45%);
+	--tury-ochre: hsl(45 90% 50%);
+	--tury-mint: hsl(155 70% 50%);
+	--tury-lavender: hsl(250 85% 70%);
+	--tury-peach: hsl(18 90% 62%);
+	--tury-emerald: hsl(160 85% 42%);
+	--tury-navy: hsl(225 60% 59%);
+	--tury-burgundy: hsl(345 55% 56%);
+	--tury-fuchsia: hsl(310 95% 50%);
+	--tury-electric: hsl(200 100% 50%);
+	--tury-sulfur: hsl(65 90% 50%);
 
 	--glow-cyan: 0 0 80px hsl(142 65% 45% / 0.2);
 	--glow-orange: 0 0 80px hsl(25 95% 55% / 0.2);

@@ -6,6 +6,45 @@ export const Route = createFileRoute('/libs/cli/api')({
 	component: Page,
 })
 
+const LIBRARIES = [
+	{
+		description: 'bootstrap, CORS, Zod, OpenAPI + Scalar',
+		name: '@turystack/nestjs-server',
+	},
+	{
+		description: 'env validated at boot, read through a service',
+		name: '@turystack/nestjs-config',
+	},
+	{
+		description: 'the request context every module reads',
+		name: '@turystack/nestjs-context',
+	},
+	{
+		description: 'Drizzle on Postgres, audit columns stamped',
+		name: '@turystack/nestjs-database',
+	},
+	{
+		description: 'session guard, profile and permission checks',
+		name: '@turystack/nestjs-iam',
+	},
+	{
+		description: 'the authorization server: code + PKCE',
+		name: '@turystack/nestjs-oauth',
+	},
+	{
+		description: 'Apple and Google sign-in',
+		name: '@turystack/nestjs-social-auth',
+	},
+	{
+		description: 'shared field schemas: names, e-mail, ints',
+		name: '@turystack/fields',
+	},
+	{
+		description: 'entity, exceptions and query primitives',
+		name: '@turystack/entity · exceptions · query-dsl',
+	},
+]
+
 function Page() {
 	return (
 		<div className="space-y-10">
@@ -14,317 +53,98 @@ function Page() {
 					API — Stack & Structure
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
-					What create api always ships: the native libraries, the folder
-					pattern, and the two API formats — single audience or multi-audience.
+					apps/api is born with every repository create writes. There is no
+					standalone API command: it is one app of the monorepo.
 				</p>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Native libraries</h2>
 				<p className="text-muted-foreground">
-					These always come in — they are the stack, not options:
+					These always come in — they are the stack, not options.
 				</p>
 				<ul className="space-y-2 text-muted-foreground">
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">@turystack/nestjs-server</code> — the
-							bootstrap factory: CORS, versioning, Zod validation, response
-							transforms, health check, OpenAPI + Scalar (mandatory)
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">@turystack/nestjs-config</code> —
-							ConfigModule.register({'{'} schema {'}'}) at the root; every
-							turystack module registers with the (config) =&gt; factory form
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">@turystack/exceptions</code> — typed
-							application exceptions with stable domain codes
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">@turystack/query-dsl</code> — the query
-							primitives every list endpoint composes: pagination (page +
-							cursor), sort, list, filter, ranges. Repositories type their
-							inputs with them — never hand-rolled shapes
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">@turystack/entity</code> — the base
-							entity contract used by domains when entities exist
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">zod</code> — request schemas, env
-							validation, and OpenAPI models
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">biome</code> + tsconfig extending{' '}
-							<code className="text-lib">@turystack/backend-config</code> — one
-							tooling source for APIs and handlers
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">vitest</code> — unit tests colocated
-							with the domains, plus an e2e config
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							Opt-in modules from the prompt — database, logger, cache, lock,
-							rate-limit, publisher, storage, iam, observability, scheduler,
-							social-auth — all registered at the root
-						</span>
-					</li>
+					{LIBRARIES.map((library) => (
+						<li
+							className="flex items-start gap-2"
+							key={library.name}
+						>
+							<span className="mt-1 text-lib">→</span>
+							<span>
+								<code className="text-lib">{library.name}</code> —{' '}
+								{library.description}
+							</span>
+						</li>
+					))}
 				</ul>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">Folder structure</h2>
+				<p className="text-muted-foreground">
+					Controllers are the HTTP surface. The rules live in domains/iam, and
+					the schema in libs/database — the API only wires them.
+				</p>
+				<CodeBlock
+					code={`apps/api/
+├── src/
+│   ├── controllers/
+│   │   ├── auth/            # sign-up, sign-in, codes, providers
+│   │   ├── console/         # one organization, from the session
+│   │   └── backoffice/      # the operator, across organizations
+│   ├── app.module.ts        # config, database, iam, oauth, social auth
+│   ├── iam-domain.module.ts # provides the @acme/iam use cases
+│   ├── config.schema.ts     # validates the environment at boot
+│   ├── seed.ts              # platform organization, roles, permissions
+│   └── main.ts              # Server.create — one document per audience
+├── vitest.config.ts
+├── vitest.e2e.config.ts
+└── package.json`}
+					filename="apps/api"
+					language="bash"
+				/>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Scripts</h2>
 				<CodeBlock
 					code={`{
-  "build": "tsc -p tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+  "build": "tsc -b tsconfig.build.json && tsc-alias -p tsconfig.build.json",
+  "db:seed": "tsx src/seed.ts",
   "dev": "tsx watch src/main.ts",
   "start": "node dist/main.js",
   "typecheck": "tsc --noEmit",
-  "test": "vitest run --passWithNoTests",
-  "test:coverage": "vitest run --coverage --passWithNoTests",
-  "test:e2e": "vitest run --config vitest.e2e.config.ts --passWithNoTests",
-  "lint": "biome lint .",
-  "format": "biome format --write .",
-  "check": "biome check .",
-  "check:fix": "biome check --write ."
+  "test": "vitest run",
+  "test:e2e": "vitest run --config vitest.e2e.config.ts",
+  "check": "biome check ."
 }`}
-					filename="package.json"
+					filename="apps/api/package.json"
 					language="json"
 				/>
 				<p className="text-muted-foreground text-sm">
-					Database and local-infra scripts are added only when their modules are
-					selected:
-				</p>
-				<CodeBlock
-					code={`{
-  "db:generate": "drizzle-kit generate",
-  "db:migrate": "drizzle-kit migrate",
-  "db:studio": "drizzle-kit studio",
-  "docker:up": "docker compose up -d",
-  "docker:down": "docker compose down"
-}`}
-					filename="package.json"
-					language="json"
-				/>
-				<p className="text-muted-foreground text-sm">
-					The CLI also runs Biome automatically after every create. This step is
-					part of project generation and still runs with{' '}
-					<code className="text-lib">--skip-install</code>.
-				</p>
-			</div>
-
-			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">Project root</h2>
-				<CodeBlock
-					code={`my-api/
-├── src/                    # application code (below)
-├── biome.json
-├── tsconfig.json
-├── tsconfig.build.json
-├── vitest.config.ts
-├── vitest.e2e.config.ts
-├── .env                    # local Docker values ready; external values use REPLACE
-├── .env.example            # safe copy of the generated environment contract
-├── docker-compose.yml      # with database, cache, or logger
-├── drizzle.config.ts       # only with nestjs-database
-├── README.md               # official guide tailored to the selected setup
-└── package.json`}
-					filename="my-api"
-					language="bash"
-				/>
-				<p className="text-muted-foreground text-sm">
-					With nestjs-database, the CLI also adds database.migration.ts,
-					drizzle.config.ts, database scripts, and the required local service.
-					The drizzle/ directory appears after the first generated migration. It
-					does not create a generic scripts/ folder or docker-compose without a
-					selected dependency that needs it. Database, cache, and logger receive
-					ready local Docker values. Database identifiers and the default
-					storage bucket derive from the project name, AWS defaults to
-					us-east-1, and IAM receives a random local secret. The committed
-					.env.example keeps a safe secret placeholder. The README is generated
-					from the same choices and only documents the selected format,
-					capabilities, services, environment, endpoints, structure, and
-					scripts.
-				</p>
-			</div>
-
-			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">Folder structure</h2>
-				<p className="text-muted-foreground">
-					Controllers are the HTTP surface; domains hold the business logic —
-					entity, schema, repository, and one use-case per operation, tests
-					colocated. The CLI does not invent an example domain. It only creates
-					a service-free smoke-test controller for each selected API surface;
-					real domain folders appear when the application gains business
-					behavior.
-				</p>
-				<CodeBlock
-					code={`src/
-├── controllers/            # HTTP surface
-│   ├── main.controller.ts  # generated single-project smoke-test route
-│   └── order/              # real controllers appear with real domains
-│       ├── order.controller.ts
-│       └── order.schemas.ts
-├── domains/                # business logic — one folder per domain
-│   └── order/
-│       ├── order.entity.ts
-│       ├── order.schema.ts
-│       ├── order.repository.ts
-│       ├── order.types.ts
-│       ├── order.mock.ts
-│       ├── index.ts        #   public API of the domain
-│       └── use-cases/      #   one folder per operation
-│           └── create-order/
-│               ├── create-order.ts       # CreateOrderUseCase.execute(input)
-│               ├── create-order.types.ts # only the Input type
-│               └── create-order.test.ts
-├── database/               # only when nestjs-database is selected
-│   ├── database.schema.ts  #   defineDatabaseSchema + declare module
-│   └── database.migration.ts # materialized tables for drizzle-kit
-├── adapters/               # only after an uncovered integration exists
-│   └── zip-code/           #   (payment gateway, maps...) — infra the
-│                           #   turystack libs cover does NOT go here
-├── support/                # optional pure cross-domain utilities
-├── app.module.ts           # root modules + consumed provider closure
-├── config.schema.ts        # defineConfigSchema — validates process.env at boot
-├── exceptions.ts           # exception catalog + type Exceptions (@turystack/exceptions)
-└── main.ts                 # Server.create(AppModule, (config) => ({ ... }))`}
-					filename="src"
-					language="bash"
-				/>
-				<p className="text-muted-foreground text-sm">
-					Infra concerns (cache, storage, tokens, messaging...) are not folders
-					here — they are the turystack lib modules, registered once in
-					app.module.ts and injected into the domain services. app.module.ts
-					registers the use-cases and repositories actually consumed; there is
-					no mandatory module per domain. adapters/ exists only for integrations
-					no lib covers. support/ is optional for pure transversal utilities; it
-					is never a wrapper or generic dumping folder.
+					Migrations run from the root: pnpm db:generate and pnpm db:migrate
+					point at libs/database; pnpm db:seed runs this seed.
 				</p>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Local infra</h2>
 				<p className="text-muted-foreground">
-					docker-compose brings up the local dependencies: postgres for
-					nestjs-database, one valkey shared by cache, lock, and rate-limit, and
-					Elasticsearch when logger is selected.
+					The root docker-compose.yml brings up Postgres. User, password and
+					database are the project name, as in DATABASE_URL.
 				</p>
 				<CodeBlock
 					code={`services:
   postgres:
     image: postgres:16-alpine
-    restart: unless-stopped
     ports:
       - '\${DATABASE_PORT:-5432}:5432'
     environment:
-      POSTGRES_USER: my_api
-      POSTGRES_PASSWORD: my_api
-      POSTGRES_DB: my_api
-    volumes:
-      - postgres_data:/var/lib/postgresql/data
-    healthcheck:
-      test: ['CMD-SHELL', 'pg_isready -U my_api -d my_api']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  valkey:
-    image: valkey/valkey:8-alpine
-    restart: unless-stopped
-    command: ['valkey-server', '--appendonly', 'yes']
-    ports:
-      - '\${CACHE_PORT:-6379}:6379'
-    volumes:
-      - valkey_data:/data
-    healthcheck:
-      test: ['CMD', 'valkey-cli', 'ping']
-      interval: 10s
-      timeout: 5s
-      retries: 5
-
-  elasticsearch:
-    image: docker.elastic.co/elasticsearch/elasticsearch:8.17.0
-    restart: unless-stopped
-    ports:
-      - '\${ELASTICSEARCH_PORT:-9200}:9200'
-    environment:
-      discovery.type: single-node
-      xpack.security.enabled: 'false'
-      ES_JAVA_OPTS: '-Xms512m -Xmx512m'
-    volumes:
-      - elasticsearch_data:/usr/share/elasticsearch/data
-    healthcheck:
-      test: ['CMD-SHELL', 'curl --fail http://localhost:9200/_cluster/health || exit 1']
-      interval: 10s
-      timeout: 5s
-      retries: 12
-
-volumes:
-  elasticsearch_data:
-  postgres_data:
-  valkey_data:`}
+      POSTGRES_USER: acme
+      POSTGRES_PASSWORD: acme
+      POSTGRES_DB: acme`}
 					filename="docker-compose.yml"
 					language="yaml"
-				/>
-				<p className="text-muted-foreground text-sm">
-					The compose file only includes what the selected modules need — no
-					database module, no postgres service. Postgres user, password, and
-					database name are all the project name with hyphens turned into
-					underscores (<code className="text-lib">my-api</code> →{' '}
-					<code className="text-lib">my_api</code>), and the same value lands in{' '}
-					<code className="text-lib">DATABASE_URL</code> inside{' '}
-					<code className="text-lib">.env</code>.
-				</p>
-			</div>
-
-			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">
-					API format: single audience
-				</h2>
-				<p className="text-muted-foreground">
-					One API surface, one OpenAPI document, one Scalar reference. The
-					initial smoke-test route lives in controllers/main.controller.ts.
-				</p>
-				<CodeBlock
-					code={`import { Server } from '@turystack/nestjs-server'
-
-import { AppModule } from './app.module'
-
-await Server.create(AppModule, (config) => ({
-  description: 'My API',
-  docs: { provider: 'scalar', theme: 'default' },
-  globalPrefix: 'api',
-  healthMessage: 'my api is healthy',
-  port: config.get('PORT'),
-}))`}
-					filename="main.ts"
-					language="ts"
 				/>
 			</div>
 
@@ -333,44 +153,73 @@ await Server.create(AppModule, (config) => ({
 					API format: multi-audience
 				</h2>
 				<p className="text-muted-foreground">
-					One app, several API surfaces — controllers are grouped per project,
-					and each project gets its own prefix, OpenAPI document, and Scalar
-					reference.
+					One app, several API surfaces. Each project gets its own prefix,
+					OpenAPI document and Scalar reference.
 				</p>
 				<CodeBlock
 					code={`src/controllers/
-├── admin/       # controllers of the admin surface
-│   ├── admin.controller.ts # generated smoke-test route
-│   └── order/
-├── app/         # controllers of the main app surface
-│   ├── app.controller.ts   # generated smoke-test route
-│   └── order/
-└── internal/    # service-to-service surface
-    ├── internal.controller.ts # generated smoke-test route
-    └── export/`}
+├── auth/          # sign-in, sign-up, social
+│   └── auth.controller.ts
+├── console/       # one organization, from the session
+│   └── console.controller.ts
+└── backoffice/    # the operator, across organizations
+    └── backoffice.controller.ts`}
 					filename="src/controllers"
 					language="bash"
 				/>
 				<CodeBlock
 					code={`await Server.create(AppModule, (config) => ({
-  description: 'My API',
+  cors: {
+    origins: [
+      config.get('AUTH_APP_URL'),
+      config.get('CONSOLE_ORIGIN'),
+      config.get('BACKOFFICE_ORIGIN'),
+    ],
+  },
+  description: 'Acme',
   docs: { provider: 'scalar', theme: 'default' },
   globalPrefix: 'api',
-  healthMessage: 'my api is healthy',
+  healthMessage: 'acme is healthy',
   port: config.get('PORT'),
   projects: [
-    { name: 'admin', prefix: 'admin', title: 'Admin API' },
-    { name: 'app', prefix: 'app', title: 'App API' },
-    { name: 'internal', prefix: 'internal', title: 'Internal API' },
+    { name: 'auth', prefix: 'auth', title: 'Auth API' },
+    { name: 'console', prefix: 'console', title: 'Console API' },
+    { name: 'backoffice', prefix: 'backoffice', title: 'Backoffice API' },
   ],
 }))`}
 					filename="main.ts"
 					language="ts"
 				/>
 				<p className="text-muted-foreground text-sm">
-					Each frontend then points kubb at its own project document —
-					/api/admin/openapi, /api/app/openapi — and only sees its surface.
+					Each app points kubb at its own document — /api/v1/console/openapi —
+					and only sees its surface.
 				</p>
+				<p className="text-muted-foreground text-sm">
+					turystack add audience partner adds a fourth: a controller, a project
+					here, an origin in CORS and apps/partner.
+				</p>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">One spelling</h2>
+				<p className="text-muted-foreground">
+					Request and response fields carry the column's name: user_id,
+					workspace_mode, is_default. Closed sets are lowercase: active, single.
+				</p>
+				<CodeBlock
+					code={`const profileResponse = z.object({
+  organization: z.object({
+    organization_id: z.string(),
+    workspace_mode: z.string(),
+  }),
+  user: z.object({
+    user_id: z.string(),
+    email_verified: z.boolean(),
+  }),
+})`}
+					filename="console.controller.ts"
+					language="ts"
+				/>
 			</div>
 		</div>
 	)

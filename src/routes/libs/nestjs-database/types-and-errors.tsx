@@ -14,7 +14,8 @@ function Page() {
 					Types & Errors
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
-					Exported utility types and the repository errors.
+					The repository errors, the registry contract, and what the package
+					deliberately does not let you name.
 				</p>
 			</div>
 
@@ -55,18 +56,45 @@ try {
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">WhereCallback</h2>
+				<h2 className="font-display font-semibold text-xl">
+					The where callback
+				</h2>
 				<p className="text-muted-foreground">
-					The where parameter accepts a callback with typed column fields and
-					Drizzle SQL operators:
+					The where parameter takes a callback with typed column fields and
+					Drizzle SQL operators. Its type is inferred at the call site and is
+					not exported — writing a signature against it would couple your code
+					to how this package models a predicate today:
 				</p>
 				<CodeBlock
-					code={`type WhereCallback<TTable> = (
+					filename="conditions.d.ts"
+					language="ts"
+					tabs={[
+						{
+							code: `type WhereCallback<TTable> = (
   fields: TableColumns<TTable>,
   operators: WhereOperators,
-) => SQL | undefined`}
-					filename="types.d.ts"
-					language="ts"
+) => SQL | undefined`,
+							label: 'PostgreSQL',
+						},
+						{
+							code: `// DynamoDB has no where callback: a read walks a key path, and the
+// only condition it takes is on the sort key.
+type SortCondition =
+  | { beginsWith: string }
+  | { between: [number | string, number | string] }
+  | { eq: number | string }
+  | { gt: number | string }
+  | { gte: number | string }
+  | { lt: number | string }
+  | { lte: number | string }
+
+await this.db.orders.query({
+  partition: userId,
+  sort: { beginsWith: 'paid#' },
+})`,
+							label: 'DynamoDB',
+						},
+					]}
 				/>
 				<p className="text-muted-foreground">Available operators:</p>
 				<CodeBlock
@@ -87,6 +115,13 @@ sql`}
 				<h2 className="font-display font-semibold text-xl">
 					InferDatabaseConfig
 				</h2>
+				<p className="text-muted-foreground text-sm">
+					The DynamoDB counterpart is{' '}
+					<code className="text-lib">InferDynamoDatabaseConfig</code>, which
+					carries only <code className="text-lib">schema</code>: that engine's
+					registry exposes no <code className="text-lib">raw</code>, because its
+					client is a command bus rather than a query builder.
+				</p>
 				<p className="text-muted-foreground">
 					Convenience type for augmenting{' '}
 					<code className="text-lib">DatabaseServiceRegistry</code> to get fully
@@ -108,24 +143,35 @@ declare module '@turystack/nestjs-database' {
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">Utility Types</h2>
+				<h2 className="font-display font-semibold text-xl">
+					What is not exported
+				</h2>
+				<p className="text-muted-foreground">
+					The type machinery exists and types every call — it is simply not
+					nameable through an import. Inference does not need a name:{' '}
+					<code className="text-lib">db.users.findById(id)</code> returns
+					exactly the row the schema describes.
+				</p>
 				<CodeBlock
-					code={`CreateInput<TTable>
-UpdateInput<TTable>
-PrimaryKeyInput<TTable>
-ReturningColumns<TTable>
-InferReturning<TTable, TReturning>
-FindByIdOptions<TTable>
-CreateOptions<TTable>
-UpdateOptions<TTable>
-UpdateByIdOptions<TTable>
-DeleteOptions<TTable>
-CountOptions<TTable>
-ExistsOptions<TTable>
-UpsertOptions<TTable>`}
-					filename="types.d.ts"
-					language="ts"
+					code={`CreateInput · UpdateInput · PrimaryKeyInput · ReturningColumns
+InferReturning · FindByIdOptions · CreateOptions · UpdateOptions
+UpdateByIdOptions · DeleteOptions · CountOptions · ExistsOptions
+UpsertOptions · WhereCallback · WhereOperators · TableRepositoryMethods
+
+PgSchemaBuilder · ColumnMap · SchemaResolverResult · RelationsHelpers
+
+DynamoKeyInput · DynamoQueryInput · DynamoPage · SortCondition
+DynamoTableDefinition · DynamoAttributes · InferRow`}
+					filename="internal"
+					language="text"
 				/>
+				<p className="text-muted-foreground text-sm">
+					A repository whose signature mentions{' '}
+					<code className="text-lib">WhereCallback&lt;TTable&gt;</code> is
+					coupled to this package's internals rather than to its own domain.
+					Keeping these unnameable is what prevents that coupling from forming
+					by accident.
+				</p>
 			</div>
 		</div>
 	)

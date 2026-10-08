@@ -40,14 +40,14 @@ import { Auth, ACL, AuthenticatedProfile } from '@turystack/nestjs-iam'
 import type { IamProfile } from '@turystack/nestjs-iam'
 import { z } from 'zod'
 
-type OrganizationRequest = { params: { organizationId: string } }
+type OrganizationRequest = { params: { organization_id: string } }
 
 const createOrganizationSchema = createRequestSchema({
   body: z.object({ name: z.string() }),
 })
 
 const updateOrganizationSchema = createRequestSchema({
-  params: z.object({ organizationId: z.string().uuid() }),
+  params: z.object({ organization_id: z.string().uuid() }),
   body: z.object({ name: z.string().optional() }),
 })
 
@@ -60,24 +60,24 @@ export class OrganizationController {
     @AuthenticatedProfile() profile: IamProfile,
     @Request(createOrganizationSchema) req: RequestInput<typeof createOrganizationSchema>,
   ) {
-    return this.organizationService.createOrganization(profile.userId, {
+    return this.organizationService.createOrganization(profile.user_id, {
       ...req.body,
-      status: 'ACTIVE',
+      status: 'active',
     })
   }
 
   // With @ACL() — combine permission check + profile access
-  @Route({ method: 'PATCH', path: ':organizationId', summary: 'Update Organization', description: 'Updates a organization.' })
+  @Route({ method: 'PATCH', path: ':organization_id', summary: 'Update Organization', description: 'Updates a organization.' })
   @ACL<OrganizationRequest>('organization:update', ({ params }) => ({
-    organizationId: params.organizationId,
+    organization_id: params.organization_id,
   }))
   updateOrganization(
     @AuthenticatedProfile() profile: IamProfile,
     @Request(updateOrganizationSchema) req: RequestInput<typeof updateOrganizationSchema>,
   ) {
-    return this.organizationService.updateOrganization(req.params.organizationId, {
+    return this.organizationService.updateOrganization(req.params.organization_id, {
       ...req.body,
-      updatedBy: profile.userId,
+      updated_by: profile.user_id,
     })
   }
 }`}
@@ -90,19 +90,19 @@ export class OrganizationController {
 				<h2 className="font-display font-semibold text-xl">IamProfile type</h2>
 				<CodeBlock
 					code={`type IamProfile = {
-  userId: string
-  organizationId: string
-  organizationRole?: IamRole // role in the organization as a whole
-  workspaceRole?: IamWorkspaceRole // role in the workspace the token was minted for
+  user_id: string
+  organization_id: string
+  organization_role?: IamRole // role in the organization as a whole
+  workspace_role?: IamWorkspaceRole // role in the workspace the token was minted for
 }
 
 type IamRole = {
-  roleId: string
+  role_id: string
   name: string
-  permissionIds: string[]
+  permission_ids: string[]
 }
 
-type IamWorkspaceRole = IamRole & { workspaceId: string }
+type IamWorkspaceRole = IamRole & { workspace_id: string }
 `}
 					filename="iam.types.d.ts"
 					language="ts"

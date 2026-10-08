@@ -26,21 +26,31 @@ export function LibrariesSection() {
 						className="mt-14"
 						key={category}
 					>
-						<h3 className="font-display font-semibold text-muted-foreground text-sm uppercase tracking-widest">
-							{category}
-						</h3>
+						{/* The section label is how a reader finds the shelf they came
+						    for, so it is set to be read: full contrast, and tracking
+						    wide enough to separate the words without stretching them
+						    past legibility. */}
+						<div className="flex items-center gap-4">
+							<h3 className="font-display font-semibold text-base text-foreground uppercase tracking-wide">
+								{category}
+							</h3>
+							<span className="h-px flex-1 bg-border" />
+						</div>
 						<div className="mt-6 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
 							{libraries
 								.filter((lib) => lib.category === category)
 								.map((lib, i) => (
 									<div
-										className="animate-fade-in-up"
+										className="h-full animate-fade-in-up"
 										key={lib.name}
 										style={{
 											animationDelay: `${i * 100}ms`,
 										}}
 									>
-										<Link to={lib.href}>
+										<Link
+											className="block h-full"
+											to={lib.href}
+										>
 											<LibraryCard {...lib} />
 										</Link>
 									</div>

@@ -31,7 +31,11 @@ function Page() {
 					that provides full type safety across the monorepo.
 				</p>
 				<CodeBlock
-					code={`import {
+					filename="database.schema.ts"
+					language="ts"
+					tabs={[
+						{
+							code: `import {
   defineDatabaseRelations,
   defineDatabaseSchema,
   type InferDatabaseConfig,
@@ -39,13 +43,13 @@ function Page() {
 
 export const databaseSchema = defineDatabaseSchema((schema) => ({
   user: schema.table({
-    userId: schema.uuid('user_id').primaryKey().notNull(),
+    user_id: schema.uuid('user_id').primaryKey().notNull(),
     name: schema.text('name').notNull(),
     email: schema.text('email').notNull(),
   }),
   product: schema.table({
-    productId: schema.uuid('product_id').primaryKey().notNull(),
-    userId: schema.uuid('user_id').notNull(),
+    product_id: schema.uuid('product_id').primaryKey().notNull(),
+    user_id: schema.uuid('user_id').notNull(),
     name: schema.text('name').notNull(),
     price: schema.integer('price').notNull(),
   }),
@@ -59,8 +63,8 @@ export const databaseRelations = defineDatabaseRelations(
     })),
     productRelations: relations(tables.product, ({ one }) => ({
       user: one(tables.user, {
-        fields: [tables.product.userId],
-        references: [tables.user.userId],
+        fields: [tables.product.user_id],
+        references: [tables.user.user_id],
       }),
     })),
   }),
@@ -72,15 +76,60 @@ declare module '@turystack/nestjs-database' {
       ReturnType<typeof databaseSchema>,
       ReturnType<typeof databaseRelations>
     > {}
-}`}
-					filename="database.schema.ts"
-					language="ts"
+}`,
+							label: 'PostgreSQL',
+						},
+						{
+							code: `import {
+  defineDynamoDatabaseSchema,
+  type InferDynamoDatabaseConfig,
+} from '@turystack/nestjs-database'
+
+// You declare attributes AND the paths a read may take. There is no query
+// planner to fall back on: a read walks a key that exists, or it scans.
+export const databaseSchema = defineDynamoDatabaseSchema((t) => ({
+  product: t.table({
+    attributes: {
+      user_id: t.string(),
+      product_id: t.string(),
+      name: t.string(),
+      price: t.number(),
+      specs: t.map().optional(),
+    },
+    // the pair that addresses an item
+    key: { partition: 'user_id', sort: 'product_id' },
+    // every other read path, declared
+    indexes: {
+      byName: { partition: 'user_id', sort: 'name' },
+    },
+  }),
+}))
+
+// No relations resolver: relations have no counterpart here. A product that
+// belongs to a user is a partition, not a foreign key.
+declare module '@turystack/nestjs-database' {
+  interface DatabaseServiceRegistry
+    extends InferDynamoDatabaseConfig<ReturnType<typeof databaseSchema>> {}
+}`,
+							label: 'DynamoDB',
+						},
+					]}
 				/>
+				<p className="text-muted-foreground text-sm">
+					The two builders share the two-phase shape — declare, then materialize
+					under the object key that becomes the table name — and nothing else.
+					One hands out column types, the other attribute types plus the key
+					paths, and the repository each produces is derived from what was
+					declared.
+				</p>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">
 					database.migration.ts
+					<span className="ml-2 rounded bg-muted px-2 py-0.5 align-middle font-medium font-normal text-muted-foreground text-xs">
+						PostgreSQL only
+					</span>
 				</h2>
 				<p className="text-muted-foreground">
 					This file materializes the schema into actual Drizzle table objects.
@@ -92,7 +141,7 @@ declare module '@turystack/nestjs-database' {
 					code={`import {
   createSchemaBuilder,
   materializeSchema,
-} from '@turystack/nestjs-database'
+} from '@turystack/nestjs-database/postgresql'
 
 import { databaseSchema } from './database.schema'
 
@@ -108,6 +157,9 @@ export const { user, product } = tables`}
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">
 					drizzle.config.ts
+					<span className="ml-2 rounded bg-muted px-2 py-0.5 align-middle font-medium font-normal text-muted-foreground text-xs">
+						PostgreSQL only
+					</span>
 				</h2>
 				<p className="text-muted-foreground">
 					Point <code className="text-lib">drizzle-kit</code> to the migration
@@ -131,7 +183,28 @@ export default defineConfig({
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">
+					Migrations, on the other engine
+				</h2>
+				<p className="text-muted-foreground text-sm">
+					There is no counterpart to the two files above on DynamoDB. Creating a
+					table and its indexes is infrastructure — CDK, Terraform, the console
+					— not a versioned migration this package runs, because the engine has
+					no DDL for an application to apply. What remains for the application
+					is data migration, which is a different problem with a different
+					shape.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					The schema you declare here is still the single source for the types
+					and the repositories; it just is not what creates the table.
+				</p>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
 					Available Column Types
+					<span className="ml-2 rounded bg-muted px-2 py-0.5 align-middle font-medium font-normal text-muted-foreground text-xs">
+						PostgreSQL only
+					</span>
 				</h2>
 				<p className="text-muted-foreground">
 					The schema builder exposes all Drizzle PostgreSQL column types. Some
@@ -156,12 +229,31 @@ schema.numeric('column_name', { precision: 10, scale: 2 })`}
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">Key Helpers</h2>
+				<h2 className="font-display font-semibold text-xl">
+					Key Helpers
+					<span className="ml-2 rounded bg-muted px-2 py-0.5 align-middle font-medium font-normal text-muted-foreground text-xs">
+						PostgreSQL only
+					</span>
+				</h2>
+				<p className="text-muted-foreground text-sm">
+					On DynamoDB the attribute helpers are `t.string()`, `t.number()`,
+					`t.boolean()`, `t.binary()`, `t.list()` and `t.map()`, each with
+					`.optional()`. There is no `.primaryKey()`, because the key belongs to
+					the table rather than to a column — it is the `key` block, and every
+					other read path is an entry in `indexes`.
+				</p>
 				<p className="text-muted-foreground">
 					<code className="text-lib">defineDatabaseSchema(resolver)</code> —
 					identity helper that preserves the inferred table types. The resolver
 					receives a <code className="text-lib">PgSchemaBuilder</code> and
 					returns table definitions.
+				</p>
+				<p className="text-muted-foreground">
+					<code className="text-lib">defineDynamoDatabaseSchema(resolver)</code>{' '}
+					— the same identity helper for the other engine. Separate rather than
+					overloaded because the two builders share nothing: one hands out
+					column types, the other attribute types plus the key paths a read may
+					take.
 				</p>
 				<p className="text-muted-foreground">
 					<code className="text-lib">

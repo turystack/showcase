@@ -174,6 +174,47 @@ await saveOrder.execute(values)
 	},
 	{
 		category: 'Async and debounce',
+		description:
+			'Turns a query result into the five outcomes of a remote read, decided in the canonical order.',
+		name: 'useDataOutcome',
+		returns:
+			'A discriminated union on status: pending, denied, error, empty or success, plus retry.',
+		signature: '({ query, select?, empty?, denied? }) => DataOutcome<TData>',
+		slug: 'use-data-outcome',
+		usage: `const outcome = useDataOutcome({
+  query: useListInvoices(params),
+  select: (page) => page.data,
+})
+
+<Table columns={columns} itemKey="invoice_id" outcome={outcome} />
+
+// or, when the surface is not a data primitive
+<Loaded outcome={outcome}>{(rows) => <Summary rows={rows} />}</Loaded>`,
+	},
+	{
+		category: 'Async and debounce',
+		description:
+			'useDataOutcome for an infinite query: the outcome plus the props that load the next page.',
+		name: 'useInfiniteDataOutcome',
+		returns:
+			'{ outcome, hasMore, loadingMore, onLoadMore } — a failed further page keeps the rows on screen.',
+		signature:
+			'({ query, select, empty?, denied? }) => InfiniteDataOutcome<TItem>',
+		slug: 'use-infinite-data-outcome',
+		usage: `const { outcome, hasMore, loadingMore, onLoadMore } = useInfiniteDataOutcome({
+  query: useListNotificationsInfinite(params),
+  select: (pages) => pages.flatMap((page) => page.data),
+})
+
+<NotificationList
+  hasMore={hasMore}
+  loadingMore={loadingMore}
+  onLoadMore={onLoadMore}
+  outcome={outcome}
+/>`,
+	},
+	{
+		category: 'Async and debounce',
 		description: 'Debounces a typed callback and exposes lifecycle controls.',
 		name: 'useDebounceCallback',
 		returns: 'A debounced callback with cancel, flush, and isPending methods.',
@@ -281,8 +322,7 @@ useEffect(() => {
 	},
 	{
 		category: 'Lifecycle and timing',
-		description:
-			'Composes callback and object refs for native or web elements.',
+		description: 'Composes callback and object refs into one ref.',
 		name: 'useMergedRefs',
 		returns: 'A callback ref that updates every supplied reference.',
 		signature: '<T>(...refs: Array<MergeableRef<T>>) => UseMergedRefsReturn<T>',

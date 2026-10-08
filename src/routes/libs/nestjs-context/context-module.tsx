@@ -134,8 +134,7 @@ export class AppModule {}`,
 				</h2>
 				<CodeBlock
 					code={`@turystack/nestjs-server       HTTP request — honours x-correlation-id, echoes it back
-@turystack/nestjs-serverless   one scope per record, inheriting the publisher's id
-@turystack/nestjs-scheduler    one scope per tick, labelled with the job name
+@turystack/nestjs-events       one scope per record or scheduled tick, inheriting the publisher's id
 @WithContext()                 anything else — CLI, custom entrypoint`}
 					filename="entrypoints"
 					language="bash"

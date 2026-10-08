@@ -22,6 +22,33 @@ function Page() {
 			</div>
 
 			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
+					The same hooks, a different commit
+				</h2>
+				<p className="text-muted-foreground text-sm">
+					The hooks are AsyncLocalStorage, so any engine runs them; what they
+					write against differs.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					On PostgreSQL a before-commit hook writes through the open handle, so
+					a rollback discards it.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					On DynamoDB it appends to the unsent batch, so a throw before the
+					flush sends nothing.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					Either way, the hook's write shares the fate of the write that queued
+					it.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					After-commit hooks behave identically on both: they run once the data
+					is durable, and a failure there is reported and swallowed, because it
+					cannot undo a commit that already happened.
+				</p>
+			</div>
+
+			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Signature</h2>
 				<CodeBlock
 					code={`import {
@@ -61,10 +88,10 @@ getCurrentTx(): ResolvedDatabase | undefined`}
 				<CodeBlock
 					code={`@Transactional()
 async execute(input: CancelOrderInput) {
-  const order = await this.orders.updateById(input.orderId, { status: 'CANCELLED' })
+  const order = await this.orders.updateById(input.orderId, { status: 'cancelled' })
 
   onBeforeCommit(async (tx) => {
-    await insertOutboxRow(tx, toEvent(order))
+    await insertAuditRow(tx, toAuditEntry(order))
   })
 
   return order
@@ -73,24 +100,21 @@ async execute(input: CancelOrderInput) {
 					language="ts"
 				/>
 				<p className="text-muted-foreground text-sm">
-					A hook that throws fails the transaction: nothing commits. That is the
-					point — if the event cannot be recorded, the write must not land
-					either.
+					A hook that throws fails the transaction: if the audit row cannot be
+					written, the order write does not land either.
 				</p>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">onAfterCommit</h2>
 				<p className="text-muted-foreground">
-					Runs once the commit succeeded — for effects that must not happen
-					unless the data is durable, and that cannot undo it either: waking a
-					dispatcher, warming a cache, notifying.
+					Runs once the commit succeeded — for effects that need durable data:
+					publishing an event, warming a cache.
 				</p>
 				<CodeBlock
 					code={`onAfterCommit(() => {
-  // The rows are durable and visible now. Kicking before the commit
-  // would find nothing.
-  dispatcher.kick()
+  // Durable now: a consumer that reads the order will find it.
+  this.publisher.publish(OrderCancelled, { identifier: order.order_id })
 })`}
 					filename="usage"
 					language="ts"
@@ -109,13 +133,13 @@ async execute(input: CancelOrderInput) {
 					a consumer accumulate across an operation and act once.
 				</p>
 				<CodeBlock
-					code={`const BUFFER = Symbol.for('app.outbox.buffer')
+					code={`const BUFFER = Symbol.for('app.audit.buffer')
 
 const buffer = transactionState(BUFFER, () => {
   const rows = []
 
   // Registered on first access, so one commit costs one batched insert
-  // no matter how many events the operation produced.
+  // no matter how many rows the operation produced.
   onBeforeCommit((tx) => insertAll(tx, rows))
 
   return rows

@@ -23,8 +23,8 @@ const params = [
 	},
 	{
 		description:
-			'Resource context with organizationId and optional workspaceId.',
-		name: 'resource',
+			'Resource context with optional organization_id and workspace_id.',
+		name: 'context',
 		required: false,
 		type: 'IamAclContext',
 	},
@@ -51,7 +51,7 @@ function Page() {
 iamAclService.canPerformAction(
   user: IamProfile,
   permission: string,
-  resource?: IamAclContext,
+  context?: IamAclContext,
 ): void // throws IamForbiddenException if not authorized`}
 					filename="acl.service.d.ts"
 					language="ts"
@@ -76,7 +76,7 @@ export class OrderService {
 
     // Programmatic check — throws IamForbiddenException if denied
     this.iamAclService.canPerformAction(profile, 'order:cancel', {
-      organizationId: order.organizationId,
+      organization_id: order.organization_id,
     })
 
     return this.orderRepository.cancel(orderId)
@@ -101,7 +101,7 @@ export class OrderService {
 						<span className="mt-1 text-lib">→</span>
 						<span>
 							Builds a CASL Ability from the union of the user's roles, scoped
-							to their organizationId
+							to their organization_id
 						</span>
 					</li>
 					<li className="flex items-start gap-2">
@@ -124,7 +124,7 @@ export class OrderService {
 						<span>
 							<code className="font-mono text-sm">workspace:manage</code> held
 							in a workspace role grants everything inside that workspace — the
-							grant carries the role's own workspaceId, so it never matches
+							grant carries the role's own workspace_id, so it never matches
 							another workspace, and never authorizes an organization-level
 							check
 						</span>
@@ -133,7 +133,7 @@ export class OrderService {
 						<span className="mt-1 text-lib">→</span>
 						<span>
 							The checked resource is the profile's{' '}
-							<code className="font-mono text-sm">organizationId</code> merged
+							<code className="font-mono text-sm">organization_id</code> merged
 							with whatever the caller passes — a mismatched id simply fails the
 							ability conditions
 						</span>

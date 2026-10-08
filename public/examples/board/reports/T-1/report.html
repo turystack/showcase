@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>T-1 — delivery report (example)</title>
+<style>
+  :root {
+    color-scheme: light dark;
+    --ink: #14181d;
+    --ink-faint: #6d7783;
+    --paper: #f5f6f4;
+    --surface: #ffffff;
+    --rule: #d9dde2;
+    --pass: #1c7d54;
+    --pass-soft: #e2f1ea;
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e7eaee;
+      --ink-faint: #7b8592;
+      --paper: #11141a;
+      --surface: #181c23;
+      --rule: #2a303a;
+      --pass: #5cc394;
+      --pass-soft: #14291f;
+    }
+  }
+
+  :root[data-theme="dark"] {
+    --ink: #e7eaee;
+    --ink-faint: #7b8592;
+    --paper: #11141a;
+    --surface: #181c23;
+    --rule: #2a303a;
+    --pass: #5cc394;
+    --pass-soft: #14291f;
+  }
+
+  body {
+    margin: 0;
+    padding: 1.5rem 1rem;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: 0.94rem;
+    line-height: 1.5;
+  }
+
+  main { max-width: 56rem; margin: 0 auto; }
+  h1 { font-size: 1.14rem; margin: 0 0 0.25rem; }
+  h2 { font-size: 0.86rem; margin: 1.5rem 0 0.5rem; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; }
+  p.meta { color: var(--ink-faint); font-size: 0.78rem; margin: 0 0 1rem; }
+
+  .chip {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 0.78rem;
+    padding: 0.1rem 0.4rem;
+    border-radius: 999px;
+    background: var(--pass-soft);
+    color: var(--pass);
+  }
+
+  .scroll { overflow-x: auto; }
+  table { width: 100%; border-collapse: collapse; font-size: 0.78rem; background: var(--surface); }
+  th { text-align: left; color: var(--ink-faint); text-transform: uppercase; letter-spacing: 0.06em; }
+  th, td { padding: 0.4rem 0.6rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  td.id { font-family: var(--mono); color: var(--ink-faint); white-space: nowrap; }
+
+  .note {
+    margin-top: 1.5rem;
+    border: 1px dashed var(--rule);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    color: var(--ink-faint);
+    font-size: 0.78rem;
+    background: var(--surface);
+  }
+
+  code { font-family: var(--mono); }
+</style>
+</head>
+<body>
+<main>
+
+<h1>T-1 · Place an order and hold its seats <span class="chip">example</span></h1>
+<p class="meta">acme · example report — no code was run to produce this page</p>
+
+<h2>Cases</h2>
+<div class="scroll">
+<table>
+  <thead>
+    <tr><th>Case</th><th>Proves</th><th>Test</th><th>State</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="id">TC-1</td><td class="id">SALES-AC-1</td><td>place-order.test.ts › holds seats and fixes the total</td><td>pass</td></tr>
+    <tr><td class="id">TC-2</td><td class="id">SALES-AC-2</td><td>place-order.test.ts › refuses a sold-out ticket type</td><td>pass</td></tr>
+    <tr><td class="id">TC-3</td><td class="id">SALES-AC-3</td><td>place-order.test.ts › refuses more than 10 tickets</td><td>pass</td></tr>
+    <tr><td class="id">TC-4</td><td class="id">SALES-AC-4</td><td>place-order.int.test.ts › a repeated placement returns the first order</td><td>pass</td></tr>
+    <tr><td class="id">TC-5</td><td class="id">SALES-JOB-1</td><td>hold-sweep.int.test.ts › expires after 15 minutes on the injected instant</td><td>pass</td></tr>
+    <tr><td class="id">TC-6</td><td class="id">BILLING-EVN-1</td><td>payment-succeeded.int.test.ts › pays the order once</td><td>pass</td></tr>
+    <tr><td class="id">TC-7</td><td class="id">—</td><td>hold-sweep.int.test.ts › a payment racing the sweep wins</td><td>pass</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h2>Phases</h2>
+<div class="scroll">
+<table>
+  <thead>
+    <tr><th>Phase</th><th>Implied by</th><th>State</th><th>Evidence</th></tr>
+  </thead>
+  <tbody>
+    <tr><td class="id">data</td><td>data</td><td>done</td><td>the order and order_item migration · gate:migration-shape</td></tr>
+    <tr><td class="id">domain</td><td>rules · operations · effects</td><td>done</td><td>TC-1 … TC-3 · gate:use-case-shape</td></tr>
+    <tr><td class="id">routes</td><td>operations</td><td>done</td><td>the place-order route · gate:route-schemas</td></tr>
+    <tr><td class="id">async</td><td>effects · scheduled</td><td>done</td><td>TC-5 · TC-6 · gate:handler-schema</td></tr>
+    <tr><td class="id">contract</td><td>operations · screens</td><td>done</td><td>gate:contract-delta</td></tr>
+    <tr><td class="id">frontend</td><td>screens</td><td>done</td><td>the event page and order page screens · gate:data-outcome</td></tr>
+  </tbody>
+</table>
+</div>
+
+<p class="note">
+  <strong>This page is an example.</strong> It ships with
+  <code>@turystack/blueprint-template</code> so the example board's finished task has
+  something to open at the path its delivery points at. Nothing here was run: the tests,
+  gates and evidence are illustrative. A real delivery report is emitted by
+  <code>turystack-proof report</code> as <code>gate-report.json</code> plus its page, and
+  carries the full ladder, the law coverage, the contract delta, the phases with their
+  evidence, and the screens beside their designs.
+</p>
+
+</main>
+</body>
+</html>

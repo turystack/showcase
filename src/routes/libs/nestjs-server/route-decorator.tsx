@@ -197,7 +197,7 @@ class UsersController {
 
 @Route({
   method: 'POST',
-  path: ':invoiceId::pay',   // matches POST /invoices/inv-123:pay
+  path: ':invoice_id::pay',   // matches POST /invoices/inv-123:pay
   summary: 'Pay Invoice',
   description: 'Pays an invoice.',
   parameters: { params: schema.params },
@@ -219,7 +219,7 @@ async generate() {}`}
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Never <code>path: ':invoiceId/pay'</code> — a verb is not a path
+							Never <code>path: ':invoice_id/pay'</code> — a verb is not a path
 							segment; segments are resources and relationships
 						</span>
 					</li>
@@ -227,7 +227,7 @@ async generate() {}`}
 						<span className="mt-1 text-lib">→</span>
 						<span>
 							A <code>::verb</code> on anything other than POST throws at boot:
-							[Route] custom method path ':invoiceId::pay' requires method POST
+							[Route] custom method path ':invoice_id::pay' requires method POST
 						</span>
 					</li>
 				</ul>

@@ -15,12 +15,12 @@ function Page() {
 				</h1>
 				<div className="mt-3 max-w-3xl space-y-2 text-lg text-muted-foreground">
 					<p>
-						A collection of reusable, platform-agnostic React hooks for state,
-						async work, timing, and lifecycle.
+						A collection of reusable React hooks for state, async work, timing,
+						and lifecycle.
 					</p>
 					<p>
-						It provides shared behavior for web, React Native, and Expo projects
-						without coupling application logic to a UI library.
+						It provides shared behavior across Turystack apps without coupling
+						application logic to a UI library.
 					</p>
 				</div>
 			</div>
@@ -55,8 +55,7 @@ function Page() {
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Platform-agnostic APIs shared by web, React Native, and Expo
-							applications
+							APIs with no UI dependency, shared by every Turystack app
 						</span>
 					</li>
 					<li className="flex items-start gap-2">

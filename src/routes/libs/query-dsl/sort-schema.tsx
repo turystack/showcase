@@ -53,17 +53,17 @@ const SortOrderSchema: z.ZodEnum<{ asc: 'asc'; desc: 'desc' }>`}
 				<CodeBlock
 					code={`import { SortSchema, type Sort } from '@turystack/query-dsl'
 
-const OrderSortSchema = SortSchema(['createdAt', 'total'], {
-  defaultSortBy: 'createdAt',
+const OrderSortSchema = SortSchema(['created_at', 'total'], {
+  defaultSortBy: 'created_at',
   defaultSortOrder: 'desc',
 })
 
-OrderSortSchema.parse({})                    // { sortBy: 'createdAt', sortOrder: 'desc' }
+OrderSortSchema.parse({})                    // { sortBy: 'created_at', sortOrder: 'desc' }
 OrderSortSchema.parse({ sortBy: 'total' })   // { sortBy: 'total', sortOrder: 'desc' }
 OrderSortSchema.parse({ sortBy: 'password' }) // throws — outside the allow-list
 
 type ListOrdersInput = { statuses?: List<OrderStatus> } & PagePagination &
-  Sort<readonly ['createdAt', 'total']>`}
+  Sort<readonly ['created_at', 'total']>`}
 					filename="example.ts"
 					language="ts"
 				/>

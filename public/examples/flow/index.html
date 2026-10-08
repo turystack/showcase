@@ -1,0 +1,716 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Turystack — the flow</title>
+<style>
+  /* Tokens mirror the delivery report's and the board's, so the three pages a
+     project actually opens read as one system. */
+  :root {
+    color-scheme: light dark;
+
+    --ink: #14181d;
+    --ink-soft: #454f5c;
+    --ink-faint: #6d7783;
+    --paper: #f5f6f4;
+    --surface: #ffffff;
+    --surface-sunken: #eceef0;
+    --rule: #d9dde2;
+
+    --accent: #2f4a7a;
+    --accent-soft: #e6ebf4;
+
+    --pass: #1c7d54;
+    --pass-soft: #e2f1ea;
+    --fail: #a8322d;
+    --fail-soft: #f8e6e5;
+    --warn: #9a6b12;
+    --warn-soft: #f7eedb;
+    --idle: #6d7783;
+    --idle-soft: #e9ebee;
+
+    --step--1: 0.78rem;
+    --step-0: 0.94rem;
+    --step-1: 1.14rem;
+    --step-2: 1.5rem;
+    --step-3: 2.1rem;
+
+    --sans: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --mono: ui-monospace, "SF Mono", SFMono-Regular, Menlo, Consolas, "Liberation Mono", monospace;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) {
+      --ink: #e7eaee;
+      --ink-soft: #a7b0bb;
+      --ink-faint: #7b8592;
+      --paper: #11141a;
+      --surface: #181c23;
+      --surface-sunken: #131720;
+      --rule: #2a303a;
+      --accent: #8ba6dd;
+      --accent-soft: #1d2634;
+      --pass: #5cc394;
+      --pass-soft: #14291f;
+      --fail: #e88b85;
+      --fail-soft: #2a1a19;
+      --warn: #d8a94a;
+      --warn-soft: #2a2114;
+      --idle: #8891a0;
+      --idle-soft: #1e232b;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: var(--sans);
+    font-size: var(--step-0);
+    line-height: 1.55;
+  }
+
+  a { color: var(--accent); }
+
+  .wrap {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 2rem;
+    max-width: 78rem;
+    margin: 0 auto;
+    padding: 2rem 1.25rem 5rem;
+  }
+
+  @media (min-width: 60rem) {
+    .wrap { grid-template-columns: 15rem minmax(0, 1fr); gap: 3rem; }
+    nav.rail { position: sticky; top: 2rem; align-self: start; }
+  }
+
+  /* --- rail ------------------------------------------------------------- */
+
+  nav.rail h2 {
+    font-size: var(--step--1);
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin: 0 0 0.6rem;
+  }
+
+  nav.rail ol { list-style: none; margin: 0 0 1.5rem; padding: 0; }
+
+  nav.rail a {
+    display: flex;
+    gap: 0.6rem;
+    align-items: baseline;
+    padding: 0.3rem 0.5rem;
+    border-radius: 6px;
+    color: var(--ink-soft);
+    text-decoration: none;
+    font-size: var(--step--1);
+  }
+
+  nav.rail a:hover { background: var(--surface); color: var(--ink); }
+  nav.rail a[aria-current="true"] { background: var(--surface); color: var(--ink); font-weight: 600; }
+  nav.rail a .n { font-family: var(--mono); color: var(--ink-faint); }
+
+  .filters { display: flex; flex-wrap: wrap; gap: 0.35rem; }
+
+  .filters button {
+    font: inherit;
+    font-size: var(--step--1);
+    padding: 0.2rem 0.6rem;
+    border-radius: 999px;
+    border: 1px solid var(--rule);
+    background: none;
+    color: var(--ink-soft);
+    cursor: pointer;
+  }
+
+  .filters button[aria-pressed="true"] {
+    background: var(--accent-soft);
+    color: var(--accent);
+    border-color: transparent;
+  }
+
+  /* --- header ----------------------------------------------------------- */
+
+  header.page h1 {
+    font-size: var(--step-3);
+    line-height: 1.1;
+    margin: 0 0 0.5rem;
+    letter-spacing: -0.01em;
+  }
+
+  header.page p.lede { font-size: var(--step-1); color: var(--ink-soft); margin: 0 0 1.5rem; max-width: 46rem; }
+
+  .kinds { display: grid; gap: 0.75rem; grid-template-columns: 1fr; margin-bottom: 2.5rem; }
+  @media (min-width: 46rem) { .kinds { grid-template-columns: repeat(3, 1fr); } }
+
+  .kind {
+    border: 1px solid var(--rule);
+    border-radius: 10px;
+    background: var(--surface);
+    padding: 0.9rem 1rem;
+  }
+
+  .kind h3 { margin: 0 0 0.2rem; font-size: var(--step-0); }
+  .kind p { margin: 0; font-size: var(--step--1); color: var(--ink-soft); }
+  .kind code { font-family: var(--mono); font-size: 0.72rem; color: var(--ink-faint); }
+
+  /* --- phases ----------------------------------------------------------- */
+
+  section.phase {
+    position: relative;
+    border-left: 2px solid var(--rule);
+    padding: 0 0 2.5rem 1.5rem;
+    margin-left: 0.6rem;
+  }
+
+  section.phase::before {
+    content: attr(data-n);
+    position: absolute;
+    left: -0.85rem;
+    top: 0;
+    width: 1.6rem;
+    height: 1.6rem;
+    border-radius: 50%;
+    background: var(--surface);
+    border: 2px solid var(--rule);
+    color: var(--ink-faint);
+    font-family: var(--mono);
+    font-size: 0.68rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  section.phase[data-mode="bootstrap"]::before { border-color: var(--accent); color: var(--accent); }
+  section.phase[data-mode="loop"]::before { border-color: var(--pass); color: var(--pass); }
+
+  section.phase.dim { opacity: 0.28; }
+
+  section.phase > h2 { font-size: var(--step-2); margin: 0 0 0.15rem; letter-spacing: -0.01em; }
+  section.phase > p.what { margin: 0 0 1rem; color: var(--ink-soft); max-width: 46rem; }
+
+  .steps { margin: 0 0 1rem; padding-left: 1.1rem; color: var(--ink-soft); }
+  .steps li { margin-bottom: 0.25rem; }
+  .steps strong { color: var(--ink); font-weight: 600; }
+
+  pre {
+    background: var(--surface-sunken);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    padding: 0.8rem 1rem;
+    overflow-x: auto;
+    font-family: var(--mono);
+    font-size: var(--step--1);
+    line-height: 1.5;
+    margin: 0 0 1rem;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: var(--step--1);
+    margin: 0 0 1rem;
+    background: var(--surface);
+    border: 1px solid var(--rule);
+    border-radius: 8px;
+    overflow: hidden;
+  }
+
+  th {
+    text-align: left;
+    font-weight: 600;
+    color: var(--ink-faint);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: 0.7rem;
+    padding: 0.45rem 0.7rem;
+    border-bottom: 1px solid var(--rule);
+  }
+
+  td { padding: 0.45rem 0.7rem; border-bottom: 1px solid var(--rule); vertical-align: top; }
+  tr:last-child td { border-bottom: 0; }
+  td.k { font-weight: 600; white-space: nowrap; }
+
+  .gates { display: flex; flex-wrap: wrap; gap: 0.3rem; margin-bottom: 0.5rem; }
+
+  .gate {
+    font-family: var(--mono);
+    font-size: 0.7rem;
+    padding: 0.12rem 0.45rem;
+    border-radius: 4px;
+    background: var(--pass-soft);
+    color: var(--pass);
+  }
+
+  .gate.halt { background: var(--fail-soft); color: var(--fail); }
+  .gate.manual { background: var(--warn-soft); color: var(--warn); }
+
+  .label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: var(--ink-faint);
+    margin: 0 0 0.3rem;
+    font-weight: 600;
+  }
+
+  .halt-note {
+    border-left: 3px solid var(--fail);
+    background: var(--fail-soft);
+    color: var(--ink);
+    padding: 0.6rem 0.9rem;
+    border-radius: 0 8px 8px 0;
+    font-size: var(--step--1);
+    margin: 0 0 1rem;
+  }
+
+  .halt-note b { color: var(--fail); }
+
+  footer.page {
+    border-top: 1px solid var(--rule);
+    padding-top: 1.5rem;
+    color: var(--ink-soft);
+  }
+
+  code { font-family: var(--mono); font-size: 0.85em; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <nav class="rail" aria-label="Phases">
+    <h2>The flow</h2>
+    <ol id="rail"></ol>
+
+    <h2>Show</h2>
+    <div class="filters">
+      <button aria-pressed="true" data-filter="all" type="button">Everything</button>
+      <button aria-pressed="false" data-filter="bootstrap" type="button">Bootstrap</button>
+      <button aria-pressed="false" data-filter="loop" type="button">Every session</button>
+    </div>
+  </nav>
+
+  <main>
+    <header class="page">
+      <h1>Turystack, end to end</h1>
+      <p class="lede">
+        A product starts as a design file, a briefing and a conversation, and ends
+        as tasks whose every id is tied to the test that proved it. What follows is that
+        path, with the branch at each step and the check that holds it.
+      </p>
+      <p class="lede">
+        The step numbers on this page are the <strong>run order</strong>. The
+        harness's section files keep their own names: the blueprint is
+        <code>04-blueprint-bootstrap.md</code> and runs before
+        <code>03-uiux-bootstrap.md</code>.
+      </p>
+
+      <div class="kinds">
+        <div class="kind">
+          <h3>Law skills</h3>
+          <p>Written by Turystack, rewritten on every install, never edited by a project.</p>
+          <code>turystack-harness · -proof-mode · -architecture-pattern · -modeling · -backend-pattern · -frontend-pattern · -frontend-primitives-pattern</code>
+        </div>
+        <div class="kind">
+          <h3>Project skills</h3>
+          <p>Materialized once under the project's name and its own from then on. This is where the product's decisions live.</p>
+          <code>&lt;project&gt;-blueprint · &lt;project&gt;-uiux</code>
+        </div>
+        <div class="kind">
+          <h3>The runner</h3>
+          <p>Runs the ladder and the structural checks the skills bind to, and emits the report whose verdict is computed.</p>
+          <code>@turystack/proof-mode-gates → turystack-proof</code>
+        </div>
+      </div>
+    </header>
+
+    <section class="phase" data-mode="setup" data-n="00" id="p0">
+      <h2>The repository exists</h2>
+      <p class="what">
+        Optional, and it decides things the blueprint will later assume. A project
+        that already exists skips it — the bootstrap below is not optional either
+        way.
+      </p>
+
+      <pre>turystack create api my-api     NestJS, one audience or several
+turystack create web my-web     React, Vite, TanStack Router, generated SDK</pre>
+
+      <p class="label">Variants</p>
+      <table>
+        <tr><td class="k">Shape</td><td><code>single</code> · <code>multi-audience</code> — one API surface per audience, each with its own generated SDK</td></tr>
+        <tr><td class="k">Modules</td><td>database · logger · cache · lock · rate-limit · publisher · storage · iam · observability · scheduler · social-auth</td></tr>
+        <tr><td class="k">Dependencies</td><td>local <code>file:</code> links while the libraries are being developed, or published versions</td></tr>
+        <tr><td class="k">Brownfield</td><td>nothing to scaffold; the blueprint is still generated complete, with the running product as one more source</td></tr>
+        <tr><td class="k">Monorepo</td><td><code>@acme/web</code> and <code>@acme/api</code> are one project: the scope names it, and they share one blueprint</td></tr>
+      </table>
+    </section>
+
+    <section class="phase" data-mode="setup" data-n="01" id="p1">
+      <h2>Install the skills</h2>
+      <p class="what">
+        One command puts the law in the repository and materializes the two the
+        project owns, plus the manifest that resolves their names.
+      </p>
+
+      <pre>turystack skills --claude --skills harness,proof-mode,architecture,modeling,backend,frontend,frontend-primitives,blueprint,uiux
+
+.claude/turystack.json      { "project": "acme", "skills": { … } }
+.claude/skills/             the law, plus acme-blueprint and acme-uiux</pre>
+
+      <p class="label">Variants</p>
+      <table>
+        <tr><td class="k">Agent</td><td><code>.claude/skills</code> · <code>.codex/skills</code> · both</td></tr>
+        <tr><td class="k">Re-run</td><td>law skills are rewritten; <code>acme-blueprint</code> and <code>acme-uiux</code> are left untouched — they hold decisions</td></tr>
+        <tr><td class="k">Old spec format</td><td><code>turystack skills --migrate-spec</code> writes <code>acme-blueprint</code> beside <code>acme-spec</code>, which it leaves untouched, and a <code>MIGRATION.md</code> with the old → new id map</td></tr>
+      </table>
+    </section>
+
+    <section class="phase" data-mode="loop" data-n="02" id="p2">
+      <h2>Every session starts here</h2>
+      <p class="what">
+        <code>turystack-harness</code> reads the disk — the manifest, the two
+        project skills, the board — and says which of two modes this session is
+        in. It never takes that from the conversation.
+      </p>
+
+      <pre>read .claude/turystack.json → &lt;project&gt;-blueprint → &lt;project&gt;-uiux → board/tasks.json
+
+  missing, or every section still unfilled  →  BOOTSTRAP   (run order 03 → 05: blueprint → uiux → board)
+  both answer                               →  ROUTINE     (run order 07)
+  -spec and no -blueprint                   →  turystack skills --migrate-spec</pre>
+
+      <p class="label">Variants</p>
+      <table>
+        <tr><td class="k">Partly filled</td><td>routine, with a known hole: the first task that needs the empty section stops there and asks</td></tr>
+        <tr><td class="k">No manifest</td><td>falls back to the shape — the folders ending in <code>-blueprint</code> and <code>-uiux</code></td></tr>
+      </table>
+
+      <div class="gates">
+        <span class="gate">gate:bootstrap-complete</span>
+        <span class="gate">gate:spec-unfilled</span>
+        <span class="gate">gate:uiux-unfilled</span>
+      </div>
+
+      <div class="halt-note">
+        <b>Until step 05 has produced a board, no implementation runs.</b> Not a
+        scaffold, not “just the login screen”. The exception people reach for is
+        the one that costs the most: a screen built before the blueprint decides
+        what it does, kept because it works, and maintained afterwards as the
+        reference for how screens are built here.
+      </div>
+    </section>
+
+    <section class="phase" data-mode="bootstrap" data-n="03" id="p3">
+      <h2>A conversation becomes the blueprint</h2>
+      <p class="what">
+        Not extracted from the design and not inferred from the code. The design,
+        the briefing and the docs are where it starts; the harness proposes and a
+        person decides each answer. It is generated complete — every domain, its
+        rules, model and flows — and what no source says keeps its marker and
+        becomes a question, never a guess.
+      </p>
+
+      <p class="label">Section file: <code>04-blueprint-bootstrap.md</code></p>
+      <pre>glossary → actors &amp; conventions → domains, each with its id prefix
+→ per domain: entities &amp; states → rules → model → flows
+→ cross-domain rules → capabilities with their acceptance criteria → erd</pre>
+
+      <ul class="steps">
+        <li><strong>Propose what the sources only imply</strong> as a checklist per domain, the evidence on each item. Only what a person accepted is written.</li>
+        <li><strong>List what no source says</strong> as questions. Each one stays an unfilled marker until someone answers it.</li>
+        <li><strong>Review it whole</strong> before the sweep starts: every domain's four pages, the glossary, the conventions, the ERD, the cross-domain rules.</li>
+      </ul>
+
+      <p class="label">Every decision leaves with an id of the domain that owns it</p>
+      <table>
+        <tr><td class="k"><code>SALES-AC-n</code></td><td>an acceptance criterion, Given / When / Then</td></tr>
+        <tr><td class="k"><code>SALES-R-n</code></td><td>a rule of the domain — an invariant or a validation</td></tr>
+        <tr><td class="k"><code>SALES-EVN-n</code></td><td>a published event, and every handler that reacts to it</td></tr>
+        <tr><td class="k"><code>SALES-JOB-n</code></td><td>something that runs on a clock</td></tr>
+        <tr><td class="k"><code>XD-R-n</code></td><td>a rule no single domain owns</td></tr>
+        <tr><td class="k"><code>UX-DR-n</code></td><td>what a design obliges</td></tr>
+        <tr><td class="k"><code>TC-n</code></td><td>a test case a task will be proved by</td></tr>
+      </table>
+
+      <p class="label">Variants</p>
+      <table>
+        <tr><td class="k">No design yet</td><td>written from the briefing and the conversation; the UI/UX skill keeps its markers</td></tr>
+        <tr><td class="k">Nothing written</td><td>the conversation carries the whole product</td></tr>
+        <tr><td class="k">A canonical domain</td><td>IAM, billing, notifications… <code>model.md</code> points at the <code>turystack-modeling</code> model and records only what this product adds</td></tr>
+        <tr><td class="k">Re-sync</td><td>only on request: the recorded source is re-read and the differences come back as a checklist; only accepted items change the blueprint</td></tr>
+      </table>
+
+      <div class="gates">
+        <span class="gate">gate:acceptance-ids</span>
+        <span class="gate">gate:capability-unhappy-paths</span>
+        <span class="gate">gate:transition-table</span>
+        <span class="gate">gate:domain-ids</span>
+        <span class="gate">gate:model-shape</span>
+        <span class="gate">gate:blueprint-nav</span>
+        <span class="gate">gate:blueprint-mdx</span>
+        <span class="gate manual">manual · a person decides, the harness proposes</span>
+      </div>
+    </section>
+
+    <section class="phase" data-mode="bootstrap" data-n="04" id="p4">
+      <h2>The design becomes the UI/UX skill</h2>
+      <p class="what">
+        The sweep runs after the blueprint, so every screen is read against words,
+        actors and states that already exist: a label that disagrees with the
+        glossary is a question, not a synonym.
+      </p>
+
+      <p class="label">Section file: <code>03-uiux-bootstrap.md</code></p>
+      <ul class="steps">
+        <li><strong>Resolve the source.</strong> A file someone else can open again in six weeks, not “the Figma the designer shared”.</li>
+        <li><strong>Sweep it, five readings at once.</strong> Tokens · layout · copy · component mapping · surfaces and their states.</li>
+        <li><strong>Propose what the design only implies</strong> as a checklist, item by item. Only what a person accepted becomes a rule.</li>
+        <li><strong>Write one theme per design system</strong> — tokens, then the slot, then the variant.</li>
+      </ul>
+
+      <p class="label">Variants</p>
+      <table>
+        <tr><td class="k">Figma, reachable</td><td>tokens read from styles and variables, variants enumerated, every frame listed — including the ones nobody mentioned</td></tr>
+        <tr><td class="k">Exports only</td><td>tokens from a token export or asked for; a state nobody exported is recorded as <em>missing</em>, never as absent</td></tr>
+        <tr><td class="k">No design yet</td><td>the UI/UX skill keeps its markers and every surface built later stops on the missing export. Inventing it is not an option</td></tr>
+        <tr><td class="k">Several design systems</td><td>audiences drawn apart stay apart: one token set, one theme and one component mapping each. Merging them is irreversible in practice</td></tr>
+        <tr><td class="k">Missing slot</td><td>a component the library cannot theme is a gap in the library — a task before the surface that needs it, never a structural selector in the theme</td></tr>
+      </table>
+
+      <div class="gates">
+        <span class="gate">gate:theme-per-system</span>
+        <span class="gate">gate:theme-override-shape</span>
+        <span class="gate">gate:theme-in-sync</span>
+        <span class="gate">gate:token-scheme-parity</span>
+        <span class="gate">gate:design-export</span>
+        <span class="gate">gate:design-requirement-ids</span>
+        <span class="gate manual">manual · the checklist is answered by a person</span>
+      </div>
+    </section>
+
+    <section class="phase" data-mode="bootstrap" data-n="05" id="p5">
+      <h2>The blueprint becomes a board</h2>
+      <p class="what">
+        Derived from the blueprint's ids, never from the screens. One task per
+        thing that can be proven — which is the same unit the delivery harness
+        slices against. The board lives inside the blueprint and is continuous:
+        nothing is deleted, an obsolete task is superseded and names its successor,
+        and a <code>done</code> task is final — a change that touches it is a new task.
+      </p>
+
+      <pre>capability  SALES-AC-n   → one task per group of criteria that ships together
+rule        SALES-R-n    → its own task where no capability already carries it
+event       SALES-EVN-n  → the publication with its capability; each handler its own task
+schedule    SALES-JOB-n  → always its own task
+cross-domain XD-R-n      → the task where the domains meet
+missing component        → a react-web task first, named in dependsOn</pre>
+
+      <p class="label">A task is lean — what a person validates, never the code</p>
+      <table>
+        <tr><td class="k">Intent</td><td>one sentence: who does what, and what follows</td></tr>
+        <tr><td class="k">Impact</td><td>data · rules · operations · effects · screens · scheduled — no methods, classes, paths or hooks</td></tr>
+        <tr><td class="k">Cases</td><td>written from the blueprint, one per thing checked, each naming the id it proves</td></tr>
+      </table>
+
+      <p class="label">Two approvals before it reaches doing</p>
+      <table>
+        <tr><td class="k">Plan</td><td>a person approves the impact — the data, rules, operation, effects and screen this change should have</td></tr>
+        <tr><td class="k">Cases</td><td>a person corrects, deletes, and adds the cases only they know about</td></tr>
+      </table>
+
+      <pre>tasks.json changed → npx --package @turystack/proof-mode-gates@^3.0.0 turystack-proof board --write .claude/skills/&lt;project&gt;-blueprint</pre>
+
+      <div class="gates">
+        <span class="gate">gate:board-covers-spec</span>
+        <span class="gate">gate:board-pages</span>
+        <span class="gate">gate:task-cases</span>
+        <span class="gate">gate:board-continuous</span>
+        <span class="gate">gate:task-shape</span>
+      </div>
+    </section>
+
+    <section class="phase" data-mode="loop" data-n="06" id="p6">
+      <h2>One task, fixed phases, one report</h2>
+      <p class="what">
+        With the blueprint reviewed and a board derived, implementation is a loop
+        with no product decisions left in it. The phases are fixed; which ones run
+        is derived from the task's impact; <code>turystack-proof-mode</code> runs
+        each one end to end, gated before the next.
+      </p>
+
+      <pre>take a task            plan and cases approved → open → doing
+resolve its ids        every id opens to a row in the blueprint, or it goes back
+data                   tables, enums, the migration          turystack-modeling
+domain                 entities, guards, use-cases, rules    turystack-backend-pattern
+routes                 controllers, permissions, OpenAPI     turystack-backend-pattern
+async                  events, handlers, schedules           turystack-backend-pattern
+contract               the SDK regenerated with Kubb         turystack-frontend-pattern
+frontend               screens from react-web + the hooks    turystack-frontend-pattern
+close                  delivery appended, history → done, pages regenerated</pre>
+
+      <p class="label">Which phases the impact implies — each shows evidence or <code>n/a</code> with a reason; the others may be omitted</p>
+      <table>
+        <tr><td class="k">data</td><td>data</td></tr>
+        <tr><td class="k">rules</td><td>domain</td></tr>
+        <tr><td class="k">operations</td><td>domain · routes · contract</td></tr>
+        <tr><td class="k">effects</td><td>domain · async</td></tr>
+        <tr><td class="k">scheduled</td><td>async</td></tr>
+        <tr><td class="k">screens</td><td>contract · frontend</td></tr>
+      </table>
+
+      <p class="label">The ladder, after every slice — not once at the end</p>
+      <pre>format → lint → typecheck → structure → test → coverage → e2e → visual</pre>
+
+      <p class="what">
+        It stops at the first red rung. A rung that goes red on a fifty-line
+        slice names the change that broke it; the same rung on a finished task
+        names nothing, and the next twenty minutes are bisecting.
+      </p>
+
+      <p class="label">Variants</p>
+      <table>
+        <tr><td class="k">Backend-only</td><td>a rule, a handler, a schedule — frontend is <code>n/a</code>, with its reason</td></tr>
+        <tr><td class="k">Frontend-only</td><td>a surface over an operation that already ships: data to async are <code>n/a</code>, contract shows the SDK is current</td></tr>
+        <tr><td class="k">Full-stack</td><td>every phase in order — the SDK is generated from the published contract, so a frontend built before it is built against a shape nobody published</td></tr>
+        <tr><td class="k">Missing component</td><td>react-web lacks it: a task under frontend-primitives, named in <code>dependsOn</code>; the screen's task is blocked until it is delivered</td></tr>
+        <tr><td class="k">Missing decision</td><td>everything that does not depend on it proceeds; the branch that does stops; the answer returns as an id in the blueprint</td></tr>
+        <tr><td class="k">Case turns out wrong</td><td>back to the person who approved it. Deleting it in the commit that could not make it pass is the failure this whole step exists to prevent</td></tr>
+      </table>
+
+      <div class="gates">
+        <span class="gate">gate:plan-approved</span>
+        <span class="gate">gate:cases-approved</span>
+        <span class="gate">gate:phase-evidence</span>
+        <span class="gate">gate:case-test-link</span>
+        <span class="gate">gate:rule-id-coverage</span>
+        <span class="gate">gate:spec-test-link</span>
+        <span class="gate">gate:required-captures</span>
+        <span class="gate">gate:contract-delta</span>
+        <span class="gate">gate:board-report-linked</span>
+        <span class="gate halt">gate:no-bypass</span>
+      </div>
+    </section>
+
+    <section class="phase" data-mode="loop" data-n="07" id="p7">
+      <h2>Every session after that</h2>
+      <p class="what">
+        The harness states the mode, lists what is open, and asks which of three
+        things this session is. It does not choose for the person, and it does
+        not start coding because the last session was coding.
+      </p>
+
+      <table>
+        <tr>
+          <td class="k">Implement</td>
+          <td>a task from the board, on a named surface → ends in a delivery appended to that task</td>
+        </tr>
+        <tr>
+          <td class="k">Audit</td>
+          <td>the ids the blueprint declares against the deliveries that claim them → ends in a difference, and tasks for it. Never in an edit to the blueprint that makes the difference disappear</td>
+        </tr>
+        <tr>
+          <td class="k">Hunt</td>
+          <td>a symptom → ends in an id: the criterion that was violated, or a new one written with the person who owns it</td>
+        </tr>
+      </table>
+
+      <p class="what">
+        A bug fixed with no id is a change nobody can audit, and it returns as a
+        “regression” that was never a regression — it was a behaviour nobody had
+        decided, twice.
+      </p>
+    </section>
+
+    <footer class="page">
+      <p style="font-size: var(--step--1); max-width: 46rem;">
+        Every law names a gate — a check the runner implements, or
+        <code>manual</code>. The distance between what the tables claim and what exists on disk is the
+        backlog; the <code>manual</code> share is not a backlog at all, but the
+        part of the law a machine was never going to check. A report prints both,
+        which is what makes its green readable.
+      </p>
+    </footer>
+  </main>
+</div>
+
+<script>
+  // The rail is built from the sections, so a phase added to the page cannot be
+  // missing from the navigation.
+  const phases = [...document.querySelectorAll('section.phase')]
+  const rail = document.getElementById('rail')
+
+  for (const phase of phases) {
+    const item = document.createElement('li')
+    const link = document.createElement('a')
+
+    link.href = `#${phase.id}`
+    link.dataset.target = phase.id
+    link.innerHTML = `<span class="n">${phase.dataset.n}</span><span>${phase.querySelector('h2').textContent}</span>`
+    item.append(link)
+    rail.append(item)
+  }
+
+  const links = [...rail.querySelectorAll('a')]
+
+  function mark(id) {
+    for (const link of links) {
+      link.setAttribute('aria-current', String(link.dataset.target === id))
+    }
+  }
+
+  mark(phases[0].id)
+
+  if ('IntersectionObserver' in window) {
+    const seen = new Map()
+    const observer = new IntersectionObserver(
+      (entries) => {
+        for (const entry of entries) {
+          seen.set(entry.target.id, entry.intersectionRatio)
+        }
+
+        const [top] = [...seen.entries()]
+          .filter(([, ratio]) => ratio > 0)
+          .sort((left, right) => right[1] - left[1])
+
+        if (top) {
+          mark(top[0])
+        }
+      },
+      { threshold: [0, 0.25, 0.5, 1] },
+    )
+
+    for (const phase of phases) {
+      observer.observe(phase)
+    }
+  }
+
+  // Bootstrap runs once; the rest runs forever. Reading only one of the two is
+  // the common case, so it is one click rather than a scroll.
+  for (const button of document.querySelectorAll('.filters button')) {
+    button.addEventListener('click', () => {
+      const filter = button.dataset.filter
+
+      for (const other of document.querySelectorAll('.filters button')) {
+        other.setAttribute('aria-pressed', String(other === button))
+      }
+
+      for (const phase of phases) {
+        const mode = phase.dataset.mode
+        const dim =
+          filter !== 'all' &&
+          mode !== filter &&
+          !(filter === 'bootstrap' && mode === 'setup')
+
+        phase.classList.toggle('dim', dim)
+      }
+    })
+  }
+</script>
+</body>
+</html>

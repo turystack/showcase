@@ -39,10 +39,10 @@ WithContext(seed?: ContextSeed): MethodDecorator
 					that started at the publisher continues on the consumer.
 				</p>
 				<CodeBlock
-					code={`import { Handler } from '@turystack/nestjs-serverless'
+					code={`import { Handler } from '@turystack/nestjs-events/workers'
 import { WithContext } from '@turystack/nestjs-context'
 
-@Handler('SQS', { schema: paymentRequestedSchema })
+@Handler('EVENTBRIDGE-SQS', { event: PaymentRequested })
 export class ProcessPaymentHandler {
   @WithContext((event: PaymentRequested) => ({ correlationId: event.correlationId }))
   async execute(event: PaymentRequested) {
@@ -61,17 +61,19 @@ export class ProcessPaymentHandler {
 					is traceable on its own.
 				</p>
 				<CodeBlock
-					code={`import { Schedule } from '@turystack/nestjs-scheduler'
-import { WithContext } from '@turystack/nestjs-context'
+					code={`import { WithContext } from '@turystack/nestjs-context'
+import { Handler } from '@turystack/nestjs-events/workers'
 
-@Schedule('0 * * * *', { lock: true })
-export class ExpireReservationsJob {
+@Handler('SCHEDULE', {}, {
+  trigger: { schedule: 'rate(15 minutes)' },
+})
+export class ExpireReservationsHandler {
   @WithContext()
   async execute() {
     return this.expireReservationsUseCase.execute()
   }
 }`}
-					filename="expire-reservations.job.ts"
+					filename="expire-reservations.handler.ts"
 					language="ts"
 				/>
 			</div>

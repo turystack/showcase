@@ -78,7 +78,7 @@ export class PaymentController {
 					result nobody will read.
 				</p>
 				<CodeBlock
-					code={`@Handler('SQS', { schema: paymentRequestedSchema })
+					code={`@Handler('EVENTBRIDGE-SQS', { event: PaymentRequested })
 export class ProcessPaymentHandler {
   constructor(private readonly idempotency: IdempotencyService) {}
 

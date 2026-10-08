@@ -40,26 +40,26 @@ import { OrderExceptions } from './order.exceptions'
 class Order {
   constructor(
     readonly id: string,
-    readonly customerId: string,
+    readonly customer_id: string,
     readonly total: number,
-    readonly createdAt: Date,
-    private status: 'PENDING' | 'PAID' = 'PENDING',
+    readonly created_at: Date,
+    private status: 'pending' | 'paid' = 'pending',
   ) {}
 
   markAsPaid() {
-    if (this.status === 'PAID') {
+    if (this.status === 'paid') {
       throw new OrderExceptions.order.alreadyPaid({ orderId: this.id })
     }
 
-    this.status = 'PAID'
+    this.status = 'paid'
   }
 
   isPaid() {
-    return this.status === 'PAID'
+    return this.status === 'paid'
   }
 
   canBeCancelled() {
-    return this.status === 'PENDING'
+    return this.status === 'pending'
   }
 }`}
 					filename="order.entity.ts"
@@ -78,8 +78,13 @@ class Order {
 				</h2>
 				<CodeBlock
 					code={`import { Injectable } from '@nestjs/common'
-import { Transactional } from '@turystack/nestjs-database'
-import { PublisherService } from '@turystack/nestjs-publisher'
+import { onAfterCommit, Transactional } from '@turystack/nestjs-database'
+import { defineEvent } from '@turystack/nestjs-events'
+import { PublisherService } from '@turystack/nestjs-events/publisher'
+import { z } from 'zod'
+
+// In @repo/events. z.instanceof survives the consumer's parse; z.object strips the class.
+export const OrderPaid = defineEvent('order.paid', z.instanceof(Order))
 
 export type PayOrderInput = {
   orderId: Order['id']
@@ -101,13 +106,9 @@ export class PayOrderUseCase {
 
     const updated = await this.orderRepository.updateById(order.id, order)
 
-    // After the write, never before: a consumer must not react to a payment
-    // a rollback can still erase. publish() returns void — no await.
-    this.publisher.publish({
-      data: updated,
-      destination: 'TOPIC',
-      name: 'order.paid',
-    })
+    // After the commit, never inside the transaction: a consumer must not
+    // react to a payment a rollback can still erase. No await.
+    onAfterCommit(() => this.publisher.publish(OrderPaid, updated))
 
     return updated
   }
@@ -136,12 +137,17 @@ export class PayOrderUseCase {
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">How it works</h2>
 				<p className="text-muted-foreground">
-					When a class is decorated, it calls{' '}
+					Decorating a class calls{' '}
 					<code>superjson.registerClass(Constructor, identifier)</code> under
-					the hood. A stable, namespaced identifier is recommended when class
-					names may be minified or duplicated. This allows superjson to preserve
-					class instances, Dates, and other non-JSON-native types when
-					serializing/deserializing data through messaging systems like SNS/SQS.
+					the hood.
+				</p>
+				<p className="text-muted-foreground">
+					Class instances, Dates and other non-JSON types survive the trip
+					through EventBridge events and queues.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					Use a stable, namespaced identifier when class names may be minified
+					or duplicated.
 				</p>
 			</div>
 		</div>

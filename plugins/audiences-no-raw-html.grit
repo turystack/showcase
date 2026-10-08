@@ -1,0 +1,32 @@
+// AUD-1 — an audience screen is composed only of @turystack/react-web.
+//
+// The audiences are the proof that the library covers whole product screens.
+// A `div`, a `span` or a `p` inside one is a piece the library is missing,
+// hidden in the showcase instead of built where every product can use it. So
+// any intrinsic element fails here: the fix is a component or a prop in
+// react-web first, consumed afterwards.
+//
+// Scoped in biome.json to src/components/audiences/**, minus the stage chrome
+// (AudienceStage.tsx) and the brand artwork (acme-logo.tsx). Globs there start
+// with `**/` because Biome 2.5.4 matches a plugin's `includes` against the
+// absolute path — `src/**` silently matches nothing.
+//
+// Caught: `<div>`, `<svg:path />`, `createElement('p', …)` and
+// `React.createElement('p', …)`. Not caught, because syntax alone cannot tell:
+// a tag held in a variable (`const Tag = 'aside'; <Tag />`). Review owns that.
+engine biome(1.0)
+language js(typescript, jsx)
+
+or {
+  JsxOpeningElement(name = or { JsxName(), JsxNamespaceName() }),
+  JsxSelfClosingElement(name = or { JsxName(), JsxNamespaceName() }),
+  or {
+    `createElement($tag, $...)`,
+    `React.createElement($tag, $...)`
+  } where { $tag <: JsStringLiteralExpression() }
+} as $element where {
+  register_diagnostic(
+    span = $element,
+    message = "AUD-1: an audience screen uses only @turystack/react-web components — build the missing piece in react-web first, never a raw HTML element."
+  )
+}

@@ -2,6 +2,7 @@ import { Link } from '@tanstack/react-router'
 import { Github } from 'lucide-react'
 import type { PropsWithChildren } from 'react'
 
+import { ThemeLabTrigger } from '@/components/docs/ThemeLab'
 import { TuryMark } from '@/components/Logo'
 import { SpotlightTrigger } from '@/components/SpotlightSearch'
 import { ThemeToggle } from '@/components/ThemeToggle'
@@ -38,12 +39,14 @@ export function MainLayout({ children }: PropsWithChildren) {
 							>
 								<Github size={18} />
 							</a>
+							<ThemeLabTrigger />
 							<ThemeToggle />
 						</div>
 					</nav>
 
 					<div className="flex items-center gap-2 md:hidden">
 						<SpotlightTrigger />
+						<ThemeLabTrigger />
 						<ThemeToggle />
 					</div>
 				</div>

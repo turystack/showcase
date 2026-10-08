@@ -14,7 +14,7 @@ const inputProps = [
 		description: 'The social provider to verify against.',
 		name: 'provider',
 		required: true,
-		type: "'GOOGLE' | 'FACEBOOK' | 'MICROSOFT' | 'APPLE'",
+		type: "'google' | 'facebook' | 'microsoft' | 'apple'",
 	},
 	{
 		description:
@@ -30,7 +30,7 @@ const profileProps = [
 		description: 'Discriminant — which provider produced this profile.',
 		name: 'provider',
 		required: true,
-		type: "'GOOGLE' | 'FACEBOOK' | 'MICROSOFT' | 'APPLE'",
+		type: "'google' | 'facebook' | 'microsoft' | 'apple'",
 	},
 	{
 		description: 'Unique user identifier from the provider.',
@@ -43,7 +43,7 @@ const profileProps = [
 			"User's display name. Typed `null` for Apple — the name never comes in the ID token.",
 		name: 'name',
 		required: true,
-		type: 'string | null (APPLE: null)',
+		type: 'string | null (apple: null)',
 	},
 	{
 		description:
@@ -57,7 +57,7 @@ const profileProps = [
 			'Profile picture URL. Typed `null` for Microsoft and Apple — their tokens never carry a photo.',
 		name: 'avatar',
 		required: true,
-		type: 'string | null (MICROSOFT, APPLE: null)',
+		type: 'string | null (microsoft, apple: null)',
 	},
 ]
 
@@ -82,8 +82,8 @@ function Page() {
 resolveIdentity<P extends SocialAuthProvider>(provider: P, token: string): Promise<SocialAuthProfileOf<P>>
 
 // The return type narrows per provider:
-// resolveIdentity('APPLE', token)  → { provider: 'APPLE'; name: null; avatar: null; ... }
-// resolveIdentity('GOOGLE', token) → { provider: 'GOOGLE'; name: string | null; avatar: string | null; ... }`}
+// resolveIdentity('apple', token)  → { provider: 'apple'; name: null; avatar: null; ... }
+// resolveIdentity('google', token) → { provider: 'google'; name: string | null; avatar: string | null; ... }`}
 					filename="social-auth-service.d.ts"
 					language="ts"
 				/>
@@ -132,7 +132,7 @@ export class LoginWithSocialUseCase {
 
 // Narrowing via the provider discriminant:
 function describe(profile: SocialAuthProfile) {
-  if (profile.provider === 'APPLE') {
+  if (profile.provider === 'apple') {
     // profile.name and profile.avatar are typed null here
   }
 }`}

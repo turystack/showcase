@@ -81,7 +81,7 @@ PaginationSchema.parse({ page: '2', nextCursor: 'abc' }) // throws paginationMix
 				<CodeBlock
 					code={`export const listOrdersRequest = createRequestSchema({
   query: PaginationSchema
-    .and(SortSchema(['createdAt'], { defaultSortBy: 'createdAt', defaultSortOrder: 'desc' }))
+    .and(SortSchema(['created_at'], { defaultSortBy: 'created_at', defaultSortOrder: 'desc' }))
     .and(z.object({ status: orderStatusSchema.optional() })),
 })`}
 					filename="list-orders.dto.ts"
@@ -123,7 +123,7 @@ if (response.meta.mode === 'cursor') {
 				</h2>
 				<CodeBlock
 					code={`type ListOrdersInput = { statuses?: List<OrderStatus> } & Pagination &
-  Sort<readonly ['createdAt', 'total']>
+  Sort<readonly ['created_at', 'total']>
 
 interface IOrderRepository {
   findPaginated(input: ListOrdersInput): Promise<PaginatedResponse<OrderEntity>>

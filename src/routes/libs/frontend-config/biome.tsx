@@ -6,6 +6,402 @@ export const Route = createFileRoute('/libs/frontend-config/biome')({
 	component: Page,
 })
 
+type RefTableProps = {
+	head: string[]
+	rows: string[][]
+}
+
+function RefTable({ head, rows }: RefTableProps) {
+	return (
+		<div className="overflow-x-auto rounded-lg border border-border">
+			<table className="w-full text-sm">
+				<thead>
+					<tr className="border-border border-b bg-muted/50">
+						{head.map((cell) => (
+							<th
+								className="px-4 py-3 text-left font-medium text-muted-foreground"
+								key={cell}
+							>
+								{cell}
+							</th>
+						))}
+					</tr>
+				</thead>
+				<tbody>
+					{rows.map((row, index) => (
+						<tr
+							className={
+								index < rows.length - 1 ? 'border-border border-b' : ''
+							}
+							key={row.join('|')}
+						>
+							{head.map((label) => (
+								<td
+									className="px-4 py-3 align-top text-muted-foreground"
+									key={label}
+								>
+									{label === head[0] ? (
+										<code className="rounded-lg bg-muted px-1.5 py-0.5 font-medium text-foreground text-xs">
+											{row[head.indexOf(label)]}
+										</code>
+									) : (
+										row[head.indexOf(label)]
+									)}
+								</td>
+							))}
+						</tr>
+					))}
+				</tbody>
+			</table>
+		</div>
+	)
+}
+
+const scopeRows = [
+	[
+		'**/src/**/*',
+		'linted',
+		'All app source',
+	],
+	[
+		'**/index.html',
+		'linted',
+		'Vite entry (web)',
+	],
+	[
+		'**/vite.config.ts',
+		'linted',
+		'Vite config (web)',
+	],
+	[
+		'**/kubb.config.ts',
+		'linted',
+		'SDK generator config',
+	],
+	[
+		'**/app.config.ts',
+		'linted',
+		'Expo config (mobile)',
+	],
+	[
+		'!**/dist',
+		'skipped',
+		'Build output',
+	],
+	[
+		'!**/coverage*',
+		'skipped',
+		'Coverage reports',
+	],
+	[
+		'!**/src/routeTree.gen.ts',
+		'skipped',
+		'TanStack Router, generated',
+	],
+	[
+		'!**/src/~sdk',
+		'skipped',
+		'Kubb SDK, generated',
+	],
+	[
+		'!**/*.css',
+		'skipped',
+		'Stylesheets',
+	],
+]
+
+const formatterRows = [
+	[
+		'indentStyle / indentWidth',
+		'space / 2',
+	],
+	[
+		'lineWidth',
+		'80',
+	],
+	[
+		'lineEnding',
+		'lf',
+	],
+	[
+		'formatWithErrors',
+		'false',
+	],
+	[
+		'quoteStyle / jsxQuoteStyle',
+		'single / double',
+	],
+	[
+		'semicolons',
+		'asNeeded',
+	],
+	[
+		'arrowParentheses',
+		'always',
+	],
+	[
+		'trailingCommas',
+		'all',
+	],
+	[
+		'bracketSpacing / bracketSameLine',
+		'true / false',
+	],
+	[
+		'attributePosition',
+		'multiline',
+	],
+	[
+		'expand',
+		'always',
+	],
+	[
+		'json.parser',
+		'allowComments, allowTrailingCommas',
+	],
+]
+
+const assistRows = [
+	[
+		'organizeImports',
+		'on',
+		'Fixed import groups, see below',
+	],
+	[
+		'useSortedAttributes',
+		'on',
+		'JSX attributes in order',
+	],
+	[
+		'useSortedKeys',
+		'on (off in *.json)',
+		'Object keys in order',
+	],
+	[
+		'useSortedProperties',
+		'on (off in *.json)',
+		'Properties in order',
+	],
+]
+
+const lintRows = [
+	[
+		'recommended',
+		'on',
+		"Biome's recommended set",
+	],
+	[
+		'style.useBlockStatements',
+		'error',
+		'No braceless if / else / loops',
+	],
+	[
+		'suspicious.noConsole',
+		'warn',
+		'console.warn and console.error allowed',
+	],
+	[
+		'nursery.useSortedClasses',
+		'error, safe fix',
+		'Sorts className and tv() classes',
+	],
+]
+
+const restrictionRows = [
+	[
+		'**/src/features/**',
+		'@/routes, #/routes',
+		'COM-3 / RTE-1',
+	],
+	[
+		'**/src/routes/**, **/src/app/**',
+		'@/features/*/components|support/**',
+		'STR-2 / ARC-LAY-5',
+	],
+	[
+		'**/src/ui/**, **/src/components/**',
+		'~sdk, @/features, @/routes',
+		'CPS-5',
+	],
+]
+
+const pluginRows = [
+	[
+		'no-as-prop',
+		'CPS-3',
+		'An as= prop; use asChild',
+	],
+	[
+		'no-classname-prop',
+		'PROP-1',
+		'className?: in a props type',
+	],
+	[
+		'no-conditional-class',
+		'STY-2',
+		'Ternary or + inside className={}',
+	],
+	[
+		'no-data-fallback',
+		'UST-11',
+		'query.data ?? []',
+	],
+	[
+		'no-default-export',
+		'CMP-L1',
+		'export default',
+	],
+	[
+		'no-external-class-merge',
+		'STY-L3',
+		'cn() merging an incoming className',
+	],
+	[
+		'no-hardcoded-brand',
+		'STY-8',
+		'A 3- or 6-digit hex colour',
+	],
+	[
+		'no-icon-name-prop',
+		'PROP-11',
+		'icon: string prop; pass a node',
+	],
+	[
+		'no-implementation-query',
+		'TST-5',
+		'container.querySelector() in tests',
+	],
+	[
+		'no-inline-handler',
+		'COM-L1',
+		'Inline arrow in onClick={}',
+	],
+	[
+		'no-inline-permission-check',
+		'PRM-1',
+		'permissions.includes(id); use Protected',
+	],
+	[
+		'no-inline-union',
+		'PROP-2',
+		"Inline 'a' | 'b' union on a prop",
+	],
+	[
+		'no-layout-scaled-media',
+		'PRF-3',
+		'<img /> without width',
+	],
+	[
+		'no-literal-visual-value',
+		'UIX-1',
+		'String literal hex colour or px value',
+	],
+	[
+		'no-manual-focus',
+		'AXS-4',
+		'ref.current.focus()',
+	],
+	[
+		'no-navigable-state-in-memory',
+		'ARC-DEL-8',
+		'useState for page, filters, sort, tab, query',
+	],
+	[
+		'no-navigate-in-form',
+		'FRM-10',
+		'navigate / router.push in a submit handler',
+	],
+	[
+		'no-outline-none',
+		'AXS-3',
+		'focus:outline-none class',
+	],
+	[
+		'no-raw-breakpoint',
+		'RSP-2',
+		'min-width: <n>px',
+	],
+	[
+		'no-raw-interactive',
+		'CPS-1',
+		'<div onClick={…}>',
+	],
+	[
+		'no-redundant-fallback',
+		'COM-L2',
+		'value ?? false',
+	],
+	[
+		'no-reset-effect',
+		'FRM-5',
+		'form.reset() inside useEffect',
+	],
+	[
+		'no-rewrite-api-message',
+		'ERR-2',
+		'Literal toast / setError text in a catch',
+	],
+	[
+		'no-route-loader-data',
+		'RTE-4',
+		'useLoaderData()',
+	],
+	[
+		'no-scheme-branch',
+		'STY-9',
+		'colorScheme === value',
+	],
+	[
+		'no-selected-row-state',
+		'TBL-8',
+		'useState holding a selectedRow',
+	],
+	[
+		'no-server-state-copy',
+		'ARC-CTR-7',
+		'useState(query.data)',
+	],
+	[
+		'no-synthetic-event',
+		'TST-6',
+		'fireEvent.*; use user-event',
+	],
+	[
+		'no-unsafe-output',
+		'ARC-SEC-10',
+		'dangerouslySetInnerHTML, .innerHTML =',
+	],
+	[
+		'onchange-delivers-value',
+		'PROP-7',
+		'on*(event: ChangeEvent…) prop types',
+	],
+	[
+		'optimistic-write-shape',
+		'ARC-CON-10',
+		'useMutation onMutate without onError',
+	],
+]
+
+const extendsRows = [
+	[
+		'files.includes, overrides',
+		'Concatenated with the preset',
+	],
+	[
+		'organizeImports groups',
+		'Replaced entirely by the app',
+	],
+	[
+		'everything else',
+		'Deep-merged, the app wins',
+	],
+	[
+		'nested extends',
+		'Ignored silently by Biome',
+	],
+]
+
 function Page() {
 	return (
 		<div className="space-y-10">
@@ -14,8 +410,8 @@ function Page() {
 					Biome preset
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
-					The frontend lint + format ruleset — extend it from an app's
-					biome.json and every web and mobile app formats the same way.
+					One lint + format preset for web and Expo apps, plus 31 GritQL rules
+					the app opts into.
 				</p>
 			</div>
 
@@ -23,193 +419,142 @@ function Page() {
 				<h2 className="font-display font-semibold text-xl">Extending it</h2>
 				<CodeBlock
 					code={`{
-  "extends": ["@turystack/frontend-config/biome"]
+  "root": false,
+  "extends": ["@turystack/frontend-config/biome"],
+  "plugins": [
+    "./node_modules/@turystack/frontend-config/plugins/no-as-prop.grit",
+    "./node_modules/@turystack/frontend-config/plugins/no-default-export.grit"
+  ]
 }`}
 					filename="biome.json"
 					language="json"
 				/>
 				<p className="text-muted-foreground text-sm">
-					The package exports ./biome straight to its biome.json — no build
-					step. Anything the app adds after extends overrides the preset.
+					The preset lists no plugins: a plugin path in an extended config
+					resolves against the app&apos;s, not the preset&apos;s. List them in
+					the app.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					"root": false only for a config nested in a monorepo. Same file for
+					web and mobile.
 				</p>
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">
-					Import organization
-				</h2>
-				<p className="text-muted-foreground">
-					organizeImports runs as an assist action with fixed groups, each
-					separated by a blank line:
-				</p>
-				<CodeBlock
-					code={`"organizeImports": {
-  "level": "on",
-  "options": {
-    "groups": [
-      [":NODE:"],
-      ":BLANK_LINE:",
-      [":PACKAGE:", "!@turystack/**", "!@repo/**"],
-      ":BLANK_LINE:",
-      ["@turystack/**"],
-      ":BLANK_LINE:",
-      ["@repo/**"],
-      ":BLANK_LINE:",
-      ["#/**"],
-      ":BLANK_LINE:",
-      [":PATH:"]
-    ]
-  }
-}`}
-					filename="biome.json (preset)"
-					language="json"
+				<h2 className="font-display font-semibold text-xl">Files in scope</h2>
+				<RefTable
+					head={[
+						'Glob',
+						'Status',
+						'What',
+					]}
+					rows={scopeRows}
 				/>
-				<p className="text-muted-foreground text-sm">
-					Node builtins first, then external packages (with{' '}
-					<code className="text-lib">!@turystack/**</code> and{' '}
-					<code className="text-lib">!@repo/**</code> excluded so they get their
-					own groups), then <code className="text-lib">@turystack/**</code>,{' '}
-					<code className="text-lib">@repo/**</code>, the app alias{' '}
-					<code className="text-lib">#/**</code>, and relative paths last.
-				</p>
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">
-					Sorted keys, attributes, and classes
-				</h2>
-				<p className="text-muted-foreground">
-					Three assist actions keep everything alphabetical —{' '}
-					<code className="text-lib">useSortedKeys</code>,{' '}
-					<code className="text-lib">useSortedAttributes</code>, and{' '}
-					<code className="text-lib">useSortedProperties</code> are all{' '}
-					<code className="text-lib">"level": "on"</code>. Tailwind classes get
-					the nursery lint rule on top:
-				</p>
+				<h2 className="font-display font-semibold text-xl">Formatter</h2>
+				<RefTable
+					head={[
+						'Option',
+						'Value',
+					]}
+					rows={formatterRows}
+				/>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">Assist actions</h2>
+				<RefTable
+					head={[
+						'Action',
+						'Level',
+						'Effect',
+					]}
+					rows={assistRows}
+				/>
 				<CodeBlock
-					code={`"nursery": {
-  "useSortedClasses": {
-    "fix": "safe",
-    "level": "error",
-    "options": {
-      "attributes": ["className"],
-      "functions": ["tv"]
-    }
-  }
-}`}
-					filename="biome.json (preset)"
+					code={`"groups": [
+  [":NODE:"],
+  ":BLANK_LINE:",
+  [":PACKAGE:", "!@turystack/**", "!@repo/**"],
+  ":BLANK_LINE:",
+  ["@turystack/**"],
+  ":BLANK_LINE:",
+  ["@repo/**"],
+  ":BLANK_LINE:",
+  ["#/**"],
+  ":BLANK_LINE:",
+  [":PATH:"]
+]`}
+					filename="organizeImports (preset)"
 					language="json"
 				/>
 				<p className="text-muted-foreground text-sm">
-					className attributes and tv() calls are sorted with a safe autofix. An
-					override turns both <code className="text-lib">useSortedKeys</code>{' '}
-					and <code className="text-lib">useSortedProperties</code> off for{' '}
-					<code className="text-lib">**/*.json</code> — package.json field order
-					stays meaningful.
+					A repo scoped other than @repo restates groups; the app's array
+					replaces this one.
 				</p>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">Lint rules</h2>
-				<p className="text-muted-foreground">
-					Biome's <code className="text-lib">recommended</code> set, plus:
-				</p>
-				<CodeBlock
-					code={`"style": {
-  "useBlockStatements": "error"
-},
-"suspicious": {
-  "noConsole": {
-    "level": "warn",
-    "options": {
-      "allow": ["warn", "error"]
-    }
-  }
-}`}
-					filename="biome.json (preset)"
-					language="json"
+				<RefTable
+					head={[
+						'Rule',
+						'Level',
+						'Effect',
+					]}
+					rows={lintRows}
 				/>
-				<ul className="space-y-2 text-muted-foreground">
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">useBlockStatements</code> as error — no
-							braceless if/else
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">noConsole</code> as warn — console.log
-							flags, console.warn and console.error stay allowed
-						</span>
-					</li>
-				</ul>
 			</div>
 
 			<div className="space-y-4">
 				<h2 className="font-display font-semibold text-xl">
-					What it covers — and skips
+					Import restrictions
 				</h2>
-				<CodeBlock
-					code={`"files": {
-  "ignoreUnknown": false,
-  "includes": [
-    "**/src/**/*",
-    "**/index.html",
-    "**/vite.config.ts",
-    "**/kubb.config.ts",
-    "**/app.config.ts",
-    "!**/src/routeTree.gen.ts",
-    "!**/src/~sdk",
-    "!**/*.css"
-  ]
-}`}
-					filename="biome.json (preset)"
-					language="json"
+				<RefTable
+					head={[
+						'Files',
+						'May not import',
+						'Law',
+					]}
+					rows={restrictionRows}
 				/>
 				<p className="text-muted-foreground text-sm">
-					Generated files are excluded with negated globs:{' '}
-					<code className="text-lib">routeTree.gen.ts</code> (TanStack Router),{' '}
-					<code className="text-lib">src/~sdk</code> (kubb-generated API
-					client), and <code className="text-lib">*.css</code>. Everything else
-					under src/ plus the vite, kubb, and expo config files is checked.
+					All three use noRestrictedImports at error level.
 				</p>
 			</div>
 
 			<div className="space-y-4">
-				<h2 className="font-display font-semibold text-xl">Formatter</h2>
-				<ul className="space-y-2 text-muted-foreground">
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							2-space indent, <code className="text-lib">"lineWidth": 80</code>,
-							lf line endings
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">"quoteStyle": "single"</code> with{' '}
-							<code className="text-lib">"jsxQuoteStyle": "double"</code>
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">"semicolons": "asNeeded"</code> and{' '}
-							<code className="text-lib">"trailingCommas": "all"</code>
-						</span>
-					</li>
-					<li className="flex items-start gap-2">
-						<span className="mt-1 text-lib">→</span>
-						<span>
-							<code className="text-lib">"attributePosition": "multiline"</code>{' '}
-							and <code className="text-lib">"expand": "always"</code> — one JSX
-							attribute per line, objects always expanded
-						</span>
-					</li>
-				</ul>
+				<h2 className="font-display font-semibold text-xl">GritQL plugins</h2>
+				<RefTable
+					head={[
+						'Plugin',
+						'Law',
+						'Flags',
+					]}
+					rows={pluginRows}
+				/>
+				<p className="text-muted-foreground text-sm">
+					Each ships as plugins/&lt;name&gt;.grit with a fail and a pass fixture
+					checked in CI.
+				</p>
+			</div>
+
+			<div className="space-y-4">
+				<h2 className="font-display font-semibold text-xl">
+					How extends merges
+				</h2>
+				<RefTable
+					head={[
+						'Key',
+						'Through extends',
+					]}
+					rows={extendsRows}
+				/>
+				<p className="text-muted-foreground text-sm">
+					So this preset restates @turystack/config instead of extending it.
+				</p>
 			</div>
 		</div>
 	)

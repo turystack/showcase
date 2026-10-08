@@ -14,55 +14,89 @@ function Page() {
 					@turystack/nestjs-database
 				</h1>
 				<p className="mt-3 text-lg text-muted-foreground">
-					Define the schema once, get one typed repository per table. PostgreSQL
-					(Drizzle) built-in.
+					Define the schema once, get one typed repository per table. Two
+					engines behind the same module: PostgreSQL through Drizzle, and
+					DynamoDB.
 				</p>
 			</div>
 
 			<div className="space-y-3">
 				<h2 className="font-display font-semibold text-xl">Installation</h2>
 				<p className="text-muted-foreground">
-					Install the library along with its required peer dependencies:
+					Every engine's driver is an optional peer, so you install the one you
+					use and nothing else. An app on PostgreSQL never pulls the AWS SDK,
+					and an app on DynamoDB never pulls Drizzle.
 				</p>
 				<CodeBlock
 					tabs={[
 						{
-							code: 'pnpm add @turystack/nestjs-database drizzle-orm pg',
+							code: `# PostgreSQL
+pnpm add @turystack/nestjs-database drizzle-orm pg
+
+# DynamoDB
+pnpm add @turystack/nestjs-database @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb`,
 							label: 'pnpm',
 						},
 						{
-							code: 'npm install @turystack/nestjs-database drizzle-orm pg',
+							code: `# PostgreSQL
+npm install @turystack/nestjs-database drizzle-orm pg
+
+# DynamoDB
+npm install @turystack/nestjs-database @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb`,
 							label: 'npm',
 						},
 						{
-							code: 'yarn add @turystack/nestjs-database drizzle-orm pg',
+							code: `# PostgreSQL
+yarn add @turystack/nestjs-database drizzle-orm pg
+
+# DynamoDB
+yarn add @turystack/nestjs-database @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb`,
 							label: 'yarn',
 						},
 						{
-							code: 'bun add @turystack/nestjs-database drizzle-orm pg',
+							code: `# PostgreSQL
+bun add @turystack/nestjs-database drizzle-orm pg
+
+# DynamoDB
+bun add @turystack/nestjs-database @aws-sdk/client-dynamodb @aws-sdk/lib-dynamodb`,
 							label: 'bun',
 						},
 					]}
 				/>
 				<p className="text-muted-foreground text-sm">
-					For migrations and Drizzle Studio, also add the dev tooling:
+					The PostgreSQL schema builder lives at{' '}
+					<code className="text-lib">
+						@turystack/nestjs-database/postgresql
+					</code>{' '}
+					rather than the root, for the same reason: everything it exports
+					imports Drizzle at module scope, and re-exporting it from the barrel
+					would make Drizzle required for a DynamoDB app.
+				</p>
+				<p className="text-muted-foreground text-sm">
+					Dev tooling, where the engine has any. PostgreSQL has migrations and
+					Drizzle Studio; on DynamoDB the table and its indexes are
+					infrastructure — CDK or Terraform — not a migration this package runs.
 				</p>
 				<CodeBlock
 					tabs={[
 						{
-							code: 'pnpm add -D drizzle-kit @types/pg',
+							code: `# PostgreSQL only
+pnpm add -D drizzle-kit @types/pg`,
 							label: 'pnpm',
 						},
 						{
-							code: 'npm install -D drizzle-kit @types/pg',
+							code: `# PostgreSQL only
+npm install -D drizzle-kit @types/pg`,
 							label: 'npm',
 						},
 						{
-							code: 'yarn add -D drizzle-kit @types/pg',
+							code: `# PostgreSQL only
+yarn add -D drizzle-kit @types/pg`,
 							label: 'yarn',
 						},
 						{
-							code: 'bun add -D drizzle-kit @types/pg',
+							code: `# PostgreSQL only
+bun add -D drizzle-kit @types/pg`,
 							label: 'bun',
 						},
 					]}
@@ -75,40 +109,54 @@ function Page() {
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Drizzle ORM with PostgreSQL — type-safe queries and mutations
+							Two engines, one module — PostgreSQL through Drizzle, DynamoDB
+							through the AWS SDK, chosen by a discriminated `adapter`
 						</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Schema builder API — define tables without importing drizzle
-							directly
+							Schema builder API — define tables without importing the engine's
+							driver, whichever one you picked
 						</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Auto-generated repositories — findMany, findFirst, create, update,
-							delete, upsert, count, exists
+							Repositories derived from the schema — on PostgreSQL findMany,
+							findFirst, update and delete by predicate; on DynamoDB a cursor
+							`query` over declared key paths, and the calls the engine cannot
+							serve cheaply are absent from the type
 						</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
 							Transactional decorator — method-level transactions via
-							AsyncLocalStorage
+							AsyncLocalStorage; an open handle on PostgreSQL, one atomic batch
+							on DynamoDB
 						</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Relations support — define Drizzle relations for nested queries
+							Relations support — PostgreSQL only; a key-value store has no
+							counterpart, and pretending otherwise would be the wrong shape
 						</span>
 					</li>
 					<li className="flex items-start gap-2">
 						<span className="mt-1 text-lib">→</span>
 						<span>
-							Auto UUID v7 — primary keys without defaults are auto-generated
+							Auto UUID v7 — PostgreSQL primary keys without defaults are
+							auto-generated; on DynamoDB the key is yours to supply, because it
+							is also the partition
+						</span>
+					</li>
+					<li className="flex items-start gap-2">
+						<span className="mt-1 text-lib">→</span>
+						<span>
+							Both engines tested against a real server in Docker, not against a
+							mock
 						</span>
 					</li>
 				</ul>
@@ -146,7 +194,11 @@ declare module '@turystack/nestjs-database' {
 					it is global:
 				</p>
 				<CodeBlock
-					code={`import { Module } from '@nestjs/common'
+					filename="app.module.ts"
+					language="ts"
+					tabs={[
+						{
+							code: `import { Module } from '@nestjs/common'
 import { ConfigModule } from '@turystack/nestjs-config'
 import { DatabaseModule } from '@turystack/nestjs-database'
 import { configSchema } from './config.schema'
@@ -162,16 +214,48 @@ import { databaseSchema } from './database.schema'
     })),
   ],
 })
-export class AppModule {}`}
-					filename="app.module.ts"
-					language="ts"
+export class AppModule {}`,
+							label: 'PostgreSQL',
+						},
+						{
+							code: `import { Module } from '@nestjs/common'
+import { ConfigModule } from '@turystack/nestjs-config'
+import { DatabaseModule } from '@turystack/nestjs-database'
+import { configSchema } from './config.schema'
+import { databaseSchema } from './database.schema'
+
+@Module({
+  imports: [
+    ConfigModule.register({ schema: configSchema }),
+    DatabaseModule.register((config) => ({
+      adapter: 'dynamodb',
+      dynamodb: {
+        region: config.get('AWS_REGION'),
+        tablePrefix: config.get('DYNAMODB_TABLE_PREFIX'),
+      },
+      schemaResolver: databaseSchema,
+    })),
+  ],
+})
+export class AppModule {}`,
+							label: 'DynamoDB',
+						},
+					]}
 				/>
+				<p className="text-muted-foreground text-sm">
+					One word changes. The config block beside it belongs to that engine,
+					and swapping one without the other does not compile.
+				</p>
 				<p className="text-muted-foreground text-sm">
 					3. Inject the typed DatabaseService from any domain service — no
 					module imports needed:
 				</p>
 				<CodeBlock
-					code={`import { Injectable } from '@nestjs/common'
+					filename="users.service.ts"
+					language="ts"
+					tabs={[
+						{
+							code: `import { Injectable } from '@nestjs/common'
 import { DatabaseService } from '@turystack/nestjs-database'
 
 @Injectable()
@@ -185,10 +269,36 @@ export class UsersService {
   async create(name: string, email: string) {
     return this.db.users.create({ name, email })
   }
-}`}
-					filename="users.service.ts"
-					language="ts"
+}`,
+							label: 'PostgreSQL',
+						},
+						{
+							code: `import { Injectable } from '@nestjs/common'
+import { DatabaseService } from '@turystack/nestjs-database'
+
+@Injectable()
+export class ProductsService {
+  constructor(private readonly db: DatabaseService) {}
+
+  // A list read walks a declared key path and pages by cursor. There is no
+  // findMany here, and no page number — see the DynamoDB adapter page.
+  async listForUser(userId: string, cursor?: string) {
+    return this.db.product.query({ partition: userId, limit: 20, cursor })
+  }
+
+  async create(userId: string, productId: string, name: string, price: number) {
+    return this.db.product.create({ user_id: userId, product_id: productId, name, price })
+  }
+}`,
+							label: 'DynamoDB',
+						},
+					]}
 				/>
+				<p className="text-muted-foreground text-sm">
+					The writes read the same. The reads do not, and that is the point: a
+					call the engine cannot serve cheaply is absent from the type instead
+					of present and expensive.
+				</p>
 			</div>
 		</div>
 	)

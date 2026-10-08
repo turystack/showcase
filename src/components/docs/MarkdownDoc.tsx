@@ -3,7 +3,7 @@ import { Children, isValidElement, useEffect, useId, useState } from 'react'
 import ReactMarkdown from 'react-markdown'
 import remarkGfm from 'remark-gfm'
 
-import { highlight } from '@/lib/highlight'
+import { canHighlight, highlight } from '@/lib/highlight'
 
 type MarkdownDocProps = {
 	content: string
@@ -17,8 +17,13 @@ function HighlightedBlock({
 	language: string
 }) {
 	const [html, setHtml] = useState<string | null>(null)
+	const plain = !canHighlight(language)
 
 	useEffect(() => {
+		if (plain) {
+			return
+		}
+
 		let active = true
 		highlight(code, language).then((result) => {
 			if (active) {
@@ -31,9 +36,10 @@ function HighlightedBlock({
 	}, [
 		code,
 		language,
+		plain,
 	])
 
-	if (!html) {
+	if (plain || !html) {
 		return (
 			<pre className="my-4 overflow-x-auto rounded-lg border border-border bg-card p-4 font-mono text-[13px] leading-relaxed">
 				{code}
@@ -43,8 +49,8 @@ function HighlightedBlock({
 
 	return (
 		<div
-			className="my-4 overflow-x-auto rounded-lg border border-border bg-card p-4 text-[13px] leading-relaxed [&>pre]:m-0 [&>pre]:bg-transparent! [&>pre]:p-0 [&_code]:font-mono"
-			// biome-ignore lint/security/noDangerouslySetInnerHtml: html gerado localmente pelo shiki a partir dos .md do repo
+			className="my-4 overflow-x-auto rounded-lg border border-border bg-zinc-950 p-4 text-[13px] leading-relaxed [&>pre]:m-0 [&>pre]:bg-transparent! [&>pre]:p-0 [&_code]:font-mono"
+			// safe: the html is generated locally by shiki from this repo's own .md
 			dangerouslySetInnerHTML={{
 				__html: html,
 			}}
@@ -65,6 +71,11 @@ function MermaidDiagram({ code }: { code: string }) {
 				mermaid.initialize({
 					securityLevel: 'loose',
 					startOnLoad: false,
+					// On a failed render mermaid otherwise appends its own "Syntax
+					// error in text" SVG to <body>, outside this component, where it
+					// stays until the page reloads. The fallback below is the error
+					// display: the diagram's source, in place.
+					suppressErrorRendering: true,
 					theme: 'dark',
 				})
 				const rendered = await mermaid.render(`mmd${id}`, code)
@@ -72,6 +83,10 @@ function MermaidDiagram({ code }: { code: string }) {
 					setSvg(rendered.svg)
 				}
 			} catch {
+				// Older mermaid builds ignore the option above; remove what a failed
+				// render may still have left behind.
+				document.getElementById(`dmmd${id}`)?.remove()
+
 				if (active) {
 					setSvg('')
 				}
@@ -99,7 +114,7 @@ function MermaidDiagram({ code }: { code: string }) {
 	return (
 		<div
 			className="my-4 flex justify-center overflow-x-auto rounded-lg border border-border bg-card p-6 [&_svg]:h-auto [&_svg]:max-w-full"
-			// biome-ignore lint/security/noDangerouslySetInnerHtml: svg gerado localmente pelo mermaid a partir dos .md do repo
+			// safe: the svg is generated locally by mermaid from this repo's own .md
 			dangerouslySetInnerHTML={{
 				__html: svg,
 			}}
@@ -151,7 +166,7 @@ const components: ComponentProps<typeof ReactMarkdown>['components'] = {
 			return <code className={className}>{children}</code>
 		}
 		return (
-			<code className="rounded bg-secondary px-1.5 py-0.5 font-mono text-[0.85em] text-foreground">
+			<code className="rounded-lg bg-secondary px-1.5 py-0.5 font-mono text-[0.85em] text-foreground">
 				{children}
 			</code>
 		)

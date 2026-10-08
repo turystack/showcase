@@ -99,7 +99,7 @@ import { OrderExceptions } from './order.exceptions'
 
 @Route({
   method: 'POST',
-  path: ':orderId::pay',
+  path: ':order_id::pay',
   summary: 'Pay Order',
   description: 'Pays a pending order.',
   responses: {

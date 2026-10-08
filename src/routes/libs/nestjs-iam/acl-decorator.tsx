@@ -79,7 +79,7 @@ export class BillingController {
   @Route({ method: 'GET', summary: 'Get Billing', description: 'Returns billing info.' })
   @ACL('billing:read')
   getBilling(@AuthenticatedProfile() profile: IamProfile) {
-    return this.billingService.getBilling(profile.organizationId)
+    return this.billingService.getBilling(profile.organization_id)
   }
 
   @Route({ method: 'PATCH', summary: 'Update Billing', description: 'Updates billing info.' })
@@ -88,7 +88,7 @@ export class BillingController {
     @AuthenticatedProfile() profile: IamProfile,
     @Request(updateBillingSchema) req: RequestInput<typeof updateBillingSchema>,
   ) {
-    return this.billingService.updateBilling(profile.organizationId, req.body)
+    return this.billingService.updateBilling(profile.organization_id, req.body)
   }
 }`}
 					filename="billing.controller.ts"
@@ -112,35 +112,35 @@ import { z } from 'zod'
 
 // getContext reads the raw request, before validation — type it so the
 // generic resolves; it defaults to {} and destructuring would not compile.
-type WorkspaceRequest = { params: { workspaceId: string } }
+type WorkspaceRequest = { params: { workspace_id: string } }
 
 const listProductsSchema = createRequestSchema({
-  params: z.object({ workspaceId: z.string().uuid() }),
+  params: z.object({ workspace_id: z.string().uuid() }),
   query: z.object({ limit: z.coerce.number().default(20) }),
 })
 
 const createProductSchema = createRequestSchema({
-  params: z.object({ workspaceId: z.string().uuid() }),
+  params: z.object({ workspace_id: z.string().uuid() }),
   body: z.object({ name: z.string(), price: z.number() }),
 })
 
-@Controller({ path: 'workspaces/:workspaceId/products', tag: 'Products' })
+@Controller({ path: 'workspaces/:workspace_id/products', tag: 'Products' })
 export class ProductController {
   @Route({ method: 'GET', summary: 'List Products', description: 'Returns paginated products.' })
-  @ACL<WorkspaceRequest>('product:read', ({ params }) => ({ workspaceId: params.workspaceId }))
+  @ACL<WorkspaceRequest>('product:read', ({ params }) => ({ workspace_id: params.workspace_id }))
   listProducts(@Request(listProductsSchema) req: RequestInput<typeof listProductsSchema>) {
     return this.productService.getPaginatedProducts({
       ...req.query,
-      workspaceId: req.params.workspaceId,
+      workspace_id: req.params.workspace_id,
     })
   }
 
   @Route({ method: 'POST', summary: 'Create Product', description: 'Creates a new product.' })
-  @ACL<WorkspaceRequest>('product:create', ({ params }) => ({ workspaceId: params.workspaceId }))
+  @ACL<WorkspaceRequest>('product:create', ({ params }) => ({ workspace_id: params.workspace_id }))
   createProduct(@Request(createProductSchema) req: RequestInput<typeof createProductSchema>) {
     return this.productService.createProduct({
       ...req.body,
-      workspaceId: req.params.workspaceId,
+      workspace_id: req.params.workspace_id,
     })
   }
 }`}
